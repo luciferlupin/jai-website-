@@ -1198,6 +1198,9 @@ img {
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--box-shadow);
+    height: 300px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
     transition: var(--transition);
     height: 300px;
 }
@@ -1215,24 +1218,62 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(37, 99, 235, 0.9);
+    background: rgba(0, 0, 0, 0.8);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transition: var(--transition);
-    padding: 2rem;
+    transition: all 0.3s ease;
+    padding: 1.5rem;
     text-align: center;
     color: white;
+    z-index: 2;
+    transform: translateY(10px);
+    will-change: transform, opacity;
 }
 
-.portfolio-item:hover .portfolio-overlay {
+/* Hover effect for desktop */
+.portfolio-item:hover .portfolio-overlay,
+.portfolio-item.active .portfolio-overlay {
     opacity: 1;
+    transform: translateY(0);
 }
 
-.portfolio-item:hover img {
+.portfolio-item:hover img,
+.portfolio-item.active img {
     transform: scale(1.1);
+}
+
+/* Touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .portfolio-overlay {
+        opacity: 0.8;
+        transform: translateY(100%);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    
+    .portfolio-item.active .portfolio-overlay {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+    .portfolio-item img {
+        transition: transform 0.5s ease;
+    }
+    
+    .portfolio-overlay h3,
+    .portfolio-overlay p {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease 0.1s;
+    }
+    
+    .portfolio-item.active .portfolio-overlay h3,
+    .portfolio-item.active .portfolio-overlay p {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .portfolio-overlay h3 {
@@ -1251,8 +1292,11 @@ img {
 }
 
 .portfolio-item:hover .portfolio-overlay h3,
-.portfolio-item:hover .portfolio-overlay p {
+.portfolio-item:hover .portfolio-overlay p,
+.portfolio-item.active .portfolio-overlay h3,
+.portfolio-item.active .portfolio-overlay p {
     transform: translateY(0);
+    opacity: 1;
 }
 
 /* Book a Call Section */

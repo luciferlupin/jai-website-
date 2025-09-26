@@ -1,4 +1,40 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Portfolio item interaction
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    
+    // Handle both click and touch events for mobile
+    portfolioItems.forEach(item => {
+        // Remove hover effect on touch devices
+        if ('ontouchstart' in window) {
+            item.classList.add('touch-device');
+        }
+        
+        // Toggle active class on click/tap
+        item.addEventListener('click', function(e) {
+            // Don't toggle if clicking on a link inside the overlay
+            if (e.target.tagName === 'A' || e.target.closest('a')) {
+                return;
+            }
+            
+            // Close any other open items
+            portfolioItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // Toggle current item
+            this.classList.toggle('active');
+        });
+        
+        // Close when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!item.contains(e.target) && !e.target.classList.contains('portfolio-item')) {
+                item.classList.remove('active');
+            }
+        });
+    });
+    
     // Mobile Navigation Toggle
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
