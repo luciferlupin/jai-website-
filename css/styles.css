@@ -2637,8 +2637,105 @@ img {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    /* Base container padding */
     .container {
-        padding: 0 1.5rem;
+        padding: 0 1.25rem;
+    }
+    
+    /* Section padding */
+    section {
+        padding: 3rem 0;
+    }
+    
+    /* Headings */
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        padding: 0 1rem;
+    }
+    
+    /* Hero section */
+    .hero {
+        padding: 1.5rem 0;
+    }
+    
+    .hero-content {
+        padding: 2rem 1.25rem;
+        margin: 0 0.5rem;
+    }
+    
+    /* Cards and grids */
+    .card, 
+    .service-card,
+    .testimonial-card,
+    .portfolio-item {
+        margin-bottom: 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    /* Forms */
+    .form-group {
+        margin-bottom: 1.25rem;
+    }
+    
+    input, 
+    textarea, 
+    select {
+        padding: 0.75rem 1rem;
+    }
+    
+    /* Buttons */
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.95rem;
+    }
+    
+    /* Navigation */
+    .nav-links {
+        padding: 2rem 1.25rem;
+    }
+    
+    /* Footer */
+    .footer {
+        padding: 3rem 0 1.5rem;
+    }
+    
+    .footer-content {
+        padding: 0 1.25rem;
+    }
+    
+    /* Testimonials */
+    .testimonial-content {
+        padding: 1.5rem;
+    }
+    
+    /* Guarantee banner */
+    .guarantee-banner {
+        padding: 2rem 1.25rem;
+        margin: 2rem 0.75rem 0;
+    }
+    
+    /* Adjust spacing for small screens */
+    @media (max-width: 480px) {
+        .container {
+            padding: 0 1rem;
+        }
+        
+        section {
+            padding: 2.5rem 0;
+        }
+        
+        h2 {
+            font-size: 1.6rem;
+            margin-bottom: 1.75rem;
+        }
+        
+        .card, 
+        .service-card,
+        .testimonial-card,
+        .portfolio-item {
+            padding: 1.25rem;
+        }
     }
     
     .nav-links {
@@ -2685,22 +2782,29 @@ img {
     /* Responsive Adjustments */
 @media (max-width: 992px) {
     .hero {
-        min-height: 90vh;
+        min-height: auto;
+        padding: 2rem 0;
+    }
+    
+    /* Ensure proper spacing between sections on tablets */
+    section {
+        padding: 4rem 0;
     }
     
     .hero-content {
-        padding: 2.5rem 1.5rem;
-        margin: 0 1rem;
+        padding: 2rem 1.25rem;
+        margin: 0 0.75rem;
         width: auto;
         background: rgba(255, 255, 255, 0.95);
-        border-radius: 16px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     }
     
     .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
         line-height: 1.2;
-        margin-bottom: 1.2rem;
-        padding: 0 0.5rem;
+        margin-bottom: 1rem;
+        padding: 0 0.25rem;
         letter-spacing: -0.5px;
     }
     
@@ -2728,9 +2832,10 @@ img {
         flex-direction: column;
         align-items: center;
         gap: 0.8rem;
-        padding: 1.2rem 1rem;
+        padding: 1.2rem 0.75rem;
         margin: 1.5rem auto 0;
-        width: calc(100% - 2rem);
+        width: 100%;
+        max-width: 400px;
     }
     
     .feature {
