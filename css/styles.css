@@ -5,14 +5,14 @@
     --accent-color: #3b82f6;
     --dark-color: #1f2937;
     --light-color: #f9fafb;
-    --text-color: #374151;
     --text-light: #6b7280;
     --success-color: #10b981;
     --warning-color: #f59e0b;
     --danger-color: #ef4444;
     --border-radius: 8px;
-    --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --transition: all 0.3s ease;
+    --nav-height: 70px;
 }
 
 * {
@@ -31,6 +31,7 @@ body {
     color: var(--text-color);
     background-color: #ffffff;
     overflow-x: hidden;
+    padding-top: var(--nav-height);
 }
 
 .container {
@@ -38,6 +39,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -264,6 +266,149 @@ img {
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    z-index: 1002;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Mobile Navigation Toggle */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001;
+    position: relative;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Mobile Menu */
+@media (max-width: 992px) {
+    .nav-toggle {
+        display: flex;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+        transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+        z-index: 1000;
+    }
+    
+    .nav-links.active {
+        right: 0;
+    }
+    
+    .nav-links li {
+        margin: 1rem 0;
+        opacity: 0;
+        transform: translateX(20px);
+        transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+    
+    .nav-links.active li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+    /* Staggered animation for menu items */
+    .nav-links.active li:nth-child(1) { transition-delay: 0.1s; }
+    .nav-links.active li:nth-child(2) { transition-delay: 0.15s; }
+    .nav-links.active li:nth-child(3) { transition-delay: 0.2s; }
+    .nav-links.active li:nth-child(4) { transition-delay: 0.25s; }
+    .nav-links.active li:nth-child(5) { transition-delay: 0.3s; }
+    
+    body.nav-open {
+        overflow: hidden;
+    }
 }
 
 /* Hero Section */
@@ -747,7 +892,7 @@ img {
     border-radius: 16px;
     padding: 2.5rem 2rem;
     text-align: center;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -756,6 +901,9 @@ img {
     display: flex;
     flex-direction: column;
     z-index: 1;
+    opacity: 0;
+    transform: translateY(30px);
+    will-change: transform, opacity;
 }
 
 .service-card::before {
@@ -778,10 +926,15 @@ img {
     background: #1d4ed8;
 }
 
+.service-card.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.12);
-    border-color: rgba(37, 99, 235, 0.1);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+    border-color: rgba(37, 99, 235, 0.2);
 }
 
 .service-card.featured:hover {
@@ -1011,6 +1164,27 @@ img {
 .package-button:hover {
     background: transparent;
     color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+}
+
+.package-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.package-button:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 .featured .package-button:hover {
@@ -2073,6 +2247,7 @@ img {
     position: fixed;
     width: 60px;
     height: 60px;
+    z-index: 998;
     bottom: 30px;
     right: 30px;
     background-color: #25d366;
@@ -2119,6 +2294,7 @@ img {
         width: 50px;
         height: 50px;
         font-size: 25px;
+        bottom: 1.5rem;
         bottom: 20px;
         right: 20px;
     }
@@ -2682,8 +2858,8 @@ img {
 /* Back to Top Button */
 .back-to-top {
     position: fixed;
-    bottom: 2rem;
     right: 2rem;
+    z-index: 999;
     width: 50px;
     height: 50px;
     background: var(--primary-color);
@@ -2704,6 +2880,18 @@ img {
 .back-to-top.visible {
     opacity: 1;
     visibility: visible;
+}
+
+/* Position above WhatsApp button on mobile */
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 6rem; /* Position above WhatsApp button */
+    }
+    
+    /* Move WhatsApp button slightly up to prevent overlap with bottom navigation if any */
+    .whatsapp-float {
+        bottom: 1.5rem;
+    }
 }
 
 .back-to-top:hover {

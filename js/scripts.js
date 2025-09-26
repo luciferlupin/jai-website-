@@ -1,4 +1,37 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Mobile Navigation Toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    if (navToggle && navLinks) {
+        // Toggle mobile menu
+        navToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            navLinks.classList.toggle('active');
+            navToggle.classList.toggle('active');
+            document.body.classList.toggle('nav-open');
+        });
+        
+        // Close menu when clicking on a nav link
+        const navItems = navLinks.querySelectorAll('a');
+        navItems.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                navToggle.classList.remove('active');
+                document.body.classList.remove('nav-open');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navLinks.contains(e.target) && !navToggle.contains(e.target)) {
+                navLinks.classList.remove('active');
+                navToggle.classList.remove('active');
+                document.body.classList.remove('nav-open');
+            }
+        });
+    }
+    
     // Portfolio item interaction
     const portfolioItems = document.querySelectorAll('.portfolio-item');
     
@@ -31,30 +64,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.addEventListener('click', function(e) {
             if (!item.contains(e.target) && !e.target.classList.contains('portfolio-item')) {
                 item.classList.remove('active');
-            }
-        });
-    });
-    
-    // Mobile Navigation Toggle
-    const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
-    
-    if (navToggle) {
-        navToggle.addEventListener('click', function() {
-            navToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
-            document.body.classList.toggle('nav-open');
-        });
-    }
-    
-    // Close mobile menu when clicking on a nav link
-    const navItems = document.querySelectorAll('.nav-links a');
-    navItems.forEach(item => {
-        item.addEventListener('click', function() {
-            if (navLinks.classList.contains('active')) {
-                navToggle.classList.remove('active');
-                navLinks.classList.remove('active');
-                document.body.classList.remove('nav-open');
             }
         });
     });
@@ -110,6 +119,31 @@ document.addEventListener('DOMContentLoaded', function() {
     backToTopButton.className = 'back-to-top';
     backToTopButton.innerHTML = '<i class="fas fa-arrow-up"></i>';
     document.body.appendChild(backToTopButton);
+
+    // Package cards animation
+    const packageCards = document.querySelectorAll('.service-card');
+    
+    // Add initial styles to package cards
+    packageCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = `opacity 0.6s ease-out ${index * 0.15}s, transform 0.6s ease-out ${index * 0.15}s`;
+    });
+    
+    // Intersection Observer for package cards
+    const packageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    // Observe each package card
+    packageCards.forEach(card => {
+        packageObserver.observe(card);
+    });
     
     window.addEventListener('scroll', function() {
         if (window.pageYOffset > 300) {
