@@ -109,13 +109,24 @@
             let mouseY = 0;
             let cursorX = 0;
             let cursorY = 0;
-            const speed = 0.1; // Adjust this value to change the delay (0.1 = more delay, 1 = no delay)
+            // Slower speed for more delay (lower value = more delay)
+            const speed = 0.05; // Reduced from 0.1 for more delay
+            // Additional smoothing factor (closer to 1 = smoother but more delayed)
+            const smoothing = 0.2;
 
             // Set initial cursor position
             document.addEventListener('mousemove', (e) => {
                 mouseX = e.clientX;
                 mouseY = e.clientY;
                 cursor.style.display = 'block';
+                
+                // Initial position for immediate response
+                if (!cursorX && !cursorY) {
+                    cursorX = mouseX;
+                    cursorY = mouseY;
+                    cursor.style.left = cursorX + 'px';
+                    cursor.style.top = cursorY + 'px';
+                }
             });
 
             // Hide cursor when leaving the window
@@ -146,15 +157,18 @@
                 });
             });
 
-            // Smooth animation loop
+            // Smooth animation loop with enhanced easing
             function animate() {
-                // Calculate new position with easing
-                cursorX += (mouseX - cursorX) * speed;
-                cursorY += (mouseY - cursorY) * speed;
+                // Calculate distance to target
+                const dx = (mouseX - cursorX) * speed;
+                const dy = (mouseY - cursorY) * speed;
                 
-                // Apply the new position
-                cursor.style.left = cursorX + 'px';
-                cursor.style.top = cursorY + 'px';
+                // Apply additional smoothing
+                cursorX += dx * (1 - smoothing) + (dx > 0 ? 1 : -1) * smoothing * 2;
+                cursorY += dy * (1 - smoothing) + (dy > 0 ? 1 : -1) * smoothing * 2;
+                
+                // Apply the new position with hardware acceleration
+                cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%)`;
                 
                 // Continue the animation loop
                 requestAnimationFrame(animate);
