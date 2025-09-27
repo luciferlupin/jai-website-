@@ -3,17 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Curious Kaizer - Web Design & Development</title>
+    <title>Curious Kaizer | Web Design & Development Services in Delhi, India</title>
+    <meta name="description" content="Curious Kaizer offers professional web design & development services in Delhi. We create fast, responsive, and SEO-optimized websites that drive results. Book a free consultation today!">
+    <meta name="keywords" content="web design, web development, Delhi web designer, responsive website, SEO services, ecommerce website, website development">
+    <meta name="author" content="Curious Kaizer">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2563eb">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://curiouskaizer.com/" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Curious Kaizer | Web Design & Development Services">
+    <meta property="og:description" content="Professional web design and development services in Delhi. We create stunning, high-performance websites that drive results.">
+    <meta property="og:image" content="https://curiouskaizer.com/images/og-image.jpg">
+    <meta property="og:url" content="https://curiouskaizer.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Curious Kaizer">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Curious Kaizer | Web Design & Development">
+    <meta name="twitter:description" content="Professional web design and development services in Delhi. Let's build something amazing together!">
+    <meta name="twitter:image" content="https://curiouskaizer.com/images/twitter-card.jpg">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="./css/styles.css" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Curious Kaizer",
+      "image": "https://curiouskaizer.com/images/logo.png",
+      "@id": "https://curiouskaizer.com/",
+      "url": "https://curiouskaizer.com/",
+      "telephone": "+918595121436",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Delhi",
+        "addressLocality": "Delhi",
+        "postalCode": "1100XX",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 28.6139,
+        "longitude": 77.2090
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "10:00",
+        "closes": "19:00"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/curious-kaizer",
+        "https://github.com/curiouskaizer",
+        "https://twitter.com/curiouskaizer"
+      ]
+    }
+    </script>
 </head>
-<body>
+<body itemscope itemtype="https://schema.org/WebPage">
     <!-- Cursor Follower -->
     <div class="cursor-follower"></div>
     
     <!-- Navigation -->
-    <nav class="navbar">
+    <header class="site-header">
+    <nav class="navbar" itemscope itemtype="https://schema.org/SiteNavigationElement" aria-label="Main navigation">
         <div class="container">
             <a href="#" class="logo">Curious Kaizer</a>
             <div class="nav-toggle" id="navToggle">
@@ -31,6 +111,7 @@
             </ul>
         </div>
     </nav>
+    </header>
 
     <!-- Hero Section -->
     <header id="home" class="hero">
@@ -182,12 +263,14 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services" style="padding: 30px 0 20px;">
+    <section id="services" class="services" style="padding: 30px 0 20px;" itemscope itemtype="https://schema.org/Service">
+        <meta itemprop="serviceType" content="Web Design & Development">
+        <meta itemprop="provider" content="Curious Kaizer">
         <div class="container" style="padding: 0 15px;">
             <h2 style="margin-bottom: 10px; text-align: center;">Our <span class="highlight-blue">Packages</span></h2>
             <div class="services-grid" style="margin-top: 20px;">
                 <div class="service-card">
-                    <div class="service-icon">
+                    <div class="service-icon" aria-hidden="true">
                         <i class="fas fa-rocket"></i>
                     </div>
                     <h3>Starter</h3>
@@ -606,7 +689,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
@@ -654,7 +737,17 @@
         </div>
     </footer>
 
-    <script src="js/scripts.js"></script>
+    <!-- Defer non-critical JavaScript -->
+    <script src="js/scripts.js" defer></script>
+    
+    <!-- Google Analytics (replace with your actual tracking ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR-GA-ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YOUR-GA-ID');
+    </script>
     <script src="js/carousel.js"></script>
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/918595121436" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
