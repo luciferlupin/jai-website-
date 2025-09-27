@@ -589,7 +589,7 @@
                         <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
-                <form id="contactForm" class="contact-form" onsubmit="sendToWhatsApp(event)" style="padding: 25px 20px;">
+                <form id="contactForm" class="contact-form" onsubmit="return sendToWhatsApp(event);" style="padding: 25px 20px;">
                     <div class="form-group" style="margin-bottom: 20px;">
                         <label for="name" style="display: block; margin-bottom: 8px; font-weight: 500; color: #4a5568;">Your Name</label>
                         <input type="text" id="name" name="name" placeholder="John Doe" required style="width: 100%; padding: 12px 15px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.95rem; transition: border-color 0.3s ease;">
@@ -625,32 +625,42 @@
                 function sendToWhatsApp(event) {
                     event.preventDefault();
                     
-                    // Get form values
-                    const name = document.getElementById('name').value;
-                    const email = document.getElementById('email').value;
-                    const phone = document.getElementById('phone').value;
-                    const package = document.getElementById('package').value;
-                    const message = document.getElementById('message').value;
-                    
-                    // Format the message
-                    const whatsappMessage = `*New Contact Form Submission*%0A%0A` +
-                        `*Name:* ${name}%0A` +
-                        `*Email:* ${email}%0A` +
-                        `*Phone:* ${phone}%0A` +
-                        `*Selected Package:* ${package}%0A%0A` +
-                        `*Project Details:*%0A${message}%0A%0A` +
-                        `_This message was sent from the Curious Kaizer website_`;
-                    
-                    // Open WhatsApp with the message
-                    window.open(`https://wa.me/918595121436?text=${whatsappMessage}`, '_blank');
-                    
-                    // Optional: Reset the form
-                    event.target.reset();
-                    
-                    // Optional: Show success message
-                    alert('Thank you! You will be redirected to WhatsApp to send your message.');
-                    
-                    return false;
+                    try {
+                        // Get form values
+                        const name = document.getElementById('name').value.trim();
+                        const email = document.getElementById('email').value.trim();
+                        const phone = document.getElementById('phone').value.trim();
+                        const package = document.getElementById('package').value.trim();
+                        const message = document.getElementById('message').value.trim();
+                        
+                        // Validate required fields
+                        if (!name || !email || !phone || !message) {
+                            alert('Please fill in all required fields');
+                            return false;
+                        }
+                        
+                        // Format the WhatsApp message with proper line breaks
+                        const whatsappMessage = 
+                            `*New Contact Form*%0A%0A` +
+                            `*Name:* ${name}%0A` +
+                            `*Email:* ${email}%0A` +
+                            `*Phone:* ${phone}%0A` +
+                            `*Package:* ${package || 'Not specified'}%0A%0A` +
+                            `*Project Details:*%0A${message}`;
+                        
+                        // Open WhatsApp directly with the message
+                        window.location.href = `https://wa.me/918595121436?text=${whatsappMessage}`;
+                        
+                        // Reset the form
+                        event.target.reset();
+                        
+                        // Prevent form submission
+                        return false;
+                        
+                    } catch (error) {
+                        console.error('Error:', error);
+                        return false;
+                    }
                 }
                 </script>
             </div>
