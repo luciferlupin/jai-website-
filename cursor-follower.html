@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor Follower Demo</title>
+    <style>
+        /* Cursor Follower Styles */
+        .cursor-follower {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background-color: #3b82f6; /* Blue color */
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: transform 0.1s ease-out, width 0.2s, height 0.2s;
+            will-change: transform;
+        }
+
+        /* Hide cursor on elements where it might interfere */
+        button, a, input, textarea, select, label, [role="button"] {
+            cursor: none !important;
+        }
+
+        /* Demo page styles (can be removed if not needed) */
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        .demo-content {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        h1 {
+            margin-bottom: 1.5rem;
+            color: #1e40af;
+        }
+
+        p {
+            max-width: 600px;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .test-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            background-color: #3b82f6;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor-follower"></div>
+    
+    <!-- Demo content (can be removed if not needed) -->
+    <div class="demo-content">
+        <h1>Cursor Follower Demo</h1>
+        <p>This is a demonstration of a smooth, blue circular cursor follower that follows your mouse movement with a slight delay. The effect is disabled on touch devices.</p>
+        <p>Try hovering over these buttons to see the cursor effect in action:</p>
+        <div class="test-buttons">
+            <button>Click Me</button>
+            <button>Hover Over Me</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if device is touch-enabled
+            const isTouchDevice = 'ontouchstart' in window || 
+                                navigator.maxTouchPoints > 0 || 
+                                navigator.msMaxTouchPoints > 0;
+            
+            if (isTouchDevice) {
+                // Remove cursor follower if on touch device
+                const cursor = document.querySelector('.cursor-follower');
+                if (cursor) cursor.remove();
+                return;
+            }
+
+            const cursor = document.querySelector('.cursor-follower');
+            let mouseX = 0;
+            let mouseY = 0;
+            let cursorX = 0;
+            let cursorY = 0;
+            const speed = 0.1; // Adjust this value to change the delay (0.1 = more delay, 1 = no delay)
+
+            // Set initial cursor position
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                cursor.style.display = 'block';
+            });
+
+            // Hide cursor when leaving the window
+            document.addEventListener('mouseleave', () => {
+                cursor.style.display = 'none';
+            });
+
+            // Show cursor when returning to the window
+            document.addEventListener('mouseenter', () => {
+                cursor.style.display = 'block';
+            });
+
+            // Handle hover states
+            const hoverElements = document.querySelectorAll('a, button, input, textarea, [role="button"], [data-cursor-hover]');
+            
+            hoverElements.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursor.style.width = '40px';
+                    cursor.style.height = '40px';
+                    cursor.style.opacity = '0.7';
+                    cursor.style.backgroundColor = '#3b82f6';
+                });
+                
+                el.addEventListener('mouseleave', () => {
+                    cursor.style.width = '20px';
+                    cursor.style.height = '20px';
+                    cursor.style.opacity = '1';
+                });
+            });
+
+            // Smooth animation loop
+            function animate() {
+                // Calculate new position with easing
+                cursorX += (mouseX - cursorX) * speed;
+                cursorY += (mouseY - cursorY) * speed;
+                
+                // Apply the new position
+                cursor.style.left = cursorX + 'px';
+                cursor.style.top = cursorY + 'px';
+                
+                // Continue the animation loop
+                requestAnimationFrame(animate);
+            }
+
+            // Start the animation
+            animate();
+        });
+    </script>
+</body>
+</html>

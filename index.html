@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Curious Kaizer - Web Design & Development</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Cursor Follower -->
+    <div class="cursor-follower"></div>
+    
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -31,6 +34,7 @@
 
     <!-- Hero Section -->
     <header id="home" class="hero">
+        <div id="particles-js"></div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-badge">Web Design & Development</div>
@@ -178,10 +182,10 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2>Our Packages</h2>
-            <div class="services-grid">
+    <section id="services" class="services" style="padding: 30px 0 20px;">
+        <div class="container" style="padding: 0 15px;">
+            <h2 style="margin-bottom: 10px; text-align: center;">Our Packages</h2>
+            <div class="services-grid" style="margin-top: 20px;">
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-rocket"></i>
@@ -262,58 +266,58 @@
     </section>
 
     <!-- Why Choose Us Section -->
-    <section id="why-us" class="why-us">
-        <div class="container">
-            <h2>Why Choose Curious Kaizer?</h2>
-            <p class="section-subtitle">We're not just another freelancing team. We're your dedicated digital partners committed to your success. Here's what makes us different:</p>
+    <section id="why-us" class="why-us" style="padding: 30px 0;">
+        <div class="container" style="padding: 0 15px;">
+            <h2 style="margin-bottom: 10px; text-align: center;">Why Choose Curious Kaizer?</h2>
+            <p class="section-subtitle" style="text-align: center; margin-bottom: 20px; padding: 0 10px;">We're not just another freelancing team. We're your dedicated digital partners committed to your success. Here's what makes us different:</p>
             
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
+            <div class="features-grid" style="margin-top: 20px;">
+                <div class="feature-card" style="margin-bottom: 20px; padding: 20px; border-radius: 8px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <div class="feature-icon" style="font-size: 1.8rem; color: #2196F3; margin-bottom: 15px;">
                         <i class="fas fa-user-shield"></i>
                     </div>
                     <h3>No Ghosting Policy</h3>
                     <p>Unlike many freelancers who disappear mid-project, we maintain <strong>clear communication</strong> and see every project through to completion. Your project is our priority from start to finish.</p>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">
+                <div class="feature-card" style="margin-bottom: 20px; padding: 20px; border-radius: 8px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <div class="feature-icon" style="font-size: 1.8rem; color: #2196F3; margin-bottom: 15px;">
                         <i class="fas fa-sync-alt"></i>
                     </div>
-                    <h3>Guaranteed Revisions</h3>
-                    <p>Your satisfaction is guaranteed with <strong>included revision rounds</strong> in every package. We won't rest until you're completely happy with the results.</p>
+                    <h3 style="margin: 0 0 10px 0; color: #2c3e50; font-size: 1.2rem;">Guaranteed Revisions</h3>
+                    <p style="margin: 0; color: #4a5568; line-height: 1.5; font-size: 0.95rem;">Your satisfaction is guaranteed with <strong>included revision rounds</strong> in every package. We won't rest until you're completely happy with the results.</p>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">
+                <div class="feature-card" style="margin-bottom: 20px; padding: 20px; border-radius: 8px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <div class="feature-icon" style="font-size: 1.8rem; color: #2196F3; margin-bottom: 15px;">
                         <i class="fas fa-handshake"></i>
                     </div>
-                    <h3>Dedicated Project Management</h3>
-                    <p>Enjoy <strong>personalized attention</strong> with a dedicated project manager who ensures your vision becomes reality, maintaining consistency and quality throughout.</p>
+                    <h3 style="margin: 0 0 10px 0; color: #2c3e50; font-size: 1.2rem;">Dedicated Project Management</h3>
+                    <p style="margin: 0; color: #4a5568; line-height: 1.5; font-size: 0.95rem;">Enjoy <strong>personalized attention</strong> with a dedicated project manager who ensures your vision becomes reality, maintaining consistency and quality throughout.</p>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">
+                <div class="feature-card" style="margin-bottom: 20px; padding: 20px; border-radius: 8px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <div class="feature-icon" style="font-size: 1.8rem; color: #2196F3; margin-bottom: 15px;">
                         <i class="fas fa-file-contract"></i>
                     </div>
-                    <h3>Clear Contracts</h3>
-                    <p>No hidden terms or surprise fees. We provide <strong>transparent pricing</strong> and <strong>detailed deliverables</strong> in writing before we begin any work.</p>
+                    <h3 style="margin: 0 0 10px 0; color: #2c3e50; font-size: 1.2rem;">Clear Contracts</h3>
+                    <p style="margin: 0; color: #4a5568; line-height: 1.5; font-size: 0.95rem;">No hidden terms or surprise fees. We provide <strong>transparent pricing</strong> and <strong>detailed deliverables</strong> in writing before we begin any work.</p>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">
+                <div class="feature-card" style="margin-bottom: 20px; padding: 20px; border-radius: 8px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <div class="feature-icon" style="font-size: 1.8rem; color: #2196F3; margin-bottom: 15px;">
                         <i class="fas fa-business-time"></i>
                     </div>
-                    <h3>Business Hours Support</h3>
-                    <p>Get <strong>reliable support</strong> during business hours with guaranteed response times. We're here when you need us.</p>
+                    <h3 style="margin: 0 0 10px 0; color: #2c3e50; font-size: 1.2rem;">Business Hours Support</h3>
+                    <p style="margin: 0; color: #4a5568; line-height: 1.5; font-size: 0.95rem;">Get <strong>reliable support</strong> during business hours with guaranteed response times. We're here when you need us.</p>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">
+                <div class="feature-card" style="margin-bottom: 20px; padding: 20px; border-radius: 8px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <div class="feature-icon" style="font-size: 1.8rem; color: #2196F3; margin-bottom: 15px;">
                         <i class="fas fa-tasks"></i>
                     </div>
-                    <h3>Structured Process</h3>
-                    <p>Our <strong>proven workflow</strong> ensures efficiency and quality at every stage, from initial consultation to final delivery and beyond.</p>
+                    <h3 style="margin: 0 0 10px 0; color: #2c3e50; font-size: 1.2rem;">Structured Process</h3>
+                    <p style="margin: 0; color: #4a5568; line-height: 1.5; font-size: 0.95rem;">Our <strong>proven workflow</strong> ensures efficiency and quality at every stage, from initial consultation to final delivery and beyond.</p>
                 </div>
             </div>
             
@@ -399,10 +403,10 @@
     </section>
 
     <!-- Book a Call Section -->
-    <section id="book-call" class="book-call">
-        <div class="container">
-            <h2>Book a Free 30-Minute Consultation</h2>
-            <p class="section-subtitle">Let's discuss your project and explore how we can help bring your vision to life</p>
+    <section id="book-call" class="book-call" style="padding: 40px 0;">
+        <div class="container" style="padding: 0 15px;">
+            <h2 style="margin-bottom: 12px;">Book a Free 30-Minute Consultation</h2>
+            <p class="section-subtitle" style="margin-bottom: 24px; padding: 0 10px;">Let's discuss your project and explore how we can help bring your vision to life</p>
             
             <div class="booking-container">
                 <div class="booking-content">
@@ -421,24 +425,32 @@
                 </div>
                 
                 <!-- Simple CTA Button -->
-                <div class="cta-container" style="text-align: center; margin: 30px 15px 0; max-width: 100%;">
-                    <a href="https://calendly.com/jaigoel2206/30min" target="_blank" class="cta-button primary" style="font-size: 1rem; padding: 12px 25px; display: inline-block; text-decoration: none; margin-bottom: 20px; width: 100%; max-width: 300px; box-sizing: border-box; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                <div class="cta-container" style="text-align: center; margin: 0 auto; padding: 20px 0; max-width: 100%;">
+                    <a href="https://calendly.com/jaigoel2206/30min" target="_blank" class="cta-button primary" style="font-size: 1rem; padding: 14px 25px; display: inline-block; text-decoration: none; margin: 10px 0 20px; width: 100%; max-width: 300px; box-sizing: border-box; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                         <i class="fas fa-calendar-alt" style="margin-right: 8px;"></i> Book a 30-Minute Call
                     </a>
                     
-                    <!-- Additional Information -->
-                    <div style="background: #f8f9fa; border-radius: 8px; padding: 20px; margin-top: 20px; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto;">
-                        <h4 style="margin-top: 0; color: #333;">What to expect:</h4>
-                        <ul style="padding-left: 20px; margin-bottom: 0;">
-                            <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 8px;"></i> 30-minute in-depth discovery call</li>
-                            <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 8px;"></i> No pressure sales pitch - just honest advice</li>
-                            <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 8px;"></i> Expert consultation on your project</li>
-                            <li style="margin-bottom: 0;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 8px;"></i> Clear next steps for your business</li>
-                        </ul>
-                        
-                        <p style="margin: 15px 0 0 0; color: #666; font-size: 0.9rem; display: flex; align-items: center;">
-                            <i class="fas fa-lock" style="margin-right: 8px; color: #666;"></i> Secure scheduling with Calendly
-                        </p>
+                    <!-- Information Section -->
+                    <div class="info-card" style="background: #ffffff; border-radius: 12px; padding: 20px; margin-top: 20px; text-align: center; width: 100%; max-width: 100%; box-sizing: border-box; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #f0f0f0;">
+                        <h4 style="margin: 0 0 16px 0; color: #2c3e50; font-size: 1.05rem; font-weight: 600;">What's Included</h4>
+                        <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px;">
+                            <div style="display: flex; align-items: flex-start; text-align: left; padding: 4px 0;">
+                                <i class="fas fa-clock" style="color: #4CAF50; margin-right: 10px; margin-top: 2px; min-width: 16px; font-size: 0.9rem;"></i>
+                                <span style="color: #4a5568; font-size: 0.9rem; line-height: 1.4;">30-minute dedicated session</span>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; text-align: left; padding: 4px 0;">
+                                <i class="fas fa-lightbulb" style="color: #4CAF50; margin-right: 10px; margin-top: 2px; min-width: 16px; font-size: 0.9rem;"></i>
+                                <span style="color: #4a5568; font-size: 0.9rem; line-height: 1.4;">Tailored advice for your project</span>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; text-align: left; padding: 4px 0;">
+                                <i class="fas fa-handshake" style="color: #4CAF50; margin-right: 10px; margin-top: 2px; min-width: 16px; font-size: 0.9rem;"></i>
+                                <span style="color: #4a5568; font-size: 0.9rem; line-height: 1.4;">No obligation, just honest insights</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; justify-content: center; background: #f8f9fa; padding: 10px; border-radius: 6px; font-size: 0.85rem; color: #6b7280;">
+                            <i class="fas fa-lock" style="margin-right: 8px; color: #6b7280;"></i>
+                            <span>Secure scheduling with Calendly</span>
+                        </div>
                     </div>
                 </div>
                 </div>
@@ -447,12 +459,13 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
+    <section id="contact" class="contact" style="padding: 40px 0;">
+        <div class="container" style="padding: 0 15px;">
+            <h2 style="margin-bottom: 12px; text-align: center;">Get In Touch</h2>
+            <p class="section-subtitle" style="text-align: center; margin-bottom: 30px; padding: 0 10px;">Have a project in mind? Let's discuss how we can help bring your ideas to life</p>
+            <div class="contact-container" style="margin-top: 20px;">
+                <div class="contact-info" style="padding: 25px 20px; margin-bottom: 30px;">
+                    <h3 style="margin-top: 0; margin-bottom: 20px; color: #2c3e50; font-size: 1.3rem;">Contact Information</h3>
                     <p><i class="fas fa-envelope"></i> <a href="mailto:contact@curiouskaizer.com">contact@curiouskaizer.com</a></p>
                     <p><i class="fas fa-phone"></i> <a href="tel:+918595121436">+91 85951 21436</a></p>
                     <p><i class="fas fa-map-marker-alt"></i> Delhi, India</p>
@@ -463,22 +476,22 @@
                         <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
-                <form id="contactForm" class="contact-form" onsubmit="sendToWhatsApp(event)">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                <form id="contactForm" class="contact-form" onsubmit="sendToWhatsApp(event)" style="padding: 25px 20px;">
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="name" style="display: block; margin-bottom: 8px; font-weight: 500; color: #4a5568;">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required style="width: 100%; padding: 12px 15px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.95rem; transition: border-color 0.3s ease;">
                     </div>
-                    <div class="form-group">
-                        <label for="email">Your Email</label>
-                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="email" style="display: block; margin-bottom: 8px; font-weight: 500; color: #4a5568;">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required style="width: 100%; padding: 12px 15px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.95rem; transition: border-color 0.3s ease;">
                     </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number (with country code)</label>
-                        <input type="tel" id="phone" name="phone" placeholder="+91 1234567890" required>
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="phone" style="display: block; margin-bottom: 8px; font-weight: 500; color: #4a5568;">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+91 1234567890" required style="width: 100%; padding: 12px 15px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.95rem; transition: border-color 0.3s ease;">
                     </div>
-                    <div class="form-group">
-                        <label for="package">Select a Package</label>
-                        <select id="package" name="package" required>
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="package" style="display: block; margin-bottom: 8px; font-weight: 500; color: #4a5568;">Select a Package</label>
+                        <select id="package" name="package" required style="width: 100%; padding: 12px 15px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.95rem; background-color: white; color: #4a5568; appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%234a5568%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 10px center; background-size: 12px;">
                             <option value="" disabled selected>Choose a package...</option>
                             <option value="Starter - $100 / ₹9,000">Starter - $100 / ₹9,000</option>
                             <option value="Business - $250 / ₹22,500">Business - $250 / ₹22,500</option>
@@ -486,12 +499,12 @@
                             <option value="Custom">Custom Project (Let's discuss)</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Your Project Details</label>
-                        <textarea id="message" name="message" placeholder="Tell us about your project..." rows="5" required></textarea>
+                    <div class="form-group" style="margin-bottom: 25px;">
+                        <label for="message" style="display: block; margin-bottom: 8px; font-weight: 500; color: #4a5568;">Your Project Details</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your project..." rows="5" required style="width: 100%; padding: 12px 15px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.95rem; resize: vertical; min-height: 120px;"></textarea>
                     </div>
-                    <button type="submit" class="submit-button">
-                        <i class="fab fa-whatsapp"></i> Send via WhatsApp
+                    <button type="submit" class="submit-button" style="width: 100%; padding: 14px 20px; background-color: #25D366; color: white; border: none; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                        <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i> Send via WhatsApp
                     </button>
                 </form>
 
@@ -622,6 +635,168 @@
         ftypes[2]='text';
     }(jQuery));
     var $mcj = jQuery.noConflict(true);
+    </script>
+    
+    <!-- Particles.js Library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <script>
+        // Initialize particles.js
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#3b82f6"
+                    },
+                    "shape": {
+                        "type": "circle"
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 2,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#3b82f6",
+                        "opacity": 0.3,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 1,
+                        "direction": "none",
+                        "random": true,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": true,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 140,
+                            "line_linked": {
+                                "opacity": 0.8
+                            }
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+        });
+    </script>
+    
+    <!-- Cursor Follower Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if device is touch-enabled or small screen
+            const isTouchDevice = 'ontouchstart' in window || 
+                                navigator.maxTouchPoints > 0 || 
+                                navigator.msMaxTouchPoints > 0;
+            
+            // Check screen width (disables on screens smaller than 768px)
+            const isSmallScreen = window.innerWidth < 768;
+            
+            if (isTouchDevice || isSmallScreen) {
+                // Remove cursor follower if on touch device or small screen
+                const cursor = document.querySelector('.cursor-follower');
+                if (cursor) cursor.remove();
+                return;
+            }
+            
+            // Also check on window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth < 768) {
+                    const cursor = document.querySelector('.cursor-follower');
+                    if (cursor) cursor.remove();
+                }
+            });
+
+            const cursor = document.querySelector('.cursor-follower');
+            let mouseX = 0;
+            let mouseY = 0;
+            let cursorX = 0;
+            let cursorY = 0;
+            const speed = 0.08; // Reduced from 0.15 for more delay (lower = more delay)
+
+            // Set initial cursor position
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                cursor.style.display = 'block';
+            });
+
+            // Hide cursor when leaving the window
+            document.addEventListener('mouseleave', () => {
+                cursor.style.display = 'none';
+            });
+
+            // Show cursor when returning to the window
+            document.addEventListener('mouseenter', () => {
+                cursor.style.display = 'block';
+            });
+
+            // Smooth animation loop
+            function animate() {
+                // Calculate new position with easing
+                cursorX += (mouseX - cursorX) * speed;
+                cursorY += (mouseY - cursorY) * speed;
+                
+                // Apply the new position
+                cursor.style.left = cursorX + 'px';
+                cursor.style.top = cursorY + 'px';
+                
+                // Continue the animation loop
+                requestAnimationFrame(animate);
+            }
+
+            // Start the animation
+            animate();
+        });
     </script>
 </body>
 </html>
