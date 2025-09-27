@@ -420,160 +420,27 @@
                     <p class="booking-note"><i class="fas fa-info-circle"></i> After booking, you'll receive a confirmation email with the meeting link.</p>
                 </div>
                 
-                <!-- Calendly inline widget begin -->
-                <div class="calendly-container">
-                    <div id="calendly-embed" class="calendly-embed" style="width:100%;height:100%;">
-                        <iframe 
-                            src="https://calendly.com/jaigoel2206/30min?embed_domain=curiouskaizer.com&embed_type=Inline&hide_landing_page_details=1&hide_gdpr_banner=1&background_color=f8fafc&primary_color=2563eb" 
-                            width="100%" 
-                            height="100%" 
-                            frameborder="0" 
-                            style="width:100%;height:100%;border:none;"
-                            allowfullscreen>
-                        </iframe>
+                <!-- Simple CTA Button -->
+                <div class="cta-container" style="text-align: center; margin: 30px 15px 0; max-width: 100%;">
+                    <a href="https://calendly.com/jaigoel2206/30min" target="_blank" class="cta-button primary" style="font-size: 1rem; padding: 12px 25px; display: inline-block; text-decoration: none; margin-bottom: 20px; width: 100%; max-width: 300px; box-sizing: border-box; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                        <i class="fas fa-calendar-alt" style="margin-right: 8px;"></i> Book a 30-Minute Call
+                    </a>
+                    
+                    <!-- Additional Information -->
+                    <div style="background: #f8f9fa; border-radius: 8px; padding: 20px; margin-top: 20px; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto;">
+                        <h4 style="margin-top: 0; color: #333;">What to expect:</h4>
+                        <ul style="padding-left: 20px; margin-bottom: 0;">
+                            <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 8px;"></i> 30-minute in-depth discovery call</li>
+                            <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 8px;"></i> No pressure sales pitch - just honest advice</li>
+                            <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 8px;"></i> Expert consultation on your project</li>
+                            <li style="margin-bottom: 0;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 8px;"></i> Clear next steps for your business</li>
+                        </ul>
+                        
+                        <p style="margin: 15px 0 0 0; color: #666; font-size: 0.9rem; display: flex; align-items: center;">
+                            <i class="fas fa-lock" style="margin-right: 8px; color: #666;"></i> Secure scheduling with Calendly
+                        </p>
                     </div>
                 </div>
-                <!-- Calendly inline widget end -->
-                    <style>
-                        /* Main container styles */
-                        #calendly-embed {
-                            width: 100%;
-                            min-height: 700px;
-                            position: relative;
-                            overflow: hidden;
-                            border-radius: 12px;
-                            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-                            background: #f8fafc;
-                            margin: 0 auto;
-                            max-width: 1140px; /* Match your container width */
-                        }
-
-                        /* Completely disable all scrolling */
-                        #calendly-embed,
-                        #calendly-embed * {
-                            overflow: hidden !important;
-                            overscroll-behavior: none !important;
-                            -webkit-overflow-scrolling: none !important;
-                            touch-action: none !important;
-                            max-height: 100% !important;
-                            height: 100% !important;
-                        }
-                        
-                        /* Hide scrollbars in all browsers */
-                        #calendly-embed::-webkit-scrollbar,
-                        #calendly-embed iframe::-webkit-scrollbar {
-                            display: none !important;
-                            width: 0 !important;
-                            height: 0 !important;
-                        }
-                        
-                        /* Iframe styles */
-                        #calendly-embed iframe {
-                            position: absolute !important;
-                            top: 0 !important;
-                            left: 0 !important;
-                            width: 100% !important;
-                            height: 100% !important;
-                            border: none !important;
-                            overflow: hidden !important;
-                            min-height: 700px;
-                        }
-                        
-                        /* Prevent body scroll when Calendly modal is open */
-                        body.calendly-open {
-                            overflow: hidden !important;
-                            position: fixed !important;
-                            width: 100% !important;
-                            height: 100% !important;
-                        }
-                        
-                        /* Responsive adjustments */
-                        @media (max-width: 1024px) {
-                            #calendly-embed {
-                                min-height: 800px;
-                            }
-                            #calendly-embed iframe {
-                                min-height: 800px;
-                            }
-                        }
-                        
-                        @media (max-width: 768px) {
-                            #calendly-embed {
-                                min-height: 900px;
-                                width: calc(100% - 20px);
-                                margin: 0 10px;
-                            }
-                            #calendly-embed iframe {
-                                min-height: 900px;
-                            }
-                        }
-                        
-                        @media (max-width: 480px) {
-                            #calendly-embed {
-                                min-height: 1000px;
-                                width: 100%;
-                                margin: 0;
-                                border-radius: 0;
-                            }
-                            #calendly-embed iframe {
-                                min-height: 1000px;
-                            }
-                        }
-                    </style>
-                    <script>
-                        // Prevent any iframe scrolling
-                        document.addEventListener('DOMContentLoaded', function() {
-                            const iframe = document.querySelector('#calendly-embed iframe');
-                            
-                            // Additional protection against iframe scrolling
-                            iframe.addEventListener('load', function() {
-                                try {
-                                    // Try to access the iframe's document to disable scrolling
-                                    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-                                    iframeDoc.body.style.overflow = 'hidden';
-                                    iframeDoc.documentElement.style.overflow = 'hidden';
-                                    
-                                    // Add class to body when Calendly is open
-                                    if (iframe.contentWindow.Calendly) {
-                                        iframe.contentWindow.Calendly.initPopupWidget({
-                                            url: 'https://calendly.com/jaigoel2206/30min?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=f8fafc&primary_color=2563eb'
-                                        });
-                                        
-                                        // Listen for Calendly events to handle modal states
-                                        window.addEventListener('message', function(e) {
-                                            if (e.data.event && e.data.event.indexOf('calendly.') === 0) {
-                                                if (e.data.event === 'calendly.profile_page_viewed') {
-                                                    document.body.classList.add('calendly-open');
-                                                } else if (e.data.event === 'calendly.event_scheduled') {
-                                                    document.body.classList.remove('calendly-open');
-                                                }
-                                            }
-                                        });
-                                    }
-                                } catch (e) {
-                                    // Cross-origin error handling
-                                    console.log('Calendly iframe loaded with restricted access');
-                                }
-                                
-                                // Additional measures to prevent scrolling
-                                iframe.style.overflow = 'hidden';
-                                iframe.style.pointerEvents = 'auto';
-                                iframe.style.touchAction = 'none';
-                            });
-                            
-                            // Disable wheel events on the iframe
-                            iframe.addEventListener('wheel', function(e) {
-                                e.preventDefault();
-                                return false;
-                            }, { passive: false });
-                            
-                            // Disable touch events that might cause scrolling
-                            iframe.addEventListener('touchmove', function(e) {
-                                e.preventDefault();
-                                return false;
-                            }, { passive: false });
-                        });
-                    </script>
                 </div>
             </div>
         </div>
@@ -671,7 +538,7 @@
             <p class="section-subtitle">Subscribe to our newsletter for the latest web design tips, special offers, and industry insights</p>
             
             <div id="mc_embed_signup">
-                <form action="https://app.us19.list-manage.com/subscribe/post?u=e1cdcd71e42aceedba8ebe2f2&amp;id=a1f6f1a3c8&amp;f_id=00328fe4f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                <form id="newsletter-form" action="https://app.us19.list-manage.com/subscribe/post?u=e1cdcd71e42aceedba8ebe2f2&amp;id=a1f6f1a3c8&amp;f_id=00328fe4f0" method="post" target="_blank" novalidate>
                     <div id="mc_embed_signup_scroll">
                         <div class="mc-field-group">
                             <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required placeholder="Enter your email address">
@@ -686,6 +553,10 @@
                         </div>
                     </div>
                 </form>
+                <div id="subscription-success" style="display: none; text-align: center; padding: 20px; background: #f8f9fa; border-radius: 8px; margin-top: 20px;">
+                    <h3>Thank You for Subscribing!</h3>
+                    <p>We've sent a confirmation email to your inbox. Please check your email to complete the subscription.</p>
+                </div>
             </div>
             <p class="privacy-note">We respect your privacy. Unsubscribe at any time.</p>
         </div>

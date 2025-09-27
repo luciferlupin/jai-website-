@@ -49,13 +49,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Close any other open items
+            // Close other open portfolio items
             portfolioItems.forEach(otherItem => {
                 if (otherItem !== item && otherItem.classList.contains('active')) {
                     otherItem.classList.remove('active');
                 }
             });
-            
             // Toggle current item
             this.classList.toggle('active');
         });
@@ -185,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const animateOnScroll = function() {
         const elements = document.querySelectorAll('.service-card, .portfolio-item, .contact-info, .contact-form');
         
-        elements.forEach(element => {
+        elements.forEach((element, index) => {
             const elementPosition = element.getBoundingClientRect().top;
             const screenPosition = window.innerHeight / 1.2;
             
@@ -197,25 +196,50 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
     // Set initial styles for animation
-    document.addEventListener('DOMContentLoaded', function() {
-        const elements = document.querySelectorAll('.service-card, .portfolio-item, .contact-info, .contact-form');
-        
-        elements.forEach((element, index) => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(30px)';
-            element.style.transition = `opacity 0.5s ease-out ${index * 0.1}s, transform 0.5s ease-out ${index * 0.1}s`;
-        });
-        
-        // Trigger animation on page load
-        setTimeout(animateOnScroll, 500);
+    const elements = document.querySelectorAll('.service-card, .portfolio-item, .contact-info, .contact-form');
+    elements.forEach((element, index) => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(30px)';
+        element.style.transition = `opacity 0.5s ease-out ${index * 0.1}s, transform 0.5s ease-out ${index * 0.1}s`;
     });
+    
+    // Trigger initial animation
+    setTimeout(animateOnScroll, 100);
+    
+    // Newsletter form handling
+    const newsletterForm = document.getElementById('newsletter-form');
+    const successMessage = document.getElementById('subscription-success');
+    
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(newsletterForm);
+            
+            // Submit the form using fetch
+            fetch(newsletterForm.action, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            })
+            .then(() => {
+                // Hide form and show success message
+                newsletterForm.style.display = 'none';
+                successMessage.style.display = 'block';
+                successMessage.scrollIntoView({ behavior: 'smooth' });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Fallback to normal form submission if fetch fails
+                newsletterForm.submit();
+            });
+        });
+    }
     
     // Listen for scroll events
     window.addEventListener('scroll', animateOnScroll);
-});
 
-// Add loading animation
-window.addEventListener('load', function() {
+    // Add loading animation
     const loader = document.createElement('div');
     loader.className = 'page-loader';
     loader.innerHTML = '<div class="spinner"></div>';
