@@ -113,11 +113,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Back to Top Button
-    const backToTopButton = document.createElement('div');
-    backToTopButton.className = 'back-to-top';
-    backToTopButton.innerHTML = '<i class="fas fa-arrow-up"></i>';
-    document.body.appendChild(backToTopButton);
 
     // Package cards animation
     const packageCards = document.querySelectorAll('.service-card');
@@ -142,21 +137,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Observe each package card
     packageCards.forEach(card => {
         packageObserver.observe(card);
-    });
-    
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            backToTopButton.classList.add('visible');
-        } else {
-            backToTopButton.classList.remove('visible');
-        }
-    });
-    
-    backToTopButton.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
     });
     
     // Form Submission
