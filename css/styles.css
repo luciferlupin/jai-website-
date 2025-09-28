@@ -957,10 +957,16 @@ button, a, input, textarea, select, label, [role="button"] {
     margin-top: 3rem;
 }
 
+/* Package Cards */
 .service-card {
-    background: linear-gradient(145deg, #ffffff, #f8fafc);
-    border-radius: 16px;
-    padding: 2.5rem 2rem;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.75rem;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     text-align: center;
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
@@ -988,8 +994,18 @@ button, a, input, textarea, select, label, [role="button"] {
 }
 
 .service-card.featured::before {
-    height: 3px;
+    content: 'POPULAR';
+    position: absolute;
+    top: -12px;
+    right: 20px;
     background: #3b82f6;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.25rem 1rem;
+    border-radius: 12px 12px 0 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .service-card.premium::before {
@@ -1026,10 +1042,10 @@ button, a, input, textarea, select, label, [role="button"] {
 }
 
 .service-card.featured {
-    border: 1px solid #e0f2fe;
+    border: 1px solid #3b82f6;
     background-color: #f8fafc;
-    transform: none;
-    z-index: 1;
+    position: relative;
+    overflow: visible;
 }
 
 .service-card.featured:hover {
@@ -1086,8 +1102,10 @@ button, a, input, textarea, select, label, [role="button"] {
 
 .service-card h3 {
     font-size: 1.4rem;
-    margin-bottom: 1rem;
-    color: #1e40af;
+    margin: 0 0 0.5rem;
+    color: #1e293b;
+    font-weight: 700;
+    text-align: center;
     font-weight: 600;
 }
 
@@ -1125,9 +1143,10 @@ button, a, input, textarea, select, label, [role="button"] {
 }
 
 .service-card ul {
-    margin: 1.5rem 0 2rem;
-    text-align: left;
+    margin: 1.25rem 0;
     padding: 0;
+    list-style: none;
+    flex-grow: 1;
     list-style: none;
     flex-grow: 1;
     display: grid;
@@ -1135,9 +1154,11 @@ button, a, input, textarea, select, label, [role="button"] {
 }
 
 .service-card ul li {
-    padding: 0.7rem 1rem 0.7rem 2.5rem;
-    color: #374151;
+    padding: 0.4rem 0 0.4rem 1.75rem;
+    color: #475569;
     position: relative;
+    font-size: 0.9rem;
+    line-height: 1.5;
     font-size: 0.95rem;
     line-height: 1.6;
     border-radius: 8px;
@@ -1149,10 +1170,7 @@ button, a, input, textarea, select, label, [role="button"] {
 }
 
 .service-card ul li:hover {
-    background: #f0f9ff;
-    transform: translateX(4px);
-    border-left-color: #3b82f6;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    color: #1e40af;
 }
 
 .service-card ul li strong {
@@ -1169,10 +1187,14 @@ button, a, input, textarea, select, label, [role="button"] {
     border-left-color: #1e40af;
 }
 
-.service-card ul li i {
-    color: #3b82f6;
+.service-card ul li:before {
+    content: '✓';
     position: absolute;
-    left: 0.6rem;
+    left: 0;
+    top: 0.4rem;
+    color: #3b82f6;
+    font-weight: 700;
+    font-size: 0.9em;
     top: 0.8rem;
     font-size: 0.9rem;
     background: rgba(59, 130, 246, 0.1);
