@@ -1,7 +1,39 @@
+# https://www.robotstxt.org/
 User-agent: *
-Allow: /
+Allow: /$
+Allow: /$
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.svg$
+Allow: /*.webp$
+Allow: /*.woff$
+Allow: /*.woff2$
+
+# Disallow
 Disallow: /admin/
 Disallow: /includes/
 Disallow: /private/
+Disallow: /cgi-bin/
+Disallow: /wp-json/
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/plugins/
+Disallow: /wp-content/cache/
+Disallow: /wp-*.php
+Disallow: /xmlrpc.php
+Disallow: *?s=
+Disallow: *&s=
+Disallow: /search/
+Disallow: /feed/
+Disallow: */feed/
+Disallow: */trackback/
+Disallow: *?s=
 
+# Sitemaps
 Sitemap: https://curiouskaizer.com/sitemap.xml
+
+# Crawl-delay: 10
+# Uncomment the above line if you experience server load issues

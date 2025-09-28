@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Curious Kaizer | Web Design & Development Services in Delhi, India</title>
-    <meta name="description" content="Curious Kaizer offers professional web design & development services in Delhi. We create fast, responsive, and SEO-optimized websites that drive results. Book a free consultation today!">
-    <meta name="keywords" content="web design, web development, Delhi web designer, responsive website, SEO services, ecommerce website, website development">
+    <meta name="description" content="Curious Kaizer - Award-winning web design & development agency in Delhi. We craft high-performance, mobile-friendly websites with SEO optimization. 30-minute free consultation. Call +91 85951 21436.">
+    <meta name="keywords" content="web design Delhi, website development company, ecommerce website Delhi, SEO services India, responsive web design, WordPress development, custom web development, digital marketing Delhi">
+    <meta name="author" content="Curious Kaizer">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="geo.region" content="IN-DL">
+    <meta name="geo.placename" content="Delhi">
+    <meta name="geo.position" content="28.6139;77.2090">
+    <meta name="ICBM" content="28.6139, 77.2090">
     <meta name="author" content="Curious Kaizer">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#2563eb">
@@ -34,31 +40,85 @@
     <meta name="twitter:description" content="Professional web design and development services in Delhi. Let's build something amazing together!">
     <meta name="twitter:image" content="https://curiouskaizer.com/images/twitter-card.jpg">
     
-    <!-- Preload critical resources -->
     <link rel="preload" href="./css/styles.css" as="style">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- CSS -->
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Scroll Animation Styles */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+        .delay-5 { transition-delay: 0.5s; }
+        .delay-6 { transition-delay: 0.6s; }
+    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
+    [
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "name": "Curious Kaizer",
+      "@id": "https://curiouskaizer.com/#professionalservice",
+      "name": "Curious Kaizer - Web Design & Development Agency",
       "image": "https://curiouskaizer.com/images/logo.png",
-      "@id": "https://curiouskaizer.com/",
       "url": "https://curiouskaizer.com/",
       "telephone": "+918595121436",
-      "priceRange": "$$",
+      "priceRange": "$$$",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Web Services",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Web Design",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Responsive Web Design"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "E-commerce Development"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "WordPress Development"
+                }
+              }
+            ]
+          }
+        ]
+      },
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Delhi",
-        "addressLocality": "Delhi",
+        "addressLocality": "New Delhi",
+        "addressRegion": "Delhi",
         "postalCode": "1100XX",
         "addressCountry": "IN"
       },
@@ -67,24 +127,61 @@
         "latitude": 28.6139,
         "longitude": 77.2090
       },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "10:00",
-        "closes": "19:00"
-      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "10:00",
+          "closes": "19:00"
+        }
+      ],
       "sameAs": [
-        "https://www.linkedin.com/company/curious-kaizer",
+        "https://www.facebook.com/curiouskaizer/",
+        "https://www.instagram.com/curiouskaizer/",
+        "https://www.linkedin.com/company/curiouskaizer/",
         "https://github.com/curiouskaizer",
         "https://twitter.com/curiouskaizer"
       ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What services does Curious Kaizer offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We specialize in web design, web development, e-commerce solutions, SEO, and digital marketing services. Our team creates custom, responsive websites that drive results."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does a website cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Website costs vary based on complexity and features. Our packages start from ₹15,000 for basic websites to ₹1,50,000+ for custom e-commerce solutions. Contact us for a personalized quote."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to build a website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Standard websites typically take 2-4 weeks to complete, while e-commerce sites may take 4-8 weeks depending on complexity. We'll provide a detailed timeline after discussing your requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide website maintenance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we offer comprehensive website maintenance plans including security updates, performance optimization, content updates, and technical support to keep your website running smoothly."
+          }
+        }
+      ]
     }
+    ]
     </script>
 </head>
 <body itemscope itemtype="https://schema.org/WebPage">
@@ -104,6 +201,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#expertise">Our Expertise</a></li>
                 <li><a href="#why-us">Why Choose Us</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#book-call">Book a Call</a></li>
@@ -262,6 +360,191 @@
         </div>
     </section>
 
+    <!-- Our Expertise Section -->
+    <section id="expertise" class="expertise-section" style="padding: 30px 0 60px; background-color: #f8fafc;">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+                <h2>Our <span class="highlight-blue">Expertise</span></h2>
+                <p class="section-subtitle">Comprehensive digital solutions to grow your business</p>
+            </div>
+            
+            <div class="expertise-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; padding: 0 15px;">
+                <!-- Web & Digital Solutions -->
+                <div class="expertise-card" style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+                    <div class="expertise-header" style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <div class="expertise-icon" style="background: #e0f2fe; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                            <i class="fas fa-globe" style="color: #0ea5e9; font-size: 1.5rem;"></i>
+                        </div>
+                        <h3 style="margin: 0; font-size: 1.3rem; color: #1e293b;">Web & Digital Solutions</h3>
+                    </div>
+                    <ul style="list-style-type: none; padding-left: 0; margin: 0;">
+                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
+                            <span style="margin-right: 10px; color: #0ea5e9;">•</span>
+                            <span>Custom Website & E-commerce Development – Responsive sites and online stores that drive sales</span>
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
+                            <span style="margin-right: 10px; color: #0ea5e9;">•</span>
+                            <span>Landing Pages & Funnels – High-converting pages for promotions and lead capture</span>
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
+                            <span style="margin-right: 10px; color: #0ea5e9;">•</span>
+                            <span>Web Apps & MVP Development – Interactive applications to test and scale your business ideas</span>
+                        </li>
+                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
+                            <span style="margin-right: 10px; color: #0ea5e9;">•</span>
+                            <span>API & Payment Integration – Seamless connections between your website and business tools</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- AI & Automation -->
+                <div class="expertise-card" style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+                    <div class="expertise-header" style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <div class="expertise-icon" style="background: #f0f9ff; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                            <i class="fas fa-robot" style="color: #3b82f6; font-size: 1.5rem;"></i>
+                        </div>
+                        <h3 style="margin: 0; font-size: 1.3rem; color: #1e293b;">AI & Automation</h3>
+                    </div>
+                    <ul style="list-style-type: none; padding-left: 0; margin: 0;">
+                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
+                            <span style="margin-right: 10px; color: #3b82f6;">•</span>
+                            <span>AI-Powered Chatbots – 24/7 customer support and lead generation</span>
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
+                            <span style="margin-right: 10px; color: #3b82f6;">•</span>
+                            <span>Workflow Automation – Streamline business processes and reduce manual work</span>
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
+                            <span style="margin-right: 10px; color: #3b82f6;">•</span>
+                            <span>Predictive Analytics – Data-driven insights for better decision making</span>
+                        </li>
+                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
+                            <span style="margin-right: 10px; color: #3b82f6;">•</span>
+                            <span>Custom AI Solutions – Tailored tools to solve your unique business challenges</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Business Intelligence -->
+                <div class="expertise-card" style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+                    <div class="expertise-header" style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <div class="expertise-icon" style="background: #f5f3ff; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                            <i class="fas fa-chart-line" style="color: #8b5cf6; font-size: 1.5rem;"></i>
+                        </div>
+                        <h3 style="margin: 0; font-size: 1.3rem; color: #1e293b;">Business Intelligence</h3>
+                    </div>
+                    <ul style="list-style-type: none; padding-left: 0; margin: 0;">
+                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
+                            <span style="margin-right: 10px; color: #8b5cf6;">•</span>
+                            <span>Real-time Data Integration – Live feeds for stock, crypto, and business metrics</span>
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
+                            <span style="margin-right: 10px; color: #8b5cf6;">•</span>
+                            <span>Trading & Strategy Bots – Automated systems for trading and market analysis</span>
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
+                            <span style="margin-right: 10px; color: #8b5cf6;">•</span>
+                            <span>Custom Business Tools – Tailored solutions for inventory, booking, and more</span>
+                        </li>
+                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
+                            <span style="margin-right: 10px; color: #8b5cf6;">•</span>
+                            <span>Analytics Dashboards – Track performance and user behavior in real-time</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Digital Marketing -->
+                <div class="expertise-card" style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+                    <div class="expertise-header" style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <div class="expertise-icon" style="background: #fef2f2; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                            <i class="fas fa-bullhorn" style="color: #ef4444; font-size: 1.5rem;"></i>
+                        </div>
+                        <h3 style="margin: 0; font-size: 1.3rem; color: #1e293b;">Digital Marketing</h3>
+                    </div>
+                    <ul style="list-style-type: none; padding-left: 0; margin: 0;">
+                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
+                            <span style="margin-right: 10px; color: #ef4444;">•</span>
+                            <span>Paid Advertising – Google, Meta, and LinkedIn campaigns that convert</span>
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
+                            <span style="margin-right: 10px; color: #ef4444;">•</span>
+                            <span>Lead Generation – Targeted strategies to attract high-quality prospects</span>
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
+                            <span style="margin-right: 10px; color: #ef4444;">•</span>
+                            <span>Social Media Management – Grow your brand across all platforms</span>
+                        </li>
+                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
+                            <span style="margin-right: 10px; color: #ef4444;">•</span>
+                            <span>Performance Analytics – Data-driven optimization for better ROI</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Branding & Design -->
+                <div class="expertise-card" style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+                    <div class="expertise-header" style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <div class="expertise-icon" style="background: #f0fdf4; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                            <i class="fas fa-paint-brush" style="color: #10b981; font-size: 1.5rem;"></i>
+                        </div>
+                        <h3 style="margin: 0; font-size: 1.3rem; color: #1e293b;">Branding & Design</h3>
+                    </div>
+                    <ul style="list-style-type: none; padding-left: 0; margin: 0;">
+                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
+                            <span style="margin-right: 10px; color: #10b981;">•</span>
+                            <span>Brand Identity – Logo, color schemes, and visual assets that tell your story</span>
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
+                            <span style="margin-right: 10px; color: #10b981;">•</span>
+                            <span>UI/UX Design – Intuitive interfaces that enhance user experience</span>
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
+                            <span style="margin-right: 10px; color: #10b981;">•</span>
+                            <span>Content Creation – Compelling copy and visuals for all platforms</span>
+                        </li>
+                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
+                            <span style="margin-right: 10px; color: #10b981;">•</span>
+                            <span>Multimedia Design – Engaging videos, presentations, and marketing materials</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- SEO & Growth -->
+                <div class="expertise-card" style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+                    <div class="expertise-header" style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <div class="expertise-icon" style="background: #fef3c7; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                            <i class="fas fa-chart-line" style="color: #d97706; font-size: 1.5rem;"></i>
+                        </div>
+                        <h3 style="margin: 0; font-size: 1.3rem; color: #1e293b;">SEO & Growth</h3>
+                    </div>
+                    <ul style="list-style-type: none; padding-left: 0; margin: 0;">
+                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
+                            <span style="margin-right: 10px; color: #d97706;">•</span>
+                            <span>Search Engine Optimization – Improve visibility and organic traffic</span>
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
+                            <span style="margin-right: 10px; color: #d97706;">•</span>
+                            <span>Content Strategy – Plan and execute content that ranks and converts</span>
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
+                            <span style="margin-right: 10px; color: #d97706;">•</span>
+                            <span>Website Performance – Speed optimization and technical SEO</span>
+                        </li>
+                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
+                            <span style="margin-right: 10px; color: #d97706;">•</span>
+                            <span>Analytics & Reporting – Track, measure, and optimize performance</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="expertise-cta" style="text-align: center; margin-top: 40px; padding: 0 15px;">
+                <p style="font-size: 1.1rem; margin-bottom: 20px; color: #475569;">Ready to discuss your project? Let's schedule a call.</p>
+                <a href="#book-call" class="cta-button primary" style="display: inline-block; padding: 12px 30px; background: #2563eb; color: white; text-decoration: none; border-radius: 6px; font-weight: 500; transition: all 0.3s ease;">Book a Meeting</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Services Section -->
     <section id="services" class="services" style="padding: 30px 0 20px;" itemscope itemtype="https://schema.org/Service">
         <meta itemprop="serviceType" content="Web Design & Development">
@@ -351,11 +634,13 @@
     <!-- Why Choose Us Section -->
     <section id="why-us" class="why-us" style="padding: 30px 0;">
         <div class="container" style="padding: 0 15px;">
-            <h2 style="margin-bottom: 10px; text-align: center;">Why Choose <span class="highlight-blue">Curious Kaizer?</span></h2>
-            <p class="section-subtitle" style="text-align: center; margin-bottom: 20px; padding: 0 10px;">We're not just another freelancing team. We're your dedicated digital partners committed to your success. Here's what makes us different:</p>
+            <div class="section-header fade-up">
+                <h2 style="margin-bottom: 10px; text-align: center;">Why Choose <span class="highlight-blue">Curious Kaizer?</span></h2>
+                <p class="section-subtitle" style="text-align: center; margin-bottom: 20px; padding: 0 10px;">We're not just another freelancing team. We're your dedicated digital partners committed to your success. Here's what makes us different:</p>
+            </div>
             
             <div class="features-grid" style="margin-top: 20px;">
-                <div class="feature-card" style="margin-bottom: 20px; padding: 20px; border-radius: 8px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                <div class="feature-card fade-up" style="margin-bottom: 20px; padding: 20px; border-radius: 8px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
                     <div class="feature-icon" style="font-size: 1.8rem; color: #2196F3; margin-bottom: 15px;">
                         <i class="fas fa-user-shield"></i>
                     </div>
@@ -363,7 +648,7 @@
                     <p>Unlike many freelancers who disappear mid-project, we maintain <strong>clear communication</strong> and see every project through to completion. Your project is our priority from start to finish.</p>
                 </div>
                 
-                <div class="feature-card" style="margin-bottom: 20px; padding: 20px; border-radius: 8px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                <div class="feature-card fade-up" style="margin-bottom: 20px; padding: 20px; border-radius: 8px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
                     <div class="feature-icon" style="font-size: 1.8rem; color: #2196F3; margin-bottom: 15px;">
                         <i class="fas fa-sync-alt"></i>
                     </div>
@@ -371,7 +656,7 @@
                     <p style="margin: 0; color: #4a5568; line-height: 1.5; font-size: 0.95rem;">Your satisfaction is guaranteed with <strong>included revision rounds</strong> in every package. We won't rest until you're completely happy with the results.</p>
                 </div>
                 
-                <div class="feature-card" style="margin-bottom: 20px; padding: 20px; border-radius: 8px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                <div class="feature-card fade-up" style="margin-bottom: 20px; padding: 20px; border-radius: 8px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
                     <div class="feature-icon" style="font-size: 1.8rem; color: #2196F3; margin-bottom: 15px;">
                         <i class="fas fa-handshake"></i>
                     </div>
@@ -379,7 +664,7 @@
                     <p style="margin: 0; color: #4a5568; line-height: 1.5; font-size: 0.95rem;">Enjoy <strong>personalized attention</strong> with a dedicated project manager who ensures your vision becomes reality, maintaining consistency and quality throughout.</p>
                 </div>
                 
-                <div class="feature-card" style="margin-bottom: 20px; padding: 20px; border-radius: 8px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                <div class="feature-card fade-up" style="margin-bottom: 20px; padding: 20px; border-radius: 8px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
                     <div class="feature-icon" style="font-size: 1.8rem; color: #2196F3; margin-bottom: 15px;">
                         <i class="fas fa-file-contract"></i>
                     </div>
@@ -387,7 +672,7 @@
                     <p style="margin: 0; color: #4a5568; line-height: 1.5; font-size: 0.95rem;">No hidden terms or surprise fees. We provide <strong>transparent pricing</strong> and <strong>detailed deliverables</strong> in writing before we begin any work.</p>
                 </div>
                 
-                <div class="feature-card" style="margin-bottom: 20px; padding: 20px; border-radius: 8px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                <div class="feature-card fade-up" style="margin-bottom: 20px; padding: 20px; border-radius: 8px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
                     <div class="feature-icon" style="font-size: 1.8rem; color: #2196F3; margin-bottom: 15px;">
                         <i class="fas fa-business-time"></i>
                     </div>
@@ -395,7 +680,7 @@
                     <p style="margin: 0; color: #4a5568; line-height: 1.5; font-size: 0.95rem;">Get <strong>reliable support</strong> during business hours with guaranteed response times. We're here when you need us.</p>
                 </div>
                 
-                <div class="feature-card" style="margin-bottom: 20px; padding: 20px; border-radius: 8px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                <div class="feature-card fade-up" style="margin-bottom: 20px; padding: 20px; border-radius: 8px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
                     <div class="feature-icon" style="font-size: 1.8rem; color: #2196F3; margin-bottom: 15px;">
                         <i class="fas fa-tasks"></i>
                     </div>
@@ -486,86 +771,73 @@
     </section>
 
     <!-- Book a Call Section -->
-    <section id="book-call" class="book-call" style="padding: 40px 0;">
-        <div class="container" style="padding: 0 15px;">
-            <h2 style="margin-bottom: 12px;">Book a <span class="highlight-blue">Free 30-Minute</span> Consultation</h2>
-            <p class="section-subtitle" style="margin-bottom: 24px; padding: 0 10px;">Let's discuss your project and explore how we can help bring your vision to life</p>
+    <section id="book-call" class="book-call" style="padding: 60px 0; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);">
+        <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 0 20px 40px;">
+            <div class="section-header fade-up" style="text-align: center; max-width: 800px; margin: 0 auto 40px; padding: 0 20px;">
+                <span style="display: inline-block; background: #e0f2fe; color: #0369a1; font-size: 0.85rem; font-weight: 600; padding: 8px 18px; border-radius: 20px; margin-bottom: 20px; letter-spacing: 0.5px; text-transform: uppercase;">
+                    <i class="fas fa-calendar-check" style="margin-right: 8px;"></i> Schedule a Meeting
+                </span>
+                <h2 style="margin: 0 0 20px 0; color: #0f172a; font-size: 2.5rem; line-height: 1.2; font-weight: 800; letter-spacing: -0.5px;">
+                    Ready to Bring Your <span style="color: #2563eb;">Vision to Life</span>?
+                </h2>
+                <p style="color: #475569; margin: 0; font-size: 1.2rem; line-height: 1.7; max-width: 700px; margin: 0 auto; font-weight: 400;">
+                    Let's have a 30-minute conversation about your project goals and how we can help you achieve them.
+                </p>
+            </div>
             
-            <div class="booking-container">
-                <div class="booking-content">
-                    <div class="booking-header">
-                        <h3>Schedule Your Consultation</h3>
-                        <p class="booking-subtitle">Let's discuss how we can transform your vision into a successful digital solution.</p>
-                    </div>
+            <div class="fade-up delay-1" style="background: white; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); overflow: hidden; border: 1px solid #e2e8f0;">
+                <div style="padding: 50px 40px;">
                     
-                    <div class="booking-highlights">
-                        <h4>Your Consultation Includes:</h4>
-                        <ul class="benefits-list">
-                            <li>
-                                <i class="fas fa-bullseye"></i>
-                                <div>
-                                    <strong>Project Strategy</strong>
-                                    <span>Tailored solutions for your specific requirements</span>
-                                </div>
-                            </li>
-                            <li>
-                                <i class="fas fa-lightbulb"></i>
-                                <div>
-                                    <strong>Expert Guidance</strong>
-                                    <span>Technology stack and implementation approach</span>
-                                </div>
-                            </li>
-                            <li>
-                                <i class="fas fa-clipboard-check"></i>
-                                <div>
-                                    <strong>Clear Next Steps</strong>
-                                    <span>Detailed proposal and timeline</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="booking-notes">
-                        <div class="note">
-                            <i class="far fa-clock"></i>
-                            <span>30-minute call at your convenience</span>
-                        </div>
-                        <div class="note">
-                            <i class="far fa-envelope"></i>
-                            <span>Meeting details sent via email</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Simple CTA Button -->
-                <div class="cta-container" style="text-align: center; margin: 0 auto; padding: 20px 0; max-width: 100%;">
-                    <a href="https://calendly.com/jaigoel2206/30min" target="_blank" class="cta-button primary" style="font-size: 1rem; padding: 14px 25px; display: inline-block; text-decoration: none; margin: 10px 0 20px; width: 100%; max-width: 300px; box-sizing: border-box; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                        <i class="fas fa-calendar-alt" style="margin-right: 8px;"></i> Book a 30-Minute Call
-                    </a>
-                    
-                    <!-- Information Section -->
-                    <div class="info-card" style="background: #ffffff; border-radius: 12px; padding: 20px; margin-top: 20px; text-align: center; width: 100%; max-width: 100%; box-sizing: border-box; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #f0f0f0;">
-                        <h4 style="margin: 0 0 16px 0; color: #2c3e50; font-size: 1.05rem; font-weight: 600;">What's Included</h4>
-                        <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px;">
-                            <div style="display: flex; align-items: flex-start; text-align: left; padding: 4px 0;">
-                                <i class="fas fa-clock" style="color: #4CAF50; margin-right: 10px; margin-top: 2px; min-width: 16px; font-size: 0.9rem;"></i>
-                                <span style="color: #4a5568; font-size: 0.9rem; line-height: 1.4;">30-minute dedicated session</span>
+                    <div class="features-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 40px;">
+                        <div style="display: flex; align-items: flex-start;">
+                            <div style="background: #f0f9ff; width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 16px; flex-shrink: 0;">
+                                <i class="fas fa-bullseye" style="color: #0284c7; font-size: 1rem;"></i>
                             </div>
-                            <div style="display: flex; align-items: flex-start; text-align: left; padding: 4px 0;">
-                                <i class="fas fa-lightbulb" style="color: #4CAF50; margin-right: 10px; margin-top: 2px; min-width: 16px; font-size: 0.9rem;"></i>
-                                <span style="color: #4a5568; font-size: 0.9rem; line-height: 1.4;">Tailored advice for your project</span>
-                            </div>
-                            <div style="display: flex; align-items: flex-start; text-align: left; padding: 4px 0;">
-                                <i class="fas fa-handshake" style="color: #4CAF50; margin-right: 10px; margin-top: 2px; min-width: 16px; font-size: 0.9rem;"></i>
-                                <span style="color: #4a5568; font-size: 0.9rem; line-height: 1.4;">No obligation, just honest insights</span>
+                            <div>
+                                <h4 style="margin: 0 0 6px 0; color: #0f172a; font-size: 1.1rem; font-weight: 600;">Strategic Planning</h4>
+                                <p style="margin: 0; color: #64748b; font-size: 0.95rem; line-height: 1.5;">Tailored solutions designed specifically for your business objectives.</p>
                             </div>
                         </div>
-                        <div style="display: flex; align-items: center; justify-content: center; background: #f8f9fa; padding: 10px; border-radius: 6px; font-size: 0.85rem; color: #6b7280;">
-                            <i class="fas fa-lock" style="margin-right: 8px; color: #6b7280;"></i>
-                            <span>Secure scheduling with Calendly</span>
+                        
+                        <div style="display: flex; align-items: flex-start;">
+                            <div style="background: #f0f9ff; width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 16px; flex-shrink: 0;">
+                                <i class="fas fa-lightbulb" style="color: #0284c7; font-size: 1rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0 0 6px 0; color: #0f172a; font-size: 1.1rem; font-weight: 600;">Expert Consultation</h4>
+                                <p style="margin: 0; color: #64748b; font-size: 0.95rem; line-height: 1.5;">Professional guidance on technology stack and implementation.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: flex-start;">
+                            <div style="background: #f0f9ff; width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 16px; flex-shrink: 0;">
+                                <i class="fas fa-clock" style="color: #0284c7; font-size: 1rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0 0 6px 0; color: #0f172a; font-size: 1.1rem; font-weight: 600;">30-Minute Session</h4>
+                                <p style="margin: 0; color: #64748b; font-size: 0.95rem; line-height: 1.5;">Focused discussion at your convenience.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: flex-start;">
+                            <div style="background: #f0f9ff; width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 16px; flex-shrink: 0;">
+                                <i class="fas fa-clipboard-check" style="color: #0284c7; font-size: 1rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0 0 6px 0; color: #0f172a; font-size: 1.1rem; font-weight: 600;">Clear Next Steps</h4>
+                                <p style="margin: 0; color: #64748b; font-size: 0.95rem; line-height: 1.5;">Actionable plan and timeline for your project's success.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    
+                    <div style="text-align: center; margin-top: 30px;">
+                        <a href="https://calendly.com/jaigoel2206/30min" target="_blank" style="display: inline-flex; align-items: center; background: #2563eb; color: white; text-decoration: none; padding: 16px 36px; border-radius: 10px; font-weight: 600; transition: all 0.3s ease; font-size: 1.05rem; box-shadow: 0 4px 14px -2px rgba(37, 99, 235, 0.3);">
+                            <i class="fas fa-calendar-alt" style="margin-right: 10px; font-size: 1.1rem;"></i> Schedule Your Free Consultation
+                        </a>
+                        <p style="font-size: 0.85rem; color: #94a3b8; margin: 16px 0 0 0; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-lock" style="margin-right: 8px; color: #cbd5e1;"></i>Secure scheduling with Calendly
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -576,35 +848,23 @@
         <div class="container" style="padding: 0 15px;">
             <h2 style="margin-bottom: 12px; text-align: center;">Get In <span class="highlight-blue">Touch</span></h2>
             <p class="section-subtitle" style="text-align: center; margin-bottom: 30px; padding: 0 10px;">Have a project in mind? Let's discuss how we can help bring your ideas to life</p>
-            <div class="contact-container" style="margin-top: 20px;">
-                <div class="contact-info" style="padding: 25px 20px; margin-bottom: 30px;">
-                    <h3 style="margin-top: 0; margin-bottom: 20px; color: #2c3e50; font-size: 1.3rem;">Contact Information</h3>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:contact@curiouskaizer.com">contact@curiouskaizer.com</a></p>
-                    <p><i class="fas fa-phone"></i> <a href="tel:+918595121436">+91 85951 21436</a></p>
-                    <p><i class="fas fa-map-marker-alt"></i> Delhi, India</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <div class="contact-container" style="max-width: 600px; margin: 20px auto 0; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                <form id="contactForm" class="contact-form" onsubmit="return sendToWhatsApp(event);" style="padding: 20px 18px;">
+                    <div class="form-group" style="margin-bottom: 16px;">
+                        <label for="name" style="display: block; margin-bottom: 6px; font-size: 0.9rem; font-weight: 500; color: #4a5568;">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required style="width: 100%; padding: 10px 12px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.9rem; transition: border-color 0.2s ease;">
                     </div>
-                </div>
-                <form id="contactForm" class="contact-form" onsubmit="return sendToWhatsApp(event);" style="padding: 25px 20px;">
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <label for="name" style="display: block; margin-bottom: 8px; font-weight: 500; color: #4a5568;">Your Name</label>
-                        <input type="text" id="name" name="name" placeholder="John Doe" required style="width: 100%; padding: 12px 15px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.95rem; transition: border-color 0.3s ease;">
+                    <div class="form-group" style="margin-bottom: 16px;">
+                        <label for="email" style="display: block; margin-bottom: 6px; font-size: 0.9rem; font-weight: 500; color: #4a5568;">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required style="width: 100%; padding: 10px 12px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.9rem; transition: border-color 0.2s ease;">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 16px;">
+                        <label for="phone" style="display: block; margin-bottom: 6px; font-size: 0.9rem; font-weight: 500; color: #4a5568;">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+91 1234567890" required style="width: 100%; padding: 10px 12px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.9rem; transition: border-color 0.2s ease;">
                     </div>
                     <div class="form-group" style="margin-bottom: 20px;">
-                        <label for="email" style="display: block; margin-bottom: 8px; font-weight: 500; color: #4a5568;">Your Email</label>
-                        <input type="email" id="email" name="email" placeholder="john@example.com" required style="width: 100%; padding: 12px 15px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.95rem; transition: border-color 0.3s ease;">
-                    </div>
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <label for="phone" style="display: block; margin-bottom: 8px; font-weight: 500; color: #4a5568;">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="+91 1234567890" required style="width: 100%; padding: 12px 15px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.95rem; transition: border-color 0.3s ease;">
-                    </div>
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <label for="package" style="display: block; margin-bottom: 8px; font-weight: 500; color: #4a5568;">Select a Package</label>
-                        <select id="package" name="package" required style="width: 100%; padding: 12px 15px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.95rem; background-color: white; color: #4a5568; appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%234a5568%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 10px center; background-size: 12px;">
+                        <label for="package" style="display: block; margin-bottom: 6px; font-size: 0.9rem; font-weight: 500; color: #4a5568;">Select a Package</label>
+                        <select id="package" name="package" required style="width: 100%; padding: 10px 12px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.9rem; background-color: white; color: #4a5568; appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%234a5568%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 10px center; background-size: 10px;">
                             <option value="" disabled selected>Choose a package...</option>
                             <option value="Starter - $100 / ₹9,000">Starter - $100 / ₹9,000</option>
                             <option value="Business - $250 / ₹22,500">Business - $250 / ₹22,500</option>
@@ -940,6 +1200,72 @@
 
             // Start the animation
             animate();
+        });
+        
+        // Scroll-triggered animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add fade-up class to all expertise cards with staggered delays
+            const expertiseCards = document.querySelectorAll('.expertise-card');
+            expertiseCards.forEach((card, index) => {
+                card.classList.add('fade-up');
+                card.classList.add(`delay-${(index % 6) + 1}`);
+            });
+            
+            // Add fade-up to expertise section header
+            const expertiseHeader = document.querySelector('.expertise-section .section-header');
+            if (expertiseHeader) {
+                expertiseHeader.classList.add('fade-up');
+            }
+            
+            // Add fade-up class to all feature cards with staggered delays
+            const featureCards = document.querySelectorAll('.feature-card');
+            featureCards.forEach((card, index) => {
+                card.classList.add('fade-up');
+                card.classList.add(`delay-${(index % 6) + 1}`);
+            });
+            
+            // Add fade-up to why-us section header
+            const whyUsHeader = document.querySelector('.why-us .section-header');
+            if (whyUsHeader) {
+                whyUsHeader.classList.add('fade-up');
+            }
+            
+            // Add fade-up to book-call section elements
+            const bookCallHeader = document.querySelector('.book-call .section-header');
+            if (bookCallHeader) {
+                bookCallHeader.classList.add('fade-up');
+            }
+            
+            // Add fade-up to book-call feature boxes with staggered delays
+            const bookCallFeatures = document.querySelectorAll('.book-call .features-container > div');
+            bookCallFeatures.forEach((item, index) => {
+                item.classList.add('fade-up');
+                item.classList.add(`delay-${(index % 3) + 1}`);
+            });
+            
+            // Add fade-up to book-call CTA button
+            const bookCallCta = document.querySelector('.book-call .cta-button');
+            if (bookCallCta) {
+                bookCallCta.classList.add('fade-up');
+                bookCallCta.classList.add('delay-2');
+            }
+            
+            // Intersection Observer for scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            });
+            
+            // Observe all elements with fade-up class
+            document.querySelectorAll('.fade-up').forEach((element) => {
+                observer.observe(element);
+            });
         });
     </script>
 </body>
