@@ -1139,7 +1139,7 @@
                 </form>
 
                 <script>
-                function sendToWhatsApp(event) {
+                async function sendToWhatsApp(event) {
                     event.preventDefault();
                     
                     try {
@@ -1154,6 +1154,39 @@
                         if (!name || !email || !phone || !message) {
                             alert('Please fill in all required fields');
                             return false;
+                        }
+                        
+                        // Send data to Supabase
+                        const USER_ID = "b2f1c4d2-9e1a-4b8d-8f44-1b23abcd4567";
+                        const supabaseUrl = "https://ajpbnddzehydezimpuor.supabase.co";
+                        const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFqcGJuZGR6ZWh5ZGV6aW1wdW9yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc4MzMyMDAsImV4cCI6MjA4MzQwOTIwMH0.GAoMAGEnm1OgrSMuPdjNitj3k0eEOXr9xOQLSdiG6TQ";
+                        
+                        try {
+                            const response = await fetch(`${supabaseUrl}/rest/v1/leads`, {
+                                method: "POST",
+                                headers: {
+                                    "apikey": supabaseKey,
+                                    "Content-Type": "application/json",
+                                    "Authorization": `Bearer ${supabaseKey}`
+                                },
+                                body: JSON.stringify({
+                                    user_id: USER_ID,
+                                    name: name,
+                                    email: email,
+                                    phone: phone,
+                                    package: package,
+                                    message: message,
+                                    created_at: new Date().toISOString()
+                                })
+                            });
+                            
+                            if (!response.ok) {
+                                console.error('Supabase error:', response.statusText);
+                            } else {
+                                console.log('Data successfully saved to Supabase');
+                            }
+                        } catch (supabaseError) {
+                            console.error('Error sending to Supabase:', supabaseError);
                         }
                         
                         // Format the WhatsApp message with proper line breaks
