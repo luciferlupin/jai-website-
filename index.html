@@ -67,7 +67,8 @@
         .delay-6 { transition-delay: 0.6s; }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -217,7 +218,7 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-badge">Web Design & Development</div>
-                <h1>Transform Your <span class="highlight">Online Presence</span> With Stunning Websites</h1>
+                <h2 data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">Transform Your <span class="highlight-blue">Online Presence</span><br>With Stunning Websites</h2>
                 <p class="hero-subtitle">We create <span class="typing-text"></span></p>
                 <p class="hero-description">Professional websites that not only look amazing but also drive real business results. Let's build something great together!</p>
                 <div class="hero-buttons">
@@ -244,9 +245,12 @@
     </header>
 
     <!-- Work Showcase Section -->
-    <section class="work-showcase">
+    <section class="work-showcase" data-aos="fade-up" data-aos-duration="800">
         <div class="container">
-            <h2>Our Work <span class="highlight-blue">Showcase</span></h2>
+            <div style="text-align: center;">
+                <div class="hero-badge">Work Showcase</div>
+            </div>
+            <h2 data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">Our Work <span class="highlight-blue">Showcase</span></h2>
             <div class="work-showcase-container">
                 <div class="work-showcase-track">
                     <div class="work-showcase-item">
@@ -291,10 +295,13 @@
     </section>
 
     <!-- Our Process Section -->
-    <section class="process-section">
+    <section class="process-section" data-aos="fade-up" data-aos-duration="800">
         <div class="container">
             <div class="section-header">
-                <h2>Our Simple <span class="highlight-blue">5-Step Process</span></h2>
+                <div style="text-align: center;">
+                    <div class="hero-badge">5-Step Process</div>
+                </div>
+                <h2 data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">Our Simple <span class="highlight-blue">5-Step Process</span></h2>
                 <p class="section-subtitle">From concept to launch, we guide you through every step of your digital journey</p>
             </div>
             
@@ -371,180 +378,98 @@
     </section>
 
     <!-- Our Expertise Section -->
-    <section id="expertise" class="expertise-section" style="padding: 30px 0 60px; background-color: #f8fafc;">
+    <section id="expertise" class="expertise-section" style="padding: 30px 0 60px; background-color: #f8fafc;" data-aos="fade-up" data-aos-duration="800">
         <div class="container">
             <div class="section-header" style="text-align: center; margin-bottom: 40px;">
-                <h2>Our <span class="highlight-blue">Expertise</span></h2>
+                <div class="hero-badge">Digital Excellence</div>
+                <h2 data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">Our <span class="highlight-blue">Expertise</span></h2>
                 <p class="section-subtitle">Comprehensive digital solutions to grow your business</p>
             </div>
             
-            <div class="expertise-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; padding: 0 15px;">
-                <!-- Web & Digital Solutions -->
-                <div class="expertise-card" style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
-                    <div class="expertise-header" style="display: flex; align-items: center; margin-bottom: 15px;">
-                        <div class="expertise-icon" style="background: #e0f2fe; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
-                            <i class="fas fa-globe" style="color: #2563eb; font-size: 1.5rem;"></i>
+            <div class="saas-scroll-section">
+                <!-- Card 1 -->
+                <div class="sticky-card">
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-globe"></i>
                         </div>
-                        <h3 style="margin: 0; font-size: 1.3rem; color: #1e293b;">Web & Digital Solutions</h3>
+                        <h3>Web & Digital Solutions</h3>
+                        <p>Custom websites, e-commerce platforms, and digital solutions that drive real business growth and conversions.</p>
+                        <ul>
+                            <li>Custom Website & E-commerce Development</li>
+                            <li>Landing Pages & Sales Funnels</li>
+                            <li>Web Apps & MVP Development</li>
+                            <li>API & Payment Integration Solutions</li>
+                        </ul>
                     </div>
-                    <ul style="list-style-type: none; padding-left: 0; margin: 0;">
-                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
-                            <span style="margin-right: 10px; color: #2563eb;">•</span>
-                            <span>Custom Website & E-commerce Development – Responsive sites and online stores that drive sales</span>
-                        </li>
-                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
-                            <span style="margin-right: 10px; color: #2563eb;">•</span>
-                            <span>Landing Pages & Funnels – High-converting pages for promotions and lead capture</span>
-                        </li>
-                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
-                            <span style="margin-right: 10px; color: #2563eb;">•</span>
-                            <span>Web Apps & MVP Development – Interactive applications to test and scale your business ideas</span>
-                        </li>
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="margin-right: 10px; color: #2563eb;">•</span>
-                            <span>API & Payment Integration – Seamless connections between your website and business tools</span>
-                        </li>
-                    </ul>
                 </div>
 
-                <!-- AI & Automation -->
-                <div class="expertise-card" style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
-                    <div class="expertise-header" style="display: flex; align-items: center; margin-bottom: 15px;">
-                        <div class="expertise-icon" style="background: #e0f2fe; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
-                            <i class="fas fa-robot" style="color: #2563eb; font-size: 1.5rem;"></i>
+                <!-- Card 2 -->
+                <div class="sticky-card">
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-robot"></i>
                         </div>
-                        <h3 style="margin: 0; font-size: 1.3rem; color: #1e293b;">AI & Automation</h3>
+                        <h3>AI & Automation</h3>
+                        <p>Cutting-edge artificial intelligence and automation solutions to streamline operations and enhance customer experiences.</p>
+                        <ul>
+                            <li>AI-Powered Chatbots & Virtual Assistants</li>
+                            <li>Business Process Automation</li>
+                            <li>Predictive Analytics & Machine Learning</li>
+                            <li>Custom AI Solutions & Integration</li>
+                        </ul>
                     </div>
-                    <ul style="list-style-type: none; padding-left: 0; margin: 0;">
-                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
-                            <span style="margin-right: 10px; color: #2563eb;">•</span>
-                            <span>AI-Powered Chatbots – 24/7 customer support and lead generation</span>
-                        </li>
-                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
-                            <span style="margin-right: 10px; color: #2563eb;">•</span>
-                            <span>Workflow Automation – Streamline business processes and reduce manual work</span>
-                        </li>
-                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
-                            <span style="margin-right: 10px; color: #2563eb;">•</span>
-                            <span>Predictive Analytics – Data-driven insights for better decision making</span>
-                        </li>
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="margin-right: 10px; color: #2563eb;">•</span>
-                            <span>Custom AI Solutions – Tailored tools to solve your unique business challenges</span>
-                        </li>
-                    </ul>
                 </div>
 
-                <!-- Business Intelligence -->
-                <div class="expertise-card" style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
-                    <div class="expertise-header" style="display: flex; align-items: center; margin-bottom: 15px;">
-                        <div class="expertise-icon" style="background: #e0f2fe; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
-                            <i class="fas fa-chart-line" style="color: #2563eb; font-size: 1.5rem;"></i>
+                <!-- Card 3 -->
+                <div class="sticky-card">
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-bar"></i>
                         </div>
-                        <h3 style="margin: 0; font-size: 1.3rem; color: #1e293b;">Business Intelligence</h3>
+                        <h3>Business Intelligence</h3>
+                        <p>Real-time data integration, analytics dashboards, and custom business tools for data-driven decision making.</p>
+                        <ul>
+                            <li>Real-time Data Integration & Feeds</li>
+                            <li>Trading Bots & Market Analysis Tools</li>
+                            <li>Custom Business Management Solutions</li>
+                            <li>Analytics Dashboards & Performance Tracking</li>
+                        </ul>
                     </div>
-                    <ul style="list-style-type: none; padding-left: 0; margin: 0;">
-                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
-                            <span style="margin-right: 10px; color: #2563eb;">•</span>
-                            <span>Real-time Data Integration – Live feeds for stock, crypto, and business metrics</span>
-                        </li>
-                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
-                            <span style="margin-right: 10px; color: #2563eb;">•</span>
-                            <span>Trading & Strategy Bots – Automated systems for trading and market analysis</span>
-                        </li>
-                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
-                            <span style="margin-right: 10px; color: #2563eb;">•</span>
-                            <span>Custom Business Tools – Tailored solutions for inventory, booking, and more</span>
-                        </li>
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="margin-right: 10px; color: #2563eb;">•</span>
-                            <span>Analytics Dashboards – Track performance and user behavior in real-time</span>
-                        </li>
-                    </ul>
                 </div>
 
-                <!-- Digital Marketing -->
-                <div class="expertise-card" style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
-                    <div class="expertise-header" style="display: flex; align-items: center; margin-bottom: 15px;">
-                        <div class="expertise-icon" style="background: #e0f2fe; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
-                            <i class="fas fa-bullhorn" style="color: #2563eb; font-size: 1.5rem;"></i>
+                <!-- Card 4 -->
+                <div class="sticky-card">
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-bullhorn"></i>
                         </div>
-                        <h3 style="margin: 0; font-size: 1.3rem; color: #1e293b;">Digital Marketing</h3>
+                        <h3>Digital Marketing</h3>
+                        <p>Comprehensive digital marketing strategies including paid advertising, lead generation, and performance optimization.</p>
+                        <ul>
+                            <li>Paid Advertising (Google, Meta, LinkedIn)</li>
+                            <li>Lead Generation & Conversion Optimization</li>
+                            <li>Social Media Management & Growth</li>
+                            <li>Performance Analytics & ROI Tracking</li>
+                        </ul>
                     </div>
-                    <ul style="list-style-type: none; padding-left: 0; margin: 0;">
-                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
-                            <span style="margin-right: 10px; color: #2563eb;">•</span>
-                            <span>Paid Advertising – Google, Meta, and LinkedIn campaigns that convert</span>
-                        </li>
-                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
-                            <span style="margin-right: 10px; color: #2563eb;">•</span>
-                            <span>Lead Generation – Targeted strategies to attract high-quality prospects</span>
-                        </li>
-                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
-                            <span style="margin-right: 10px; color: #2563eb;">•</span>
-                            <span>Social Media Management – Grow your brand across all platforms</span>
-                        </li>
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="margin-right: 10px; color: #2563eb;">•</span>
-                            <span>Performance Analytics – Data-driven optimization for better ROI</span>
-                        </li>
-                    </ul>
                 </div>
 
-                <!-- Branding & Design -->
-                <div class="expertise-card" style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
-                    <div class="expertise-header" style="display: flex; align-items: center; margin-bottom: 15px;">
-                        <div class="expertise-icon" style="background: #e0f2fe; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
-                            <i class="fas fa-paint-brush" style="color: #2563eb; font-size: 1.5rem;"></i>
+                <!-- Card 5 -->
+                <div class="sticky-card">
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-palette"></i>
                         </div>
-                        <h3 style="margin: 0; font-size: 1.3rem; color: #1e293b;">Branding & Design</h3>
+                        <h3>Branding & Design</h3>
+                        <p>Complete brand identity, UI/UX design, and content creation services that build memorable user experiences.</p>
+                        <ul>
+                            <li>Brand Identity & Visual Design</li>
+                            <li>UI/UX Design & User Experience</li>
+                            <li>Content Creation & Copywriting</li>
+                            <li>Multimedia Design & Video Production</li>
+                        </ul>
                     </div>
-                    <ul style="list-style-type: none; padding-left: 0; margin: 0;">
-                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
-                            <span style="margin-right: 10px; color: #2563eb;">•</span>
-                            <span>Brand Identity – Logo, color schemes, and visual assets that tell your story</span>
-                        </li>
-                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
-                            <span style="margin-right: 10px; color: #2563eb;">•</span>
-                            <span>UI/UX Design – Intuitive interfaces that enhance user experience</span>
-                        </li>
-                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
-                            <span style="margin-right: 10px; color: #2563eb;">•</span>
-                            <span>Content Creation – Compelling copy and visuals for all platforms</span>
-                        </li>
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="margin-right: 10px; color: #2563eb;">•</span>
-                            <span>Multimedia Design – Engaging videos, presentations, and marketing materials</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- SEO & Growth -->
-                <div class="expertise-card" style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
-                    <div class="expertise-header" style="display: flex; align-items: center; margin-bottom: 15px;">
-                        <div class="expertise-icon" style="background: #e0f2fe; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
-                            <i class="fas fa-chart-line" style="color: #2563eb; font-size: 1.5rem;"></i>
-                        </div>
-                        <h3 style="margin: 0; font-size: 1.3rem; color: #1e293b;">SEO & Growth</h3>
-                    </div>
-                    <ul style="list-style-type: none; padding-left: 0; margin: 0;">
-                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
-                            <span style="margin-right: 10px; color: #2563eb;">•</span>
-                            <span>Search Engine Optimization – Improve visibility and organic traffic</span>
-                        </li>
-                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
-                            <span style="margin-right: 10px; color: #2563eb;">•</span>
-                            <span>Content Strategy – Plan and execute content that ranks and converts</span>
-                        </li>
-                        <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start;">
-                            <span style="margin-right: 10px; color: #2563eb;">•</span>
-                            <span>Website Performance – Speed optimization and technical SEO</span>
-                        </li>
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="margin-right: 10px; color: #2563eb;">•</span>
-                            <span>Analytics & Reporting – Track, measure, and optimize performance</span>
-                        </li>
-                    </ul>
                 </div>
             </div>
             
@@ -556,11 +481,12 @@
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="services" style="padding: 50px 0; background-color: #f8fafc;" itemscope itemtype="https://schema.org/Service">
+    <section id="pricing" class="services" style="padding: 50px 0;" itemscope itemtype="https://schema.org/Service" data-aos="fade-up" data-aos-duration="800">
         <meta itemprop="serviceType" content="Web Design & Development">
         <meta itemprop="provider" content="Curious Kaizer">
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
             <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+                <div class="hero-badge">Affordable Pricing</div>
                 <h2 style="margin-bottom: 15px;">Our <span class="highlight-blue">Pricing Plans</span></h2>
                 <p class="section-subtitle" style="color: #64748b; max-width: 700px; margin: 0 auto;">Simple, transparent pricing to help you grow your business</p>
             </div>
@@ -704,9 +630,12 @@
     </section>
 
     <!-- Why Choose Us Section -->
-    <section id="why-us" class="why-us" style="padding: 30px 0;">
+    <section id="why-us" class="why-us" style="padding: 30px 0;" data-aos="fade-up" data-aos-duration="800">
         <div class="container" style="padding: 0 15px;">
             <div class="section-header fade-up">
+                <div style="text-align: center;">
+                    <div class="hero-badge">Trusted Partner</div>
+                </div>
                 <h2 style="margin-bottom: 10px; text-align: center;">Why Choose <span class="highlight-blue">Kaizer?</span></h2>
                 <p class="section-subtitle" style="text-align: center; margin-bottom: 20px; padding: 0 10px;">We're not just another freelancing team. We're your dedicated digital partners committed to your success. Here's what makes us different:</p>
             </div>
@@ -771,9 +700,12 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
+    <section id="portfolio" class="portfolio" data-aos="fade-up" data-aos-duration="800">
         <div class="container">
-            <h2>Our <span class="highlight-blue">Work</span></h2>
+            <div style="text-align: center;">
+                <div class="hero-badge">Creative Portfolio</div>
+            </div>
+            <h2 data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">Our <span class="highlight-blue">Work</span></h2>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
                     <img src="images/gummes-website-1.png" alt="Gummies Website Demo">
@@ -864,12 +796,10 @@
     </section>
 
     <!-- Book a Call Section -->
-    <section id="book-call" class="book-call" style="padding: 60px 0; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);">
+    <section id="book-call" class="book-call" style="padding: 60px 0; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);" data-aos="fade-up" data-aos-duration="800">
         <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 0 20px 40px;">
             <div class="section-header fade-up" style="text-align: center; max-width: 800px; margin: 0 auto 40px; padding: 0 20px;">
-                <span style="display: inline-block; background: #e0f2fe; color: #0369a1; font-size: 0.85rem; font-weight: 600; padding: 8px 18px; border-radius: 20px; margin-bottom: 20px; letter-spacing: 0.5px; text-transform: uppercase;">
-                    <i class="fas fa-calendar-check" style="margin-right: 8px;"></i> Schedule a Meeting
-                </span>
+                <div class="hero-badge">Schedule Meeting</div>
                 <h2 style="margin: 0 0 20px 0; color: #0f172a; font-size: 2.5rem; line-height: 1.2; font-weight: 800; letter-spacing: -0.5px;">
                     Ready to Bring Your <span style="color: #2563eb;">Vision to Life</span>?
                 </h2>
@@ -967,9 +897,10 @@
     </section>
 
     <!-- Testimonials Carousel -->
-    <section class="testimonials-section" style="padding: 60px 0; background: #f8fafc;">
+    <section class="testimonials-section" style="padding: 60px 0; background: #f8fafc;" data-aos="fade-up" data-aos-duration="800">
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
             <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+                <div class="hero-badge">Client Testimonials</div>
                 <h2 style="margin-bottom: 15px;">What Our <span class="highlight-blue">Clients Say</span></h2>
                 <p class="section-subtitle" style="color: #64748b; max-width: 700px; margin: 0 auto;">Don't just take our word for it - hear from businesses we've helped transform</p>
             </div>
@@ -1132,9 +1063,12 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact" style="padding: 40px 0;">
+    <section id="contact" class="contact" style="padding: 40px 0;" data-aos="fade-up" data-aos-duration="800">
         <div class="container" style="padding: 0 15px;">
-            <h2 style="margin-bottom: 12px; text-align: center;">Get In <span class="highlight-blue">Touch</span></h2>
+            <div style="text-align: center;">
+                <div class="hero-badge">Get In Touch</div>
+            </div>
+            <h2 data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">Get In <span class="highlight-blue">Touch</span></h2>
             <p class="section-subtitle" style="text-align: center; margin-bottom: 30px; padding: 0 10px;">Have a project in mind? Let's discuss how we can help bring your ideas to life</p>
             <div class="contact-container" style="max-width: 600px; margin: 20px auto 0; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
                 <form id="contactForm" class="contact-form" onsubmit="return sendToWhatsApp(event);" style="padding: 20px 18px;">
@@ -1246,9 +1180,10 @@
     </section>
 
     <!-- Newsletter Section -->
-    <section class="newsletter">
+    <section class="newsletter" data-aos="fade-up" data-aos-duration="800">
         <div class="container">
-            <h2><span class="highlight-blue">Stay</span> Updated</h2>
+            <div class="hero-badge">Stay Updated</div>
+            <h2 data-aos="fade-up" data-aos-duration="600" data-aos-delay="100"><span class="highlight-blue">Stay</span> Updated</h2>
             <p class="section-subtitle">Subscribe to our newsletter for the latest web design tips, special offers, and industry insights</p>
             
             <div id="mc_embed_signup">
@@ -1452,6 +1387,111 @@
         });
     </script>
     
+    <!-- Enhanced Navbar Scroll Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.querySelector('.navbar');
+            let lastScrollTop = 0;
+            let scrollThreshold = 50;
+            
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                // Add/remove scrolled class
+                if (scrollTop > scrollThreshold) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+                
+                // Hide/show navbar on scroll direction
+                if (scrollTop > lastScrollTop && scrollTop > scrollThreshold * 2) {
+                    // Scrolling down
+                    navbar.style.transform = 'translateY(-100%)';
+                } else {
+                    // Scrolling up or at top
+                    navbar.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollTop = scrollTop;
+            });
+            
+            // Show navbar on mouse hover near top
+            document.addEventListener('mousemove', function(e) {
+                if (e.clientY < 100) {
+                    navbar.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
+    
+    <!-- Smooth Scroll Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            const links = document.querySelectorAll('a[href^="#"]');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                        const targetPosition = targetElement.offsetTop - navbarHeight - 20;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update active nav link
+                        document.querySelectorAll('.nav-links a').forEach(navLink => {
+                            navLink.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                        
+                        // Close mobile menu if open
+                        const navLinks = document.querySelector('.nav-links');
+                        const navToggle = document.querySelector('.nav-toggle');
+                        if (navLinks && navLinks.classList.contains('active')) {
+                            navLinks.classList.remove('active');
+                            navToggle.classList.remove('active');
+                            document.body.classList.remove('nav-open');
+                        }
+                    }
+                });
+            });
+            
+            // Update active nav link on scroll
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('section[id]');
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                const scrollPosition = window.scrollY + navbarHeight + 100;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        document.querySelectorAll('.nav-links a').forEach(navLink => {
+                            navLink.classList.remove('active');
+                        });
+                        
+                        const activeLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
+                        if (activeLink) {
+                            activeLink.classList.add('active');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    
     <!-- Cursor Follower Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -1584,6 +1624,17 @@
             document.querySelectorAll('.fade-up').forEach((element) => {
                 observer.observe(element);
             });
+        });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100,
+            mirror: false
         });
     </script>
 </body>
