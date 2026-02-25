@@ -1,39 +1,47 @@
-# https://www.robotstxt.org/
+# Robots.txt for Curious Kaizer - Optimized for SEO
+# Created: 2025-02-25
+# Purpose: Maximize search engine crawling and indexing
+
 User-agent: *
-Allow: /$
-Allow: /$
-Allow: /*.css$
-Allow: /*.js$
-Allow: /*.jpg$
-Allow: /*.jpeg$
-Allow: /*.png$
-Allow: /*.svg$
-Allow: /*.webp$
-Allow: /*.woff$
-Allow: /*.woff2$
+Allow: /
 
-# Disallow
+# Allow all important crawling
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Block unnecessary files
 Disallow: /admin/
-Disallow: /includes/
 Disallow: /private/
-Disallow: /cgi-bin/
-Disallow: /wp-json/
-Disallow: /wp-admin/
-Disallow: /wp-includes/
-Disallow: /wp-content/plugins/
-Disallow: /wp-content/cache/
-Disallow: /wp-*.php
-Disallow: /xmlrpc.php
-Disallow: *?s=
-Disallow: *&s=
-Disallow: /search/
-Disallow: /feed/
-Disallow: */feed/
-Disallow: */trackback/
-Disallow: *?s=
+Disallow: /temp/
+Disallow: /*.json$
+Disallow: /*?utm*
 
-# Sitemaps
+# Sitemap location
 Sitemap: https://curiouskaizer.com/sitemap.xml
 
-# Crawl-delay: 10
-# Uncomment the above line if you experience server load issues
+# Crawl delay for respectful crawling
+Crawl-delay: 1
+
+# Specific instructions for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0.5
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# Allow social media crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /

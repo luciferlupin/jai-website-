@@ -649,6 +649,7 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeSpeed;
 }
 
 /* Content-visibility for ink chunks */
@@ -660,15 +661,66 @@ section {
 /* Optimize images */
 img {
     content-visibility: auto;
+    max-width: 100%;
+    height: auto;
 }
 
-/* Optimize animations */
+/* Optimize animations for Core Web Vitals */
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
+}
+
+/* Critical CSS optimizations */
+.hero-content {
+    contain: layout style paint;
+}
+
+.pricing-card {
+    contain: layout style paint;
+}
+
+.sticky-card {
+    contain: layout style paint;
+    will-change: transform;
+}
+
+/* Font loading optimization */
+@font-face {
+    font-family: 'Inter';
+    font-display: swap;
+    src: url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+}
+
+/* Image optimization */
+img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Reduce layout shifts */
+img, video, iframe {
+    aspect-ratio: attr(width) / attr(height);
+}
+
+/* Optimize for Largest Contentful Paint */
+.hero-content h1,
+.hero-content h2 {
+    contain: layout style paint;
+}
+
+/* Optimize for Cumulative Layout Shift */
+.cta-button {
+    contain: layout style paint;
+}
+
+/* Optimize for First Input Delay */
+.cta-button,
+.nav-links a {
+    touch-action: manipulation;
 }
 
 /* Ensure content is above particles */
