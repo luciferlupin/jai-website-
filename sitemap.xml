@@ -47,6 +47,14 @@
         <priority>0.8</priority>
     </url>
     
+    <!-- FAQ Section - High SEO Priority for User Queries -->
+    <url>
+        <loc>https://curiouskaizer.com/#faq</loc>
+        <lastmod>2025-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
     <!-- Book Call Page - Lead Generation -->
     <url>
         <loc>https://curiouskaizer.com/#book-call</loc>
