@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         lastScroll = currentScroll;
-    });
+    }, { passive: true });
     
     // Smooth Scrolling for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     // Listen for scroll events
-    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('scroll', animateOnScroll, { passive: true });
     
     // FAQ Accordion Interaction
     const faqItems = document.querySelectorAll('.faq-item');
@@ -294,6 +294,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (!isDesktop) {
                     // Reset mobile styles
                     card.style.top = 'auto';
+                    card.style.zIndex = 'auto';
                     cardContent.style.setProperty('--card-transform', 'none');
                     cardContent.style.opacity = '1';
                     cardContent.style.filter = 'none';
@@ -302,6 +303,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Desktop Sticky positioning offsets
                 card.style.top = `${100 + index * stackOffset}px`;
+                card.style.zIndex = index + 1;
                 
                 const rect = card.getBoundingClientRect();
                 const topLimit = 100 + index * stackOffset;
@@ -313,13 +315,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 if (rect.top <= eightyPercentViewport) {
                     const scale = 1 - (scrollProgress * 0.05);
-                    const opacity = 1 - (scrollProgress * 0.2);
-                    const blur = scrollProgress * 2;
                     const translateY = scrollProgress * -15;
                     
                     cardContent.style.setProperty('--card-transform', `scale(${scale}) translateY(${translateY}px)`);
-                    cardContent.style.opacity = `${opacity}`;
-                    cardContent.style.filter = `blur(${blur}px)`;
+                    cardContent.style.opacity = '1';
+                    cardContent.style.filter = 'none';
                 } else {
                     cardContent.style.setProperty('--card-transform', 'scale(1) translateY(0)');
                     cardContent.style.opacity = '1';
@@ -330,7 +330,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         window.addEventListener('scroll', () => {
             window.requestAnimationFrame(updateStack);
-        });
+        }, { passive: true });
         window.addEventListener('resize', updateStack);
         // Initial run
         updateStack();

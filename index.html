@@ -407,6 +407,7 @@
     <link rel="preload" href="./css/styles.css?v=1.4" as="style">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@700;800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://assets.calendly.com">
     <link rel="preconnect" href="https://calendly.com">
     <link rel="dns-prefetch" href="https://assets.calendly.com">
@@ -582,7 +583,7 @@
 
     <!-- Hero Section - Semantic HTML5 with proper heading hierarchy -->
     <header id="home" class="hero" role="banner">
-        <div class="container">
+        <div class="container container-hero-fluid">
             <section class="hero-content" role="main">
                 <!-- 1. Headline with the animated typing text preserved inside -->
                 <h1 style="display: grid; grid-template-columns: 100%; justify-content: center; align-items: center; margin-bottom: 24px;">
@@ -591,12 +592,32 @@
                 </h1>
 
                 <!-- 2. Beautiful Badge/Tag Pills row placed below typing animation -->
-                <div class="hero-tags" style="margin-bottom: 32px;">
-                    <span class="tag-pill active">Custom Web Design</span>
-                    <span class="tag-pill">E-commerce Solutions</span>
-                    <span class="tag-pill">Web Apps & MVPs</span>
-                    <span class="tag-pill">SEO Optimization</span>
-                    <span class="tag-pill">AI & Chatbots</span>
+                <div class="hero-tags-ticker" style="margin-bottom: 32px;">
+                    <div class="hero-tags-track">
+                        <!-- Set 1 -->
+                        <span class="tag-pill">Custom Web Design</span>
+                        <span class="tag-pill">E-commerce Solutions</span>
+                        <span class="tag-pill">Web Apps & MVPs</span>
+                        <span class="tag-pill">SEO Optimization</span>
+                        <span class="tag-pill">AI & Automation</span>
+                        <span class="tag-pill">SaaS Platforms</span>
+                        <span class="tag-pill">Conversion Funnels</span>
+                        <span class="tag-pill">UI/UX Strategy</span>
+                        <span class="tag-pill">Brand Identity</span>
+                        <span class="tag-pill">Intelligent Systems</span>
+                        
+                        <!-- Set 2 (Duplicated for seamless loop) -->
+                        <span class="tag-pill">Custom Web Design</span>
+                        <span class="tag-pill">E-commerce Solutions</span>
+                        <span class="tag-pill">Web Apps & MVPs</span>
+                        <span class="tag-pill">SEO Optimization</span>
+                        <span class="tag-pill">AI & Automation</span>
+                        <span class="tag-pill">SaaS Platforms</span>
+                        <span class="tag-pill">Conversion Funnels</span>
+                        <span class="tag-pill">UI/UX Strategy</span>
+                        <span class="tag-pill">Brand Identity</span>
+                        <span class="tag-pill">Intelligent Systems</span>
+                    </div>
                 </div>
 
                 <!-- 3. Primary premium Apple-style CTA Button centered -->
@@ -612,11 +633,18 @@
                     <!-- SVG Wavy Connection Line in Background -->
                     <svg class="flow-connector-line" viewBox="0 0 1200 240" fill="none" preserveAspectRatio="none">
                         <path d="M 120 80 C 240 80, 240 150, 360 150 C 480 150, 480 110, 600 110 C 720 110, 720 70, 840 70 C 960 70, 960 160, 1080 160" stroke="url(#line-gradient)" stroke-width="3.5" />
+                        <!-- Traveling Laser Pulse path -->
+                        <path class="flow-pulse-line" d="M 120 80 C 240 80, 240 150, 360 150 C 480 150, 480 110, 600 110 C 720 110, 720 70, 840 70 C 960 70, 960 160, 1080 160" stroke="url(#pulse-gradient)" stroke-width="5" stroke-linecap="round" />
                         <defs>
                             <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
                                 <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.2" />
                                 <stop offset="50%" stop-color="#2563eb" stop-opacity="0.8" />
                                 <stop offset="100%" stop-color="#22c55e" stop-opacity="0.2" />
+                            </linearGradient>
+                            <linearGradient id="pulse-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#3b82f6" />
+                                <stop offset="50%" stop-color="#60a5fa" />
+                                <stop offset="100%" stop-color="#22c55e" />
                             </linearGradient>
                         </defs>
                     </svg>
@@ -1248,10 +1276,22 @@
                         <span class="tech-title-highlight">AI-Powered Tech Stack</span>
                         That Covers Every Industry
                     </h2>
-                    <div class="tech-capability-pills">
-                        <span class="tech-cap-pill">& WooCommerce Solutions</span>
-                        <span class="tech-cap-pill">Solar AI Calculator</span>
-                        <span class="tech-cap-pill">MVP Development</span>
+                    <div class="tech-capability-pills-ticker">
+                        <div class="pills-ticker-track">
+                            <!-- Set 1 -->
+                            <span class="tech-cap-pill">Shopify & WooCommerce Solutions</span>
+                            <span class="tech-cap-pill">Solar AI Calculator</span>
+                            <span class="tech-cap-pill">Custom AI & Chatbots</span>
+                            <span class="tech-cap-pill">MVP Development</span>
+                            <span class="tech-cap-pill">Custom Web Apps & SaaS</span>
+                            
+                            <!-- Set 2 (Duplicated for seamless loop) -->
+                            <span class="tech-cap-pill">Shopify & WooCommerce Solutions</span>
+                            <span class="tech-cap-pill">Solar AI Calculator</span>
+                            <span class="tech-cap-pill">Custom AI & Chatbots</span>
+                            <span class="tech-cap-pill">MVP Development</span>
+                            <span class="tech-cap-pill">Custom Web Apps & SaaS</span>
+                        </div>
                     </div>
                 </div>
 
@@ -1454,12 +1494,12 @@
     <!-- Why Choose Us Section -->
     <section id="why-us" class="why-us" style="background-color: white;" data-aos="fade-up" data-aos-duration="800">
         <div class="container" style="padding: 0 15px;">
-            <div class="section-header fade-up">
-                <div style="text-align: center;">
+            <div class="section-header">
+                <div style="text-align: center;" data-aos="fade-up" data-aos-duration="600">
                     <div class="hero-badge">Trusted Partner</div>
                 </div>
-                <h2 style="text-align: center;">Why Choose <span class="highlight-blue">Curious Kaizer?</span></h2>
-                <p class="section-subtitle" style="text-align: center; margin-bottom: 20px; padding: 0 10px;">We're not just another freelancing team. We're your dedicated digital partners committed to your success. Here's what makes us different:</p>
+                <h2 data-aos="fade-up" data-aos-duration="600" data-aos-delay="150" style="text-align: center;">Why Choose <span class="highlight-blue">Curious Kaizer?</span></h2>
+                <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="300" class="section-subtitle" style="text-align: center; margin-bottom: 20px; padding: 0 10px;">We're not just another freelancing team. We're your dedicated digital partners committed to your success. Here's what makes us different:</p>
             </div>
             
             <div class="bento-grid">
@@ -1597,16 +1637,16 @@
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio" data-aos="fade-up" data-aos-duration="800" style="background-color: white;">
         <div class="container">
-            <div style="text-align: center;">
+            <div style="text-align: center;" data-aos="fade-up" data-aos-duration="600">
                 <div class="hero-badge">Creative Portfolio</div>
             </div>
-            <h2 data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">Our <span class="highlight-blue">Work</span></h2>
+            <h2 data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">Our <span class="highlight-blue">Work</span></h2>
         </div>
         <div class="portfolio-grid">
             <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
                 <div class="shimmer"></div>
                 <div class="category-badge">E-commerce</div>
-                <img src="images/gummes-website-1.png" alt="Her Bite E-commerce Store">
+                <img src="images/gummes-website-1.png" alt="Her Bite E-commerce Store" loading="lazy" decoding="async">
                 <div class="portfolio-overlay">
                     <h3>Her Bite</h3>
                     <p>E-Commerce Store Website</p>
@@ -1615,7 +1655,7 @@
             <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
                 <div class="shimmer"></div>
                 <div class="category-badge">Healthcare</div>
-                <img src="images/healthcare-equipment.png" alt="SRB Healthcare Website">
+                <img src="images/healthcare-equipment.png" alt="SRB Healthcare Website" loading="lazy" decoding="async">
                 <div class="portfolio-overlay">
                     <h3>SRB Healthcare</h3>
                     <p>B2B Medical Portal & Catalogue</p>
@@ -1624,7 +1664,7 @@
             <div class="portfolio-item" data-aos="fade-up" data-aos-delay="300">
                 <div class="shimmer"></div>
                 <div class="category-badge">Business</div>
-                <img src="images/consultancy-project.png" alt="Qualityezo Website">
+                <img src="images/consultancy-project.png" alt="Qualityezo Website" loading="lazy" decoding="async">
                 <div class="portfolio-overlay">
                     <h3>Qualityezo</h3>
                     <p>Corporate Branding Website</p>
@@ -1633,7 +1673,7 @@
             <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
                 <div class="shimmer"></div>
                 <div class="category-badge">E-commerce</div>
-                <img src="images/3d-jewelry-store.png" alt="Luxury Jewelry 3D Website">
+                <img src="images/3d-jewelry-store.png" alt="Luxury Jewelry 3D Website" loading="lazy" decoding="async">
                 <div class="portfolio-overlay">
                     <h3>Luxury Jewelry</h3>
                     <p>Interactive 3D Retail Store</p>
@@ -1642,7 +1682,7 @@
             <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
                 <div class="shimmer"></div>
                 <div class="category-badge">Wellness</div>
-                <img src="images/ayurvedic-diet-plan.png" alt="AYURDIET Ayurvedic Diet & Wellness Website">
+                <img src="images/ayurvedic-diet-plan.png" alt="AYURDIET Ayurvedic Diet & Wellness Website" loading="lazy" decoding="async">
                 <div class="portfolio-overlay">
                     <h3>AYURDIET</h3>
                     <p>Custom Diet Planner Web App</p>
@@ -1651,7 +1691,7 @@
             <div class="portfolio-item" data-aos="fade-up" data-aos-delay="300">
                 <div class="shimmer"></div>
                 <div class="category-badge">Finance</div>
-                <img src="images/trading-signals.png" alt="what if i say Website">
+                <img src="images/trading-signals.png" alt="what if i say Website" loading="lazy" decoding="async">
                 <div class="portfolio-overlay">
                     <h3>what if i say</h3>
                     <p>Trading Analytics Dashboard</p>
@@ -1660,7 +1700,7 @@
             <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
                 <div class="shimmer"></div>
                 <div class="category-badge">Industrial</div>
-                <img src="images/industrial-factory.png" alt="WatFix Chemicals Website">
+                <img src="images/industrial-factory.png" alt="WatFix Chemicals Website" loading="lazy" decoding="async">
                 <div class="portfolio-overlay">
                     <h3>WatFix Chemicals</h3>
                     <p>Manufacturer Enterprise Portal</p>
@@ -1669,7 +1709,7 @@
             <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
                 <div class="shimmer"></div>
                 <div class="category-badge">Software</div>
-                <img src="images/crm-dashboard-new.png" alt="CuriousCRM Web Application">
+                <img src="images/crm-dashboard-new.png" alt="CuriousCRM Web Application" loading="lazy" decoding="async">
                 <div class="portfolio-overlay">
                     <h3>CuriousCRM</h3>
                     <p>Custom SaaS CRM Dashboard</p>
@@ -1678,7 +1718,7 @@
             <div class="portfolio-item" data-aos="fade-up" data-aos-delay="300">
                 <div class="shimmer"></div>
                 <div class="category-badge">Web App</div>
-                <img src="images/toilet-finder.png" alt="Toilet Finder Map Web Application">
+                <img src="images/toilet-finder.png" alt="Toilet Finder Map Web Application" loading="lazy" decoding="async">
                 <div class="portfolio-overlay">
                     <h3>Toilet Finder Map</h3>
                     <p>Location-Based Maps Web App</p>
@@ -1687,7 +1727,7 @@
             <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
                 <div class="shimmer"></div>
                 <div class="category-badge">Entertainment</div>
-                <img src="images/tarot-website.png" alt="Starlight Tarot Web Application">
+                <img src="images/tarot-website.png" alt="Starlight Tarot Web Application" loading="lazy" decoding="async">
                 <div class="portfolio-overlay">
                     <h3>Starlight Tarot</h3>
                     <p>Mystic Tarot Reading Web App</p>
@@ -1696,7 +1736,7 @@
             <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
                 <div class="shimmer"></div>
                 <div class="category-badge">Travel</div>
-                <img src="images/travel-booking.png" alt="Arpan Holidays Website">
+                <img src="images/travel-booking.png" alt="Arpan Holidays Website" loading="lazy" decoding="async">
                 <div class="portfolio-overlay">
                     <h3>Arpan Holidays</h3>
                     <p>SaaS Lodging Booking Platform</p>
@@ -1705,7 +1745,7 @@
             <div class="portfolio-item" data-aos="fade-up" data-aos-delay="300">
                 <div class="shimmer"></div>
                 <div class="category-badge">Real Estate</div>
-                <img src="images/group-buying-real-estate.png" alt="BigPockets Group Buying Real Estate Platform">
+                <img src="images/group-buying-real-estate.png" alt="BigPockets Group Buying Real Estate Platform" loading="lazy" decoding="async">
                 <div class="portfolio-overlay">
                     <h3>BigPockets</h3>
                     <p>Real Estate Co-Investment Platform</p>
@@ -1718,11 +1758,11 @@
     <section id="faq" class="faq" data-aos="fade-up" data-aos-duration="800" style="position: relative; background-color: white;">
         <div class="container" style="position: relative; z-index: 2;">
             <div class="section-header" style="text-align: center; margin-bottom: 60px;">
-                <div style="text-align: center;">
+                <div style="text-align: center;" data-aos="fade-up" data-aos-duration="600">
                     <div class="hero-badge">Common Questions</div>
                 </div>
-                <h2 style="margin-bottom: 20px;">Frequently Asked Questions About <span class="highlight-blue">Website Making</span></h2>
-                <p class="section-subtitle" style="color: #64748b; max-width: 700px; margin: 0 auto;">Get answers to all your questions about website development costs and process</p>
+                <h2 data-aos="fade-up" data-aos-duration="600" data-aos-delay="150" style="margin-bottom: 20px;">Frequently Asked Questions About <span class="highlight-blue">Website Making</span></h2>
+                <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="300" class="section-subtitle" style="color: #64748b; max-width: 700px; margin: 0 auto;">Get answers to all your questions about website development costs and process</p>
             </div>
             
             <div class="faq-grid" style="max-width: 800px; margin: 0 auto;">
@@ -1898,50 +1938,57 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer" role="contentinfo" style="background-color: white;">
+    <footer class="footer footer-minimalist" role="contentinfo">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">
+                <div class="footer-brand" data-aos="fade-up" data-aos-duration="600">
                     <h3>Curious Kaizer</h3>
-                    <p>Where Innovation Meets Digital Excellence</p>
-                    <p class="tagline">Crafting digital experiences that inspire, engage, and convert. Your vision, our code.</p>
-                </div>
-                <div class="footer-contact">
-                    <h4>Let's Build Something Amazing</h4>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:contact@curiouskaizer.com">contact@curiouskaizer.com</a></li>
-                        <li><i class="fas fa-phone-alt"></i> <a href="tel:+918595121436">+91 85951 21436</a></li>
-                        <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/918595121436" target="_blank" rel="noopener">Chat on WhatsApp</a></li>
-                        <li><i class="fas fa-map-marker-alt"></i> Delhi, India | Remote Worldwide</li>
-                    </ul>
-                    <p class="business-hours">
-                        <i class="far fa-clock"></i> Mon-Fri: 10:00 AM - 7:00 PM IST
+                    <p class="subtitle">Where Innovation Meets Digital Excellence</p>
+                    <p class="tagline">
+                        Crafting bespoke, high-performance web applications and design systems that scale your business. We turn complex requirements into clean, elegant code.
                     </p>
                 </div>
-                <div class="footer-social">
-                    <h4>Follow Our Journey</h4>
-                    <p>Join our community for the latest updates, tips, and insights on web development and design.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="LinkedIn" title="Connect on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="GitHub" title="View our GitHub"><i class="fab fa-github"></i></a>
-                        <a href="#" aria-label="Dribbble" title="See our designs"><i class="fab fa-dribbble"></i></a>
-                        <a href="#" aria-label="Twitter" title="Follow us on X"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Instagram" title="Follow on Instagram"><i class="fab fa-instagram"></i></a>
-                    </div>
+                <div class="footer-contact" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
+                    <h4>Get in Touch</h4>
+                    <ul>
+                        <li>
+                            <i class="fas fa-envelope" style="color: #0066cc;"></i> 
+                            <a href="mailto:contact@curiouskaizer.com" class="hover-underline">contact@curiouskaizer.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt" style="color: #0066cc;"></i> 
+                            <a href="tel:+918595121436" class="hover-underline">+91 85951 21436</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-whatsapp" style="color: #25d366;"></i> 
+                            <a href="https://wa.me/918595121436" target="_blank" rel="noopener" class="hover-underline">Chat on WhatsApp</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt" style="color: #0066cc;"></i> Delhi, India | Remote Worldwide
+                        </li>
+                    </ul>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2025 Curious Kaizer. All rights reserved. <span class="highlight">Crafting digital excellence since 2023.</span></p>
-                <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <span>•</span>
-                    <a href="#">Terms of Service</a>
-                    <span>•</span>
-                    <a href="#">Sitemap</a>
-                    <span>•</span>
-                    <a href="#book-call">Contact Us</a>
+                <div class="footer-left-info">
+                    <p class="copyright">
+                        &copy; 2026 Curious Kaizer. All rights reserved.
+                    </p>
+                    <p class="since">
+                        Crafting digital excellence since 2023. Delhi, India.
+                    </p>
                 </div>
-                <p class="made-with-love">Made with <i class="fas fa-heart"></i> in India</p>
+                <div class="footer-links">
+                    <a href="#" class="hover-underline">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="#" class="hover-underline">Terms of Service</a>
+                    <span>•</span>
+                    <a href="#book-call" class="hover-underline">Contact Us</a>
+                </div>
+                <p class="made-with-love">
+                    Made with <i class="fas fa-heart"></i> in India
+                </p>
             </div>
         </div>
     </footer>
@@ -1958,8 +2005,6 @@
         gtag('config', 'G-YOUR-GA-ID');
     </script>
     <script src="js/carousel.js"></script>
-    <!-- Tidio Chat Widget -->
-    <script src="//code.tidio.co/sdtjp1gs660tv9c71ju3omu7yknbpj7i.js" async></script>
 
     <script src="js/typing.js"></script>
     <script src="js/timeline-animations.js"></script>
@@ -1993,7 +2038,7 @@
                 }
                 
                 lastScrollTop = scrollTop;
-            });
+            }, { passive: true });
             
             // Show navbar on mouse hover near top
             document.addEventListener('mousemove', function(e) {
@@ -2067,7 +2112,7 @@
                         }
                     }
                 });
-            });
+            }, { passive: true });
         });
     </script>
     
