@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Sticky Navigation on Scroll
-    const navbar = document.querySelector('.navbar');
+    const navbar = document.querySelector('.site-header');
     let lastScroll = 0;
     
     window.addEventListener('scroll', function() {
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (currentScroll > lastScroll && currentScroll > 100) {
             // Scroll Down
-            navbar.style.transform = 'translateY(-100%)';
+            navbar.style.transform = 'translateY(-120%)';
         } else {
             // Scroll Up
             navbar.style.transform = 'translateY(0)';
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                const headerOffset = 80;
+                const headerOffset = 110;
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
                 
@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add animation on scroll
     const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.service-card, .portfolio-item, .contact-info, .contact-form');
+        const elements = document.querySelectorAll('.service-card, .portfolio-item, .contact-info');
         
         elements.forEach((element, index) => {
             const elementPosition = element.getBoundingClientRect().top;
@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
     // Set initial styles for animation
-    const elements = document.querySelectorAll('.service-card, .portfolio-item, .contact-info, .contact-form');
+    const elements = document.querySelectorAll('.service-card, .portfolio-item, .contact-info');
     elements.forEach((element, index) => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(30px)';
@@ -212,9 +212,58 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-    
     // Listen for scroll events
     window.addEventListener('scroll', animateOnScroll);
+    
+    // FAQ Accordion Interaction
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const answer = item.querySelector('.faq-answer');
+        
+        // Hide answers by default in JS
+        if (answer) {
+            answer.style.maxHeight = '0px';
+            answer.style.overflow = 'hidden';
+            answer.style.transition = 'max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease';
+            answer.style.opacity = '0';
+        }
+        
+        item.addEventListener('click', function(e) {
+            // Prevent close when clicking inside the answer content (like links or paragraphs)
+            if (e.target.closest('.faq-answer')) {
+                return;
+            }
+            
+            const isOpen = item.classList.contains('active');
+            
+            // Close other FAQ items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                    const otherAnswer = otherItem.querySelector('.faq-answer');
+                    if (otherAnswer) {
+                        otherAnswer.style.maxHeight = '0px';
+                        otherAnswer.style.opacity = '0';
+                    }
+                }
+            });
+            
+            // Toggle current FAQ item
+            if (isOpen) {
+                item.classList.remove('active');
+                if (answer) {
+                    answer.style.maxHeight = '0px';
+                    answer.style.opacity = '0';
+                }
+            } else {
+                item.classList.add('active');
+                if (answer) {
+                    answer.style.maxHeight = `${answer.scrollHeight}px`;
+                    answer.style.opacity = '1';
+                }
+            }
+        });
+    });
 
     // Add loading animation
     const loader = document.createElement('div');
@@ -229,4 +278,63 @@ document.addEventListener('DOMContentLoaded', function() {
             loader.style.display = 'none';
         }, 500);
     }, 500);
+
+    // 'Our Expertise' Premium Card Scroll Stacking & Visual Dynamics
+    const cards = document.querySelectorAll('.saas-scroll-section .sticky-card');
+    if (cards.length > 0) {
+        const stackOffset = 30;
+        
+        const updateStack = () => {
+            const isDesktop = window.innerWidth > 768;
+            
+            cards.forEach((card, index) => {
+                const cardContent = card.querySelector('.card-content');
+                if (!cardContent) return;
+                
+                if (!isDesktop) {
+                    // Reset mobile styles
+                    card.style.top = 'auto';
+                    cardContent.style.setProperty('--card-transform', 'none');
+                    cardContent.style.opacity = '1';
+                    cardContent.style.filter = 'none';
+                    return;
+                }
+                
+                // Desktop Sticky positioning offsets
+                card.style.top = `${100 + index * stackOffset}px`;
+                
+                const rect = card.getBoundingClientRect();
+                const topLimit = 100 + index * stackOffset;
+                const viewportHeight = window.innerHeight;
+                const eightyPercentViewport = viewportHeight * 0.8;
+                
+                // If scrolled past 80% viewport threshold, calculate progress
+                const scrollProgress = Math.max(0, Math.min(1, (eightyPercentViewport - rect.top) / 400));
+                
+                if (rect.top <= eightyPercentViewport) {
+                    const scale = 1 - (scrollProgress * 0.05);
+                    const opacity = 1 - (scrollProgress * 0.2);
+                    const blur = scrollProgress * 2;
+                    const translateY = scrollProgress * -15;
+                    
+                    cardContent.style.setProperty('--card-transform', `scale(${scale}) translateY(${translateY}px)`);
+                    cardContent.style.opacity = `${opacity}`;
+                    cardContent.style.filter = `blur(${blur}px)`;
+                } else {
+                    cardContent.style.setProperty('--card-transform', 'scale(1) translateY(0)');
+                    cardContent.style.opacity = '1';
+                    cardContent.style.filter = 'none';
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', () => {
+            window.requestAnimationFrame(updateStack);
+        });
+        window.addEventListener('resize', updateStack);
+        // Initial run
+        updateStack();
+    }
 });
+
+

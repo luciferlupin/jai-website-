@@ -404,12 +404,16 @@
     <meta name="twitter:description" content="Professional web design and development services in Delhi. Let's build something amazing together!">
     <meta name="twitter:image" content="https://curiouskaizer.com/images/twitter-card.jpg">
     
-    <link rel="preload" href="./css/styles.css" as="style">
+    <link rel="preload" href="./css/styles.css?v=1.4" as="style">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://assets.calendly.com">
+    <link rel="preconnect" href="https://calendly.com">
+    <link rel="dns-prefetch" href="https://assets.calendly.com">
+    <link rel="dns-prefetch" href="https://calendly.com">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css?v=1.4">
     <style>
         /* Scroll Animation Styles */
         .fade-up {
@@ -431,8 +435,8 @@
         .delay-6 { transition-delay: 0.6s; }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/styles.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -550,63 +554,194 @@
     </script>
 </head>
 <body itemscope itemtype="https://schema.org/WebPage">
-    <!-- Cursor Follower -->
-    <div class="cursor-follower"></div>
-    
+
     <!-- Navigation -->
     <header class="site-header">
     <nav class="navbar" itemscope itemtype="https://schema.org/SiteNavigationElement" aria-label="Main navigation">
         <div class="container">
-            <a href="#" class="logo">Curious Kaizer</a>
+            <a href="#" class="logo">
+                <span class="logo-text">Curious Kaizer</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" title="Home">Home</a></li>
+                <li><a href="#process" title="Process">Process</a></li>
+                <li><a href="#expertise" title="Capabilities">Capabilities</a></li>
+                <li><a href="#why-us" title="Why Choose Us">Why Choose Us</a></li>
+                <li><a href="#portfolio" title="Portfolio">Portfolio</a></li>
+                <li class="mobile-cta-item"><a href="#book-call" class="nav-cta-btn-mobile">Book Free Call <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+            <a href="#book-call" class="nav-cta-btn">Book Free Call <i class="fas fa-arrow-right"></i></a>
             <div class="nav-toggle" id="navToggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" title="Professional Web Design Delhi - Home">Home</a></li>
-                <li><a href="#pricing" title="Affordable Website Pricing Plans Delhi">Pricing</a></li>
-                <li><a href="#expertise" title="Web Development Expertise & Services Delhi">Our Expertise</a></li>
-                <li><a href="#why-us" title="Why Choose Curious Kaizer - Best Web Design Company">Why Choose Us</a></li>
-                <li><a href="#portfolio" title="Web Design Portfolio Delhi - Client Projects">Portfolio</a></li>
-                <li><a href="#faq" title="FAQ - Website Making Cost and Process">FAQ</a></li>
-                <li><a href="#book-call" title="Book Free Website Design Consultation Delhi">Book a Call</a></li>
-                <li><a href="#contact" title="Contact Web Designers Delhi - Get Quote">Contact</a></li>
-            </ul>
         </div>
     </nav>
     </header>
 
     <!-- Hero Section - Semantic HTML5 with proper heading hierarchy -->
     <header id="home" class="hero" role="banner">
-        <div id="particles-js"></div>
         <div class="container">
             <section class="hero-content" role="main">
-                <div class="hero-badge">Web Design & Development</div>
-                <h1>Want to <span class="highlight-blue">Make a Website</span> for Your Business?</h1>
-                <p class="hero-subtitle">We create <span class="typing-text"></span></p>
-                <p class="hero-description"><strong>I want to make a website</strong> - If this is what you're searching for, you've come to the right place! We provide complete <strong>cost of website making</strong> solutions in Delhi. Whether you need a website for your business, e-commerce store, or professional portfolio, we make website development affordable and easy. Get your dream website starting at just ₹9,000!</p>
-                <nav class="hero-buttons" role="navigation" aria-label="Hero Actions">
-                    <a href="#pricing" class="cta-button primary" title="Check Website Making Cost" role="button">See Website Making Cost</a>
-                    <a href="#book-call" class="cta-button secondary" title="Get Free Website Quote" role="button">Get Free Quote</a>
-                    <a href="#portfolio" class="cta-button secondary" title="View Website Examples" role="button">View Our Work</a>
-                </nav>
-                <div class="hero-features" role="list">
-                    <div class="feature" role="listitem">
-                        <i class="fas fa-check-circle"></i>
-                        <span>100% Custom Design</span>
+                <!-- 1. Headline with the animated typing text preserved inside -->
+                <h1 style="display: grid; grid-template-columns: 100%; justify-content: center; align-items: center; margin-bottom: 24px;">
+                    <span class="typing-text-ghost" aria-hidden="true" style="grid-area: 1/1; visibility: hidden; pointer-events: none; user-select: none; font-weight: 600; display: block; width: 100%;">Your competitors have a website. Let's build one that's better.</span>
+                    <span class="typing-text" style="grid-area: 1/1; display: block; width: 100%;"></span>
+                </h1>
+
+                <!-- 2. Beautiful Badge/Tag Pills row placed below typing animation -->
+                <div class="hero-tags" style="margin-bottom: 32px;">
+                    <span class="tag-pill active">Custom Web Design</span>
+                    <span class="tag-pill">E-commerce Solutions</span>
+                    <span class="tag-pill">Web Apps & MVPs</span>
+                    <span class="tag-pill">SEO Optimization</span>
+                    <span class="tag-pill">AI & Chatbots</span>
+                </div>
+
+                <!-- 3. Primary premium Apple-style CTA Button centered -->
+                <div class="hero-main-cta" style="margin-bottom: 20px;">
+                    <a href="#book-call" class="hero-cta-button" title="Get Your Prototype">
+                        <span>Get Your Prototype</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- 4. Interactive Animated Flow Graphic representing high-end execution -->
+                <div class="hero-flow-container">
+                    <!-- SVG Wavy Connection Line in Background -->
+                    <svg class="flow-connector-line" viewBox="0 0 1200 240" fill="none" preserveAspectRatio="none">
+                        <path d="M 120 80 C 240 80, 240 150, 360 150 C 480 150, 480 110, 600 110 C 720 110, 720 70, 840 70 C 960 70, 960 160, 1080 160" stroke="url(#line-gradient)" stroke-width="3.5" />
+                        <defs>
+                            <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.2" />
+                                <stop offset="50%" stop-color="#2563eb" stop-opacity="0.8" />
+                                <stop offset="100%" stop-color="#22c55e" stop-opacity="0.2" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+
+                    <!-- Card 1: Discovery Call (Left) -->
+                    <div class="flow-card card-discovery">
+                        <div class="card-badge">1. Discovery Call</div>
+                        <h4 class="card-title">Initial Alignment</h4>
+                        <p class="card-desc">30-Min Free Strategy Call</p>
+                        <div class="avatar-group">
+                            <div class="avatar">
+                                <span class="avatar-label">You</span>
+                                <div class="avatar-circle you-color">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                            </div>
+                            <div class="avatar">
+                                <span class="avatar-label">Consultant</span>
+                                <div class="avatar-circle expert-color">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="card-bullet-list">
+                            <li><i class="fas fa-check"></i> Scope Mapping</li>
+                            <li><i class="fas fa-check"></i> Custom Quotation</li>
+                        </ul>
+                        <div class="card-status">
+                            <span class="status-dot pulsing"></span>
+                            <span>Active Booking</span>
+                        </div>
                     </div>
-                    <div class="feature" role="listitem">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Mobile-First Approach</span>
+
+                    <!-- Node: Glowing Lightbulb on Wavy Line -->
+                    <div class="flow-node node-ideation">
+                        <div class="node-circle">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <span class="node-label">Ideation</span>
                     </div>
-                    <div class="feature" role="listitem">
-                        <i class="fas fa-check-circle"></i>
-                        <span>SEO Optimized</span>
+
+                    <!-- Card 2: Strategy Document (Center/Below Button) -->
+                    <div class="flow-card card-strategy">
+                        <div class="card-badge primary-badge">2. Strategy & Scope</div>
+                        <h4 class="card-title">Website Blueprint</h4>
+                        <p class="card-desc">Complete Design Roadmap</p>
+                        <div class="strategy-icon-wrapper">
+                            <div class="strategy-icon">
+                                <i class="fas fa-file-signature"></i>
+                            </div>
+                            <div class="scan-line"></div>
+                        </div>
+                        <ul class="card-bullet-list">
+                            <li><i class="fas fa-check"></i> SEO Keyword Research</li>
+                            <li><i class="fas fa-check"></i> Layout Wireframes</li>
+                        </ul>
                     </div>
-                    <div class="feature" role="listitem">
-                        <i class="fas fa-check-circle"></i>
-                        <span>24/7 Support</span>
+
+                    <!-- Card 3: 7 Days Launch Card (Right-Middle) -->
+                    <div class="flow-card card-prototype">
+                        <div class="prototype-badge">
+                            <span class="badge-num">3</span>
+                            <span class="badge-text">Development & Code</span>
+                        </div>
+                        <h4 class="card-title">Rapid Coding</h4>
+                        <p class="card-desc">Staging Link in 7 Days</p>
+                        <div class="prototype-preview">
+                            <div class="preview-header">
+                                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                            </div>
+                            <div class="preview-body">
+                                <div class="preview-layout-line long"></div>
+                                <div class="preview-layout-line short"></div>
+                                <div class="preview-blocks">
+                                    <div class="preview-block square"></div>
+                                    <div class="preview-block circle"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="card-bullet-list">
+                            <li><i class="fas fa-check"></i> Mobile-First Build</li>
+                            <li><i class="fas fa-check"></i> Google Speed Test</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 4: Success / Website Live Card (Far Right) -->
+                    <div class="flow-card card-success">
+                        <div class="success-header">
+                            <i class="fas fa-check-circle success-check"></i>
+                            <span>4. Website Launch</span>
+                        </div>
+                        <h4 class="card-title">Deployment</h4>
+                        <p class="card-desc">DNS & Server Setup</p>
+                        <ul class="card-bullet-list" style="margin-bottom: 0.75rem;">
+                            <li><i class="fas fa-check"></i> Google Indexing</li>
+                            <li><i class="fas fa-check"></i> SSL Certificate</li>
+                        </ul>
+                        <div class="success-action-btn">Go Live!</div>
+                    </div>
+                </div>
+
+                <div class="hero-trust-bar">
+                    <p>Trusted by 50+ Entrepreneurs & Startups</p>
+                    <div class="trust-logos">
+                        <div class="trust-logo-item">
+                            <i class="fas fa-shopping-basket"></i> Her Bite
+                        </div>
+                        <div class="trust-logo-item">
+                            <i class="fas fa-heartbeat"></i> SRB Healthcare
+                        </div>
+                        <div class="trust-logo-item">
+                            <i class="fas fa-chart-line"></i> Qualityezo
+                        </div>
+                        <div class="trust-logo-item">
+                            <i class="fas fa-seedling"></i> AYURDIET
+                        </div>
+                        <div class="trust-logo-item">
+                            <i class="fas fa-industry"></i> WatFix Chemicals
+                        </div>
+                        <div class="trust-logo-item">
+                            <i class="fas fa-plane-departure"></i> Arpan Holidays
+                        </div>
+                        <div class="trust-logo-item">
+                            <i class="fas fa-home"></i> BigPockets
+                        </div>
                     </div>
                 </div>
             </section>
@@ -615,48 +750,182 @@
 
     <!-- Work Showcase Section -->
     <section class="work-showcase" data-aos="fade-up" data-aos-duration="800">
-        <div class="container">
-            <div style="text-align: center;">
-                <div class="hero-badge">Work Showcase</div>
+
+        <div class="work-showcase-container">
+            <!-- Row 1: Left Scrolling -->
+            <div class="work-showcase-row row-left">
+                <div class="work-showcase-track track-left">
+                    <!-- Card 1: Her Bite -->
+                    <div class="work-showcase-item">
+                        <img src="images/gummes-website-1.png" alt="Her Bite">
+                        <div class="showcase-card-footer">
+                            <div class="showcase-icon-wrapper icon-gummies">
+                                <i class="fas fa-shopping-basket"></i>
+                            </div>
+                            <div class="showcase-text-wrapper">
+                                <h4 class="showcase-title">Her Bite</h4>
+                                <p class="showcase-subtitle">E-Commerce Store Website</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2: SRB Healthcare -->
+                    <div class="work-showcase-item">
+                        <img src="images/healthcare-equipment.png" alt="SRB Healthcare">
+                        <div class="showcase-card-footer">
+                            <div class="showcase-icon-wrapper icon-health">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <div class="showcase-text-wrapper">
+                                <h4 class="showcase-title">SRB Healthcare</h4>
+                                <p class="showcase-subtitle">B2B Medical Portal & Catalogue</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 3: Qualityezo -->
+                    <div class="work-showcase-item">
+                        <img src="images/consultancy-project.png" alt="Qualityezo">
+                        <div class="showcase-card-footer">
+                            <div class="showcase-icon-wrapper icon-consult">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="showcase-text-wrapper">
+                                <h4 class="showcase-title">Qualityezo</h4>
+                                <p class="showcase-subtitle">Corporate Branding Website</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 4: Luxury Jewelry -->
+                    <div class="work-showcase-item">
+                        <img src="images/3d-jewelry-store.png" alt="Luxury Jewelry">
+                        <div class="showcase-card-footer">
+                            <div class="showcase-icon-wrapper icon-jewelry">
+                                <i class="fas fa-gem"></i>
+                            </div>
+                            <div class="showcase-text-wrapper">
+                                <h4 class="showcase-title">Luxury Jewelry</h4>
+                                <p class="showcase-subtitle">Interactive 3D Retail Store</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 5: AYURDIET -->
+                    <div class="work-showcase-item">
+                        <img src="images/ayurvedic-diet-plan.png" alt="AYURDIET">
+                        <div class="showcase-card-footer">
+                            <div class="showcase-icon-wrapper icon-ayur">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <div class="showcase-text-wrapper">
+                                <h4 class="showcase-title">AYURDIET</h4>
+                                <p class="showcase-subtitle">Custom Diet Planner Web App</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 6: what if i say -->
+                    <div class="work-showcase-item">
+                        <img src="images/trading-signals.png" alt="what if i say">
+                        <div class="showcase-card-footer">
+                            <div class="showcase-icon-wrapper icon-trade">
+                                <i class="fas fa-wave-square"></i>
+                            </div>
+                            <div class="showcase-text-wrapper">
+                                <h4 class="showcase-title">what if i say</h4>
+                                <p class="showcase-subtitle">Trading Analytics Dashboard</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h2 data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">Our Work <span class="highlight-blue">Showcase</span></h2>
-            <div class="work-showcase-container">
-                <div class="work-showcase-track">
+
+            <!-- Row 2: Right Scrolling -->
+            <div class="work-showcase-row row-right">
+                <div class="work-showcase-track track-right">
+                    <!-- Card 7: WatFix Chemicals -->
                     <div class="work-showcase-item">
-                        <img src="images/gummes-website-1.png" alt="Gummies Website Demo">
+                        <img src="images/industrial-factory.png" alt="WatFix Chemicals">
+                        <div class="showcase-card-footer">
+                            <div class="showcase-icon-wrapper icon-indus">
+                                <i class="fas fa-industry"></i>
+                            </div>
+                            <div class="showcase-text-wrapper">
+                                <h4 class="showcase-title">WatFix Chemicals</h4>
+                                <p class="showcase-subtitle">Manufacturer Enterprise Portal</p>
+                            </div>
+                        </div>
                     </div>
+                    
+                    <!-- Card 8: CuriousCRM -->
                     <div class="work-showcase-item">
-                        <img src="images/healthcare-equipment.png" alt="Healthcare Equipment Supply Website">
+                        <img src="images/crm-dashboard-new.png" alt="CuriousCRM">
+                        <div class="showcase-card-footer">
+                            <div class="showcase-icon-wrapper icon-crm">
+                                <i class="fas fa-users-cog"></i>
+                            </div>
+                            <div class="showcase-text-wrapper">
+                                <h4 class="showcase-title">CuriousCRM</h4>
+                                <p class="showcase-subtitle">Custom SaaS CRM Dashboard</p>
+                            </div>
+                        </div>
                     </div>
+                    
+                    <!-- Card 9: Toilet Finder Map -->
                     <div class="work-showcase-item">
-                        <img src="images/consultancy-project.png" alt="Consultancy Website">
+                        <img src="images/toilet-finder.png" alt="Toilet Finder Map">
+                        <div class="showcase-card-footer">
+                            <div class="showcase-icon-wrapper icon-map">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <div class="showcase-text-wrapper">
+                                <h4 class="showcase-title">Toilet Finder Map</h4>
+                                <p class="showcase-subtitle">Location-Based Maps Web App</p>
+                            </div>
+                        </div>
                     </div>
+                    
+                    <!-- Card 10: Starlight Tarot -->
                     <div class="work-showcase-item">
-                        <img src="images/3d-jewelry-store.png" alt="3D Jewelry Store Website">
+                        <img src="images/tarot-website.png" alt="Starlight Tarot">
+                        <div class="showcase-card-footer">
+                            <div class="showcase-icon-wrapper icon-tarot">
+                                <i class="fas fa-hands"></i>
+                            </div>
+                            <div class="showcase-text-wrapper">
+                                <h4 class="showcase-title">Starlight Tarot</h4>
+                                <p class="showcase-subtitle">Mystic Tarot Reading Web App</p>
+                            </div>
+                        </div>
                     </div>
+                    
+                    <!-- Card 11: Arpan Holidays -->
                     <div class="work-showcase-item">
-                        <img src="images/ayurvedic-diet-plan.png" alt="Ayurvedic Diet Plan Website">
+                        <img src="images/travel-booking.png" alt="Arpan Holidays">
+                        <div class="showcase-card-footer">
+                            <div class="showcase-icon-wrapper icon-travel">
+                                <i class="fas fa-plane-departure"></i>
+                            </div>
+                            <div class="showcase-text-wrapper">
+                                <h4 class="showcase-title">Arpan Holidays</h4>
+                                <p class="showcase-subtitle">SaaS Lodging Booking Platform</p>
+                            </div>
+                        </div>
                     </div>
+                    
+                    <!-- Card 12: BigPockets -->
                     <div class="work-showcase-item">
-                        <img src="images/trading-signals.png" alt="Trading Signals Platform">
-                    </div>
-                    <div class="work-showcase-item">
-                        <img src="images/industrial-factory.png" alt="Industrial Solutions">
-                    </div>
-                    <div class="work-showcase-item">
-                        <img src="images/crm-dashboard-new.png" alt="CRM Dashboard">
-                    </div>
-                    <div class="work-showcase-item">
-                        <img src="images/numerology-calculator.png" alt="Numerology Calculator">
-                    </div>
-                    <div class="work-showcase-item">
-                        <img src="images/tarot-website.png" alt="Interactive Tarot">
-                    </div>
-                    <div class="work-showcase-item">
-                        <img src="images/travel-booking.png" alt="Travel Booking Platform">
-                    </div>
-                    <div class="work-showcase-item">
-                        <img src="images/business-services.png" alt="Business Services Hub">
+                        <img src="images/group-buying-real-estate.png" alt="BigPockets">
+                        <div class="showcase-card-footer">
+                            <div class="showcase-icon-wrapper icon-home">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div class="showcase-text-wrapper">
+                                <h4 class="showcase-title">BigPockets</h4>
+                                <p class="showcase-subtitle">Real Estate Co-Investment Platform</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -664,7 +933,7 @@
     </section>
 
     <!-- Our Process Section -->
-    <section class="process-section" data-aos="fade-up" data-aos-duration="800">
+    <section id="process" class="process-section" data-aos="fade-up" data-aos-duration="800" style="background-image: linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px); background-size: 40px 40px; background-color: white;">
         <div class="container">
             <div class="section-header">
                 <div style="text-align: center;">
@@ -741,725 +1010,713 @@
             
             <div class="process-cta">
                 <p>Ready to start your project? Let's discuss how we can help you succeed online.</p>
-                <a href="#contact" class="cta-button primary">Get Started Today</a>
+                <a href="#book-call" class="cta-button primary">Get Started Today</a>
             </div>
         </div>
     </section>
 
     <!-- Our Expertise Section -->
-    <section id="expertise" class="expertise-section" style="padding: 30px 0 60px; background-color: #f8fafc;" data-aos="fade-up" data-aos-duration="800">
+    <section id="expertise" class="expertise-section" style="background-color: #ffffff;" data-aos="fade-up" data-aos-duration="800">
         <div class="container">
             <div class="section-header" style="text-align: center; margin-bottom: 40px;">
-                <div class="hero-badge">Digital Excellence</div>
-                <h2 data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">Our <span class="highlight-blue">Expertise</span></h2>
-                <p class="section-subtitle">Comprehensive digital solutions to grow your business</p>
+                <div class="hero-badge">Capabilities</div>
+                <h2 data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">Full-Spectrum Systems. <span class="highlight-blue">Intelligent Growth.</span></h2>
+                <p class="section-subtitle">We integrate elite software engineering, custom AI, data intelligence, and performance marketing into a unified engine built to scale your brand.</p>
             </div>
             
             <div class="saas-scroll-section">
-                <!-- Card 1 -->
-                <div class="sticky-card">
+                <!-- Card 1: Web & Digital Solutions -->
+                <div class="sticky-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="card-content">
-                        <div class="card-icon">
-                            <i class="fas fa-globe"></i>
+                        <div class="card-left">
+                            <span class="card-number">#01</span>
+                            <h3><i class="fas fa-globe" style="color: #2563eb; margin-right: 12px; font-size: 1.6rem;"></i>Web & Digital Solutions</h3>
+                            <p>Custom websites, e-commerce platforms, and digital solutions that drive real business growth and conversions.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Custom Web Development</li>
+                                <li><i class="fas fa-check"></i> E-commerce Solutions</li>
+                                <li><i class="fas fa-check"></i> Landing Pages & Funnels</li>
+                                <li><i class="fas fa-check"></i> Web Apps & MVPs</li>
+                            </ul>
                         </div>
-                        <h3>Web & Digital Solutions</h3>
-                        <p>Custom websites, e-commerce platforms, and digital solutions that drive real business growth and conversions.</p>
-                        <ul>
-                            <li>Custom Website & E-commerce Development</li>
-                            <li>Landing Pages & Sales Funnels</li>
-                            <li>Web Apps & MVP Development</li>
-                            <li>API & Payment Integration Solutions</li>
-                        </ul>
+                        <div class="card-right">
+                            <div class="card-mockup web-mockup">
+                                <div class="browser-header">
+                                    <span class="browser-dot red"></span>
+                                    <span class="browser-dot yellow"></span>
+                                    <span class="browser-dot green"></span>
+                                    <div class="browser-address">curiouskaizer.com</div>
+                                </div>
+                                <div class="browser-body">
+                                    <div class="mock-hero">
+                                        <div class="mock-line-title"></div>
+                                        <div class="mock-line-subtitle"></div>
+                                        <div class="mock-cta"></div>
+                                    </div>
+                                    <div class="mock-cards">
+                                        <div class="mock-mini-card"></div>
+                                        <div class="mock-mini-card active"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="sticky-card">
+                <!-- Card 2: AI & Automation -->
+                <div class="sticky-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="card-content">
-                        <div class="card-icon">
-                            <i class="fas fa-robot"></i>
+                        <div class="card-left">
+                            <span class="card-number">#02</span>
+                            <h3><i class="fas fa-robot" style="color: #2563eb; margin-right: 12px; font-size: 1.6rem;"></i>AI & Automation</h3>
+                            <p>Cutting-edge artificial intelligence and automation solutions to streamline operations and enhance customer experiences.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> AI Chatbots & Agents</li>
+                                <li><i class="fas fa-check"></i> Process Automation</li>
+                                <li><i class="fas fa-check"></i> Predictive Analytics</li>
+                                <li><i class="fas fa-check"></i> Custom AI Integrations</li>
+                            </ul>
                         </div>
-                        <h3>AI & Automation</h3>
-                        <p>Cutting-edge artificial intelligence and automation solutions to streamline operations and enhance customer experiences.</p>
-                        <ul>
-                            <li>AI-Powered Chatbots & Virtual Assistants</li>
-                            <li>Business Process Automation</li>
-                            <li>Predictive Analytics & Machine Learning</li>
-                            <li>Custom AI Solutions & Integration</li>
-                        </ul>
+                        <div class="card-right">
+                            <div class="card-mockup ai-mockup">
+                                <div class="mock-terminal">
+                                    <div class="terminal-header">
+                                        <span class="terminal-title">App.tsx</span>
+                                    </div>
+                                    <pre class="terminal-code">
+1 <span>import</span> { InitApp } <span>from</span> "./ai";
+2 <span>const</span> config = {
+3   mode: "autonomous",
+4   agent: "Gemini 3.5"
+5 };
+6 <span>async</span> <span>function</span> run() {
+7   <span>const</span> app = InitApp(config);
+8   app.run();
+9 }</pre>
+                                </div>
+                                <div class="mock-ui-layout">
+                                    <div class="ui-header"></div>
+                                    <div class="ui-block"></div>
+                                    <div class="ui-block small"></div>
+                                </div>
+                                <div class="mock-orange-glow">
+                                    <i class="fas fa-sun"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="sticky-card">
+                <!-- Card 3: Business Intelligence -->
+                <div class="sticky-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="card-content">
-                        <div class="card-icon">
-                            <i class="fas fa-chart-bar"></i>
+                        <div class="card-left">
+                            <span class="card-number">#03</span>
+                            <h3><i class="fas fa-chart-bar" style="color: #2563eb; margin-right: 12px; font-size: 1.6rem;"></i>Business Intelligence</h3>
+                            <p>Real-time data integration, analytics dashboards, and custom business tools for data-driven decision making.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Real-time Data Feeds</li>
+                                <li><i class="fas fa-check"></i> Custom Dashboards</li>
+                                <li><i class="fas fa-check"></i> Trading & BI Tools</li>
+                                <li><i class="fas fa-check"></i> ROI Performance Tracking</li>
+                            </ul>
                         </div>
-                        <h3>Business Intelligence</h3>
-                        <p>Real-time data integration, analytics dashboards, and custom business tools for data-driven decision making.</p>
-                        <ul>
-                            <li>Real-time Data Integration & Feeds</li>
-                            <li>Trading Bots & Market Analysis Tools</li>
-                            <li>Custom Business Management Solutions</li>
-                            <li>Analytics Dashboards & Performance Tracking</li>
-                        </ul>
+                        <div class="card-right">
+                            <div class="card-mockup bi-mockup">
+                                <div class="mock-grid-bg"></div>
+                                <div class="volumetric-button-wrapper">
+                                    <div class="volumetric-3d-button">
+                                        We Are Live
+                                    </div>
+                                    <div class="simulated-cursor">
+                                        <i class="fas fa-mouse-pointer"></i>
+                                    </div>
+                                </div>
+                                <div class="mock-dash-metric">
+                                    <div class="dash-circle">78%</div>
+                                    <div class="dash-labels">
+                                        <div class="dash-label"></div>
+                                        <div class="dash-label short"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Card 4 -->
-                <div class="sticky-card">
+                <!-- Card 4: Digital Marketing -->
+                <div class="sticky-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="card-content">
-                        <div class="card-icon">
-                            <i class="fas fa-bullhorn"></i>
+                        <div class="card-left">
+                            <span class="card-number">#04</span>
+                            <h3><i class="fas fa-bullhorn" style="color: #2563eb; margin-right: 12px; font-size: 1.6rem;"></i>Digital Marketing</h3>
+                            <p>Comprehensive digital marketing strategies including paid advertising, lead generation, and performance optimization.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Paid Ads (Google, Meta)</li>
+                                <li><i class="fas fa-check"></i> Conversion Optimization</li>
+                                <li><i class="fas fa-check"></i> Lead Generation Funnels</li>
+                                <li><i class="fas fa-check"></i> ROI Analysis & Tracking</li>
+                            </ul>
                         </div>
-                        <h3>Digital Marketing</h3>
-                        <p>Comprehensive digital marketing strategies including paid advertising, lead generation, and performance optimization.</p>
-                        <ul>
-                            <li>Paid Advertising (Google, Meta, LinkedIn)</li>
-                            <li>Lead Generation & Conversion Optimization</li>
-                            <li>Social Media Management & Growth</li>
-                            <li>Performance Analytics & ROI Tracking</li>
-                        </ul>
+                        <div class="card-right">
+                            <div class="card-mockup marketing-mockup">
+                                <div class="analytics-card">
+                                    <div class="analytics-header">
+                                        <span class="analytics-label">CONVERSIONS</span>
+                                        <span class="analytics-percentage">+145%</span>
+                                    </div>
+                                    <div class="mock-bars">
+                                        <div class="mock-bar" style="height: 40%;"></div>
+                                        <div class="mock-bar" style="height: 60%;"></div>
+                                        <div class="mock-bar" style="height: 50%;"></div>
+                                        <div class="mock-bar" style="height: 85%;"></div>
+                                        <div class="mock-bar active" style="height: 95%;"></div>
+                                    </div>
+                                </div>
+                                <div class="mini-metrics">
+                                    <div class="mini-metric">ROI: 4.8x</div>
+                                    <div class="mini-metric secondary">Active</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Card 5 -->
-                <div class="sticky-card">
+                <!-- Card 5: Branding & Design -->
+                <div class="sticky-card" data-aos="fade-up" data-aos-delay="500">
                     <div class="card-content">
-                        <div class="card-icon">
-                            <i class="fas fa-palette"></i>
+                        <div class="card-left">
+                            <span class="card-number">#05</span>
+                            <h3><i class="fas fa-palette" style="color: #2563eb; margin-right: 12px; font-size: 1.6rem;"></i>Branding & Design</h3>
+                            <p>Complete brand identity, UI/UX design, and content creation services that build memorable user experiences.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Visual Brand Identity</li>
+                                <li><i class="fas fa-check"></i> UI/UX Design (Figma)</li>
+                                <li><i class="fas fa-check"></i> Content & Copywriting</li>
+                                <li><i class="fas fa-check"></i> High-End Media Assets</li>
+                            </ul>
                         </div>
-                        <h3>Branding & Design</h3>
-                        <p>Complete brand identity, UI/UX design, and content creation services that build memorable user experiences.</p>
-                        <ul>
-                            <li>Brand Identity & Visual Design</li>
-                            <li>UI/UX Design & User Experience</li>
-                            <li>Content Creation & Copywriting</li>
-                            <li>Multimedia Design & Video Production</li>
-                        </ul>
+                        <div class="card-right">
+                            <div class="card-mockup design-mockup">
+                                <div class="figma-canvas">
+                                    <div class="figma-vector-shape">
+                                        <span class="vector-dot top-left"></span>
+                                        <span class="vector-dot top-right"></span>
+                                        <span class="vector-dot bottom-left"></span>
+                                        <span class="vector-dot bottom-right"></span>
+                                    </div>
+                                    <div class="figma-swatches">
+                                        <span class="swatch blue"></span>
+                                        <span class="swatch gray"></span>
+                                        <span class="swatch green"></span>
+                                    </div>
+                                    <div class="figma-cursor">
+                                        <i class="fas fa-mouse-pointer"></i>
+                                        <span class="figma-cursor-tag">Designer</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <div class="expertise-cta" style="text-align: center; margin-top: 40px; padding: 0 15px;">
+            <div class="expertise-cta" style="text-align: center; margin-top: 24px; padding: 0 15px;">
                 <p style="font-size: 1.1rem; margin-bottom: 20px; color: #475569;">Ready to discuss your project? Let's schedule a call.</p>
                 <a href="#book-call" class="cta-button primary" style="display: inline-block; padding: 12px 30px; background: #2563eb; color: white; text-decoration: none; border-radius: 6px; font-weight: 500; transition: all 0.3s ease;">Book a Meeting</a>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="services" style="padding: 50px 0;" itemscope itemtype="https://schema.org/Service" data-aos="fade-up" data-aos-duration="800">
-        <meta itemprop="serviceType" content="Web Design & Development">
-        <meta itemprop="provider" content="Curious Kaizer">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
-            <div class="section-header" style="text-align: center; margin-bottom: 40px;">
-                <div class="hero-badge">Affordable Pricing</div>
-                <h2 style="margin-bottom: 15px;">Our <span class="highlight-blue">Pricing Plans</span></h2>
-                <p class="section-subtitle" style="color: #64748b; max-width: 700px; margin: 0 auto;">Simple, transparent pricing to help you grow your business</p>
-            </div>
-            
-            <div class="pricing-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin: 0 auto; max-width: 1200px;">
-                <!-- Starter Plan -->
-                <div class="pricing-card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(37, 99, 235, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%; display: flex; flex-direction: column;">
-                    <div style="background: #f8fafc; padding: 20px; text-align: center; border-bottom: 1px solid #e2e8f0;">
-                        <h3 style="margin: 0; color: #1e40af; font-size: 1.5rem;">Starter</h3>
-                        <div style="margin: 15px 0;">
-                            <span style="font-size: 2.5rem; font-weight: 700; color: #1e40af;">$100</span>
-                            <div style="font-size: 0.9rem; color: #64748b; margin-top: 5px;">₹9,000 one-time</div>
-                        </div>
+    <!-- Technology Stack Section -->
+    <section id="technology" class="tech-stack-section" style="background-color: #ffffff; position: relative; overflow: hidden;" data-aos="fade-up" data-aos-duration="800">
+        <!-- Glowing background overlays for modern dark/light contrast -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.04) 0%, transparent 60%); pointer-events: none; z-index: 1;"></div>
+        
+        <!-- Subtle Grid Pattern background matching the rest of the site -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px); background-size: 40px 40px; background-position: -1px -1px; pointer-events: none; z-index: 2;"></div>
+
+            <!-- Unified Technology Arch Container -->
+            <div class="tech-arch-container" data-aos="fade-up" data-aos-duration="1000">
+                
+                <!-- Central Text and Call-to-Action Content -->
+                <div class="tech-central-content">
+                    <div style="text-align: center; margin-bottom: 16px;">
+                        <span class="tech-category-badge">TECHNOLOGY</span>
                     </div>
-                    <div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
-                        <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; flex-grow: 1;">
-                            <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; color: #334155; font-size: 0.95rem;">
-                                <i class="fas fa-check" style="color: #3b82f6; margin-right: 8px;"></i> 3-5 Pages Website
-                            </li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; color: #334155; font-size: 0.95rem;">
-                                <i class="fas fa-check" style="color: #3b82f6; margin-right: 8px;"></i> Mobile & Desktop Responsive
-                            </li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; color: #334155; font-size: 0.95rem;">
-                                <i class="fas fa-check" style="color: #3b82f6; margin-right: 8px;"></i> Basic Contact Form
-                            </li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; color: #334155; font-size: 0.95rem;">
-                                <i class="fas fa-check" style="color: #3b82f6; margin-right: 8px;"></i> Basic SEO Setup
-                            </li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; color: #94a3b8; font-size: 0.9rem;">
-                                <i class="fas fa-times" style="color: #94a3b8; margin-right: 8px;"></i> <span style="text-decoration: line-through;">Advanced SEO</span>
-                            </li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; color: #334155; font-size: 0.95rem;">
-                                <i class="fas fa-check" style="color: #3b82f6; margin-right: 8px;"></i> Basic Security (SSL)
-                            </li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; color: #94a3b8; font-size: 0.9rem;">
-                                <i class="fas fa-times" style="color: #94a3b8; margin-right: 8px;"></i> <span style="text-decoration: line-through;">E-commerce</span>
-                            </li>
-                            <li style="padding: 8px 0; color: #334155; font-size: 0.95rem;">
-                                <i class="fas fa-check" style="color: #3b82f6; margin-right: 8px;"></i> 1 Month Support
-                            </li>
-                        </ul>
-                        <a href="#contact" class="pricing-button" style="display: block; text-align: center; background: #3b82f6; color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 500; margin-top: auto; transition: background 0.3s ease;">
-                            Get Started
-                        </a>
+                    <h2 class="tech-arch-title">
+                        <span class="tech-title-highlight">AI-Powered Tech Stack</span>
+                        That Covers Every Industry
+                    </h2>
+                    <div class="tech-capability-pills">
+                        <span class="tech-cap-pill">& WooCommerce Solutions</span>
+                        <span class="tech-cap-pill">Solar AI Calculator</span>
+                        <span class="tech-cap-pill">MVP Development</span>
                     </div>
                 </div>
 
-                <!-- Business Plan -->
-                <div class="pricing-card featured" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(37, 99, 235, 0.15); transform: scale(1.03); border: 2px solid #3b82f6; position: relative; height: 100%; display: flex; flex-direction: column;">
-                    <div style="position: absolute; top: 10px; right: 10px; background: #2563eb; color: white; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">Popular</div>
-                    <div style="background: #f0f7ff; padding: 20px; text-align: center; border-bottom: 1px solid #e2e8f0;">
-                        <h3 style="margin: 0; color: #1e40af; font-size: 1.5rem;">Business</h3>
-                        <div style="margin: 15px 0;">
-                            <span style="font-size: 2.5rem; font-weight: 700; color: #1e40af;">$250</span>
-                            <div style="font-size: 0.9rem; color: #64748b; margin-top: 5px;">₹22,500 one-time</div>
+                <!-- Combined Grid/Arch cards wrapper (display: contents on desktop, display: grid on mobile) -->
+                <!-- Combined Grid/Arch cards wrapper (display: contents on desktop, display: grid on mobile) -->
+                <div class="tech-cards-grid-mobile">
+                    
+                    <!-- Outer Arc (10 Cards, Left to Right) -->
+                    <!-- Card 1: Stripe -->
+                    <div class="tech-card-arch outer" title="Stripe">
+                        <div class="tech-card-inner">
+                            <svg viewBox="0 0 24 24" width="36" height="36" fill="#635bff">
+                                <path d="M13.962 2c-2.433 0-4.04 1.258-4.04 3.738 0 3.639 4.985 3.056 4.985 4.606 0 .546-.492.831-1.28.831-.989 0-2.434-.336-3.663-1.003L9 12.392c1.33.682 3.197 1.055 4.757 1.055 2.569 0 4.243-1.206 4.243-3.689 0-3.873-4.992-3.111-4.992-4.63 0-.482.43-.767 1.157-.767.818 0 2.051.274 3.09.831L18 3.076C16.83 2.378 15.225 2 13.962 2zM3 13h4v8H3v-8zM8 7h4v14H8V7zM18 13h4v8h-4v-8z" />
+                            </svg>
                         </div>
                     </div>
-                    <div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
-                        <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; flex-grow: 1;">
-                            <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; color: #334155; font-size: 0.95rem;">
-                                <i class="fas fa-check" style="color: #2563eb; margin-right: 8px;"></i> 5-7 Pages Website
-                            </li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; color: #334155; font-size: 0.95rem;">
-                                <i class="fas fa-check" style="color: #2563eb; margin-right: 8px;"></i> Custom Responsive Design
-                            </li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; color: #334155; font-size: 0.95rem;">
-                                <i class="fas fa-check" style="color: #2563eb; margin-right: 8px;"></i> Advanced Contact Form
-                            </li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; color: #334155; font-size: 0.95rem;">
-                                <i class="fas fa-check" style="color: #2563eb; margin-right: 8px;"></i> Advanced SEO
-                            </li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; color: #334155; font-size: 0.95rem;">
-                                <i class="fas fa-check" style="color: #2563eb; margin-right: 8px;"></i> Social Media Integration
-                            </li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; color: #334155; font-size: 0.95rem;">
-                                <i class="fas fa-check" style="color: #2563eb; margin-right: 8px;"></i> Enhanced Security
-                            </li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; color: #94a3b8; font-size: 0.9rem;">
-                                <i class="fas fa-times" style="color: #94a3b8; margin-right: 8px;"></i> <span style="text-decoration: line-through;">E-commerce</span>
-                            </li>
-                            <li style="padding: 8px 0; color: #334155; font-size: 0.95rem;">
-                                <i class="fas fa-check" style="color: #2563eb; margin-right: 8px;"></i> 3 Months Support
-                            </li>
-                        </ul>
-                        <a href="#contact" class="pricing-button" style="display: block; text-align: center; background: #2563eb; color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 500; margin-top: auto; transition: background 0.3s ease;">
-                            Choose Business
-                        </a>
-                    </div>
-                </div>
 
-                <!-- Premium Plan -->
-                <div class="pricing-card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(37, 99, 235, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%; display: flex; flex-direction: column;">
-                    <div style="background: #f8fafc; padding: 20px; text-align: center; border-bottom: 1px solid #e2e8f0;">
-                        <h3 style="margin: 0; color: #1e40af; font-size: 1.5rem;">Premium</h3>
-                        <div style="margin: 15px 0;">
-                            <span style="font-size: 2.5rem; font-weight: 700; color: #1e40af;">$350</span>
-                            <div style="font-size: 0.9rem; color: #64748b; margin-top: 5px;">₹31,500 one-time</div>
+                    <!-- Card 2: Figma -->
+                    <div class="tech-card-arch outer" title="Figma">
+                        <div class="tech-card-inner">
+                            <svg viewBox="0 0 24 24" width="28" height="28">
+                                <path d="M12 2a4 4 0 0 0-4 4v2a4 4 0 0 0 4 4 4 4 0 0 0 4-4V6a4 4 0 0 0-4-4z" fill="#F24E1E"/>
+                                <path d="M8 12a4 4 0 0 0 4 4v-8H8a4 4 0 0 0 0 8z" fill="#A259FF"/>
+                                <path d="M8 18a4 4 0 0 0 4 4 4 4 0 0 0 4-4v-2H8a4 4 0 0 0 0 6z" fill="#0ACF83"/>
+                                <path d="M16 12a4 4 0 0 0 4-4V6a4 4 0 0 0-4-4 4 4 0 0 0-4 4v6h4z" fill="#FF7262"/>
+                                <path d="M16 12v4a4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4h4z" fill="#1ABC9C"/>
+                            </svg>
                         </div>
                     </div>
-                    <div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
-                        <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; flex-grow: 1;">
-                            <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; color: #334155; font-size: 0.95rem;">
-                                <i class="fas fa-check" style="color: #3b82f6; margin-right: 8px;"></i> Unlimited Pages
-                            </li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; color: #334155; font-size: 0.95rem;">
-                                <i class="fas fa-check" style="color: #3b82f6; margin-right: 8px;"></i> Premium Custom Design
-                            </li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; color: #334155; font-size: 0.95rem;">
-                                <i class="fas fa-check" style="color: #3b82f6; margin-right: 8px;"></i> Advanced Forms & CRM
-                            </li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; color: #334155; font-size: 0.95rem;">
-                                <i class="fas fa-check" style="color: #3b82f6; margin-right: 8px;"></i> Premium SEO & Marketing
-                            </li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; color: #334155; font-size: 0.95rem;">
-                                <i class="fas fa-check" style="color: #3b82f6; margin-right: 8px;"></i> Full Social Integration
-                            </li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; color: #334155; font-size: 0.95rem;">
-                                <i class="fas fa-check" style="color: #3b82f6; margin-right: 8px;"></i> Enterprise Security
-                            </li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; color: #334155; font-size: 0.95rem;">
-                                <i class="fas fa-check" style="color: #3b82f6; margin-right: 8px;"></i> E-commerce Ready
-                            </li>
-                            <li style="padding: 8px 0; color: #334155; font-size: 0.95rem;">
-                                <i class="fas fa-check" style="color: #3b82f6; margin-right: 8px;"></i> 6 Months Priority Support
-                            </li>
-                        </ul>
-                        <a href="#contact" class="pricing-button" style="display: block; text-align: center; background: #3b82f6; color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 500; margin-top: auto; transition: background 0.3s ease;">
-                            Get Premium
-                        </a>
+
+                    <!-- Card 3: GitHub -->
+                    <div class="tech-card-arch outer" title="GitHub">
+                        <div class="tech-card-inner">
+                            <svg viewBox="0 0 24 24" width="30" height="30" fill="#24292e">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.164 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                            </svg>
+                        </div>
                     </div>
+
+                    <!-- Card 4: Firebase -->
+                    <div class="tech-card-arch outer" title="Firebase">
+                        <div class="tech-card-inner">
+                            <svg viewBox="0 0 24 24" width="30" height="30">
+                                <path d="M3.89 15.75L1.15 10.7c-.45-.83-.1-1.87.77-2.26.85-.38 1.85-.05 2.3.77l1.72 3.16 7.42-10.42c.45-.63 1.38-.63 1.83 0l6.92 9.7H3.89zm16.22 1.95L12.7 21.6a1.65 1.65 0 0 1-1.4 0l-7.41-3.9 16.22 0z" fill="#FFCA28"/>
+                                <path d="M12 2.5a.95.95 0 0 1 .83.47l8.47 14.83a.95.95 0 0 1-.83 1.43H3.53a.95.95 0 0 1-.83-1.43L11.17 2.97c.18-.3.5-.47.83-.47z" fill="#FFA000" opacity="0.8"/>
+                                <path d="M3.53 18.75l7.64-15.78a.95.95 0 0 1 1.66 0l7.64 15.78a.95.95 0 0 1-.83 1.43H4.36a.95.95 0 0 1-.83-1.43z" fill="#F57C00"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Tailwind CSS -->
+                    <div class="tech-card-arch outer" title="Tailwind CSS">
+                        <div class="tech-card-inner">
+                            <svg viewBox="0 0 24 24" width="36" height="36" fill="#38bdf8">
+                                <path d="M12.005 18.232c-3.417 0-4.537-1.358-6.732-4.118 1.942.33 3.659-.285 4.887-1.503 1.341-1.342 2.475-3.327 4.962-3.327 3.418 0 4.538 1.358 6.733 4.118-1.942-.33-3.66.285-4.888 1.502-1.34 1.342-2.475 3.328-4.962 3.328zm-6-6c-3.418 0-4.538-1.358-6.733-4.118 1.943.33 3.66-.285 4.888-1.502 1.34-1.343 2.475-3.328 4.962-3.328 3.417 0 4.537 1.358 6.732 4.118-1.942-.33-3.659.285-4.887 1.502-1.342 1.343-2.476 3.328-4.963 3.328z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: AWS -->
+                    <div class="tech-card-arch outer" title="AWS">
+                        <div class="tech-card-inner">
+                            <svg viewBox="0 0 256 154" width="38" height="38">
+                                <path d="M128 0C70.6 0 20.4 28.5 0 69.8l29.4 14.8c14.6-28.5 49-48.4 89.2-48.4 39.8 0 74 19.5 88.8 47.7l29.2-15C216.4 28.4 165.8 0 128 0z" fill="#FF9900"/>
+                                <path d="M128 117.8c-28.5 0-53-14-66-34.8L32.6 97.8C52 129.4 87.6 150 128 150c40.4 0 76.2-20.6 95.6-52.2l-29.4-14.8c-13 20.8-37.5 34.8-66.2 34.8z" fill="#232F3E"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Card 7: PostgreSQL -->
+                    <div class="tech-card-arch outer" title="PostgreSQL">
+                        <div class="tech-card-inner">
+                            <svg viewBox="0 0 512 512" width="34" height="34">
+                                <path d="M439.4 362.3c-23-19.1-50.6-30.8-77.9-38.3 22-55.8 15.9-119.5-20.2-168.3-33-44.6-83.6-70.3-138.8-70.3h-43.1c-14.4 0-26.3 11.9-26.3 26.3v41.3c0 7.8 6.4 14.1 14.1 14.1h20.6c43.6 0 79 35.4 79 79v54.8c0 43.6-35.4 79-79 79h-52.6c-43.6 0-79-35.4-79-79v-25.1c0-7.8-6.4-14.1-14.1-14.1H31.1C13.9 261.7 0 275.6 0 292.9v18.7c0 43.2 24.3 80.8 60 99.7 13.1 7 28 10.9 43.9 10.9h60.4c17.2 0 31.1-13.9 31.1-31.1v-6.2c35-30.8 77.9-48.4 122.9-52.6 16.5 17.5 37.3 30.6 60.9 37.7 27.3 8.2 55.8 10.6 83.9 7 9.9 22.8 28.5 40.1 52.3 46.9 34.6 9.9 70.3-9.5 80.2-44.1 9.9-34.6-9.5-70.3-44.1-80.2-8-.2-15.9.8-23.2 2.7z" fill="#336791"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Card 8: Supabase -->
+                    <div class="tech-card-arch outer" title="Supabase">
+                        <div class="tech-card-inner">
+                            <svg viewBox="0 0 24 24" width="36" height="36" fill="#3ECF8E">
+                                <path d="M21.35 11.2H12.5V1.85c0-.95-1.12-1.45-1.84-.83l-10.1 8.7c-.55.48-.56 1.35-.01 1.84h8.85v9.35c0 .95 1.12 1.45 1.84.83l10.1-8.7c.55-.48.56-1.35-.01-1.84z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Card 9: React -->
+                    <div class="tech-card-arch outer" title="React">
+                        <div class="tech-card-inner">
+                            <svg viewBox="-11.5 -10.23 23 20.46" width="36" height="36">
+                                <circle cx="0" cy="0" r="2.05" fill="#61dafb"/>
+                                <g stroke="#61dafb" stroke-width="1" fill="none">
+                                    <ellipse rx="11" ry="4.2"/>
+                                    <ellipse rx="11" ry="4.2" transform="rotate(60)"/>
+                                    <ellipse rx="11" ry="4.2" transform="rotate(120)"/>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Card 10: OpenAI -->
+                    <div class="tech-card-arch outer" title="OpenAI">
+                        <div class="tech-card-inner">
+                            <svg viewBox="0 0 24 24" width="36" height="36" fill="#10a37f">
+                                <path d="M21.3,10.1a5.5,5.5,0,0,0-4.8-4.8,5.6,5.6,0,0,0-5.8,2.7A5.6,5.6,0,0,0,6,6.3,5.6,5.6,0,0,0,2.7,11a5.6,5.6,0,0,0,1.7,5.5,5.6,5.6,0,0,0,4.8,4.8,5.6,5.6,0,0,0,5.8-2.7,5.6,5.6,0,0,0,4.7,1.7,5.6,5.6,0,0,0,3.3-4.7A5.6,5.6,0,0,0,21.3,10.1ZM12,19.3a1.5,1.5,0,0,1-.8-.2l-3.3-1.9a1.5,1.5,0,0,1-.8-1.3V12a1.5,1.5,0,0,1,.8-1.3l3.3-1.9A1.5,1.5,0,0,1,12,8.6v1.9l-2.4,1.4a.5.5,0,0,0-.3.4v2.7a.5.5,0,0,0,.3.4L12,16.8Zm4.8-2.8a1.5,1.5,0,0,1-.8.8l-3.3,1.9a1.5,1.5,0,0,1-1.5,0V15.3l2.4-1.4a.5.5,0,0,0,.3-.4V10.8a.5.5,0,0,0-.3-.4l-2.4-1.4V6.9a1.5,1.5,0,0,1,.8-.2,1.5,1.5,0,0,1,.8.2l3.3,1.9a1.5,1.5,0,0,1,.8,1.3Zm2-4a1.5,1.5,0,0,1-.8.2,1.5,1.5,0,0,1-.8-.2L13.9,10.6l-2.4,1.4a.5.5,0,0,0-.3.4v2.7a.5.5,0,0,0,.3.4l2.4,1.4V19.3a1.5,1.5,0,0,1-.8-.2,1.5,1.5,0,0,1-.8-.8l-3.3-1.9a1.5,1.5,0,0,1-.8-1.3V12a1.5,1.5,0,0,1,.8-1.3Zm-2.8-5.3a1.5,1.5,0,0,1,.8.2l3.3,1.9a1.5,1.5,0,0,1,.8,1.3V12a1.5,1.5,0,0,1-.8,1.3l-3.3,1.9a1.5,1.5,0,0,1-1.5,0l-2.4-1.4v2.7a.5.5,0,0,0,.3-.4l2.4-1.4V19.3Zm-4.8-1.9a1.5,1.5,0,0,1,.8-.2l-3.3,1.9a1.5,1.5,0,0,1,.8,1.3V15.3l-2.4,1.4a.5.5,0,0,0-.3.4V10.8a.5.5,0,0,0,.3-.4l2.4-1.4V6.9a1.5,1.5,0,0,1-.8-.2Zm-4.8,2.7a1.5,1.5,0,0,1,.8-.2h0L12,6.9V8.6l-2.4,1.4a.5.5,0,0,0-.3.4v2.7a.5.5,0,0,0,.3.4L12,14.9V19.3a1.5,1.5,0,0,1-.8-.2L7.9,17.2A1.5,1.5,0,0,1,7.2,16V10.8A1.5,1.5,0,0,1,7.2,9.6Z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Inner Arc (8 Cards, Left to Right) -->
+                    <!-- Card 11: Git -->
+                    <div class="tech-card-arch inner" title="Git">
+                        <div class="tech-card-inner">
+                            <svg viewBox="0 0 24 24" width="30" height="30" fill="#F05032">
+                                <path d="M23.384 11.201L12.798.616a1.135 1.135 0 0 0-1.603 0L9.08 2.731l3.181 3.181a1.134 1.134 0 0 1 .124 1.48l2.9 2.9a1.137 1.137 0 0 1 1.48.125l3.181-3.181a1.135 1.135 0 0 0 0-1.603L23.384 11.2zM2.731 9.08L.616 11.196a1.135 1.135 0 0 0 0 1.603l10.586 10.586a1.135 1.135 0 0 0 1.603 0l2.115-2.115-3.181-3.181a1.134 1.134 0 0 1-.124-1.48l-2.9-2.9a1.137 1.137 0 0 1-1.48-.125L2.731 9.08z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Card 12: WordPress -->
+                    <div class="tech-card-arch inner" title="WordPress">
+                        <div class="tech-card-inner">
+                            <svg viewBox="0 0 24 24" width="30" height="30" fill="#21759b">
+                                <path d="M12.158 12.786l-2.698 7.84c1.826.512 3.75.512 5.576 0l-2.878-7.84zm1.182-3.328c.783-.03 1.39-.7 1.39-1.488 0-.69-.474-1.288-1.152-1.432l-3.32-.236v-.412h1.61c1.39 0 2.29-.72 2.29-1.85 0-1.1-.78-1.78-2.07-1.78h-4.38v8.38l3.18-.236c.866-.062 1.464-.32 1.836-1.146.062.247.165.464.309.64H13.34zm6.052.268c.288-.958.438-1.958.438-2.986 0-5.522-4.478-10-10-10S1.83 4.478 1.83 10c0 .99.144 1.952.412 2.874l3.11-8.54C6.54 2.872 7.746 2 9.07 2h5.86c1.324 0 2.53.872 2.718 2.334l1.764 8.72zm-6.19 1.1l3.52 9.58c3.556-1.826 5.568-5.632 4.954-9.58h-8.474z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Card 13: TypeScript -->
+                    <div class="tech-card-arch inner" title="TypeScript">
+                        <div class="tech-card-inner">
+                            <svg viewBox="0 0 100 100" width="30" height="30">
+                                <rect width="100" height="100" fill="#3178c6" rx="15"/>
+                                <text x="30" y="70" fill="#fff" font-family="Inter, sans-serif" font-weight="900" font-size="44">TS</text>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Card 14: Docker -->
+                    <div class="tech-card-arch inner" title="Docker">
+                        <div class="tech-card-inner">
+                            <svg viewBox="0 0 24 24" width="36" height="36" fill="#0db7ed">
+                                <path d="M13.983 11.078h2.119c.102 0 .186-.084.186-.186V9.227c0-.102-.084-.186-.186-.186h-2.119c-.102 0-.186.084-.186.186v1.665c0 .102.084.186.186.186zm-2.917 0h2.119c.102 0 .186-.084.186-.186V9.227c0-.102-.084-.186-.186-.186h-2.119c-.102 0-.186.084-.186.186v1.665c0 .102.084.186.186.186zm-2.916 0h2.119c.102 0 .186-.084.186-.186V9.227c0-.102-.084-.186-.186-.186H8.15c-.102 0-.186.084-.186.186v1.665c0 .102.084.186.186.186zm-2.916 0h2.119c.102 0 .186-.084.186-.186V9.227c0-.102-.084-.186-.186-.186H5.234c-.102 0-.186.084-.186.186v1.665c0 .102.084.186.186.186zm-2.916 0h2.119c.102 0 .186-.084.186-.186V9.227c0-.102-.084-.186-.186-.186H2.318c-.102 0-.186.084-.186.186v1.665c0 .102.084.186.186.186zm1.458-2.678h2.119c.102 0 .186-.084.186-.186V6.549c0-.102-.084-.186-.186-.186H3.776c-.102 0-.186.084-.186.186v1.665c0 .102.084.186.186.186zm2.917 0h2.119c.102 0 .186-.084.186-.186V6.549c0-.102-.084-.186-.186-.186H6.693c-.102 0-.186.084-.186.186v1.665c0 .102.084.186.186.186zm2.916 0h2.119c.102 0 .186-.084.186-.186V6.549c0-.102-.084-.186-.186-.186H9.609c-.102 0-.186.084-.186.186v1.665c0 .102.084.186.186.186zm1.458-2.677h2.119c.102 0 .186-.084.186-.186V3.871c0-.102-.084-.186-.186-.186h-2.119c-.102 0-.186.084-.186.186v1.665c0 .102.084.186.186.186zm5.833 8.033c0-3.69-3.033-6.681-6.732-6.681-.03 0-.063.003-.093.003V16.89c.03 0 .063.003.093.003.267 0 .528-.018.789-.048.51-.06 1.011-.192 1.488-.39 1.545-.63 2.766-1.854 3.396-3.399.198-.477.33-1 .39-1.488.066-.3.069-.6.069-.882zm5.833-2.678c0 .168-.009.336-.027.501-.153 1.341-.75 2.55-1.683 3.447-.699.666-1.545 1.137-2.475 1.365l-.012-.006c-1.122.285-2.292.204-3.399-.201-.06-.024-.12-.054-.18-.084l-.12-.084c-.03-.021-.06-.042-.09-.063-.09-.072-.18-.153-.261-.237a.384.384 0 0 1-.033-.03c-.237-.246-.447-.519-.627-.816a.434.434 0 0 1-.027-.048c-.066-.111-.132-.228-.189-.345-.141-.294-.258-.6-.339-.915-.03-.105-.054-.216-.075-.327-.03-.162-.051-.33-.06-.495-.003-.03-.006-.06-.006-.09V11.08h2.118c.099 0 .183.084.183.186v1.665c0 .102.084.186.186.186h2.118c.102 0 .186-.084.186-.186V11.26c.216.03.429.078.636.147.243.081.477.189.699.324.453.276.816.666 1.05 1.137.126.252.204.525.234.807.033.243.036.486.015.729zm0 0" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Card 15: Next.js -->
+                    <div class="tech-card-arch inner" title="Next.js">
+                        <div class="tech-card-inner">
+                            <svg viewBox="0 0 180 180" width="36" height="36">
+                                <mask id="next-mask-arch">
+                                    <circle cx="90" cy="90" r="90" fill="white" />
+                                </mask>
+                                <circle cx="90" cy="90" r="90" fill="black" />
+                                <g mask="url(#next-mask-arch)">
+                                    <path d="M140 150L75 66H61V124H73V83L127 150H140Z" fill="white" />
+                                    <path d="M117 66H129V124H117V66Z" fill="white" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Card 16: Python -->
+                    <div class="tech-card-arch inner" title="Python">
+                        <div class="tech-card-inner">
+                            <svg viewBox="0 0 110 110" width="34" height="34">
+                                <path d="M55 2.5C30.2 2.5 32 13.3 32 13.3l.1 8.9h23.2v3.3H22.7S2.5 22.8 2.5 47.7c0 24.9 17.8 24.1 17.8 24.1h10.6v-15s.4-17.8 17.8-17.8h17.8s17.8.1 17.8-17.8V22.7S105.1 2.5 81.3 2.5H55z" fill="#3776ab"/>
+                                <path d="M55 107.5c24.8 0 23-10.8 23-10.8l-.1-8.9H54.7v-3.3h32.6s20.2 2.7 20.2-22.2c0-24.9-17.8-24.1-17.8-24.1H79v15s-.4 17.8-17.8 17.8H43.4s-17.8-.1-17.8 17.8v13.9s-.6 20.2 23.2 20.2H55z" fill="#ffd343"/>
+                                <circle cx="43.5" cy="13.5" r="3.5" fill="#fff"/>
+                                <circle cx="66.5" cy="96.5" r="3.5" fill="#fff"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Card 17: Node.js -->
+                    <div class="tech-card-arch inner" title="Node.js">
+                        <div class="tech-card-inner">
+                            <svg viewBox="0 0 100 100" width="36" height="36">
+                                <path d="M50 3.7L12.5 25.3v43.4L50 90.3l37.5-21.6V25.3L50 3.7zm28.1 60L50 80 21.9 63.7V30.3L50 14l28.1 16.3v33.4z" fill="#68a063"/>
+                                <path d="M50 31.3L31.3 42.1v21.6L50 74.5l18.8-10.8V42.1L50 31.3z" fill="#303030"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Card 18: Shopify -->
+                    <div class="tech-card-arch inner" title="Shopify">
+                        <div class="tech-card-inner">
+                            <svg viewBox="0 0 24 24" width="34" height="34" fill="#96bf48">
+                                <path d="M19.8 5.4l-7.2-2.4c-.4-.1-.8-.1-1.2 0L4.2 5.4c-.5.2-.8.6-.8 1.1v9.6c0 .5.3 1 .8 1.1l7.2 2.4c.2.1.4.1.6.1s.4 0 .6-.1l7.2-2.4c.5-.2.8-.6.8-1.1V6.5c0-.5-.3-.9-.8-1.1zM12 4.6l5.4 1.8-5.4 1.8-5.4-1.8L12 4.6zm-1 12.8l-4.8-1.6V9.4l4.8 1.6v6.4zm1 1.6l-4.8-1.6 4.8-1.6 4.8 1.6-4.8 1.6zm6-3.2l-4.8-1.6v-6.4l4.8 1.6v6.4z" />
+                            </svg>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-            
-            <div style="text-align: center; margin-top: 40px;">
-                <p style="color: #64748b; margin-bottom: 20px;">Need a custom solution? We can tailor a package specifically for your needs.</p>
-                <a href="#contact" class="btn" style="background: #3b82f6; color: white; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 8px;">
-                    <i class="fas fa-comments"></i> Get a Custom Quote
-                </a>
-            </div>
-        </div>
     </section>
 
     <!-- Why Choose Us Section -->
-    <section id="why-us" class="why-us" style="padding: 30px 0;" data-aos="fade-up" data-aos-duration="800">
+    <section id="why-us" class="why-us" style="background-color: white;" data-aos="fade-up" data-aos-duration="800">
         <div class="container" style="padding: 0 15px;">
             <div class="section-header fade-up">
                 <div style="text-align: center;">
                     <div class="hero-badge">Trusted Partner</div>
                 </div>
-                <h2 style="margin-bottom: 10px; text-align: center;">Why Choose <span class="highlight-blue">Kaizer?</span></h2>
+                <h2 style="text-align: center;">Why Choose <span class="highlight-blue">Curious Kaizer?</span></h2>
                 <p class="section-subtitle" style="text-align: center; margin-bottom: 20px; padding: 0 10px;">We're not just another freelancing team. We're your dedicated digital partners committed to your success. Here's what makes us different:</p>
             </div>
             
-            <div class="features-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px;">
-                <div class="feature-card fade-up" style="background: #fff; border-radius: 16px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: all 0.3s ease; border: 1px solid #e2e8f0; height: 100%; display: flex; flex-direction: column;">
-                    <div class="feature-icon" style="width: 60px; height: 60px; background: #f0f9ff; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-                        <i class="fas fa-user-shield" style="color: #0284c7; font-size: 1.5rem;"></i>
+            <div class="bento-grid">
+                <!-- Bento Card 1: No Ghosting Policy (Span 2) -->
+                <div class="bento-card bento-span-2 fade-up delay-1">
+                    <div class="bento-card-top">
+                        <div class="bento-card-header">
+                            <div class="bento-icon icon-blue">
+                                <i class="fas fa-comment-dots"></i>
+                            </div>
+                            <div class="apple-status-badge">
+                                <span class="apple-pulse-dot"></span>
+                                <span>Support Active</span>
+                            </div>
+                        </div>
+                        <h3 class="bento-title">No Ghosting Policy</h3>
+                        <p class="bento-text">Unlike many freelancers who disappear mid-project, we maintain <strong>clear communication</strong> and see every project through to completion. Your project is our priority from start to finish.</p>
                     </div>
-                    <h3 style="margin: 0 0 15px 0; color: #0f172a; font-size: 1.4rem; font-weight: 700;">No Ghosting Policy</h3>
-                    <p style="margin: 0; color: #64748b; line-height: 1.6; font-size: 1rem;">Unlike many freelancers who disappear mid-project, we maintain <strong>clear communication</strong> and see every project through to completion. Your project is our priority from start to finish.</p>
+                    <!-- iOS Style Chat Interface -->
+                    <div class="apple-chat-wrapper">
+                        <div class="chat-bubble bubble-client">Hey, any updates on the dashboard wireframe?</div>
+                        <div class="chat-bubble bubble-kaizer">Hey! Yes, just sent it over to your inbox. Let's review it today.</div>
+                    </div>
                 </div>
                 
-                <div class="feature-card fade-up" style="background: #fff; border-radius: 16px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: all 0.3s ease; border: 1px solid #e2e8f0; height: 100%; display: flex; flex-direction: column;">
-                    <div class="feature-icon" style="width: 60px; height: 60px; background: #f0f9ff; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-                        <i class="fas fa-sync-alt" style="color: #0284c7; font-size: 1.5rem;"></i>
+                <!-- Bento Card 2: Guaranteed Revisions (Span 1) -->
+                <div class="bento-card bento-span-1 fade-up delay-2">
+                    <div class="bento-card-top">
+                        <div class="bento-icon icon-purple">
+                            <i class="fas fa-sliders-h"></i>
+                        </div>
+                        <h3 class="bento-title">Guaranteed Revisions</h3>
+                        <p class="bento-text">Your satisfaction is guaranteed with <strong>included revision rounds</strong> in every package. We won't rest until you're completely happy with the results.</p>
                     </div>
-                    <h3 style="margin: 0 0 15px 0; color: #0f172a; font-size: 1.4rem; font-weight: 700;">Guaranteed Revisions</h3>
-                    <p style="margin: 0; color: #64748b; line-height: 1.6; font-size: 1rem;">Your satisfaction is guaranteed with <strong>included revision rounds</strong> in every package. We won't rest until you're completely happy with the results.</p>
+                    <!-- Visual live element: revision loader -->
+                    <div class="apple-revision-progress">
+                        <div class="progress-bar-apple">
+                            <div class="progress-fill-apple"></div>
+                        </div>
+                        <div class="progress-text-apple">Revision Iteration: Active</div>
+                    </div>
                 </div>
                 
-                <div class="feature-card fade-up" style="background: #fff; border-radius: 16px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: all 0.3s ease; border: 1px solid #e2e8f0; height: 100%; display: flex; flex-direction: column;">
-                    <div class="feature-icon" style="width: 60px; height: 60px; background: #f0f9ff; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-                        <i class="fas fa-handshake" style="color: #0284c7; font-size: 1.5rem;"></i>
+                <!-- Bento Card 3: Dedicated Project Management (Span 1) -->
+                <div class="bento-card bento-span-1 fade-up delay-3">
+                    <div class="bento-card-top">
+                        <div class="bento-icon icon-teal">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <h3 class="bento-title">Dedicated PM</h3>
+                        <p class="bento-text">Enjoy <strong>personalized attention</strong> with a dedicated project manager who ensures consistency and quality throughout.</p>
                     </div>
-                    <h3 style="margin: 0 0 15px 0; color: #0f172a; font-size: 1.4rem; font-weight: 700;">Dedicated Project Management</h3>
-                    <p style="margin: 0; color: #64748b; line-height: 1.6; font-size: 1rem;">Enjoy <strong>personalized attention</strong> with a dedicated project manager who ensures your vision becomes reality, maintaining consistency and quality throughout.</p>
+                    <!-- Visual live element: iOS status light -->
+                    <div class="apple-pm-badge">
+                        <div class="pm-status-indicator">
+                            <span class="pm-dot"></span>
+                            <span>Manager Assigned</span>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="feature-card fade-up" style="background: #fff; border-radius: 16px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: all 0.3s ease; border: 1px solid #e2e8f0; height: 100%; display: flex; flex-direction: column;">
-                    <div class="feature-icon" style="width: 60px; height: 60px; background: #f0f9ff; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-                        <i class="fas fa-file-contract" style="color: #0284c7; font-size: 1.5rem;"></i>
+                <!-- Bento Card 4: Structured Process (Span 2) -->
+                <div class="bento-card bento-span-2 fade-up delay-1">
+                    <div class="bento-card-top">
+                        <div class="bento-icon icon-orange">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <h3 class="bento-title">Structured Process</h3>
+                        <p class="bento-text">Our <strong>proven workflow</strong> ensures efficiency and quality at every stage, from initial consultation to final delivery and beyond.</p>
                     </div>
-                    <h3 style="margin: 0 0 15px 0; color: #0f172a; font-size: 1.4rem; font-weight: 700;">Clear Contracts</h3>
-                    <p style="margin: 0; color: #64748b; line-height: 1.6; font-size: 1rem;">No hidden terms or surprise fees. We provide <strong>transparent pricing</strong> and <strong>detailed deliverables</strong> in writing before we begin any work.</p>
+                    <!-- iOS style timeline steps -->
+                    <div class="apple-timeline">
+                        <div class="timeline-step step-complete">
+                            <div class="step-icon"><i class="fas fa-check"></i></div>
+                            <span>Plan</span>
+                        </div>
+                        <div class="timeline-line"></div>
+                        <div class="timeline-step step-complete">
+                            <div class="step-icon"><i class="fas fa-check"></i></div>
+                            <span>Design</span>
+                        </div>
+                        <div class="timeline-line"></div>
+                        <div class="timeline-step step-animating">
+                            <div class="step-icon"></div>
+                            <span>Launch</span>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="feature-card fade-up" style="background: #fff; border-radius: 16px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: all 0.3s ease; border: 1px solid #e2e8f0; height: 100%; display: flex; flex-direction: column;">
-                    <div class="feature-icon" style="width: 60px; height: 60px; background: #f0f9ff; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-                        <i class="fas fa-business-time" style="color: #0284c7; font-size: 1.5rem;"></i>
+                <!-- Bento Card 5: Clear Contracts (Span 2) -->
+                <div class="bento-card bento-span-2 fade-up delay-2">
+                    <div class="bento-card-top">
+                        <div class="bento-icon icon-rose">
+                            <i class="fas fa-file-signature"></i>
+                        </div>
+                        <h3 class="bento-title">Clear Contracts</h3>
+                        <p class="bento-text">No hidden terms or surprise fees. We provide <strong>transparent pricing</strong> and <strong>detailed deliverables</strong> in writing before we begin any work.</p>
                     </div>
-                    <h3 style="margin: 0 0 15px 0; color: #0f172a; font-size: 1.4rem; font-weight: 700;">Business Hours Support</h3>
-                    <p style="margin: 0; color: #64748b; line-height: 1.6; font-size: 1rem;">Get <strong>reliable support</strong> during business hours with guaranteed response times. We're here when you need us.</p>
+                    <!-- iOS style Toggles -->
+                    <div class="apple-toggles-wrapper">
+                        <div class="toggle-row">
+                            <span>Guaranteed Delivery Scope</span>
+                            <div class="ios-switch active"><div class="switch-handle"></div></div>
+                        </div>
+                        <div class="toggle-row">
+                            <span>Zero Surprise Fees</span>
+                            <div class="ios-switch active"><div class="switch-handle"></div></div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="feature-card fade-up" style="background: #fff; border-radius: 16px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: all 0.3s ease; border: 1px solid #e2e8f0; height: 100%; display: flex; flex-direction: column;">
-                    <div class="feature-icon" style="width: 60px; height: 60px; background: #f0f9ff; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-                        <i class="fas fa-tasks" style="color: #0284c7; font-size: 1.5rem;"></i>
+                <!-- Bento Card 6: Business Hours Support (Span 1) -->
+                <div class="bento-card bento-span-1 fade-up delay-3">
+                    <div class="bento-card-top">
+                        <div class="bento-icon icon-green">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 class="bento-title">Business Support</h3>
+                        <p class="bento-text">Get <strong>reliable support</strong> during business hours with guaranteed fast response times. We're here when you need us.</p>
                     </div>
-                    <h3 style="margin: 0 0 15px 0; color: #0f172a; font-size: 1.4rem; font-weight: 700;">Structured Process</h3>
-                    <p style="margin: 0; color: #64748b; line-height: 1.6; font-size: 1rem;">Our <strong>proven workflow</strong> ensures efficiency and quality at every stage, from initial consultation to final delivery and beyond.</p>
+                    <!-- Visual live element: Active Radar -->
+                    <div class="apple-support-badge">
+                        <div class="active-radar">
+                            <div class="radar-circle-1"></div>
+                            <div class="radar-circle-2"></div>
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <span class="support-status-text">Online Support</span>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Guarantee Banner -->
-            <div class="guarantee-banner">
-                <i class="fas fa-medal"></i>
-                <h3>Our 100% Satisfaction Guarantee</h3>
-                <p>We're so confident in our services that we offer a <strong>100% satisfaction guarantee</strong>. If you're not completely happy with our work, we'll make it right or your money back. No questions asked.</p>
             </div>
         </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio" data-aos="fade-up" data-aos-duration="800">
+    <section id="portfolio" class="portfolio" data-aos="fade-up" data-aos-duration="800" style="background-color: white;">
         <div class="container">
             <div style="text-align: center;">
                 <div class="hero-badge">Creative Portfolio</div>
             </div>
             <h2 data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">Our <span class="highlight-blue">Work</span></h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="shimmer"></div>
-                    <div class="category-badge">E-commerce</div>
-                    <img src="images/gummes-website-1.png" alt="Gummies Website Demo">
-                    <div class="portfolio-overlay">
-                        <h3>Gummies Website</h3>
-                        <p>Product Showcase Platform</p>
-                    </div>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="shimmer"></div>
+                <div class="category-badge">E-commerce</div>
+                <img src="images/gummes-website-1.png" alt="Her Bite E-commerce Store">
+                <div class="portfolio-overlay">
+                    <h3>Her Bite</h3>
+                    <p>E-Commerce Store Website</p>
                 </div>
-                <div class="portfolio-item">
-                    <div class="shimmer"></div>
-                    <div class="category-badge">Healthcare</div>
-                    <img src="images/healthcare-equipment.png" alt="Healthcare Equipment Supply Website">
-                    <div class="portfolio-overlay">
-                        <h3>Healthcare Equipment</h3>
-                        <p>Medical Supply Platform</p>
-                    </div>
+            </div>
+            <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="shimmer"></div>
+                <div class="category-badge">Healthcare</div>
+                <img src="images/healthcare-equipment.png" alt="SRB Healthcare Website">
+                <div class="portfolio-overlay">
+                    <h3>SRB Healthcare</h3>
+                    <p>B2B Medical Portal & Catalogue</p>
                 </div>
-                <div class="portfolio-item">
-                    <div class="shimmer"></div>
-                    <div class="category-badge">Business</div>
-                    <img src="images/consultancy-project.png" alt="Consultancy Website Project">
-                    <div class="portfolio-overlay">
-                        <h3>Consultancy Website</h3>
-                        <p>Web Design & Development</p>
-                    </div>
+            </div>
+            <div class="portfolio-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="shimmer"></div>
+                <div class="category-badge">Business</div>
+                <img src="images/consultancy-project.png" alt="Qualityezo Website">
+                <div class="portfolio-overlay">
+                    <h3>Qualityezo</h3>
+                    <p>Corporate Branding Website</p>
                 </div>
-                <div class="portfolio-item">
-                    <div class="shimmer"></div>
-                    <div class="category-badge">E-commerce</div>
-                    <img src="images/3d-jewelry-store.png" alt="3D Jewelry Store Website">
-                    <div class="portfolio-overlay">
-                        <h3>3D Jewelry Store</h3>
-                        <p>Interactive E-commerce Platform</p>
-                    </div>
+            </div>
+            <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="shimmer"></div>
+                <div class="category-badge">E-commerce</div>
+                <img src="images/3d-jewelry-store.png" alt="Luxury Jewelry 3D Website">
+                <div class="portfolio-overlay">
+                    <h3>Luxury Jewelry</h3>
+                    <p>Interactive 3D Retail Store</p>
                 </div>
-                <div class="portfolio-item">
-                    <div class="shimmer"></div>
-                    <div class="category-badge">Wellness</div>
-                    <img src="images/ayurvedic-diet-plan.png" alt="Ayurvedic Diet Plan Website">
-                    <div class="portfolio-overlay">
-                        <h3>Ayurvedic Diet Plan</h3>
-                        <p>Wellness & Nutrition Platform</p>
-                    </div>
+            </div>
+            <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="shimmer"></div>
+                <div class="category-badge">Wellness</div>
+                <img src="images/ayurvedic-diet-plan.png" alt="AYURDIET Ayurvedic Diet & Wellness Website">
+                <div class="portfolio-overlay">
+                    <h3>AYURDIET</h3>
+                    <p>Custom Diet Planner Web App</p>
                 </div>
-                <div class="portfolio-item">
-                    <div class="shimmer"></div>
-                    <div class="category-badge">Finance</div>
-                    <img src="images/trading-signals.png" alt="Crypto Trading Signals Platform">
-                    <div class="portfolio-overlay">
-                        <h3>Crypto Signals Platform</h3>
-                        <p>Real-time Trading & News Integration</p>
-                    </div>
+            </div>
+            <div class="portfolio-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="shimmer"></div>
+                <div class="category-badge">Finance</div>
+                <img src="images/trading-signals.png" alt="what if i say Website">
+                <div class="portfolio-overlay">
+                    <h3>what if i say</h3>
+                    <p>Trading Analytics Dashboard</p>
                 </div>
-                <div class="portfolio-item">
-                    <div class="shimmer"></div>
-                    <div class="category-badge">Industrial</div>
-                    <img src="images/industrial-factory.png" alt="Industrial Factory Website">
-                    <div class="portfolio-overlay">
-                        <h3>Industrial Solutions</h3>
-                        <p>Minimalist Corporate Design</p>
-                    </div>
+            </div>
+            <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="shimmer"></div>
+                <div class="category-badge">Industrial</div>
+                <img src="images/industrial-factory.png" alt="WatFix Chemicals Website">
+                <div class="portfolio-overlay">
+                    <h3>WatFix Chemicals</h3>
+                    <p>Manufacturer Enterprise Portal</p>
                 </div>
-                <div class="portfolio-item">
-                    <div class="shimmer"></div>
-                    <div class="category-badge">Software</div>
-                    <img src="images/crm-dashboard-new.png" alt="CRM Dashboard">
-                    <div class="portfolio-overlay">
-                        <h3>CRM Dashboard</h3>
-                        <p>Client Management System</p>
-                    </div>
+            </div>
+            <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="shimmer"></div>
+                <div class="category-badge">Software</div>
+                <img src="images/crm-dashboard-new.png" alt="CuriousCRM Web Application">
+                <div class="portfolio-overlay">
+                    <h3>CuriousCRM</h3>
+                    <p>Custom SaaS CRM Dashboard</p>
                 </div>
-                <div class="portfolio-item">
-                    <div class="shimmer"></div>
-                    <div class="category-badge">Web App</div>
-                    <img src="images/numerology-calculator.png" alt="Numerology Calculator Website">
-                    <div class="portfolio-overlay">
-                        <h3>Numerology Calculator</h3>
-                        <p>Interactive Web Application</p>
-                    </div>
+            </div>
+            <div class="portfolio-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="shimmer"></div>
+                <div class="category-badge">Web App</div>
+                <img src="images/toilet-finder.png" alt="Toilet Finder Map Web Application">
+                <div class="portfolio-overlay">
+                    <h3>Toilet Finder Map</h3>
+                    <p>Location-Based Maps Web App</p>
                 </div>
-                <div class="portfolio-item">
-                    <div class="shimmer"></div>
-                    <div class="category-badge">Entertainment</div>
-                    <img src="images/tarot-website.png" alt="Interactive Tarot Website">
-                    <div class="portfolio-overlay">
-                        <h3>Interactive Tarot</h3>
-                        <p>Responsive Web Experience</p>
-                    </div>
+            </div>
+            <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="shimmer"></div>
+                <div class="category-badge">Entertainment</div>
+                <img src="images/tarot-website.png" alt="Starlight Tarot Web Application">
+                <div class="portfolio-overlay">
+                    <h3>Starlight Tarot</h3>
+                    <p>Mystic Tarot Reading Web App</p>
                 </div>
-                <div class="portfolio-item">
-                    <div class="shimmer"></div>
-                    <div class="category-badge">Travel</div>
-                    <img src="images/travel-booking.png" alt="Travel Booking Website">
-                    <div class="portfolio-overlay">
-                        <h3>Travel Booking Platform</h3>
-                        <p>Complete Travel Package Management</p>
-                    </div>
+            </div>
+            <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="shimmer"></div>
+                <div class="category-badge">Travel</div>
+                <img src="images/travel-booking.png" alt="Arpan Holidays Website">
+                <div class="portfolio-overlay">
+                    <h3>Arpan Holidays</h3>
+                    <p>SaaS Lodging Booking Platform</p>
                 </div>
-                <div class="portfolio-item">
-                    <div class="shimmer"></div>
-                    <div class="category-badge">Business</div>
-                    <img src="images/business-services.png" alt="Business Services Website">
-                    <div class="portfolio-overlay">
-                        <h3>Business Services Hub</h3>
-                        <p>Lead Generation & Conversion Focused</p>
-                    </div>
+            </div>
+            <div class="portfolio-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="shimmer"></div>
+                <div class="category-badge">Real Estate</div>
+                <img src="images/group-buying-real-estate.png" alt="BigPockets Group Buying Real Estate Platform">
+                <div class="portfolio-overlay">
+                    <h3>BigPockets</h3>
+                    <p>Real Estate Co-Investment Platform</p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Book a Call Section -->
-    <section id="book-call" class="book-call" style="padding: 60px 0; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); background-image: linear-gradient(rgba(226, 232, 240, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(226, 232, 240, 0.3) 1px, transparent 1px); background-size: 50px 50px; background-position: -1px -1px; position: relative;" data-aos="fade-up" data-aos-duration="800">
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 25% 25%, rgba(37, 99, 235, 0.02) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(37, 99, 235, 0.02) 0%, transparent 50%); pointer-events: none; z-index: 1;"></div>
-        <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 0 20px 40px; position: relative; z-index: 2;">
-            <div class="section-header fade-up" style="text-align: center; max-width: 800px; margin: 0 auto 40px; padding: 0 20px;">
-                <div class="hero-badge">Schedule Meeting</div>
-                <h2 style="margin: 0 0 20px 0; color: #0f172a; font-size: 2.5rem; line-height: 1.2; font-weight: 800; letter-spacing: -0.5px;">
-                    Ready to Bring Your <span style="color: #2563eb;">Vision to Life</span>?
-                </h2>
-                <p style="color: #475569; margin: 0; font-size: 1.2rem; line-height: 1.7; max-width: 700px; margin: 0 auto; font-weight: 400;">
-                    Let's have a 30-minute conversation about your project goals and how we can help you achieve them.
-                </p>
-            </div>
-            
-            <div class="fade-up delay-1" style="background: white; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); overflow: hidden; border: 1px solid #e2e8f0;">
-                <div style="padding: 50px 40px;">
-                    
-                    <div class="features-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 40px; align-items: stretch;">
-                        <!-- Strategic Planning Card -->
-                        <div style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); display: flex; flex-direction: column; height: 100%; transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid #e2e8f0;">
-                            <div style="background: #f0f9ff; width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-                                <i class="fas fa-bullseye" style="color: #0284c7; font-size: 1.5rem;"></i>
-                            </div>
-                            <h4 style="margin: 0 0 15px 0; color: #0f172a; font-size: 1.25rem; font-weight: 700;">Strategic Planning</h4>
-                            <p style="margin: 0; color: #64748b; font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">Tailored solutions designed specifically for your business objectives with a clear roadmap for success.</p>
-                        </div>
-                        
-                        <!-- Expert Consultation Card -->
-                        <div style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); display: flex; flex-direction: column; height: 100%; transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid #e2e8f0;">
-                            <div style="background: #f0f9ff; width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-                                <i class="fas fa-lightbulb" style="color: #0284c7; font-size: 1.5rem;"></i>
-                            </div>
-                            <h4 style="margin: 0 0 15px 0; color: #0f172a; font-size: 1.25rem; font-weight: 700;">Expert Consultation</h4>
-                            <p style="margin: 0; color: #64748b; font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">Professional guidance on technology stack selection and implementation strategies tailored to your needs.</p>
-                        </div>
-                        
-                        <!-- Project Roadmap Card -->
-                        <div style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); display: flex; flex-direction: column; height: 100%; transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid #e2e8f0;">
-                            <div style="background: #f0f9ff; width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-                                <i class="fas fa-clipboard-check" style="color: #0284c7; font-size: 1.5rem;"></i>
-                            </div>
-                            <h4 style="margin: 0 0 15px 0; color: #0f172a; font-size: 1.25rem; font-weight: 700;">Project Roadmap</h4>
-                            <p style="margin: 0; color: #64748b; font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">Clear milestones and deliverables outlined for your project's success.</p>
-                        </div>
-                        
-                        <!-- Dedicated Support Card -->
-                        <div style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); display: flex; flex-direction: column; height: 100%; transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid #e2e8f0;">
-                            <div style="background: #f0f9ff; width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-                                <i class="fas fa-headset" style="color: #0284c7; font-size: 1.5rem;"></i>
-                            </div>
-                            <h4 style="margin: 0 0 15px 0; color: #0f172a; font-size: 1.25rem; font-weight: 700;">Dedicated Support</h4>
-                            <p style="margin: 0; color: #64748b; font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">Ongoing assistance and maintenance to keep your project running smoothly after launch.</p>
-                        </div>
-                    </div>
-                    
-                    <div style="text-align: center; margin-top: 20px;">
-                        <div style="display: inline-flex; flex-direction: column; align-items: center;">
-                            <a href="https://calendly.com/jaigoel2206/30min" target="_blank" style="display: inline-flex; align-items: center; background: #2563eb; color: white; text-decoration: none; padding: 16px 36px; border-radius: 10px; font-weight: 600; transition: all 0.3s ease; font-size: 1.05rem; box-shadow: 0 4px 14px -2px rgba(37, 99, 235, 0.3);">
-                                <i class="fas fa-calendar-alt" style="margin-right: 10px; font-size: 1.1rem;"></i> Schedule Your Free Consultation
-                            </a>
-                            <p style="font-size: 0.85rem; color: #94a3b8; margin: 16px 0 0 0; display: flex; align-items: center; justify-content: center;">
-                                <i class="fas fa-lock" style="margin-right: 8px; color: #cbd5e1;"></i>Secure scheduling with Calendly
-                            </p>
-                        </div>
-                        
-                        <div style="display: flex; align-items: center; justify-content: center; margin-top: 30px; gap: 20px; flex-wrap: wrap;">
-                            <div style="display: flex; align-items: center; background: #f8fafc; padding: 10px 20px; border-radius: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                                <div style="background: #e0f2fe; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0;">
-                                    <i class="fas fa-check" style="color: #2563eb; font-size: 0.9rem;"></i>
-                                </div>
-                                <div>
-                                    <div style="font-weight: 600; color: #1e293b; font-size: 0.95rem;">No Hidden Fees</div>
-                                    <div style="font-size: 0.8rem; color: #64748b;">Transparent pricing, no surprises</div>
-                                </div>
-                            </div>
-                            
-                            <div style="display: flex; align-items: center; background: #f8fafc; padding: 10px 20px; border-radius: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                                <div style="background: #e0f2fe; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0;">
-                                    <i class="fas fa-headset" style="color: #2563eb; font-size: 0.9rem;"></i>
-                                </div>
-                                <div>
-                                    <div style="font-weight: 600; color: #1e293b; font-size: 0.95rem;">Dedicated Support</div>
-                                    <div style="font-size: 0.8rem; color: #64748b;">We're here to help 24/7</div>
-                                </div>
-                            </div>
-                            
-                            <div style="display: flex; align-items: center; background: #f8fafc; padding: 10px 20px; border-radius: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                                <div style="background: #e0f2fe; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0;">
-                                    <i class="fas fa-shield-alt" style="color: #2563eb; font-size: 0.9rem;"></i>
-                                </div>
-                                <div>
-                                    <div style="font-weight: 600; color: #1e293b; font-size: 0.95rem;">100% Satisfaction</div>
-                                    <div style="font-size: 0.8rem; color: #64748b;">Guaranteed results</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Carousel -->
-    <section class="testimonials-section" style="padding: 60px 0; background: #f8fafc; background-image: linear-gradient(rgba(226, 232, 240, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(226, 232, 240, 0.3) 1px, transparent 1px); background-size: 50px 50px; background-position: -1px -1px; position: relative;" data-aos="fade-up" data-aos-duration="800">
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 25% 25%, rgba(37, 99, 235, 0.02) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(37, 99, 235, 0.02) 0%, transparent 50%); pointer-events: none; z-index: 1;"></div>
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 2;">
-            <div class="section-header" style="text-align: center; margin-bottom: 40px;">
-                <div class="hero-badge">Client Testimonials</div>
-                <h2 style="margin-bottom: 15px;">What Our <span class="highlight-blue">Clients Say</span></h2>
-                <p class="section-subtitle" style="color: #64748b; max-width: 700px; margin: 0 auto;">Don't just take our word for it - hear from businesses we've helped transform</p>
-            </div>
-            
-            <div class="testimonial-carousel" style="position: relative; overflow: hidden; padding: 20px 0;">
-                <div class="testimonial-track" style="display: flex; gap: 30px; width: max-content; animation: scroll 40s linear infinite;">
-                    <!-- Testimonial items will be duplicated by JavaScript -->
-                    <div class="testimonial-item" style="flex: 0 0 350px; background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                        <div class="testimonial-content" style="margin-bottom: 20px; font-style: italic; color: #4b5563; line-height: 1.6;">
-                            "Working with Curious Kaizer was a game-changer for our business. Our new website has significantly increased our online leads and the team was professional throughout the entire process."
-                        </div>
-                        <div class="testimonial-author" style="display: flex; align-items: center;">
-                            <div class="author-avatar" style="width: 50px; height: 50px; border-radius: 50%; background: #e0f2fe; display: flex; align-items: center; justify-content: center; margin-right: 15px; color: #0ea5e9; font-weight: bold; font-size: 1.2rem;">
-                                AK
-                            </div>
-                            <div>
-                                <div style="font-weight: 600; color: #1f2937;">Amit Kumar</div>
-                                <div style="font-size: 0.9rem; color: #6b7280;">CEO, TechSolutions</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-item" style="flex: 0 0 350px; background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                        <div class="testimonial-content" style="margin-bottom: 20px; font-style: italic; color: #4b5563; line-height: 1.6;">
-                            "The team delivered beyond our expectations. They understood our vision and brought it to life with a stunning, high-performing website that perfectly represents our brand."
-                        </div>
-                        <div class="testimonial-author" style="display: flex; align-items: center;">
-                            <div class="author-avatar" style="width: 50px; height: 50px; border-radius: 50%; background: #f0f9ff; display: flex; align-items: center; justify-content: center; margin-right: 15px; color: #0369a1; font-weight: bold; font-size: 1.2rem;">
-                                PS
-                            </div>
-                            <div>
-                                <div style="font-weight: 600; color: #1f2937;">Priya Sharma</div>
-                                <div style="font-size: 0.9rem; color: #6b7280;">Founder, DesignHub</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-item" style="flex: 0 0 350px; background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                        <div class="testimonial-content" style="margin-bottom: 20px; font-style: italic; color: #4b5563; line-height: 1.6;">
-                            "Incredible attention to detail and excellent communication. Our e-commerce site saw a 75% increase in conversions after their optimizations."
-                        </div>
-                        <div class="testimonial-author" style="display: flex; align-items: center;">
-                            <div class="author-avatar" style="width: 50px; height: 50px; border-radius: 50%; background: #f0fdf4; display: flex; align-items: center; justify-content: center; margin-right: 15px; color: #059669; font-weight: bold; font-size: 1.2rem;">
-                                RS
-                            </div>
-                            <div>
-                                <div style="font-weight: 600; color: #1f2937;">Rahul Singh</div>
-                                <div style="font-size: 0.9rem; color: #6b7280;">Owner, UrbanFashion</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-item" style="flex: 0 0 350px; background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                        <div class="testimonial-content" style="margin-bottom: 20px; font-style: italic; color: #4b5563; line-height: 1.6;">
-                            "Professional, responsive, and delivered on time. Our new website has significantly improved our online presence and customer engagement."
-                        </div>
-                        <div class="testimonial-author" style="display: flex; align-items: center;">
-                            <div class="author-avatar" style="width: 50px; height: 50px; border-radius: 50%; background: #f5f3ff; display: flex; align-items: center; justify-content: center; margin-right: 15px; color: #7c3aed; font-weight: bold; font-size: 1.2rem;">
-                                MK
-                            </div>
-                            <div>
-                                <div style="font-weight: 600; color: #1f2937;">Meera Kapoor</div>
-                                <div style="font-size: 0.9rem; color: #6b7280;">Marketing Director, HealthPlus</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-item" style="flex: 0 0 350px; background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                        <div class="testimonial-content" style="margin-bottom: 20px; font-style: italic; color: #4b5563; line-height: 1.6;">
-                            "The team's expertise in both design and development is exceptional. They delivered a beautiful, functional site that exceeded our expectations."
-                        </div>
-                        <div class="testimonial-author" style="display: flex; align-items: center;">
-                            <div class="author-avatar" style="width: 50px; height: 50px; border-radius: 50%; background: #fef2f2; display: flex; align-items: center; justify-content: center; margin-right: 15px; color: #dc2626; font-weight: bold; font-size: 1.2rem;">
-                                VG
-                            </div>
-                            <div>
-                                <div style="font-weight: 600; color: #1f2937;">Vikram Gupta</div>
-                                <div style="font-size: 0.9rem; color: #6b7280;">CTO, FinTech Solutions</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 50px;">
-                <a href="#contact" class="cta-button" style="display: inline-block; padding: 12px 30px; background: #2563eb; color: white; text-decoration: none; border-radius: 8px; font-weight: 500; transition: all 0.3s ease; border: 2px solid transparent;">
-                    Share Your Experience
-                </a>
-            </div>
-        </div>
-        
-        <style>
-            @keyframes scroll {
-                0% { transform: translateX(0); }
-                100% { transform: translateX(calc(-350px * 5 - 30px * 4)); }
-            }
-            
-            @media (max-width: 768px) {
-                .testimonial-item {
-                    flex: 0 0 280px !important;
-                }
-                
-                @keyframes scroll {
-                    0% { transform: translateX(0); }
-                    100% { transform: translateX(calc(-280px * 5 - 30px * 4)); }
-                }
-            }
-            
-            @media (max-width: 480px) {
-                .testimonial-item {
-                    flex: 0 0 85vw !important;
-                }
-                
-                .testimonial-content {
-                    font-size: 0.95rem !important;
-                }
-            }
-            
-            /* Removed hover pause functionality */
-        </style>
-        
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const track = document.querySelector('.testimonial-track');
-                const items = document.querySelectorAll('.testimonial-item');
-                
-                // Duplicate items for seamless looping
-                items.forEach(item => {
-                    const clone = item.cloneNode(true);
-                    track.appendChild(clone);
-                });
-                
-                // Touch support for mobile
-                let touchStartX = 0;
-                let touchEndX = 0;
-                
-                carousel.addEventListener('touchstart', e => {
-                    touchStartX = e.changedTouches[0].screenX;
-                    track.style.animationPlayState = 'paused';
-                }, false);
-                
-                carousel.addEventListener('touchend', e => {
-                    touchEndX = e.changedTouches[0].screenX;
-                    handleSwipe();
-                    track.style.animationPlayState = 'running';
-                }, false);
-                
-                function handleSwipe() {
-                    if (touchEndX < touchStartX) {
-                        // Swipe left
-                        track.scrollLeft += 50;
-                    }
-                    if (touchEndX > touchStartX) {
-                        // Swipe right
-                        track.scrollLeft -= 50;
-                    }
-                }
-            });
-        </script>
     </section>
 
     <!-- FAQ Section - Targeting User Search Queries -->
-    <section id="faq" class="faq" style="padding: 80px 0; background: #f8fafc;">
-        <div class="container">
+    <section id="faq" class="faq" data-aos="fade-up" data-aos-duration="800" style="position: relative; background-color: white;">
+        <div class="container" style="position: relative; z-index: 2;">
             <div class="section-header" style="text-align: center; margin-bottom: 60px;">
                 <div style="text-align: center;">
                     <div class="hero-badge">Common Questions</div>
@@ -1469,195 +1726,179 @@
             </div>
             
             <div class="faq-grid" style="max-width: 800px; margin: 0 auto;">
-                <div class="faq-item">
-                    <h3>I want to make a website - where do I start?</h3>
-                    <p>Starting is easy! Contact us for a free consultation. We'll discuss your business needs, target audience, and goals. Then we'll provide a detailed proposal with timeline and cost. The entire process takes 2-4 weeks from start to launch.</p>
+                <!-- FAQ Item 1 -->
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">
+                        <span class="faq-icon-wrapper">
+                            <i class="fas fa-question"></i>
+                        </span>
+                        <h3>I want to make a website - where do I start?</h3>
+                        <span class="faq-toggle-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Starting is easy! Contact us for a free consultation. We'll discuss your business needs, target audience, and goals. Then we'll provide a detailed proposal with timeline and cost. The entire process takes 2-4 weeks from start to launch.</p>
+                    </div>
                 </div>
                 
-                <div class="faq-item">
-                    <h3>What is the cost of website making in Delhi?</h3>
-                    <p>Website making costs in Delhi vary from <strong>₹9,000 to ₹50,000+</strong> depending on complexity. Basic business websites start at ₹9,000, e-commerce sites at ₹15,000, and custom web applications at ₹25,000+. We offer transparent pricing with no hidden charges.</p>
+                <!-- FAQ Item 2 -->
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">
+                        <span class="faq-icon-wrapper">
+                            <i class="fas fa-question"></i>
+                        </span>
+                        <h3>What is the cost of website making in Delhi?</h3>
+                        <span class="faq-toggle-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Website making costs in Delhi vary from <strong>₹10,200 to ₹50,000+</strong> depending on complexity. Basic business websites start at ₹10,200, e-commerce sites at ₹16,900, and custom web applications at ₹28,900+. We offer transparent pricing with no hidden charges.</p>
+                    </div>
                 </div>
                 
-                <div class="faq-item">
-                    <h3>How long does it take to make a website?</h3>
-                    <p>Simple websites take <strong>7-10 days</strong>, business websites 2-3 weeks, and complex e-commerce sites 4-6 weeks. We provide exact timelines in our proposal and keep you updated throughout the development process.</p>
+                <!-- FAQ Item 3 -->
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">
+                        <span class="faq-icon-wrapper">
+                            <i class="fas fa-question"></i>
+                        </span>
+                        <h3>How long does it take to make a website?</h3>
+                        <span class="faq-toggle-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Simple websites take <strong>7-10 days</strong>, business websites 2-3 weeks, and complex e-commerce sites 4-6 weeks. We provide exact timelines in our proposal and keep you updated throughout the development process.</p>
+                    </div>
                 </div>
                 
-                <div class="faq-item">
-                    <h3>Do I need technical knowledge to make a website?</h3>
-                    <p><strong>No technical knowledge required!</strong> We handle everything from design to development to hosting. You just need to provide your business information and preferences. We also provide training so you can easily update your website later.</p>
+                <!-- FAQ Item 4 -->
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">
+                        <span class="faq-icon-wrapper">
+                            <i class="fas fa-question"></i>
+                        </span>
+                        <h3>Do I need technical knowledge to make a website?</h3>
+                        <span class="faq-toggle-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>No technical knowledge required!</strong> We handle everything from design to development to hosting. You just need to provide your business information and preferences. We also provide training so you can easily update your website later.</p>
+                    </div>
                 </div>
                 
-                <div class="faq-item">
-                    <h3>What's included in website making cost?</h3>
-                    <p>Our website making cost includes: <strong>custom design, responsive development, domain setup, hosting configuration, basic SEO setup, testing, and 3 months of support</strong>. No hidden charges - everything is clearly mentioned in your proposal.</p>
+                <!-- FAQ Item 5 -->
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">
+                        <span class="faq-icon-wrapper">
+                            <i class="fas fa-question"></i>
+                        </span>
+                        <h3>What's included in website making cost?</h3>
+                        <span class="faq-toggle-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our website making cost includes: <strong>custom design, responsive development, domain setup, hosting configuration, basic SEO setup, testing, and 3 months of support</strong>. No hidden charges - everything is clearly mentioned in your proposal.</p>
+                    </div>
                 </div>
                 
-                <div class="faq-item">
-                    <h3>Can you make a website for my small business?</h3>
-                    <p><strong>Absolutely!</strong> We specialize in websites for small businesses. We understand your budget constraints and create professional websites that help you compete with larger companies. Starting at just ₹9,000, it's an investment that pays for itself.</p>
+                <!-- FAQ Item 6 -->
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">
+                        <span class="faq-icon-wrapper">
+                            <i class="fas fa-question"></i>
+                        </span>
+                        <h3>Can you make a website for my small business?</h3>
+                        <span class="faq-toggle-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>Absolutely!</strong> We specialize in websites for small businesses. We understand your budget constraints and create professional websites that help you compete with larger companies. Starting at just ₹10,200, it's an investment that pays for itself.</p>
+                    </div>
                 </div>
             </div>
             
             <div style="text-align: center; margin-top: 40px;">
                 <p style="color: #64748b; margin-bottom: 20px;">Still have questions about making a website?</p>
-                <a href="#contact" class="cta-button primary" style="display: inline-block; padding: 12px 30px; background: #2563eb; color: white; text-decoration: none; border-radius: 8px; font-weight: 500;">Talk to Website Expert</a>
+                <a href="#book-call" class="cta-button primary" style="display: inline-block; padding: 14px 32px; background: #2563eb; color: white; text-decoration: none; border-radius: 9999px; font-weight: 600; font-family: var(--font-primary); transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);">Talk to Website Expert</a>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact" style="padding: 40px 0;" data-aos="fade-up" data-aos-duration="800">
-        <div class="container" style="padding: 0 15px;">
-            <div style="text-align: center;">
-                <div class="hero-badge">Get In Touch</div>
-            </div>
-            <h2 data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">Get In <span class="highlight-blue">Touch</span></h2>
-            <p class="section-subtitle" style="text-align: center; margin-bottom: 30px; padding: 0 10px;">Have a project in mind? Let's discuss how we can help bring your ideas to life</p>
-            <div class="contact-container" style="max-width: 600px; margin: 20px auto 0; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-                <form id="contactForm" class="contact-form" onsubmit="return sendToWhatsApp(event);" style="padding: 20px 18px;">
-                    <div class="form-group" style="margin-bottom: 16px;">
-                        <label for="name" style="display: block; margin-bottom: 6px; font-size: 0.9rem; font-weight: 500; color: #4a5568;">Your Name</label>
-                        <input type="text" id="name" name="name" placeholder="John Doe" required style="width: 100%; padding: 10px 12px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.9rem; transition: border-color 0.2s ease;">
-                    </div>
-                    <div class="form-group" style="margin-bottom: 16px;">
-                        <label for="email" style="display: block; margin-bottom: 6px; font-size: 0.9rem; font-weight: 500; color: #4a5568;">Your Email</label>
-                        <input type="email" id="email" name="email" placeholder="john@example.com" required style="width: 100%; padding: 10px 12px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.9rem; transition: border-color 0.2s ease;">
-                    </div>
-                    <div class="form-group" style="margin-bottom: 16px;">
-                        <label for="phone" style="display: block; margin-bottom: 6px; font-size: 0.9rem; font-weight: 500; color: #4a5568;">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="+91 1234567890" required style="width: 100%; padding: 10px 12px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.9rem; transition: border-color 0.2s ease;">
-                    </div>
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <label for="package" style="display: block; margin-bottom: 6px; font-size: 0.9rem; font-weight: 500; color: #4a5568;">Select a Package</label>
-                        <select id="package" name="package" required style="width: 100%; padding: 10px 12px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.9rem; background-color: white; color: #4a5568; appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%234a5568%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 10px center; background-size: 10px;">
-                            <option value="" disabled selected>Choose a package...</option>
-                            <option value="Starter - $100 / ₹9,000">Starter - $100 / ₹9,000</option>
-                            <option value="Business - $250 / ₹22,500">Business - $250 / ₹22,500</option>
-                            <option value="Premium - $350 / ₹31,500">Premium - $350 / ₹31,500</option>
-                            <option value="Custom">Custom Project (Let's discuss)</option>
-                        </select>
-                    </div>
-                    <div class="form-group" style="margin-bottom: 25px;">
-                        <label for="message" style="display: block; margin-bottom: 8px; font-weight: 500; color: #4a5568;">Your Project Details</label>
-                        <textarea id="message" name="message" placeholder="Tell us about your project..." rows="5" required style="width: 100%; padding: 12px 15px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.95rem; resize: vertical; min-height: 120px;"></textarea>
-                    </div>
-                    <button type="submit" class="submit-button" style="width: 100%; padding: 14px 20px; background-color: #25D366; color: white; border: none; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 10px;">
-                        <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i> Send via WhatsApp
-                    </button>
-                </form>
 
+    <!-- Book a Call Section -->
+    <section id="book-call" class="booking-premium-section" data-aos="fade-up" data-aos-duration="800" style="background-image: linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px); background-size: 40px 40px; background-color: white;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div class="booking-premium-banner">
+                <!-- Giant background translucent number -->
+                <div class="banner-bg-text">30</div>
+                
+                <!-- Animated wind lines -->
+                <div class="wind-glow wind-1"></div>
+                <div class="wind-glow wind-2"></div>
+                <div class="wind-glow wind-3"></div>
+                <div class="wind-glow wind-4"></div>
+                <div class="wind-glow wind-5"></div>
+                
+                <div class="banner-content">
+                    <div class="hero-badge" style="margin-bottom: 1.5rem !important;">Schedule Meeting</div>
+                    <h2 class="banner-title">Ready to Bring Your <span class="highlight-blue-light">Vision to Life</span>?</h2>
+                    <p class="banner-desc">Let's have a 30-minute direct session to map out your goals, explore custom wireframes, and figure out the exact timeline and budget.</p>
+                </div>
+            </div>
+            
+            <!-- Overlapping Booking Card -->
+            <div class="calendly-card-wrapper">
+                <!-- Clean Premium Loading Placeholder -->
+                <div class="calendly-loader-container">
+                    <div class="calendly-loader-circle"></div>
+                    <div class="calendly-loader-text">Loading secure calendar...</div>
+                </div>
+                
+                <!-- Calendly inline widget begin -->
+                <div class="calendly-inline-widget" data-url="https://calendly.com/jaigoel2206/30min?background_color=ffffff&text_color=0f172a&primary_color=2563eb&hide_landing_page_details=1&hide_gdpr_banner=1" style="min-width:320px;height:600px;border:none;"></div>
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                <!-- Calendly inline widget end -->
+                
                 <script>
-                async function sendToWhatsApp(event) {
-                    event.preventDefault();
-                    
-                    try {
-                        // Get form values
-                        const name = document.getElementById('name').value.trim();
-                        const email = document.getElementById('email').value.trim();
-                        const phone = document.getElementById('phone').value.trim();
-                        const package = document.getElementById('package').value.trim();
-                        const message = document.getElementById('message').value.trim();
+                    (function() {
+                        const wrapper = document.querySelector('.calendly-card-wrapper');
+                        const loader = wrapper.querySelector('.calendly-loader-container');
+                        const widget = wrapper.querySelector('.calendly-inline-widget');
                         
-                        // Validate required fields
-                        if (!name || !email || !phone || !message) {
-                            alert('Please fill in all required fields');
-                            return false;
-                        }
-                        
-                        // Send data to Supabase
-                        const BUSINESS_ID = "b2f1c4d2-9e1a-4b8d-8f44-1b23abcd4567";
-                        const supabaseUrl = "https://ajpbnddzehydezimpuor.supabase.co";
-                        const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFqcGJuZGR6ZWh5ZGV6aW1wdW9yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc4MzMyMDAsImV4cCI6MjA4MzQwOTIwMH0.GAoMAGEnm1OgrSMuPdjNitj3k0eEOXr9xOQLSdiG6TQ";
-                        
-                        try {
-                            const response = await fetch(`${supabaseUrl}/rest/v1/leads`, {
-                                method: "POST",
-                                headers: {
-                                    "apikey": supabaseKey,
-                                    "Authorization": "Bearer " + supabaseKey,
-                                    "Content-Type": "application/json",
-                                    "Prefer": "return=minimal"
-                                },
-                                body: JSON.stringify({
-                                    business_id: BUSINESS_ID,
-                                    name: name,
-                                    phone: phone
-                                })
-                            });
-                            
-                            if (!response.ok) {
-                                console.error('Supabase error:', response.statusText);
-                            } else {
-                                console.log('Data successfully saved to Supabase');
+                        let checkInterval = setInterval(() => {
+                            const iframe = widget.querySelector('iframe');
+                            if (iframe) {
+                                iframe.addEventListener('load', hideLoader);
+                                // Fallback: hide loader after short delay once iframe exists
+                                setTimeout(hideLoader, 1500);
+                                clearInterval(checkInterval);
                             }
-                        } catch (supabaseError) {
-                            console.error('Error sending to Supabase:', supabaseError);
+                        }, 100);
+                        
+                        // Absolute fallback timeout of 5 seconds
+                        setTimeout(hideLoader, 5000);
+                        
+                        function hideLoader() {
+                            if (loader && loader.style.opacity !== '0') {
+                                loader.style.opacity = '0';
+                                loader.style.visibility = 'hidden';
+                                setTimeout(() => loader.remove(), 400);
+                            }
                         }
-                        
-                        // Format the WhatsApp message with proper line breaks
-                        const whatsappMessage = 
-                            `*New Contact Form*%0A%0A` +
-                            `*Name:* ${name}%0A` +
-                            `*Email:* ${email}%0A` +
-                            `*Phone:* ${phone}%0A` +
-                            `*Package:* ${package || 'Not specified'}%0A%0A` +
-                            `*Project Details:*%0A${message}`;
-                        
-                        // Open WhatsApp directly with the message
-                        window.location.href = `https://wa.me/918595121436?text=${whatsappMessage}`;
-                        
-                        // Reset the form
-                        event.target.reset();
-                        
-                        // Prevent form submission
-                        return false;
-                        
-                    } catch (error) {
-                        console.error('Error:', error);
-                        return false;
-                    }
-                }
+                    })();
                 </script>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter Section -->
-    <section class="newsletter" data-aos="fade-up" data-aos-duration="800">
-        <div class="container">
-            <div class="hero-badge">Stay Updated</div>
-            <h2 data-aos="fade-up" data-aos-duration="600" data-aos-delay="100"><span class="highlight-blue">Stay</span> Updated</h2>
-            <p class="section-subtitle">Subscribe to our newsletter for the latest web design tips, special offers, and industry insights</p>
-            
-            <div id="mc_embed_signup">
-                <form id="newsletter-form" action="https://app.us19.list-manage.com/subscribe/post?u=e1cdcd71e42aceedba8ebe2f2&amp;id=a1f6f1a3c8&amp;f_id=00328fe4f0" method="post" target="_blank" novalidate>
-                    <div id="mc_embed_signup_scroll">
-                        <div class="mc-field-group">
-                            <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required placeholder="Enter your email address">
-                            <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="cta-button primary">Subscribe</button>
-                        </div>
-                        <div id="mce-responses" class="clear">
-                            <div class="response" id="mce-error-response" style="display:none"></div>
-                            <div class="response" id="mce-success-response" style="display:none"></div>
-                        </div>
-                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                            <input type="text" name="b_e1cdcd71e42aceedba8ebe2f2_a1f6f1a3c8" tabindex="-1" value="">
-                        </div>
-                    </div>
-                </form>
-                <div id="subscription-success" style="display: none; text-align: center; padding: 20px; background: #f8f9fa; border-radius: 8px; margin-top: 20px;">
-                    <h3>Thank You for Subscribing!</h3>
-                    <p>We've sent a confirmation email to your inbox. Please check your email to complete the subscription.</p>
-                </div>
-            </div>
-            <p class="privacy-note">We respect your privacy. Unsubscribe at any time.</p>
-        </div>
-    </section>
-
     <!-- Footer -->
-    <footer class="footer" role="contentinfo">
+    <footer class="footer" role="contentinfo" style="background-color: white;">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
@@ -1698,7 +1939,7 @@
                     <span>•</span>
                     <a href="#">Sitemap</a>
                     <span>•</span>
-                    <a href="#contact">Contact Us</a>
+                    <a href="#book-call">Contact Us</a>
                 </div>
                 <p class="made-with-love">Made with <i class="fas fa-heart"></i> in India</p>
             </div>
@@ -1723,114 +1964,7 @@
     <script src="js/typing.js"></script>
     <script src="js/timeline-animations.js"></script>
     
-    <!-- Mailchimp Form Scripts -->
-    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-    <script type="text/javascript">
-    (function($) {
-        window.fnames = new Array(); 
-        window.ftypes = new Array();
-        fnames[0]='EMAIL';
-        ftypes[0]='email';
-        fnames[1]='FNAME';
-        ftypes[1]='text';
-        fnames[2]='LNAME';
-        ftypes[2]='text';
-    }(jQuery));
-    var $mcj = jQuery.noConflict(true);
-    </script>
-    
-    <!-- Particles.js Library -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    
-    <script>
-        // Initialize particles.js
-        document.addEventListener('DOMContentLoaded', function() {
-            particlesJS('particles-js', {
-                "particles": {
-                    "number": {
-                        "value": 80,
-                        "density": {
-                            "enable": true,
-                            "value_area": 800
-                        }
-                    },
-                    "color": {
-                        "value": "#3b82f6"
-                    },
-                    "shape": {
-                        "type": "circle"
-                    },
-                    "opacity": {
-                        "value": 0.5,
-                        "random": true,
-                        "anim": {
-                            "enable": true,
-                            "speed": 1,
-                            "opacity_min": 0.1,
-                            "sync": false
-                        }
-                    },
-                    "size": {
-                        "value": 3,
-                        "random": true,
-                        "anim": {
-                            "enable": true,
-                            "speed": 2,
-                            "size_min": 0.1,
-                            "sync": false
-                        }
-                    },
-                    "line_linked": {
-                        "enable": true,
-                        "distance": 150,
-                        "color": "#3b82f6",
-                        "opacity": 0.3,
-                        "width": 1
-                    },
-                    "move": {
-                        "enable": true,
-                        "speed": 1,
-                        "direction": "none",
-                        "random": true,
-                        "straight": false,
-                        "out_mode": "out",
-                        "bounce": false,
-                        "attract": {
-                            "enable": true,
-                            "rotateX": 600,
-                            "rotateY": 1200
-                        }
-                    }
-                },
-                "interactivity": {
-                    "detect_on": "canvas",
-                    "events": {
-                        "onhover": {
-                            "enable": true,
-                            "mode": "grab"
-                        },
-                        "onclick": {
-                            "enable": true,
-                            "mode": "push"
-                        },
-                        "resize": true
-                    },
-                    "modes": {
-                        "grab": {
-                            "distance": 140,
-                            "line_linked": {
-                                "opacity": 0.8
-                            }
-                        },
-                        "push": {
-                            "particles_nb": 4
-                        }
-                    }
-                },
-                "retina_detect": true
-            });
-        });
-    </script>
+
     
     <!-- Enhanced Navbar Scroll Script -->
     <script>
@@ -1937,74 +2071,8 @@
         });
     </script>
     
-    <!-- Cursor Follower Script -->
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Check if device is touch-enabled or small screen
-            const isTouchDevice = 'ontouchstart' in window || 
-                                navigator.maxTouchPoints > 0 || 
-                                navigator.msMaxTouchPoints > 0;
-            
-            // Check screen width (disables on screens smaller than 768px)
-            const isSmallScreen = window.innerWidth < 768;
-            
-            if (isTouchDevice || isSmallScreen) {
-                // Remove cursor follower if on touch device or small screen
-                const cursor = document.querySelector('.cursor-follower');
-                if (cursor) cursor.remove();
-                return;
-            }
-            
-            // Also check on window resize
-            window.addEventListener('resize', function() {
-                if (window.innerWidth < 768) {
-                    const cursor = document.querySelector('.cursor-follower');
-                    if (cursor) cursor.remove();
-                }
-            });
-
-            const cursor = document.querySelector('.cursor-follower');
-            let mouseX = 0;
-            let mouseY = 0;
-            let cursorX = 0;
-            let cursorY = 0;
-            const speed = 0.08; // Reduced from 0.15 for more delay (lower = more delay)
-
-            // Set initial cursor position
-            document.addEventListener('mousemove', (e) => {
-                mouseX = e.clientX;
-                mouseY = e.clientY;
-                cursor.style.display = 'block';
-            });
-
-            // Hide cursor when leaving the window
-            document.addEventListener('mouseleave', () => {
-                cursor.style.display = 'none';
-            });
-
-            // Show cursor when returning to the window
-            document.addEventListener('mouseenter', () => {
-                cursor.style.display = 'block';
-            });
-
-            // Smooth animation loop
-            function animate() {
-                // Calculate new position with easing
-                cursorX += (mouseX - cursorX) * speed;
-                cursorY += (mouseY - cursorY) * speed;
-                
-                // Apply the new position
-                cursor.style.left = cursorX + 'px';
-                cursor.style.top = cursorY + 'px';
-                
-                // Continue the animation loop
-                requestAnimationFrame(animate);
-            }
-
-            // Start the animation
-            animate();
-        });
-        
         // Scroll-triggered animations
         document.addEventListener('DOMContentLoaded', function() {
             // Add fade-up class to all expertise cards with staggered delays
@@ -2072,7 +2140,35 @@
         });
     </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Premium Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
     <script>
+        // Initialize Lenis Smooth Scroll with premium momentum scrolling
+        const lenis = new Lenis({
+            lerp: 0.1, // Snappy linear interpolation - zero lag, instant feedback
+            orientation: 'vertical',
+            gestureOrientation: 'vertical',
+            smoothWheel: true,
+            wheelMultiplier: 1.0,
+            touchMultiplier: 1.5,
+            infinite: false,
+        });
+
+        // Make lenis globally accessible
+        window.lenis = lenis;
+
+        // Setup requestAnimationFrame loop for Lenis
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // Synchronize scroll events for AOS and other standard scroll listeners
+        lenis.on('scroll', () => {
+            window.dispatchEvent(new Event('scroll'));
+        });
+
         // Initialize AOS
         AOS.init({
             duration: 800,
