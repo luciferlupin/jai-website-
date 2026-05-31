@@ -1,45 +1,59 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const carouselTrack = document.querySelector('.work-showcase-track');
-    const carouselItems = document.querySelectorAll('.work-showcase-item');
+    const trackLeft = document.querySelector('.track-left');
+    const trackRight = document.querySelector('.track-right');
     
-    // Clone the first set of items for seamless looping
-    carouselItems.forEach(item => {
+    if (!trackLeft || !trackRight) return;
+    
+    const itemsLeft = trackLeft.querySelectorAll('.work-showcase-item');
+    const itemsRight = trackRight.querySelectorAll('.work-showcase-item');
+    
+    // Clone the items for seamless looping
+    itemsLeft.forEach(item => {
         const clone = item.cloneNode(true);
-        carouselTrack.appendChild(clone);
+        trackLeft.appendChild(clone);
+    });
+    itemsRight.forEach(item => {
+        const clone = item.cloneNode(true);
+        trackRight.appendChild(clone);
     });
     
-    // Set the width of the track to accommodate all items
-    const itemWidth = carouselItems[0].offsetWidth + 20; // 20px for gap
-    carouselTrack.style.width = `${itemWidth * carouselItems.length * 2}px`;
+    let itemWidth = 380 + 24; 
     
-    // Animation
-    let position = 0;
-    const speed = 0.5; // Adjust speed here (lower is slower)
+    function updateWidth() {
+        if (itemsLeft[0]) {
+            itemWidth = itemsLeft[0].offsetWidth + 24;
+        }
+        trackLeft.style.width = `${itemWidth * itemsLeft.length * 2}px`;
+        trackRight.style.width = `${itemWidth * itemsRight.length * 2}px`;
+    }
+    
+    updateWidth();
+    window.addEventListener('resize', updateWidth);
+    
+    // Animation states
+    let posLeft = 0;
+    // Offset the right track initially so they don't look completely synchronized/mirrored
+    let posRight = -itemWidth * itemsRight.length * 0.5;
+    
+    const speed = 0.6; // Speed index
     
     function animate() {
-        position -= speed;
-        
-        // Reset position to create infinite loop
-        if (position <= -itemWidth * carouselItems.length) {
-            position = 0;
+        // Track Left (Scrolls Left)
+        posLeft -= speed;
+        if (posLeft <= -itemWidth * itemsLeft.length) {
+            posLeft = 0;
         }
+        trackLeft.style.transform = `translateX(${posLeft}px)`;
         
-        carouselTrack.style.transform = `translateX(${position}px)`;
+        // Track Right (Scrolls Right)
+        posRight += speed;
+        if (posRight >= 0) {
+            posRight = -itemWidth * itemsRight.length;
+        }
+        trackRight.style.transform = `translateX(${posRight}px)`;
+        
         requestAnimationFrame(animate);
     }
     
-    // Start animation after page loads
-    window.addEventListener('load', () => {
-        // Small delay to ensure everything is loaded
-        setTimeout(animate, 500);
-    });
-    
-    // Pause animation on hover (optional, but you mentioned no hover effects)
-    // carouselTrack.addEventListener('mouseenter', () => {
-    //     isPaused = true;
-    // });
-    
-    // carouselTrack.addEventListener('mouseleave', () => {
-    //     isPaused = false;
-    // });
+    setTimeout(animate, 500);
 });

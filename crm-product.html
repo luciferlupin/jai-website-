@@ -39,6 +39,43 @@
             --success: #10b981;
             --warning: #f59e0b;
             --danger: #ef4444;
+
+            /* Apple 3D Design System Shadows */
+            --apple-3d-shadow-light: 
+                0 1px 2px rgba(0, 0, 0, 0.05),
+                0 8px 24px rgba(0, 0, 0, 0.04),
+                inset 0 1px 0 rgba(255, 255, 255, 0.6),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.04);
+                
+            --apple-3d-shadow-light-hover: 
+                0 4px 8px rgba(0, 0, 0, 0.06),
+                0 16px 40px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.7),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.04);
+                
+            --apple-3d-shadow-dark: 
+                0 1px 2px rgba(0, 0, 0, 0.15),
+                0 6px 20px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.25),
+                inset 0 -1.5px 0 rgba(0, 0, 0, 0.2);
+                
+            --apple-3d-shadow-dark-hover: 
+                0 4px 8px rgba(0, 0, 0, 0.2),
+                0 12px 30px rgba(0, 0, 0, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.35),
+                inset 0 -1.5px 0 rgba(0, 0, 0, 0.2);
+
+            --apple-3d-shadow-pill-light:
+                0 1px 2px rgba(0, 0, 0, 0.04),
+                0 4px 12px rgba(0, 0, 0, 0.03),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.03);
+
+            --apple-3d-shadow-pill-light-hover:
+                0 4px 12px rgba(0, 0, 0, 0.08),
+                0 8px 24px rgba(0, 0, 0, 0.06),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.03);
         }
         
         body {
@@ -1282,6 +1319,172 @@
                 height: 50px;
                 font-size: 1.3rem;
             }
+        }
+
+        /* ==========================================
+           CRM APPLE 3D PREMIUM DESIGN SYSTEM OVERRIDES
+           ========================================== */
+
+        /* 1. Buttons, Pills & Metrics */
+        .btn,
+        .btn-primary,
+        .btn-secondary,
+        .metric-highlight {
+            border-radius: 9999px !important; /* Smooth Apple pill caps */
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), background 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+
+        /* Solid Colored Pills & Primary Buttons */
+        .btn-primary {
+            border: 1px solid rgba(0, 0, 0, 0.15) !important;
+            box-shadow: var(--apple-3d-shadow-dark) !important;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.03) !important;
+            box-shadow: var(--apple-3d-shadow-dark-hover) !important;
+        }
+
+        .btn-primary:active {
+            transform: translateY(0) scale(0.98) !important;
+            box-shadow: var(--apple-3d-shadow-dark) !important;
+        }
+
+        /* Light / Transparent Pills & Secondary Buttons */
+        .btn-secondary,
+        .metric-highlight {
+            border: 1px solid rgba(0, 0, 0, 0.08) !important;
+            box-shadow: var(--apple-3d-shadow-pill-light) !important;
+            background: rgba(255, 255, 255, 0.95) !important;
+            color: var(--primary) !important;
+        }
+
+        .btn-secondary:hover,
+        .metric-highlight:hover {
+            transform: translateY(-4px) scale(1.04) !important;
+            box-shadow: var(--apple-3d-shadow-pill-light-hover) !important;
+            background: #ffffff !important;
+            border-color: rgba(37, 99, 235, 0.25) !important;
+        }
+
+        .btn-secondary:active,
+        .metric-highlight:active {
+            transform: translateY(0) scale(0.97) !important;
+            box-shadow: var(--apple-3d-shadow-pill-light) !important;
+        }
+
+        /* 2. Cards & Rounded Boxes (Apple Squircle Aesthetic) */
+        .problem-card,
+        .problem-slider,
+        .slide-image,
+        .problem-item,
+        .lead-chat-card,
+        .solution-card,
+        .feature-card,
+        .dashboard-mockup,
+        .audience-card {
+            border-radius: 20px !important; /* Premium Apple curve */
+            border: 1px solid rgba(0, 0, 0, 0.06) !important;
+            box-shadow: var(--apple-3d-shadow-light) !important;
+            background: rgba(255, 255, 255, 0.85) !important;
+            backdrop-filter: blur(20px) !important;
+            -webkit-backdrop-filter: blur(20px) !important;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease !important;
+        }
+
+        .problem-card:hover,
+        .problem-item:hover,
+        .lead-chat-card:hover,
+        .solution-card:hover,
+        .feature-card:hover,
+        .audience-card:hover {
+            transform: translateY(-6px) scale(1.01) !important;
+            box-shadow: var(--apple-3d-shadow-light-hover) !important;
+            border-color: rgba(0, 0, 0, 0.09) !important;
+            background: rgba(255, 255, 255, 0.95) !important;
+        }
+
+        .problem-card:active,
+        .problem-item:active,
+        .lead-chat-card:active,
+        .solution-card:active,
+        .feature-card:active,
+        .audience-card:active {
+            transform: translateY(-1px) scale(0.99) !important;
+            box-shadow: var(--apple-3d-shadow-light) !important;
+        }
+
+        /* Special styling for icon badges inside cards */
+        .card-icon,
+        .problem-icon,
+        .solution-icon,
+        .feature-icon,
+        .audience-icon {
+            border-radius: 14px !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+            box-shadow: var(--apple-3d-shadow-dark) !important;
+        }
+
+        /* 3. Apple Form Inputs (Tactile 3D feel) */
+        input,
+        textarea,
+        select {
+            border-radius: 12px !important; /* Apple squircle input */
+            border: 1px solid rgba(0, 0, 0, 0.15) !important;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.06), 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+            background-color: rgba(255, 255, 255, 0.9) !important;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease !important;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: var(--primary) !important;
+            background-color: #ffffff !important;
+            box-shadow: 
+                inset 0 1px 2px rgba(0, 0, 0, 0.04),
+                0 0 0 4px rgba(37, 99, 235, 0.15) !important; /* Subtle Apple focal glow */
+            outline: none !important;
+        }
+
+        /* 4. Perfect Apple-Style Typography Overrides */
+        body, p, li, td, th, span:not(.typing-text):not(.metric-value) {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif !important;
+            font-size: 1.0625rem !important; /* 17px Body Text */
+            font-weight: 400 !important;
+            line-height: 1.7 !important; /* Premium body line height */
+        }
+
+        /* Bold/Strong text weight mapping */
+        strong, b, .font-semibold, .font-bold {
+            font-weight: 700 !important;
+        }
+
+        h1, h2, h5, h6 {
+            font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif !important;
+            font-weight: 800 !important; /* Heavy headings for premium visual hierarchy */
+            letter-spacing: -0.025em !important;
+            line-height: 1.15 !important;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.3rem, 5vw, 3.8rem) !important;
+            line-height: 1.1 !important;
+            letter-spacing: -0.03em !important;
+        }
+
+        .section-header h2, .cta h2, .solution-text h2, .dashboard-text h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem) !important;
+            letter-spacing: -0.02em !important;
+            line-height: 1.2 !important;
+        }
+
+        h3, h4, .sub-headline, .hero p, .section-header p {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif !important;
+            font-size: clamp(1.2rem, 2.5vw, 1.45rem) !important; /* 20px - 23px Subheadings */
+            font-weight: 600 !important; /* Inter 600 weight */
+            line-height: 1.35 !important; /* 1.3 - 1.4 line-height */
+            letter-spacing: -0.015em !important;
         }
     </style>
 </head>

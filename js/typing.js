@@ -1,50 +1,92 @@
 document.addEventListener('DOMContentLoaded', function() {
     const texts = [
-        'Stunning Websites',
-        'Powerful Web Apps',
-        'E-commerce Solutions',
-        'SEO-Optimized Sites'
+        'Your competitors have a website. Let\'s build one that\'s better.',
+        'A website people actually remember.',
+        'Built to make your business look serious.',
+        'Stop losing customers to a bad website.',
+        'Your business deserves better than a template.',
+        'The website your business should have had years ago.',
+        'Make a first impression that actually matters.',
+        'People judge your business in seconds. Make them count.',
+        'A website that earns trust before you say a word.',
+        'Turn visitors into customers, not bounce rates.',
+        'Built for businesses that want to grow.',
+        'Look bigger. Sell better. Grow faster.',
+        'Your website is your best salesperson.',
+        'We build websites that make businesses money.'
     ];
     
     const typingText = document.querySelector('.typing-text');
     let textIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    let typingSpeed = 100; // milliseconds
-    let deleteSpeed = 50; // milliseconds
-    let pauseEnd = 2000; // pause at the end of each word
-    let pauseStart = 500; // pause at the start of each word
+    let typingSpeed = 50; 
+    let deleteSpeed = 30; 
+    let pauseEnd = 3000; 
+    let pauseStart = 500; 
     
     function type() {
         const currentText = texts[textIndex];
         
         if (isDeleting) {
-            // Delete characters
             typingText.textContent = currentText.substring(0, charIndex - 1);
             charIndex--;
             typingSpeed = deleteSpeed;
         } else {
-            // Type characters
             typingText.textContent = currentText.substring(0, charIndex + 1);
             charIndex++;
-            typingSpeed = 100 + Math.random() * 50; // Random typing speed for natural feel
+            typingSpeed = 50 + Math.random() * 30;
+            
+            // Color transition from blue (#2563eb) to black based on character position
+            const progress = charIndex / currentText.length;
+            const redValue = Math.round(37 * (1 - progress));
+            const greenValue = Math.round(99 * (1 - progress));
+            const blueValue = Math.round(235 * (1 - progress));
+            typingText.style.color = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
         }
         
-        // Check if we've finished typing a word
         if (!isDeleting && charIndex === currentText.length) {
-            // Pause at the end of the word
             typingSpeed = pauseEnd;
             isDeleting = true;
         } else if (isDeleting && charIndex === 0) {
-            // Move to the next word
             isDeleting = false;
             textIndex = (textIndex + 1) % texts.length;
             typingSpeed = pauseStart;
+            typingText.style.color = '#2563eb';
         }
         
         setTimeout(type, typingSpeed);
     }
     
-    // Start the typing effect after a short delay
+    // Set initial color
+    typingText.style.color = '#2563eb';
     setTimeout(type, 1000);
+
+    // Tech stack dynamic info cycling
+    const techTextElement = document.querySelector('.tech-dynamic-text');
+    if (techTextElement) {
+        const techTexts = [
+            'React & Next.js for high-fidelity interactive UIs.',
+            'Python & OpenAI for intelligent autonomous systems.',
+            'AWS, Docker & Supabase for enterprise-grade scalability.',
+            'Shopify, Stripe & WooCommerce for smooth global commerce.',
+            'Figma designs translated into pixel-perfect high-end code.'
+        ];
+        let techIndex = 0;
+        
+        function rotateTechText() {
+            techTextElement.style.opacity = '0';
+            techTextElement.style.transform = 'translateY(8px)';
+            
+            setTimeout(() => {
+                techIndex = (techIndex + 1) % techTexts.length;
+                techTextElement.textContent = techTexts[techIndex];
+                techTextElement.style.opacity = '1';
+                techTextElement.style.transform = 'translateY(0)';
+            }, 500);
+        }
+        
+        techTextElement.style.transition = 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+        setInterval(rotateTechText, 4000);
+    }
 });
