@@ -705,7 +705,7 @@ img {
     position: relative;
     overflow: hidden;
     background: white;
-    padding: 60px 0;
+    padding: 140px 0 60px 0; /* Add safety top padding for premium floating capsule navbar overlay */
 }
 
 /* Particle.js container */
@@ -2917,7 +2917,7 @@ section {
         display: flex;
         align-items: center;
         min-height: calc(100vh - 60px);
-        padding: 1rem;
+        padding: 100px 1rem 40px 1rem; /* Generous top padding on mobile to clear the floating navbar */
     }
     
     .hero-content {
@@ -6857,8 +6857,8 @@ select:focus {
 
 .tech-category-badge {
     display: inline-block;
-    padding: 6px 16px;
-    font-size: 0.72rem;
+    padding: 8px 20px;
+    font-size: 0.95rem;
     font-weight: 700;
     letter-spacing: 0.15em;
     color: #475569;
@@ -7047,7 +7047,7 @@ select:focus {
 }
 
 /* 2. Desktop Premium Orbiting Arch & Looping Animations */
-@media (min-width: 993px) {
+@media (min-width: 1151px) {
     .tech-arch-container {
         position: relative;
         width: 100%;
@@ -7674,11 +7674,10 @@ select:focus {
     --hero-text-light: #a1a1a6;  /* Apple tertiary gray */
 }
 
-/* Base override for hero layout to give it proper space and alignment */
 .hero {
     min-height: auto !important;
     margin-top: 0 !important;
-    padding: 16px 0 40px 0 !important;
+    padding: 130px 0 40px 0 !important; /* Upgrade: Added 130px top padding to safely clear the premium floating header */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8565,9 +8564,9 @@ select:focus {
 }
 
 /* Responsive Overrides */
-@media (max-width: 992px) {
+@media (max-width: 1150px) {
     .hero {
-        padding: 120px 0 60px 0 !important;
+        padding: 140px 0 60px 0 !important;
     }
 
     .hero-flow-container {
@@ -8591,7 +8590,7 @@ select:focus {
         transform: none !important;
         animation: float1 6s ease-in-out infinite !important;
         width: 100% !important;
-        max-width: 280px !important;
+        max-width: 520px !important; /* Premium generous width on tablet/medium screens */
     }
     
     .node-ideation {
@@ -8600,7 +8599,7 @@ select:focus {
     }
     
     .hero h1 {
-        font-size: 2.8rem !important;
+        font-size: 3.2rem !important; /* Spacious display font size for tablet */
     }
     
     .hero-trust-bar {
@@ -9811,7 +9810,7 @@ html.lenis, html.lenis body {
     width: 92% !important;
     max-width: 1200px !important;
     height: 72px !important;
-    background: rgba(255, 255, 255, 0.85) !important; /* Soft frosted glass */
+    background: rgba(255, 255, 255, 0.7) !important; /* Soft frosted glass - highly transparent */
     backdrop-filter: blur(20px) !important;
     -webkit-backdrop-filter: blur(20px) !important;
     border: 1px solid rgba(0, 0, 0, 0.05) !important;
@@ -9826,7 +9825,7 @@ html.lenis, html.lenis body {
 
 /* When scrolled down, make it slightly tighter and less transparent */
 .navbar.scrolled, .site-header.scrolled .navbar {
-    background: rgba(255, 255, 255, 0.95) !important;
+    background: rgba(255, 255, 255, 0.8) !important; /* Slightly more opaque on scroll but maintains high transparency blur */
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.02) !important;
     border-color: rgba(0, 0, 0, 0.08) !important;
 }
@@ -10560,4 +10559,42 @@ html.lenis, html.lenis body {
     .container-hero-fluid {
         max-width: 1560px !important; /* Elegant cap at 1560px for ultra-wide screens to maintain high-end editorial layouts */
     }
+}
+
+/* Remove all decorative underlines/lines under headings across the entire website */
+h1::after,
+h2::after,
+h3::after,
+h4::after,
+h5::after,
+h6::after,
+.feature-card h3::after,
+.booking-content h3::after,
+.booking-highlights h4::after,
+.contact-info h3::after,
+.contact-form h3::after,
+.footer h4::after,
+.footer-minimalist .footer-contact h4::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Upgraded premium 3D layered shadows and floating hover effects for Why Choose Us Bento cards */
+.bento-card {
+    background: #ffffff !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.02), 
+        0 10px 20px -5px rgba(0, 0, 0, 0.04),
+        0 20px 40px -10px rgba(0, 0, 0, 0.03) !important; /* Layered deep 3D shadow */
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease !important;
+}
+
+.bento-card:hover {
+    transform: translateY(-8px) scale(1.01) !important; /* Premium 3D float upwards */
+    box-shadow: 
+        0 20px 25px -5px rgba(0, 0, 0, 0.04), 
+        0 30px 50px -10px rgba(0, 0, 0, 0.06),
+        0 40px 80px -15px rgba(0, 0, 0, 0.04) !important; /* Deepest, softest floating shadow */
+    border-color: rgba(37, 99, 235, 0.15) !important; /* Premium subtle focal blue border glow */
 }

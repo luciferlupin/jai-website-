@@ -66,11 +66,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const techTextElement = document.querySelector('.tech-dynamic-text');
     if (techTextElement) {
         const techTexts = [
-            'React & Next.js for high-fidelity interactive UIs.',
-            'Python & OpenAI for intelligent autonomous systems.',
-            'AWS, Docker & Supabase for enterprise-grade scalability.',
-            'Shopify, Stripe & WooCommerce for smooth global commerce.',
-            'Figma designs translated into pixel-perfect high-end code.'
+            'Thoughtful strategy, modern technology, and seamless interactions.',
+            'Fast, scalable, and reliable digital experiences.',
+            'Custom AI solutions that streamline operations and drive efficiency.',
+            'High-converting digital products designed for business outcomes.',
+            'Crafting pixel-perfect designs translated into powerful code.'
         ];
         let techIndex = 0;
         

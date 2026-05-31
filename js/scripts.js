@@ -67,29 +67,68 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Sticky Navigation on Scroll
+    // Sticky Navigation on Scroll & Active Link Scroll Spy
     const navbar = document.querySelector('.site-header');
+    const sections = document.querySelectorAll('section[id], header[id]');
+    const navAnchorLinks = document.querySelectorAll('.nav-links a');
     let lastScroll = 0;
     
-    window.addEventListener('scroll', function() {
+    function handleScroll() {
         const currentScroll = window.pageYOffset;
+        const isMobileMenuOpen = navLinks && navLinks.classList.contains('active');
         
-        if (currentScroll <= 0) {
-            navbar.classList.remove('scrolled');
-            return;
-        }
-        
-        if (currentScroll > lastScroll && currentScroll > 100) {
-            // Scroll Down
-            navbar.style.transform = 'translateY(-120%)';
-        } else {
-            // Scroll Up
+        // 1. Jitter-Proof Show/Hide Navigation Logic
+        if (currentScroll <= 0 || isMobileMenuOpen) {
+            // Keep nav fully visible at the top of the page or when mobile hamburger is open
             navbar.style.transform = 'translateY(0)';
-            navbar.classList.add('scrolled');
+            if (currentScroll <= 0) {
+                navbar.classList.remove('scrolled');
+            }
+            lastScroll = currentScroll;
+        } else if (Math.abs(currentScroll - lastScroll) >= 10) {
+            // Only update nav visibility if scroll delta is greater than 10px to prevent jitter
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                // Scroll Down - Hide Navbar
+                navbar.style.transform = 'translateY(-120%)';
+            } else {
+                // Scroll Up - Show Navbar
+                navbar.style.transform = 'translateY(0)';
+                navbar.classList.add('scrolled');
+            }
+            lastScroll = currentScroll;
         }
         
-        lastScroll = currentScroll;
-    }, { passive: true });
+        // 2. Active Link Scroll Spy Highlight (runs continuously on every pixel scrolled)
+        const scrollSpyOffset = 180; // offset for floating nav + spacing
+        let currentSectionId = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            if (currentScroll + scrollSpyOffset >= sectionTop && currentScroll + scrollSpyOffset < sectionTop + sectionHeight) {
+                currentSectionId = section.getAttribute('id');
+            }
+        });
+        
+        // When on Home section (scrolled near the top), highlight "Home" so it shows the active line
+        if (currentSectionId === 'home' || currentScroll < 150) {
+            currentSectionId = 'home';
+        }
+        
+        if (currentSectionId) {
+            navAnchorLinks.forEach(link => {
+                if (link.getAttribute('href') === `#${currentSectionId}`) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+    }
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    // Initial run on DOM load to set correct initial highlights
+    handleScroll();
     
     // Smooth Scrolling for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -98,6 +137,15 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
+            
+            // Custom direct scroll for Home to go to the absolute top of the page
+            if (targetId === '#home') {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                return;
+            }
             
             const targetElement = document.querySelector(targetId);
             if (targetElement) {

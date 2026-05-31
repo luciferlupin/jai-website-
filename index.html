@@ -52,6 +52,14 @@
     <meta name="rating" content="general">
     <meta name="revisit-after" content="7 days">
     
+    <!-- Preload external booking calendar resources for instant loading -->
+    <link rel="dns-prefetch" href="https://assets.calendly.com">
+    <link rel="dns-prefetch" href="https://calendly.com">
+    <link rel="preconnect" href="https://assets.calendly.com" crossorigin>
+    <link rel="preconnect" href="https://calendly.com" crossorigin>
+    <link rel="preload" as="script" href="https://assets.calendly.com/assets/external/widget.js">
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
     <!-- Technical SEO -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="theme-color" content="#2563eb">
@@ -586,7 +594,7 @@
         <div class="container container-hero-fluid">
             <section class="hero-content" role="main">
                 <!-- 1. Headline with the animated typing text preserved inside -->
-                <h1 style="display: grid; grid-template-columns: 100%; justify-content: center; align-items: center; margin-bottom: 24px;">
+                <h1 style="display: grid; grid-template-columns: 100%; justify-content: center; align-items: center; margin-top: 48px; margin-bottom: 24px;">
                     <span class="typing-text-ghost" aria-hidden="true" style="grid-area: 1/1; visibility: hidden; pointer-events: none; user-select: none; font-weight: 600; display: block; width: 100%;">Your competitors have a website. Let's build one that's better.</span>
                     <span class="typing-text" style="grid-area: 1/1; display: block; width: 100%;"></span>
                 </h1>
@@ -595,28 +603,22 @@
                 <div class="hero-tags-ticker" style="margin-bottom: 32px;">
                     <div class="hero-tags-track">
                         <!-- Set 1 -->
-                        <span class="tag-pill">Custom Web Design</span>
-                        <span class="tag-pill">E-commerce Solutions</span>
-                        <span class="tag-pill">Web Apps & MVPs</span>
-                        <span class="tag-pill">SEO Optimization</span>
-                        <span class="tag-pill">AI & Automation</span>
-                        <span class="tag-pill">SaaS Platforms</span>
-                        <span class="tag-pill">Conversion Funnels</span>
-                        <span class="tag-pill">UI/UX Strategy</span>
-                        <span class="tag-pill">Brand Identity</span>
-                        <span class="tag-pill">Intelligent Systems</span>
+                        <span class="tag-pill">Custom Websites</span>
+                        <span class="tag-pill">E-Commerce Stores</span>
+                        <span class="tag-pill">Web Applications</span>
+                        <span class="tag-pill">AI Solutions</span>
+                        <span class="tag-pill">Business Automation</span>
+                        <span class="tag-pill">Landing Pages</span>
+                        <span class="tag-pill">Internal Tools & Dashboards</span>
                         
                         <!-- Set 2 (Duplicated for seamless loop) -->
-                        <span class="tag-pill">Custom Web Design</span>
-                        <span class="tag-pill">E-commerce Solutions</span>
-                        <span class="tag-pill">Web Apps & MVPs</span>
-                        <span class="tag-pill">SEO Optimization</span>
-                        <span class="tag-pill">AI & Automation</span>
-                        <span class="tag-pill">SaaS Platforms</span>
-                        <span class="tag-pill">Conversion Funnels</span>
-                        <span class="tag-pill">UI/UX Strategy</span>
-                        <span class="tag-pill">Brand Identity</span>
-                        <span class="tag-pill">Intelligent Systems</span>
+                        <span class="tag-pill">Custom Websites</span>
+                        <span class="tag-pill">E-Commerce Stores</span>
+                        <span class="tag-pill">Web Applications</span>
+                        <span class="tag-pill">AI Solutions</span>
+                        <span class="tag-pill">Business Automation</span>
+                        <span class="tag-pill">Landing Pages</span>
+                        <span class="tag-pill">Internal Tools & Dashboards</span>
                     </div>
                 </div>
 
@@ -968,7 +970,7 @@
                     <div class="hero-badge">5-Step Process</div>
                 </div>
                 <h2 data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">Our Simple <span class="highlight-blue">5-Step Process</span></h2>
-                <p class="section-subtitle">From concept to launch, we guide you through every step of your digital journey</p>
+                <p class="section-subtitle">We partner with ambitious businesses to design, build, and launch digital experiences that combine thoughtful strategy, modern technology, and seamless interactions.</p>
             </div>
             
             <div class="process-timeline">
@@ -976,11 +978,8 @@
                 <div class="process-step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <div class="step-icon">
-                            <i class="fas fa-clipboard-check"></i>
-                        </div>
                         <h3>Choose a Plan</h3>
-                        <p>Select the perfect package that aligns with your business goals and budget. We'll help you find the right solution for your needs.</p>
+                        <p>Select the package that fits your objectives. We align on scope, deliverables, and transparent pricing from day one.</p>
                     </div>
                 </div>
                 
@@ -988,11 +987,8 @@
                 <div class="process-step">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <div class="step-icon">
-                            <i class="fas fa-comment-dots"></i>
-                        </div>
                         <h3>Discovery & Planning</h3>
-                        <p>We'll discuss your project requirements, goals, and vision to create a detailed project roadmap.</p>
+                        <p>We map your user journeys, outline core features, and design wireframes to build a high-fidelity blueprint of your product.</p>
                     </div>
                 </div>
                 
@@ -1000,11 +996,8 @@
                 <div class="process-step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <div class="step-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
                         <h3>Design & Development</h3>
-                        <p>Our team brings your vision to life with custom designs and clean, efficient code that works across all devices.</p>
+                        <p>We transform your approved blueprint into a stunning custom design and build it using fast, reliable, and clean-coded technologies.</p>
                     </div>
                 </div>
                 
@@ -1012,11 +1005,8 @@
                 <div class="process-step">
                     <div class="step-number">4</div>
                     <div class="step-content">
-                        <div class="step-icon">
-                            <i class="fas fa-search"></i>
-                        </div>
                         <h3>Testing & Optimization</h3>
-                        <p>We thoroughly test your website for performance, security, and user experience to ensure everything works perfectly.</p>
+                        <p>We thoroughly test your product for speed, security, and responsive performance to ensure an effortless user experience.</p>
                     </div>
                 </div>
                 
@@ -1024,11 +1014,8 @@
                 <div class="process-step">
                     <div class="step-number">5</div>
                     <div class="step-content">
-                        <div class="step-icon">
-                            <i class="fas fa-rocket"></i>
-                        </div>
                         <h3>Launch & Scale</h3>
-                        <p>Your website goes live! We provide ongoing support and optimization to help your business grow online.</p>
+                        <p>We deploy your system live, configure hosting/DNS, and provide ongoing updates to ensure your digital product continues to scale.</p>
                     </div>
                 </div>
                 
@@ -1049,7 +1036,7 @@
             <div class="section-header" style="text-align: center; margin-bottom: 40px;">
                 <div class="hero-badge">Capabilities</div>
                 <h2 data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">Full-Spectrum Systems. <span class="highlight-blue">Intelligent Growth.</span></h2>
-                <p class="section-subtitle">We integrate elite software engineering, custom AI, data intelligence, and performance marketing into a unified engine built to scale your brand.</p>
+                <p class="section-subtitle">From high-converting websites and e-commerce stores to AI-powered tools and custom platforms, we create digital products that help businesses stand out, operate smarter, and grow faster.</p>
             </div>
             
             <div class="saas-scroll-section">
@@ -1059,7 +1046,7 @@
                         <div class="card-left">
                             <span class="card-number">#01</span>
                             <h3><i class="fas fa-globe" style="color: #2563eb; margin-right: 12px; font-size: 1.6rem;"></i>Web & Digital Solutions</h3>
-                            <p>Custom websites, e-commerce platforms, and digital solutions that drive real business growth and conversions.</p>
+                            <p>We build high-converting websites and e-commerce stores crafted to help your business stand out, establish trust, and turn visitors into loyal customers.</p>
                             <ul>
                                 <li><i class="fas fa-check"></i> Custom Web Development</li>
                                 <li><i class="fas fa-check"></i> E-commerce Solutions</li>
@@ -1097,7 +1084,7 @@
                         <div class="card-left">
                             <span class="card-number">#02</span>
                             <h3><i class="fas fa-robot" style="color: #2563eb; margin-right: 12px; font-size: 1.6rem;"></i>AI & Automation</h3>
-                            <p>Cutting-edge artificial intelligence and automation solutions to streamline operations and enhance customer experiences.</p>
+                            <p>We deploy custom AI tools and intelligent agents that handle repetitive tasks, streamline your operations, and allow your team to focus on growth.</p>
                             <ul>
                                 <li><i class="fas fa-check"></i> AI Chatbots & Agents</li>
                                 <li><i class="fas fa-check"></i> Process Automation</li>
@@ -1141,7 +1128,7 @@
                         <div class="card-left">
                             <span class="card-number">#03</span>
                             <h3><i class="fas fa-chart-bar" style="color: #2563eb; margin-right: 12px; font-size: 1.6rem;"></i>Business Intelligence</h3>
-                            <p>Real-time data integration, analytics dashboards, and custom business tools for data-driven decision making.</p>
+                            <p>We build custom data dashboards and internal business tools that give you real-time visibility into your metrics so you can make smarter decisions.</p>
                             <ul>
                                 <li><i class="fas fa-check"></i> Real-time Data Feeds</li>
                                 <li><i class="fas fa-check"></i> Custom Dashboards</li>
@@ -1178,7 +1165,7 @@
                         <div class="card-left">
                             <span class="card-number">#04</span>
                             <h3><i class="fas fa-bullhorn" style="color: #2563eb; margin-right: 12px; font-size: 1.6rem;"></i>Digital Marketing</h3>
-                            <p>Comprehensive digital marketing strategies including paid advertising, lead generation, and performance optimization.</p>
+                            <p>We design and run targeted performance campaigns that attract your ideal customers, optimize your cost per acquisition, and maximize your return on ad spend.</p>
                             <ul>
                                 <li><i class="fas fa-check"></i> Paid Ads (Google, Meta)</li>
                                 <li><i class="fas fa-check"></i> Conversion Optimization</li>
@@ -1216,7 +1203,7 @@
                         <div class="card-left">
                             <span class="card-number">#05</span>
                             <h3><i class="fas fa-palette" style="color: #2563eb; margin-right: 12px; font-size: 1.6rem;"></i>Branding & Design</h3>
-                            <p>Complete brand identity, UI/UX design, and content creation services that build memorable user experiences.</p>
+                            <p>We craft clean visual identities and seamless user interfaces that communicate your value instantly and make a lasting premium impression.</p>
                             <ul>
                                 <li><i class="fas fa-check"></i> Visual Brand Identity</li>
                                 <li><i class="fas fa-check"></i> UI/UX Design (Figma)</li>
@@ -1276,21 +1263,26 @@
                         <span class="tech-title-highlight">AI-Powered Tech Stack</span>
                         That Covers Every Industry
                     </h2>
+                    <p class="section-subtitle" style="max-width: 650px; margin: 0 auto 24px auto; color: #64748b;">We use modern, battle-tested technologies to create fast, scalable, and reliable digital experiences that grow with your business.</p>
                     <div class="tech-capability-pills-ticker">
                         <div class="pills-ticker-track">
                             <!-- Set 1 -->
-                            <span class="tech-cap-pill">Shopify & WooCommerce Solutions</span>
-                            <span class="tech-cap-pill">Solar AI Calculator</span>
-                            <span class="tech-cap-pill">Custom AI & Chatbots</span>
-                            <span class="tech-cap-pill">MVP Development</span>
-                            <span class="tech-cap-pill">Custom Web Apps & SaaS</span>
+                            <span class="tech-cap-pill">Custom Websites</span>
+                            <span class="tech-cap-pill">E-Commerce Stores</span>
+                            <span class="tech-cap-pill">Web Applications</span>
+                            <span class="tech-cap-pill">AI Solutions</span>
+                            <span class="tech-cap-pill">Business Automation</span>
+                            <span class="tech-cap-pill">Landing Pages</span>
+                            <span class="tech-cap-pill">Internal Tools & Dashboards</span>
                             
                             <!-- Set 2 (Duplicated for seamless loop) -->
-                            <span class="tech-cap-pill">Shopify & WooCommerce Solutions</span>
-                            <span class="tech-cap-pill">Solar AI Calculator</span>
-                            <span class="tech-cap-pill">Custom AI & Chatbots</span>
-                            <span class="tech-cap-pill">MVP Development</span>
-                            <span class="tech-cap-pill">Custom Web Apps & SaaS</span>
+                            <span class="tech-cap-pill">Custom Websites</span>
+                            <span class="tech-cap-pill">E-Commerce Stores</span>
+                            <span class="tech-cap-pill">Web Applications</span>
+                            <span class="tech-cap-pill">AI Solutions</span>
+                            <span class="tech-cap-pill">Business Automation</span>
+                            <span class="tech-cap-pill">Landing Pages</span>
+                            <span class="tech-cap-pill">Internal Tools & Dashboards</span>
                         </div>
                     </div>
                 </div>
@@ -1516,7 +1508,7 @@
                             </div>
                         </div>
                         <h3 class="bento-title">No Ghosting Policy</h3>
-                        <p class="bento-text">Unlike many freelancers who disappear mid-project, we maintain <strong>clear communication</strong> and see every project through to completion. Your project is our priority from start to finish.</p>
+                        <p class="bento-text">You get a dedicated partner who communicates <strong>transparently</strong>, delivers on schedule, and ensures your project is completed to the highest standard without exceptions.</p>
                     </div>
                     <!-- iOS Style Chat Interface -->
                     <div class="apple-chat-wrapper">
@@ -1532,7 +1524,7 @@
                             <i class="fas fa-sliders-h"></i>
                         </div>
                         <h3 class="bento-title">Guaranteed Revisions</h3>
-                        <p class="bento-text">Your satisfaction is guaranteed with <strong>included revision rounds</strong> in every package. We won't rest until you're completely happy with the results.</p>
+                        <p class="bento-text">We work collaboratively to refine every design and interaction until the final product aligns <strong>perfectly with your brand</strong> and business objectives.</p>
                     </div>
                     <!-- Visual live element: revision loader -->
                     <div class="apple-revision-progress">
@@ -1550,7 +1542,7 @@
                             <i class="fas fa-user-check"></i>
                         </div>
                         <h3 class="bento-title">Dedicated PM</h3>
-                        <p class="bento-text">Enjoy <strong>personalized attention</strong> with a dedicated project manager who ensures consistency and quality throughout.</p>
+                        <p class="bento-text">Your project is led by a <strong>dedicated manager</strong> who coordinates timelines, keeps you updated, and ensures seamless execution from day one.</p>
                     </div>
                     <!-- Visual live element: iOS status light -->
                     <div class="apple-pm-badge">
@@ -1568,7 +1560,7 @@
                             <i class="fas fa-sitemap"></i>
                         </div>
                         <h3 class="bento-title">Structured Process</h3>
-                        <p class="bento-text">Our <strong>proven workflow</strong> ensures efficiency and quality at every stage, from initial consultation to final delivery and beyond.</p>
+                        <p class="bento-text">A streamlined <strong>five-step workflow</strong> designed to move your project from alignment to launch efficiently, maintaining high quality at every milestone.</p>
                     </div>
                     <!-- iOS style timeline steps -->
                     <div class="apple-timeline">
@@ -1596,7 +1588,7 @@
                             <i class="fas fa-file-signature"></i>
                         </div>
                         <h3 class="bento-title">Clear Contracts</h3>
-                        <p class="bento-text">No hidden terms or surprise fees. We provide <strong>transparent pricing</strong> and <strong>detailed deliverables</strong> in writing before we begin any work.</p>
+                        <p class="bento-text">Every engagement starts with <strong>transparent pricing</strong>, clear timelines, and explicit deliverables so you know exactly what to expect with zero surprises.</p>
                     </div>
                     <!-- iOS style Toggles -->
                     <div class="apple-toggles-wrapper">
@@ -1618,7 +1610,7 @@
                             <i class="fas fa-clock"></i>
                         </div>
                         <h3 class="bento-title">Business Support</h3>
-                        <p class="bento-text">Get <strong>reliable support</strong> during business hours with guaranteed fast response times. We're here when you need us.</p>
+                        <p class="bento-text">Access <strong>fast, reliable assistance</strong> during standard business hours with guaranteed response times so your digital products stay online and operational.</p>
                     </div>
                     <!-- Visual live element: Active Radar -->
                     <div class="apple-support-badge">
@@ -1902,7 +1894,6 @@
                 
                 <!-- Calendly inline widget begin -->
                 <div class="calendly-inline-widget" data-url="https://calendly.com/jaigoel2206/30min?background_color=ffffff&text_color=0f172a&primary_color=2563eb&hide_landing_page_details=1&hide_gdpr_banner=1" style="min-width:320px;height:600px;border:none;"></div>
-                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
                 <!-- Calendly inline widget end -->
                 
                 <script>
@@ -2209,9 +2200,19 @@
         }
         requestAnimationFrame(raf);
 
-        // Synchronize scroll events for AOS and other standard scroll listeners
+        // Synchronize scroll events safely for AOS and other standard scroll listeners
+        let isSyncingScroll = false;
         lenis.on('scroll', () => {
-            window.dispatchEvent(new Event('scroll'));
+            // Cleanly refresh AOS to keep premium scroll animations perfectly in sync
+            if (window.AOS) {
+                AOS.refresh();
+            }
+            // Safely dispatch native scroll event without infinite recursion
+            if (!isSyncingScroll) {
+                isSyncingScroll = true;
+                window.dispatchEvent(new Event('scroll'));
+                isSyncingScroll = false;
+            }
         });
 
         // Initialize AOS
