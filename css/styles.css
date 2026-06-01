@@ -10598,3 +10598,240 @@ h6::after,
         0 40px 80px -15px rgba(0, 0, 0, 0.04) !important; /* Deepest, softest floating shadow */
     border-color: rgba(37, 99, 235, 0.15) !important; /* Premium subtle focal blue border glow */
 }
+
+/* ==========================================================================
+   MOBILE PROCESS CARD SWITCHER & PHONE MOCKUP (wantace-style)
+   ========================================================================== */
+
+/* Hide mobile indicators by default on desktop/tablet */
+.mobile-flow-indicators {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    /* Hide decorative ideation node and connector line on mobile */
+    .node-ideation,
+    .flow-connector-line {
+        display: none !important;
+    }
+
+    /* Transform the flow container into a high-end Apple-style frameless container */
+    .hero-flow-container {
+        display: block !important;
+        position: relative !important;
+        width: 100% !important;
+        max-width: 480px !important; /* Spacious Apple width */
+        height: 420px !important; /* Fixed viewport height to host all cards comfortably */
+        margin: 2rem auto 0 auto !important;
+        border-radius: 0 !important;
+        border: none !important; /* Remove phone bezel */
+        background: transparent !important; /* Translucent glass styling inside the card itself */
+        box-shadow: none !important; /* Shadow on the card itself */
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+        z-index: 10 !important;
+    }
+
+    /* Remove notch and home bar styles completely */
+    .hero-flow-container::before,
+    .hero-flow-container::after {
+        display: none !important;
+        content: none !important;
+    }
+
+    /* Premium indicators at the top of flow container */
+    .mobile-flow-indicators {
+        display: flex !important;
+        justify-content: space-between !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        padding: 0 6px !important;
+        gap: 10px !important;
+        z-index: 25 !important;
+    }
+
+    .indicator-step {
+        flex: 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important; /* Left-aligned real dashboard design */
+        gap: 6px !important;
+        cursor: pointer !important;
+        user-select: none !important;
+        -webkit-user-select: none !important;
+        transition: transform 0.25s ease !important;
+    }
+    
+    .indicator-step:hover {
+        transform: translateY(-1px) !important;
+    }
+
+    .indicator-number {
+        display: none !important; /* Keep design modern & uncluttered */
+    }
+
+    .indicator-text {
+        font-size: 0.65rem !important;
+        font-weight: 750 !important; /* Richer weight for extreme legibility */
+        color: #86868b !important; /* Clean gray text standard */
+        text-transform: uppercase !important;
+        letter-spacing: 0.05em !important;
+        transition: color 0.25s ease !important;
+    }
+
+    .indicator-step.active .indicator-text {
+        color: #0071e3 !important; /* Elegant Apple blue active label */
+    }
+
+    .indicator-progress {
+        width: 100% !important;
+        height: 3.5px !important; /* Refined sleek Apple gauge thickness */
+        background: rgba(0, 0, 0, 0.06) !important; /* Transparent engraved track background */
+        border-radius: 99px !important;
+        overflow: hidden !important;
+        box-shadow: inset 0 0.5px 1px rgba(0, 0, 0, 0.05) !important; /* Subtle inner shadow depth */
+    }
+
+    .indicator-progress .progress-bar {
+        width: 0% !important;
+        height: 100% !important;
+        background: linear-gradient(90deg, #0071e3 0%, #00a2ff 100%) !important; /* Royal Apple royal blue gradient */
+        border-radius: 99px !important;
+        box-shadow: 0 0 6px rgba(0, 113, 227, 0.3) !important; /* Active progress soft microglow */
+        transition: width 0.1s linear !important;
+    }
+
+    /* Finished steps keep progress bar at 100% */
+    .indicator-step.completed .indicator-progress .progress-bar {
+        width: 100% !important;
+        background: #0071e3 !important; /* Solid finish blue */
+        box-shadow: none !important;
+    }
+
+    /* Absolutely position all flow cards inside the mockup container */
+    .hero-flow-container .flow-card {
+        position: absolute !important;
+        top: 55px !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: auto !important;
+        height: auto !important;
+        max-width: none !important;
+        margin: 0 !important;
+        background: #ffffff !important;
+        border-radius: 24px !important; /* Premium rounded corners */
+        padding: 24px 20px !important;
+        border: 1px solid rgba(0, 0, 0, 0.05) !important;
+        box-shadow: 
+            0 4px 6px -1px rgba(0, 0, 0, 0.02),
+            0 20px 40px -10px rgba(15, 23, 42, 0.08), 
+            0 25px 50px -12px rgba(15, 23, 42, 0.06),
+            inset 0 1px 0 rgba(255, 255, 255, 0.95),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.02) !important; /* Premium 3D floating shadow layers */
+        box-sizing: border-box !important;
+        
+        /* Snappy Apple ease transition */
+        opacity: 0 !important;
+        pointer-events: none !important;
+        z-index: 5 !important;
+        transform: scale(0.96) translate3d(0, 15px, 0) !important;
+        transition: 
+            opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+            transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+            border-color 0.3s ease !important;
+    }
+
+    /* Active state is fully centered */
+    .hero-flow-container .flow-card.active {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        z-index: 15 !important;
+        transform: scale(1) translate3d(0, 0, 0) !important;
+    }
+
+    /* Prev state slides out to the left */
+    .hero-flow-container .flow-card.prev {
+        opacity: 0 !important;
+        pointer-events: none !important;
+        z-index: 5 !important;
+        transform: scale(0.96) translate3d(-105%, 0, 0) !important;
+    }
+
+    /* Next state slides out to the right */
+    .hero-flow-container .flow-card.next {
+        opacity: 0 !important;
+        pointer-events: none !important;
+        z-index: 5 !important;
+        transform: scale(0.96) translate3d(105%, 0, 0) !important;
+    }
+
+    /* Responsive typography scaling for card content - Maximum Readability */
+    .hero-flow-container .flow-card .card-title {
+        font-size: 1.15rem !important;
+        font-weight: 800 !important;
+        color: #1d1d1f !important; /* High contrast black */
+        margin: 0.25rem 0 0.2rem 0 !important;
+    }
+    
+    .hero-flow-container .flow-card .card-desc {
+        font-size: 0.85rem !important;
+        font-weight: 600 !important;
+        color: #4b5563 !important; /* Rich readable gray label */
+        margin-bottom: 0.75rem !important;
+    }
+
+    .hero-flow-container .flow-card .card-bullet-list {
+        margin: 0.6rem 0 0.8rem 0 !important;
+        gap: 6px !important;
+    }
+
+    .hero-flow-container .flow-card .card-bullet-list li {
+        font-size: 0.78rem !important;
+        font-weight: 650 !important;
+        color: #374151 !important; /* High contrast deep slate bullet text */
+    }
+
+    /* Discovery Call card style specific tweaks for roomy layout */
+    .hero-flow-container .card-discovery .avatar-group {
+        gap: 16px !important;
+        margin-bottom: 0.6rem !important;
+    }
+
+    .hero-flow-container .card-discovery .avatar-circle {
+        width: 42px !important;
+        height: 42px !important;
+        font-size: 1rem !important;
+    }
+
+    /* Strategy Document card specific scanning animation height tweaks */
+    .hero-flow-container .card-strategy .strategy-icon-wrapper {
+        height: 48px !important;
+        margin-bottom: 0.6rem !important;
+    }
+    
+    .hero-flow-container .card-strategy .strategy-icon {
+        font-size: 1.35rem !important;
+    }
+
+    /* Prototype Card specific preview height tweaks */
+    .hero-flow-container .card-prototype .prototype-preview {
+        padding: 8px !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .hero-flow-container .card-prototype .prototype-badge {
+        padding: 0.3rem 0.6rem !important;
+        margin-bottom: 0.6rem !important;
+    }
+
+    /* Success Card go-live action button adjustment */
+    .hero-flow-container .card-success .success-action-btn {
+        margin-top: 0.6rem !important;
+        padding: 10px 20px !important;
+        font-size: 0.8rem !important;
+    }
+}
+

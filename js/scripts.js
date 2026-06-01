@@ -383,6 +383,145 @@ document.addEventListener('DOMContentLoaded', function() {
         // Initial run
         updateStack();
     }
+
+    // ==========================================================================
+    // MOBILE HERO FLOW CARD SWITCHER (wantace-style)
+    // ==========================================================================
+    const flowContainer = document.querySelector('.hero-flow-container');
+    const flowCards = document.querySelectorAll('.hero-flow-container .flow-card');
+    const indicators = document.querySelectorAll('.mobile-flow-indicators .indicator-step');
+    
+    if (flowContainer && flowCards.length > 0 && indicators.length > 0) {
+        let currentIndex = 0;
+        let isPaused = false;
+        let lastTime = performance.now();
+        let elapsed = 0;
+        const duration = 2500; // 2.5 seconds per step (fast, premium flow)
+        let animationFrameId = null;
+        
+        // Touch gesture vars
+        let touchStartX = 0;
+        let touchStartY = 0;
+        
+        function updateCards(targetIndex) {
+            // Cap targetIndex within boundaries
+            currentIndex = (targetIndex + flowCards.length) % flowCards.length;
+            elapsed = 0; // reset active card elapsed time
+            
+            // 1. Update Card CSS classes
+            flowCards.forEach((card, idx) => {
+                card.classList.remove('active', 'prev', 'next');
+                if (idx === currentIndex) {
+                    card.classList.add('active');
+                } else if (idx < currentIndex) {
+                    card.classList.add('prev');
+                } else {
+                    card.classList.add('next');
+                }
+            });
+            
+            // 2. Update Indicator step status and static progress fill values
+            indicators.forEach((indicator, idx) => {
+                indicator.classList.remove('active', 'completed');
+                const bar = indicator.querySelector('.progress-bar');
+                if (bar) {
+                    if (idx < currentIndex) {
+                        indicator.classList.add('completed');
+                        bar.style.width = '100%';
+                    } else if (idx === currentIndex) {
+                        indicator.classList.add('active');
+                        bar.style.width = '0%';
+                    } else {
+                        bar.style.width = '0%';
+                    }
+                }
+            });
+        }
+        
+        function animateSwitcher(time) {
+            const delta = time - lastTime;
+            lastTime = time;
+            
+            // Only update progression if screen is mobile-sized (<= 768px) and not paused
+            const isMobile = window.innerWidth <= 768;
+            
+            if (isMobile && !isPaused) {
+                elapsed += delta;
+                
+                // Update progress bar of the ACTIVE step dynamically
+                const activeBar = indicators[currentIndex].querySelector('.progress-bar');
+                if (activeBar) {
+                    const percent = Math.min(100, (elapsed / duration) * 100);
+                    activeBar.style.width = `${percent}%`;
+                }
+                
+                // If progress reaches 100%, switch to next card
+                if (elapsed >= duration) {
+                    updateCards(currentIndex + 1);
+                }
+            } else {
+                // If not mobile, reset elapsed time tracking
+                elapsed = 0;
+            }
+            
+            animationFrameId = requestAnimationFrame(animateSwitcher);
+        }
+        
+        // Trigger initial cards configuration
+        updateCards(0);
+        
+        // Start animation frame loop
+        animationFrameId = requestAnimationFrame((time) => {
+            lastTime = time;
+            animateSwitcher(time);
+        });
+        
+        // Interactive: Indicator Click
+        indicators.forEach((indicator, idx) => {
+            indicator.addEventListener('click', () => {
+                updateCards(idx);
+            });
+        });
+        
+        // Interactive: Hover/Touch Pause Events
+        const pauseTimer = () => { isPaused = true; };
+        const resumeTimer = () => { 
+            isPaused = false; 
+            lastTime = performance.now(); 
+        };
+        
+        flowContainer.addEventListener('mouseenter', pauseTimer);
+        flowContainer.addEventListener('mouseleave', resumeTimer);
+        
+        // Mobile Touch Swipe Handling
+        flowContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+            isPaused = true; // pause when user touches/holds
+        }, { passive: true });
+        
+        flowContainer.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].clientX;
+            const touchEndY = e.changedTouches[0].clientY;
+            
+            const diffX = touchEndX - touchStartX;
+            const diffY = touchEndY - touchStartY;
+            
+            // Check if touch is primarily horizontal swipe
+            if (Math.abs(diffX) > Math.abs(diffY)) {
+                if (diffX > 50) {
+                    // Swipe Right -> Previous card
+                    updateCards(currentIndex - 1);
+                } else if (diffX < -50) {
+                    // Swipe Left -> Next card
+                    updateCards(currentIndex + 1);
+                }
+            }
+            
+            // Resume progress bar loop after swiping
+            resumeTimer();
+        }, { passive: true });
+    }
 });
 
 
