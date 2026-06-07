@@ -334,27 +334,18 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const updateStack = () => {
             const isDesktop = window.innerWidth > 768;
+            const startTop = isDesktop ? 100 : 75;
+            const offsetStep = isDesktop ? 30 : 20;
             
             cards.forEach((card, index) => {
                 const cardContent = card.querySelector('.card-content');
                 if (!cardContent) return;
                 
-                if (!isDesktop) {
-                    // Reset mobile styles
-                    card.style.top = 'auto';
-                    card.style.zIndex = 'auto';
-                    cardContent.style.setProperty('--card-transform', 'none');
-                    cardContent.style.opacity = '1';
-                    cardContent.style.filter = 'none';
-                    return;
-                }
-                
-                // Desktop Sticky positioning offsets
-                card.style.top = `${100 + index * stackOffset}px`;
+                // Set Sticky positioning offsets for all screen sizes
+                card.style.top = `${startTop + index * offsetStep}px`;
                 card.style.zIndex = index + 1;
                 
                 const rect = card.getBoundingClientRect();
-                const topLimit = 100 + index * stackOffset;
                 const viewportHeight = window.innerHeight;
                 const eightyPercentViewport = viewportHeight * 0.8;
                 
@@ -483,15 +474,12 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
         
-        // Interactive: Hover/Touch Pause Events
+        // Interactive: Touch Pause/Resume Events (Hover pausing disabled for smoother rotation)
         const pauseTimer = () => { isPaused = true; };
         const resumeTimer = () => { 
             isPaused = false; 
             lastTime = performance.now(); 
         };
-        
-        flowContainer.addEventListener('mouseenter', pauseTimer);
-        flowContainer.addEventListener('mouseleave', resumeTimer);
         
         // Mobile Touch Swipe Handling
         flowContainer.addEventListener('touchstart', (e) => {
