@@ -43,9 +43,9 @@ const initTimeline = () => {
         const viewportHeight = window.innerHeight;
         
         // 1. Dynamic line progress (Using 100% layout-reflow-free cached coordinates)
-        const startPoint = scrollTop + viewportHeight * 0.65;
+        const startPoint = scrollTop + viewportHeight * 0.75;
         const scrolled = startPoint - containerTop;
-        const total = containerHeight - (viewportHeight * 0.3); // 0.65 - 0.35 = 0.3 viewport difference
+        const total = containerHeight - (viewportHeight * 0.4); // 0.75 - 0.35 = 0.4 viewport difference
         
         let progress = scrolled / total;
         progress = Math.max(0, Math.min(1, progress));
@@ -56,7 +56,7 @@ const initTimeline = () => {
         stepMetrics.forEach((metric) => {
             if (metric.animated) return;
             
-            if (metric.top <= scrollTop + viewportHeight * 0.8) {
+            if (metric.top <= scrollTop + viewportHeight * 0.9) {
                 metric.animated = true;
                 metric.element.classList.add('animate');
                 
