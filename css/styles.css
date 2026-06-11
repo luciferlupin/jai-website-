@@ -465,38 +465,46 @@ img {
     flex: 0 0 auto;
     width: 380px;
     height: 340px;
-    border-radius: 24px; /* Squircle curves */
-    overflow: hidden;
-    background: #f5f5f7; /* Apple signature grey */
-    border: 1px solid rgba(0, 0, 0, 0.02);
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
     display: flex;
     flex-direction: column;
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     cursor: pointer;
+    overflow: visible !important;
 }
 
 .work-showcase-item:hover {
-    transform: scale(1.02); /* Apple premium transition */
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05); /* Soft natural blur shadow */
+    transform: translateY(-6px);
 }
 
 .work-showcase-item img {
     width: 100%;
-    height: 260px;
+    height: 250px;
     object-fit: cover;
     display: block;
-    border-radius: 24px 24px 0 0;
+    border-radius: 20px !important;
+    border: 1px solid rgba(0, 0, 0, 0.04) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.01) !important;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.work-showcase-item:hover img {
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.1) !important;
+    transform: scale(1.01);
 }
 
 .showcase-card-footer {
-    height: 80px;
-    padding: 15px 20px;
+    height: auto;
+    padding: 14px 4px 0 4px !important;
     display: flex;
     align-items: center;
-    gap: 15px;
-    background: #f5f5f7; /* Match signature card gray */
-    border-radius: 0 0 24px 24px;
-    border-top: 1px solid rgba(0, 0, 0, 0.02);
+    gap: 12px;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
 }
 
 .showcase-icon-wrapper {
@@ -520,11 +528,10 @@ img {
 .icon-consult { background: rgba(59, 130, 246, 0.08); color: #3b82f6; }
 .icon-jewelry { background: rgba(139, 92, 246, 0.08); color: #8b5cf6; }
 .icon-ayur { background: rgba(34, 197, 94, 0.08); color: #22c55e; }
-.icon-trade { background: rgba(249, 115, 22, 0.08); color: #f97316; }
 .icon-indus { background: rgba(100, 116, 139, 0.08); color: #64748b; }
 .icon-crm { background: rgba(79, 70, 229, 0.08); color: #4f46e5; }
 .icon-map { background: rgba(6, 182, 212, 0.08); color: #06b6d4; }
-.icon-tarot { background: rgba(168, 85, 247, 0.08); color: #a855f7; }
+.icon-browserbuddy { background: rgba(99, 102, 241, 0.08); color: #6366f1; }
 .icon-travel { background: rgba(14, 165, 233, 0.08); color: #0ea5e9; }
 .icon-home { background: rgba(16, 185, 129, 0.08); color: #10b981; }
 
@@ -2289,18 +2296,24 @@ section {
     
     .work-showcase-item {
         width: 290px;
-        height: 250px; /* Taller card container to allow text to fit */
+        height: auto !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
     }
     
     .work-showcase-item img {
         height: 180px !important; /* Shorter image height to fit layout */
         object-fit: cover;
+        border-radius: 16px !important;
     }
     
     .showcase-card-footer {
-        height: 70px !important; /* Fixed footer height to prevent text overlap */
-        padding: 12px 16px !important;
-        flex-shrink: 0 !important;
+        height: auto !important; /* Fixed footer height to prevent text overlap */
+        padding: 10px 4px 0 4px !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
     }
     
     .showcase-icon-wrapper {
@@ -3752,7 +3765,7 @@ section {
 
 /* Why Choose Us Section */
 .why-us {
-    padding: 6rem 0;
+    padding: 3rem 0 6rem 0;
     background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
     position: relative;
     overflow: hidden;
@@ -4142,9 +4155,13 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml;utf8,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="2" fill="%23e2e8f0" opacity="0.3"/></svg>');
-    background-size: 60px 60px;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center center;
     z-index: 0;
+    pointer-events: none;
 }
 
 .portfolio .container {
@@ -4435,6 +4452,222 @@ section {
         right: 12px;
         padding: 5px 12px;
         font-size: 0.65rem;
+    }
+}
+
+/* Premium Apple-Style Portfolio Redesign */
+.portfolio-list-premium {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    max-width: 1200px;
+    margin: 3rem auto 0;
+    padding: 0 20px;
+}
+
+.portfolio-card-premium {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: #f5f5f7;
+    border-radius: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.01);
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    min-height: 340px; /* Ensure content is never cut off */
+    height: auto; /* Allow expanding if content is long */
+}
+
+.portfolio-card-premium:has(.portfolio-calc-section) {
+    height: auto; /* Expand dynamically for ROI calculator */
+}
+
+.portfolio-card-premium:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.02);
+    border-color: rgba(37, 99, 235, 0.15);
+}
+
+.portfolio-card-premium:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.portfolio-card-content {
+    width: 52%;
+    padding: 1.5rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.portfolio-card-visual {
+    width: 48%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem;
+}
+
+.portfolio-card-visual-inner {
+    width: 100%;
+    height: 100%;
+    min-height: 240px;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    background: transparent !important;
+}
+
+.portfolio-card-visual-inner img {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 0;
+    box-shadow: none;
+    transition: none;
+}
+
+.portfolio-card-category {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #0066cc;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-card-brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1d1d1f;
+    letter-spacing: -0.015em;
+    margin-bottom: 0.2rem;
+}
+
+.portfolio-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1d1d1f;
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.02em;
+}
+
+.portfolio-card-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem 1.5rem;
+}
+
+.portfolio-card-checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    font-size: 0.95rem;
+    color: #515154;
+    line-height: 1.5;
+}
+
+.portfolio-card-checklist li strong {
+    color: #1d1d1f;
+    font-weight: 600;
+}
+
+.portfolio-card-checklist .check-bullet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    color: #10b981;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+    transition: all 0.3s ease;
+}
+
+.portfolio-card-premium:hover .check-bullet {
+    background: #ecfdf5;
+    transform: scale(1.1);
+}
+
+/* Custom Visual Container Gradients */
+.bg-liquidity { background: linear-gradient(135deg, #0f172a 0%, #030712 100%); }
+.bg-herbiete { background: linear-gradient(135deg, #FFF1F2 0%, #FFE4E6 100%); }
+.bg-notary { background: linear-gradient(135deg, #EEF2F6 0%, #D0E1FD 100%); }
+.bg-srbhealthcare { background: linear-gradient(135deg, #F0FDFA 0%, #CCFBF1 100%); }
+.bg-luxuryjewelry { background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%); }
+.bg-ayurdiet { background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%); }
+.bg-watfix { background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%); }
+.bg-curiouscrm { background: linear-gradient(135deg, #EEF2F6 0%, #D8E2ED 100%); }
+.bg-toiletfinder { background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%); }
+.bg-browserbuddy { background: linear-gradient(135deg, #09090b 0%, #1e1b4b 100%); }
+.bg-arpanholidays { background: linear-gradient(135deg, #F0FDF4 0%, #D1FAE5 100%); }
+.bg-bigpockets { background: linear-gradient(135deg, #F5F3FF 0%, #DDD6FE 100%); }
+
+/* Adjustments for dark-background visual mocks */
+.bg-browserbuddy img, .bg-liquidity img {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* Mobile responsive for premium layout */
+@media (max-width: 768px) {
+    .portfolio-list-premium {
+        gap: 2rem;
+        padding: 0 15px;
+    }
+    
+    .portfolio-card-premium {
+        flex-direction: column !important;
+        height: auto !important;
+        min-height: auto;
+        border-radius: 20px;
+    }
+    
+    .portfolio-card-content {
+        width: 100%;
+        padding: 1.8rem 1.2rem;
+    }
+    
+    .portfolio-card-visual {
+        width: 100%;
+        padding: 1.2rem;
+    }
+    
+    .portfolio-card-visual-inner {
+        min-height: 260px;
+        border-radius: 14px;
+    }
+    
+    .portfolio-card-visual-inner img {
+        width: 90%;
+    }
+    
+    .portfolio-card-title {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+    
+    .portfolio-card-checklist {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+    }
+    
+    .portfolio-card-checklist li {
+        font-size: 0.85rem;
     }
 }
 
@@ -6636,7 +6869,6 @@ section {
 .card,
 .card-content,
 .sticky-card,
-.work-showcase-item,
 .step-content,
 .pricing-card,
 .testimonial-card,
@@ -6655,7 +6887,6 @@ section {
 .card:hover,
 .card-content:hover,
 .sticky-card:hover,
-.work-showcase-item:hover,
 .step-content:hover,
 .pricing-card:hover,
 .testimonial-card:hover,
@@ -7063,9 +7294,9 @@ select:focus {
     position: relative;
     width: 100%;
     max-width: 650px;
-    margin: 0 auto 24px auto;
+    margin: 0 auto 48px auto;
     overflow: hidden;
-    padding: 12px 0;
+    padding: 20px 0;
 }
 
 .pills-ticker-track {
@@ -7116,16 +7347,19 @@ select:focus {
 }
 
 .tech-cap-pill {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(0, 0, 0, 0.07);
     border-radius: 9999px;
-    padding: 6px 14px;
-    font-size: 0.8rem;
+    padding: 10px 22px;
+    font-size: 0.9rem;
     font-weight: 600;
     color: #475569;
+    line-height: 1.4;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     white-space: nowrap;
@@ -8337,7 +8571,7 @@ select:focus {
     position: relative;
     width: 100%;
     max-width: 1200px; /* Increased from 1000px */
-    height: 480px; /* Increased from 380px */
+    height: 410px;
     margin: 0 auto !important;
     animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
 }
@@ -8883,8 +9117,8 @@ select:focus {
 /* Trusted Partner Logos row styling */
 .hero-trust-bar {
     width: 100%;
-    max-width: 900px;
-    margin: 20px auto 0 auto !important;
+    max-width: 750px;
+    margin: -20px auto 0 auto !important;
     text-align: center;
     animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
 }
@@ -8895,15 +9129,23 @@ select:focus {
     font-weight: 700;
     color: var(--hero-text-light);
     letter-spacing: 0.1em;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
-.trust-logos {
+.trust-logos-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.trust-logos-row {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 2.5rem 3.5rem;
+    gap: 1rem 2.25rem;
 }
 
 .trust-logo-item {
@@ -9087,11 +9329,14 @@ select:focus {
     }
     
     .hero-trust-bar {
-        margin-top: 4rem;
+        margin-top: 1.5rem !important;
     }
     
-    .trust-logos {
-        gap: 1.5rem 2rem;
+    .trust-logos-row {
+        gap: 0.85rem 1.75rem !important;
+    }
+    .trust-logos-rows {
+        gap: 0.85rem !important;
     }
 }
 
@@ -10207,22 +10452,13 @@ html.lenis, html.lenis body {
 .bento-card,
 .expertise-card,
 .feature-card,
-.service-card,
-.work-showcase-item {
+.service-card {
     padding: 28px !important; /* Clean inner border spaces */
     border-radius: 16px !important; /* Consistent premium curves */
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02), inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
     border: 1px solid rgba(0, 0, 0, 0.04) !important;
     background: #ffffff !important;
     box-sizing: border-box !important;
-}
-
-/* Work showcase item layout adjustments */
-.work-showcase-item {
-    padding: 0 !important; /* Keep items clean for top images */
-}
-.showcase-card-footer {
-    padding: 16px 20px !important;
 }
 
 /* 6. Fluid Responsive Spacings for Mobile & Tablet break-points */
@@ -11102,7 +11338,7 @@ html.lenis, html.lenis body {
     /* 3. Hero Flow Graphic Expansion */
     .hero-flow-container {
         max-width: 1320px !important;
-        height: 520px !important;
+        height: 440px !important;
         margin-top: 2rem !important;
     }
     
@@ -11788,9 +12024,12 @@ h6::after,
         color: #64748b !important;
     }
     
-    .trust-logos {
-        gap: 12px 20px !important;
+    .trust-logos-row {
+        gap: 10px 16px !important;
         justify-content: center !important;
+    }
+    .trust-logos-rows {
+        gap: 10px !important;
     }
     
     .trust-logo-item {
@@ -11993,4 +12232,172 @@ h6::after,
         padding-top: 25px !important; /* Reduce space above process section heading on mobile */
     }
 }
+
+/* ==========================================================================
+   PORTFOLIO ROI CALCULATOR WIDGET (BigPockets)
+   ========================================================================== */
+.portfolio-calc-section {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(229, 231, 235, 0.7);
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.portfolio-card-premium .portfolio-calc-section {
+    width: calc(100% - 7rem);
+    margin: 0 3.5rem 3.5rem 3.5rem;
+}
+
+.calc-header {
+    margin-bottom: 1.5rem;
+}
+
+.calc-header h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.calc-header h4 i {
+    color: #2563eb;
+}
+
+.calc-header p {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.calc-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+}
+
+.calc-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.calc-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.calc-input-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #475569;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calc-val {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+/* Range Input styling */
+.calc-input-group input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 5px;
+    outline: none;
+}
+
+.calc-input-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #2563eb;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
+}
+
+.calc-input-group input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.calc-outputs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.calc-output-card {
+    background: #ffffff;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 16px;
+    padding: 1.25rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.01);
+}
+
+.output-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.output-val {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #1e293b;
+}
+
+.output-val.text-green {
+    color: #16a34a;
+}
+
+.output-val.text-blue {
+    color: #2563eb;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    .calc-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-calc-section {
+        padding: 1.25rem;
+        border-radius: 20px;
+    }
+    .portfolio-card-premium .portfolio-calc-section {
+        width: calc(100% - 3rem);
+        margin: 0 1.5rem 2rem 1.5rem;
+    }
+    .calc-outputs {
+        grid-template-columns: 1fr;
+    }
+    .output-val {
+        font-size: 1.15rem;
+    }
+}
+
 

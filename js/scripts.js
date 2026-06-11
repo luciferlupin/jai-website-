@@ -510,6 +510,76 @@ document.addEventListener('DOMContentLoaded', function() {
             resumeTimer();
         }, { passive: true });
     }
+
+    // ==========================================================================
+    // PORTFOLIO ROI CALCULATOR (BigPockets)
+    // ==========================================================================
+    const propPriceInput = document.getElementById('prop-price');
+    const groupDiscountInput = document.getElementById('group-discount');
+    const initInvestInput = document.getElementById('init-invest');
+    const expRentInput = document.getElementById('exp-rent');
+    const appreciationRateInput = document.getElementById('appreciation-rate');
+    const holdingPeriodInput = document.getElementById('holding-period');
+
+    function updateCalculator() {
+        if (!propPriceInput) return;
+
+        const propPrice = parseFloat(propPriceInput.value);
+        const groupDiscount = parseFloat(groupDiscountInput.value);
+        const initInvest = parseFloat(initInvestInput.value);
+        const expRent = parseFloat(expRentInput.value);
+        const appreciationRate = parseFloat(appreciationRateInput.value);
+        const holdingPeriod = parseFloat(holdingPeriodInput.value);
+
+        // Update slider value labels
+        document.getElementById('prop-price-val').textContent = '$' + propPrice.toLocaleString();
+        document.getElementById('group-discount-val').textContent = groupDiscount + '%';
+        document.getElementById('init-invest-val').textContent = '$' + initInvest.toLocaleString();
+        document.getElementById('exp-rent-val').textContent = '$' + expRent.toLocaleString();
+        document.getElementById('appreciation-rate-val').textContent = appreciationRate + '%';
+        document.getElementById('holding-period-val').textContent = holdingPeriod + ' Years';
+
+        // Calculations
+        const discountedPrice = propPrice * (1 - groupDiscount / 100);
+        const ownershipShare = initInvest / discountedPrice;
+        
+        // 1. Annual Rental Yield = (Rent * 12) / Discounted Price
+        const annualRentalYield = ((expRent * 12) / discountedPrice) * 100;
+        
+        // 2. Monthly Cash Flow = Rent * Ownership Share
+        const monthlyCashFlow = expRent * ownershipShare;
+        
+        // 3. Future Property Value = Prop Price * (1 + appreciation)^holding
+        const futureValue = propPrice * Math.pow(1 + appreciationRate / 100, holdingPeriod);
+        
+        // 4. Capital Gain = Future Value - Discounted Price
+        const capitalGain = futureValue - discountedPrice;
+        const investorShareCapGain = capitalGain * ownershipShare;
+        
+        // 5. Total Rental Profit = Rent * 12 * holding * ownership share
+        const totalRentalProfit = expRent * 12 * holdingPeriod * ownershipShare;
+        
+        // 6. Total Profit = Capital Gain Share + Rental Profit
+        const totalProfit = investorShareCapGain + totalRentalProfit;
+        
+        // 7. Projected ROI % = Total Profit / Initial Investment * 100
+        const projectedROI = (totalProfit / initInvest) * 100;
+
+        // Render Outputs
+        document.getElementById('out-yield').textContent = annualRentalYield.toFixed(2) + '%';
+        document.getElementById('out-cashflow').textContent = '$' + Math.round(monthlyCashFlow).toLocaleString();
+        document.getElementById('out-roi').textContent = projectedROI.toFixed(1) + '%';
+        document.getElementById('out-capgain').textContent = '$' + Math.round(investorShareCapGain).toLocaleString();
+        document.getElementById('out-future-val').textContent = '$' + Math.round(futureValue).toLocaleString();
+        document.getElementById('out-total-profit').textContent = '$' + Math.round(totalProfit).toLocaleString();
+    }
+
+    if (propPriceInput) {
+        [propPriceInput, groupDiscountInput, initInvestInput, expRentInput, appreciationRateInput, holdingPeriodInput].forEach(input => {
+            input.addEventListener('input', updateCalculator);
+        });
+        updateCalculator();
+    }
 });
 
 

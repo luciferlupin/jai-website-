@@ -71,12 +71,4 @@
         <priority>0.7</priority>
     </url>
     
-    <!-- CRM Product Page - Service Offering -->
-    <url>
-        <loc>https://curiouskaizer.com/crm-product.html</loc>
-        <lastmod>2025-02-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
 </urlset>
