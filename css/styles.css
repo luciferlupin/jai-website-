@@ -7466,7 +7466,7 @@ select:focus {
         width: 100%;
         max-width: 1200px;
         margin: 40px auto 0 auto;
-        height: 700px;
+        height: 760px; /* Increased from 700px to add space below the pills */
         display: block;
         overflow: visible; /* Let high-arched outer cards flow smoothly into top margins */
     }
@@ -11356,7 +11356,7 @@ html.lenis, html.lenis body {
     /* 5. Tech Stack Orbiting Squircle expansion */
     .tech-arch-container {
         max-width: 1360px !important;
-        height: 720px !important;
+        height: 780px !important; /* Increased from 720px to add space below the pills */
     }
     
     .tech-central-content {
@@ -11412,7 +11412,7 @@ html.lenis, html.lenis body {
     /* 5. Tech Stack Orbiting Squircle expansion */
     .tech-arch-container {
         max-width: 1520px !important;
-        height: 760px !important;
+        height: 820px !important; /* Increased from 760px to add space below the pills */
     }
     
     .tech-central-content {
@@ -12229,7 +12229,7 @@ h6::after,
     }
 
     .tech-arch-container {
-        height: 780px !important; /* Prevent text and pills clipping by expanding height */
+        height: 730px !important; /* Reduced from 780px to tighten space below the pills on mobile */
     }
 
     .tech-central-content {
