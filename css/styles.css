@@ -9134,10 +9134,11 @@ select:focus {
 
 .trust-logos-grid {
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(4, max-content);
     gap: 1.25rem 3.5rem;
     justify-content: center;
     align-items: center;
+    margin-top: 0.5rem;
 }
 
 .trust-logo-item {
@@ -9325,8 +9326,8 @@ select:focus {
     }
     
     .trust-logos-grid {
-        grid-template-columns: repeat(2, auto) !important;
-        gap: 1rem 2rem !important;
+        grid-template-columns: repeat(2, max-content) !important;
+        gap: 1rem 2.5rem !important;
     }
 }
 
@@ -12015,8 +12016,9 @@ h6::after,
     }
     
     .trust-logos-grid {
-        grid-template-columns: repeat(2, auto) !important;
-        gap: 10px 18px !important;
+        grid-template-columns: repeat(2, max-content) !important;
+        gap: 12px 20px !important;
+        justify-content: center !important;
     }
     
     .trust-logo-item {
