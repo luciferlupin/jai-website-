@@ -12228,6 +12228,14 @@ h6::after,
         padding-bottom: 25px !important; /* Reduce space below tech stack section on mobile */
     }
 
+    .tech-arch-container {
+        height: 780px !important; /* Prevent text and pills clipping by expanding height */
+    }
+
+    .tech-central-content {
+        top: 350px !important; /* Space content below the floating cards */
+    }
+
     .why-us {
         padding-top: 30px !important; /* Reduce space above why-us heading on mobile */
         padding-bottom: 25px !important; /* Reduce space below why-us on mobile */
