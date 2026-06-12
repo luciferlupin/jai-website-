@@ -9334,8 +9334,8 @@ select:focus {
     }
     
     .trust-logos-row {
-        flex-wrap: wrap !important;
-        gap: 1rem 2.5rem !important;
+        flex-wrap: nowrap !important;
+        gap: 1rem 2rem !important;
     }
     .trust-logos-rows {
         gap: 1rem !important;
@@ -12027,8 +12027,8 @@ h6::after,
     }
     
     .trust-logos-row {
-        flex-wrap: wrap !important;
-        gap: 12px 20px !important;
+        flex-wrap: nowrap !important;
+        gap: 6px 10px !important;
         justify-content: center !important;
     }
     .trust-logos-rows {
@@ -12036,13 +12036,14 @@ h6::after,
     }
     
     .trust-logo-item {
-        font-size: 0.92rem !important;
+        font-size: 0.68rem !important;
         color: #94a3b8 !important;
-        gap: 4px !important;
+        gap: 3px !important;
+        white-space: nowrap !important;
     }
     
     .trust-logo-item i {
-        font-size: 0.85rem !important;
+        font-size: 0.62rem !important;
     }
 
     /* Mobile Horizontal Rectangular Process Steps */
