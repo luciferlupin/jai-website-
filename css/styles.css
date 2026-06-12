@@ -979,16 +979,16 @@ img, video, iframe {
 
 .pricing-features li i.fa-check {
     color: #2563eb;
-    font-size: 0.9rem;
-    background: rgba(37, 99, 235, 0.08);
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
+    font-size: 0.8rem;
+    background: transparent;
+    width: auto;
+    height: auto;
+    border-radius: 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    margin-top: 1px;
+    margin-top: 3px;
 }
 
 .pricing-features li.disabled {
@@ -1506,14 +1506,14 @@ section {
 
 .saas-scroll-section .card-left ul li i {
     color: #2563eb;
-    background: rgba(37, 99, 235, 0.1);
-    border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    display: flex;
+    background: transparent;
+    border-radius: 0;
+    width: auto;
+    height: auto;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.6rem;
+    font-size: 0.75rem;
 }
 
 /* Card Visual Mockups */
@@ -4585,22 +4585,23 @@ section {
 }
 
 .portfolio-card-checklist .check-bullet {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #f1f5f9;
-    color: #10b981;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    background: transparent;
+    color: #2563eb;
     font-size: 0.75rem;
     flex-shrink: 0;
-    margin-top: 2px;
+    margin-top: 4px;
     transition: all 0.3s ease;
 }
 
 .portfolio-card-premium:hover .check-bullet {
-    background: #ecfdf5;
+    background: transparent;
+    color: #1d4ed8;
     transform: scale(1.1);
 }
 
@@ -8764,7 +8765,7 @@ select:focus {
 }
 
 .card-bullet-list li i {
-    color: #22c55e !important;
+    color: #2563eb !important;
     font-size: 0.7rem !important;
 }
 
@@ -8975,7 +8976,7 @@ select:focus {
 }
 
 .card-bullet-list li i {
-    color: #22c55e !important;
+    color: #2563eb !important;
     margin-right: 6px;
     animation: checkGlowPulse 2.5s infinite ease-in-out;
 }
@@ -9237,7 +9238,7 @@ select:focus {
 
 @keyframes checkGlowPulse {
     0%, 100% { opacity: 0.75; }
-    50% { opacity: 1; filter: drop-shadow(0 0 3px rgba(34, 197, 94, 0.6)); }
+    50% { opacity: 1; filter: drop-shadow(0 0 3px rgba(37, 99, 235, 0.6)); }
 }
 
 @keyframes successCheckPulse {
@@ -11736,7 +11737,7 @@ h6::after,
     }
 
     .hero-flow-container .flow-card .card-bullet-list li i {
-        color: #22c55e !important;
+        color: #2563eb !important;
         font-size: 0.75rem !important;
         margin: 0 !important;
     }
@@ -11941,7 +11942,7 @@ h6::after,
     }
 
     .hero-flow-container .card-success .success-check {
-        color: #22c55e !important;
+        color: #2563eb !important;
         font-size: 0.8rem !important;
         animation: none !important;
     }
