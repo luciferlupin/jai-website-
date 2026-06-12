@@ -8639,48 +8639,50 @@ select:focus {
     cursor: pointer;
 }
 
-.flow-card:hover {
-    animation-play-state: paused !important; /* Freeze floats during interaction */
-}
+@media (hover: hover) {
+    .flow-card:hover {
+        animation-play-state: paused !important; /* Freeze floats during interaction */
+    }
 
-/* Card 1: Discovery Call (Premium Blue Glow) */
-.card-discovery:hover {
-    border-color: rgba(37, 99, 235, 0.6) !important;
-    box-shadow: 
-        0 2px 4px rgba(15, 23, 42, 0.03),
-        0 14px 35px rgba(37, 99, 235, 0.16), 
-        inset 0 1.5px 0 rgba(255, 255, 255, 0.95),
-        inset 0 -1.5px 0 rgba(0, 0, 0, 0.03) !important;
-}
+    /* Card 1: Discovery Call (Premium Blue Glow) */
+    .card-discovery:hover {
+        border-color: rgba(37, 99, 235, 0.6) !important;
+        box-shadow: 
+            0 2px 4px rgba(15, 23, 42, 0.03),
+            0 14px 35px rgba(37, 99, 235, 0.16), 
+            inset 0 1.5px 0 rgba(255, 255, 255, 0.95),
+            inset 0 -1.5px 0 rgba(0, 0, 0, 0.03) !important;
+    }
 
-/* Card 2: Strategy & Scope (Premium Purple Glow) */
-.card-strategy:hover {
-    border-color: rgba(124, 58, 237, 0.6) !important;
-    box-shadow: 
-        0 2px 4px rgba(15, 23, 42, 0.03),
-        0 14px 35px rgba(124, 58, 237, 0.16), 
-        inset 0 1.5px 0 rgba(255, 255, 255, 0.95),
-        inset 0 -1.5px 0 rgba(0, 0, 0, 0.03) !important;
-}
+    /* Card 2: Strategy & Scope (Premium Purple Glow) */
+    .card-strategy:hover {
+        border-color: rgba(124, 58, 237, 0.6) !important;
+        box-shadow: 
+            0 2px 4px rgba(15, 23, 42, 0.03),
+            0 14px 35px rgba(124, 58, 237, 0.16), 
+            inset 0 1.5px 0 rgba(255, 255, 255, 0.95),
+            inset 0 -1.5px 0 rgba(0, 0, 0, 0.03) !important;
+    }
 
-/* Card 3: Development & Code (Premium Emerald Glow) */
-.card-prototype:hover {
-    border-color: rgba(16, 185, 129, 0.6) !important;
-    box-shadow: 
-        0 2px 4px rgba(15, 23, 42, 0.03),
-        0 14px 35px rgba(16, 185, 129, 0.16), 
-        inset 0 1.5px 0 rgba(255, 255, 255, 0.95),
-        inset 0 -1.5px 0 rgba(0, 0, 0, 0.03) !important;
-}
+    /* Card 3: Development & Code (Premium Emerald Glow) */
+    .card-prototype:hover {
+        border-color: rgba(16, 185, 129, 0.6) !important;
+        box-shadow: 
+            0 2px 4px rgba(15, 23, 42, 0.03),
+            0 14px 35px rgba(16, 185, 129, 0.16), 
+            inset 0 1.5px 0 rgba(255, 255, 255, 0.95),
+            inset 0 -1.5px 0 rgba(0, 0, 0, 0.03) !important;
+    }
 
-/* Card 4: Website Launch (Premium Blue/Green Symmetrical Glow) */
-.card-success:hover {
-    border-color: rgba(37, 99, 235, 0.6) !important;
-    box-shadow: 
-        0 2px 4px rgba(15, 23, 42, 0.03),
-        0 14px 35px rgba(37, 99, 235, 0.16), 
-        inset 0 1.5px 0 rgba(255, 255, 255, 0.95),
-        inset 0 -1.5px 0 rgba(0, 0, 0, 0.03) !important;
+    /* Card 4: Website Launch (Premium Blue/Green Symmetrical Glow) */
+    .card-success:hover {
+        border-color: rgba(37, 99, 235, 0.6) !important;
+        box-shadow: 
+            0 2px 4px rgba(15, 23, 42, 0.03),
+            0 14px 35px rgba(37, 99, 235, 0.16), 
+            inset 0 1.5px 0 rgba(255, 255, 255, 0.95),
+            inset 0 -1.5px 0 rgba(0, 0, 0, 0.03) !important;
+    }
 }
 
 .flow-node {
@@ -12121,12 +12123,18 @@ h6::after,
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
 }
 
-.flow-card:hover,
-.card-discovery:hover,
-.card-strategy:hover,
-.card-prototype:hover,
-.card-success:hover,
-.hero-flow-container .flow-card:hover,
+@media (hover: hover) {
+    .flow-card:hover,
+    .card-discovery:hover,
+    .card-strategy:hover,
+    .card-prototype:hover,
+    .card-success:hover,
+    .hero-flow-container .flow-card:hover {
+        border-color: #cbd5e1 !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
+    }
+}
+
 .hero-flow-container .flow-card.active {
     border-color: #cbd5e1 !important;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;

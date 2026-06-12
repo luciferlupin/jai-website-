@@ -474,41 +474,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
         
-        // Interactive: Touch Pause/Resume Events (Hover pausing disabled for smoother rotation)
-        const pauseTimer = () => { isPaused = true; };
-        const resumeTimer = () => { 
-            isPaused = false; 
-            lastTime = performance.now(); 
-        };
-        
-        // Mobile Touch Swipe Handling
-        flowContainer.addEventListener('touchstart', (e) => {
-            touchStartX = e.touches[0].clientX;
-            touchStartY = e.touches[0].clientY;
-            isPaused = true; // pause when user touches/holds
-        }, { passive: true });
-        
-        flowContainer.addEventListener('touchend', (e) => {
-            const touchEndX = e.changedTouches[0].clientX;
-            const touchEndY = e.changedTouches[0].clientY;
-            
-            const diffX = touchEndX - touchStartX;
-            const diffY = touchEndY - touchStartY;
-            
-            // Check if touch is primarily horizontal swipe
-            if (Math.abs(diffX) > Math.abs(diffY)) {
-                if (diffX > 50) {
-                    // Swipe Right -> Previous card
-                    updateCards(currentIndex - 1);
-                } else if (diffX < -50) {
-                    // Swipe Left -> Next card
-                    updateCards(currentIndex + 1);
-                }
-            }
-            
-            // Resume progress bar loop after swiping
-            resumeTimer();
-        }, { passive: true });
+        // Mobile Touch Swipe Handling disabled to prevent touch impacts on hero cards
     }
 
     // ==========================================================================
