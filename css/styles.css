@@ -9117,7 +9117,7 @@ select:focus {
 /* Trusted Partner Logos row styling */
 .hero-trust-bar {
     width: 100%;
-    max-width: 750px;
+    max-width: 950px;
     margin: -20px auto 0 auto !important;
     text-align: center;
     animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
@@ -9145,8 +9145,8 @@ select:focus {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 1.25rem 3.5rem;
+    flex-wrap: nowrap;
+    gap: 1.25rem 3rem;
 }
 
 .trust-logo-item {
@@ -9334,6 +9334,7 @@ select:focus {
     }
     
     .trust-logos-row {
+        flex-wrap: wrap !important;
         gap: 1rem 2.5rem !important;
     }
     .trust-logos-rows {
@@ -12026,6 +12027,7 @@ h6::after,
     }
     
     .trust-logos-row {
+        flex-wrap: wrap !important;
         gap: 12px 20px !important;
         justify-content: center !important;
     }
