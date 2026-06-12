@@ -4648,12 +4648,14 @@ section {
     }
     
     .portfolio-card-visual-inner {
-        min-height: 260px;
+        min-height: 340px;
         border-radius: 14px;
     }
     
     .portfolio-card-visual-inner img {
-        width: 90%;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
     
     .portfolio-card-title {
