@@ -4631,7 +4631,7 @@ section {
     }
     
     .portfolio-card-premium {
-        flex-direction: column !important;
+        flex-direction: column-reverse !important;
         height: auto !important;
         min-height: auto;
         border-radius: 20px;
@@ -4639,12 +4639,12 @@ section {
     
     .portfolio-card-content {
         width: 100%;
-        padding: 1.8rem 1.2rem;
+        padding: 1.2rem 1.2rem 1.8rem 1.2rem;
     }
     
     .portfolio-card-visual {
         width: 100%;
-        padding: 0 1.2rem 1.2rem 1.2rem;
+        padding: 1.2rem 1.2rem 0 1.2rem;
     }
     
     .portfolio-card-visual-inner {
