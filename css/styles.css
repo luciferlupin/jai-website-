@@ -9132,13 +9132,21 @@ select:focus {
     margin-bottom: 1rem;
 }
 
-.trust-logos-grid {
-    display: grid;
-    grid-template-columns: repeat(4, max-content);
-    gap: 1.25rem 3.5rem;
+.trust-logos-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.trust-logos-row {
+    display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 0.5rem;
+    flex-wrap: wrap;
+    gap: 1.25rem 3.5rem;
 }
 
 .trust-logo-item {
@@ -9325,9 +9333,11 @@ select:focus {
         margin-top: 1.5rem !important;
     }
     
-    .trust-logos-grid {
-        grid-template-columns: repeat(2, max-content) !important;
+    .trust-logos-row {
         gap: 1rem 2.5rem !important;
+    }
+    .trust-logos-rows {
+        gap: 1rem !important;
     }
 }
 
@@ -12015,10 +12025,12 @@ h6::after,
         color: #64748b !important;
     }
     
-    .trust-logos-grid {
-        grid-template-columns: repeat(2, max-content) !important;
+    .trust-logos-row {
         gap: 12px 20px !important;
         justify-content: center !important;
+    }
+    .trust-logos-rows {
+        gap: 10px !important;
     }
     
     .trust-logo-item {
