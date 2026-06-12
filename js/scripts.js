@@ -512,7 +512,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ==========================================================================
-    // PORTFOLIO ROI CALCULATOR (BigPockets)
+    // PORTFOLIO ROI CALCULATOR (PropVest)
     // ==========================================================================
     const propPriceInput = document.getElementById('prop-price');
     const groupDiscountInput = document.getElementById('group-discount');
