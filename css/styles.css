@@ -10697,7 +10697,20 @@ html.lenis, html.lenis body {
 }
 .logo:hover {
     transform: none !important;
-    opacity: 0.7 !important;
+    opacity: 0.85 !important;
+}
+
+.logo-icon {
+    height: 38px !important;
+    width: auto !important;
+    margin-right: 10px !important;
+    border-radius: 6px !important;
+    mix-blend-mode: multiply !important; /* blend white background seamlessly */
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.logo:hover .logo-icon {
+    transform: scale(1.06) rotate(-2deg) !important;
 }
 
 /* Brand Text styles - Apple Signature Styling */
@@ -10871,6 +10884,11 @@ html.lenis, html.lenis body {
     .logo {
         margin-right: auto !important;
     }
+    
+    .logo-icon {
+        height: 32px !important;
+        margin-right: 8px !important;
+    }
 
     .navbar .container {
         gap: 12px !important;
@@ -10913,6 +10931,19 @@ html.lenis, html.lenis body {
         .nav-cta-btn {
             padding: 7px 11px !important;
             font-size: 0.78rem !important;
+        }
+        .logo-text {
+            font-size: 1.05rem !important;
+        }
+        .logo-icon {
+            height: 28px !important;
+            margin-right: 6px !important;
+        }
+    }
+
+    @media (max-width: 375px) {
+        .logo-text {
+            display: none !important;
         }
     }
     
@@ -12424,4 +12455,20 @@ h6::after,
     }
 }
 
+/* Footer Logo Styles */
+.footer-logo-link {
+    display: inline-block !important;
+    text-decoration: none !important;
+    margin-bottom: 1rem !important;
+    transition: opacity 0.25s ease !important;
+}
 
+.footer-logo-link:hover {
+    opacity: 0.8 !important;
+}
+
+.footer-logo-img {
+    height: 72px !important;
+    width: auto !important;
+    display: block !important;
+}
