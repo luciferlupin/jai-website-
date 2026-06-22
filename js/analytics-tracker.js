@@ -4,9 +4,34 @@
  */
 
 (function () {
+    // Safe storage helpers to avoid SecurityError crashes in Safari Private Mode or blocked third-party storage on mobile
+    function safeGetLocalStorage(key) {
+        try {
+            return localStorage.getItem(key);
+        } catch (e) {
+            return null;
+        }
+    }
+
+    const memorySessionStorage = {};
+    function safeGetSessionStorage(key) {
+        try {
+            return sessionStorage.getItem(key);
+        } catch (e) {
+            return memorySessionStorage[key] || null;
+        }
+    }
+    function safeSetSessionStorage(key, value) {
+        try {
+            sessionStorage.setItem(key, value);
+        } catch (e) {
+            memorySessionStorage[key] = value;
+        }
+    }
+
     // 1. Configuration - Fallback pattern (Global config -> LocalStorage -> Placeholder)
-    const SUPABASE_URL = window.SUPABASE_URL || localStorage.getItem('supabase_url') || "https://umuetoqaoaqlhelgoyfx.supabase.co";
-    const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || localStorage.getItem('supabase_anon_key') || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVtdWV0b3Fhb2FxbGhlbGdveWZ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIxMzk5MzcsImV4cCI6MjA5NzcxNTkzN30.PCgA5s8nlK_eadT3W4hUG9zzL_ISn5-zMqk2SRS2EuQ";
+    const SUPABASE_URL = window.SUPABASE_URL || safeGetLocalStorage('supabase_url') || "https://umuetoqaoaqlhelgoyfx.supabase.co";
+    const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || safeGetLocalStorage('supabase_anon_key') || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVtdWV0b3Fhb2FxbGhlbGdveWZ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIxMzk5MzcsImV4cCI6MjA5NzcxNTkzN30.PCgA5s8nlK_eadT3W4hUG9zzL_ISn5-zMqk2SRS2EuQ";
 
     // Stop if credentials are not configured yet
     if (!SUPABASE_URL || SUPABASE_URL === "YOUR_SUPABASE_URL" || !SUPABASE_ANON_KEY || SUPABASE_ANON_KEY === "YOUR_SUPABASE_ANON_KEY") {
@@ -30,18 +55,18 @@
 
     // 3. Helper to get or create Session ID
     function getSessionId() {
-        let sessionId = sessionStorage.getItem('kk_analytics_session_id');
+        let sessionId = safeGetSessionStorage('kk_analytics_session_id');
         if (!sessionId) {
             // Generate a random ID
             sessionId = 'session_' + Math.random().toString(36).substring(2, 15) + '_' + Date.now().toString(36);
-            sessionStorage.setItem('kk_analytics_session_id', sessionId);
+            safeSetSessionStorage('kk_analytics_session_id', sessionId);
         }
         return sessionId;
     }
 
     // Helper to get location once per session
     async function getSessionLocation() {
-        const cached = sessionStorage.getItem('kk_analytics_location');
+        const cached = safeGetSessionStorage('kk_analytics_location');
         if (cached) {
             try { return JSON.parse(cached); } catch (e) {}
         }
@@ -55,7 +80,7 @@
                     latitude: data.latitude || null,
                     longitude: data.longitude || null
                 };
-                sessionStorage.setItem('kk_analytics_location', JSON.stringify(loc));
+                safeSetSessionStorage('kk_analytics_location', JSON.stringify(loc));
                 return loc;
             }
         } catch (e) {

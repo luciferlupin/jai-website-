@@ -703,8 +703,17 @@
 
         // 2. Validate & Load Credentials
         function checkConfiguration() {
-            const url = localStorage.getItem('supabase_url') || "https://umuetoqaoaqlhelgoyfx.supabase.co";
-            const key = localStorage.getItem('supabase_anon_key') || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVtdWV0b3Fhb2FxbGhlbGdveWZ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIxMzk5MzcsImV4cCI6MjA5NzcxNTkzN30.PCgA5s8nlK_eadT3W4hUG9zzL_ISn5-zMqk2SRS2EuQ";
+            let url = "https://umuetoqaoaqlhelgoyfx.supabase.co";
+            let key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVtdWV0b3Fhb2FxbGhlbGdveWZ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIxMzk5MzcsImV4cCI6MjA5NzcxNTkzN30.PCgA5s8nlK_eadT3W4hUG9zzL_ISn5-zMqk2SRS2EuQ";
+
+            try {
+                const storedUrl = localStorage.getItem('supabase_url');
+                const storedKey = localStorage.getItem('supabase_anon_key');
+                if (storedUrl) url = storedUrl;
+                if (storedKey) key = storedKey;
+            } catch (e) {
+                console.warn("Curious Kaizer Analytics: LocalStorage access is blocked by browser security. Using default credentials.", e);
+            }
 
             if (!url || !key) {
                 // Show setup wizard
@@ -750,8 +759,13 @@
             const url = document.getElementById('setupUrl').value.trim();
             const key = document.getElementById('setupKey').value.trim();
             
-            localStorage.setItem('supabase_url', url);
-            localStorage.setItem('supabase_anon_key', key);
+            try {
+                localStorage.setItem('supabase_url', url);
+                localStorage.setItem('supabase_anon_key', key);
+            } catch (err) {
+                console.error("Failed to save to localStorage:", err);
+                alert("Your browser settings are blocking local storage access. The configuration was not saved permanently, but it will be loaded for this session.");
+            }
             
             checkConfiguration();
         });
@@ -798,8 +812,12 @@
         });
 
         function clearConfig() {
-            localStorage.removeItem('supabase_url');
-            localStorage.removeItem('supabase_anon_key');
+            try {
+                localStorage.removeItem('supabase_url');
+                localStorage.removeItem('supabase_anon_key');
+            } catch (err) {
+                console.error("Failed to clear localStorage:", err);
+            }
             checkConfiguration();
         }
 
