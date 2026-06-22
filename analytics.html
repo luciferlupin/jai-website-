@@ -57,7 +57,13 @@
             border: 1px solid var(--border-glow);
             border-radius: 16px;
             box-shadow: var(--shadow-glow);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .glass-panel:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px 0 rgba(139, 92, 246, 0.15);
+            border-color: rgba(139, 92, 246, 0.25);
         }
 
         /* 1. Setup / Login Wizard Overlay */
@@ -1016,6 +1022,10 @@
             const data = sortedPages.map(p => p[1]);
 
             const ctx = document.getElementById('pagesChart').getContext('2d');
+            const grad = ctx.createLinearGradient(0, 0, 0, 200);
+            grad.addColorStop(0, 'rgba(16, 185, 129, 0.85)');
+            grad.addColorStop(1, 'rgba(16, 185, 129, 0.15)');
+
             chartInstances['pages'] = new Chart(ctx, {
                 type: 'bar',
                 data: {
@@ -1023,7 +1033,9 @@
                     datasets: [{
                         label: 'Views',
                         data: data,
-                        backgroundColor: 'rgba(16, 185, 129, 0.75)',
+                        backgroundColor: grad,
+                        borderColor: 'rgba(16, 185, 129, 0.9)',
+                        borderWidth: 1.5,
                         borderRadius: 6,
                     }]
                 },
@@ -1053,6 +1065,10 @@
             const data = sortedClicks.map(c => c[1]);
 
             const ctx = document.getElementById('clicksChart').getContext('2d');
+            const grad = ctx.createLinearGradient(0, 0, 300, 0);
+            grad.addColorStop(0, 'rgba(245, 158, 11, 0.85)');
+            grad.addColorStop(1, 'rgba(245, 158, 11, 0.15)');
+
             chartInstances['clicks'] = new Chart(ctx, {
                 type: 'bar',
                 data: {
@@ -1060,7 +1076,9 @@
                     datasets: [{
                         label: 'Interactions',
                         data: data,
-                        backgroundColor: 'rgba(245, 158, 11, 0.75)',
+                        backgroundColor: grad,
+                        borderColor: 'rgba(245, 158, 11, 0.9)',
+                        borderWidth: 1.5,
                         borderRadius: 6,
                     }]
                 },
