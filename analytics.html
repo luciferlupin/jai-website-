@@ -1125,12 +1125,18 @@
                 const timeStr = date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
                 
                 // Parse browser simple name
-                let browserName = 'Unknown Browser';
+                let browserName = 'Other';
                 const ua = e.user_agent || '';
                 if (ua.includes('Firefox')) browserName = 'Firefox';
+                else if (ua.includes('Edg/') || ua.includes('Edge')) browserName = 'Edge';
+                else if (ua.includes('OPR') || ua.includes('Opera')) browserName = 'Opera';
+                else if (ua.includes('CriOS')) browserName = 'Chrome (iOS)';
                 else if (ua.includes('Chrome')) browserName = 'Chrome';
-                else if (ua.includes('Safari')) browserName = 'Safari';
-                else if (ua.includes('Edge')) browserName = 'Edge';
+                else if (ua.includes('Safari')) {
+                    browserName = ua.includes('Mobile') ? 'Safari (Mobile)' : 'Safari';
+                } else if (ua.includes('MSIE') || ua.includes('Trident/')) {
+                    browserName = 'IE';
+                }
 
                 const tr = document.createElement('tr');
                 tr.innerHTML = `

@@ -4,7 +4,8 @@
  */
 
 (function () {
-    // Safe storage helpers to avoid SecurityError crashes in Safari Private Mode or blocked third-party storage on mobile
+    try {
+        // Safe storage helpers to avoid SecurityError crashes in Safari Private Mode or blocked third-party storage on mobile
     function safeGetLocalStorage(key) {
         try {
             return localStorage.getItem(key);
@@ -169,5 +170,8 @@
         window.addEventListener('DOMContentLoaded', initTracker);
     } else {
         initTracker();
+    }
+    } catch (globalError) {
+        console.warn("KK Analytics tracker load failed (incompatible browser):", globalError);
     }
 })();
