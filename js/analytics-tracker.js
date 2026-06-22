@@ -39,8 +39,34 @@
         return sessionId;
     }
 
+    // Helper to get location once per session
+    async function getSessionLocation() {
+        const cached = sessionStorage.getItem('kk_analytics_location');
+        if (cached) {
+            try { return JSON.parse(cached); } catch (e) {}
+        }
+
+        try {
+            const response = await fetch('https://freeipapi.com/api/json');
+            if (response.ok) {
+                const data = await response.json();
+                const loc = {
+                    country: data.countryName || null,
+                    latitude: data.latitude || null,
+                    longitude: data.longitude || null
+                };
+                sessionStorage.setItem('kk_analytics_location', JSON.stringify(loc));
+                return loc;
+            }
+        } catch (e) {
+            console.warn("KK Analytics Location Fetch Error:", e);
+        }
+        return { country: null, latitude: null, longitude: null };
+    }
+
     // 4. Send Event to Supabase
     async function trackEvent(eventType, eventLabel = null) {
+        const loc = await getSessionLocation();
         const payload = {
             session_id: getSessionId(),
             page_path: window.location.pathname || '/',
@@ -48,7 +74,10 @@
             event_label: eventLabel,
             referrer: document.referrer || null,
             user_agent: navigator.userAgent,
-            screen_resolution: `${window.screen.width}x${window.screen.height}`
+            screen_resolution: `${window.screen.width}x${window.screen.height}`,
+            country: loc.country,
+            latitude: loc.latitude,
+            longitude: loc.longitude
         };
 
         try {
