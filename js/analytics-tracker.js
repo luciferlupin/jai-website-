@@ -73,7 +73,7 @@
             }
 
             try {
-                const response = await fetch('https://freeipapi.com/api/json');
+                const response = await fetch('https://free.freeipapi.com/api/json');
                 if (response.ok) {
                     const data = await response.json();
                     const loc = {
