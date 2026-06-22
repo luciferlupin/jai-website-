@@ -1157,16 +1157,38 @@
             sphereGrad.addColorStop(1, '#090d16');
 
             let rotation = [0, -15];
-            
+            projection.rotate(rotation);
+
+            // Set up dragging interaction
+            const drag = d3.drag()
+                .on('drag', (event) => {
+                    const r = projection.rotate();
+                    const k = 75 / projection.scale(); // Drag sensitivity
+                    
+                    // Constrain latitude between -90 and 90 to prevent upside down flip
+                    let nextLat = r[1] - event.dy * k;
+                    if (nextLat > 90) nextLat = 90;
+                    if (nextLat < -90) nextLat = -90;
+
+                    rotation = [
+                        r[0] + event.dx * k,
+                        nextLat
+                    ];
+                    projection.rotate(rotation);
+                });
+
+            d3.select(canvas)
+                .style('cursor', 'grab')
+                .call(drag)
+                .on('mousedown.cursor', () => d3.select(canvas).style('cursor', 'grabbing'))
+                .on('mouseup.cursor', () => d3.select(canvas).style('cursor', 'grab'));
+
             if (globeRotationTimer) {
                 globeRotationTimer.stop();
             }
 
-            // Animation loop using D3 timer
+            // Animation loop to redraw and animate pulsing visitor markers
             globeRotationTimer = d3.timer(() => {
-                rotation[0] += 0.45; // rotate speed
-                projection.rotate(rotation);
-
                 // Clear
                 context.clearRect(0, 0, width, height);
 
