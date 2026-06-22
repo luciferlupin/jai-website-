@@ -665,17 +665,18 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Timestamp (UTC)</th>
-                            <th>Page Path</th>
-                            <th>Event Type</th>
-                            <th>Interaction / Label</th>
-                            <th>Resolution</th>
+                            <th>Timestamp</th>
+                            <th>Page (Path & Title)</th>
+                            <th>Event</th>
+                            <th>Label / CTA</th>
+                            <th>Location (IP)</th>
+                            <th>Language & Size</th>
                             <th>User Agent (Browser)</th>
                         </tr>
                     </thead>
                     <tbody id="rawEventsBody">
                         <tr>
-                            <td colspan="6" style="text-align: center; color: var(--text-muted); padding: 2rem;">
+                            <td colspan="7" style="text-align: center; color: var(--text-muted); padding: 2rem;">
                                 <i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i> Loading event logs...
                             </td>
                         </tr>
@@ -852,7 +853,7 @@
                 console.error("Dashboard error:", err);
                 document.getElementById('rawEventsBody').innerHTML = `
                     <tr>
-                        <td colspan="6" style="text-align: center; color: var(--color-danger); padding: 2rem;">
+                        <td colspan="7" style="text-align: center; color: var(--color-danger); padding: 2rem;">
                             <i class="fas fa-exclamation-triangle"></i> Error pulling data: ${err.message}. 
                             Ensure the database table is configured correctly and your policy allows read access.
                         </td>
@@ -864,7 +865,7 @@
         function renderEmptyDashboard() {
             document.getElementById('rawEventsBody').innerHTML = `
                 <tr>
-                    <td colspan="6" style="text-align: center; color: var(--text-muted); padding: 3rem;">
+                    <td colspan="7" style="text-align: center; color: var(--text-muted); padding: 3rem;">
                         <i class="fas fa-chart-line" style="font-size:2rem; margin-bottom:1rem; display:block;"></i>
                         No tracking data found yet. Visit your index.html page to trigger some pageviews!
                     </td>
@@ -1138,14 +1139,29 @@
                     browserName = 'IE';
                 }
 
+                // Format location: "City, Region, Country (IP)"
+                let locationParts = [];
+                if (e.city) locationParts.push(e.city);
+                if (e.region) locationParts.push(e.region);
+                if (e.country) locationParts.push(e.country);
+                let locationStr = locationParts.join(', ') || 'Unknown Location';
+                if (e.ip_address) {
+                    locationStr += ` (${e.ip_address})`;
+                }
+
+                const pageLabel = e.page_title 
+                    ? `${e.page_path === '/' ? '/index.html' : e.page_path} <span style="font-size: 0.75rem; color: var(--text-muted); display: block; font-weight: normal;">${e.page_title}</span>`
+                    : (e.page_path === '/' ? '/index.html' : e.page_path);
+
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
                     <td style="font-family: monospace; font-size: 0.8rem; color: var(--text-muted);">${timeStr}</td>
-                    <td style="font-weight: 500;">${e.page_path === '/' ? '/index.html' : e.page_path}</td>
+                    <td style="font-weight: 500;">${pageLabel}</td>
                     <td><span class="badge-event ${e.event_type}">${e.event_type}</span></td>
                     <td style="color: ${e.event_type === 'click' ? 'var(--color-warning)' : 'inherit'}; font-weight: ${e.event_type === 'click' ? '500' : 'normal'};">${e.event_label || '-'}</td>
-                    <td>${e.screen_resolution || '-'}</td>
-                    <td style="font-size: 0.8rem; color: var(--text-muted);" title="${ua}">${browserName}</td>
+                    <td style="font-size: 0.85rem;" title="ZIP: ${e.zip_code || 'N/A'}">${locationStr}</td>
+                    <td style="font-size: 0.8rem; color: var(--text-muted);">${e.language || 'N/A'} <span style="display: block; font-size: 0.75rem;">${e.screen_resolution || '-'}</span></td>
+                    <td style="font-size: 0.8rem; color: var(--text-muted); max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${ua}">${browserName} <span style="font-size:0.75rem; color:rgba(255,255,255,0.2); display:block; overflow:hidden; text-overflow:ellipsis;" title="${ua}">${ua}</span></td>
                 `;
                 tbody.appendChild(tr);
             });
