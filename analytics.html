@@ -300,6 +300,7 @@
         .metric-card.blue::before { background: var(--color-secondary); }
         .metric-card.green::before { background: var(--color-success); }
         .metric-card.warning::before { background: var(--color-warning); }
+        .metric-card.pink::before { background: #ec4899; }
 
         .metric-icon {
             width: 52px;
@@ -317,6 +318,7 @@
         .metric-card.blue .metric-icon { color: var(--color-secondary); }
         .metric-card.green .metric-icon { color: var(--color-success); }
         .metric-card.warning .metric-icon { color: var(--color-warning); }
+        .metric-card.pink .metric-icon { color: #ec4899; }
 
         .metric-info {
             display: flex;
@@ -595,6 +597,14 @@
                     <span id="metricUniqueUsers" class="metric-value">0</span>
                 </div>
             </div>
+
+            <div class="glass-panel metric-card warning">
+                <div class="metric-icon"><i class="fas fa-hourglass-half"></i></div>
+                <div class="metric-info">
+                    <span class="metric-label">Avg Session Time</span>
+                    <span id="metricSessionTime" class="metric-value">0s</span>
+                </div>
+            </div>
             
             <div class="glass-panel metric-card green">
                 <div class="metric-icon"><i class="fas fa-mouse-pointer"></i></div>
@@ -604,11 +614,11 @@
                 </div>
             </div>
             
-            <div class="glass-panel metric-card warning">
-                <div class="metric-icon"><i class="fas fa-percentage"></i></div>
+            <div class="glass-panel metric-card pink">
+                <div class="metric-icon"><i class="fas fa-fire"></i></div>
                 <div class="metric-info">
-                    <span class="metric-label">Conversion Rate</span>
-                    <span id="metricConvRate" class="metric-value">0%</span>
+                    <span class="metric-label">Lead Heat Index</span>
+                    <span id="metricLeadHeat" class="metric-value">0%</span>
                 </div>
             </div>
         </section>
@@ -633,6 +643,14 @@
         </section>
 
         <section class="secondary-grid">
+            <!-- Traffic Sources / Referrers -->
+            <div class="glass-panel chart-card">
+                <h3><i class="fas fa-route" style="color:#d946ef;"></i> Traffic Sources (Referrers)</h3>
+                <div class="chart-container">
+                    <canvas id="referrersChart"></canvas>
+                </div>
+            </div>
+
             <!-- Popular Pages -->
             <div class="glass-panel chart-card">
                 <h3><i class="fas fa-file-alt" style="color:var(--color-success);"></i> Top Visited Pages</h3>
@@ -840,6 +858,7 @@
 
                 calculateKPIs(events);
                 renderTrafficChart(events);
+                renderReferrersChart(events);
                 renderDeviceChart(events);
                 renderPagesChart(events);
                 renderClicksChart(events);
@@ -883,19 +902,71 @@
             // Clicks
             const totalClicks = events.filter(e => e.event_type === 'click').length;
             
-            // Conversion rate (Sessions that had at least one click / total unique sessions)
-            const conversionSessions = new Set(
-                events.filter(e => e.event_type === 'click').map(e => e.session_id)
-            ).size;
+            // Group events by session to calculate duration
+            const sessionTimes = {};
+            const sessionClickCounts = {};
             
-            const conversionRate = uniqueSessions > 0 
-                ? ((conversionSessions / uniqueSessions) * 100).toFixed(1) 
+            events.forEach(e => {
+                const t = new Date(e.created_at).getTime();
+                if (!sessionTimes[e.session_id]) {
+                    sessionTimes[e.session_id] = { min: t, max: t };
+                    sessionClickCounts[e.session_id] = 0;
+                } else {
+                    if (t < sessionTimes[e.session_id].min) sessionTimes[e.session_id].min = t;
+                    if (t > sessionTimes[e.session_id].max) sessionTimes[e.session_id].max = t;
+                }
+                if (e.event_type === 'click') {
+                    sessionClickCounts[e.session_id]++;
+                }
+            });
+
+            // Calculate durations
+            let totalDuration = 0;
+            let multiEventSessions = 0;
+
+            Object.keys(sessionTimes).forEach(sid => {
+                const s = sessionTimes[sid];
+                const duration = (s.max - s.min) / 1000; // seconds
+                
+                if (duration > 0) {
+                    totalDuration += duration;
+                    multiEventSessions++;
+                }
+            });
+
+            const avgSessionDuration = multiEventSessions > 0 
+                ? (totalDuration / multiEventSessions).toFixed(0) 
+                : 0;
+
+            // Formatted Avg Duration: e.g. "1m 15s" or "32s"
+            let durationText = '0s';
+            if (avgSessionDuration > 0) {
+                if (avgSessionDuration >= 60) {
+                    const mins = Math.floor(avgSessionDuration / 60);
+                    const secs = avgSessionDuration % 60;
+                    durationText = `${mins}m ${secs}s`;
+                } else {
+                    durationText = `${avgSessionDuration}s`;
+                }
+            }
+
+            // Lead Heat Index: % of visitors who performed clicks or are highly engaged (>60s stay)
+            const highlyEngagedCount = Object.keys(sessionTimes).filter(sid => {
+                const s = sessionTimes[sid];
+                const clicks = sessionClickCounts[sid];
+                const duration = (s.max - s.min) / 1000;
+                return clicks > 0 || duration > 60;
+            }).length;
+
+            const leadHeatIndex = uniqueSessions > 0 
+                ? ((highlyEngagedCount / uniqueSessions) * 100).toFixed(1)
                 : 0;
 
             document.getElementById('metricTotalViews').innerText = totalViews.toLocaleString();
             document.getElementById('metricUniqueUsers').innerText = uniqueSessions.toLocaleString();
+            document.getElementById('metricSessionTime').innerText = durationText;
             document.getElementById('metricClicks').innerText = totalClicks.toLocaleString();
-            document.getElementById('metricConvRate').innerText = `${conversionRate}%`;
+            document.getElementById('metricLeadHeat').innerText = `${leadHeatIndex}%`;
         }
 
         // 4. Render Graphs via Chart.js
@@ -981,6 +1052,52 @@
                     scales: {
                         x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9ca3af' } },
                         y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9ca3af', stepSize: 1 } }
+                    }
+                }
+            });
+        }
+
+        function renderReferrersChart(events) {
+            destroyChart('referrers');
+
+            const referrers = {};
+            // Gather referrers from pageviews
+            events.filter(e => e.event_type === 'pageview').forEach(e => {
+                let ref = e.referrer || 'Direct / None';
+                // Clean up referrer URL for easy reading
+                if (ref !== 'Direct / None') {
+                    try {
+                        const url = new URL(ref);
+                        ref = url.hostname;
+                        if (ref.startsWith('www.')) ref = ref.substring(4);
+                    } catch (err) {}
+                }
+                referrers[ref] = (referrers[ref] || 0) + 1;
+            });
+
+            const sortedRefs = Object.entries(referrers).sort((a,b) => b[1] - a[1]).slice(0, 5);
+            const labels = sortedRefs.map(r => r[0]);
+            const data = sortedRefs.map(r => r[1]);
+
+            const ctx = document.getElementById('referrersChart').getContext('2d');
+            chartInstances['referrers'] = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: ['#8b5cf6', '#3b82f6', '#10b981', '#f59e0b', '#ef4444'],
+                        borderWidth: 0,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: { color: '#9ca3af', font: { family: 'Inter' } }
+                        }
                     }
                 }
             });
@@ -1153,6 +1270,26 @@
                     ? `${e.page_path === '/' ? '/index.html' : e.page_path} <span style="font-size: 0.75rem; color: var(--text-muted); display: block; font-weight: normal;">${e.page_title}</span>`
                     : (e.page_path === '/' ? '/index.html' : e.page_path);
 
+                // Lead Qualification rules
+                let leadStatusBadge = '<span class="badge-event pageview" style="background:rgba(156, 163, 175, 0.15); color:#9ca3af; border: 1px solid rgba(156, 163, 175, 0.2);">❄️ Cold</span>';
+                
+                // Check if user session has any click or multi pageviews
+                const userSessionEvents = events.filter(ev => ev.session_id === e.session_id);
+                const clickCount = userSessionEvents.filter(ev => ev.event_type === 'click').length;
+                const viewCount = userSessionEvents.filter(ev => ev.event_type === 'pageview').length;
+                
+                // Calculate session stay duration
+                const timestamps = userSessionEvents.map(ev => new Date(ev.created_at).getTime());
+                const sessionDuration = timestamps.length > 1 
+                    ? (Math.max(...timestamps) - Math.min(...timestamps)) / 1000 
+                    : 0;
+
+                if (clickCount > 0) {
+                    leadStatusBadge = '<span class="badge-event click" style="background:rgba(16, 185, 129, 0.15); color:#34d399; border: 1px solid rgba(16, 185, 129, 0.2);">🔥 Hot Lead</span>';
+                } else if (sessionDuration > 60 || viewCount >= 3) {
+                    leadStatusBadge = '<span class="badge-event click" style="background:rgba(139, 92, 246, 0.15); color:#a78bfa; border: 1px solid rgba(139, 92, 246, 0.2);">⚡ Engaged</span>';
+                }
+
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
                     <td style="font-family: monospace; font-size: 0.8rem; color: var(--text-muted);">${timeStr}</td>
@@ -1161,6 +1298,7 @@
                     <td style="color: ${e.event_type === 'click' ? 'var(--color-warning)' : 'inherit'}; font-weight: ${e.event_type === 'click' ? '500' : 'normal'};">${e.event_label || '-'}</td>
                     <td style="font-size: 0.85rem;" title="ZIP: ${e.zip_code || 'N/A'}">${locationStr}</td>
                     <td style="font-size: 0.8rem; color: var(--text-muted);">${e.language || 'N/A'} <span style="display: block; font-size: 0.75rem;">${e.screen_resolution || '-'}</span></td>
+                    <td>${leadStatusBadge}</td>
                     <td style="font-size: 0.8rem; color: var(--text-muted); max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${ua}">${browserName} <span style="font-size:0.75rem; color:rgba(255,255,255,0.2); display:block; overflow:hidden; text-overflow:ellipsis;" title="${ua}">${ua}</span></td>
                 `;
                 tbody.appendChild(tr);
