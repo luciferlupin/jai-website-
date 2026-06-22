@@ -409,7 +409,7 @@
         }
 
         th {
-            padding: 1rem;
+            padding: 0.85rem 1rem;
             color: var(--text-muted);
             font-weight: 600;
             border-bottom: 1px solid var(--border-glow);
@@ -419,9 +419,27 @@
         }
 
         td {
-            padding: 1rem;
+            padding: 0.85rem 1rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.03);
             color: var(--text-main);
+            vertical-align: middle;
+        }
+
+        /* Prevent text wrapping for short, structured columns to keep columns aligned */
+        td:nth-child(1), /* Timestamp */
+        td:nth-child(3), /* Event Type */
+        td:nth-child(6), /* Language & Size */
+        td:nth-child(7)  /* Lead Status */ {
+            white-space: nowrap;
+        }
+
+        /* Allow text wrap for descriptive columns */
+        td:nth-child(2), /* Page path */
+        td:nth-child(4), /* Label/CTA */
+        td:nth-child(5), /* Location (IP) */
+        td:nth-child(8)  /* User Agent */ {
+            word-break: break-all;
+            line-height: 1.4;
         }
 
         tr:hover td {
@@ -472,6 +490,12 @@
         @media (max-width: 1024px) {
             .charts-grid, .secondary-grid {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .metrics-grid {
+                grid-template-columns: repeat(5, 1fr);
             }
         }
 
@@ -714,6 +738,17 @@
     <script>
         let supabaseClient = null;
         let chartInstances = {};
+
+        // Configure global Chart.js defaults for premium unified look
+        Chart.defaults.font.family = "'Inter', sans-serif";
+        Chart.defaults.color = '#9ca3af';
+        Chart.defaults.plugins.tooltip.backgroundColor = 'rgba(17, 24, 39, 0.9)';
+        Chart.defaults.plugins.tooltip.titleColor = '#fff';
+        Chart.defaults.plugins.tooltip.bodyColor = '#e5e7eb';
+        Chart.defaults.plugins.tooltip.borderColor = 'rgba(255, 255, 255, 0.1)';
+        Chart.defaults.plugins.tooltip.borderWidth = 1;
+        Chart.defaults.plugins.tooltip.padding = 10;
+        Chart.defaults.plugins.tooltip.cornerRadius = 8;
 
         // 1. Initial State Checks
         window.addEventListener('DOMContentLoaded', () => {
