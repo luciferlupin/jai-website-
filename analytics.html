@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curious Kaizer Analytics | Custom Dashboard</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styling -->
+    <style>
+        :root {
+            --bg-base: #090d16;
+            --bg-surface: rgba(17, 25, 40, 0.75);
+            --bg-surface-solid: #111827;
+            --border-glow: rgba(255, 255, 255, 0.08);
+            --color-primary: #8b5cf6; /* Neon Violet */
+            --color-secondary: #3b82f6; /* Electric Blue */
+            --color-success: #10b981; /* Emerald Green */
+            --color-warning: #f59e0b; /* Amber */
+            --color-danger: #ef4444; /* Coral Red */
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --text-inverse: #090d16;
+            --font-display: 'Outfit', sans-serif;
+            --font-sans: 'Inter', sans-serif;
+            --shadow-glow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            background-image: 
+                radial-gradient(at 10% 20%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+                radial-gradient(at 90% 80%, rgba(59, 130, 246, 0.15) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphic Container */
+        .glass-panel {
+            background: var(--bg-surface);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-glow);
+            border-radius: 16px;
+            box-shadow: var(--shadow-glow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* 1. Setup / Login Wizard Overlay */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 8, 15, 0.85);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .auth-card {
+            width: 100%;
+            max-width: 480px;
+            padding: 2.5rem;
+            animation: cardEntrance 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes cardEntrance {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .auth-logo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .auth-logo i {
+            font-size: 3rem;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .auth-logo h2 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .auth-logo p {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-glow);
+            border-radius: 8px;
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.25);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+            border: 1px solid var(--border-glow);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .auth-help-box {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            font-size: 0.8rem;
+            line-height: 1.4;
+            color: #93c5fd;
+        }
+
+        .auth-help-box code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 5px;
+            border-radius: 4px;
+            color: #f43f5e;
+            font-family: monospace;
+        }
+
+        /* 2. Main Dashboard Layout */
+        .dashboard-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: none; /* Shown after auth success */
+        }
+
+        /* Header */
+        .db-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .db-title h1 {
+            font-family: var(--font-display);
+            font-size: 2.25rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 30%, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .db-title p {
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+            font-size: 0.95rem;
+        }
+
+        .db-actions {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .db-badge {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            color: var(--color-success);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Metrics grid */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .metric-card {
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--color-primary);
+        }
+
+        .metric-card.blue::before { background: var(--color-secondary); }
+        .metric-card.green::before { background: var(--color-success); }
+        .metric-card.warning::before { background: var(--color-warning); }
+
+        .metric-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--color-primary);
+            border: 1px solid var(--border-glow);
+        }
+
+        .metric-card.blue .metric-icon { color: var(--color-secondary); }
+        .metric-card.green .metric-icon { color: var(--color-success); }
+        .metric-card.warning .metric-icon { color: var(--color-warning); }
+
+        .metric-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .metric-value {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-top: 0.25rem;
+        }
+
+        /* Charts grid */
+        .charts-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .chart-card {
+            padding: 1.5rem;
+            min-height: 380px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chart-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chart-container {
+            position: relative;
+            flex-grow: 1;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Secondary charts row */
+        .secondary-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Table log panel */
+        .log-card {
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .log-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        th {
+            padding: 1rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            border-bottom: 1px solid var(--border-glow);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            color: var(--text-main);
+        }
+
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .badge-event {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .badge-event.pageview {
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .badge-event.click {
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        /* Config dialog trigger & info */
+        .config-btn {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            border: 1px solid var(--border-glow);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .config-btn:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Screen sizes responsive setup */
+        @media (max-width: 1024px) {
+            .charts-grid, .secondary-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .db-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .db-actions {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Credentials Setup Wizard / Modal -->
+    <div id="setupModal" class="modal-overlay" style="display: none;">
+        <div class="glass-panel auth-card">
+            <div class="auth-logo">
+                <i class="fas fa-sliders-h"></i>
+                <h2>Configure Analytics</h2>
+                <p>Connect your website to your Supabase Project</p>
+            </div>
+            
+            <form id="setupForm">
+                <div class="form-group">
+                    <label for="setupUrl">Supabase Project URL</label>
+                    <input type="url" id="setupUrl" class="form-control" placeholder="https://xxxxxx.supabase.co" required>
+                </div>
+                <div class="form-group">
+                    <label for="setupKey">Supabase Anon Key</label>
+                    <input type="password" id="setupKey" class="form-control" placeholder="eyJhbGciOi..." required>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-check-circle"></i> Save Configuration
+                </button>
+            </form>
+            
+            <div class="auth-help-box">
+                <strong>How to configure:</strong><br>
+                1. Go to your <strong>Supabase Dashboard</strong>.<br>
+                2. Navigate to <strong>Project Settings -> API</strong>.<br>
+                3. Copy your <strong>Project URL</strong> and <strong>anon (public)</strong> API Key.<br>
+                4. Ensure your table `analytics_events` is created.
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Login Screen Modal -->
+    <div id="loginModal" class="modal-overlay" style="display: none;">
+        <div class="glass-panel auth-card">
+            <div class="auth-logo">
+                <i class="fas fa-user-lock"></i>
+                <h2>Dashboard Login</h2>
+                <p>Sign in using your Supabase Auth user</p>
+            </div>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" class="form-control" placeholder="admin@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" class="form-control" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+                <button type="button" id="changeConfigBtn" class="btn btn-secondary" style="margin-top: 0.75rem;">
+                    <i class="fas fa-cog"></i> Change Supabase Keys
+                </button>
+            </form>
+
+            <div class="auth-help-box">
+                <strong>Setup note:</strong> Users are managed securely in your Supabase Auth Panel. Create a user under <strong>Authentication -> Users</strong> inside Supabase to log in here.
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Dashboard Interface -->
+    <div id="dashboard" class="dashboard-container">
+        
+        <!-- Header -->
+        <header class="db-header">
+            <div class="db-title">
+                <h1>Curious Kaizer</h1>
+                <p>Custom Serverless Web Analytics</p>
+            </div>
+            <div class="db-actions">
+                <span class="db-badge">
+                    <span class="status-dot" style="width:8px; height:8px; border-radius:50%; background:#10b981; display:inline-block; box-shadow:0 0 8px #10b981;"></span>
+                    Connected to Supabase
+                </span>
+                <button id="logoutBtn" class="config-btn" title="Logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+                <button id="reconfigBtn" class="config-btn" title="Reconfigure connection">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- KPI Metrics Grid -->
+        <section class="metrics-grid">
+            <div class="glass-panel metric-card">
+                <div class="metric-icon"><i class="fas fa-eye"></i></div>
+                <div class="metric-info">
+                    <span class="metric-label">Total Views</span>
+                    <span id="metricTotalViews" class="metric-value">0</span>
+                </div>
+            </div>
+            
+            <div class="glass-panel metric-card blue">
+                <div class="metric-icon"><i class="fas fa-users"></i></div>
+                <div class="metric-info">
+                    <span class="metric-label">Unique Visitors</span>
+                    <span id="metricUniqueUsers" class="metric-value">0</span>
+                </div>
+            </div>
+            
+            <div class="glass-panel metric-card green">
+                <div class="metric-icon"><i class="fas fa-mouse-pointer"></i></div>
+                <div class="metric-info">
+                    <span class="metric-label">CTA Clicks</span>
+                    <span id="metricClicks" class="metric-value">0</span>
+                </div>
+            </div>
+            
+            <div class="glass-panel metric-card warning">
+                <div class="metric-icon"><i class="fas fa-percentage"></i></div>
+                <div class="metric-info">
+                    <span class="metric-label">Conversion Rate</span>
+                    <span id="metricConvRate" class="metric-value">0%</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Charts Layout -->
+        <section class="charts-grid">
+            <!-- Traffic chart -->
+            <div class="glass-panel chart-card">
+                <h3><i class="fas fa-chart-area" style="color:var(--color-primary);"></i> Traffic & Audience Over Time</h3>
+                <div class="chart-container">
+                    <canvas id="trafficChart"></canvas>
+                </div>
+            </div>
+            
+            <!-- Device/Resolution breakdown -->
+            <div class="glass-panel chart-card">
+                <h3><i class="fas fa-desktop" style="color:var(--color-secondary);"></i> Screen Resolutions</h3>
+                <div class="chart-container">
+                    <canvas id="deviceChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="secondary-grid">
+            <!-- Popular Pages -->
+            <div class="glass-panel chart-card">
+                <h3><i class="fas fa-file-alt" style="color:var(--color-success);"></i> Top Visited Pages</h3>
+                <div class="chart-container">
+                    <canvas id="pagesChart"></canvas>
+                </div>
+            </div>
+            
+            <!-- Click Tracking Events -->
+            <div class="glass-panel chart-card">
+                <h3><i class="fas fa-hand-pointer" style="color:var(--color-warning);"></i> Top CTA Interactions</h3>
+                <div class="chart-container">
+                    <canvas id="clicksChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Log / Stream -->
+        <section class="glass-panel log-card">
+            <h3><i class="fas fa-stream" style="color:var(--color-primary);"></i> Real-Time Event Stream</h3>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Timestamp (UTC)</th>
+                            <th>Page Path</th>
+                            <th>Event Type</th>
+                            <th>Interaction / Label</th>
+                            <th>Resolution</th>
+                            <th>User Agent (Browser)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rawEventsBody">
+                        <tr>
+                            <td colspan="6" style="text-align: center; color: var(--text-muted); padding: 2rem;">
+                                <i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i> Loading event logs...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <!-- SDKs -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Page Logic -->
+    <script>
+        let supabaseClient = null;
+        let chartInstances = {};
+
+        // 1. Initial State Checks
+        window.addEventListener('DOMContentLoaded', () => {
+            checkConfiguration();
+        });
+
+        // 2. Validate & Load Credentials
+        function checkConfiguration() {
+            const url = localStorage.getItem('supabase_url') || "https://umuetoqaoaqlhelgoyfx.supabase.co";
+            const key = localStorage.getItem('supabase_anon_key') || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVtdWV0b3Fhb2FxbGhlbGdveWZ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIxMzk5MzcsImV4cCI6MjA5NzcxNTkzN30.PCgA5s8nlK_eadT3W4hUG9zzL_ISn5-zMqk2SRS2EuQ";
+
+            if (!url || !key) {
+                // Show setup wizard
+                document.getElementById('setupModal').style.display = 'flex';
+                document.getElementById('loginModal').style.display = 'none';
+                document.getElementById('dashboard').style.display = 'none';
+            } else {
+                // Initialize Supabase
+                initSupabase(url, key);
+            }
+        }
+
+        function initSupabase(url, key) {
+            try {
+                supabaseClient = supabase.createClient(url, key);
+                checkAuth();
+            } catch (err) {
+                alert("Failed to initialize Supabase. Your configuration might be incorrect.");
+                clearConfig();
+            }
+        }
+
+        async function checkAuth() {
+            const { data: { session } } = await supabaseClient.auth.getSession();
+            
+            if (!session) {
+                // Show login form
+                document.getElementById('setupModal').style.display = 'none';
+                document.getElementById('loginModal').style.display = 'flex';
+                document.getElementById('dashboard').style.display = 'none';
+            } else {
+                // Show dashboard & pull data
+                document.getElementById('setupModal').style.display = 'none';
+                document.getElementById('loginModal').style.display = 'none';
+                document.getElementById('dashboard').style.display = 'block';
+                loadDashboardData();
+            }
+        }
+
+        // Setup Form submission
+        document.getElementById('setupForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const url = document.getElementById('setupUrl').value.trim();
+            const key = document.getElementById('setupKey').value.trim();
+            
+            localStorage.setItem('supabase_url', url);
+            localStorage.setItem('supabase_anon_key', key);
+            
+            checkConfiguration();
+        });
+
+        // Login Form submission
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value.trim();
+            const password = document.getElementById('loginPassword').value.trim();
+
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            const oldBtnText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging in...';
+
+            const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
+
+            if (error) {
+                alert(`Login failed: ${error.message}`);
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = oldBtnText;
+            } else {
+                checkAuth();
+            }
+        });
+
+        // Configuration resets & logouts
+        document.getElementById('changeConfigBtn').addEventListener('click', clearConfig);
+        document.getElementById('reconfigBtn').addEventListener('click', clearConfig);
+        
+        document.getElementById('logoutBtn').addEventListener('click', async () => {
+            await supabaseClient.auth.signOut();
+            checkAuth();
+        });
+
+        function clearConfig() {
+            localStorage.removeItem('supabase_url');
+            localStorage.removeItem('supabase_anon_key');
+            checkConfiguration();
+        }
+
+        // 3. Load & Query Data for Dashboard
+        async function loadDashboardData() {
+            try {
+                // Fetch all analytics events
+                const { data: events, error } = await supabaseClient
+                    .from('analytics_events')
+                    .select('*')
+                    .order('created_at', { ascending: false });
+
+                if (error) throw error;
+
+                if (!events || events.length === 0) {
+                    renderEmptyDashboard();
+                    return;
+                }
+
+                calculateKPIs(events);
+                renderTrafficChart(events);
+                renderDeviceChart(events);
+                renderPagesChart(events);
+                renderClicksChart(events);
+                renderEventStreamTable(events);
+
+            } catch (err) {
+                console.error("Dashboard error:", err);
+                document.getElementById('rawEventsBody').innerHTML = `
+                    <tr>
+                        <td colspan="6" style="text-align: center; color: var(--color-danger); padding: 2rem;">
+                            <i class="fas fa-exclamation-triangle"></i> Error pulling data: ${err.message}. 
+                            Ensure the database table is configured correctly and your policy allows read access.
+                        </td>
+                    </tr>
+                `;
+            }
+        }
+
+        function renderEmptyDashboard() {
+            document.getElementById('rawEventsBody').innerHTML = `
+                <tr>
+                    <td colspan="6" style="text-align: center; color: var(--text-muted); padding: 3rem;">
+                        <i class="fas fa-chart-line" style="font-size:2rem; margin-bottom:1rem; display:block;"></i>
+                        No tracking data found yet. Visit your index.html page to trigger some pageviews!
+                    </td>
+                </tr>
+            `;
+        }
+
+        // Calculation Helpers
+        function calculateKPIs(events) {
+            const totalViews = events.filter(e => e.event_type === 'pageview').length;
+            
+            // Unique sessions
+            const uniqueSessions = new Set(events.map(e => e.session_id)).size;
+            
+            // Clicks
+            const totalClicks = events.filter(e => e.event_type === 'click').length;
+            
+            // Conversion rate (Sessions that had at least one click / total unique sessions)
+            const conversionSessions = new Set(
+                events.filter(e => e.event_type === 'click').map(e => e.session_id)
+            ).size;
+            
+            const conversionRate = uniqueSessions > 0 
+                ? ((conversionSessions / uniqueSessions) * 100).toFixed(1) 
+                : 0;
+
+            document.getElementById('metricTotalViews').innerText = totalViews.toLocaleString();
+            document.getElementById('metricUniqueUsers').innerText = uniqueSessions.toLocaleString();
+            document.getElementById('metricClicks').innerText = totalClicks.toLocaleString();
+            document.getElementById('metricConvRate').innerText = `${conversionRate}%`;
+        }
+
+        // 4. Render Graphs via Chart.js
+        function destroyChart(name) {
+            if (chartInstances[name]) {
+                chartInstances[name].destroy();
+            }
+        }
+
+        function renderTrafficChart(events) {
+            destroyChart('traffic');
+            
+            // Group views and sessions by day (UTC)
+            const viewsByDay = {};
+            const sessionsByDay = {};
+            
+            events.forEach(e => {
+                const dateStr = new Date(e.created_at).toLocaleDateString(undefined, {month: 'short', day: 'numeric'});
+                
+                if (!viewsByDay[dateStr]) {
+                    viewsByDay[dateStr] = 0;
+                    sessionsByDay[dateStr] = new Set();
+                }
+                
+                if (e.event_type === 'pageview') {
+                    viewsByDay[dateStr]++;
+                }
+                sessionsByDay[dateStr].add(e.session_id);
+            });
+
+            // Sort dates chronologically (using event timestamps)
+            const uniqueDates = Array.from(new Set(
+                events.map(e => new Date(e.created_at).toLocaleDateString(undefined, {month: 'short', day: 'numeric'}))
+            )).reverse();
+
+            const pageViewsData = uniqueDates.map(d => viewsByDay[d] || 0);
+            const sessionsData = uniqueDates.map(d => sessionsByDay[d] ? sessionsByDay[d].size : 0);
+
+            const ctx = document.getElementById('trafficChart').getContext('2d');
+            
+            // Gradient setups
+            const primaryGrad = ctx.createLinearGradient(0, 0, 0, 300);
+            primaryGrad.addColorStop(0, 'rgba(139, 92, 246, 0.4)');
+            primaryGrad.addColorStop(1, 'rgba(139, 92, 246, 0)');
+            
+            const secondaryGrad = ctx.createLinearGradient(0, 0, 0, 300);
+            secondaryGrad.addColorStop(0, 'rgba(59, 130, 246, 0.4)');
+            secondaryGrad.addColorStop(1, 'rgba(59, 130, 246, 0)');
+
+            chartInstances['traffic'] = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: uniqueDates,
+                    datasets: [
+                        {
+                            label: 'Page Views',
+                            data: pageViewsData,
+                            borderColor: '#8b5cf6',
+                            borderWidth: 3,
+                            backgroundColor: primaryGrad,
+                            fill: true,
+                            tension: 0.3,
+                            pointBackgroundColor: '#8b5cf6',
+                        },
+                        {
+                            label: 'Unique Visitors (Sessions)',
+                            data: sessionsData,
+                            borderColor: '#3b82f6',
+                            borderWidth: 3,
+                            backgroundColor: secondaryGrad,
+                            fill: true,
+                            tension: 0.3,
+                            pointBackgroundColor: '#3b82f6',
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { labels: { color: '#9ca3af', font: { family: 'Inter' } } }
+                    },
+                    scales: {
+                        x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9ca3af' } },
+                        y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9ca3af', stepSize: 1 } }
+                    }
+                }
+            });
+        }
+
+        function renderDeviceChart(events) {
+            destroyChart('device');
+
+            const resolutions = {};
+            events.forEach(e => {
+                if (e.screen_resolution) {
+                    resolutions[e.screen_resolution] = (resolutions[e.screen_resolution] || 0) + 1;
+                }
+            });
+
+            const sortedRes = Object.entries(resolutions)
+                .sort((a,b) => b[1] - a[1])
+                .slice(0, 5); // top 5
+
+            const labels = sortedRes.map(r => r[0]);
+            const data = sortedRes.map(r => r[1]);
+
+            const ctx = document.getElementById('deviceChart').getContext('2d');
+            chartInstances['device'] = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: ['#8b5cf6', '#3b82f6', '#10b981', '#f59e0b', '#ef4444'],
+                        borderWidth: 0,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: { color: '#9ca3af', font: { family: 'Inter' } }
+                        }
+                    }
+                }
+            });
+        }
+
+        function renderPagesChart(events) {
+            destroyChart('pages');
+
+            const pages = {};
+            events.filter(e => e.event_type === 'pageview').forEach(e => {
+                const path = e.page_path === '/' ? '/index.html' : e.page_path;
+                pages[path] = (pages[path] || 0) + 1;
+            });
+
+            const sortedPages = Object.entries(pages).sort((a,b) => b[1] - a[1]).slice(0, 5);
+            const labels = sortedPages.map(p => p[0]);
+            const data = sortedPages.map(p => p[1]);
+
+            const ctx = document.getElementById('pagesChart').getContext('2d');
+            chartInstances['pages'] = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Views',
+                        data: data,
+                        backgroundColor: 'rgba(16, 185, 129, 0.75)',
+                        borderRadius: 6,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { grid: { display: false }, ticks: { color: '#9ca3af' } },
+                        y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9ca3af', stepSize: 1 } }
+                    }
+                }
+            });
+        }
+
+        function renderClicksChart(events) {
+            destroyChart('clicks');
+
+            const clicks = {};
+            events.filter(e => e.event_type === 'click').forEach(e => {
+                const cleanLabel = (e.event_label || 'CTA').replace('Click: ', '');
+                clicks[cleanLabel] = (clicks[cleanLabel] || 0) + 1;
+            });
+
+            const sortedClicks = Object.entries(clicks).sort((a,b) => b[1] - a[1]).slice(0, 5);
+            const labels = sortedClicks.map(c => c[0]);
+            const data = sortedClicks.map(c => c[1]);
+
+            const ctx = document.getElementById('clicksChart').getContext('2d');
+            chartInstances['clicks'] = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Interactions',
+                        data: data,
+                        backgroundColor: 'rgba(245, 158, 11, 0.75)',
+                        borderRadius: 6,
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9ca3af', stepSize: 1 } },
+                        y: { grid: { display: false }, ticks: { color: '#9ca3af' } }
+                    }
+                }
+            });
+        }
+
+        function renderEventStreamTable(events) {
+            const tbody = document.getElementById('rawEventsBody');
+            tbody.innerHTML = '';
+
+            // Show latest 25 events
+            const latestEvents = events.slice(0, 25);
+
+            latestEvents.forEach(e => {
+                const date = new Date(e.created_at);
+                const timeStr = date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+                
+                // Parse browser simple name
+                let browserName = 'Unknown Browser';
+                const ua = e.user_agent || '';
+                if (ua.includes('Firefox')) browserName = 'Firefox';
+                else if (ua.includes('Chrome')) browserName = 'Chrome';
+                else if (ua.includes('Safari')) browserName = 'Safari';
+                else if (ua.includes('Edge')) browserName = 'Edge';
+
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td style="font-family: monospace; font-size: 0.8rem; color: var(--text-muted);">${timeStr}</td>
+                    <td style="font-weight: 500;">${e.page_path === '/' ? '/index.html' : e.page_path}</td>
+                    <td><span class="badge-event ${e.event_type}">${e.event_type}</span></td>
+                    <td style="color: ${e.event_type === 'click' ? 'var(--color-warning)' : 'inherit'}; font-weight: ${e.event_type === 'click' ? '500' : 'normal'};">${e.event_label || '-'}</td>
+                    <td>${e.screen_resolution || '-'}</td>
+                    <td style="font-size: 0.8rem; color: var(--text-muted);" title="${ua}">${browserName}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+    </script>
+</body>
+</html>
