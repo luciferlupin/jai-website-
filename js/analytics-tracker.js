@@ -64,8 +64,8 @@
         }
     }
 
-    // 5. Track Pageview on page load
-    window.addEventListener('DOMContentLoaded', () => {
+    // 5. Initialize tracking
+    function initTracker() {
         // Track the pageview event
         trackEvent('pageview');
 
@@ -109,5 +109,11 @@
                 trackEvent('click', label);
             }
         });
-    });
+    }
+
+    if (document.readyState === 'loading') {
+        window.addEventListener('DOMContentLoaded', initTracker);
+    } else {
+        initTracker();
+    }
 })();

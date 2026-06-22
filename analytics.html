@@ -560,6 +560,9 @@
                     <span class="status-dot" style="width:8px; height:8px; border-radius:50%; background:#10b981; display:inline-block; box-shadow:0 0 8px #10b981;"></span>
                     Connected to Supabase
                 </span>
+                <button id="refreshBtn" class="config-btn" title="Refresh Data">
+                    <i class="fas fa-sync-alt"></i> Refresh
+                </button>
                 <button id="logoutBtn" class="config-btn" title="Logout">
                     <i class="fas fa-sign-out-alt"></i> Logout
                 </button>
@@ -759,13 +762,23 @@
             }
         });
 
-        // Configuration resets & logouts
+        // Configuration resets, logouts & refresh
         document.getElementById('changeConfigBtn').addEventListener('click', clearConfig);
         document.getElementById('reconfigBtn').addEventListener('click', clearConfig);
         
         document.getElementById('logoutBtn').addEventListener('click', async () => {
             await supabaseClient.auth.signOut();
             checkAuth();
+        });
+
+        document.getElementById('refreshBtn').addEventListener('click', async () => {
+            const btn = document.getElementById('refreshBtn');
+            const oldText = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-sync-alt fa-spin"></i> Refreshing...';
+            await loadDashboardData();
+            btn.disabled = false;
+            btn.innerHTML = oldText;
         });
 
         function clearConfig() {
