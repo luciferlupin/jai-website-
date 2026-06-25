@@ -74,48 +74,59 @@ document.addEventListener('DOMContentLoaded', function() {
     let lastScroll = 0;
     
     function handleScroll() {
-        const currentScroll = window.pageYOffset;
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
         const isMobileMenuOpen = navLinks && navLinks.classList.contains('active');
         
-        // 1. Jitter-Proof Show/Hide Navigation Logic
-        if (currentScroll <= 0 || isMobileMenuOpen) {
-            // Keep nav fully visible at the top of the page or when mobile hamburger is open
-            navbar.style.transform = 'translateY(0)';
-            if (currentScroll <= 0) {
-                navbar.classList.remove('scrolled');
-            }
-            lastScroll = currentScroll;
-        } else if (Math.abs(currentScroll - lastScroll) >= 10) {
-            // Only update nav visibility if scroll delta is greater than 10px to prevent jitter
-            if (currentScroll > lastScroll && currentScroll > 100) {
-                // Scroll Down - Hide Navbar
-                navbar.style.transform = 'translateY(-120%)';
-            } else {
-                // Scroll Up - Show Navbar
-                navbar.style.transform = 'translateY(0)';
+        // 1. Add/remove scrolled class based on scroll threshold (50px)
+        const scrollThreshold = 50;
+        if (navbar) {
+            const innerNavbar = navbar.querySelector('.navbar');
+            if (currentScroll > scrollThreshold) {
                 navbar.classList.add('scrolled');
+                if (innerNavbar) innerNavbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+                if (innerNavbar) innerNavbar.classList.remove('scrolled');
             }
-            lastScroll = currentScroll;
+        }
+
+        // Jitter-Proof Show/Hide Navigation Logic on scroll direction
+        if (navbar) {
+            if (currentScroll <= 0 || isMobileMenuOpen) {
+                // Keep nav fully visible at the top of the page or when mobile hamburger is open
+                navbar.style.transform = 'translateY(0)';
+                lastScroll = currentScroll;
+            } else if (Math.abs(currentScroll - lastScroll) >= 10) {
+                // Only update nav visibility if scroll delta is greater than 10px to prevent jitter
+                if (currentScroll > lastScroll && currentScroll > 100) {
+                    // Scroll Down - Hide Navbar
+                    navbar.style.transform = 'translateY(-120%)';
+                } else {
+                    // Scroll Up - Show Navbar
+                    navbar.style.transform = 'translateY(0)';
+                }
+                lastScroll = currentScroll;
+            }
         }
         
-        // 2. Active Link Scroll Spy Highlight (runs continuously on every pixel scrolled)
+        // 2. Active Link Scroll Spy Highlight using boundingClientRect for rock-solid accuracy
         const scrollSpyOffset = 180; // offset for floating nav + spacing
         let currentSectionId = '';
         
         sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            if (currentScroll + scrollSpyOffset >= sectionTop && currentScroll + scrollSpyOffset < sectionTop + sectionHeight) {
+            const rect = section.getBoundingClientRect();
+            // Section is active if it spans across the scroll spy threshold
+            if (rect.top <= scrollSpyOffset && rect.bottom > scrollSpyOffset) {
                 currentSectionId = section.getAttribute('id');
             }
         });
         
-        // When on Home section (scrolled near the top), highlight "Home" so it shows the active line
+        // When near the top, highlight "Home"
         if (currentSectionId === 'home' || currentScroll < 150) {
             currentSectionId = 'home';
         }
         
-        if (currentSectionId) {
+        if (currentSectionId && navAnchorLinks.length > 0) {
             navAnchorLinks.forEach(link => {
                 if (link.getAttribute('href') === `#${currentSectionId}`) {
                     link.classList.add('active');
@@ -130,33 +141,68 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial run on DOM load to set correct initial highlights
     handleScroll();
     
-    // Smooth Scrolling for Anchor Links
+    // Smooth Scrolling for Anchor Links (integrated with Lenis)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
             
-            // Custom direct scroll for Home to go to the absolute top of the page
             if (targetId === '#home') {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                const navLinksEl = document.getElementById('navLinks');
+                const navToggleEl = document.getElementById('navToggle');
+                if (navLinksEl && navLinksEl.classList.contains('active')) {
+                    navLinksEl.classList.remove('active');
+                    if (navToggleEl) navToggleEl.classList.remove('active');
+                    document.body.classList.remove('nav-open');
+                }
+
+                if (window.lenis) {
+                    window.lenis.scrollTo(0);
+                } else {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
                 return;
             }
             
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                const headerOffset = 110;
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
+            try {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    
+                    // Close mobile menu if open
+                    const navLinksEl = document.getElementById('navLinks');
+                    const navToggleEl = document.getElementById('navToggle');
+                    if (navLinksEl && navLinksEl.classList.contains('active')) {
+                        navLinksEl.classList.remove('active');
+                        if (navToggleEl) navToggleEl.classList.remove('active');
+                        document.body.classList.remove('nav-open');
+                    }
+
+                    const navbarEl = document.querySelector('.navbar');
+                    const offset = navbarEl ? navbarEl.offsetHeight + 20 : 100;
+                    
+                    if (window.lenis) {
+                        window.lenis.scrollTo(targetElement, {
+                            offset: -offset
+                        });
+                    } else {
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - offset;
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            } catch (err) {
+                console.warn('Smooth scroll navigation failed for selector:', targetId, err);
             }
         });
     });
