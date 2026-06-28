@@ -437,17 +437,19 @@
             }
             requestAnimationFrame(raf);
 
-            lenis.on('scroll', () => {
-                if (window.AOS) {
-                    AOS.refresh();
-                }
-            });
-
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true,
-            });
+            // Initialize AOS with a brief delay or when idle to prevent blocking the main thread
+            const initAOS = () => {
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-in-out',
+                    once: true,
+                });
+            };
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(() => initAOS());
+            } else {
+                setTimeout(initAOS, 100);
+            }
 
             // Simple Portfolio Filtering
             const tabs = document.querySelectorAll('.filter-tab');
