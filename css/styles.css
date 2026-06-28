@@ -375,6 +375,10 @@ img {
     height: 21px;
     cursor: pointer;
     z-index: 1001;
+    border: none;
+    background: transparent;
+    padding: 0;
+    outline: none;
 }
 
 .nav-toggle span {
@@ -627,6 +631,10 @@ img {
     cursor: pointer;
     z-index: 1001;
     position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    outline: none;
 }
 
 .nav-toggle span {
@@ -12550,5 +12558,15 @@ h6::after,
 
 .portfolio-card-premium:hover .browser-content img {
     transform: scale(1.04) !important;
+}
+
+button.nav-toggle {
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
 }
 
