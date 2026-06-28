@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KFQ266Z1Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9KFQ266Z1Z');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>CRM Pro - Custom CRM SaaS Platform & Pipeline Dashboard | Curious Kaizer</title>
+    <meta name="description" content="Streamline operations, track client pipelines, and manage custom workflows with CRM Pro, our flagship customizable Kanban business dashboard.">
+    <meta name="keywords" content="custom CRM software, bespoke sales pipeline, client operations dashboard, task Kanban CRM, custom business software, Delhi software company CRM">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://curiouskaizer.com/crm-product.html" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="CRM Pro - Advanced Business CRM | Curious Kaizer">
+    <meta property="og:description" content="Bespoke sales funnel pipeline dashboards, client management systems, and automated email operations in a single customizable CRM interface.">
+    <meta property="og:url" content="https://curiouskaizer.com/crm-product.html">
+    <meta property="og:image" content="https://curiouskaizer.com/images/crmimage.png">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        /* Product Page Specific Styling */
+        .product-hero {
+            padding: 8rem 0 5rem;
+            background: linear-gradient(135deg, #090d16 0%, #1e1e38 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .product-hero-container {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .product-info h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+        }
+
+        .product-info .tagline {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #3b82f6;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-info .description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+        }
+
+        .product-image-preview {
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+            background: #0f172a;
+        }
+
+        .product-image-preview img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Features Styling */
+        .product-features-section {
+            padding: 5rem 0;
+            background-color: #ffffff;
+        }
+
+        .features-grid-custom {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 3.5rem;
+        }
+
+        .feature-card-custom {
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            transition: all 0.3s ease;
+            background: #ffffff;
+        }
+
+        .feature-card-custom:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.03);
+            border-color: #3b82f6;
+        }
+
+        .feature-icon-custom {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: rgba(59, 130, 246, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #3b82f6;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card-custom h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card-custom p {
+            color: #475569;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Pricing Styling */
+        .product-pricing-section {
+            padding: 5rem 0;
+            background-color: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .pricing-cards-custom {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 3.5rem;
+        }
+
+        .pricing-card-custom {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card-custom.featured {
+            border-color: #3b82f6;
+            box-shadow: 0 12px 30px rgba(59, 130, 246, 0.05);
+            transform: scale(1.03);
+        }
+
+        .pricing-card-custom h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 1rem;
+        }
+
+        .price-custom {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .price-custom span {
+            font-size: 0.95rem;
+            color: #64748b;
+            font-weight: 500;
+            margin-left: 4px;
+        }
+
+        .pricing-card-custom ul {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+            flex-grow: 1;
+        }
+
+        .pricing-card-custom ul li {
+            font-size: 0.9rem;
+            color: #475569;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pricing-card-custom ul li i {
+            color: #10b981;
+        }
+
+        @media (max-width: 991px) {
+            .product-hero-container {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .features-grid-custom, .pricing-cards-custom {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .pricing-card-custom.featured {
+                transform: scale(1);
+            }
+            .product-info h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+    
+    <!-- JSON-LD Product Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "CRM Pro by Curious Kaizer",
+        "image": "https://curiouskaizer.com/images/crmimage.png",
+        "description": "Enterprise customer relationship management system featuring sales pipeline tracking, customer directories, and task management dashboards.",
+        "brand": {
+            "@type": "Brand",
+            "name": "Curious Kaizer"
+        },
+        "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "INR",
+            "lowPrice": "2999",
+            "highPrice": "12999",
+            "offerCount": "3"
+        }
+    }
+    </script>
+</head>
+<body itemscope itemtype="https://schema.org/WebPage">
+
+    <!-- Navigation Header -->
+    <header class="site-header">
+    <nav class="navbar" itemscope itemtype="https://schema.org/SiteNavigationElement" aria-label="Main navigation">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo-icon.jpg" alt="Curious Kaizer Logo" class="logo-icon">
+                <span class="logo-text">Curious Kaizer</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#home" title="Home" itemprop="url"><span itemprop="name">Home</span></a></li>
+                <li><a href="index.html#process" title="Process" itemprop="url"><span itemprop="name">Process</span></a></li>
+                <li><a href="services.html" title="Capabilities" itemprop="url"><span itemprop="name">Capabilities</span></a></li>
+                <li><a href="index.html#why-us" title="Why Choose Us" itemprop="url"><span itemprop="name">Why Choose Us</span></a></li>
+                <li><a href="portfolio.html" title="Portfolio" itemprop="url"><span itemprop="name">Portfolio</span></a></li>
+                <li><a href="pricing.html" title="Pricing" itemprop="url"><span itemprop="name">Pricing</span></a></li>
+                <li class="mobile-cta-item"><a href="contact.html" class="nav-cta-btn-mobile" itemprop="url"><span itemprop="name"><span class="cta-text-long">Book Free Call</span><span class="cta-text-short">Book Call</span></span> <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+            <a href="contact.html" class="nav-cta-btn"><span class="cta-text-long">Book Free Call</span><span class="cta-text-short">Book Call</span> <i class="fas fa-arrow-right"></i></a>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="product-hero">
+        <div class="container">
+            <div class="product-hero-container">
+                <div class="product-info" data-aos="fade-up">
+                    <div class="hero-badge" style="background: rgba(59, 130, 246, 0.15); color: #60a5fa;">SaaS Product</div>
+                    <h1>CRM Pro</h1>
+                    <p class="tagline">Transform Your Customer Relationships</p>
+                    <p class="description">
+                        Streamline your sales pipeline, email tracking, custom configurations, and customer histories in a single, high-performance interface designed for rapid operations.
+                    </p>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="contact.html" class="cta-button primary">Request Live Demo</a>
+                        <a href="#pricing" class="cta-button secondary" style="background: rgba(255,255,255,0.05); color: #fff;">View Pricing</a>
+                    </div>
+                </div>
+                <div class="product-image-preview" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/crmimage.png" alt="CRM Pro Dashboard Interface Screen">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="product-features-section" id="features">
+        <div class="container">
+            <div style="text-align: center;">
+                <div class="hero-badge">Product Capabilities</div>
+                <h2>Built for <span class="highlight-blue">Efficiency</span></h2>
+                <p class="section-subtitle" style="margin: 0 auto; max-width: 600px;">Review the specialized components that make CRM Pro an industry-leading business dashboard tool.</p>
+            </div>
+
+            <div class="features-grid-custom">
+                <div class="feature-card-custom" data-aos="fade-up">
+                    <div class="feature-icon-custom"><i class="fas fa-users"></i></div>
+                    <h3>Contact Management</h3>
+                    <p>Centralized database listing all historical client emails, purchases, and communications in singular profile views.</p>
+                </div>
+                <div class="feature-card-custom" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon-custom"><i class="fas fa-chart-line"></i></div>
+                    <h3>Sales Pipeline</h3>
+                    <p>Visual drag-and-drop Kanban pipeline boards configured to move sales steps cleanly from leads to closings.</p>
+                </div>
+                <div class="feature-card-custom" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon-custom"><i class="fas fa-envelope"></i></div>
+                    <h3>Email Integration</h3>
+                    <p>Automate dynamic follow-ups, trigger templates on customer actions, and track openings automatically.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="product-pricing-section" id="pricing">
+        <div class="container">
+            <div style="text-align: center;">
+                <div class="hero-badge">Licensing</div>
+                <h2>Simple <span class="highlight-blue">Pricing</span></h2>
+            </div>
+
+            <div class="pricing-cards-custom">
+                <!-- Card 1 -->
+                <div class="pricing-card-custom" data-aos="fade-up">
+                    <h3>Starter Plan</h3>
+                    <p style="color: #64748b; font-size: 0.85rem;">For small startups beginning client pipelines.</p>
+                    <div class="price-custom">₹2,999 <span>/month</span></div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Up to 100 contacts</li>
+                        <li><i class="fas fa-check"></i> Basic Pipeline Tracking</li>
+                        <li><i class="fas fa-check"></i> Email customer support</li>
+                        <li><i class="fas fa-check"></i> 5GB secure file storage</li>
+                    </ul>
+                    <a href="contact.html" class="cta-button outline" style="margin-top: auto; text-align: center; display: block;">Select Starter</a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="pricing-card-custom featured" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Professional Plan</h3>
+                    <p style="color: #64748b; font-size: 0.85rem;">Standard enterprise-grade operations console.</p>
+                    <div class="price-custom">₹5,999 <span>/month</span></div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Up to 1,000 contacts</li>
+                        <li><i class="fas fa-check"></i> Full dashboard analytics</li>
+                        <li><i class="fas fa-check"></i> Priority support channel</li>
+                        <li><i class="fas fa-check"></i> 50GB secure file storage</li>
+                    </ul>
+                    <a href="contact.html" class="cta-button primary" style="margin-top: auto; text-align: center; display: block;">Select Professional</a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="pricing-card-custom" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Enterprise Plan</h3>
+                    <p style="color: #64748b; font-size: 0.85rem;">For scaling platforms needing integrations.</p>
+                    <div class="price-custom">₹12,999 <span>/month</span></div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Unlimited database contacts</li>
+                        <li><i class="fas fa-check"></i> 24/7 Phone SLA support</li>
+                        <li><i class="fas fa-check"></i> API & Custom configurations</li>
+                        <li><i class="fas fa-check"></i> Unlimited vault storage</li>
+                    </ul>
+                    <a href="contact.html" class="cta-button outline" style="margin-top: auto; text-align: center; display: block;">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer footer-premium" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo-link">
+                        <img src="images/logo.jpg" alt="Curious Kaizer Logo" class="footer-logo-img">
+                    </a>
+                    <p class="subtitle" style="margin-top: 0.5rem;">Where Innovation Meets Digital Excellence</p>
+                    <p class="tagline">
+                        Crafting bespoke, high-performance web applications, custom platforms, and design systems that scale your business.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/curiouskaizer" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/curiouskaizer" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/curiouskaizer" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.twitter.com/curiouskaizer" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-nav-col">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="services.html">Custom Websites</a></li>
+                        <li><a href="services.html">E-Commerce Stores</a></li>
+                        <li><a href="services.html">Web Applications</a></li>
+                        <li><a href="crm-product.html">Custom CRM Solutions</a></li>
+                        <li><a href="services.html">AI & Automation Tools</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-nav-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html#home">Home / Process</a></li>
+                        <li><a href="services.html">Capabilities</a></li>
+                        <li><a href="index.html#why-us">Why Choose Us</a></li>
+                        <li><a href="portfolio.html">Our Portfolio</a></li>
+                        <li><a href="pricing.html">Pricing / FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Get in Touch</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@curiouskaizer.com">info@curiouskaizer.com</a></li>
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:+918595121436">+91 85951 21436</a></li>
+                        <li><i class="fab fa-whatsapp" style="color: #25d366;"></i> <a href="https://wa.me/918595121436" target="_blank" rel="noopener">Chat on WhatsApp</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Delhi, India | Remote Worldwide</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-left-info">
+                    <p class="copyright">&copy; 2026 Curious Kaizer. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="#">Terms of Service</a>
+                    <span>•</span>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/scripts.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
+    <script>
+        const lenis = new Lenis({
+            lerp: 0.1,
+            orientation: 'vertical',
+            gestureOrientation: 'vertical',
+            smoothWheel: true,
+        });
+        window.lenis = lenis;
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        lenis.on('scroll', () => {
+            if (window.AOS) {
+                AOS.refresh();
+            }
+        });
+
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+        });
+    </script>
+</body>
+</html>

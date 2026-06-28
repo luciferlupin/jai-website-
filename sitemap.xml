@@ -5,7 +5,7 @@
     <!-- Homepage - Highest Priority -->
     <url>
         <loc>https://curiouskaizer.com/</loc>
-        <lastmod>2025-02-25</lastmod>
+        <lastmod>2026-06-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -15,58 +15,42 @@
         </image:image>
     </url>
     
-    <!-- Pricing Page - High Conversion Priority -->
+    <!-- Services Page - Core Offerings -->
     <url>
-        <loc>https://curiouskaizer.com/#pricing</loc>
-        <lastmod>2025-02-25</lastmod>
+        <loc>https://curiouskaizer.com/services.html</loc>
+        <lastmod>2026-06-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     
-    <!-- Expertise Page - High SEO Priority -->
+    <!-- Portfolio Page - Showcasing Best Work -->
     <url>
-        <loc>https://curiouskaizer.com/#expertise</loc>
-        <lastmod>2025-02-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <!-- Why Choose Us Page - Trust Building -->
-    <url>
-        <loc>https://curiouskaizer.com/#why-us</loc>
-        <lastmod>2025-02-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <!-- Portfolio Page - Social Proof -->
-    <url>
-        <loc>https://curiouskaizer.com/#portfolio</loc>
-        <lastmod>2025-02-25</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <!-- FAQ Section - High SEO Priority for User Queries -->
-    <url>
-        <loc>https://curiouskaizer.com/#faq</loc>
-        <lastmod>2025-02-25</lastmod>
+        <loc>https://curiouskaizer.com/portfolio.html</loc>
+        <lastmod>2026-06-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     
-    <!-- Book Call Page - Lead Generation -->
+    <!-- Pricing Page - Cost & Packages -->
     <url>
-        <loc>https://curiouskaizer.com/#book-call</loc>
-        <lastmod>2025-02-25</lastmod>
+        <loc>https://curiouskaizer.com/pricing.html</loc>
+        <lastmod>2026-06-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
-    <!-- Contact Page - Local SEO -->
+    <!-- CRM Product Page - Detailed Software Offering -->
     <url>
-        <loc>https://curiouskaizer.com/#contact</loc>
-        <lastmod>2025-02-25</lastmod>
+        <loc>https://curiouskaizer.com/crm-product.html</loc>
+        <lastmod>2026-06-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Contact Page - Local SEO Contact & Map -->
+    <url>
+        <loc>https://curiouskaizer.com/contact.html</loc>
+        <lastmod>2026-06-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>

@@ -128,7 +128,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (currentSectionId && navAnchorLinks.length > 0) {
             navAnchorLinks.forEach(link => {
-                if (link.getAttribute('href') === `#${currentSectionId}`) {
+                const href = link.getAttribute('href');
+                if (href === `#${currentSectionId}` || href === `index.html#${currentSectionId}` || href === `./index.html#${currentSectionId}`) {
                     link.classList.add('active');
                 } else {
                     link.classList.remove('active');
@@ -142,70 +143,83 @@ document.addEventListener('DOMContentLoaded', function() {
     handleScroll();
     
     // Smooth Scrolling for Anchor Links (integrated with Lenis)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
+            const href = this.getAttribute('href');
+            if (!href) return;
             
-            if (targetId === '#home') {
-                e.preventDefault();
+            // Check if it's a local anchor link or links to homepage anchors (e.g. #portfolio or index.html#portfolio)
+            const isLocalAnchor = href.startsWith('#') && href !== '#';
+            const isHomepageAnchor = (href.startsWith('index.html#') || href.startsWith('./index.html#')) && 
+                                      (window.location.pathname.endsWith('/') || 
+                                       window.location.pathname.endsWith('/index.html') || 
+                                       window.location.pathname === '' ||
+                                       !window.location.pathname.includes('.html'));
+            
+            if (isLocalAnchor || isHomepageAnchor) {
+                const targetId = href.split('#')[1];
+                if (!targetId) return;
                 
-                // Close mobile menu if open
-                const navLinksEl = document.getElementById('navLinks');
-                const navToggleEl = document.getElementById('navToggle');
-                if (navLinksEl && navLinksEl.classList.contains('active')) {
-                    navLinksEl.classList.remove('active');
-                    if (navToggleEl) navToggleEl.classList.remove('active');
-                    document.body.classList.remove('nav-open');
-                }
-
-                if (window.lenis) {
-                    window.lenis.scrollTo(0);
-                } else {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                }
-                return;
-            }
-            
-            try {
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
+                if (targetId === 'home') {
                     e.preventDefault();
-                    
-                    // Close mobile menu if open
-                    const navLinksEl = document.getElementById('navLinks');
-                    const navToggleEl = document.getElementById('navToggle');
-                    if (navLinksEl && navLinksEl.classList.contains('active')) {
-                        navLinksEl.classList.remove('active');
-                        if (navToggleEl) navToggleEl.classList.remove('active');
-                        document.body.classList.remove('nav-open');
-                    }
-
-                    const navbarEl = document.querySelector('.navbar');
-                    const offset = navbarEl ? navbarEl.offsetHeight + 20 : 100;
-                    
-                    if (window.lenis) {
-                        window.lenis.scrollTo(targetElement, {
-                            offset: -offset
-                        });
-                    } else {
-                        const elementPosition = targetElement.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - offset;
-                        
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
+                    closeMobileMenu();
+                    scrollToTop();
+                    return;
                 }
-            } catch (err) {
-                console.warn('Smooth scroll navigation failed for selector:', targetId, err);
+                
+                try {
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        closeMobileMenu();
+                        scrollToElement(targetElement);
+                    }
+                } catch (err) {
+                    console.warn('Smooth scroll navigation failed for selector:', targetId, err);
+                }
             }
         });
     });
+
+    function closeMobileMenu() {
+        const navLinksEl = document.getElementById('navLinks');
+        const navToggleEl = document.getElementById('navToggle');
+        if (navLinksEl && navLinksEl.classList.contains('active')) {
+            navLinksEl.classList.remove('active');
+            if (navToggleEl) navToggleEl.classList.remove('active');
+            document.body.classList.remove('nav-open');
+        }
+    }
+
+    function scrollToTop() {
+        if (window.lenis) {
+            window.lenis.scrollTo(0);
+        } else {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    function scrollToElement(element) {
+        const navbarEl = document.querySelector('.navbar');
+        const offset = navbarEl ? navbarEl.offsetHeight + 20 : 100;
+        
+        if (window.lenis) {
+            window.lenis.scrollTo(element, {
+                offset: -offset
+            });
+        } else {
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - offset;
+            
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    }
     
 
     // Package cards animation

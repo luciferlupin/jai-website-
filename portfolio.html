@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KFQ266Z1Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9KFQ266Z1Z');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>SaaS, AI & Web Development Portfolio | Case Studies | Curious Kaizer</title>
+    <meta name="description" content="Explore our custom web development and SaaS engineering portfolio. Review active case studies in spatial real estate dashboards, Three.js 3D stores, B2B procurement, and AI tools.">
+    <meta name="keywords" content="custom SaaS portfolio, AI agent case studies, Three.js 3D rings, real estate spatial maps, B2B procurement portal, legal operations CRM, Delhi software agency portfolio">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://curiouskaizer.com/portfolio.html" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Our Portfolio | Case Studies & Projects | Curious Kaizer">
+    <meta property="og:description" content="View bespoke web applications, custom platforms, and high-performance design systems crafted by Curious Kaizer.">
+    <meta property="og:url" content="https://curiouskaizer.com/portfolio.html">
+    <meta property="og:image" content="https://curiouskaizer.com/images/og-image.jpg">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        /* Subpage Premium Hero Styling */
+        .subpage-hero {
+            padding: 8rem 0 4rem;
+            background-color: #fafbfc;
+            background-image: linear-gradient(rgba(37, 99, 235, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            text-align: center;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        
+        .subpage-hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: #0f172a;
+            margin: 1rem 0 1.5rem;
+        }
+
+        /* Portfolio Grid Styling */
+        .portfolio-detail-section {
+            padding: 5rem 0;
+            background-color: #ffffff;
+        }
+
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 3.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            padding: 0.6rem 1.5rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            background-color: #f8fafc;
+            color: #475569;
+            border: 1px solid #e2e8f0;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .filter-tab.active, .filter-tab:hover {
+            background-color: #2563eb;
+            color: #ffffff;
+            border-color: #2563eb;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+
+        .portfolio-item-premium {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+            border-bottom: 1px solid #f1f5f9;
+            padding-bottom: 4rem;
+        }
+
+        .portfolio-item-premium:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .portfolio-item-content h3 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-item-meta {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #2563eb;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+        }
+
+        .portfolio-item-desc {
+            color: #475569;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .tech-tag {
+            font-size: 0.85rem;
+            font-weight: 600;
+            background-color: #f1f5f9;
+            color: #334155;
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+        }
+
+        .portfolio-item-visual {
+            background: #fafbfc;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+
+        .portfolio-item-visual img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        @media (max-width: 991px) {
+            .portfolio-item-premium {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                padding-bottom: 3.5rem;
+            }
+            .subpage-hero-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body itemscope itemtype="https://schema.org/WebPage">
+
+    <!-- Navigation Header -->
+    <header class="site-header">
+    <nav class="navbar" itemscope itemtype="https://schema.org/SiteNavigationElement" aria-label="Main navigation">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo-icon.jpg" alt="Curious Kaizer Logo" class="logo-icon">
+                <span class="logo-text">Curious Kaizer</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#home" title="Home" itemprop="url"><span itemprop="name">Home</span></a></li>
+                <li><a href="index.html#process" title="Process" itemprop="url"><span itemprop="name">Process</span></a></li>
+                <li><a href="services.html" title="Capabilities" itemprop="url"><span itemprop="name">Capabilities</span></a></li>
+                <li><a href="index.html#why-us" title="Why Choose Us" itemprop="url"><span itemprop="name">Why Choose Us</span></a></li>
+                <li><a href="portfolio.html" class="active" title="Portfolio" itemprop="url"><span itemprop="name">Portfolio</span></a></li>
+                <li><a href="pricing.html" title="Pricing" itemprop="url"><span itemprop="name">Pricing</span></a></li>
+                <li class="mobile-cta-item"><a href="contact.html" class="nav-cta-btn-mobile" itemprop="url"><span itemprop="name"><span class="cta-text-long">Book Free Call</span><span class="cta-text-short">Book Call</span></span> <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+            <a href="contact.html" class="nav-cta-btn"><span class="cta-text-long">Book Free Call</span><span class="cta-text-short">Book Call</span> <i class="fas fa-arrow-right"></i></a>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+    <!-- Subpage Hero -->
+    <section class="subpage-hero">
+        <div class="container">
+            <div class="hero-badge">Creative Portfolio</div>
+            <h1 class="subpage-hero-title">Our Best Work.<br><span class="highlight-blue">Engineered to Excel.</span></h1>
+            <p class="section-subtitle" style="margin: 0 auto; max-width: 700px;">Explore our catalog of web platforms, automation tools, and applications designed to solve real business challenges.</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Detail Section -->
+    <section class="portfolio-detail-section">
+        <div class="container">
+            
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">All Projects</button>
+                <button class="filter-tab" data-filter="saas">SaaS & Web Apps</button>
+                <button class="filter-tab" data-filter="ecommerce">E-Commerce</button>
+                <button class="filter-tab" data-filter="ai">AI & Automation</button>
+            </div>
+
+            <div class="portfolio-grid">
+                
+                <!-- Project 1: Liquidity Intelligence -->
+                <div class="portfolio-item-premium" data-category="saas" data-aos="fade-up">
+                    <div class="portfolio-item-content">
+                        <div class="portfolio-item-meta">Real Estate & SaaS</div>
+                        <h3>Liquidity Intelligence</h3>
+                        <p class="portfolio-item-desc">A premium market intelligence portal designed to connect buyers and sellers, scoring intents automatically using real-time spatial data analysis maps.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Python Django</span>
+                            <span class="tech-tag">Supabase</span>
+                            <span class="tech-tag">Mapbox API</span>
+                        </div>
+                        <a href="contact.html" class="cta-button primary">Request Live Demo</a>
+                    </div>
+                    <div class="portfolio-item-visual">
+                        <img src="images/liquidity-intelligence.png" alt="Liquidity Intelligence Dashboard Mockup">
+                    </div>
+                </div>
+
+                <!-- Project 2: Notary Platform -->
+                <div class="portfolio-item-premium" data-category="saas" data-aos="fade-up">
+                    <div class="portfolio-item-content">
+                        <div class="portfolio-item-meta">LegalTech Operations</div>
+                        <h3>Notary Platform</h3>
+                        <p class="portfolio-item-desc">An all-in-one workspace helping notary experts manage clients, securely upload document PDFs, schedule online appointments, and digitalize operations.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">AWS S3</span>
+                        </div>
+                        <a href="contact.html" class="cta-button primary">Request Live Demo</a>
+                    </div>
+                    <div class="portfolio-item-visual">
+                        <img src="images/notary-platform.png" alt="Notary Operations Platform Dashboard">
+                    </div>
+                </div>
+
+                <!-- Project 3: CuriousCRM -->
+                <div class="portfolio-item-premium" data-category="saas" data-aos="fade-up">
+                    <div class="portfolio-item-content">
+                        <div class="portfolio-item-meta">Enterprise CRM</div>
+                        <h3>CuriousCRM</h3>
+                        <p class="portfolio-item-desc">Our flagship customer relationship management console, including interactive task Kanban boards, lead-scoring mechanics, conversion indicators, and database syncs.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Vanilla JS</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">Supabase</span>
+                            <span class="tech-tag">Chart.js</span>
+                        </div>
+                        <a href="crm-product.html" class="cta-button primary">Explore Product Specs</a>
+                    </div>
+                    <div class="portfolio-item-visual">
+                        <img src="images/curiouscrm.png" alt="CuriousCRM Web Application UI">
+                    </div>
+                </div>
+
+                <!-- Project 4: Browser Buddy -->
+                <div class="portfolio-item-premium" data-category="ai" data-aos="fade-up">
+                    <div class="portfolio-item-content">
+                        <div class="portfolio-item-meta">AI & Automation</div>
+                        <h3>Browser Buddy</h3>
+                        <p class="portfolio-item-desc">A voice-activated AI helper operating inside user browsers, allowing hands-free navigation, summaries, scraping, and multi-step action automation.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Chrome Extension</span>
+                            <span class="tech-tag">Gemini API</span>
+                            <span class="tech-tag">Web Speech API</span>
+                        </div>
+                        <a href="contact.html" class="cta-button primary">Inquire About Extension</a>
+                    </div>
+                    <div class="portfolio-item-visual">
+                        <img src="images/browser-buddy.jpg" alt="Browser Buddy AI Assistant View">
+                    </div>
+                </div>
+
+                <!-- Project 5: WatFix Chemicals -->
+                <div class="portfolio-item-premium" data-category="ecommerce" data-aos="fade-up">
+                    <div class="portfolio-item-content">
+                        <div class="portfolio-item-meta">B2B Sourcing Portal</div>
+                        <h3>WatFix Chemicals</h3>
+                        <p class="portfolio-item-desc">A complete raw material database and RFQ procurement pipeline built for industrial manufacturing clients, featuring search directories and product sheets.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React Next.js</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">GraphQL</span>
+                        </div>
+                        <a href="contact.html" class="cta-button primary">Request Live Demo</a>
+                    </div>
+                    <div class="portfolio-item-visual">
+                        <img src="images/watfix.png" alt="WatFix Chemicals B2B Sourcing Portal UI">
+                    </div>
+                </div>
+
+                <!-- Project 6: Luxury Jewelry -->
+                <div class="portfolio-item-premium" data-category="ecommerce" data-aos="fade-up">
+                    <div class="portfolio-item-content">
+                        <div class="portfolio-item-meta">E-Commerce & 3D</div>
+                        <h3>Luxury Jewelry Store</h3>
+                        <p class="portfolio-item-desc">An interactive online shop featuring real-time 3D models and ring previews, providing high-end consumers with a virtual custom jewelry checkout flow.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Three.js</span>
+                            <span class="tech-tag">React Three Fiber</span>
+                            <span class="tech-tag">Shopify API</span>
+                        </div>
+                        <a href="contact.html" class="cta-button primary">Request Demo</a>
+                    </div>
+                    <div class="portfolio-item-visual">
+                        <img src="images/3d-jewelry-store.png" alt="Interactive 3D Luxury Jewelry Store UI">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer footer-premium" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo-link">
+                        <img src="images/logo.jpg" alt="Curious Kaizer Logo" class="footer-logo-img">
+                    </a>
+                    <p class="subtitle" style="margin-top: 0.5rem;">Where Innovation Meets Digital Excellence</p>
+                    <p class="tagline">
+                        Crafting bespoke, high-performance web applications, custom platforms, and design systems that scale your business.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/curiouskaizer" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/curiouskaizer" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/curiouskaizer" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.twitter.com/curiouskaizer" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-nav-col">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="services.html">Custom Websites</a></li>
+                        <li><a href="services.html">E-Commerce Stores</a></li>
+                        <li><a href="services.html">Web Applications</a></li>
+                        <li><a href="crm-product.html">Custom CRM Solutions</a></li>
+                        <li><a href="services.html">AI & Automation Tools</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-nav-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html#home">Home / Process</a></li>
+                        <li><a href="services.html">Capabilities</a></li>
+                        <li><a href="index.html#why-us">Why Choose Us</a></li>
+                        <li><a href="portfolio.html">Our Portfolio</a></li>
+                        <li><a href="pricing.html">Pricing / FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Get in Touch</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@curiouskaizer.com">info@curiouskaizer.com</a></li>
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:+918595121436">+91 85951 21436</a></li>
+                        <li><i class="fab fa-whatsapp" style="color: #25d366;"></i> <a href="https://wa.me/918595121436" target="_blank" rel="noopener">Chat on WhatsApp</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Delhi, India | Remote Worldwide</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-left-info">
+                    <p class="copyright">&copy; 2026 Curious Kaizer. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="#">Terms of Service</a>
+                    <span>•</span>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/scripts.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
+    <script>
+        const lenis = new Lenis({
+            lerp: 0.1,
+            orientation: 'vertical',
+            gestureOrientation: 'vertical',
+            smoothWheel: true,
+        });
+        window.lenis = lenis;
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        lenis.on('scroll', () => {
+            if (window.AOS) {
+                AOS.refresh();
+            }
+        });
+
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+        });
+
+        // Simple Portfolio Filtering
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.filter-tab');
+            const items = document.querySelectorAll('.portfolio-item-premium');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    const filter = tab.getAttribute('data-filter');
+
+                    items.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'grid';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+
+                    // Refresh AOS layouts
+                    if (window.AOS) {
+                        AOS.refresh();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
