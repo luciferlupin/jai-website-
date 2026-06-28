@@ -40,19 +40,7 @@
             return;
         }
 
-        // 2. Initialize Supabase Client
-        let supabaseClient = null;
-        try {
-            if (typeof supabase !== 'undefined' && supabase.createClient) {
-                supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-            } else {
-                console.error("Curious Kaizer Analytics: Supabase SDK is not loaded. Make sure to include the CDN script before this tracker.");
-                return;
-            }
-        } catch (e) {
-            console.error("Curious Kaizer Analytics: Failed to initialize Supabase client.", e);
-            return;
-        }
+        // Supabase client initialization removed in favor of direct REST API calls
 
         // 3. Helper to get or create Session ID
         function getSessionId() {
@@ -117,12 +105,19 @@
             };
 
             try {
-                const { error } = await supabaseClient
-                    .from('analytics_events')
-                    .insert([payload]);
+                const response = await fetch(`${SUPABASE_URL}/rest/v1/analytics_events`, {
+                    method: 'POST',
+                    headers: {
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                        'Content-Type': 'application/json',
+                        'Prefer': 'return=minimal'
+                    },
+                    body: JSON.stringify(payload)
+                });
 
-                if (error) {
-                    console.error("KK Analytics Error:", error.message);
+                if (!response.ok) {
+                    console.error("KK Analytics Error:", response.statusText);
                 }
             } catch (e) {
                 console.error("KK Analytics Network Error:", e);
