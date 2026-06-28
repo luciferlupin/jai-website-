@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const typingText = document.querySelector('.typing-text');
     let textIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
+    let charIndex = texts[0].length; // Start with the first text fully typed
+    let isDeleting = true; // Start by deleting
     let typingSpeed = 50; 
     let deleteSpeed = 30; 
     let pauseEnd = 3000; 
@@ -58,9 +58,9 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(type, typingSpeed);
     }
     
-    // Set initial color
-    typingText.style.color = '#2563eb';
-    setTimeout(type, 1000);
+    // Set initial color to match fully typed black text
+    typingText.style.color = 'rgb(0, 0, 0)';
+    setTimeout(type, pauseEnd); // Wait for the pause before deleting first text
 
     // Tech stack dynamic info cycling
     const techTextElement = document.querySelector('.tech-dynamic-text');

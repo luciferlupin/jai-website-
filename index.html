@@ -389,7 +389,8 @@
     <link rel="preload" href="./css/styles.css?v=1.5" as="style">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@700;800&display=swap" rel="stylesheet"></noscript>
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css?v=1.5">
@@ -462,7 +463,7 @@
                 <!-- 1. Headline with the animated typing text preserved inside -->
                 <h1 aria-label="Your competitors have a website. Let's build one that's better." style="display: grid; grid-template-columns: 100%; justify-content: center; align-items: center; margin-top: 48px; margin-bottom: 24px;">
                     <span class="typing-text-ghost" aria-hidden="true" style="grid-area: 1/1; visibility: hidden; pointer-events: none; user-select: none; font-weight: 600; display: block; width: 100%;">Your competitors have a website. Let's build one that's better.</span>
-                    <span class="typing-text" style="grid-area: 1/1; display: block; width: 100%;"></span>
+                    <span class="typing-text" style="grid-area: 1/1; display: block; width: 100%; color: rgb(0, 0, 0);">Your competitors have a website. Let's build one that's better.</span>
                 </h1>
 
                 <!-- 2. Beautiful Badge/Tag Pills row placed below typing animation -->
