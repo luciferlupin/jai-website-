@@ -778,12 +778,7 @@ img {
     will-change: transform;
 }
 
-/* Font loading optimization */
-@font-face {
-    font-family: 'Inter';
-    font-display: swap;
-    src: url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-}
+/* Font loading optimization is handled directly via Google Fonts link tag in HTML */
 
 /* Image optimization */
 img {

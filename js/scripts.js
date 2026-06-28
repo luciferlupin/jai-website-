@@ -72,6 +72,46 @@ document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('section[id], header[id]');
     const navAnchorLinks = document.querySelectorAll('.nav-links a');
     let lastScroll = 0;
+    let activeSectionId = '';
+
+    function updateActiveLink(activeId) {
+        if (!activeId || activeId === activeSectionId) return;
+        activeSectionId = activeId;
+        
+        if (navAnchorLinks.length > 0) {
+            navAnchorLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === `#${activeId}` || href === `index.html#${activeId}` || href === `./index.html#${activeId}`) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+    }
+
+    // IntersectionObserver for Layout-Reflow-Free active section detection
+    if (sections.length > 0 && navAnchorLinks.length > 0) {
+        const observerOptions = {
+            root: null,
+            rootMargin: '-180px 0px -40% 0px',
+            threshold: 0
+        };
+        
+        const spyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                    if (currentScroll >= 150 || id === 'home') {
+                        updateActiveLink(id);
+                    }
+                }
+            });
+        }, observerOptions);
+        
+        sections.forEach(section => spyObserver.observe(section));
+    }
     
     function handleScroll() {
         const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
@@ -109,32 +149,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        // 2. Active Link Scroll Spy Highlight using boundingClientRect for rock-solid accuracy
-        const scrollSpyOffset = 180; // offset for floating nav + spacing
-        let currentSectionId = '';
-        
-        sections.forEach(section => {
-            const rect = section.getBoundingClientRect();
-            // Section is active if it spans across the scroll spy threshold
-            if (rect.top <= scrollSpyOffset && rect.bottom > scrollSpyOffset) {
-                currentSectionId = section.getAttribute('id');
-            }
-        });
-        
-        // When near the top, highlight "Home"
-        if (currentSectionId === 'home' || currentScroll < 150) {
-            currentSectionId = 'home';
-        }
-        
-        if (currentSectionId && navAnchorLinks.length > 0) {
-            navAnchorLinks.forEach(link => {
-                const href = link.getAttribute('href');
-                if (href === `#${currentSectionId}` || href === `index.html#${currentSectionId}` || href === `./index.html#${currentSectionId}`) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
-                }
-            });
+        // Force highlight "home" when scrolled to the very top
+        if (currentScroll < 150) {
+            updateActiveLink('home');
         }
     }
     
@@ -396,7 +413,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const isDesktop = window.innerWidth > 768;
             const startTop = isDesktop ? 100 : 75;
             const offsetStep = isDesktop ? 30 : 20;
+            const viewportHeight = window.innerHeight;
+            const eightyPercentViewport = viewportHeight * 0.8;
             
+            // 1. Batch all DOM read operations first
+            const rects = Array.from(cards).map(card => card.getBoundingClientRect());
+            
+            // 2. Batch all DOM write operations next
             cards.forEach((card, index) => {
                 const cardContent = card.querySelector('.card-content');
                 if (!cardContent) return;
@@ -405,9 +428,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 card.style.top = `${startTop + index * offsetStep}px`;
                 card.style.zIndex = index + 1;
                 
-                const rect = card.getBoundingClientRect();
-                const viewportHeight = window.innerHeight;
-                const eightyPercentViewport = viewportHeight * 0.8;
+                const rect = rects[index];
                 
                 // If scrolled past 80% viewport threshold, calculate progress
                 const scrollProgress = Math.max(0, Math.min(1, (eightyPercentViewport - rect.top) / 400));
