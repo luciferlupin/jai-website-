@@ -1,0 +1,35 @@
+# Curious Kaizer
+
+> Premium custom design and software engineering agency specializing in custom SaaS platforms, AI integrations, 3D web configurations, and business dashboards.
+
+## Core Offerings & Services
+
+- **Custom Web & E-Commerce**: High-performance corporate sites, portfolios, and conversion-optimized storefronts.
+- **SaaS & Web Applications**: Bespoke CRM systems, business pipeline trackers, and real-time dashboards (such as CRM Pro).
+- **AI & Automation Tools**: Custom AI automation agents, chatbot integrations, and voice-controlled browser automation.
+- **3D Visualizers**: Three.js/WebGL-based 3D product configurators (e.g. jewelry customizers).
+
+## Pricing Packages
+
+- **Basic Business Website**: Starts at ₹10,200. Perfect for small businesses looking to establish a professional presence.
+- **E-Commerce Storefront**: Starts at ₹16,900. Features advanced product catalogues, payment gateways, and inventory management.
+- **Custom Web & SaaS Apps**: Starts at ₹28,900. Tailored solutions for complex workflows, customer portals, and enterprise software.
+
+## Navigation Map
+
+- [Home Page](https://curiouskaizer.com/) - Main overview, process timeline, and value proposition.
+- [Our Services](https://curiouskaizer.com/services.html) - Detailed breakdown of capabilities (SaaS, AI, E-Commerce, Dashboards).
+- [Portfolio & Case Studies](https://curiouskaizer.com/portfolio.html) - Live projects including real estate SaaS portals, 3D ring customizers, and legal databases.
+- [Pricing & FAQ](https://curiouskaizer.com/pricing.html) - Pricing packages, transparent licensing cost, and common web development FAQs.
+- [CRM Product Demo](https://curiouskaizer.com/crm-product.html) - Overview of CRM Pro, our flagship customizable Kanban business dashboard.
+- [Contact Us](https://curiouskaizer.com/contact.html) - Book a free discovery call or send an inquiry.
+- [Privacy Policy](https://curiouskaizer.com/privacy.html) - Our user data, cookies, and privacy policy terms.
+- [Terms of Service](https://curiouskaizer.com/terms.html) - Standard service agreement terms for our projects.
+
+## Contact Information
+
+- **Website**: https://curiouskaizer.com/
+- **Email**: info@curiouskaizer.com
+- **Phone**: +91 85951 21436
+- **WhatsApp**: https://wa.me/918595121436
+- **Address**: Delhi, India (Remote worldwide operations)

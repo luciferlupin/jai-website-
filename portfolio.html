@@ -184,6 +184,67 @@
             }
         }
     </style>
+    <!-- JSON-LD Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://curiouskaizer.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Portfolio",
+                "item": "https://curiouskaizer.com/portfolio.html"
+            }
+        ]
+    }
+    </script>
+    
+    <!-- JSON-LD Portfolio CollectionPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "SaaS & Web Development Portfolio - Curious Kaizer",
+        "description": "Explore custom web development and SaaS engineering portfolio of Curious Kaizer, showcasing 3D jewelry stores, legal platforms, travel portals, and CRM projects.",
+        "url": "https://curiouskaizer.com/portfolio.html",
+        "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Real Estate Group-Buying SaaS Portal",
+                    "description": "Custom real estate group purchasing platform with fractional token investment calculators."
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Three.js 3D Jewelry Customizer Storefront",
+                    "description": "Interactive Three.js 3D gold ring configurator and e-commerce cart."
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "B2B Chemical Procurement Platform",
+                    "description": "Procurement portal featuring bulk purchase RFQ pipelines and digital signature PDF generation."
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "name": "Legal Operations & Notary Dashboard",
+                    "description": "Kanban case workflow tracking and real-time dashboard panel for law practices."
+                }
+            ]
+        }
+    }
+    </script>
 </head>
 <body itemscope itemtype="https://schema.org/WebPage">
 
@@ -409,9 +470,9 @@
                     <p class="copyright">&copy; 2026 Curious Kaizer. All rights reserved.</p>
                 </div>
                 <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
+                    <a href="privacy.html">Privacy Policy</a>
                     <span>•</span>
-                    <a href="#">Terms of Service</a>
+                    <a href="terms.html">Terms of Service</a>
                     <span>•</span>
                     <a href="contact.html">Contact Us</a>
                 </div>

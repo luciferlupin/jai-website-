@@ -55,4 +55,20 @@
         <priority>0.7</priority>
     </url>
     
+    <!-- Privacy Policy Page -->
+    <url>
+        <loc>https://curiouskaizer.com/privacy.html</loc>
+        <lastmod>2026-07-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+    <!-- Terms of Service Page -->
+    <url>
+        <loc>https://curiouskaizer.com/terms.html</loc>
+        <lastmod>2026-07-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
 </urlset>
