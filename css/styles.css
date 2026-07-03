@@ -529,6 +529,8 @@ img {
 .icon-health { background: rgba(20, 184, 166, 0.08); color: #14b8a6; }
 .icon-consult { background: rgba(59, 130, 246, 0.08); color: #3b82f6; }
 .icon-jewelry { background: rgba(139, 92, 246, 0.08); color: #8b5cf6; }
+.icon-analytics { background: rgba(139, 92, 246, 0.08); color: #8b5cf6; }
+.icon-crypto { background: rgba(245, 158, 11, 0.08); color: #f59e0b; }
 .icon-ayur { background: rgba(34, 197, 94, 0.08); color: #22c55e; }
 .icon-indus { background: rgba(100, 116, 139, 0.08); color: #64748b; }
 .icon-crm { background: rgba(79, 70, 229, 0.08); color: #4f46e5; }
@@ -12567,4 +12569,105 @@ button.nav-toggle {
     -webkit-appearance: none !important;
     appearance: none !important;
 }
+
+/* ==========================================================================
+   QUICK CONTACT DOCK (WhatsApp & Call) - Premium Apple-Style Glassmorphism
+   ========================================================================== */
+.quick-contact-dock {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 9999px;
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+    z-index: 9999;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.quick-contact-dock:hover {
+    box-shadow: 0 12px 40px rgba(15, 23, 42, 0.12);
+    transform: translateY(-1px);
+}
+
+.quick-dock-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 32px;
+    padding: 0 14px;
+    border-radius: 9999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    text-decoration: none;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+}
+
+/* WhatsApp button matching website blue */
+.quick-dock-btn.whatsapp {
+    background-color: #2563eb;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+    animation: bluePulseGlow 3s infinite;
+}
+
+.quick-dock-btn.whatsapp:hover {
+    background-color: #1d4ed8;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+
+/* Call button styling in sleek clean text style */
+.quick-dock-btn.call {
+    background-color: transparent;
+    color: #334155;
+}
+
+.quick-dock-btn.call:hover {
+    background-color: rgba(15, 23, 42, 0.05);
+    color: #0f172a;
+}
+
+.quick-dock-btn i {
+    font-size: 0.85rem;
+}
+
+/* Blue Pulse Glow Animation */
+@keyframes bluePulseGlow {
+    0% {
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2), 0 0 0 0 rgba(37, 99, 235, 0.3);
+    }
+    70% {
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2), 0 0 0 8px rgba(37, 99, 235, 0);
+    }
+    100% {
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2), 0 0 0 0 rgba(37, 99, 235, 0);
+    }
+}
+
+/* Mobile responsive adjustments - compact floating corner pill */
+@media (max-width: 768px) {
+    .quick-contact-dock {
+        bottom: 20px;
+        right: 20px;
+        left: auto;
+        width: auto;
+        padding: 4px;
+        gap: 2px;
+    }
+    
+    .quick-dock-btn {
+        height: 30px;
+        padding: 0 10px;
+        font-size: 0.75rem;
+    }
+}
+
 

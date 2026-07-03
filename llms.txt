@@ -11,9 +11,9 @@
 
 ## Pricing Packages
 
-- **Basic Business Website**: Starts at ₹10,200. Perfect for small businesses looking to establish a professional presence.
-- **E-Commerce Storefront**: Starts at ₹16,900. Features advanced product catalogues, payment gateways, and inventory management.
-- **Custom Web & SaaS Apps**: Starts at ₹28,900. Tailored solutions for complex workflows, customer portals, and enterprise software.
+- **Basic Business Website**: Starts at ₹15,200. Perfect for small businesses looking to establish a professional presence.
+- **E-Commerce Storefront**: Starts at ₹21,900. Features advanced product catalogues, payment gateways, and inventory management.
+- **Custom Web & SaaS Apps**: Starts at ₹33,900. Tailored solutions for complex workflows, customer portals, and enterprise software.
 
 ## Navigation Map
 
@@ -29,7 +29,7 @@
 ## Contact Information
 
 - **Website**: https://curiouskaizer.com/
-- **Email**: info@curiouskaizer.com
+- **Email**: info@curiouskaizer.com / curiouskaizer@gmail.com
 - **Phone**: +91 85951 21436
 - **WhatsApp**: https://wa.me/918595121436
 - **Address**: Delhi, India (Remote worldwide operations)

@@ -99,10 +99,11 @@
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
         }
 
-        .portfolio-grid {
+        .portfolio-detail-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 4rem;
+            gap: 6rem;
+            margin-top: 2rem;
         }
 
         .portfolio-item-premium {
@@ -178,6 +179,9 @@
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
                 padding-bottom: 3.5rem;
+            }
+            .portfolio-detail-grid {
+                gap: 4rem;
             }
             .subpage-hero-title {
                 font-size: 2.5rem;
@@ -295,8 +299,46 @@
                 <button class="filter-tab" data-filter="ai">AI & Automation</button>
             </div>
 
-            <div class="portfolio-grid">
+            <div class="portfolio-detail-grid">
                 
+                <!-- Project: CoinVortex PRO -->
+                <div class="portfolio-item-premium" data-category="saas" data-aos="fade-up">
+                    <div class="portfolio-item-content">
+                        <div class="portfolio-item-meta">Cryptocurrency & Web3 / SaaS</div>
+                        <h3>CoinVortex PRO</h3>
+                        <p class="portfolio-item-desc">An all-in-one crypto intelligence dashboard offering real-time WebSocket order flows, liquidation trackers, interactive TradingView terminals, and positioning sentiment analysis.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React TSX</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">WebSockets</span>
+                            <span class="tech-tag">TradingView API</span>
+                        </div>
+                        <a href="contact.html" class="cta-button primary">Request Demo</a>
+                    </div>
+                    <div class="portfolio-item-visual">
+                        <img src="images/coinvortex.png" alt="CoinVortex PRO Dashboard Layout Preview" loading="lazy" decoding="async" width="1024" height="682">
+                    </div>
+                </div>
+
+                <!-- Project: Curious Kaizer Analytics -->
+                <div class="portfolio-item-premium" data-category="saas" data-aos="fade-up">
+                    <div class="portfolio-item-content">
+                        <div class="portfolio-item-meta">Custom Serverless Analytics</div>
+                        <h3>Curious Kaizer Analytics</h3>
+                        <p class="portfolio-item-desc">A privacy-first serverless web analytics console built on Supabase, allowing users to connect and track views, active sessions, custom CTAs, and visitor locations on any website in real-time.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Vanilla JS</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">Supabase</span>
+                            <span class="tech-tag">Chart.js</span>
+                        </div>
+                        <a href="analytics.html" class="cta-button primary" target="_blank">Explore Live Dashboard</a>
+                    </div>
+                    <div class="portfolio-item-visual">
+                        <img src="images/curiouskaizer.png" alt="Curious Kaizer Analytics Dashboard Preview" loading="lazy" decoding="async" width="1024" height="682">
+                    </div>
+                </div>
+
                 <!-- Project 1: Liquidity Intelligence -->
                 <div class="portfolio-item-premium" data-category="saas" data-aos="fade-up">
                     <div class="portfolio-item-content">
@@ -458,6 +500,7 @@
                     <h3>Get in Touch</h3>
                     <ul>
                         <li><i class="fas fa-envelope"></i> <a href="mailto:info@curiouskaizer.com">info@curiouskaizer.com</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:curiouskaizer@gmail.com">curiouskaizer@gmail.com</a></li>
                         <li><i class="fas fa-phone-alt"></i> <a href="tel:+918595121436">+91 85951 21436</a></li>
                         <li><i class="fab fa-whatsapp" style="color: #25d366;"></i> <a href="https://wa.me/918595121436" target="_blank" rel="noopener">Chat on WhatsApp</a></li>
                         <li><i class="fas fa-map-marker-alt"></i> Delhi, India | Remote Worldwide</li>
@@ -479,6 +522,18 @@
             </div>
         </div>
     </footer>
+
+    <!-- Quick Contact Dock (WhatsApp & Call CTAs) -->
+    <div class="quick-contact-dock">
+        <a href="https://wa.me/918595121436?text=Hi!%20I'd%20like%20to%20get%20an%20instant%20quote%20and%20discuss%20a%20project." class="quick-dock-btn whatsapp" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i>
+            <span>Quote</span>
+        </a>
+        <a href="tel:+918595121436" class="quick-dock-btn call">
+            <i class="fas fa-phone-alt"></i>
+            <span>Call</span>
+        </a>
+    </div>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
