@@ -492,6 +492,36 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
+        .config-select {
+            background: rgba(17, 25, 40, 0.75);
+            color: var(--text-muted);
+            border: 1px solid var(--border-glow);
+            padding: 0.5rem 1.75rem 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            outline: none;
+            font-family: var(--font-sans);
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg fill='%239ca3af' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+            background-repeat: no-repeat;
+            background-position: right 4px center;
+            background-size: 16px;
+        }
+
+        .config-select:hover {
+            color: var(--text-main);
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+
+        .config-select option {
+            background: var(--bg-surface-solid);
+            color: var(--text-main);
+        }
+
         /* Screen sizes responsive setup */
         @media (max-width: 1024px) {
             .charts-grid, .secondary-grid {
@@ -598,6 +628,13 @@
                     <span class="status-dot" style="width:8px; height:8px; border-radius:50%; background:#10b981; display:inline-block; box-shadow:0 0 8px #10b981;"></span>
                     Connected to Supabase
                 </span>
+                <select id="timeRangeSelect" class="config-select" title="Filter by Date Range">
+                    <option value="24h">Last 24 Hours</option>
+                    <option value="7d">Last 7 Days</option>
+                    <option value="30d" selected>Last 30 Days</option>
+                    <option value="90d">Last 90 Days</option>
+                    <option value="all">All Time</option>
+                </select>
                 <button id="refreshBtn" class="config-btn" title="Refresh Data">
                     <i class="fas fa-sync-alt"></i> Refresh
                 </button>
@@ -862,6 +899,11 @@
             checkAuth();
         });
 
+        // Time range filter change listener
+        document.getElementById('timeRangeSelect').addEventListener('change', () => {
+            loadDashboardData();
+        });
+
         document.getElementById('refreshBtn').addEventListener('click', async () => {
             const btn = document.getElementById('refreshBtn');
             const oldText = btn.innerHTML;
@@ -885,10 +927,30 @@
         // 3. Load & Query Data for Dashboard
         async function loadDashboardData() {
             try {
-                // Fetch all analytics events
-                const { data: events, error } = await supabaseClient
+                const timeRange = document.getElementById('timeRangeSelect')?.value || '30d';
+                let query = supabaseClient
                     .from('analytics_events')
-                    .select('*')
+                    .select('*');
+
+                if (timeRange !== 'all') {
+                    const now = new Date();
+                    let filterDate;
+                    if (timeRange === '24h') {
+                        filterDate = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+                    } else if (timeRange === '7d') {
+                        filterDate = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+                    } else if (timeRange === '30d') {
+                        filterDate = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
+                    } else if (timeRange === '90d') {
+                        filterDate = new Date(now.getTime() - 90 * 24 * 60 * 60 * 1000);
+                    }
+                    if (filterDate) {
+                        query = query.gte('created_at', filterDate.toISOString());
+                    }
+                }
+
+                // Fetch analytics events matching filters
+                const { data: events, error } = await query
                     .order('created_at', { ascending: false });
 
                 if (error) throw error;
