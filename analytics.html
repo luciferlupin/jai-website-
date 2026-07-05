@@ -949,9 +949,10 @@
                     }
                 }
 
-                // Fetch analytics events matching filters
+                // Fetch analytics events matching filters (limit to 5000 to prevent timeouts)
                 const { data: events, error } = await query
-                    .order('created_at', { ascending: false });
+                    .order('created_at', { ascending: false })
+                    .limit(5000);
 
                 if (error) throw error;
 
