@@ -745,7 +745,13 @@
 
         <!-- Event Log / Stream -->
         <section class="glass-panel log-card">
-            <h3><i class="fas fa-stream" style="color:var(--color-primary);"></i> Real-Time Event Stream</h3>
+            <div class="log-card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                <h3 style="margin: 0;"><i class="fas fa-stream" style="color:var(--color-primary);"></i> Real-Time Event Stream</h3>
+                <div class="log-search-container" style="position: relative; width: 100%; max-width: 320px;">
+                    <input type="text" id="logSearchInput" placeholder="Filter by page, event, location..." style="width: 100%; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 0.55rem 1rem 0.55rem 2.2rem; color: #fff; font-size: 0.85rem; outline: none; transition: all 0.2s; font-family: inherit;">
+                    <i class="fas fa-search" style="position: absolute; left: 0.85rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.85rem; pointer-events: none;"></i>
+                </div>
+            </div>
             <div class="table-responsive">
                 <table>
                     <thead>
@@ -782,6 +788,7 @@
     <script>
         let supabaseClient = null;
         let chartInstances = {};
+        let currentEvents = [];
 
         // 1. Initial State Checks & Global Config
         window.addEventListener('DOMContentLoaded', () => {
@@ -797,6 +804,31 @@
                 Chart.defaults.plugins.tooltip.padding = 10;
                 Chart.defaults.plugins.tooltip.cornerRadius = 8;
             }
+            
+            // Bind search filter for Real-Time Event Stream
+            const searchInput = document.getElementById('logSearchInput');
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    const query = e.target.value.toLowerCase().trim();
+                    if (!query) {
+                        renderEventStreamTable(currentEvents);
+                        return;
+                    }
+                    const filtered = currentEvents.filter(ev => {
+                        return (ev.page_path || '').toLowerCase().includes(query) ||
+                               (ev.page_title || '').toLowerCase().includes(query) ||
+                               (ev.event_type || '').toLowerCase().includes(query) ||
+                               (ev.event_label || '').toLowerCase().includes(query) ||
+                               (ev.city || '').toLowerCase().includes(query) ||
+                               (ev.region || '').toLowerCase().includes(query) ||
+                               (ev.country || '').toLowerCase().includes(query) ||
+                               (ev.ip_address || '').toLowerCase().includes(query) ||
+                               (ev.user_agent || '').toLowerCase().includes(query);
+                    });
+                    renderEventStreamTable(filtered);
+                });
+            }
+
             checkConfiguration();
         });
 
@@ -962,6 +994,7 @@
                     return;
                 }
 
+                currentEvents = events;
                 calculateKPIs(events);
                 renderTrafficChart(events);
                 renderReferrersChart(events);
@@ -1337,6 +1370,35 @@
             });
         }
 
+        function getFlagEmoji(countryName) {
+            if (!countryName) return '🌐';
+            const c = countryName.toLowerCase();
+            if (c.includes('india')) return '🇮🇳';
+            if (c.includes('united states') || c.includes('us')) return '🇺🇸';
+            if (c.includes('united kingdom') || c.includes('uk') || c.includes('britain')) return '🇬🇧';
+            if (c.includes('canada')) return '🇨🇦';
+            if (c.includes('australia')) return '🇦🇺';
+            if (c.includes('germany')) return '🇩🇪';
+            if (c.includes('france')) return '🇫🇷';
+            if (c.includes('japan')) return '🇯🇵';
+            if (c.includes('singapore')) return '🇸🇬';
+            if (c.includes('china')) return '🇨🇳';
+            if (c.includes('united arab emirates') || c.includes('uae')) return '🇦🇪';
+            return '🏳️';
+        }
+
+        function formatTime(date) {
+            const now = new Date();
+            const diff = Math.floor((now.getTime() - date.getTime()) / 1000);
+            
+            if (diff < 10) return 'Just now';
+            if (diff < 60) return `${diff}s ago`;
+            if (diff < 3600) return `${Math.floor(diff / 60)}m ago`;
+            if (diff < 86400) return `${Math.floor(diff / 3600)}h ago`;
+            
+            return date.toLocaleDateString(undefined, {month: 'short', day: 'numeric'}) + ' ' + date.toLocaleTimeString(undefined, {hour: '2-digit', minute:'2-digit'});
+        }
+
         function renderEventStreamTable(events) {
             const tbody = document.getElementById('rawEventsBody');
             tbody.innerHTML = '';
@@ -1346,20 +1408,36 @@
 
             latestEvents.forEach(e => {
                 const date = new Date(e.created_at);
-                const timeStr = date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+                const timeStr = formatTime(date);
+                const fullTimeStr = date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
                 
-                // Parse browser simple name
-                let browserName = 'Other';
+                // Parse browser and OS name with icons
+                let browserHtml = '<i class="fas fa-globe" style="color: #64748b; margin-right: 5px;"></i> Other';
                 const ua = e.user_agent || '';
-                if (ua.includes('Firefox')) browserName = 'Firefox';
-                else if (ua.includes('Edg/') || ua.includes('Edge')) browserName = 'Edge';
-                else if (ua.includes('OPR') || ua.includes('Opera')) browserName = 'Opera';
-                else if (ua.includes('CriOS')) browserName = 'Chrome (iOS)';
-                else if (ua.includes('Chrome')) browserName = 'Chrome';
-                else if (ua.includes('Safari')) {
-                    browserName = ua.includes('Mobile') ? 'Safari (Mobile)' : 'Safari';
-                } else if (ua.includes('MSIE') || ua.includes('Trident/')) {
-                    browserName = 'IE';
+                const uaLower = ua.toLowerCase();
+                if (uaLower.includes('firefox')) {
+                    browserHtml = '<i class="fab fa-firefox-browser" style="color: #ff9400; margin-right: 5px;"></i> Firefox';
+                } else if (uaLower.includes('edg/') || uaLower.includes('edge')) {
+                    browserHtml = '<i class="fab fa-edge" style="color: #0078d7; margin-right: 5px;"></i> Edge';
+                } else if (uaLower.includes('opr') || uaLower.includes('opera')) {
+                    browserHtml = '<i class="fab fa-opera" style="color: #ff1b2d; margin-right: 5px;"></i> Opera';
+                } else if (uaLower.includes('chrome')) {
+                    browserHtml = '<i class="fab fa-chrome" style="color: #4285f4; margin-right: 5px;"></i> Chrome';
+                } else if (uaLower.includes('safari')) {
+                    browserHtml = '<i class="fab fa-safari" style="color: #00c0f3; margin-right: 5px;"></i> Safari';
+                }
+
+                let osHtml = '<i class="fas fa-desktop" style="color: #64748b; margin-right: 5px;"></i> Desktop';
+                if (uaLower.includes('macintosh') || uaLower.includes('mac os x')) {
+                    osHtml = '<i class="fab fa-apple" style="color: #cbd5e1; margin-right: 5px;"></i> macOS';
+                } else if (uaLower.includes('iphone') || uaLower.includes('ipad')) {
+                    osHtml = '<i class="fab fa-apple" style="color: #cbd5e1; margin-right: 5px;"></i> iOS';
+                } else if (uaLower.includes('windows')) {
+                    osHtml = '<i class="fab fa-windows" style="color: #0078d7; margin-right: 5px;"></i> Windows';
+                } else if (uaLower.includes('android')) {
+                    osHtml = '<i class="fab fa-android" style="color: #3ddc84; margin-right: 5px;"></i> Android';
+                } else if (uaLower.includes('linux')) {
+                    osHtml = '<i class="fab fa-linux" style="color: #f59e0b; margin-right: 5px;"></i> Linux';
                 }
 
                 // Format location: "City, Region, Country (IP)"
@@ -1368,16 +1446,16 @@
                 if (e.region) locationParts.push(e.region);
                 if (e.country) locationParts.push(e.country);
                 let locationStr = locationParts.join(', ') || 'Unknown Location';
-                if (e.ip_address) {
-                    locationStr += ` (${e.ip_address})`;
-                }
+                let flag = getFlagEmoji(e.country);
 
-                const pageLabel = e.page_title 
-                    ? `${e.page_path === '/' ? '/index.html' : e.page_path} <span style="font-size: 0.75rem; color: var(--text-muted); display: block; font-weight: normal;">${e.page_title}</span>`
-                    : (e.page_path === '/' ? '/index.html' : e.page_path);
+                const pageHtml = e.page_title 
+                    ? `<div style="display:flex; align-items:center; gap:8px;"><i class="fas fa-file-alt" style="color:var(--color-primary); font-size:0.9rem;"></i><div><span style="font-weight:600; color:#fff; display:block;">${e.page_path === '/' ? '/index.html' : e.page_path}</span><span style="font-size:0.75rem; color:var(--text-muted); font-weight:normal;">${e.page_title}</span></div></div>`
+                    : `<div style="display:flex; align-items:center; gap:8px;"><i class="fas fa-file-alt" style="color:var(--color-primary); font-size:0.9rem;"></i><span style="font-weight:600; color:#fff;">${e.page_path === '/' ? '/index.html' : e.page_path}</span></div>`;
+
+                const locationHtml = `<div style="display:flex; align-items:center; gap:8px;"><span>${flag}</span><div><span style="font-weight:500; color:#fff; display:block;">${locationStr}</span>${e.ip_address ? `<span style="font-size:0.75rem; color:var(--text-muted); font-family:monospace;">${e.ip_address}</span>` : ''}</div></div>`;
 
                 // Lead Qualification rules
-                let leadStatusBadge = '<span class="badge-event pageview" style="background:rgba(156, 163, 175, 0.15); color:#9ca3af; border: 1px solid rgba(156, 163, 175, 0.2);">❄️ Cold</span>';
+                let leadStatusBadge = '<span class="badge-event pageview" style="background:rgba(156, 163, 175, 0.08); color:#9ca3af; border: 1px solid rgba(156, 163, 175, 0.15); padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 500; display: inline-flex; align-items: center; gap: 4px;">❄️ Cold</span>';
                 
                 // Check if user session has any click or multi pageviews
                 const userSessionEvents = events.filter(ev => ev.session_id === e.session_id);
@@ -1391,21 +1469,30 @@
                     : 0;
 
                 if (clickCount > 0) {
-                    leadStatusBadge = '<span class="badge-event click" style="background:rgba(16, 185, 129, 0.15); color:#34d399; border: 1px solid rgba(16, 185, 129, 0.2);">🔥 Hot Lead</span>';
+                    leadStatusBadge = '<span class="badge-event click" style="background:rgba(16, 185, 129, 0.15); color:#34d399; border: 1px solid rgba(16, 185, 129, 0.2); padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 500; display: inline-flex; align-items: center; gap: 4px;">🔥 Hot Lead</span>';
                 } else if (sessionDuration > 60 || viewCount >= 3) {
-                    leadStatusBadge = '<span class="badge-event click" style="background:rgba(139, 92, 246, 0.15); color:#a78bfa; border: 1px solid rgba(139, 92, 246, 0.2);">⚡ Engaged</span>';
+                    leadStatusBadge = '<span class="badge-event click" style="background:rgba(139, 92, 246, 0.15); color:#c084fc; border: 1px solid rgba(139, 92, 246, 0.2); padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 500; display: inline-flex; align-items: center; gap: 4px;">⚡ Engaged</span>';
                 }
 
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
-                    <td style="font-family: monospace; font-size: 0.8rem; color: var(--text-muted);">${timeStr}</td>
-                    <td style="font-weight: 500;">${pageLabel}</td>
+                    <td style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;" title="${fullTimeStr}">${timeStr}</td>
+                    <td>${pageHtml}</td>
                     <td><span class="badge-event ${e.event_type}">${e.event_type}</span></td>
-                    <td style="color: ${e.event_type === 'click' ? 'var(--color-warning)' : 'inherit'}; font-weight: ${e.event_type === 'click' ? '500' : 'normal'};">${e.event_label || '-'}</td>
-                    <td style="font-size: 0.85rem;" title="ZIP: ${e.zip_code || 'N/A'}">${locationStr}</td>
-                    <td style="font-size: 0.8rem; color: var(--text-muted);">${e.language || 'N/A'} <span style="display: block; font-size: 0.75rem;">${e.screen_resolution || '-'}</span></td>
+                    <td style="color: ${e.event_type === 'click' ? 'var(--color-warning)' : 'inherit'}; font-weight: ${e.event_type === 'click' ? '600' : 'normal'};">
+                        ${e.event_type === 'click' ? `<i class="fas fa-hand-pointer" style="margin-right:4px; font-size:0.8rem; color:var(--color-warning);"></i>` : ''}
+                        ${e.event_label || '-'}
+                    </td>
+                    <td>${locationHtml}</td>
+                    <td style="font-size: 0.8rem; color: var(--text-muted);">
+                        <div style="font-weight:500; color:#cbd5e1;">${e.language || 'N/A'}</div>
+                        <span style="font-size: 0.75rem; font-family:monospace;">${e.screen_resolution || '-'}</span>
+                    </td>
                     <td>${leadStatusBadge}</td>
-                    <td style="font-size: 0.8rem; color: var(--text-muted); max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${ua}">${browserName} <span style="font-size:0.75rem; color:rgba(255,255,255,0.2); display:block; overflow:hidden; text-overflow:ellipsis;" title="${ua}">${ua}</span></td>
+                    <td>
+                        <div style="font-weight: 500; color: #fff; display: flex; align-items: center;">${browserHtml}</div>
+                        <div style="font-size: 0.75rem; color: var(--text-muted); display: flex; align-items: center; margin-top: 2px;">${osHtml}</div>
+                    </td>
                 `;
                 tbody.appendChild(tr);
             });
