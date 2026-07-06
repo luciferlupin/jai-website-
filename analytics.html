@@ -756,12 +756,13 @@
                             <th>Label / CTA</th>
                             <th>Location (IP)</th>
                             <th>Language & Size</th>
+                            <th>Lead Status</th>
                             <th>User Agent (Browser)</th>
                         </tr>
                     </thead>
                     <tbody id="rawEventsBody">
                         <tr>
-                            <td colspan="7" style="text-align: center; color: var(--text-muted); padding: 2rem;">
+                            <td colspan="8" style="text-align: center; color: var(--text-muted); padding: 2rem;">
                                 <i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i> Loading event logs...
                             </td>
                         </tr>
@@ -977,7 +978,7 @@
                 console.error("Dashboard error:", err);
                 document.getElementById('rawEventsBody').innerHTML = `
                     <tr>
-                        <td colspan="7" style="text-align: center; color: var(--color-danger); padding: 2rem;">
+                        <td colspan="8" style="text-align: center; color: var(--color-danger); padding: 2rem;">
                             <i class="fas fa-exclamation-triangle"></i> Error pulling data: ${err.message}. 
                             Ensure the database table is configured correctly and your policy allows read access.
                         </td>
@@ -989,7 +990,7 @@
         function renderEmptyDashboard() {
             document.getElementById('rawEventsBody').innerHTML = `
                 <tr>
-                    <td colspan="7" style="text-align: center; color: var(--text-muted); padding: 3rem;">
+                    <td colspan="8" style="text-align: center; color: var(--text-muted); padding: 3rem;">
                         <i class="fas fa-chart-line" style="font-size:2rem; margin-bottom:1rem; display:block;"></i>
                         No tracking data found yet. Visit your index.html page to trigger some pageviews!
                     </td>
