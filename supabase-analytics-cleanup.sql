@@ -70,4 +70,28 @@ GRANT SELECT, INSERT ON analytics_events TO anon, authenticated;
 GRANT SELECT, INSERT ON analytics_sessions TO anon, authenticated;
 GRANT SELECT, INSERT ON analytics_events_raw TO anon, authenticated;
 
+-- 5. Re-enable RLS and configure policies for inserts (anon/auth) and select (authenticated)
+ALTER TABLE analytics_sessions ENABLE ROW LEVEL SECURITY;
+ALTER TABLE analytics_events_raw ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS "Allow anonymous and auth insert on sessions" ON analytics_sessions;
+CREATE POLICY "Allow anonymous and auth insert on sessions" ON analytics_sessions
+    FOR INSERT TO anon, authenticated
+    WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow authenticated select on sessions" ON analytics_sessions;
+CREATE POLICY "Allow authenticated select on sessions" ON analytics_sessions
+    FOR SELECT TO authenticated
+    USING (true);
+
+DROP POLICY IF EXISTS "Allow anonymous and auth insert on events_raw" ON analytics_events_raw;
+CREATE POLICY "Allow anonymous and auth insert on events_raw" ON analytics_events_raw
+    FOR INSERT TO anon, authenticated
+    WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow authenticated select on events_raw" ON analytics_events_raw;
+CREATE POLICY "Allow authenticated select on events_raw" ON analytics_events_raw
+    FOR SELECT TO authenticated
+    USING (true);
+
 COMMIT;
