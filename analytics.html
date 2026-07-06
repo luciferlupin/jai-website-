@@ -697,7 +697,13 @@
         <section class="charts-grid">
             <!-- Traffic chart -->
             <div class="glass-panel chart-card">
-                <h3><i class="fas fa-chart-area" style="color:var(--color-primary);"></i> Traffic & Audience Over Time</h3>
+                <h3 style="display: flex; align-items: flex-start; gap: 10px;">
+                    <i class="fas fa-chart-area" style="color:var(--color-primary); margin-top: 3px;"></i> 
+                    <div>
+                        Traffic & Audience Over Time
+                        <span class="chart-subtitle" style="display: block; font-size: 0.72rem; color: var(--text-muted); font-weight: normal; margin-top: 3px; text-transform: none; letter-spacing: 0;">Visualize traffic spikes and overall audience growth trends</span>
+                    </div>
+                </h3>
                 <div class="chart-container">
                     <canvas id="trafficChart"></canvas>
                 </div>
@@ -705,7 +711,13 @@
             
             <!-- Live Visitor Locations (Rotating Globe) -->
             <div class="glass-panel chart-card">
-                <h3><i class="fas fa-globe-americas" style="color:var(--color-secondary);"></i> Live Visitor Locations</h3>
+                <h3 style="display: flex; align-items: flex-start; gap: 10px;">
+                    <i class="fas fa-globe-americas" style="color:var(--color-secondary); margin-top: 3px;"></i> 
+                    <div>
+                        Live Visitor Locations
+                        <span class="chart-subtitle" style="display: block; font-size: 0.72rem; color: var(--text-muted); font-weight: normal; margin-top: 3px; text-transform: none; letter-spacing: 0;">View real-time geographical distribution of interested leads</span>
+                    </div>
+                </h3>
                 <div class="chart-container" style="display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden; min-height: 300px;">
                     <canvas id="globeCanvas" width="300" height="300" style="max-width: 100%; max-height: 100%; z-index: 2;"></canvas>
                 </div>
@@ -715,7 +727,13 @@
         <section class="secondary-grid">
             <!-- Traffic Sources / Referrers -->
             <div class="glass-panel chart-card">
-                <h3><i class="fas fa-route" style="color:#d946ef;"></i> Traffic Sources (Referrers)</h3>
+                <h3 style="display: flex; align-items: flex-start; gap: 10px;">
+                    <i class="fas fa-route" style="color:#d946ef; margin-top: 3px;"></i> 
+                    <div>
+                        Traffic Sources (Referrers)
+                        <span class="chart-subtitle" style="display: block; font-size: 0.72rem; color: var(--text-muted); font-weight: normal; margin-top: 3px; text-transform: none; letter-spacing: 0;">Identify marketing channels delivering prospects</span>
+                    </div>
+                </h3>
                 <div class="chart-container">
                     <canvas id="referrersChart"></canvas>
                 </div>
@@ -723,7 +741,13 @@
 
             <!-- Popular Pages -->
             <div class="glass-panel chart-card">
-                <h3><i class="fas fa-file-alt" style="color:var(--color-success);"></i> Top Visited Pages</h3>
+                <h3 style="display: flex; align-items: flex-start; gap: 10px;">
+                    <i class="fas fa-file-alt" style="color:var(--color-success); margin-top: 3px;"></i> 
+                    <div>
+                        Top Visited Pages
+                        <span class="chart-subtitle" style="display: block; font-size: 0.72rem; color: var(--text-muted); font-weight: normal; margin-top: 3px; text-transform: none; letter-spacing: 0;">Track inbound feature interest & landing page stickiness</span>
+                    </div>
+                </h3>
                 <div class="chart-container">
                     <canvas id="pagesChart"></canvas>
                 </div>
@@ -731,7 +755,13 @@
             
             <!-- Click Tracking Events -->
             <div class="glass-panel chart-card">
-                <h3><i class="fas fa-hand-pointer" style="color:var(--color-warning);"></i> Top CTA Interactions</h3>
+                <h3 style="display: flex; align-items: flex-start; gap: 10px;">
+                    <i class="fas fa-hand-pointer" style="color:var(--color-warning); margin-top: 3px;"></i> 
+                    <div>
+                        Top CTA Interactions
+                        <span class="chart-subtitle" style="display: block; font-size: 0.72rem; color: var(--text-muted); font-weight: normal; margin-top: 3px; text-transform: none; letter-spacing: 0;">Analyze direct conversion clicks and user intents</span>
+                    </div>
+                </h3>
                 <div class="chart-container">
                     <canvas id="clicksChart"></canvas>
                 </div>
@@ -739,7 +769,13 @@
 
             <!-- Device/Resolution breakdown -->
             <div class="glass-panel chart-card">
-                <h3><i class="fas fa-desktop" style="color:var(--color-secondary);"></i> Screen Resolutions</h3>
+                <h3 style="display: flex; align-items: flex-start; gap: 10px;">
+                    <i class="fas fa-desktop" style="color:var(--color-secondary); margin-top: 3px;"></i> 
+                    <div>
+                        Screen Resolutions
+                        <span class="chart-subtitle" style="display: block; font-size: 0.72rem; color: var(--text-muted); font-weight: normal; margin-top: 3px; text-transform: none; letter-spacing: 0;">Optimize UI compatibility for visitor device sizes</span>
+                    </div>
+                </h3>
                 <div class="chart-container">
                     <canvas id="deviceChart"></canvas>
                 </div>
