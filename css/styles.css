@@ -12070,12 +12070,15 @@ h6::after,
     }
     
     .trust-logos-row {
-        flex-wrap: nowrap !important;
-        gap: 6px 10px !important;
-        justify-content: center !important;
+        display: contents !important;
     }
     .trust-logos-rows {
-        gap: 10px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 10px 18px !important;
+        justify-content: center !important;
+        align-items: center !important;
     }
     
     .trust-logo-item {
