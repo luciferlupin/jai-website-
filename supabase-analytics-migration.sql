@@ -121,7 +121,7 @@ BEGIN
 
     RETURN NEW;
 END;
-$$ LANGUAGE plpgsql;
+$$ LANGUAGE plpgsql SECURITY DEFINER SET search_path = public;
 
 CREATE OR REPLACE TRIGGER insert_analytics_event_trigger
 INSTEAD OF INSERT ON analytics_events

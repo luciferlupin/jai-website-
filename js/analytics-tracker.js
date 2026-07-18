@@ -82,24 +82,30 @@
             return { ipAddress: null, country: null, region: null, city: null, zipCode: null, latitude: null, longitude: null };
         }
 
+        // Helper to truncate strings safely before database insertion
+        function limitLength(str, max) {
+            if (typeof str !== 'string') return str;
+            return str.substring(0, max);
+        }
+
         // 4. Send Event to Supabase
         async function trackEvent(eventType, eventLabel = null) {
             const loc = await getSessionLocation();
             const payload = {
-                session_id: getSessionId(),
-                page_path: window.location.pathname || '/',
-                page_title: document.title || null,
-                event_type: eventType,
-                event_label: eventLabel,
-                referrer: document.referrer || null,
-                user_agent: navigator.userAgent,
-                screen_resolution: `${window.screen.width}x${window.screen.height}`,
-                language: navigator.language || null,
-                ip_address: loc.ipAddress,
-                country: loc.country,
-                region: loc.region,
-                city: loc.city,
-                zip_code: loc.zipCode,
+                session_id: limitLength(getSessionId(), 100),
+                page_path: limitLength(window.location.pathname || '/', 2048),
+                page_title: limitLength(document.title || null, 500),
+                event_type: limitLength(eventType, 50),
+                event_label: limitLength(eventLabel, 1000),
+                referrer: limitLength(document.referrer || null, 1024),
+                user_agent: limitLength(navigator.userAgent, 1000),
+                screen_resolution: limitLength(`${window.screen.width}x${window.screen.height}`, 50),
+                language: limitLength(navigator.language || null, 50),
+                ip_address: limitLength(loc.ipAddress, 45),
+                country: limitLength(loc.country, 100),
+                region: limitLength(loc.region, 100),
+                city: limitLength(loc.city, 100),
+                zip_code: limitLength(loc.zipCode, 20),
                 latitude: loc.latitude,
                 longitude: loc.longitude
             };

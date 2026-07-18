@@ -94,4 +94,66 @@ CREATE POLICY "Allow authenticated select on events_raw" ON analytics_events_raw
     FOR SELECT TO authenticated
     USING (true);
 
+-- 6. Re-create the INSTEAD OF INSERT trigger with SECURITY DEFINER trigger function
+CREATE OR REPLACE FUNCTION insert_analytics_event_into_normalized()
+RETURNS TRIGGER AS $$
+BEGIN
+    -- Insert the session if it doesn't exist yet (DO NOTHING if session_id is a conflict)
+    INSERT INTO analytics_sessions (
+        session_id,
+        user_agent,
+        ip_address,
+        country,
+        region,
+        city,
+        zip_code,
+        latitude,
+        longitude,
+        screen_resolution,
+        language,
+        referrer,
+        created_at
+    ) VALUES (
+        NEW.session_id,
+        NEW.user_agent,
+        NEW.ip_address,
+        NEW.country,
+        NEW.region,
+        NEW.city,
+        NEW.zip_code,
+        NEW.latitude,
+        NEW.longitude,
+        NEW.screen_resolution,
+        NEW.language,
+        NEW.referrer,
+        COALESCE(NEW.created_at, NOW())
+    ) ON CONFLICT (session_id) DO NOTHING;
+
+    -- Insert the event log
+    INSERT INTO analytics_events_raw (
+        session_id,
+        event_type,
+        event_label,
+        page_path,
+        page_title,
+        created_at
+    ) VALUES (
+        NEW.session_id,
+        NEW.event_type,
+        NEW.event_label,
+        NEW.page_path,
+        NEW.page_title,
+        COALESCE(NEW.created_at, NOW())
+    ) RETURNING id, created_at INTO NEW.id, NEW.created_at;
+
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER SET search_path = public;
+
+DROP TRIGGER IF EXISTS insert_analytics_event_trigger ON analytics_events;
+CREATE TRIGGER insert_analytics_event_trigger
+INSTEAD OF INSERT ON analytics_events
+FOR EACH ROW
+EXECUTE FUNCTION insert_analytics_event_into_normalized();
+
 COMMIT;
