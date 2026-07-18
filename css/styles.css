@@ -10660,13 +10660,13 @@ html.lenis, html.lenis body {
     transform: translateX(-50%) !important;
     width: 92% !important;
     max-width: 1200px !important;
-    height: 72px !important;
-    background: rgba(255, 255, 255, 0.7) !important; /* Soft frosted glass - highly transparent */
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-    border: 1px solid rgba(0, 0, 0, 0.05) !important;
-    border-radius: 18px !important;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02) !important;
+    height: 60px !important; /* Slimmer, elegant profile */
+    background: rgba(255, 255, 255, 0.72) !important; /* Frosted glass styling */
+    backdrop-filter: saturate(180%) blur(20px) !important; /* Apple signature saturation blur */
+    -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.45) !important; /* Semi-transparent highlight border */
+    border-radius: 20px !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03), inset 0 1px 1px rgba(255, 255, 255, 0.4) !important; /* Inner shadow for physical glass feel */
     pointer-events: auto; /* Re-enable pointer events for interactions */
     display: flex !important;
     align-items: center !important;
@@ -10676,9 +10676,9 @@ html.lenis, html.lenis body {
 
 /* When scrolled down, make it slightly tighter and less transparent */
 .navbar.scrolled, .site-header.scrolled .navbar {
-    background: rgba(255, 255, 255, 0.8) !important; /* Slightly more opaque on scroll but maintains high transparency blur */
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.02) !important;
-    border-color: rgba(0, 0, 0, 0.08) !important;
+    background: rgba(255, 255, 255, 0.85) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), inset 0 1px 1px rgba(255, 255, 255, 0.3) !important;
 }
 
 /* Outer container grid */
@@ -10721,10 +10721,10 @@ html.lenis, html.lenis body {
 /* Brand Text styles - Apple Signature Styling */
 .logo-text {
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", sans-serif !important;
-    font-size: 1.2rem !important; /* Elegant Apple header text size */
-    font-weight: 600 !important; /* Semi-bold signature weight */
-    letter-spacing: -0.015em !important;
-    color: #2563eb !important; /* Premium brand blue */
+    font-size: 1.15rem !important; /* Elegant Apple header text size */
+    font-weight: 700 !important; /* Bold signature weight */
+    letter-spacing: -0.02em !important;
+    color: #1d1d1f !important; /* Premium signature Apple dark charcoal instead of basic blue */
     background: none !important;
     -webkit-background-clip: unset !important;
     background-clip: unset !important;
@@ -10737,7 +10737,7 @@ html.lenis, html.lenis body {
 .nav-links {
     display: flex !important;
     align-items: center !important;
-    gap: 1.1rem !important;
+    gap: 1.25rem !important;
     list-style: none !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -10752,7 +10752,7 @@ html.lenis, html.lenis body {
     color: #475569 !important; /* Premium slate gray */
     font-family: 'Inter', -apple-system, sans-serif !important;
     font-weight: 500 !important;
-    font-size: 0.95rem !important;
+    font-size: 0.92rem !important;
     letter-spacing: -0.01em !important;
     text-decoration: none !important;
     padding: 8px 0 !important;
@@ -10764,36 +10764,36 @@ html.lenis, html.lenis body {
     display: none !important; /* Disable old underlines */
 }
 
-/* Custom premium hover effect - smooth dot or subtle bottom bar */
+/* Custom premium hover effect - elegant Apple status indicator dot */
 .nav-links a::before {
     content: '' !important;
     position: absolute !important;
-    bottom: 0 !important;
+    bottom: -1px !important;
     left: 50% !important;
-    transform: translateX(-50%) scaleX(0) !important;
-    width: 16px !important;
-    height: 3px !important;
-    border-radius: 99px !important;
-    background: var(--primary-color, #2563eb) !important;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    transform: translateX(-50%) scale(0) !important;
+    width: 4px !important;
+    height: 4px !important;
+    border-radius: 50% !important;
+    background: #0071e3 !important; /* Apple blue */
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .nav-links a:hover {
-    color: #0f172a !important; /* Dark Slate Gray */
+    color: #1d1d1f !important; /* Dark Charcoal */
 }
 
 .nav-links a:hover::before {
-    transform: translateX(-50%) scaleX(1) !important;
+    transform: translateX(-50%) scale(1) !important;
 }
 
 /* Active Nav State */
 .nav-links a.active {
-    color: #2563eb !important;
+    color: #0071e3 !important; /* Apple accent blue */
     font-weight: 600 !important;
 }
 
 .nav-links a.active::before {
-    transform: translateX(-50%) scaleX(1) !important;
+    transform: translateX(-50%) scale(1) !important;
 }
 
 /* Desktop CTA Button on Right */
@@ -10801,36 +10801,36 @@ html.lenis, html.lenis body {
     display: inline-flex !important;
     align-items: center !important;
     gap: 8px !important;
-    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+    background: #0071e3 !important; /* Solid Apple Royal Blue instead of generic gradient */
     color: #ffffff !important;
-    padding: 10px 22px !important;
-    font-family: 'Inter', -apple-system, sans-serif !important;
-    font-weight: 600 !important;
-    font-size: 0.92rem !important;
+    padding: 8px 18px !important; /* Slightly tighter padding */
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", sans-serif !important;
+    font-weight: 500 !important; /* Elegant medium weight */
+    font-size: 0.88rem !important; /* Crisp size */
     border-radius: 99px !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid rgba(0, 113, 227, 0.2) !important;
+    box-shadow: 0 2px 6px rgba(0, 113, 227, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
     text-decoration: none !important;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .nav-cta-btn i {
-    font-size: 0.85rem !important;
-    transition: transform 0.3s ease !important;
+    font-size: 0.8rem !important;
+    transition: transform 0.25s ease !important;
 }
 
 .nav-cta-btn:hover {
-    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
-    transform: translateY(-1px) scale(1.03) !important;
-    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    background: #0077ed !important; /* Slightly brighter blue on hover */
+    transform: translateY(-1px) !important; /* Minimalist translate */
+    box-shadow: 0 4px 12px rgba(0, 113, 227, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
 }
 
 .nav-cta-btn:hover i {
-    transform: translateX(3px) !important;
+    transform: translateX(2px) !important;
 }
 
 .nav-cta-btn:active {
-    transform: translateY(0) scale(0.98) !important;
+    transform: translateY(0) scale(0.97) !important;
 }
 
 /* Mobile CTA is hidden on desktop */

@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KFQ266Z1Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9KFQ266Z1Z');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>Fixing Canonical Redirect Loops on Vercel Custom Domains | Curious Kaizer</title>
+    <meta name="description" content="A comprehensive technical guide by Jai Goel on diagnosing and fixing canonical loops on Vercel deployments to resolve Google indexing errors.">
+    <meta name="keywords" content="canonical redirect loop, Vercel domain routing, Google Search Console index error, alternative page canonical, SEO custom domains">
+    
+    <!-- Advanced SEO Meta Tags -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.curiouskaizer.com/blog-canonical-redirect-loops.html" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Fixing Canonical Redirect Loops on Vercel Custom Domains | Curious Kaizer">
+    <meta property="og:description" content="Diagnosing and solving GSC indexing loops caused by www and non-www domain mismatches.">
+    <meta property="og:url" content="https://www.curiouskaizer.com/blog-canonical-redirect-loops.html">
+    <meta property="og:image" content="https://www.curiouskaizer.com/images/og-image.jpg">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter+Tight:wght@700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter+Tight:wght@700;800&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css?v=1.4">
+    
+    <!-- Premium Article Layout Styles -->
+    <style>
+        body {
+            font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", sans-serif !important;
+        }
+
+        .article-hero {
+            padding: 8rem 0 3.5rem;
+            background-color: #fafbfc;
+            background-image: linear-gradient(rgba(37, 99, 235, 0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235, 0.015) 1px, transparent 1px);
+            background-size: 30px 30px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .breadcrumb a {
+            color: #64748b;
+            transition: color 0.2s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: #2563eb;
+        }
+
+        .article-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+            color: #0f172a;
+            margin: 1rem 0 1.5rem;
+            font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif !important;
+            text-align: left;
+            max-width: 900px;
+        }
+
+        .article-meta-bar {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.92rem;
+            color: #475569;
+            font-weight: 500;
+            flex-wrap: wrap;
+        }
+
+        .article-tag {
+            background: rgba(37, 99, 235, 0.08);
+            color: #2563eb;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .article-main-section {
+            padding: 4.5rem 0;
+            background-color: #ffffff;
+        }
+
+        .article-container {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        /* Typography spacing & rules */
+        .article-body {
+            font-size: 1.125rem;
+            line-height: 1.85;
+            color: #334155;
+            font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", sans-serif !important;
+        }
+
+        .article-body p {
+            margin-bottom: 1.8rem;
+        }
+
+        .article-body h2 {
+            font-size: 1.85rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            color: #0f172a;
+            margin: 2.8rem 0 1.2rem;
+            font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif !important;
+            line-height: 1.3;
+        }
+
+        .article-body h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #0f172a;
+            margin: 2rem 0 1rem;
+            font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif !important;
+        }
+
+        .article-body ul, .article-body ol {
+            margin-bottom: 1.8rem;
+            padding-left: 1.5rem;
+        }
+
+        .article-body li {
+            margin-bottom: 0.6rem;
+        }
+
+        .article-body blockquote {
+            border-left: 4px solid #2563eb;
+            background-color: #f8fafc;
+            padding: 1.2rem 1.8rem;
+            border-radius: 0 12px 12px 0;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #475569;
+        }
+
+        .article-body blockquote p {
+            margin-bottom: 0;
+        }
+
+        /* Code block stylings */
+        pre {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 1.5rem;
+            overflow-x: auto;
+            margin: 2rem 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.92rem;
+            line-height: 1.5;
+            color: #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        code {
+            font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.95em;
+            color: #0f172a;
+            background-color: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        pre code {
+            color: #e2e8f0;
+            background-color: transparent;
+            padding: 0;
+            border-radius: 0;
+        }
+
+        /* Author Info Profile */
+        .article-author-card {
+            background-color: #fafbfc;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 2.2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.8rem;
+            margin: 4.5rem 0 2rem;
+        }
+
+        .article-author-avatar {
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            background: #0071e3; /* Refined Apple Blue */
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 800;
+            border: 2px solid white;
+            box-shadow: 0 8px 16px rgba(0, 113, 227, 0.15);
+            flex-shrink: 0;
+        }
+
+        .article-author-details h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.4rem;
+        }
+
+        .article-author-details p {
+            color: #475569;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+
+        /* Nav links at bottom */
+        .article-navigation {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 2rem;
+            margin-top: 3.5rem;
+            gap: 16px;
+        }
+
+        .article-nav-btn {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            color: #475569;
+            text-decoration: none;
+            max-width: 48%;
+            transition: color 0.2s ease;
+        }
+
+        .article-nav-btn:hover {
+            color: #2563eb;
+        }
+
+        .article-nav-btn span {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #64748b;
+        }
+
+        .article-nav-btn h5 {
+            font-size: 0.98rem;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .article-nav-btn.next {
+            text-align: right;
+            align-items: flex-end;
+        }
+
+        @media (max-width: 768px) {
+            .article-hero h1 {
+                font-size: 2.2rem;
+            }
+            .article-author-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+            .article-navigation {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .article-nav-btn {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body itemscope itemtype="https://schema.org/TechArticle">
+
+    <!-- Navigation Header -->
+    <header class="site-header">
+    <nav class="navbar" itemscope itemtype="https://schema.org/SiteNavigationElement" aria-label="Main navigation">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo-icon.jpg" alt="Curious Kaizer Logo" class="logo-icon" width="50" height="38">
+                <span class="logo-text">Curious Kaizer</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#home" title="Home" itemprop="url"><span itemprop="name">Home</span></a></li>
+                <li><a href="index.html#process" title="Process" itemprop="url"><span itemprop="name">Process</span></a></li>
+                <li><a href="services.html" title="Capabilities" itemprop="url"><span itemprop="name">Capabilities</span></a></li>
+                <li><a href="index.html#why-us" title="Why Choose Us" itemprop="url"><span itemprop="name">Why Choose Us</span></a></li>
+                <li><a href="portfolio.html" title="Portfolio" itemprop="url"><span itemprop="name">Portfolio</span></a></li>
+                <li><a href="pricing.html" title="Pricing" itemprop="url"><span itemprop="name">Pricing</span></a></li>
+                <li><a href="blog.html" class="active" title="Blog" itemprop="url"><span itemprop="name">Blog</span></a></li>
+                <li class="mobile-cta-item"><a href="contact.html" class="nav-cta-btn-mobile" itemprop="url"><span itemprop="name"><span class="cta-text-long">Book Free Call</span><span class="cta-text-short">Book Call</span></span> <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+            <a href="contact.html" class="nav-cta-btn"><span class="cta-text-long">Book Free Call</span><span class="cta-text-short">Book Call</span> <i class="fas fa-arrow-right"></i></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    </header>
+
+    <!-- Subpage Hero - Article Headers -->
+    <section class="article-hero">
+        <div class="container">
+            <div class="breadcrumb" aria-label="Breadcrumb navigation">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right" style="font-size: 0.7rem;"></i>
+                <a href="blog.html">Blog</a>
+                <i class="fas fa-chevron-right" style="font-size: 0.7rem;"></i>
+                <span style="color: #0f172a;">SEO & Domains</span>
+            </div>
+            
+            <span class="article-tag" itemprop="genre">Web Design</span>
+            <h1 itemprop="headline">Fixing Canonical Redirect Loops on Vercel Custom Domains</h1>
+            
+            <div class="article-meta-bar">
+                <span itemprop="author" itemscope itemtype="https://schema.org/Person"><strong itemprop="name">Jai Goel</strong></span>
+                <span>•</span>
+                <time datetime="2026-07-18" itemprop="datePublished">July 18, 2026</time>
+                <span>•</span>
+                <span>5 min read</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="article-main-section" itemprop="articleBody">
+        <div class="container">
+            <div class="article-container">
+                <div class="article-body">
+                    
+                    <p>It is one of the most frustrating messages a web administrator can find in Google Search Console: **"Alternative page with proper canonical tag"** under the **Not Indexed** section. You check the page, and it loads fine. You check the canonical tag, and it seems to point to your domain. Why then is Google rejecting your pages?</p>
+                    
+                    <p>On hosting platforms like Vercel and Netlify, this error is almost always caused by a silent, hidden mismatch between the hosting provider's domain redirect settings and the hardcoded canonical links in your HTML. In this article, I will explain exactly how this loop happens and show you how to fix it in minutes.</p>
+                    
+                    <h2>Understanding the www vs non-www Redirect</h2>
+                    <p>When you set up a custom domain on Vercel, you generally configure two domains: <code>yourdomain.com</code> and <code>www.yourdomain.com</code>. Vercel asks you to pick one as the **Primary Domain** and automatically redirects the other version to it using an HTTP <code>308 Permanent Redirect</code>.</p>
+                    
+                    <p>For example, if you set <code>www.yourdomain.com</code> as primary:</p>
+                    <ul>
+                        <li>A user visits <code>https://yourdomain.com/services.html</code>.</li>
+                        <li>Vercel intercepts the request and redirects it to <code>https://www.yourdomain.com/services.html</code>.</li>
+                    </ul>
+                    <p>This is standard and excellent for avoiding duplicate content. But it sets up an indexing trap if your HTML templates aren't aligned.</p>
+
+                    <h2>How the Canonical Loop is Created</h2>
+                    <p>Google's crawlers check the HTML head of your pages for the canonical tag (e.g. <code>&lt;link rel="canonical" href="..."&gt;</code>) to know which URL is the master version they should index.</p>
+                    
+                    <p>Here is the exact sequence of events that triggers the GSC indexing error:</p>
+                    <ol>
+                        <li>Google crawls your forced primary domain: <code>https://www.yourdomain.com/services.html</code>.</li>
+                        <li>It reads the HTML code, but finds a canonical link pointing to the non-www version:
+                            <pre><code>&lt;!-- Mismatched Canonical tag in HTML --&gt;
+&lt;link rel="canonical" href="https://yourdomain.com/services.html" /&gt;</code></pre>
+                        </li>
+                        <li>Google says: *"Ah, the owner tells us the real URL is the non-www version. Let's ignore this www URL and crawl the canonical version instead."*</li>
+                        <li>Google tries to request the non-www page: <code>https://yourdomain.com/services.html</code>.</li>
+                        <li>Vercel sees the non-www request and redirects Googlebot right back to <code>https://www.yourdomain.com/services.html</code>!</li>
+                        <li>Google gets redirected in a loop. Realizing the canonical points to a page that redirects back, Google decides **not to index either URL**, marking the www page as "Alternative page with proper canonical tag" (not indexed).</li>
+                    </ol>
+
+                    <blockquote>
+                        "If your server forces www, but your HTML canonical tags point to non-www (or vice versa), you have created a canonical loop. Google will refuse to index your subpages, leaving them hidden from search results."
+                    </blockquote>
+
+                    <h2>The Step-by-Step Fix</h2>
+                    <p>To resolve this, you must audit and match your hosting settings to your HTML links. Here is how we fixed it for Curious Kaizer:</p>
+                    
+                    <h3>Step 1: Check your primary domain redirect</h3>
+                    <p>Run a <code>curl</code> command in your terminal to see which domain your server redirects to:</p>
+                    <pre><code>curl -IL https://yourdomain.com/</code></pre>
+                    <p>Check the <code>location:</code> header. If it redirects to <code>https://www.yourdomain.com/</code>, then **WWW is your primary domain** and must be used in all canonicals. If it returns <code>200 OK</code> without redirects, then **non-WWW is your primary domain**.</p>
+                    
+                    <h3>Step 2: Update all HTML canonical tags</h3>
+                    <p>Once you verify the primary domain, open all HTML files on your site and ensure the canonical tags use the exact same prefix. If your primary domain uses WWW, update them accordingly:</p>
+                    <pre><code>&lt;!-- Correct WWW-aligned Canonical link --&gt;
+&lt;link rel="canonical" href="https://www.curiouskaizer.com/services.html" /&gt;</code></pre>
+
+                    <h3>Step 3: Update XML Sitemaps and robots.txt</h3>
+                    <p>Google relies on your sitemap to locate pages. If your sitemap contains redirecting non-www URLs, Google will list those as "Page with redirect" errors. Update all sitemap link tags (<code>&lt;loc&gt;</code>) to include the primary www format, and update the sitemap location in your <code>robots.txt</code> file:</p>
+                    <pre><code># robots.txt
+Sitemap: https://www.yourdomain.com/sitemap.xml</code></pre>
+
+                    <h2>Requesting a Recrawl</h2>
+                    <p>Google updates its index when it recrawls your pages. To speed up indexation after making the fix:</p>
+                    <ol>
+                        <li>Open **Google Search Console**.</li>
+                        <li>Paste your URL into the top search bar (URL Inspection tool).</li>
+                        <li>Click **Request Indexing**. Google will fetch the page, see that the crawled URL matches the canonical tag, and index your pages successfully!</li>
+                    </ol>
+
+                    <!-- Author Details -->
+                    <div class="article-author-card">
+                        <div class="article-author-avatar">JG</div>
+                        <div class="article-author-details">
+                            <h4>About Jai Goel</h4>
+                            <p>Jai Goel is the Founder and Lead Web Architect of Curious Kaizer. He creates bespoke web platforms, custom database schemes, voice-controlled Chrome tools, and conversion-focused web layouts. Jai personally codes and supervises every project shipped from the Delhi headquarters.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Article Navigation footer -->
+                    <div class="article-navigation">
+                        <a href="blog-database-normalization.html" class="article-nav-btn">
+                            <span>Previous Story</span>
+                            <h5>Optimizing Database Schema to Reduce Supabase Storage by 80%</h5>
+                        </a>
+                        <a href="blog-b2b-procurement-case-study.html" class="article-nav-btn next">
+                            <span>Next Story</span>
+                            <h5>Case Study: Designing the Perfect B2B Procurement Portal</h5>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer footer-premium" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo-link">
+                        <img src="images/logo.jpg" alt="Curious Kaizer Logo" class="footer-logo-img" width="72" height="72" loading="lazy" decoding="async">
+                    </a>
+                    <p class="subtitle" style="margin-top: 0.5rem;">Where Innovation Meets Digital Excellence</p>
+                    <p class="tagline">
+                        Crafting bespoke, high-performance web applications, custom platforms, and design systems that scale your business.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/curious-kaizer/" target="_blank" rel="noopener me" aria-label="Curious Kaizer LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/curiouskaizer/" target="_blank" rel="noopener me" aria-label="Curious Kaizer Instagram Profile"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-nav-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="services.html">Custom Websites</a></li>
+                        <li><a href="services.html">E-Commerce Stores</a></li>
+                        <li><a href="services.html">Web Applications</a></li>
+                        <li><a href="crm-product.html">Custom CRM Solutions</a></li>
+                        <li><a href="services.html">AI & Automation Tools</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-nav-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html#home">Home / Process</a></li>
+                        <li><a href="services.html">Capabilities</a></li>
+                        <li><a href="index.html#why-us">Why Choose Us</a></li>
+                        <li><a href="portfolio.html">Our Portfolio</a></li>
+                        <li><a href="pricing.html">Pricing / FAQ</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Get in Touch</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@curiouskaizer.com">info@curiouskaizer.com</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:curiouskaizer@gmail.com">curiouskaizer@gmail.com</a></li>
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:+918595121436">+91 85951 21436</a></li>
+                        <li><i class="fab fa-whatsapp" style="color: #25d366;"></i> <a href="https://wa.me/918595121436" target="_blank" rel="noopener">Chat on WhatsApp</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Delhi, India | Remote Worldwide</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-left-info">
+                    <p class="copyright">&copy; 2026 Curious Kaizer. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="terms.html">Terms of Service</a>
+                    <span>•</span>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quick Contact Dock (WhatsApp & Call CTAs) -->
+    <div class="quick-contact-dock">
+        <a href="https://wa.me/918595121436?text=Hi!%20I'd%20like%20to%20get%20an%20instant%20quote%20and%20discuss%20a%20project." class="quick-dock-btn whatsapp" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i>
+            <span>Quote</span>
+        </a>
+        <a href="tel:+918595121436" class="quick-dock-btn call">
+            <i class="fas fa-phone-alt"></i>
+            <span>Call</span>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/scripts.js" defer></script>
+    <script src="js/analytics-tracker.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navToggle = document.getElementById('navToggle');
+            const navLinks = document.getElementById('navLinks');
+            
+            if (navToggle && navLinks) {
+                navToggle.addEventListener('click', () => {
+                    const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
+                    navToggle.setAttribute('aria-expanded', !expanded);
+                    navLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

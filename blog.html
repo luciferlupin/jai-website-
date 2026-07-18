@@ -35,8 +35,8 @@
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@700;800&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter+Tight:wght@700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter+Tight:wght@700;800&display=swap" rel="stylesheet"></noscript>
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
     
@@ -45,6 +45,10 @@
     
     <!-- Apple-style & Curious Kaizer Cohesive Style Sheets -->
     <style>
+        body {
+            font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", sans-serif !important;
+        }
+
         /* Subpage Premium Hero Styling - Fully matching portfolio.html */
         .subpage-hero {
             padding: 8rem 0 4rem;
@@ -117,6 +121,7 @@
 
         /* Featured Hero Post */
         .blog-featured-card {
+            position: relative;
             margin-bottom: 4rem;
             background: #ffffff;
             border: 1px solid #e2e8f0;
@@ -143,12 +148,28 @@
             overflow: hidden;
             min-height: 380px;
             border-right: 1px solid #e2e8f0;
+            position: relative;
         }
 
         .blog-featured-image i {
             font-size: 7.5rem;
             color: #2563eb;
             filter: drop-shadow(0 10px 15px rgba(37, 99, 235, 0.15));
+            position: relative;
+            z-index: 2;
+        }
+
+        .blog-featured-image::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(37, 99, 235, 0.05);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
         }
 
         .blog-featured-body {
@@ -189,6 +210,33 @@
             font-family: 'Inter Tight', sans-serif;
         }
 
+        .blog-featured-body h2 a,
+        .blog-card-body h3 a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.25s ease;
+        }
+
+        /* Stretched Link Overlay to make the entire card clickable */
+        .blog-featured-body h2 a::after,
+        .blog-card-body h3 a::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 5;
+        }
+
+        /* Color title when hovering anywhere on the card */
+        .blog-featured-card:hover h2 a,
+        .blog-card:hover h3 a,
+        .blog-featured-body h2 a:hover,
+        .blog-card-body h3 a:hover {
+            color: #2563eb;
+        }
+
         .blog-featured-body p {
             color: #475569;
             line-height: 1.6;
@@ -206,7 +254,7 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: #2563eb;
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
             color: white;
             display: flex;
             align-items: center;
@@ -214,7 +262,8 @@
             font-weight: 700;
             font-size: 1rem;
             border: 2px solid #ffffff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+            flex-shrink: 0;
         }
 
         .blog-author-info span {
@@ -238,6 +287,7 @@
         }
 
         .blog-card {
+            position: relative;
             background: #ffffff;
             border: 1px solid #e2e8f0;
             border-radius: 20px;
@@ -263,16 +313,76 @@
             overflow: hidden;
             border-bottom: 1px solid #e2e8f0;
             transition: all 0.3s ease;
+            position: relative;
         }
 
         .blog-card-image i {
             font-size: 4.5rem;
             color: #2563eb;
             transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .blog-card-image::before {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: rgba(37, 99, 235, 0.05);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
         }
 
         .blog-card:hover .blog-card-image i {
-            transform: scale(1.05);
+            transform: scale(1.08);
+        }
+
+        .blog-card:hover .blog-card-image::before {
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+
+        /* Dynamic Category Theming */
+        .blog-card-item[data-category="saas"] .blog-card-image,
+        .blog-card-item[data-category="saas"] .blog-featured-image {
+            background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+        }
+        .blog-card-item[data-category="saas"] .blog-tag {
+            background: rgba(37, 99, 235, 0.08);
+            color: #2563eb;
+        }
+        .blog-card-item[data-category="saas"] i {
+            color: #2563eb !important;
+            filter: drop-shadow(0 8px 16px rgba(37, 99, 235, 0.1));
+        }
+
+        .blog-card-item[data-category="web"] .blog-card-image,
+        .blog-card-item[data-category="web"] .blog-featured-image {
+            background: linear-gradient(135deg, #f8fafc 0%, #f5f3ff 100%);
+        }
+        .blog-card-item[data-category="web"] .blog-tag {
+            background: rgba(79, 70, 229, 0.08);
+            color: #4f46e5;
+        }
+        .blog-card-item[data-category="web"] i {
+            color: #4f46e5 !important;
+            filter: drop-shadow(0 8px 16px rgba(79, 70, 229, 0.1));
+        }
+
+        .blog-card-item[data-category="ai"] .blog-card-image,
+        .blog-card-item[data-category="ai"] .blog-featured-image {
+            background: linear-gradient(135deg, #f8fafc 0%, #f0fdfa 100%);
+        }
+        .blog-card-item[data-category="ai"] .blog-tag {
+            background: rgba(13, 148, 136, 0.08);
+            color: #0d9488;
+        }
+        .blog-card-item[data-category="ai"] i {
+            color: #0d9488 !important;
+            filter: drop-shadow(0 8px 16px rgba(13, 148, 136, 0.1));
         }
 
         .blog-card-body {
@@ -303,33 +413,32 @@
 
         /* Jai G Author Profile Card - Premium design matching services.html panels */
         .blog-author-card {
-            background-color: #fafbfc;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
             border: 1px solid #e2e8f0;
             background-image: linear-gradient(rgba(37, 99, 235, 0.01) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235, 0.01) 1px, transparent 1px);
             background-size: 20px 20px;
             border-radius: 24px;
-            padding: 3rem;
-            display: flex;
-            align-items: center;
-            gap: 2.5rem;
+            padding: 3rem 4rem;
             margin-bottom: 6rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.01);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+            position: relative;
+            overflow: hidden;
         }
 
-        .blog-author-card-avatar {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: #2563eb;
-            color: white;
+        .blog-author-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);
+        }
+
+        .blog-author-card-content {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            font-weight: 800;
-            border: 3px solid #ffffff;
-            flex-shrink: 0;
-            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.15);
+            flex-direction: column;
+            gap: 0.75rem;
         }
 
         .blog-author-card-content h3 {
@@ -337,13 +446,66 @@
             font-weight: 800;
             font-family: 'Inter Tight', sans-serif;
             color: #0f172a;
-            margin-bottom: 0.5rem;
+            margin: 0 0 0.25rem 0;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .blog-author-card-content .author-title {
+            font-size: 1rem;
+            color: #2563eb;
+            font-weight: 600;
+            margin: 0 0 1rem 0;
         }
 
         .blog-author-card-content p {
             color: #475569;
-            line-height: 1.6;
-            font-size: 1.02rem;
+            line-height: 1.7;
+            font-size: 1rem;
+            margin: 0 0 1.25rem 0;
+        }
+
+        .author-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 0 0 1.25rem 0;
+        }
+
+        .author-skill-tag {
+            background: rgba(37, 99, 235, 0.08);
+            color: #2563eb;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(37, 99, 235, 0.15);
+        }
+
+        .author-social-links {
+            display: flex;
+            gap: 0.875rem;
+            margin-top: 0.25rem;
+        }
+
+        .author-social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #f1f5f9;
+            color: #475569;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .author-social-links a:hover {
+            background: #2563eb;
+            color: white;
+            border-color: #2563eb;
+            transform: translateY(-2px);
         }
 
         /* Animations */
@@ -362,6 +524,9 @@
                 border-right: none;
                 border-bottom: 1px solid #e2e8f0;
             }
+            .blog-featured-image i {
+                font-size: 5rem;
+            }
             .blog-featured-body {
                 padding: 2rem;
             }
@@ -369,14 +534,102 @@
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
+            .blog-card-image {
+                height: 180px;
+            }
+            .blog-card-image i {
+                font-size: 3.5rem;
+            }
             .blog-author-card {
-                flex-direction: column;
                 text-align: center;
-                padding: 2rem;
-                gap: 1.5rem;
+                padding: 2.5rem;
+            }
+            .blog-author-card-content {
+                gap: 1rem;
+            }
+            .blog-author-card-content h3 {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+            .blog-author-card-content .author-title {
+                margin-bottom: 1.25rem;
+            }
+            .blog-author-card-content p {
+                margin-bottom: 1.5rem;
+            }
+            .author-skills {
+                justify-content: center;
+                gap: 0.5rem;
+                margin-bottom: 1.5rem;
+            }
+            .author-social-links {
+                justify-content: center;
             }
             .subpage-hero-title {
                 font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .subpage-hero {
+                padding: 5rem 0 3rem;
+            }
+            .subpage-hero-title {
+                font-size: 2.2rem;
+            }
+            .section-subtitle {
+                font-size: 1rem;
+            }
+            .blog-filter-section {
+                padding: 1.5rem 0;
+            }
+            .filter-tabs {
+                gap: 8px;
+            }
+            .filter-tab {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+            .blog-detail-section {
+                padding: 3rem 0;
+            }
+            .blog-featured-body {
+                padding: 1.5rem;
+            }
+            .blog-featured-body h2 {
+                font-size: 1.6rem;
+            }
+            .blog-card-body {
+                padding: 1.5rem;
+            }
+            .blog-card-body h3 {
+                font-size: 1.2rem;
+            }
+            .blog-author-card {
+                padding: 2rem;
+            }
+            .blog-author-card-content {
+                gap: 0.875rem;
+            }
+            .blog-author-card-content h3 {
+                font-size: 1.35rem;
+                margin-bottom: 0.25rem;
+            }
+            .blog-author-card-content .author-title {
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+            }
+            .blog-author-card-content p {
+                font-size: 0.9rem;
+                margin-bottom: 1.25rem;
+            }
+            .author-skills {
+                gap: 0.4rem;
+                margin-bottom: 1.25rem;
+            }
+            .author-skill-tag {
+                font-size: 0.75rem;
+                padding: 5px 12px;
             }
         }
     </style>
@@ -439,12 +692,11 @@
     <!-- Subpage Hero - Identical to portfolio.html / pricing.html visual layout -->
     <section class="subpage-hero">
         <div class="container">
-            <div class="hero-badge">Kaizer Insights</div>
             <h1 class="subpage-hero-title">
-                <span class="seo-subpage-pre-title" style="display: block; font-size: 0.95rem; text-transform: uppercase; font-weight: 800; color: #2563eb; letter-spacing: 0.15em; margin-bottom: 12px; font-family: 'Inter', sans-serif;">Jai Goel's Engineering Blog</span>
-                Insights & Ideas.<br><span class="highlight-blue">Engineered to Inform.</span>
+                <span class="seo-subpage-pre-title" style="display: block; font-size: 0.95rem; text-transform: uppercase; font-weight: 800; color: #2563eb; letter-spacing: 0.15em; margin-bottom: 12px; font-family: 'Inter', sans-serif;">KAIZER INSIGHTS</span>
+                Insights & Ideas.<br><span class="highlight-blue">Engineered to perform.</span>
             </h1>
-            <p class="section-subtitle" style="margin: 0 auto; max-width: 700px;">Deep-dives into serverless analytics architecture, custom business CRMs, AI search agent workflows, and frontend performance optimization.</p>
+            <p class="section-subtitle" style="margin: 0 auto; max-width: 650px;">Deep-dives into custom serverless architectures, database optimizations, and B2B software engineering. Written by Jai Goel.</p>
         </div>
     </section>
 
@@ -464,19 +716,19 @@
     <section class="blog-detail-section">
         <main class="container">
             
-            <!-- Featured Hero Post (SaaS Engineering) -->
-            <article class="blog-featured-card blog-card-item" data-category="saas">
+            <!-- Featured Hero Post (AI / Latency Optimization) -->
+            <article class="blog-featured-card blog-card-item" data-category="ai">
                 <div class="blog-featured-image">
-                    <i class="fas fa-database"></i>
+                    <i class="fas fa-bolt"></i>
                 </div>
                 <div class="blog-featured-body">
                     <div class="blog-meta">
-                        <span class="blog-tag">SaaS & Databases</span>
+                        <span class="blog-tag">AI & Automation</span>
                         <span>•</span>
                         <span>8 min read</span>
                     </div>
-                    <h2>Optimizing Database Schema to Reduce Supabase Storage by 80%</h2>
-                    <p>A technical guide on serverless database normalization. Learn how we restructured database logs into normalized sessions and light event records to bypass RLS conflicts and decrease overhead.</p>
+                    <h2><a href="blog-rag-latency-optimization.html">Reducing LLM RAG Latency from 8s to 900ms on Serverless Edge Runtimes</a></h2>
+                    <p>A detailed engineering study on pgvector caching, serverless edge geographical lookups, and streamed JSON chunk rendering to bypass network and model bottlenecks.</p>
                     <div class="blog-author-strip">
                         <div class="blog-author-avatar">JG</div>
                         <div class="blog-author-info">
@@ -490,6 +742,29 @@
             <!-- Blog Posts Grid -->
             <section class="blog-grid" id="blogGrid">
                 
+                <!-- Post 1: SaaS / Database Normalization -->
+                <article class="blog-card blog-card-item" data-category="saas">
+                    <div class="blog-card-image">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-meta">
+                            <span class="blog-tag">SaaS & Databases</span>
+                            <span>•</span>
+                            <span>8 min read</span>
+                        </div>
+                        <h3><a href="blog-database-normalization.html">Optimizing Database Schema to Reduce Supabase Storage by 80%</a></h3>
+                        <p>A technical guide on serverless database normalization. Learn how we restructured database logs into normalized sessions and light event records to decrease overhead.</p>
+                        <div class="blog-author-strip">
+                            <div class="blog-author-avatar">JG</div>
+                            <div class="blog-author-info">
+                                <span>Jai Goel</span>
+                                <small>July 18, 2026</small>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
                 <!-- Post 2: Web Design / SEO -->
                 <article class="blog-card blog-card-item" data-category="web">
                     <div class="blog-card-image">
@@ -501,7 +776,7 @@
                             <span>•</span>
                             <span>5 min read</span>
                         </div>
-                        <h3>Fixing Canonical Redirect Loops on Vercel Custom Domains</h3>
+                        <h3><a href="blog-canonical-redirect-loops.html">Fixing Canonical Redirect Loops on Vercel Custom Domains</a></h3>
                         <p>Why Google Search Console marks your pages as "Not Indexed: Alternative page with proper canonical tag". Understanding www/non-www discrepancies and how to configure matching headers.</p>
                         <div class="blog-author-strip">
                             <div class="blog-author-avatar">JG</div>
@@ -524,13 +799,13 @@
                             <span>•</span>
                             <span>6 min read</span>
                         </div>
-                        <h3>Case Study: Designing the Perfect B2B Procurement Portal</h3>
+                        <h3><a href="blog-b2b-procurement-case-study.html">Case Study: Designing the Perfect B2B Procurement Portal</a></h3>
                         <p>How we mapped industrial Raw Sourcing RFQ pipelines into a streamlined digital web workspace. An inside look at UX solutions crafted for WatFix Chemicals.</p>
                         <div class="blog-author-strip">
                             <div class="blog-author-avatar">JG</div>
                             <div class="blog-author-info">
                                 <span>Jai Goel</span>
-                                <small>July 12, 2026</small>
+                                <small>July 18, 2026</small>
                             </div>
                         </div>
                     </div>
@@ -547,13 +822,13 @@
                             <span>•</span>
                             <span>7 min read</span>
                         </div>
-                        <h3>Integrating voice-recognition automation with Gemini API</h3>
+                        <h3><a href="blog-voice-ai-gemini-integration.html">Integrating voice-recognition automation with Gemini API</a></h3>
                         <p>Developing Browser Buddy: Our customizable Chrome extension that enables hands-free browser actions, custom scraping pipelines, and AI conversational workflows.</p>
                         <div class="blog-author-strip">
                             <div class="blog-author-avatar">JG</div>
                             <div class="blog-author-info">
                                 <span>Jai Goel</span>
-                                <small>July 5, 2026</small>
+                                <small>July 18, 2026</small>
                             </div>
                         </div>
                     </div>
@@ -570,13 +845,105 @@
                             <span>•</span>
                             <span>6 min read</span>
                         </div>
-                        <h3>Why We Built CuriousCRM on Vanilla JS with Zero Frameworks</h3>
+                        <h3><a href="blog-vanilla-js-crm.html">Why We Built CuriousCRM on Vanilla JS with Zero Frameworks</a></h3>
                         <p>React/Vue are excellent, but framework overhead can degrade first-load times. Why we constructed CuriousCRM's Kanban board and charts on native Javascript.</p>
                         <div class="blog-author-strip">
                             <div class="blog-author-avatar">JG</div>
                             <div class="blog-author-info">
                                 <span>Jai Goel</span>
-                                <small>June 28, 2026</small>
+                                <small>July 18, 2026</small>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 6: Web Design / Edge Computing -->
+                <article class="blog-card blog-card-item" data-category="web">
+                    <div class="blog-card-image">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-meta">
+                            <span class="blog-tag">Web Design</span>
+                            <span>•</span>
+                            <span>7 min read</span>
+                        </div>
+                        <h3><a href="blog-edge-rendering-2026.html">Edge Rendering in 2026: Why Your Next App Should Run at 300+ Locations</a></h3>
+                        <p>Moving server logic from centralized data centers to edge PoPs reduces TTFB by 60-80%. A practical guide to implementing edge rendering with Cloudflare Workers and Vercel Edge.</p>
+                        <div class="blog-author-strip">
+                            <div class="blog-author-avatar">JG</div>
+                            <div class="blog-author-info">
+                                <span>Jai Goel</span>
+                                <small>July 18, 2026</small>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 7: AI & Automation / Edge AI -->
+                <article class="blog-card blog-card-item" data-category="ai">
+                    <div class="blog-card-image">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-meta">
+                            <span class="blog-tag">AI & Automation</span>
+                            <span>•</span>
+                            <span>8 min read</span>
+                        </div>
+                        <h3><a href="blog-edge-ai-inference.html">AI Inference at the Edge: Running LLMs in Under 50ms Globally</a></h3>
+                        <p>Centralized GPU clusters add 300ms latency. Edge AI inference delivers real-time responses for content moderation, recommendations, and fraud detection at 50ms.</p>
+                        <div class="blog-author-strip">
+                            <div class="blog-author-avatar">JG</div>
+                            <div class="blog-author-info">
+                                <span>Jai Goel</span>
+                                <small>July 18, 2026</small>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 8: Web Design / Performance -->
+                <article class="blog-card blog-card-item" data-category="web">
+                    <div class="blog-card-image">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-meta">
+                            <span class="blog-tag">Web Design</span>
+                            <span>•</span>
+                            <span>6 min read</span>
+                        </div>
+                        <h3><a href="blog-inp-core-web-vitals.html">INP Replaces FID: Optimizing for the New Core Web Vital in 2026</a></h3>
+                        <p>Interaction to Next Paint is now Google's key responsiveness metric. 43% of sites fail. Here's how to optimize your site's INP score with practical code examples.</p>
+                        <div class="blog-author-strip">
+                            <div class="blog-author-avatar">JG</div>
+                            <div class="blog-author-info">
+                                <span>Jai Goel</span>
+                                <small>July 18, 2026</small>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 9: SaaS / WebAssembly -->
+                <article class="blog-card blog-card-item" data-category="saas">
+                    <div class="blog-card-image">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-meta">
+                            <span class="blog-tag">SaaS & Databases</span>
+                            <span>•</span>
+                            <span>7 min read</span>
+                        </div>
+                        <h3><a href="blog-webassembly-edge.html">WebAssembly at the Edge: Breaking Language Constraints in Serverless</a></h3>
+                        <p>Cloudflare Workers and Vercel Edge run JavaScript, but Fastly Compute runs Wasm. How to use Rust, Go, and C++ at the edge for performance-critical workloads.</p>
+                        <div class="blog-author-strip">
+                            <div class="blog-author-avatar">JG</div>
+                            <div class="blog-author-info">
+                                <span>Jai Goel</span>
+                                <small>July 18, 2026</small>
                             </div>
                         </div>
                     </div>
@@ -586,10 +953,22 @@
 
             <!-- Jai Goel Author Profile Card (Apple style) -->
             <section class="blog-author-card">
-                <div class="blog-author-card-avatar">JG</div>
                 <div class="blog-author-card-content">
                     <h3>About Jai Goel</h3>
-                    <p>Jai Goel is the Founder and Lead Web Architect of Curious Kaizer. He creates bespoke web platforms, custom database schemes, voice-controlled Chrome tools, and conversion-focused web layouts. Jai personally codes and supervises every project shipped from the Delhi headquarters.</p>
+                    <span class="author-title">Founder & Lead Web Architect</span>
+                    <p>Jai Goel is the Founder and Lead Web Architect of Curious Kaizer. He creates bespoke web platforms, custom database schemes, voice-controlled Chrome tools, and conversion-focused web layouts. Jai personally codes and supervises every project shipped from the Delhi headquarters, ensuring pixel-perfect execution and technical excellence.</p>
+                    <div class="author-skills">
+                        <span class="author-skill-tag">Full-Stack Development</span>
+                        <span class="author-skill-tag">Database Architecture</span>
+                        <span class="author-skill-tag">AI Integration</span>
+                        <span class="author-skill-tag">UX Design</span>
+                        <span class="author-skill-tag">Performance Optimization</span>
+                    </div>
+                    <div class="author-social-links">
+                        <a href="https://www.linkedin.com/company/curious-kaizer/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/curiouskaizer/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="mailto:info@curiouskaizer.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
                 </div>
             </section>
 
@@ -597,46 +976,85 @@
     </section>
 
     <!-- Footer -->
-    <footer class="site-footer">
+    <footer class="footer footer-premium" role="contentinfo">
         <div class="container">
-            <div class="footer-grid">
+            <div class="footer-content">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo">
-                        <img src="images/logo-icon.jpg" alt="Curious Kaizer Logo" class="logo-icon" width="50" height="38">
-                        <span class="logo-text">Curious Kaizer</span>
+                    <a href="index.html" class="footer-logo-link">
+                        <img src="images/logo.jpg" alt="Curious Kaizer Logo" class="footer-logo-img" width="72" height="72" loading="lazy" decoding="async">
                     </a>
-                    <p class="footer-tagline"> Delhi's premium web engineering agency. Crafting customized digital designs, SaaS platforms, and AI workflows starting at ₹15,200.</p>
-                </div>
-                <div class="footer-links-column">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="index.html#home">Home</a></li>
-                        <li><a href="services.html">Capabilities</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links-column">
-                    <h4>Legals</h4>
-                    <ul>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
-                        <li><a href="terms.html">Terms of Service</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links-column">
-                    <h4>Connect</h4>
-                    <div class="footer-social-links">
-                        <a href="https://www.linkedin.com/company/curious-kaizer/" target="_blank" rel="noopener me" aria-label="Curious Kaizer LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.instagram.com/curiouskaizer/" target="_blank" rel="noopener me" aria-label="Curious Kaizer Instagram"><i class="fab fa-instagram"></i></a>
+                    <p class="subtitle" style="margin-top: 0.5rem;">Where Innovation Meets Digital Excellence</p>
+                    <p class="tagline">
+                        Crafting bespoke, high-performance web applications, custom platforms, and design systems that scale your business.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/curious-kaizer/" target="_blank" rel="noopener me" aria-label="Curious Kaizer LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/curiouskaizer/" target="_blank" rel="noopener me" aria-label="Curious Kaizer Instagram Profile"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
+
+                <div class="footer-nav-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="services.html">Custom Websites</a></li>
+                        <li><a href="services.html">E-Commerce Stores</a></li>
+                        <li><a href="services.html">Web Applications</a></li>
+                        <li><a href="crm-product.html">Custom CRM Solutions</a></li>
+                        <li><a href="services.html">AI & Automation Tools</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-nav-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html#home">Home / Process</a></li>
+                        <li><a href="services.html">Capabilities</a></li>
+                        <li><a href="index.html#why-us">Why Choose Us</a></li>
+                        <li><a href="portfolio.html">Our Portfolio</a></li>
+                        <li><a href="pricing.html">Pricing / FAQ</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Get in Touch</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@curiouskaizer.com">info@curiouskaizer.com</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:curiouskaizer@gmail.com">curiouskaizer@gmail.com</a></li>
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:+918595121436">+91 85951 21436</a></li>
+                        <li><i class="fab fa-whatsapp" style="color: #25d366;"></i> <a href="https://wa.me/918595121436" target="_blank" rel="noopener">Chat on WhatsApp</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Delhi, India | Remote Worldwide</li>
+                    </ul>
+                </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2026 Curious Kaizer. Delhi, India. All rights reserved.</p>
+                <div class="footer-left-info">
+                    <p class="copyright">&copy; 2026 Curious Kaizer. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="terms.html">Terms of Service</a>
+                    <span>•</span>
+                    <a href="contact.html">Contact Us</a>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Quick Contact Dock (WhatsApp & Call CTAs) -->
+    <div class="quick-contact-dock">
+        <a href="https://wa.me/918595121436?text=Hi!%20I'd%20like%20to%20get%20an%20instant%20quote%20and%20discuss%20a%20project." class="quick-dock-btn whatsapp" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i>
+            <span>Quote</span>
+        </a>
+        <a href="tel:+918595121436" class="quick-dock-btn call">
+            <i class="fas fa-phone-alt"></i>
+            <span>Call</span>
+        </a>
+    </div>
 
     <!-- Scripts -->
     <script src="js/scripts.js" defer></script>

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KFQ266Z1Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9KFQ266Z1Z');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>Edge Rendering in 2026: Why Your Next App Should Run at 300+ Locations | Curious Kaizer</title>
+    <meta name="description" content="Learn how edge rendering reduces TTFB by 60-80% by running server logic at 300+ global PoPs. A practical guide to implementing edge rendering with Cloudflare Workers and Vercel Edge.">
+    <meta name="keywords" content="edge rendering, Cloudflare Workers, Vercel Edge, TTFB optimization, serverless edge computing, web performance 2026">
+    
+    <!-- Advanced SEO Meta Tags -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.curiouskaizer.com/blog-edge-rendering-2026.html" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Edge Rendering in 2026: Why Your Next App Should Run at 300+ Locations | Curious Kaizer">
+    <meta property="og:description" content="Moving server logic from centralized data centers to edge PoPs reduces TTFB by 60-80%. A practical guide to implementing edge rendering.">
+    <meta property="og:url" content="https://www.curiouskaizer.com/blog-edge-rendering-2026.html">
+    <meta property="og:image" content="https://www.curiouskaizer.com/images/og-image.jpg">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter+Tight:wght@700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter+Tight:wght@700;800&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css?v=1.4">
+    
+    <!-- Premium Article Layout Styles -->
+    <style>
+        body {
+            font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", sans-serif !important;
+        }
+
+        .article-hero {
+            padding: 8rem 0 3.5rem;
+            background-color: #fafbfc;
+            background-image: linear-gradient(rgba(37, 99, 235, 0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235, 0.015) 1px, transparent 1px);
+            background-size: 30px 30px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .breadcrumb a {
+            color: #64748b;
+            transition: color 0.2s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: #2563eb;
+        }
+
+        .article-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+            color: #0f172a;
+            margin: 1rem 0 1.5rem;
+            font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif !important;
+            text-align: left;
+            max-width: 900px;
+        }
+
+        .article-meta-bar {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.92rem;
+            color: #475569;
+            font-weight: 500;
+            flex-wrap: wrap;
+        }
+
+        .article-tag {
+            background: rgba(37, 99, 235, 0.08);
+            color: #2563eb;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .article-main-section {
+            padding: 4.5rem 0;
+            background-color: #ffffff;
+        }
+
+        .article-container {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        /* Typography spacing & rules */
+        .article-body {
+            font-size: 1.125rem;
+            line-height: 1.85;
+            color: #334155;
+            font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", sans-serif !important;
+        }
+
+        .article-body p {
+            margin-bottom: 1.8rem;
+        }
+
+        .article-body h2 {
+            font-size: 1.85rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            color: #0f172a;
+            margin: 2.8rem 0 1.2rem;
+            font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif !important;
+            line-height: 1.3;
+        }
+
+        .article-body h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #0f172a;
+            margin: 2rem 0 1rem;
+            font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif !important;
+        }
+
+        .article-body ul, .article-body ol {
+            margin-bottom: 1.8rem;
+            padding-left: 1.5rem;
+        }
+
+        .article-body li {
+            margin-bottom: 0.6rem;
+        }
+
+        .article-body blockquote {
+            border-left: 4px solid #2563eb;
+            background-color: #f8fafc;
+            padding: 1.2rem 1.8rem;
+            border-radius: 0 12px 12px 0;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #475569;
+        }
+
+        .article-body blockquote p {
+            margin-bottom: 0;
+        }
+
+        /* Code block stylings */
+        pre {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 1.5rem;
+            overflow-x: auto;
+            margin: 2rem 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.92rem;
+            line-height: 1.5;
+            color: #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        code {
+            font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.95em;
+            color: #0f172a;
+            background-color: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        pre code {
+            color: #e2e8f0;
+            background-color: transparent;
+            padding: 0;
+            border-radius: 0;
+        }
+
+        /* Author Info Profile */
+        .article-author-card {
+            background-color: #fafbfc;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 2.2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.8rem;
+            margin: 4.5rem 0 2rem;
+        }
+
+        .article-author-avatar {
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            background: #0071e3;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 800;
+            border: 2px solid white;
+            box-shadow: 0 8px 16px rgba(0, 113, 227, 0.15);
+            flex-shrink: 0;
+        }
+
+        .article-author-details h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.4rem;
+        }
+
+        .article-author-details p {
+            color: #475569;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+
+        /* Nav links at bottom */
+        .article-navigation {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 2rem;
+            margin-top: 3.5rem;
+            gap: 16px;
+        }
+
+        .article-nav-btn {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            color: #475569;
+            text-decoration: none;
+            max-width: 48%;
+            transition: color 0.2s ease;
+        }
+
+        .article-nav-btn:hover {
+            color: #2563eb;
+        }
+
+        .article-nav-btn span {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #64748b;
+        }
+
+        .article-nav-btn h5 {
+            font-size: 0.98rem;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .article-nav-btn.next {
+            text-align: right;
+            align-items: flex-end;
+        }
+
+        @media (max-width: 768px) {
+            .article-hero h1 {
+                font-size: 2.2rem;
+            }
+            .article-author-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+            .article-navigation {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .article-nav-btn {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body itemscope itemtype="https://schema.org/TechArticle">
+
+    <!-- Navigation Header -->
+    <header class="site-header">
+    <nav class="navbar" itemscope itemtype="https://schema.org/SiteNavigationElement" aria-label="Main navigation">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo-icon.jpg" alt="Curious Kaizer Logo" class="logo-icon" width="50" height="38">
+                <span class="logo-text">Curious Kaizer</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#home" title="Home" itemprop="url"><span itemprop="name">Home</span></a></li>
+                <li><a href="index.html#process" title="Process" itemprop="url"><span itemprop="name">Process</span></a></li>
+                <li><a href="services.html" title="Capabilities" itemprop="url"><span itemprop="name">Capabilities</span></a></li>
+                <li><a href="index.html#why-us" title="Why Choose Us" itemprop="url"><span itemprop="name">Why Choose Us</span></a></li>
+                <li><a href="portfolio.html" title="Portfolio" itemprop="url"><span itemprop="name">Portfolio</span></a></li>
+                <li><a href="pricing.html" title="Pricing" itemprop="url"><span itemprop="name">Pricing</span></a></li>
+                <li><a href="blog.html" class="active" title="Blog" itemprop="url"><span itemprop="name">Blog</span></a></li>
+                <li class="mobile-cta-item"><a href="contact.html" class="nav-cta-btn-mobile" itemprop="url"><span itemprop="name"><span class="cta-text-long">Book Free Call</span><span class="cta-text-short">Book Call</span></span> <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+            <a href="contact.html" class="nav-cta-btn"><span class="cta-text-long">Book Free Call</span><span class="cta-text-short">Book Call</span> <i class="fas fa-arrow-right"></i></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    </header>
+
+    <!-- Subpage Hero - Article Headers -->
+    <section class="article-hero">
+        <div class="container">
+            <div class="breadcrumb" aria-label="Breadcrumb navigation">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right" style="font-size: 0.7rem;"></i>
+                <a href="blog.html">Blog</a>
+                <i class="fas fa-chevron-right" style="font-size: 0.7rem;"></i>
+                <span style="color: #0f172a;">Edge Rendering</span>
+            </div>
+            
+            <span class="article-tag" itemprop="genre">Web Design</span>
+            <h1 itemprop="headline">Edge Rendering in 2026: Why Your Next App Should Run at 300+ Locations</h1>
+            
+            <div class="article-meta-bar">
+                <span itemprop="author" itemscope itemtype="https://schema.org/Person"><strong itemprop="name">Jai Goel</strong></span>
+                <span>•</span>
+                <time datetime="2026-07-18" itemprop="datePublished">July 18, 2026</time>
+                <span>•</span>
+                <span>7 min read</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="article-main-section" itemprop="articleBody">
+        <div class="container">
+            <div class="article-container">
+                <div class="article-body">
+                    
+                    <p>In 2026, delivering sub-50ms interactive experiences across continents is no longer a niche optimization — it's competitive differentiation. Modern users expect immediate feedback, and search engines reward fast, resilient experiences. The teams that win this year treat the edge as the primary runtime and the cloud as coordination and storage.</p>
+                    
+                    <p>The centralized origin server model has a fundamental physics problem: a user in Singapore connecting to a server in US East experiences 200+ milliseconds of network latency before a single byte arrives. Edge computing solves this by running server-side logic at 300+ global points of presence, placing execution within milliseconds of every user on the planet.</p>
+                    
+                    <h2>The Performance Impact: 60-80% TTFB Reduction</h2>
+                    <p>Time to First Byte (TTFB) is the critical metric that measures how long it takes for a browser to receive the first byte of data from a server. In our testing at Curious Kaizer, moving from centralized rendering to edge rendering delivered dramatic improvements:</p>
+                    
+                    <blockquote>
+                        "A user in Mumbai gets their HTML generated at the Mumbai edge node, not routed through us-east-1. The TTFB improvement is dramatic: 60-80% reduction compared to centralized origins. That translates from 200ms+ round trips down to sub-50ms function execution."
+                    </blockquote>
+                    
+                    <p>The conversion math is well-established at this point. Every 100ms of added latency costs roughly 7% in conversions. For e-commerce sites with global audiences, this difference between 200ms and 50ms can mean millions in annual revenue.</p>
+
+                    <h2>Understanding Edge Runtimes vs Traditional Serverless</h2>
+                    <p>Edge functions are not traditional serverless functions. While AWS Lambda uses containerized processes with cold starts of 100-1000ms, edge runtimes use V8 isolates that start in under 1 millisecond:</p>
+                    
+                    <table style="width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid #e2e8f0;">
+                                <th style="text-align: left; padding: 12px; background: #f8fafc;">Property</th>
+                                <th style="text-align: left; padding: 12px; background: #f8fafc;">V8 Isolate (Edge)</th>
+                                <th style="text-align: left; padding: 12px; background: #f8fafc;">Container (Serverless)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #f1f5f9;">
+                                <td style="padding: 12px;">Cold Start</td>
+                                <td style="padding: 12px;">&lt; 1ms</td>
+                                <td style="padding: 12px;">100-1000ms</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #f1f5f9;">
+                                <td style="padding: 12px;">CPU Limit</td>
+                                <td style="padding: 12px;">30-50ms</td>
+                                <td style="padding: 12px;">Minutes</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #f1f5f9;">
+                                <td style="padding: 12px;">Memory Limit</td>
+                                <td style="padding: 12px;">128MB</td>
+                                <td style="padding: 12px;">512MB-10GB</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #f1f5f9;">
+                                <td style="padding: 12px;">Node.js APIs</td>
+                                <td style="padding: 12px;">None</td>
+                                <td style="padding: 12px;">Full</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px;">Global Deployment</td>
+                                <td style="padding: 12px;">300+ PoPs</td>
+                                <td style="padding: 12px;">1-4 regions</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>Choosing Your Edge Platform</h2>
+                    <p>Three platforms dominate edge function deployment in 2026. Here's how to choose the right one for your use case:</p>
+                    
+                    <h3>Cloudflare Workers</h3>
+                    <p>Cloudflare Workers runs on 330+ PoPs with up to 50ms CPU time per request. Workers integrates natively with Cloudflare KV (globally replicated key-value), R2 (S3-compatible object storage with zero egress fees), D1 (SQLite at the edge), Durable Objects (stateful coordination), and the AI Gateway. The platform offers the richest feature set and is framework-agnostic, making it the best choice for platform-level infrastructure teams building custom edge logic.</p>
+                    
+                    <h3>Vercel Edge Functions</h3>
+                    <p>Vercel Edge Functions runs on the Cloudflare network and offers the tightest integration with Next.js middleware and the App Router. Adding <code>export const runtime = 'edge'</code> to any route or middleware file deploys it to the edge globally. Vercel Edge Config provides a globally replicated key-value store optimized for low-latency reads of configuration data like feature flags and A/B test definitions. The 5MB Edge Config limit makes it unsuitable for user data but ideal for small, frequently read configuration objects.</p>
+                    
+                    <h3>AWS CloudFront Functions</h3>
+                    <p>CloudFront Functions runs at AWS's 600+ PoPs with an extremely tight 1ms CPU time limit per invocation and a 10KB code size limit. These constraints make it suitable only for simple header manipulation, URL rewrites, and basic redirects. For more complex logic, AWS offers Lambda@Edge (runs at regional CloudFront edge nodes, not all PoPs, with 5-30 second execution time and full Node.js access). Teams on AWS should use CloudFront Functions for lightweight transforms and Lambda@Edge for anything requiring data access or complex computation.</p>
+
+                    <h2>What Should Run at the Edge?</h2>
+                    <p>The catch with edge runtimes is real constraints. Edge functions typically give you 30-50ms of CPU time, no full Node.js API access, no native modules, and limited memory. You cannot run your entire Express app at the edge. What you can do:</p>
+                    
+                    <ul>
+                        <li><strong>Render HTML</strong> - Generate personalized page content based on user context</li>
+                        <li><strong>Handle auth checks</strong> - Validate JWTs and session tokens without hitting origin</li>
+                        <li><strong>Serve personalized content</strong> - A/B test routing, feature flags, geo-specific pricing</li>
+                        <li><strong>Run A/B test logic</strong> - Split traffic and serve variations instantly</li>
+                        <li><strong>Geo-routing</strong> - Route users to nearest data centers or regional services</li>
+                    </ul>
+                    
+                    <p>One developer on r/developersIndia described it as "the right architecture for the 90% of requests that are read-heavy and latency-sensitive, while the remaining 10% of write-heavy or compute-intensive operations still route to centralized origins."</p>
+
+                    <h2>Practical Implementation Example</h2>
+                    <p>Here's a simple example of an edge function that handles A/B testing routing using Cloudflare Workers:</p>
+
+<pre><code>// Cloudflare Worker for A/B testing routing
+export default {
+  async fetch(request, env, ctx) {
+    const url = new URL(request.url);
+    const userId = request.headers.get('X-User-ID') || 'anonymous';
+    
+    // Simple hash-based A/B test assignment
+    const hash = userId.split('').reduce((a, b) => {
+      a = ((a << 5) - a) + b.charCodeAt(0);
+      return a & a;
+    }, 0);
+    
+    const variant = Math.abs(hash) % 2 === 0 ? 'A' : 'B';
+    
+    // Add variant to response headers for analytics
+    const response = await fetch(url);
+    const newResponse = new Response(response.body, response);
+    newResponse.headers.set('X-AB-Variant', variant);
+    
+    return newResponse;
+  }
+};</code></pre>
+
+                    <h2>Key Takeaways for 2026</h2>
+                    <p>If you're building web applications today, edge rendering should be your default architecture for:</p>
+                    <ol>
+                        <li><strong>Global audiences</strong> - Any app with users across multiple continents</li>
+                        <li><strong>E-commerce</strong> - Where every 100ms costs 7% in conversions</li>
+                        <li><strong>Content delivery</strong> - News, media, and content-heavy applications</li>
+                        <li><strong>Real-time features</strong> - Live search, collaboration, and interactive tools</li>
+                    </ol>
+                    
+                    <p>The edge isn't an afterthought in 2026 — it's the control plane for latency, reliability, and SEO. Start treating it as your primary runtime, and use centralized cloud services only for coordination, storage, and compute-heavy operations.</p>
+
+                    <!-- Author Details -->
+                    <div class="article-author-card">
+                        <div class="article-author-avatar">JG</div>
+                        <div class="article-author-details">
+                            <h4>About Jai Goel</h4>
+                            <p>Jai Goel is the Founder and Lead Web Architect of Curious Kaizer. He creates bespoke web platforms, custom database schemes, voice-controlled Chrome tools, and conversion-focused web layouts. Jai personally codes and supervises every project shipped from the Delhi headquarters.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Article Navigation footer -->
+                    <div class="article-navigation">
+                        <a href="blog-vanilla-js-crm.html" class="article-nav-btn">
+                            <span>Previous Story</span>
+                            <h5>Why We Built CuriousCRM on Vanilla JS with Zero Frameworks</h5>
+                        </a>
+                        <a href="blog-edge-ai-inference.html" class="article-nav-btn next">
+                            <span>Next Story</span>
+                            <h5>AI Inference at the Edge: Running LLMs in Under 50ms Globally</h5>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer footer-premium" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo-link">
+                        <img src="images/logo.jpg" alt="Curious Kaizer Logo" class="footer-logo-img" width="72" height="72" loading="lazy" decoding="async">
+                    </a>
+                    <p class="subtitle" style="margin-top: 0.5rem;">Where Innovation Meets Digital Excellence</p>
+                    <p class="tagline">
+                        Crafting bespoke, high-performance web applications, custom platforms, and design systems that scale your business.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/curious-kaizer/" target="_blank" rel="noopener me" aria-label="Curious Kaizer LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/curiouskaizer/" target="_blank" rel="noopener me" aria-label="Curious Kaizer Instagram Profile"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-nav-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="services.html">Custom Websites</a></li>
+                        <li><a href="services.html">E-Commerce Stores</a></li>
+                        <li><a href="services.html">Web Applications</a></li>
+                        <li><a href="crm-product.html">Custom CRM Solutions</a></li>
+                        <li><a href="services.html">AI & Automation Tools</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-nav-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html#home">Home / Process</a></li>
+                        <li><a href="services.html">Capabilities</a></li>
+                        <li><a href="index.html#why-us">Why Choose Us</a></li>
+                        <li><a href="portfolio.html">Our Portfolio</a></li>
+                        <li><a href="pricing.html">Pricing / FAQ</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Get in Touch</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@curiouskaizer.com">info@curiouskaizer.com</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:curiouskaizer@gmail.com">curiouskaizer@gmail.com</a></li>
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:+918595121436">+91 85951 21436</a></li>
+                        <li><i class="fab fa-whatsapp" style="color: #25d366;"></i> <a href="https://wa.me/918595121436" target="_blank" rel="noopener">Chat on WhatsApp</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Delhi, India | Remote Worldwide</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-left-info">
+                    <p class="copyright">&copy; 2026 Curious Kaizer. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="terms.html">Terms of Service</a>
+                    <span>•</span>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quick Contact Dock (WhatsApp & Call CTAs) -->
+    <div class="quick-contact-dock">
+        <a href="https://wa.me/918595121436?text=Hi!%20I'd%20like%20to%20get%20an%20instant%20quote%20and%20discuss%20a%20project." class="quick-dock-btn whatsapp" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i>
+            <span>Quote</span>
+        </a>
+        <a href="tel:+918595121436" class="quick-dock-btn call">
+            <i class="fas fa-phone-alt"></i>
+            <span>Call</span>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/scripts.js" defer></script>
+    <script src="js/analytics-tracker.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navToggle = document.getElementById('navToggle');
+            const navLinks = document.getElementById('navLinks');
+            
+            if (navToggle && navLinks) {
+                navToggle.addEventListener('click', () => {
+                    const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
+                    navToggle.setAttribute('aria-expanded', !expanded);
+                    navLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

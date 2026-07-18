@@ -63,6 +63,54 @@
         <priority>0.8</priority>
     </url>
     
+    <!-- Blog Article - RAG Latency Edge Optimization -->
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-rag-latency-optimization.html</loc>
+        <lastmod>2026-07-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- Blog Article - Database Normalization -->
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-database-normalization.html</loc>
+        <lastmod>2026-07-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- Blog Article - Canonical Redirect Loops -->
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-canonical-redirect-loops.html</loc>
+        <lastmod>2026-07-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- Blog Article - B2B Chemical Procurement Case Study -->
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-b2b-procurement-case-study.html</loc>
+        <lastmod>2026-07-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- Blog Article - Voice AI Gemini Integration -->
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-voice-ai-gemini-integration.html</loc>
+        <lastmod>2026-07-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- Blog Article - Vanilla JS CRM Architecture -->
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-vanilla-js-crm.html</loc>
+        <lastmod>2026-07-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
     <!-- Privacy Policy Page -->
     <url>
         <loc>https://www.curiouskaizer.com/privacy.html</loc>

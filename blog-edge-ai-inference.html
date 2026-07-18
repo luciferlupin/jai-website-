@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KFQ266Z1Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9KFQ266Z1Z');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>AI Inference at the Edge: Running LLMs in Under 50ms Globally | Curious Kaizer</title>
+    <meta name="description" content="Learn how edge AI inference delivers real-time responses for content moderation, recommendations, and fraud detection at 50ms, eliminating the 300ms latency of centralized GPU clusters.">
+    <meta name="keywords" content="edge AI inference, LLM at the edge, real-time AI, Cloudflare Workers AI, Vercel AI SDK, content moderation, AI performance optimization">
+    
+    <!-- Advanced SEO Meta Tags -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.curiouskaizer.com/blog-edge-ai-inference.html" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="AI Inference at the Edge: Running LLMs in Under 50ms Globally | Curious Kaizer">
+    <meta property="og:description" content="Centralized GPU clusters add 300ms latency. Edge AI inference delivers real-time responses for content moderation, recommendations, and fraud detection at 50ms.">
+    <meta property="og:url" content="https://www.curiouskaizer.com/blog-edge-ai-inference.html">
+    <meta property="og:image" content="https://www.curiouskaizer.com/images/og-image.jpg">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter+Tight:wght@700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter+Tight:wght@700;800&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css?v=1.4">
+    
+    <!-- Premium Article Layout Styles -->
+    <style>
+        body {
+            font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", sans-serif !important;
+        }
+
+        .article-hero {
+            padding: 8rem 0 3.5rem;
+            background-color: #fafbfc;
+            background-image: linear-gradient(rgba(37, 99, 235, 0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235, 0.015) 1px, transparent 1px);
+            background-size: 30px 30px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .breadcrumb a {
+            color: #64748b;
+            transition: color 0.2s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: #2563eb;
+        }
+
+        .article-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+            color: #0f172a;
+            margin: 1rem 0 1.5rem;
+            font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif !important;
+            text-align: left;
+            max-width: 900px;
+        }
+
+        .article-meta-bar {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.92rem;
+            color: #475569;
+            font-weight: 500;
+            flex-wrap: wrap;
+        }
+
+        .article-tag {
+            background: rgba(37, 99, 235, 0.08);
+            color: #2563eb;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .article-main-section {
+            padding: 4.5rem 0;
+            background-color: #ffffff;
+        }
+
+        .article-container {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        /* Typography spacing & rules */
+        .article-body {
+            font-size: 1.125rem;
+            line-height: 1.85;
+            color: #334155;
+            font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", sans-serif !important;
+        }
+
+        .article-body p {
+            margin-bottom: 1.8rem;
+        }
+
+        .article-body h2 {
+            font-size: 1.85rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            color: #0f172a;
+            margin: 2.8rem 0 1.2rem;
+            font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif !important;
+            line-height: 1.3;
+        }
+
+        .article-body h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #0f172a;
+            margin: 2rem 0 1rem;
+            font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif !important;
+        }
+
+        .article-body ul, .article-body ol {
+            margin-bottom: 1.8rem;
+            padding-left: 1.5rem;
+        }
+
+        .article-body li {
+            margin-bottom: 0.6rem;
+        }
+
+        .article-body blockquote {
+            border-left: 4px solid #2563eb;
+            background-color: #f8fafc;
+            padding: 1.2rem 1.8rem;
+            border-radius: 0 12px 12px 0;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #475569;
+        }
+
+        .article-body blockquote p {
+            margin-bottom: 0;
+        }
+
+        /* Code block stylings */
+        pre {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 1.5rem;
+            overflow-x: auto;
+            margin: 2rem 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.92rem;
+            line-height: 1.5;
+            color: #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        code {
+            font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.95em;
+            color: #0f172a;
+            background-color: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        pre code {
+            color: #e2e8f0;
+            background-color: transparent;
+            padding: 0;
+            border-radius: 0;
+        }
+
+        /* Author Info Profile */
+        .article-author-card {
+            background-color: #fafbfc;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 2.2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.8rem;
+            margin: 4.5rem 0 2rem;
+        }
+
+        .article-author-avatar {
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            background: #0071e3;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 800;
+            border: 2px solid white;
+            box-shadow: 0 8px 16px rgba(0, 113, 227, 0.15);
+            flex-shrink: 0;
+        }
+
+        .article-author-details h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.4rem;
+        }
+
+        .article-author-details p {
+            color: #475569;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+
+        /* Nav links at bottom */
+        .article-navigation {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 2rem;
+            margin-top: 3.5rem;
+            gap: 16px;
+        }
+
+        .article-nav-btn {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            color: #475569;
+            text-decoration: none;
+            max-width: 48%;
+            transition: color 0.2s ease;
+        }
+
+        .article-nav-btn:hover {
+            color: #2563eb;
+        }
+
+        .article-nav-btn span {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #64748b;
+        }
+
+        .article-nav-btn h5 {
+            font-size: 0.98rem;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .article-nav-btn.next {
+            text-align: right;
+            align-items: flex-end;
+        }
+
+        @media (max-width: 768px) {
+            .article-hero h1 {
+                font-size: 2.2rem;
+            }
+            .article-author-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+            .article-navigation {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .article-nav-btn {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body itemscope itemtype="https://schema.org/TechArticle">
+
+    <!-- Navigation Header -->
+    <header class="site-header">
+    <nav class="navbar" itemscope itemtype="https://schema.org/SiteNavigationElement" aria-label="Main navigation">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo-icon.jpg" alt="Curious Kaizer Logo" class="logo-icon" width="50" height="38">
+                <span class="logo-text">Curious Kaizer</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#home" title="Home" itemprop="url"><span itemprop="name">Home</span></a></li>
+                <li><a href="index.html#process" title="Process" itemprop="url"><span itemprop="name">Process</span></a></li>
+                <li><a href="services.html" title="Capabilities" itemprop="url"><span itemprop="name">Capabilities</span></a></li>
+                <li><a href="index.html#why-us" title="Why Choose Us" itemprop="url"><span itemprop="name">Why Choose Us</span></a></li>
+                <li><a href="portfolio.html" title="Portfolio" itemprop="url"><span itemprop="name">Portfolio</span></a></li>
+                <li><a href="pricing.html" title="Pricing" itemprop="url"><span itemprop="name">Pricing</span></a></li>
+                <li><a href="blog.html" class="active" title="Blog" itemprop="url"><span itemprop="name">Blog</span></a></li>
+                <li class="mobile-cta-item"><a href="contact.html" class="nav-cta-btn-mobile" itemprop="url"><span itemprop="name"><span class="cta-text-long">Book Free Call</span><span class="cta-text-short">Book Call</span></span> <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+            <a href="contact.html" class="nav-cta-btn"><span class="cta-text-long">Book Free Call</span><span class="cta-text-short">Book Call</span> <i class="fas fa-arrow-right"></i></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    </header>
+
+    <!-- Subpage Hero - Article Headers -->
+    <section class="article-hero">
+        <div class="container">
+            <div class="breadcrumb" aria-label="Breadcrumb navigation">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right" style="font-size: 0.7rem;"></i>
+                <a href="blog.html">Blog</a>
+                <i class="fas fa-chevron-right" style="font-size: 0.7rem;"></i>
+                <span style="color: #0f172a;">Edge AI Inference</span>
+            </div>
+            
+            <span class="article-tag" itemprop="genre">AI & Automation</span>
+            <h1 itemprop="headline">AI Inference at the Edge: Running LLMs in Under 50ms Globally</h1>
+            
+            <div class="article-meta-bar">
+                <span itemprop="author" itemscope itemtype="https://schema.org/Person"><strong itemprop="name">Jai Goel</strong></span>
+                <span>•</span>
+                <time datetime="2026-07-18" itemprop="datePublished">July 18, 2026</time>
+                <span>•</span>
+                <span>8 min read</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="article-main-section" itemprop="articleBody">
+        <div class="container">
+            <div class="article-container">
+                <div class="article-body">
+                    
+                    <p>Running AI inference at the edge eliminates the round trip to a centralized GPU cluster. For real-time applications like content moderation, product recommendations, language detection, and fraud scoring, the difference between 50ms edge inference and 300ms centralized inference determines whether the result arrives before or after the user makes a decision.</p>
+                    
+                    <p>In 2026, model inference is following the same path that static content, then dynamic rendering, then serverless functions already traveled. Start centralized, move to the edge when latency matters. This article explores how to implement edge AI inference and when it makes sense for your application.</p>
+                    
+                    <h2>The Latency Problem with Centralized AI</h2>
+                    <p>Traditional AI inference architectures route all requests to centralized GPU clusters, typically hosted in a few cloud regions. This creates a fundamental latency problem:</p>
+                    
+                    <blockquote>
+                        "A user in Tokyo requesting content moderation must send data to a GPU cluster in us-east-1, wait for model inference, and receive results. The round trip typically takes 250-350ms, even before accounting for model execution time. For real-time applications, this is unacceptable."
+                    </blockquote>
+                    
+                    <p>The latency breakdown for centralized AI inference typically looks like:</p>
+                    <ul>
+                        <li><strong>Network round trip:</strong> 150-250ms (user to cloud region)</li>
+                        <li><strong>Model loading:</strong> 50-100ms (if not cached)</li>
+                        <li><strong>Inference execution:</strong> 50-150ms (depending on model size)</li>
+                        <li><strong>Total:</strong> 250-500ms</li>
+                    </ul>
+
+                    <h2>Edge AI: Bringing GPUs Closer to Users</h2>
+                    <p>Edge AI inference platforms solve this by deploying GPU-equipped nodes at edge locations. Cloudflare Workers AI runs inference on GPU-equipped edge nodes. Fastly's AI Accelerator caches and serves model responses at the edge. Vercel's AI SDK supports edge runtime for streaming LLM responses.</p>
+                    
+                    <p>The latency improvement is dramatic:</p>
+                    <ul>
+                        <li><strong>Network round trip:</strong> 5-20ms (user to nearest edge node)</li>
+                        <li><strong>Model loading:</strong> 0-10ms (models cached at edge)</li>
+                        <li><strong>Inference execution:</strong> 30-80ms (optimized edge GPUs)</li>
+                        <li><strong>Total:</strong> 35-110ms</li>
+                    </ul>
+                    
+                    <p>This represents a 60-80% reduction in total latency, moving from the 300ms range to the 50ms range.</p>
+
+                    <h2>Use Cases That Benefit from Edge AI</h2>
+                    <p>Not every AI application needs edge inference. The sweet spot is real-time, latency-sensitive use cases where the AI result influences immediate user decisions:</p>
+                    
+                    <h3>Content Moderation</h3>
+                    <p>Social platforms and user-generated content sites need to moderate content in real-time. Edge AI can analyze text, images, and video frames as they're uploaded, flagging inappropriate content before it reaches other users. The 50ms response time means moderation happens during the upload process, not after.</p>
+                    
+                    <h3>Fraud Detection</h3>
+                    <p>E-commerce and financial services need to evaluate transactions for fraud as they happen. Edge AI can analyze transaction patterns, user behavior, and device fingerprints in real-time, blocking fraudulent transactions before they complete. Every 100ms of latency increases the window for fraudsters to exploit.</p>
+                    
+                    <h3>Product Recommendations</h3>
+                    <p>E-commerce sites use AI to recommend products based on user behavior. Edge AI can generate recommendations in real-time as users browse, updating the UI instantly without page reloads. The difference between 50ms and 300ms determines whether recommendations feel responsive or laggy.</p>
+                    
+                    <h3>Language Detection & Translation</h3>
+                    <p>Global applications need to detect user language and translate content dynamically. Edge AI can detect language from user input and serve translated content instantly, creating a seamless multilingual experience.</p>
+
+                    <h2>Implementing Edge AI with Cloudflare Workers AI</h2>
+                    <p>Cloudflare Workers AI provides a straightforward API for running inference at the edge. Here's an example of content moderation using Workers AI:</p>
+
+<pre><code// Cloudflare Worker for content moderation
+export default {
+  async fetch(request, env, ctx) {
+    const url = new URL(request.url);
+    
+    // Only handle POST requests to /moderate
+    if (request.method === 'POST' && url.pathname === '/moderate') {
+      const data = await request.json();
+      const text = data.text;
+      
+      // Run content moderation model
+      const response = await env.AI.run('@cf/meta/llama-2-7b-chat-int8', {
+        prompt: `Classify this text as appropriate or inappropriate: "${text}". Respond with only "appropriate" or "inappropriate".`
+      });
+      
+      const isAppropriate = response.response.toLowerCase().includes('appropriate');
+      
+      return new Response(JSON.stringify({
+        appropriate: isAppropriate,
+        confidence: 0.95
+      }), {
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+    
+    return new Response('Not found', { status: 404 });
+  }
+};</code></pre>
+
+                    <h2>Implementing Edge AI with Vercel AI SDK</h2>
+                    <p>Vercel's AI SDK provides a TypeScript-first approach to edge AI inference with streaming support. Here's an example using the edge runtime:</p>
+
+<pre><code// app/api/chat/route.ts
+import { OpenAIStream, StreamingTextResponse } from 'ai';
+import OpenAI from 'openai';
+
+export const runtime = 'edge';
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+
+export async function POST(req: Request) {
+  const { messages } = await req.json();
+  
+  const response = await openai.chat.completions.create({
+    model: 'gpt-4',
+    stream: true,
+    messages,
+  });
+  
+  const stream = OpenAIStream(response);
+  
+  return new StreamingTextResponse(stream);
+}</code></pre>
+
+                    <h2>Cost Considerations</h2>
+                    <p>Edge AI inference typically costs more per request than centralized inference due to the distributed infrastructure. However, the total cost of ownership may be lower when you factor in:</p>
+                    
+                    <ul>
+                        <li><strong>Reduced egress costs</strong> - Data stays closer to users</li>
+                        <li><strong>Higher conversion rates</strong> - Faster responses mean more completed transactions</li>
+                        <li><strong>Better user experience</strong> - Lower latency improves engagement and retention</li>
+                        <li><strong>Reduced load on origin</strong> - Edge caching reduces requests to centralized systems</li>
+                    </ul>
+                    
+                    <p>For high-traffic applications, the cost difference is often negligible compared to the revenue impact of improved latency.</p>
+
+                    <h2>When to Stick with Centralized AI</h2>
+                    <p>Edge AI isn't always the right choice. Consider centralized inference when:</p>
+                    
+                    <ul>
+                        <li><strong>Model size is large</strong> - Models over 10GB may not fit well in edge memory</li>
+                        <li><strong>Batch processing</strong> - Processing large batches is more efficient centrally</li>
+                        <li><strong>Complex workflows</strong> - Multi-step AI pipelines benefit from centralized orchestration</li>
+                        <li><strong>Low traffic</strong> - Edge infrastructure may not be cost-effective for small applications</li>
+                        <li><strong>Regulatory requirements</strong> - Some jurisdictions require data processing in specific regions</li>
+                    </ul>
+
+                    <h2>Key Takeaways</h2>
+                    <p>Edge AI inference represents a significant shift in how we deploy AI applications. The key principles for 2026:</p>
+                    
+                    <ol>
+                        <li><strong>Latency matters for real-time AI</strong> - If your AI affects immediate user decisions, edge inference is worth considering</li>
+                        <li><strong>Start centralized, move to edge</strong> - Prototype with centralized inference, then optimize hot paths with edge deployment</li>
+                        <li><strong>Choose the right platform</strong> - Cloudflare Workers for framework-agnostic needs, Vercel AI SDK for Next.js applications</li>
+                        <li><strong>Measure the business impact</strong> - Track conversion rates, engagement metrics, and user satisfaction to justify edge AI investment</li>
+                    </ol>
+                    
+                    <p>The pattern is consistent: model inference is following the same path that static content, then dynamic rendering, then serverless functions already traveled. Start centralized, move to the edge when latency matters.</p>
+
+                    <!-- Author Details -->
+                    <div class="article-author-card">
+                        <div class="article-author-avatar">JG</div>
+                        <div class="article-author-details">
+                            <h4>About Jai Goel</h4>
+                            <p>Jai Goel is the Founder and Lead Web Architect of Curious Kaizer. He creates bespoke web platforms, custom database schemes, voice-controlled Chrome tools, and conversion-focused web layouts. Jai personally codes and supervises every project shipped from the Delhi headquarters.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Article Navigation footer -->
+                    <div class="article-navigation">
+                        <a href="blog-edge-rendering-2026.html" class="article-nav-btn">
+                            <span>Previous Story</span>
+                            <h5>Edge Rendering in 2026: Why Your Next App Should Run at 300+ Locations</h5>
+                        </a>
+                        <a href="blog-inp-core-web-vitals.html" class="article-nav-btn next">
+                            <span>Next Story</span>
+                            <h5>INP Replaces FID: Optimizing for the New Core Web Vital in 2026</h5>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer footer-premium" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo-link">
+                        <img src="images/logo.jpg" alt="Curious Kaizer Logo" class="footer-logo-img" width="72" height="72" loading="lazy" decoding="async">
+                    </a>
+                    <p class="subtitle" style="margin-top: 0.5rem;">Where Innovation Meets Digital Excellence</p>
+                    <p class="tagline">
+                        Crafting bespoke, high-performance web applications, custom platforms, and design systems that scale your business.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/curious-kaizer/" target="_blank" rel="noopener me" aria-label="Curious Kaizer LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/curiouskaizer/" target="_blank" rel="noopener me" aria-label="Curious Kaizer Instagram Profile"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-nav-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="services.html">Custom Websites</a></li>
+                        <li><a href="services.html">E-Commerce Stores</a></li>
+                        <li><a href="services.html">Web Applications</a></li>
+                        <li><a href="crm-product.html">Custom CRM Solutions</a></li>
+                        <li><a href="services.html">AI & Automation Tools</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-nav-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html#home">Home / Process</a></li>
+                        <li><a href="services.html">Capabilities</a></li>
+                        <li><a href="index.html#why-us">Why Choose Us</a></li>
+                        <li><a href="portfolio.html">Our Portfolio</a></li>
+                        <li><a href="pricing.html">Pricing / FAQ</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Get in Touch</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@curiouskaizer.com">info@curiouskaizer.com</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:curiouskaizer@gmail.com">curiouskaizer@gmail.com</a></li>
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:+918595121436">+91 85951 21436</a></li>
+                        <li><i class="fab fa-whatsapp" style="color: #25d366;"></i> <a href="https://wa.me/918595121436" target="_blank" rel="noopener">Chat on WhatsApp</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Delhi, India | Remote Worldwide</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-left-info">
+                    <p class="copyright">&copy; 2026 Curious Kaizer. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="terms.html">Terms of Service</a>
+                    <span>•</span>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quick Contact Dock (WhatsApp & Call CTAs) -->
+    <div class="quick-contact-dock">
+        <a href="https://wa.me/918595121436?text=Hi!%20I'd%20like%20to%20get%20an%20instant%20quote%20and%20discuss%20a%20project." class="quick-dock-btn whatsapp" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i>
+            <span>Quote</span>
+        </a>
+        <a href="tel:+918595121436" class="quick-dock-btn call">
+            <i class="fas fa-phone-alt"></i>
+            <span>Call</span>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/scripts.js" defer></script>
+    <script src="js/analytics-tracker.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navToggle = document.getElementById('navToggle');
+            const navLinks = document.getElementById('navLinks');
+            
+            if (navToggle && navLinks) {
+                navToggle.addEventListener('click', () => {
+                    const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
+                    navToggle.setAttribute('aria-expanded', !expanded);
+                    navLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
