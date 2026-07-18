@@ -12041,7 +12041,7 @@ h6::after,
         min-height: auto !important;
         height: auto !important;
         margin-top: 0 !important;
-        padding-top: 10px !important; /* Minimized to 10px to bring the headline right to the top */
+        padding-top: 90px !important; /* Adjusted to 90px to prevent H1 pre-headline overlapping mobile header */
         padding-bottom: 40px !important;
     }
     
