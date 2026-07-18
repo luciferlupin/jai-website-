@@ -55,6 +55,14 @@
         <priority>0.7</priority>
     </url>
     
+    <!-- Blog Page - Articles & Updates by Jai Goel -->
+    <url>
+        <loc>https://www.curiouskaizer.com/blog.html</loc>
+        <lastmod>2026-07-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
     <!-- Privacy Policy Page -->
     <url>
         <loc>https://www.curiouskaizer.com/privacy.html</loc>

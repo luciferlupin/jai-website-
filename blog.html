@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KFQ266Z1Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9KFQ266Z1Z');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>Insights & Ideas | Tech, Design & SaaS Blog by Jai Goel - Curious Kaizer</title>
+    <meta name="description" content="Explore custom web development case studies, AI automation blueprints, and database optimization guides written by Jai Goel, founder of Curious Kaizer.">
+    <meta name="keywords" content="web development blog, SaaS case studies, Supabase analytics guide, AI voice search, custom web agency blog Delhi">
+    
+    <!-- Advanced SEO Meta Tags -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.curiouskaizer.com/blog.html" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Insights & Ideas | Curious Kaizer Blog">
+    <meta property="og:description" content="Web development guides, database optimizations, and tech workflows by Jai Goel.">
+    <meta property="og:url" content="https://www.curiouskaizer.com/blog.html">
+    <meta property="og:image" content="https://www.curiouskaizer.com/images/og-image.jpg">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@700;800&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css?v=1.4">
+    
+    <!-- Apple-style Encapsulated Blog Layout Styles -->
+    <style>
+        .blog-hero {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 8rem 0 6rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .blog-hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            font-family: 'Inter Tight', sans-serif;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .blog-hero-subtitle {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+        }
+
+        /* Filter Tab Bar (Apple Newsroom Style) */
+        .blog-filter-section {
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 70px;
+            z-index: 100;
+            padding: 1rem 0;
+        }
+
+        .blog-filter-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .blog-filter-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .blog-filter-btn {
+            background: transparent;
+            border: none;
+            outline: none;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #475569;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            white-space: nowrap;
+        }
+
+        .blog-filter-btn:hover {
+            color: #0f172a;
+            background: #f1f5f9;
+        }
+
+        .blog-filter-btn.active {
+            background: #2563eb;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
+
+        /* Featured Hero Post */
+        .blog-featured-card {
+            margin: 4rem 0 3rem 0;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 24px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .blog-featured-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border-color: #cbd5e1;
+        }
+
+        .blog-featured-image {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+            overflow: hidden;
+            min-height: 380px;
+        }
+
+        .blog-featured-image i {
+            font-size: 8rem;
+            color: #2563eb;
+            filter: drop-shadow(0 10px 15px rgba(37, 99, 235, 0.15));
+        }
+
+        .blog-featured-body {
+            padding: 3.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 1.25rem;
+            font-weight: 500;
+        }
+
+        .blog-tag {
+            background: rgba(37, 99, 235, 0.08);
+            color: #2563eb;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .blog-featured-body h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+            color: #0f172a;
+            margin-bottom: 1rem;
+            font-family: 'Inter Tight', sans-serif;
+        }
+
+        .blog-featured-body p {
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .blog-author-strip {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .blog-author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #2563eb;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            border: 2px solid #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-author-info span {
+            display: block;
+            font-weight: 700;
+            color: #0f172a;
+            font-size: 0.9rem;
+        }
+
+        .blog-author-info small {
+            color: #64748b;
+            font-size: 0.78rem;
+        }
+
+        /* Post Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .blog-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.06);
+            border-color: #cbd5e1;
+        }
+
+        .blog-card-image {
+            height: 220px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-bottom: 1px solid #e2e8f0;
+            transition: background 0.3s ease;
+        }
+
+        .blog-card:hover .blog-card-image {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+        }
+
+        .blog-card-image i {
+            font-size: 4.5rem;
+            color: #64748b;
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover .blog-card-image i {
+            color: #2563eb;
+            transform: scale(1.05);
+        }
+
+        .blog-card-body {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .blog-card-body h3 {
+            font-size: 1.45rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.3;
+            color: #0f172a;
+            margin-bottom: 0.75rem;
+            font-family: 'Inter Tight', sans-serif;
+            flex-grow: 0;
+        }
+
+        .blog-card-body p {
+            color: #475569;
+            line-height: 1.5;
+            font-size: 0.95rem;
+            margin-bottom: 1.75rem;
+            flex-grow: 1;
+        }
+
+        /* Jai G Author Profile Block */
+        .blog-author-card {
+            background: linear-gradient(135deg, #090d16 0%, #111827 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 3rem;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            margin-bottom: 6rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .blog-author-card-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #2563eb;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            flex-shrink: 0;
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .blog-author-card-content h3 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            font-family: 'Inter Tight', sans-serif;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .blog-author-card-content p {
+            color: #94a3b8;
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .blog-card.hidden {
+            display: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .blog-featured-card {
+                grid-template-columns: 1fr;
+            }
+            .blog-featured-image {
+                min-height: 280px;
+                padding: 2rem;
+            }
+            .blog-featured-body {
+                padding: 2rem;
+            }
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .blog-author-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem;
+                gap: 1.5rem;
+            }
+            .blog-hero-title {
+                font-size: 2.8rem;
+            }
+        }
+    </style>
+    
+    <!-- JSON-LD Structured Schema for the Blog Page -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Curious Kaizer Insights",
+        "description": "Premium design audits, serverless database insights, and B2B workflow solutions by Jai Goel.",
+        "url": "https://www.curiouskaizer.com/blog.html",
+        "publisher": {
+            "@type": "LocalBusiness",
+            "name": "Curious Kaizer",
+            "url": "https://www.curiouskaizer.com/",
+            "sameAs": [
+                "https://www.linkedin.com/company/curious-kaizer/",
+                "https://www.instagram.com/curiouskaizer/"
+            ]
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Jai Goel",
+            "jobTitle": "Founder & Web Architect"
+        }
+    }
+    </script>
+</head>
+<body itemscope itemtype="https://schema.org/WebPage">
+
+    <!-- Navigation Header -->
+    <header class="site-header">
+    <nav class="navbar" itemscope itemtype="https://schema.org/SiteNavigationElement" aria-label="Main navigation">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo-icon.jpg" alt="Curious Kaizer Logo" class="logo-icon" width="50" height="38">
+                <span class="logo-text">Curious Kaizer</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#home" title="Home" itemprop="url"><span itemprop="name">Home</span></a></li>
+                <li><a href="index.html#process" title="Process" itemprop="url"><span itemprop="name">Process</span></a></li>
+                <li><a href="services.html" title="Capabilities" itemprop="url"><span itemprop="name">Capabilities</span></a></li>
+                <li><a href="index.html#why-us" title="Why Choose Us" itemprop="url"><span itemprop="name">Why Choose Us</span></a></li>
+                <li><a href="portfolio.html" title="Portfolio" itemprop="url"><span itemprop="name">Portfolio</span></a></li>
+                <li><a href="pricing.html" title="Pricing" itemprop="url"><span itemprop="name">Pricing</span></a></li>
+                <li><a href="blog.html" class="active" title="Blog" itemprop="url"><span itemprop="name">Blog</span></a></li>
+                <li class="mobile-cta-item"><a href="contact.html" class="nav-cta-btn-mobile" itemprop="url"><span itemprop="name"><span class="cta-text-long">Book Free Call</span><span class="cta-text-short">Book Call</span></span> <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+            <a href="contact.html" class="nav-cta-btn"><span class="cta-text-long">Book Free Call</span><span class="cta-text-short">Book Call</span> <i class="fas fa-arrow-right"></i></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    </header>
+
+    <!-- Blog subpage Hero (Apple style dark backdrop) -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1 class="blog-hero-title">Insights & Ideas.</h1>
+            <p class="blog-hero-subtitle">By Jai Goel. Deep dives into custom SaaS pipelines, AI search agents, and serverless optimization strategies.</p>
+        </div>
+    </section>
+
+    <!-- Sticky Filter Tab Bar -->
+    <section class="blog-filter-section">
+        <div class="container">
+            <div class="blog-filter-container">
+                <button class="blog-filter-btn active" data-filter="all">All Stories</button>
+                <button class="blog-filter-btn" data-filter="saas">SaaS & Databases</button>
+                <button class="blog-filter-btn" data-filter="web">Web Design</button>
+                <button class="blog-filter-btn" data-filter="ai">AI & Automation</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="container">
+        
+        <!-- Featured Hero Post (SaaS Engineering) -->
+        <article class="blog-featured-card blog-card-item" data-category="saas">
+            <div class="blog-featured-image">
+                <i class="fas fa-database"></i>
+            </div>
+            <div class="blog-featured-body">
+                <div class="blog-meta">
+                    <span class="blog-tag">SaaS & Databases</span>
+                    <span>•</span>
+                    <span>8 min read</span>
+                </div>
+                <h2>Optimizing Database Schema to Reduce Supabase Storage by 80%</h2>
+                <p>A technical guide on serverless database normalization. Learn how we restructured database logs into normalized sessions and light event records to bypass RLS conflicts and decrease overhead.</p>
+                <div class="blog-author-strip">
+                    <div class="blog-author-avatar">JG</div>
+                    <div class="blog-author-info">
+                        <span>Jai Goel</span>
+                        <small>July 18, 2026</small>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Blog Posts Grid -->
+        <section class="blog-grid" id="blogGrid">
+            
+            <!-- Post 2: Web Design / SEO -->
+            <article class="blog-card blog-card-item" data-category="web">
+                <div class="blog-card-image">
+                    <i class="fas fa-search-dollar"></i>
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-meta">
+                        <span class="blog-tag">Web Design</span>
+                        <span>•</span>
+                        <span>5 min read</span>
+                    </div>
+                    <h3>Fixing Canonical Redirect Loops on Vercel Custom Domains</h3>
+                    <p>Why Google Search Console marks your pages as "Not Indexed: Alternative page with proper canonical tag". Understanding www/non-www discrepancies and how to configure matching headers.</p>
+                    <div class="blog-author-strip">
+                        <div class="blog-author-avatar">JG</div>
+                        <div class="blog-author-info">
+                            <span>Jai Goel</span>
+                            <small>July 18, 2026</small>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Post 3: Web Design / Case Study -->
+            <article class="blog-card blog-card-item" data-category="web">
+                <div class="blog-card-image">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-meta">
+                        <span class="blog-tag">Web Design</span>
+                        <span>•</span>
+                        <span>6 min read</span>
+                    </div>
+                    <h3>Case Study: Designing the Perfect B2B Procurement Portal</h3>
+                    <p>How we mapped industrial Raw Sourcing RFQ pipelines into a streamlined digital web workspace. An inside look at UX solutions crafted for WatFix Chemicals.</p>
+                    <div class="blog-author-strip">
+                        <div class="blog-author-avatar">JG</div>
+                        <div class="blog-author-info">
+                            <span>Jai Goel</span>
+                            <small>July 12, 2026</small>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Post 4: AI & Automation -->
+            <article class="blog-card blog-card-item" data-category="ai">
+                <div class="blog-card-image">
+                    <i class="fas fa-microphone-alt"></i>
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-meta">
+                        <span class="blog-tag">AI & Automation</span>
+                        <span>•</span>
+                        <span>7 min read</span>
+                    </div>
+                    <h3>Integrating voice-recognition automation with Gemini API</h3>
+                    <p>Developing Browser Buddy: Our customizable Chrome extension that enables hands-free browser actions, custom scraping pipelines, and AI conversational workflows.</p>
+                    <div class="blog-author-strip">
+                        <div class="blog-author-avatar">JG</div>
+                        <div class="blog-author-info">
+                            <span>Jai Goel</span>
+                            <small>July 5, 2026</small>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Post 5: SaaS / Vanilla JS -->
+            <article class="blog-card blog-card-item" data-category="saas">
+                <div class="blog-card-image">
+                    <i class="fab fa-js-square"></i>
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-meta">
+                        <span class="blog-tag">SaaS & Databases</span>
+                        <span>•</span>
+                        <span>6 min read</span>
+                    </div>
+                    <h3>Why We Built CuriousCRM on Vanilla JS with Zero Frameworks</h3>
+                    <p>React/Vue are excellent, but framework overhead can degrade first-load times. Why we constructed CuriousCRM's Kanban board and charts on native Javascript.</p>
+                    <div class="blog-author-strip">
+                        <div class="blog-author-avatar">JG</div>
+                        <div class="blog-author-info">
+                            <span>Jai Goel</span>
+                            <small>June 28, 2026</small>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- Jai Goel Author Profile Card (Apple style) -->
+        <section class="blog-author-card">
+            <div class="blog-author-card-avatar">JG</div>
+            <div class="blog-author-card-content">
+                <h3>About Jai Goel</h3>
+                <p>Jai Goel is the Founder and Lead Web Architect of Curious Kaizer. He creates bespoke web platforms, custom database schemes, voice-controlled Chrome tools, and conversion-focused web layouts. Jai personally codes and supervises every project shipped from the Delhi headquarters.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="images/logo-icon.jpg" alt="Curious Kaizer Logo" class="logo-icon" width="50" height="38">
+                        <span class="logo-text">Curious Kaizer</span>
+                    </a>
+                    <p class="footer-tagline"> Delhi's premium web engineering agency. Crafting customized digital designs, SaaS platforms, and AI workflows starting at ₹15,200.</p>
+                </div>
+                <div class="footer-links-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="services.html">Capabilities</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-column">
+                    <h4>Legals</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-column">
+                    <h4>Connect</h4>
+                    <div class="footer-social-links">
+                        <a href="https://www.linkedin.com/company/curious-kaizer/" target="_blank" rel="noopener me" aria-label="Curious Kaizer LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/curiouskaizer/" target="_blank" rel="noopener me" aria-label="Curious Kaizer Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Curious Kaizer. Delhi, India. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/scripts.js" defer></script>
+    <script src="js/analytics-tracker.js" defer></script>
+    
+    <!-- Simple Interactive Filter Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Interactive Toggle Navigation Menu Support
+            const navToggle = document.getElementById('navToggle');
+            const navLinks = document.getElementById('navLinks');
+            
+            if (navToggle && navLinks) {
+                navToggle.addEventListener('click', () => {
+                    const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
+                    navToggle.setAttribute('aria-expanded', !expanded);
+                    navLinks.classList.toggle('active');
+                });
+            }
+
+            // Blog Filter Functionality
+            const filterBtns = document.querySelectorAll('.blog-filter-btn');
+            const blogCards = document.querySelectorAll('.blog-card-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active button classes
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    // Filter cards
+                    const category = btn.getAttribute('data-filter');
+
+                    blogCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+                        
+                        if (category === 'all' || cardCategory === category) {
+                            card.classList.remove('hidden');
+                            // Add fade-in micro-animation
+                            card.style.opacity = '0';
+                            setTimeout(() => {
+                                card.style.transition = 'opacity 0.4s ease';
+                                card.style.opacity = '1';
+                            }, 50);
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
