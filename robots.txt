@@ -20,7 +20,7 @@ Disallow: /*.json$
 Disallow: /*?utm*
 
 # Sitemap location
-Sitemap: https://curiouskaizer.com/sitemap.xml
+Sitemap: https://www.curiouskaizer.com/sitemap.xml
 
 # Crawl delay for respectful crawling
 Crawl-delay: 1

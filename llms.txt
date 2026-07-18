@@ -17,18 +17,18 @@
 
 ## Navigation Map
 
-- [Home Page](https://curiouskaizer.com/) - Main overview, process timeline, and value proposition.
-- [Our Services](https://curiouskaizer.com/services.html) - Detailed breakdown of capabilities (SaaS, AI, E-Commerce, Dashboards).
-- [Portfolio & Case Studies](https://curiouskaizer.com/portfolio.html) - Live projects including real estate SaaS portals, 3D ring customizers, and legal databases.
-- [Pricing & FAQ](https://curiouskaizer.com/pricing.html) - Pricing packages, transparent licensing cost, and common web development FAQs.
-- [CRM Product Demo](https://curiouskaizer.com/crm-product.html) - Overview of CRM Pro, our flagship customizable Kanban business dashboard.
-- [Contact Us](https://curiouskaizer.com/contact.html) - Book a free discovery call or send an inquiry.
-- [Privacy Policy](https://curiouskaizer.com/privacy.html) - Our user data, cookies, and privacy policy terms.
-- [Terms of Service](https://curiouskaizer.com/terms.html) - Standard service agreement terms for our projects.
+- [Home Page](https://www.curiouskaizer.com/) - Main overview, process timeline, and value proposition.
+- [Our Services](https://www.curiouskaizer.com/services.html) - Detailed breakdown of capabilities (SaaS, AI, E-Commerce, Dashboards).
+- [Portfolio & Case Studies](https://www.curiouskaizer.com/portfolio.html) - Live projects including real estate SaaS portals, 3D ring customizers, and legal databases.
+- [Pricing & FAQ](https://www.curiouskaizer.com/pricing.html) - Pricing packages, transparent licensing cost, and common web development FAQs.
+- [CRM Product Demo](https://www.curiouskaizer.com/crm-product.html) - Overview of CRM Pro, our flagship customizable Kanban business dashboard.
+- [Contact Us](https://www.curiouskaizer.com/contact.html) - Book a free discovery call or send an inquiry.
+- [Privacy Policy](https://www.curiouskaizer.com/privacy.html) - Our user data, cookies, and privacy policy terms.
+- [Terms of Service](https://www.curiouskaizer.com/terms.html) - Standard service agreement terms for our projects.
 
 ## Contact Information
 
-- **Website**: https://curiouskaizer.com/
+- **Website**: https://www.curiouskaizer.com/
 - **Email**: info@curiouskaizer.com / curiouskaizer@gmail.com
 - **Phone**: +91 85951 21436
 - **WhatsApp**: https://wa.me/918595121436
