@@ -12041,7 +12041,7 @@ h6::after,
         min-height: auto !important;
         height: auto !important;
         margin-top: 0 !important;
-        padding-top: 120px !important; /* Adjusted to 120px to shift the mobile hero content further down */
+        padding-top: 10px !important; /* Minimized to 10px to bring the headline right to the top */
         padding-bottom: 40px !important;
     }
     
@@ -12052,7 +12052,7 @@ h6::after,
     
     .hero h1,
     .hero-content h1 {
-        margin-top: 0 !important;
+        margin-top: 30px !important; /* Added 30px top margin to shift H1 further down on mobile */
         padding-top: 0 !important;
     }
 
