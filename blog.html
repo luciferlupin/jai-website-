@@ -933,10 +933,223 @@
         @media (max-width: 991px) {
             .social-feeds-grid {
                 grid-template-columns: 1fr;
+                padding: 0 1rem;
+                gap: 1.5rem;
             }
             .social-embed-container {
                 height: auto;
                 min-height: 500px;
+            }
+            .social-feeds-header h2 {
+                font-size: 1.8rem;
+            }
+            /* Author card */
+            .author-profile-card {
+                padding: 0 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            /* ---- Social Feeds Section ---- */
+            .blog-social-feeds {
+                padding: 1.5rem 0 1rem;
+            }
+            .social-feeds-header {
+                margin-bottom: 1.75rem;
+                padding: 0 0.5rem;
+            }
+            .social-feeds-header h2 {
+                font-size: 1.5rem;
+            }
+            .social-feeds-header p {
+                font-size: 0.92rem !important;
+            }
+            .social-feeds-grid {
+                padding: 0 0.75rem;
+                gap: 1.25rem;
+            }
+            .social-feed-card {
+                border-radius: 16px;
+            }
+            .social-card-header {
+                padding: 1rem 1.25rem;
+            }
+            .social-card-title {
+                font-size: 0.92rem;
+                gap: 0.4rem;
+            }
+            .social-card-title .fab.fa-linkedin,
+            .social-card-title .fab.fa-instagram {
+                font-size: 1.1rem;
+            }
+            .social-follow-btn {
+                padding: 0.35rem 0.85rem;
+                font-size: 0.78rem;
+            }
+            .social-embed-container {
+                min-height: 420px;
+                max-height: 520px;
+            }
+            .carousel-slide {
+                padding: 0 6px;
+            }
+            .carousel-slide iframe {
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+            .carousel-slide blockquote.instagram-media {
+                min-width: 280px !important;
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+            .carousel-controls {
+                padding: 0.75rem 1.25rem;
+            }
+
+            /* ---- Author Profile Card ---- */
+            .author-profile-section {
+                padding: 1.5rem 0 2rem;
+            }
+            .author-profile-card {
+                padding: 0 0.75rem;
+            }
+            .apc-inner {
+                border-radius: 18px;
+            }
+            .apc-banner {
+                height: 80px;
+                border-radius: 18px 18px 0 0;
+            }
+            .apc-body {
+                padding: 0 1.25rem 1.75rem;
+                border-radius: 0 0 18px 18px;
+            }
+            .apc-top-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.6rem;
+                margin-top: -44px;
+                padding-top: 1.5rem;
+            }
+            .apc-name {
+                font-size: 1.45rem;
+            }
+            .apc-cta-btn {
+                margin-bottom: 0;
+                align-self: flex-start;
+                padding: 0.5rem 1.1rem;
+                font-size: 0.8rem;
+            }
+            .apc-role {
+                font-size: 0.82rem;
+                flex-wrap: wrap;
+                margin: 0.3rem 0 1.15rem;
+            }
+            .apc-bio {
+                font-size: 0.88rem;
+                line-height: 1.7;
+                margin: 0 0 1.25rem;
+                padding-bottom: 1.25rem;
+            }
+            .apc-stats {
+                margin-bottom: 1.25rem;
+                border-radius: 12px;
+                flex-wrap: wrap;
+            }
+            .apc-stat {
+                min-width: 50%;
+                padding: 0.9rem 0.5rem;
+                border-bottom: 1px solid #e8edf5;
+            }
+            .apc-stat:nth-child(3),
+            .apc-stat:nth-child(4) {
+                border-bottom: none;
+            }
+            .apc-stat-num {
+                font-size: 1.35rem;
+            }
+            .apc-stat-label {
+                font-size: 0.68rem;
+            }
+            .apc-tags {
+                gap: 0.4rem;
+                margin-bottom: 1.25rem;
+            }
+            .apc-tag {
+                font-size: 0.72rem;
+                padding: 4px 11px;
+            }
+            .apc-footer-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.6rem;
+                padding-top: 1rem;
+            }
+            .apc-social-links a {
+                width: 34px;
+                height: 34px;
+                font-size: 0.82rem;
+            }
+            .apc-location {
+                font-size: 0.78rem;
+            }
+
+            /* ---- Footer ---- */
+            .footer.footer-premium {
+                padding-bottom: 80px; /* Clear quick-contact-dock */
+            }
+            .footer-content {
+                padding: 0 0.5rem;
+            }
+            .footer-logo-img {
+                height: 56px !important;
+            }
+            .footer-brand .subtitle {
+                font-size: 0.78rem;
+            }
+            .footer-brand .tagline {
+                font-size: 0.85rem;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: left;
+                align-items: flex-start;
+                gap: 0.75rem;
+                padding-top: 1rem;
+            }
+            .footer-links {
+                flex-wrap: wrap;
+                gap: 8px;
+                justify-content: flex-start;
+            }
+            .footer-links a {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            /* Extra small screens */
+            .social-embed-container {
+                min-height: 360px;
+                max-height: 460px;
+            }
+            .social-card-header {
+                padding: 0.85rem 1rem;
+            }
+            .social-follow-btn span {
+                display: none;
+            }
+            .apc-name {
+                font-size: 1.3rem;
+            }
+            .apc-body {
+                padding: 0 1rem 1.5rem;
+            }
+            .apc-stat {
+                padding: 0.75rem 0.4rem;
+            }
+            .apc-stat-num {
+                font-size: 1.2rem;
             }
         }
     </style>
