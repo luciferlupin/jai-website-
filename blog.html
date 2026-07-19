@@ -42,6 +42,14 @@
     
     <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="css/styles.css?v=1.4">
+
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
+
+    <!-- Lenis Smooth Scroll CSS -->
+    <link rel="preload" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css"></noscript>
     
     <!-- Apple-style & Curious Kaizer Cohesive Style Sheets -->
     <style>
@@ -51,21 +59,19 @@
 
         /* Subpage Premium Hero Styling - Fully matching portfolio.html */
         .subpage-hero {
-            padding: 8rem 0 4rem;
-            background-color: #fafbfc;
-            background-image: linear-gradient(rgba(37, 99, 235, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235, 0.02) 1px, transparent 1px);
-            background-size: 40px 40px;
+            padding: 5rem 0 2.5rem;
+            background: transparent;
             text-align: center;
             border-bottom: 1px solid #f1f5f9;
         }
         
         .subpage-hero-title {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 800;
             letter-spacing: -0.03em;
             color: #0f172a;
-            margin: 1rem 0 1.5rem;
-            line-height: 1.2;
+            margin: 0.75rem 0 1rem;
+            line-height: 1.15;
             font-family: 'Inter Tight', sans-serif;
         }
 
@@ -79,7 +85,7 @@
         .blog-filter-section {
             background-color: #ffffff;
             border-bottom: 1px solid #f1f5f9;
-            padding: 2.5rem 0;
+            padding: 1.25rem 0;
             position: sticky;
             top: 70px;
             z-index: 100;
@@ -113,19 +119,17 @@
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
         }
 
-        /* Grid section layout */
         .blog-detail-section {
-            padding: 5rem 0;
+            padding: 2.5rem 0;
             background-color: #ffffff;
         }
 
-        /* Featured Hero Post */
         .blog-featured-card {
             position: relative;
-            margin-bottom: 4rem;
+            margin-bottom: 2.5rem;
             background: #ffffff;
             border: 1px solid #e2e8f0;
-            border-radius: 24px;
+            border-radius: 20px;
             overflow: hidden;
             display: grid;
             grid-template-columns: 1.2fr 1fr;
@@ -144,9 +148,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 3rem;
+            padding: 2.5rem;
             overflow: hidden;
-            min-height: 380px;
+            min-height: 280px;
             border-right: 1px solid #e2e8f0;
             position: relative;
         }
@@ -173,7 +177,7 @@
         }
 
         .blog-featured-body {
-            padding: 3.5rem;
+            padding: 2.5rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -201,12 +205,12 @@
         }
 
         .blog-featured-body h2 {
-            font-size: 2.2rem;
+            font-size: 1.9rem;
             font-weight: 800;
             letter-spacing: -0.03em;
             line-height: 1.2;
             color: #0f172a;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             font-family: 'Inter Tight', sans-serif;
         }
 
@@ -240,8 +244,8 @@
         .blog-featured-body p {
             color: #475569;
             line-height: 1.6;
-            margin-bottom: 2rem;
-            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.97rem;
         }
 
         .blog-author-strip {
@@ -282,8 +286,8 @@
         .blog-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-bottom: 5rem;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
         }
 
         .blog-card {
@@ -305,7 +309,7 @@
         }
 
         .blog-card-image {
-            height: 220px;
+            height: 170px;
             background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
             display: flex;
             align-items: center;
@@ -317,7 +321,7 @@
         }
 
         .blog-card-image i {
-            font-size: 4.5rem;
+            font-size: 3.5rem;
             color: #2563eb;
             transition: all 0.3s ease;
             position: relative;
@@ -386,19 +390,19 @@
         }
 
         .blog-card-body {
-            padding: 2.2rem;
+            padding: 1.6rem;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
 
         .blog-card-body h3 {
-            font-size: 1.45rem;
+            font-size: 1.2rem;
             font-weight: 800;
             letter-spacing: -0.02em;
             line-height: 1.3;
             color: #0f172a;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
             font-family: 'Inter Tight', sans-serif;
             flex-grow: 0;
         }
@@ -406,106 +410,276 @@
         .blog-card-body p {
             color: #475569;
             line-height: 1.6;
-            font-size: 0.98rem;
-            margin-bottom: 1.75rem;
+            font-size: 0.88rem;
+            margin-bottom: 1.25rem;
             flex-grow: 1;
         }
 
-        /* Jai G Author Profile Card - Premium design matching services.html panels */
-        .blog-author-card {
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-            border: 1px solid #e2e8f0;
-            background-image: linear-gradient(rgba(37, 99, 235, 0.01) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235, 0.01) 1px, transparent 1px);
-            background-size: 20px 20px;
+        /* ============================================
+           AUTHOR PROFILE CARD — PREMIUM REDESIGN
+        ============================================ */
+        .author-profile-section {
+            padding: 2rem 0 3.5rem;
+            background: transparent;
+        }
+
+        .author-profile-card {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .apc-inner {
+            background: #ffffff;
             border-radius: 24px;
-            padding: 3rem 4rem;
-            margin-bottom: 6rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 8px 40px rgba(15, 23, 42, 0.08);
+            overflow: visible;
+            position: relative;
+        }
+
+        /* --- Banner --- */
+        .apc-banner {
+            height: 120px;
+            background: linear-gradient(120deg, #1e3a8a 0%, #2563eb 55%, #38bdf8 100%);
+            border-radius: 24px 24px 0 0;
             position: relative;
             overflow: hidden;
         }
 
-        .blog-author-card::before {
-            content: '';
+        .apc-banner-pattern {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);
+            inset: 0;
+            opacity: 0.12;
+            background-image:
+                radial-gradient(circle, #fff 1.5px, transparent 1.5px);
+            background-size: 28px 28px;
         }
 
-        .blog-author-card-content {
+        /* --- Body --- */
+        .apc-body {
+            padding: 0 2.5rem 2.5rem;
+            border-radius: 0 0 24px 24px;
+            border: 1px solid #e2e8f0;
+            border-top: none;
+            background: #fff;
+            position: relative;
+        }
+
+        /* --- CTA row --- */
+        .apc-top-row {
             display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding-top: 2rem;
+            margin-bottom: 0.2rem;
         }
 
-        .blog-author-card-content h3 {
+        .apc-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            background: #0f172a;
+            color: #fff;
+            padding: 0.6rem 1.35rem;
+            border-radius: 100px;
+            text-decoration: none;
+            font-size: 0.84rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            transition: all 0.25s ease;
+            align-self: flex-end;       /* stays bottom-aligned */
+            margin-bottom: 6px;
+        }
+
+        .apc-cta-btn:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+        }
+
+        /* --- Name & Role --- */
+        .apc-name {
             font-size: 1.75rem;
             font-weight: 800;
-            font-family: 'Inter Tight', sans-serif;
             color: #0f172a;
-            margin: 0 0 0.25rem 0;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
+            font-family: 'Inter Tight', sans-serif;
+            letter-spacing: -0.03em;
+            margin: 0;
+            line-height: 1.15;
         }
 
-        .blog-author-card-content .author-title {
-            font-size: 1rem;
+        .apc-role {
+            font-size: 0.88rem;
+            color: #64748b;
+            font-weight: 500;
+            margin: 0.35rem 0 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            letter-spacing: 0.01em;
+        }
+
+        .apc-role-badge {
+            background: rgba(37, 99, 235, 0.09);
             color: #2563eb;
-            font-weight: 600;
-            margin: 0 0 1rem 0;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 100px;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            white-space: nowrap;
         }
 
-        .blog-author-card-content p {
+        /* --- Bio --- */
+        .apc-bio {
             color: #475569;
-            line-height: 1.7;
-            font-size: 1rem;
-            margin: 0 0 1.25rem 0;
+            line-height: 1.78;
+            font-size: 0.95rem;
+            margin: 0 0 1.75rem;
+            padding-bottom: 1.75rem;
+            border-bottom: 1px solid #f1f5f9;
         }
 
-        .author-skills {
+        /* --- Stats row --- */
+        .apc-stats {
+            display: flex;
+            margin-bottom: 1.75rem;
+            background: #f8fafc;
+            border: 1px solid #e8edf5;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        .apc-stat {
+            flex: 1;
+            text-align: center;
+            padding: 1.15rem 0.5rem;
+            border-right: 1px solid #e8edf5;
+        }
+
+        .apc-stat:last-child {
+            border-right: none;
+        }
+
+        .apc-stat-num {
+            font-size: 1.55rem;
+            font-weight: 800;
+            color: #0f172a;
+            font-family: 'Inter Tight', sans-serif;
+            line-height: 1;
+            letter-spacing: -0.03em;
+            display: block;
+        }
+
+        .apc-stat-label {
+            font-size: 0.72rem;
+            color: #94a3b8;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            display: block;
+            margin-top: 5px;
+        }
+
+        /* --- Skill tags --- */
+        .apc-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin: 0 0 1.25rem 0;
+            margin-bottom: 1.75rem;
         }
 
-        .author-skill-tag {
-            background: rgba(37, 99, 235, 0.08);
+        .apc-tag {
+            background: rgba(37, 99, 235, 0.07);
             color: #2563eb;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
+            padding: 5px 14px;
+            border-radius: 100px;
+            font-size: 0.78rem;
+            font-weight: 700;
             border: 1px solid rgba(37, 99, 235, 0.15);
+            transition: all 0.2s ease;
+            cursor: default;
         }
 
-        .author-social-links {
+        .apc-tag:hover {
+            background: #2563eb;
+            color: #fff;
+            border-color: #2563eb;
+        }
+
+        /* --- Divider --- */
+        .apc-divider {
+            height: 1px;
+            background: #e8edf5;
+            margin: 0 0 1.5rem;
+        }
+
+        /* --- Footer row --- */
+        .apc-footer-row {
             display: flex;
-            gap: 0.875rem;
-            margin-top: 0.25rem;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid #f1f5f9;
         }
 
-        .author-social-links a {
+        .apc-social-links {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .apc-social-links a {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
             background: #f1f5f9;
             color: #475569;
-            transition: all 0.3s ease;
+            font-size: 0.88rem;
             border: 1px solid #e2e8f0;
+            text-decoration: none;
+            transition: all 0.25s ease;
         }
 
-        .author-social-links a:hover {
+        .apc-social-links a:hover {
             background: #2563eb;
-            color: white;
+            color: #fff;
             border-color: #2563eb;
             transform: translateY(-2px);
+        }
+
+        .apc-location {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.83rem;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 640px) {
+            .apc-top-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.75rem;
+                margin-top: -48px;
+            }
+            .apc-cta-btn {
+                margin-bottom: 0;
+                align-self: flex-start;
+            }
+            .apc-stats { flex-wrap: wrap; }
+            .apc-stat { min-width: 50%; border-bottom: 1px solid #e8edf5; }
+            .apc-body { padding: 0 1.5rem 2rem; }
+            .apc-footer-row { flex-direction: column; align-items: flex-start; }
         }
 
         /* Animations */
@@ -540,31 +714,8 @@
             .blog-card-image i {
                 font-size: 3.5rem;
             }
-            .blog-author-card {
-                text-align: center;
-                padding: 2.5rem;
-            }
-            .blog-author-card-content {
-                gap: 1rem;
-            }
-            .blog-author-card-content h3 {
-                font-size: 1.5rem;
-                margin-bottom: 0.5rem;
-            }
-            .blog-author-card-content .author-title {
-                margin-bottom: 1.25rem;
-            }
-            .blog-author-card-content p {
-                margin-bottom: 1.5rem;
-            }
-            .author-skills {
-                justify-content: center;
-                gap: 0.5rem;
-                margin-bottom: 1.5rem;
-            }
-            .author-social-links {
-                justify-content: center;
-            }
+            .apc-banner { height: 80px; }
+
             .subpage-hero-title {
                 font-size: 2.8rem;
             }
@@ -605,31 +756,187 @@
             .blog-card-body h3 {
                 font-size: 1.2rem;
             }
-            .blog-author-card {
-                padding: 2rem;
+        }
+
+        /* ============================================
+           SOCIAL FEEDS SECTION
+        ============================================ */
+        .blog-social-feeds {
+            padding: 2.5rem 0 2rem;
+            background: transparent;
+        }
+
+        .social-feeds-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .social-feeds-header h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 0;
+        }
+
+        .social-feeds-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .social-feed-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(15,23,42,0.08);
+            border: 1px solid #e8edf5;
+            display: flex;
+            flex-direction: column;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-feed-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(15,23,42,0.13);
+        }
+
+        .social-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem 1.75rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .social-card-title {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #0f172a;
+        }
+
+        .social-card-title .fab.fa-linkedin {
+            color: #0a66c2;
+            font-size: 1.3rem;
+        }
+
+        .social-card-title .fab.fa-instagram {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.3rem;
+        }
+
+        .social-follow-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: #f1f5f9;
+            color: #0f172a;
+            padding: 0.4rem 1rem;
+            border-radius: 100px;
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .social-follow-btn:hover {
+            background: #2563eb;
+            color: #fff;
+        }
+
+        .social-embed-container {
+            height: 680px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel-track {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .carousel-slide {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            padding: 0 10px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .carousel-controls {
+            padding: 1rem 1.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid #f1f5f9;
+            background: #fafbfc;
+        }
+
+        .carousel-control-btn {
+            background: none;
+            border: none;
+            color: #64748b;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+
+        .carousel-control-btn:hover {
+            background: #f1f5f9;
+            color: #0f172a;
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .carousel-dot.active {
+            background: #2563eb;
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 991px) {
+            .social-feeds-grid {
+                grid-template-columns: 1fr;
             }
-            .blog-author-card-content {
-                gap: 0.875rem;
-            }
-            .blog-author-card-content h3 {
-                font-size: 1.35rem;
-                margin-bottom: 0.25rem;
-            }
-            .blog-author-card-content .author-title {
-                font-size: 0.9rem;
-                margin-bottom: 1rem;
-            }
-            .blog-author-card-content p {
-                font-size: 0.9rem;
-                margin-bottom: 1.25rem;
-            }
-            .author-skills {
-                gap: 0.4rem;
-                margin-bottom: 1.25rem;
-            }
-            .author-skill-tag {
-                font-size: 0.75rem;
-                padding: 5px 12px;
+            .social-embed-container {
+                height: auto;
+                min-height: 500px;
             }
         }
     </style>
@@ -692,18 +999,18 @@
     <!-- Subpage Hero - Identical to portfolio.html / pricing.html visual layout -->
     <section class="subpage-hero">
         <div class="container">
-            <h1 class="subpage-hero-title">
+            <h1 class="subpage-hero-title" data-aos="fade-up">
                 <span class="seo-subpage-pre-title" style="display: block; font-size: 0.95rem; text-transform: uppercase; font-weight: 800; color: #2563eb; letter-spacing: 0.15em; margin-bottom: 12px; font-family: 'Inter', sans-serif;">KAIZER INSIGHTS</span>
                 Insights & Ideas.<br><span class="highlight-blue">Engineered to perform.</span>
             </h1>
-            <p class="section-subtitle" style="margin: 0 auto; max-width: 650px;">Deep-dives into custom serverless architectures, database optimizations, and B2B software engineering. Written by Jai Goel.</p>
+            <p class="section-subtitle" style="margin: 0 auto; max-width: 650px;" data-aos="fade-up" data-aos-delay="100">Deep-dives into custom serverless architectures, database optimizations, and B2B software engineering. Written by Jai Goel.</p>
         </div>
     </section>
 
     <!-- Sticky Filter Tab Bar -->
     <section class="blog-filter-section">
         <div class="container">
-            <div class="filter-tabs">
+            <div class="filter-tabs" data-aos="fade-up" data-aos-delay="200">
                 <button class="filter-tab active" data-filter="all">All Stories</button>
                 <button class="filter-tab" data-filter="saas">SaaS & Databases</button>
                 <button class="filter-tab" data-filter="web">Web Design</button>
@@ -717,7 +1024,7 @@
         <main class="container">
             
             <!-- Featured Hero Post (AI / Inference Scaling) -->
-            <article class="blog-featured-card blog-card-item" data-category="ai">
+            <article class="blog-featured-card blog-card-item" data-category="ai" data-aos="fade-up">
                 <div class="blog-featured-image">
                     <i class="fas fa-brain"></i>
                 </div>
@@ -743,7 +1050,7 @@
             <section class="blog-grid" id="blogGrid">
                 
                 <!-- Post: AI / Latency Optimization -->
-                <article class="blog-card blog-card-item" data-category="ai">
+                <article class="blog-card blog-card-item" data-category="ai" data-aos="fade-up">
                     <div class="blog-card-image">
                         <i class="fas fa-bolt"></i>
                     </div>
@@ -766,7 +1073,7 @@
                 </article>
                 
                 <!-- Post: SaaS / Liquid Neural Networks -->
-                <article class="blog-card blog-card-item" data-category="saas">
+                <article class="blog-card blog-card-item" data-category="saas" data-aos="fade-up" data-aos-delay="100">
                     <div class="blog-card-image">
                         <i class="fas fa-water"></i>
                     </div>
@@ -789,7 +1096,7 @@
                 </article>
                 
                 <!-- Post 1: SaaS / Database Normalization -->
-                <article class="blog-card blog-card-item" data-category="saas">
+                <article class="blog-card blog-card-item" data-category="saas" data-aos="fade-up">
                     <div class="blog-card-image">
                         <i class="fas fa-database"></i>
                     </div>
@@ -812,7 +1119,7 @@
                 </article>
                 
                 <!-- Post 2: Web Design / SEO -->
-                <article class="blog-card blog-card-item" data-category="web">
+                <article class="blog-card blog-card-item" data-category="web" data-aos="fade-up" data-aos-delay="100">
                     <div class="blog-card-image">
                         <i class="fas fa-search-dollar"></i>
                     </div>
@@ -835,7 +1142,7 @@
                 </article>
 
                 <!-- Post 3: Web Design / Case Study -->
-                <article class="blog-card blog-card-item" data-category="web">
+                <article class="blog-card blog-card-item" data-category="web" data-aos="fade-up">
                     <div class="blog-card-image">
                         <i class="fas fa-project-diagram"></i>
                     </div>
@@ -858,7 +1165,7 @@
                 </article>
 
                 <!-- Post 4: AI & Automation -->
-                <article class="blog-card blog-card-item" data-category="ai">
+                <article class="blog-card blog-card-item" data-category="ai" data-aos="fade-up" data-aos-delay="100">
                     <div class="blog-card-image">
                         <i class="fas fa-microphone-alt"></i>
                     </div>
@@ -881,7 +1188,7 @@
                 </article>
 
                 <!-- Post 5: SaaS / Vanilla JS -->
-                <article class="blog-card blog-card-item" data-category="saas">
+                <article class="blog-card blog-card-item" data-category="saas" data-aos="fade-up">
                     <div class="blog-card-image">
                         <i class="fab fa-js-square"></i>
                     </div>
@@ -904,7 +1211,7 @@
                 </article>
 
                 <!-- Post 6: Web Design / Edge Computing -->
-                <article class="blog-card blog-card-item" data-category="web">
+                <article class="blog-card blog-card-item" data-category="web" data-aos="fade-up" data-aos-delay="100">
                     <div class="blog-card-image">
                         <i class="fas fa-globe"></i>
                     </div>
@@ -927,7 +1234,7 @@
                 </article>
 
                 <!-- Post 7: AI & Automation / Edge AI -->
-                <article class="blog-card blog-card-item" data-category="ai">
+                <article class="blog-card blog-card-item" data-category="ai" data-aos="fade-up">
                     <div class="blog-card-image">
                         <i class="fas fa-brain"></i>
                     </div>
@@ -950,7 +1257,7 @@
                 </article>
 
                 <!-- Post 8: Web Design / Performance -->
-                <article class="blog-card blog-card-item" data-category="web">
+                <article class="blog-card blog-card-item" data-category="web" data-aos="fade-up" data-aos-delay="100">
                     <div class="blog-card-image">
                         <i class="fas fa-tachometer-alt"></i>
                     </div>
@@ -973,7 +1280,7 @@
                 </article>
 
                 <!-- Post 9: SaaS / WebAssembly -->
-                <article class="blog-card blog-card-item" data-category="saas">
+                <article class="blog-card blog-card-item" data-category="saas" data-aos="fade-up">
                     <div class="blog-card-image">
                         <i class="fas fa-cube"></i>
                     </div>
@@ -997,23 +1304,166 @@
 
             </section>
 
-            <!-- Jai Goel Author Profile Card (Apple style) -->
-            <section class="blog-author-card">
-                <div class="blog-author-card-content">
-                    <h3>About Jai Goel</h3>
-                    <span class="author-title">Founder & Lead Web Architect</span>
-                    <p>Jai Goel is the Founder and Lead Web Architect of Curious Kaizer. He creates bespoke web platforms, custom database schemes, voice-controlled Chrome tools, and conversion-focused web layouts. Jai personally codes and supervises every project shipped from the Delhi headquarters, ensuring pixel-perfect execution and technical excellence.</p>
-                    <div class="author-skills">
-                        <span class="author-skill-tag">Full-Stack Development</span>
-                        <span class="author-skill-tag">Database Architecture</span>
-                        <span class="author-skill-tag">AI Integration</span>
-                        <span class="author-skill-tag">UX Design</span>
-                        <span class="author-skill-tag">Performance Optimization</span>
+            <!-- Latest Social Updates Section -->
+            <section class="blog-social-feeds">
+                <div class="social-feeds-header" data-aos="fade-up">
+                    <span style="font-size: 0.85rem; text-transform: uppercase; font-weight: 800; color: #2563eb; letter-spacing: 0.15em; display: block; margin-bottom: 8px; font-family: 'DM Sans', sans-serif;">STAY CONNECTED</span>
+                    <h2>Latest Social Updates</h2>
+                    <p style="color: #475569; max-width: 600px; margin: 0.5rem auto 0; font-size: 1.05rem;">Follow along for real-time web development insights, database architecture designs, and SaaS updates.</p>
+                </div>
+                <div class="social-feeds-grid">
+
+                    <!-- LinkedIn Feed Card -->
+                    <div class="social-feed-card" id="linkedin-card" data-aos="fade-up">
+                        <div class="social-card-header">
+                            <div class="social-card-title">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn Feed</span>
+                            </div>
+                            <a href="https://www.linkedin.com/company/curious-kaizer/" target="_blank" rel="noopener" class="social-follow-btn">
+                                <span>Follow</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="social-embed-container">
+                            <div class="carousel-track" id="linkedin-track">
+                                <div class="carousel-slide">
+                                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7484466628223463424?collapsed=1" height="626" width="100%" style="max-width: 504px; border: none;" allowfullscreen="" title="Embedded post"></iframe>
+                                </div>
+                                <div class="carousel-slide">
+                                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7484481310430875648?collapsed=1" height="626" width="100%" style="max-width: 504px; border: none;" allowfullscreen="" title="Embedded post"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-controls">
+                            <button class="carousel-control-btn prev-btn" onclick="rotateCarousel('linkedin', -1)" aria-label="Previous Post"><i class="fas fa-chevron-left"></i></button>
+                            <div class="carousel-dots" id="linkedin-dots">
+                                <span class="carousel-dot active" onclick="setCarouselSlide('linkedin', 0)"></span>
+                                <span class="carousel-dot" onclick="setCarouselSlide('linkedin', 1)"></span>
+                            </div>
+                            <button class="carousel-control-btn next-btn" onclick="rotateCarousel('linkedin', 1)" aria-label="Next Post"><i class="fas fa-chevron-right"></i></button>
+                        </div>
                     </div>
-                    <div class="author-social-links">
-                        <a href="https://www.linkedin.com/company/curious-kaizer/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.instagram.com/curiouskaizer/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="mailto:info@curiouskaizer.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+
+                    <!-- Instagram Feed Card -->
+                    <div class="social-feed-card" id="instagram-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="social-card-header">
+                            <div class="social-card-title">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram Feed</span>
+                            </div>
+                            <a href="https://www.instagram.com/curiouskaizer/" target="_blank" rel="noopener" class="social-follow-btn">
+                                <span>Follow</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="social-embed-container">
+                            <div class="carousel-track" id="instagram-track">
+                                <!-- Slide 1 -->
+                                <div class="carousel-slide">
+                                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DaZ72JHCRyk/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"><a href="https://www.instagram.com/p/DaZ72JHCRyk/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"><div style=" display: flex; flex-direction: row; align-items: center;"><div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div><div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"><div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div><div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div><div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"><div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div><div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div><div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div><div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div><div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"><div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div><div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"><div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div><div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div><div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div><div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"><div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div><div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DaZ72JHCRyk/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Curious Kaizer (@curiouskaizer)</a></p></div></blockquote>
+                                </div>
+                                <!-- Slide 2 -->
+                                <div class="carousel-slide">
+                                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Da2oe71iZhG/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"><a href="https://www.instagram.com/p/Da2oe71iZhG/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"><div style=" display: flex; flex-direction: row; align-items: center;"><div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div><div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"><div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div><div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div><div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"><div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div><div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div><div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div><div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div><div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"><div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div><div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"><div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div><div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div><div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div><div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"><div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div><div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/Da2oe71iZhG/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Curious Kaizer (@curiouskaizer)</a></p></div></blockquote>
+                                </div>
+                                <!-- Slide 3 -->
+                                <div class="carousel-slide">
+                                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Da8nJrVk_g0/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"><a href="https://www.instagram.com/p/Da8nJrVk_g0/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"><div style=" display: flex; flex-direction: row; align-items: center;"><div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div><div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"><div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div><div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div><div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"><div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div><div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div><div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div><div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div><div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"><div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div><div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"><div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div><div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div><div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div><div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"><div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div><div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/Da8nJrVk_g0/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Curious Kaizer (@curiouskaizer)</a></p></div></blockquote>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-controls">
+                            <button class="carousel-control-btn prev-btn" onclick="rotateCarousel('instagram', -1)" aria-label="Previous Post"><i class="fas fa-chevron-left"></i></button>
+                            <div class="carousel-dots" id="instagram-dots">
+                                <span class="carousel-dot active" onclick="setCarouselSlide('instagram', 0)"></span>
+                                <span class="carousel-dot" onclick="setCarouselSlide('instagram', 1)"></span>
+                                <span class="carousel-dot" onclick="setCarouselSlide('instagram', 2)"></span>
+                            </div>
+                            <button class="carousel-control-btn next-btn" onclick="rotateCarousel('instagram', 1)" aria-label="Next Post"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <script async src="https://www.instagram.com/embed.js"></script>
+
+            <!-- Author Profile Card — Premium Redesign -->
+            <section class="author-profile-section" data-aos="fade-up">
+                <div class="author-profile-card">
+                    <div class="apc-inner">
+                        <!-- Banner -->
+                        <div class="apc-banner">
+                            <div class="apc-banner-pattern"></div>
+                        </div>
+
+                        <!-- Body -->
+                        <div class="apc-body">
+
+                            <!-- Name + CTA row -->
+                            <div class="apc-top-row">
+                                <h3 class="apc-name">Jai Goel</h3>
+                                <a href="mailto:info@curiouskaizer.com" class="apc-cta-btn">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Work with Jai
+                                </a>
+                            </div>
+
+                            <!-- Role -->
+                            <p class="apc-role">
+                                Founder &amp; Lead Web Architect
+                                <span class="apc-role-badge">Curious Kaizer</span>
+                            </p>
+
+                            <!-- Bio -->
+                            <p class="apc-bio">Jai builds bespoke web platforms, custom database schemas, voice-controlled Chrome tools, and conversion-focused layouts — all shipped from Delhi. He personally codes and oversees every project, ensuring pixel-perfect execution and technical excellence on every deliverable.</p>
+
+                            <!-- Stats -->
+                            <div class="apc-stats">
+                                <div class="apc-stat">
+                                    <span class="apc-stat-num">50+</span>
+                                    <span class="apc-stat-label">Projects</span>
+                                </div>
+                                <div class="apc-stat">
+                                    <span class="apc-stat-num">5+</span>
+                                    <span class="apc-stat-label">Years Exp.</span>
+                                </div>
+                                <div class="apc-stat">
+                                    <span class="apc-stat-num">30+</span>
+                                    <span class="apc-stat-label">Clients</span>
+                                </div>
+                                <div class="apc-stat">
+                                    <span class="apc-stat-num">100%</span>
+                                    <span class="apc-stat-label">Satisfaction</span>
+                                </div>
+                            </div>
+
+                            <!-- Skill Tags -->
+                            <div class="apc-tags">
+                                <span class="apc-tag">Full-Stack Dev</span>
+                                <span class="apc-tag">Database Architecture</span>
+                                <span class="apc-tag">AI Integration</span>
+                                <span class="apc-tag">UX Design</span>
+                                <span class="apc-tag">Performance Optimization</span>
+                                <span class="apc-tag">SaaS Platforms</span>
+                            </div>
+
+
+
+                            <!-- Social + Location -->
+                            <div class="apc-footer-row">
+                                <div class="apc-social-links">
+                                    <a href="https://www.linkedin.com/company/curious-kaizer/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="https://www.instagram.com/curiouskaizer/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                    <a href="mailto:info@curiouskaizer.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                                    <a href="https://curiouskaizer.com" target="_blank" rel="noopener" aria-label="Website"><i class="fas fa-globe"></i></a>
+                                </div>
+                                <div class="apc-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>New Delhi, India</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -1103,15 +1553,94 @@
     </div>
 
     <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js" defer></script>
     <script src="js/scripts.js" defer></script>
     <script src="js/analytics-tracker.js" defer></script>
     
-    <!-- Interactive Navigation and Blog Filter Script -->
+    <!-- Carousel + Blog Filter Script -->
     <script>
+        // Carousel State Management
+        const carouselStates = {
+            linkedin: { current: 0, slides: 2 },
+            instagram: { current: 0, slides: 3 }
+        };
+
+        window.updateCarousel = function(platform) {
+            const state = carouselStates[platform];
+            const track = document.getElementById(platform + '-track');
+            const dots = document.querySelectorAll('#' + platform + '-dots .carousel-dot');
+            if (!track) return;
+            track.style.transform = 'translateX(-' + (state.current * 100) + '%)';
+            dots.forEach(function(dot, idx) {
+                dot.classList.toggle('active', idx === state.current);
+            });
+        };
+
+        window.rotateCarousel = function(platform, direction) {
+            const state = carouselStates[platform];
+            state.current = (state.current + direction + state.slides) % state.slides;
+            window.updateCarousel(platform);
+        };
+
+        window.setCarouselSlide = function(platform, slideIdx) {
+            carouselStates[platform].current = slideIdx;
+            window.updateCarousel(platform);
+        };
+
         document.addEventListener('DOMContentLoaded', () => {
 
+            // ==============================
+            // Lenis Smooth Scroll Init
+            // ==============================
+            const lenis = new Lenis({
+                lerp: 0.1,
+                orientation: 'vertical',
+                gestureOrientation: 'vertical',
+                smoothWheel: true,
+                wheelMultiplier: 1.0,
+                touchMultiplier: 1.5,
+                infinite: false,
+            });
+            window.lenis = lenis;
 
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+
+            // Synchronize scroll events for AOS and other scroll listeners
+            let isSyncingScroll = false;
+            lenis.on('scroll', () => {
+                if (!isSyncingScroll) {
+                    isSyncingScroll = true;
+                    window.dispatchEvent(new Event('scroll'));
+                    isSyncingScroll = false;
+                }
+            });
+
+            // ==============================
+            // AOS (Animate On Scroll) Init
+            // ==============================
+            const initAOS = () => {
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-in-out',
+                    once: true,
+                    offset: 100,
+                    mirror: false
+                });
+            };
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(() => initAOS());
+            } else {
+                setTimeout(initAOS, 100);
+            }
+
+            // ==============================
             // Interactive Category Filter
+            // ==============================
             const filterTabs = document.querySelectorAll('.filter-tab');
             const blogCards = document.querySelectorAll('.blog-card-item');
 
@@ -1139,6 +1668,11 @@
                             card.classList.add('hidden');
                         }
                     });
+
+                    // Refresh AOS after filtering
+                    if (window.AOS) {
+                        AOS.refresh();
+                    }
                 });
             });
         });
