@@ -419,7 +419,7 @@
                     <h2>Implementing Edge AI with Cloudflare Workers AI</h2>
                     <p>Cloudflare Workers AI provides a straightforward API for running inference at the edge. Here's an example of content moderation using Workers AI:</p>
 
-<pre><code// Cloudflare Worker for content moderation
+<pre><code>// Cloudflare Worker for content moderation
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
@@ -451,7 +451,7 @@ export default {
                     <h2>Implementing Edge AI with Vercel AI SDK</h2>
                     <p>Vercel's AI SDK provides a TypeScript-first approach to edge AI inference with streaming support. Here's an example using the edge runtime:</p>
 
-<pre><code// app/api/chat/route.ts
+<pre><code>// app/api/chat/route.ts
 import { OpenAIStream, StreamingTextResponse } from 'ai';
 import OpenAI from 'openai';
 
@@ -620,19 +620,5 @@ export async function POST(req: Request) {
     <!-- Scripts -->
     <script src="js/scripts.js" defer></script>
     <script src="js/analytics-tracker.js" defer></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const navToggle = document.getElementById('navToggle');
-            const navLinks = document.getElementById('navLinks');
-            
-            if (navToggle && navLinks) {
-                navToggle.addEventListener('click', () => {
-                    const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
-                    navToggle.setAttribute('aria-expanded', !expanded);
-                    navLinks.classList.toggle('active');
-                });
-            }
-        });
-    </script>
 </body>
 </html>

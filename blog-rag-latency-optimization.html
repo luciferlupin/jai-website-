@@ -277,25 +277,31 @@
         }
 
         @media (max-width: 768px) {
+            .article-hero h1 {
+                font-size: 2.2rem;
+            }
             .article-author-card {
                 flex-direction: column;
                 text-align: center;
-                gap: 1rem;
+                padding: 1.5rem;
             }
-
             .article-navigation {
                 flex-direction: column;
+                gap: 1.5rem;
+            }
+            .article-nav-btn {
+                max-width: 100%;
             }
         }
     </style>
 </head>
 <body itemscope itemtype="https://schema.org/BlogPosting">
-    <!-- Header/Navigation -->
-    <header role="banner">
-    <nav class="navbar navbar-premium" role="navigation" aria-label="Main navigation">
+    <!-- Navigation Header -->
+    <header class="site-header">
+    <nav class="navbar" itemscope itemtype="https://schema.org/SiteNavigationElement" aria-label="Main navigation">
         <div class="container">
-            <a href="index.html" class="logo" itemprop="url">
-                <img src="images/logo.jpg" alt="Curious Kaizer Logo" class="logo-img" width="40" height="40" itemprop="logo" decoding="async">
+            <a href="index.html" class="logo">
+                <img src="images/logo-icon.jpg" alt="Curious Kaizer Logo" class="logo-icon" width="50" height="38">
                 <span class="logo-text">Curious Kaizer</span>
             </a>
             <ul class="nav-links" id="navLinks">
@@ -455,9 +461,9 @@ export default async function handler(req) {
                     
                     <!-- Article Navigation footer -->
                     <div class="article-navigation">
-                        <a href="blog.html" class="article-nav-btn">
-                            <span>Back</span>
-                            <h5>Back to Insights</h5>
+                        <a href="blog-liquid-foundation-models.html" class="article-nav-btn">
+                            <span>Previous Story</span>
+                            <h5>Liquid Foundation Models: Replacing Transformers for Real-Time Streaming and IoT Edge</h5>
                         </a>
                         <a href="blog-database-normalization.html" class="article-nav-btn next">
                             <span>Next Story</span>
@@ -554,19 +560,5 @@ export default async function handler(req) {
     <!-- Scripts -->
     <script src="js/scripts.js" defer></script>
     <script src="js/analytics-tracker.js" defer></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const navToggle = document.getElementById('navToggle');
-            const navLinks = document.getElementById('navLinks');
-            
-            if (navToggle && navLinks) {
-                navToggle.addEventListener('click', () => {
-                    const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
-                    navToggle.setAttribute('aria-expanded', !expanded);
-                    navLinks.classList.toggle('active');
-                });
-            }
-        });
-    </script>
 </body>
 </html>

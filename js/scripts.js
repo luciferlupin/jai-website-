@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Toggle mobile menu
         navToggle.addEventListener('click', function(e) {
             e.stopPropagation();
+            const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
+            navToggle.setAttribute('aria-expanded', !expanded);
             navLinks.classList.toggle('active');
             navToggle.classList.toggle('active');
             document.body.classList.toggle('nav-open');
@@ -18,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
                 navToggle.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
                 document.body.classList.remove('nav-open');
             });
         });
@@ -27,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!navLinks.contains(e.target) && !navToggle.contains(e.target)) {
                 navLinks.classList.remove('active');
                 navToggle.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
                 document.body.classList.remove('nav-open');
             }
         });

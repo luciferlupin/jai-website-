@@ -716,24 +716,24 @@
     <section class="blog-detail-section">
         <main class="container">
             
-            <!-- Featured Hero Post (AI / Latency Optimization) -->
+            <!-- Featured Hero Post (AI / Inference Scaling) -->
             <article class="blog-featured-card blog-card-item" data-category="ai">
                 <div class="blog-featured-image">
-                    <i class="fas fa-bolt"></i>
+                    <i class="fas fa-brain"></i>
                 </div>
                 <div class="blog-featured-body">
                     <div class="blog-meta">
                         <span class="blog-tag">AI & Automation</span>
                         <span>•</span>
-                        <span>8 min read</span>
+                        <span>9 min read</span>
                     </div>
-                    <h2><a href="blog-rag-latency-optimization.html">Reducing LLM RAG Latency from 8s to 900ms on Serverless Edge Runtimes</a></h2>
-                    <p>A detailed engineering study on pgvector caching, serverless edge geographical lookups, and streamed JSON chunk rendering to bypass network and model bottlenecks.</p>
+                    <h2><a href="blog-inference-compute-scaling.html">Scaling Inference-Time Compute: How Search and RL are Reshaping LLM Performance in 2026</a></h2>
+                    <p>A detailed engineering guide on Monte Carlo Tree Search, value neural network evaluators, and GRPO reinforcement learning loops to scale reasoning computation on demand.</p>
                     <div class="blog-author-strip">
                         <div class="blog-author-avatar">JG</div>
                         <div class="blog-author-info">
                             <span>Jai Goel</span>
-                            <small>July 18, 2026</small>
+                            <small>July 19, 2026</small>
                         </div>
                     </div>
                 </div>
@@ -741,6 +741,52 @@
 
             <!-- Blog Posts Grid -->
             <section class="blog-grid" id="blogGrid">
+                
+                <!-- Post: AI / Latency Optimization -->
+                <article class="blog-card blog-card-item" data-category="ai">
+                    <div class="blog-card-image">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-meta">
+                            <span class="blog-tag">AI & Automation</span>
+                            <span>•</span>
+                            <span>8 min read</span>
+                        </div>
+                        <h3><a href="blog-rag-latency-optimization.html">Reducing LLM RAG Latency from 8s to 900ms on Serverless Edge Runtimes</a></h3>
+                        <p>A detailed engineering study on pgvector caching, serverless edge geographical lookups, and streamed JSON chunk rendering to bypass network and model bottlenecks.</p>
+                        <div class="blog-author-strip">
+                            <div class="blog-author-avatar">JG</div>
+                            <div class="blog-author-info">
+                                <span>Jai Goel</span>
+                                <small>July 18, 2026</small>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Post: SaaS / Liquid Neural Networks -->
+                <article class="blog-card blog-card-item" data-category="saas">
+                    <div class="blog-card-image">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-meta">
+                            <span class="blog-tag">SaaS & Databases</span>
+                            <span>•</span>
+                            <span>7 min read</span>
+                        </div>
+                        <h3><a href="blog-liquid-foundation-models.html">Liquid Foundation Models: Replacing Transformers for Real-Time Streaming and IoT Edge</a></h3>
+                        <p>Are Transformers obsolete for streaming data? Learn how Liquid Foundation Models deliver constant-memory execution and state updates for edge platforms.</p>
+                        <div class="blog-author-strip">
+                            <div class="blog-author-avatar">JG</div>
+                            <div class="blog-author-info">
+                                <span>Jai Goel</span>
+                                <small>July 19, 2026</small>
+                            </div>
+                        </div>
+                    </div>
+                </article>
                 
                 <!-- Post 1: SaaS / Database Normalization -->
                 <article class="blog-card blog-card-item" data-category="saas">
@@ -1063,17 +1109,7 @@
     <!-- Interactive Navigation and Blog Filter Script -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Interactive Mobile Menu Support
-            const navToggle = document.getElementById('navToggle');
-            const navLinks = document.getElementById('navLinks');
-            
-            if (navToggle && navLinks) {
-                navToggle.addEventListener('click', () => {
-                    const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
-                    navToggle.setAttribute('aria-expanded', !expanded);
-                    navLinks.classList.toggle('active');
-                });
-            }
+
 
             // Interactive Category Filter
             const filterTabs = document.querySelectorAll('.filter-tab');

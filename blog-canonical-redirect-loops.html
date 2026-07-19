@@ -539,19 +539,5 @@ Sitemap: https://www.yourdomain.com/sitemap.xml</code></pre>
     <!-- Scripts -->
     <script src="js/scripts.js" defer></script>
     <script src="js/analytics-tracker.js" defer></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const navToggle = document.getElementById('navToggle');
-            const navLinks = document.getElementById('navLinks');
-            
-            if (navToggle && navLinks) {
-                navToggle.addEventListener('click', () => {
-                    const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
-                    navToggle.setAttribute('aria-expanded', !expanded);
-                    navLinks.classList.toggle('active');
-                });
-            }
-        });
-    </script>
 </body>
 </html>
