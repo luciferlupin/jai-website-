@@ -24,12 +24,85 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.curiouskaizer.com/blog-rag-latency-optimization.html" />
     
-    <!-- Open Graph -->
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
     <meta property="og:title" content="Reducing LLM RAG Latency from 8s to 900ms on Serverless Edge Runtimes | Curious Kaizer">
-    <meta property="og:description" content="A deep technical dive into pgvector caching, edge geographical lookups, and structured token streaming.">
+    <meta property="og:description" content="A comprehensive technical guide by Jai Goel on optimizing vector database queries, implementing Redis caching on Vercel Edge, and streaming parsed JSON outputs.">
     <meta property="og:url" content="https://www.curiouskaizer.com/blog-rag-latency-optimization.html">
-    <meta property="og:image" content="https://www.curiouskaizer.com/images/og-image.jpg">
+    <meta property="og:image" content="https://www.curiouskaizer.com/images/blog-rag-latency.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="RAG Latency Optimization Diagram">
+    <meta property="og:site_name" content="Curious Kaizer">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:author" content="Jai Goel">
+    <meta property="article:published_time" content="2026-07-18T00:00:00+05:30">
+    <meta property="article:section" content="AI & Automation">
+    <meta property="article:tag" content="RAG latency">
+    <meta property="article:tag" content="LLM optimization">
+    <meta property="article:tag" content="Edge computing">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@curiouskaizer">
+    <meta name="twitter:creator" content="@jaigoel">
+    <meta name="twitter:title" content="Reducing LLM RAG Latency from 8s to 900ms on Serverless Edge Runtimes | Curious Kaizer">
+    <meta name="twitter:description" content="A comprehensive technical guide by Jai Goel on optimizing vector database queries, implementing Redis caching on Vercel Edge, and streaming parsed JSON outputs.">
+    <meta name="twitter:image" content="https://www.curiouskaizer.com/images/blog-rag-latency.png">
+    <meta name="twitter:image:alt" content="RAG Latency Optimization Diagram">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="author" content="Jai Goel">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="msapplication-TileColor" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Curious Kaizer">
+    
+    <!-- Schema.org Structured Data for Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Reducing LLM RAG Latency from 8s to 900ms on Serverless Edge Runtimes",
+        "description": "A comprehensive technical guide by Jai Goel on optimizing vector database queries, implementing Redis caching on Vercel Edge, and streaming parsed JSON outputs.",
+        "image": "https://www.curiouskaizer.com/images/blog-rag-latency.png",
+        "author": {
+            "@type": "Person",
+            "name": "Jai Goel",
+            "jobTitle": "Founder & Lead Developer",
+            "url": "https://www.curiouskaizer.com",
+            "sameAs": [
+                "https://www.linkedin.com/in/jaigoel",
+                "https://twitter.com/jaigoel",
+                "https://www.instagram.com/curiouskaizer"
+            ]
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Curious Kaizer",
+            "url": "https://www.curiouskaizer.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.curiouskaizer.com/images/logo.jpg",
+                "width": 200,
+                "height": 60
+            },
+            "sameAs": [
+                "https://www.linkedin.com/company/curious-kaizer",
+                "https://www.instagram.com/curiouskaizer"
+            ]
+        },
+        "datePublished": "2026-07-18T00:00:00+05:30",
+        "dateModified": "2026-07-18T00:00:00+05:30",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.curiouskaizer.com/blog-rag-latency-optimization.html"
+        },
+        "articleSection": "AI & Automation",
+        "keywords": "RAG latency, LLM response speed, pgvector cache, Vercel Edge functions, Gemini streaming JSON, serverless vector search, AI latency optimization"
+    }
+    </script>
     
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -456,6 +529,28 @@ export default async function handler(req) {
                         <div class="article-author-details">
                             <h4>About Jai Goel</h4>
                             <p>Jai Goel is the Founder and Lead Web Architect of Curious Kaizer. He creates bespoke web platforms, custom database schemes, voice-controlled Chrome tools, and conversion-focused web layouts. Jai personally codes and supervises every project shipped from the Delhi headquarters.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Related Articles -->
+                    <div class="related-articles">
+                        <h3>Related Articles</h3>
+                        <div class="related-articles-grid">
+                            <a href="blog-edge-ai-inference.html" class="related-article-card">
+                                <img src="images/blog-edge-ai.png" alt="Edge AI Inference">
+                                <h4>AI Inference at the Edge: Running LLMs in Under 50ms Globally</h4>
+                                <p>Learn how edge AI inference delivers real-time responses for content moderation, recommendations, and fraud detection at 50ms.</p>
+                            </a>
+                            <a href="blog-inference-compute-scaling.html" class="related-article-card">
+                                <img src="images/blog-inference-scaling.png" alt="Inference Compute Scaling">
+                                <h4>Scaling Inference-Time Compute: How Search and RL are Reshaping LLM Performance</h4>
+                                <p>A comprehensive guide on scaling inference-time compute using Monte Carlo Tree Search, Best-of-N sampling, and Reinforcement Learning.</p>
+                            </a>
+                            <a href="blog-database-normalization.html" class="related-article-card">
+                                <img src="images/blog-database-schema.png" alt="Database Schema Normalization">
+                                <h4>Optimizing Database Schema to Reduce Supabase Storage by 80%</h4>
+                                <p>Technical guide on database normalization in PostgreSQL & Supabase, structuring sessions, and solving RLS insertion violations.</p>
+                            </a>
                         </div>
                     </div>
                     

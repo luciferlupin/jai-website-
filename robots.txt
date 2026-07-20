@@ -1,5 +1,6 @@
 # Robots.txt for Curious Kaizer - Optimized for SEO
 # Created: 2025-02-25
+# Updated: 2026-07-20
 # Purpose: Maximize search engine crawling and indexing
 
 User-agent: *
@@ -9,6 +10,7 @@ Allow: /
 Allow: /css/
 Allow: /js/
 Allow: /images/
+Allow: /blog-*.html
 
 # Block unnecessary files
 Disallow: /admin/
@@ -46,4 +48,14 @@ User-agent: Twitterbot
 Allow: /
 
 User-agent: LinkedInBot
+Allow: /
+
+# Allow AI crawlers for better indexing
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
 Allow: /
