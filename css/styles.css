@@ -538,6 +538,7 @@ img {
 .icon-browserbuddy { background: rgba(99, 102, 241, 0.08); color: #6366f1; }
 .icon-travel { background: rgba(14, 165, 233, 0.08); color: #0ea5e9; }
 .icon-home { background: rgba(16, 185, 129, 0.08); color: #10b981; }
+.icon-auto { background: rgba(239, 68, 68, 0.08); color: #ef4444; }
 
 .showcase-text-wrapper {
     display: flex;
@@ -4461,33 +4462,36 @@ section {
     display: flex;
     flex-direction: column;
     gap: 3.5rem;
-    max-width: 1200px;
-    margin: 3rem auto 0;
-    padding: 0 20px;
+    max-width: 1240px;
+    margin: 3.5rem auto 0;
+    padding: 0 24px;
 }
 
 .portfolio-card-premium {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    background: #f5f5f7;
-    border-radius: 24px;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.01);
+    align-items: center;
+    background: #f8fafc;
+    border-radius: 28px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03), 0 1px 3px rgba(15, 23, 42, 0.01);
     overflow: hidden;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    min-height: 340px; /* Ensure content is never cut off */
-    height: auto; /* Allow expanding if content is long */
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 2.5rem;
+    gap: 2.5rem;
+    min-height: auto;
+    height: auto;
 }
 
 .portfolio-card-premium:has(.portfolio-calc-section) {
-    height: auto; /* Expand dynamically for ROI calculator */
+    height: auto;
+    flex-wrap: wrap;
 }
 
 .portfolio-card-premium:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.02);
-    border-color: rgba(37, 99, 235, 0.15);
+    transform: translateY(-6px);
+    box-shadow: 0 25px 50px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.02);
+    border-color: rgba(37, 99, 235, 0.2);
 }
 
 .portfolio-card-premium:nth-child(even) {
@@ -4495,22 +4499,24 @@ section {
 }
 
 .portfolio-card-content {
-    width: 52%;
-    padding: 1.5rem 1.8rem;
+    flex: 1 1 54%;
+    width: 54%;
+    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", sans-serif;
 }
 
 .portfolio-card-visual {
-    width: 48%;
+    flex: 1 1 46%;
+    width: 46%;
     position: relative;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.2rem;
+    padding: 0;
 }
 
 .portfolio-card-visual-inner {
@@ -4538,28 +4544,28 @@ section {
 
 .portfolio-card-category {
     font-size: 0.8rem;
-    font-weight: 600;
-    color: #0066cc;
+    font-weight: 700;
+    color: #2563eb;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
     margin-bottom: 0.5rem;
 }
 
 .portfolio-card-brand {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #1d1d1f;
-    letter-spacing: -0.015em;
-    margin-bottom: 0.2rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.35rem;
 }
 
 .portfolio-card-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #1d1d1f;
-    line-height: 1.2;
-    margin-bottom: 1.2rem;
-    letter-spacing: -0.02em;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #475569;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
 }
 
 .portfolio-card-checklist {
@@ -4568,20 +4574,20 @@ section {
     margin: 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.8rem 1.5rem;
+    gap: 1rem 1.75rem;
 }
 
 .portfolio-card-checklist li {
     display: flex;
     align-items: flex-start;
-    gap: 0.8rem;
-    font-size: 0.95rem;
-    color: #515154;
-    line-height: 1.5;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: #334155;
+    line-height: 1.45;
 }
 
 .portfolio-card-checklist li strong {
-    color: #1d1d1f;
+    color: #0f172a;
     font-weight: 600;
 }
 
@@ -4589,21 +4595,21 @@ section {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: auto;
-    height: auto;
-    border-radius: 0;
-    background: transparent;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: rgba(37, 99, 235, 0.1);
     color: #2563eb;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     flex-shrink: 0;
-    margin-top: 4px;
+    margin-top: 2px;
     transition: all 0.3s ease;
 }
 
 .portfolio-card-premium:hover .check-bullet {
-    background: transparent;
-    color: #1d4ed8;
-    transform: scale(1.1);
+    background: #2563eb;
+    color: #ffffff;
+    transform: scale(1.08);
 }
 
 /* Custom Visual Container Gradients */

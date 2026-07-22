@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KFQ266Z1Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9KFQ266Z1Z');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>Autonomous AI Browser Employees: Building Web Automation with Gemini API & Function Calling | Curious Kaizer</title>
+    <meta name="description" content="A comprehensive technical guide by Jai Goel on building voice-controlled autonomous AI browser agents like Browser Buddy using Google Gemini API, Web Speech APIs, and Chrome Extension background scripts.">
+    <meta name="keywords" content="autonomous AI browser agent, Browser Buddy Chrome extension, Gemini API function calling, voice control browser automation, AI web agent architecture, DOM automation AI">
+    
+    <!-- Advanced SEO Meta Tags -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.curiouskaizer.com/blog-browser-ai-agent-automation.html" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Autonomous AI Browser Employees: Building Web Automation with Gemini API | Curious Kaizer">
+    <meta property="og:description" content="Learn how we built Browser Buddy—an AI agent that understands speech, parses DOM trees, and executes multi-step web tasks autonomously inside Google Chrome.">
+    <meta property="og:url" content="https://www.curiouskaizer.com/blog-browser-ai-agent-automation.html">
+    <meta property="og:image" content="https://www.curiouskaizer.com/images/browser-buddy.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Browser Buddy AI Agent Interface">
+    <meta property="og:site_name" content="Curious Kaizer">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:author" content="Jai Goel">
+    <meta property="article:published_time" content="2026-07-22T00:00:00+05:30">
+    <meta property="article:section" content="AI & Automation">
+    <meta property="article:tag" content="AI Agents">
+    <meta property="article:tag" content="Gemini API">
+    <meta property="article:tag" content="Browser Automation">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@curiouskaizer">
+    <meta name="twitter:creator" content="@jaigoel">
+    <meta name="twitter:title" content="Autonomous AI Browser Employees: Building Web Automation with Gemini API | Curious Kaizer">
+    <meta name="twitter:description" content="Learn how we built Browser Buddy—an AI agent that understands speech, parses DOM trees, and executes multi-step web tasks autonomously inside Google Chrome.">
+    <meta name="twitter:image" content="https://www.curiouskaizer.com/images/browser-buddy.webp">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="author" content="Jai Goel">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="msapplication-TileColor" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Curious Kaizer">
+    
+    <!-- Schema.org Structured Data for Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Autonomous AI Browser Employees: Building Web Automation with Gemini API & Function Calling",
+        "description": "A comprehensive technical guide by Jai Goel on building voice-controlled autonomous AI browser agents like Browser Buddy using Google Gemini API, Web Speech APIs, and Chrome Extension background scripts.",
+        "image": "https://www.curiouskaizer.com/images/browser-buddy.webp",
+        "author": {
+            "@type": "Person",
+            "name": "Jai Goel",
+            "jobTitle": "Founder & Lead Developer",
+            "url": "https://www.curiouskaizer.com",
+            "sameAs": [
+                "https://www.linkedin.com/in/jaigoel",
+                "https://twitter.com/jaigoel",
+                "https://www.instagram.com/curiouskaizer"
+            ]
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Curious Kaizer",
+            "url": "https://www.curiouskaizer.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.curiouskaizer.com/images/logo.jpg",
+                "width": 200,
+                "height": 60
+            }
+        },
+        "datePublished": "2026-07-22T00:00:00+05:30",
+        "dateModified": "2026-07-22T00:00:00+05:30",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.curiouskaizer.com/blog-browser-ai-agent-automation.html"
+        },
+        "articleSection": "AI & Automation",
+        "keywords": "autonomous AI browser agent, Browser Buddy Chrome extension, Gemini API function calling, voice control browser automation"
+    }
+    </script>
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter+Tight:wght@700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter+Tight:wght@700;800&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css?v=1.4">
+    
+    <!-- Premium Article Layout Styles -->
+    <style>
+        body {
+            font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", sans-serif !important;
+        }
+
+        .article-hero {
+            padding: 8rem 0 3.5rem;
+            background-color: #fafbfc;
+            background-image: linear-gradient(rgba(37, 99, 235, 0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235, 0.015) 1px, transparent 1px);
+            background-size: 30px 30px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .breadcrumb a {
+            color: #64748b;
+            transition: color 0.2s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: #2563eb;
+        }
+
+        .article-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+            color: #0f172a;
+            margin: 1rem 0 1.5rem;
+            font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif !important;
+            text-align: left;
+            max-width: 920px;
+        }
+
+        .article-meta-bar {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.92rem;
+            color: #475569;
+            font-weight: 500;
+            flex-wrap: wrap;
+        }
+
+        .article-tag {
+            background: rgba(13, 148, 136, 0.08);
+            color: #0d9488;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .article-main-section {
+            padding: 4.5rem 0;
+            background-color: #ffffff;
+        }
+
+        .article-container {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .article-body {
+            font-size: 1.125rem;
+            line-height: 1.85;
+            color: #334155;
+            font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", sans-serif !important;
+        }
+
+        .article-body p {
+            margin-bottom: 1.8rem;
+        }
+
+        .article-body h2 {
+            font-size: 1.85rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            color: #0f172a;
+            margin: 2.8rem 0 1.2rem;
+            font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif !important;
+            line-height: 1.3;
+        }
+
+        .article-body h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #0f172a;
+            margin: 2rem 0 1rem;
+            font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif !important;
+        }
+
+        .article-body ul, .article-body ol {
+            margin-bottom: 1.8rem;
+            padding-left: 1.5rem;
+        }
+
+        .article-body li {
+            margin-bottom: 0.7rem;
+        }
+
+        .article-body blockquote {
+            border-left: 4px solid #0d9488;
+            background-color: #f0fdfa;
+            padding: 1.4rem 1.8rem;
+            border-radius: 0 16px 16px 0;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #134e4a;
+        }
+
+        .article-body blockquote p {
+            margin-bottom: 0;
+        }
+
+        pre {
+            background-color: #0f172a;
+            color: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 16px;
+            overflow-x: auto;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            margin: 2rem 0;
+            font-family: "Fira Code", "SFMono-Regular", Consolas, monospace;
+        }
+
+        code {
+            background-color: #f1f5f9;
+            color: #0d9488;
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-size: 0.9em;
+            font-family: "Fira Code", "SFMono-Regular", Consolas, monospace;
+        }
+
+        pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+
+        .featured-image-wrapper {
+            margin: 2.5rem 0;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .featured-image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .article-cta-box {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            color: #ffffff;
+            margin: 4rem 0 2rem;
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+            text-align: center;
+        }
+
+        .article-cta-box h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .article-cta-box p {
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto 1.8rem;
+            font-size: 1.05rem;
+        }
+
+        .article-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: #0d9488;
+            color: #ffffff;
+            padding: 0.9rem 2.2rem;
+            border-radius: 100px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .article-cta-btn:hover {
+            background: #0f766e;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(13, 148, 136, 0.3);
+        }
+    </style>
+</head>
+<body itemscope itemtype="https://schema.org/TechArticle">
+
+    <!-- Navigation Header -->
+    <header class="site-header">
+    <nav class="navbar" itemscope itemtype="https://schema.org/SiteNavigationElement" aria-label="Main navigation">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo-icon.jpg" alt="Curious Kaizer Logo" class="logo-icon" width="50" height="38">
+                <span class="logo-text">Curious Kaizer</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#home" title="Home" itemprop="url"><span itemprop="name">Home</span></a></li>
+                <li><a href="index.html#process" title="Process" itemprop="url"><span itemprop="name">Process</span></a></li>
+                <li><a href="services.html" title="Capabilities" itemprop="url"><span itemprop="name">Capabilities</span></a></li>
+                <li><a href="index.html#why-us" title="Why Choose Us" itemprop="url"><span itemprop="name">Why Choose Us</span></a></li>
+                <li><a href="portfolio.html" title="Portfolio" itemprop="url"><span itemprop="name">Portfolio</span></a></li>
+                <li><a href="pricing.html" title="Pricing" itemprop="url"><span itemprop="name">Pricing</span></a></li>
+                <li><a href="blog.html" class="active" title="Blog" itemprop="url"><span itemprop="name">Blog</span></a></li>
+                <li class="mobile-cta-item"><a href="contact.html" class="nav-cta-btn-mobile" itemprop="url"><span itemprop="name"><span class="cta-text-long">Book Free Call</span><span class="cta-text-short">Book Call</span></span> <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+            <a href="contact.html" class="nav-cta-btn"><span class="cta-text-long">Book Free Call</span><span class="cta-text-short">Book Call</span> <i class="fas fa-arrow-right"></i></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    </header>
+
+    <!-- Article Hero -->
+    <section class="article-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right" style="font-size: 0.7rem;"></i>
+                <a href="blog.html">Blog</a>
+                <i class="fas fa-chevron-right" style="font-size: 0.7rem;"></i>
+                <span>Autonomous AI Browser Employees</span>
+            </div>
+            
+            <div class="article-meta-bar">
+                <span class="article-tag">AI & Automation</span>
+                <span>•</span>
+                <span><i class="far fa-clock"></i> 10 min read</span>
+                <span>•</span>
+                <span><i class="far fa-calendar-alt"></i> July 22, 2026</span>
+            </div>
+            
+            <h1 itemprop="headline">Autonomous AI Browser Employees: Scaling Web Automation with Gemini API & Function Calling</h1>
+            
+            <div class="blog-author-strip" style="margin-top: 1rem;">
+                <div class="blog-author-avatar">JG</div>
+                <div class="blog-author-info">
+                    <span itemprop="author">Jai Goel</span>
+                    <small>Founder & Lead Developer, Curious Kaizer</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <main class="article-main-section">
+        <div class="article-container">
+            
+            <div class="featured-image-wrapper">
+                <img src="images/browser-buddy.webp" alt="Browser Buddy AI Employee Interface" loading="eager" width="1024" height="682">
+            </div>
+
+            <article class="article-body" itemprop="articleBody">
+                
+                <p class="lead" style="font-size: 1.25rem; font-weight: 500; color: #0f172a; line-height: 1.7;">
+                    What if your browser could read, speak, navigate, and execute complex online tasks for you? Instead of spending hours manually copying research data, filling out repetitive client forms, or tracking prices across multiple tabs, AI browser agents turn your web browser into an autonomous employee.
+                </p>
+
+                <p>
+                    In this technical engineering breakdown, we detail how we built <strong>Browser Buddy</strong>—a voice-enabled Chrome extension powered by the Google Gemini API that understands natural spoken intent, constructs lightweight DOM accessibility trees, and executes deterministic multi-step browser actions safely.
+                </p>
+
+                <h2>1. Beyond Brittle Automation: Why Selenium and Puppeteer Fail</h2>
+                <p>
+                    Traditional browser automation scripts (like Selenium, Playwright, or Puppeteer) rely on rigid XPath expressions or CSS selectors (e.g. <code>#btn-submit-v2</code>). The moment a web designer changes a container class or layout structure, the script breaks.
+                </p>
+                <p>
+                    AI browser employees solve this by operating at the <strong>semantic level</strong>. Instead of hardcoding selectors, the agent analyzes the DOM’s accessibility tree and interactive elements in real-time, matching natural language requests like <em>“Book a table for two at 8 PM on Friday”</em> or <em>“Extract all active pricing plans from this SaaS page”</em> to actual page components.
+                </p>
+
+                <blockquote>
+                    <p>“An AI agent doesn’t just click buttons—it understands intent, evaluates DOM states, handles popups gracefully, and self-heals when element positions change.”</p>
+                </blockquote>
+
+                <h2>2. System Architecture: Voice to Execution Pipeline</h2>
+                <p>
+                    Browser Buddy operates through a multi-tier extension pipeline split across the Content Script (DOM inspector), Background Service Worker (Gemini API Orchestrator), and Side Panel UI (Voice & Log Terminal).
+                </p>
+
+                <pre><code>// Browser Buddy Agent Execution Loop:
+// 1. User Voice Command ──> [ Web Speech Recognition API ]
+//                                   │
+// 2. DOM Inspector ────────> [ Compact Accessibility Tree Extractor ]
+//                                   │
+// 3. Orchestrator ─────────> [ Google Gemini API Function Calling ]
+//                                   │
+// 4. Action Execution ─────> [ CDP / Extension Script Injection ]
+//                                   │
+// 5. Verification ─────────> [ Screen State Evaluation & Feedback ]</code></pre>
+
+                <h2>3. Extracting Token-Efficient DOM Accessibility Trees</h2>
+                <p>
+                    Sending full HTML DOM trees (often exceeding 50,000 lines of code) to an LLM wastes context tokens and degrades response speed. We compress the raw DOM into a minimal JSON Accessibility Tree containing only interactable nodes:
+                </p>
+
+                <pre><code>// Compact DOM Tree Parser Example
+function extractInteractiveDOMTree() {
+    const selector = 'button, a, input, select, textarea, [role="button"]';
+    const elements = document.querySelectorAll(selector);
+    
+    return Array.from(elements).map((el, index) => ({
+        id: index,
+        tag: el.tagName.toLowerCase(),
+        text: el.innerText || el.placeholder || el.alt || '',
+        role: el.getAttribute('role') || el.type || '',
+        bounding: el.getBoundingClientRect(),
+        isVisible: isElementInViewport(el)
+    })).filter(node => node.isVisible && node.text.trim().length > 0);
+}</code></pre>
+
+                <h2>4. Structured Function Calling with Google Gemini API</h2>
+                <p>
+                    We provide the Gemini API with a suite of deterministic browser execution tools: <code>click_element(id)</code>, <code>fill_input(id, text)</code>, <code>scroll_page(direction)</code>, <code>switch_tab(index)</code>, and <code>summarize_page()</code>.
+                </p>
+
+                <p>Here is how tool declarations are structured in JavaScript for Gemini API function calling:</p>
+
+                <pre><code>const browserTools = [
+    {
+        name: "click_element",
+        description: "Click an interactive button or link on the active webpage by element ID",
+        parameters: {
+            type: "OBJECT",
+            properties: {
+                element_id: { type: "NUMBER", description: "The numeric ID of the DOM element" },
+                reason: { type: "STRING", description: "Why this action is being taken" }
+            },
+            required: ["element_id"]
+        }
+    },
+    {
+        name: "fill_input",
+        description: "Type text into a text input or textarea field",
+        parameters: {
+            type: "OBJECT",
+            properties: {
+                element_id: { type: "NUMBER", description: "The numeric ID of the input element" },
+                text_value: { type: "STRING", description: "The text to insert" }
+            },
+            required: ["element_id", "text_value"]
+        }
+    }
+];</code></pre>
+
+                <h2>5. Guardrails, Security & Safety Controls</h2>
+                <p>
+                    Autonomous web agents must execute safely without compromising sensitive user data:
+                </p>
+                <ul>
+                    <li><strong>Sensitive Field Intercepts:</strong> Password fields, credit card inputs, and 2FA prompts bypass automated entry and require explicit user approval.</li>
+                    <li><strong>Human-in-the-Loop Confirmation:</strong> Destructive actions (like submitting payment forms or deleting data) present a confirmation dialog before firing.</li>
+                    <li><strong>Sandboxed Context Execution:</strong> Chrome Extension APIs enforce strict origin isolation to prevent malicious cross-site scripting (XSS).</li>
+                </ul>
+
+                <h2>The Future of Agentic Browsing</h2>
+                <p>
+                    As multimodal LLMs continue to evolve in speed and visual reasoning, AI browser employees will transform how businesses handle back-office data entry, market research, and multi-app workflows. Instead of writing custom API integrations for every legacy web platform, an AI agent simply logs in and completes the work like a human employee.
+                </p>
+
+                <div class="article-cta-box">
+                    <h3>Supercharge Your Web Workflows with Custom AI Tools</h3>
+                    <p>Want to build custom AI agents, voice-controlled extensions, or automated web scraping pipelines for your team?</p>
+                    <a href="contact.html" class="article-cta-btn">Discuss Your AI Project With Curious Kaizer <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo-link">
+                        <img src="images/logo.jpg" alt="Curious Kaizer Logo" class="footer-logo-img" width="72" height="72" loading="lazy" decoding="async">
+                    </a>
+                    <p class="subtitle" style="margin-top: 0.5rem;">Where Innovation Meets Digital Excellence</p>
+                    <p class="tagline">
+                        Crafting bespoke, high-performance web applications, custom platforms, and design systems that scale your business.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/curious-kaizer/" target="_blank" rel="noopener me" aria-label="Curious Kaizer LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/curiouskaizer/" target="_blank" rel="noopener me" aria-label="Curious Kaizer Instagram Profile"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-nav-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="services.html">Custom Websites</a></li>
+                        <li><a href="services.html">E-Commerce Stores</a></li>
+                        <li><a href="services.html">Web Applications</a></li>
+                        <li><a href="crm-product.html">Custom CRM Solutions</a></li>
+                        <li><a href="services.html">AI & Automation Tools</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-nav-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html#home">Home / Process</a></li>
+                        <li><a href="services.html">Capabilities</a></li>
+                        <li><a href="index.html#why-us">Why Choose Us</a></li>
+                        <li><a href="portfolio.html">Our Portfolio</a></li>
+                        <li><a href="pricing.html">Pricing / FAQ</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Get in Touch</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@curiouskaizer.com">info@curiouskaizer.com</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:curiouskaizer@gmail.com">curiouskaizer@gmail.com</a></li>
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:+918595121436">+91 85951 21436</a></li>
+                        <li><i class="fab fa-whatsapp" style="color: #25d366;"></i> <a href="https://wa.me/918595121436" target="_blank" rel="noopener">Chat on WhatsApp</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Delhi, India | Remote Worldwide</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-left-info">
+                    <p class="copyright">&copy; 2026 Curious Kaizer. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="terms.html">Terms of Service</a>
+                    <span>•</span>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quick Contact Dock -->
+    <div class="quick-contact-dock">
+        <a href="https://wa.me/918595121436?text=Hi!%20I'd%20like%20to%20get%20an%20instant%20quote%20and%20discuss%20a%20project." class="quick-dock-btn whatsapp" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i>
+            <span>Quote</span>
+        </a>
+        <a href="tel:+918595121436" class="quick-dock-btn call">
+            <i class="fas fa-phone-alt"></i>
+            <span>Call</span>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/scripts.js" defer></script>
+    <script src="js/analytics-tracker.js" defer></script>
+</body>
+</html>
