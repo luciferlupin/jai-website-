@@ -1,13 +1,16 @@
 /**
  * Curious Kaizer Website Analytics Tracker
  * Connects directly to Supabase for serverless event tracking.
+ * Filters bots, automated scrapers, admin views, and local dev environments to ensure only real visitor data is recorded.
  */
 
 (function () {
     try {
-        // Disable tracker on localhost / loopback / local IPs / dev ports / file protocol
         const hostname = window.location.hostname || '';
         const port = window.location.port || '';
+        const pathname = window.location.pathname || '';
+
+        // 1. Disable tracker on localhost / loopback / local IPs / dev ports / file protocol
         const isLocal = hostname === 'localhost' || 
                         hostname === '127.0.0.1' || 
                         hostname === '0.0.0.0' ||
@@ -22,6 +25,19 @@
                         port === '8085' ||
                         window.location.protocol === 'file:';
         if (isLocal) {
+            return;
+        }
+
+        // 2. Disable tracking on analytics dashboard pages
+        if (pathname.includes('analytics.html') || pathname.includes('analytics-deploy')) {
+            return;
+        }
+
+        // 3. Disable tracking for Bots, Crawlers, Automated Webdrivers & Headless Browsers
+        const ua = (navigator.userAgent || '').toLowerCase();
+        const isBot = navigator.webdriver ||
+                      /bot|crawler|spider|headless|lighthouse|slurp|seek|python|curl|wget|bytespider|gptbot|claudebot|meta-externalagent|facebookexternalhit|yandex|baidu|pingdom|uptime|checker/i.test(ua);
+        if (isBot) {
             return;
         }
 
@@ -50,23 +66,18 @@
             }
         }
 
-        // 1. Configuration - Fallback pattern (Global config -> LocalStorage -> Placeholder)
+        // Configuration - Fallback pattern (Global config -> LocalStorage -> Default)
         const SUPABASE_URL = window.SUPABASE_URL || safeGetLocalStorage('supabase_url') || "https://umuetoqaoaqlhelgoyfx.supabase.co";
         const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || safeGetLocalStorage('supabase_anon_key') || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVtdWV0b3Fhb2FxbGhlbGdveWZ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIxMzk5MzcsImV4cCI6MjA5NzcxNTkzN30.PCgA5s8nlK_eadT3W4hUG9zzL_ISn5-zMqk2SRS2EuQ";
 
-        // Stop if credentials are not configured yet
         if (!SUPABASE_URL || SUPABASE_URL === "YOUR_SUPABASE_URL" || !SUPABASE_ANON_KEY || SUPABASE_ANON_KEY === "YOUR_SUPABASE_ANON_KEY") {
-            console.warn("Curious Kaizer Analytics: Supabase credentials not found. Please set them in localStorage ('supabase_url' and 'supabase_anon_key') or hardcode them in the tracking script.");
             return;
         }
 
-        // Supabase client initialization removed in favor of direct REST API calls
-
-        // 3. Helper to get or create Session ID
+        // Helper to get or create Session ID
         function getSessionId() {
             let sessionId = safeGetSessionStorage('kk_analytics_session_id');
             if (!sessionId) {
-                // Generate a random ID
                 sessionId = 'session_' + Math.random().toString(36).substring(2, 15) + '_' + Date.now().toString(36);
                 safeSetSessionStorage('kk_analytics_session_id', sessionId);
             }
@@ -80,8 +91,7 @@
                 try { return JSON.parse(cached); } catch (e) {}
             }
 
-            // Skip IP API fetch on localhost
-            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
+            if (isLocal) {
                 return { ipAddress: null, country: null, region: null, city: null, zipCode: null, latitude: null, longitude: null };
             }
 
@@ -107,28 +117,22 @@
             return { ipAddress: null, country: null, region: null, city: null, zipCode: null, latitude: null, longitude: null };
         }
 
-        // Helper to truncate strings safely before database insertion
         function limitLength(str, max) {
             if (typeof str !== 'string') return str;
             return str.substring(0, max);
         }
 
-        // 4. Send Event to Supabase
+        // Send Event to Supabase
         async function trackEvent(eventType, eventLabel = null) {
-            const h = window.location.hostname || '';
-            const p = window.location.port || '';
-            const isLocal = h === 'localhost' || h === '127.0.0.1' || h === '0.0.0.0' || h === '[::1]' ||
-                            h.startsWith('192.168.') || h.startsWith('10.') || h.startsWith('172.') || h.endsWith('.local') ||
-                            p === '8080' || p === '3000' || p === '8000' || p === '8085' || window.location.protocol === 'file:';
-
-            if (isLocal) {
+            const currentPath = window.location.pathname || '/';
+            if (currentPath.includes('analytics.html') || currentPath.includes('analytics-deploy')) {
                 return;
             }
 
             const loc = await getSessionLocation();
             const payload = {
                 session_id: limitLength(getSessionId(), 100),
-                page_path: limitLength(window.location.pathname || '/', 2048),
+                page_path: limitLength(currentPath, 2048),
                 page_title: limitLength(document.title || null, 500),
                 event_type: limitLength(eventType, 50),
                 event_label: limitLength(eventLabel, 1000),
@@ -146,7 +150,7 @@
             };
 
             try {
-                const response = await fetch(`${SUPABASE_URL}/rest/v1/analytics_events`, {
+                await fetch(`${SUPABASE_URL}/rest/v1/analytics_events`, {
                     method: 'POST',
                     headers: {
                         'apikey': SUPABASE_ANON_KEY,
@@ -156,43 +160,33 @@
                     },
                     body: JSON.stringify(payload)
                 });
-
-                if (!response.ok) {
-                    // Suppress verbose error output if response fails
-                    return;
-                }
             } catch (e) {
                 // Silently handle network errors
             }
         }
 
-        // 5. Initialize tracking
+        // Initialize tracking
         function initTracker() {
             // Track the pageview event
             trackEvent('pageview');
 
-            // Track click events on important CTAs and links
+            // Track click events on CTAs and interactive elements
             document.body.addEventListener('click', (event) => {
-                // Find closest link or button to get meaningful tracking
                 const target = event.target.closest('a, button, [data-track]');
-                
                 if (!target) return;
 
-                // Check if it's a high-value element we want to track
                 let trackThis = false;
                 let label = '';
 
-                // Explicit tracking attribute
                 if (target.hasAttribute('data-track')) {
                     trackThis = true;
                     label = target.getAttribute('data-track');
                 } else {
-                    // Check classes or ID of the link/button
                     const classes = target.className || '';
                     const id = target.id || '';
-                    const text = (target.innerText || target.textContent || '').trim().substring(0, 50);
+                    const rawText = (target.innerText || target.textContent || '').replace(/\s+/g, ' ').trim();
+                    const text = rawText.substring(0, 60);
 
-                    // Identify if it's a CTA button
                     if (
                         classes.includes('cta') || 
                         classes.includes('btn') || 
@@ -219,6 +213,6 @@
             initTracker();
         }
     } catch (globalError) {
-        console.warn("KK Analytics tracker load failed (incompatible browser):", globalError);
+        console.warn("KK Analytics tracker load failed:", globalError);
     }
 })();

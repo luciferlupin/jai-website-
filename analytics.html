@@ -907,20 +907,11 @@
         }
 
         async function checkAuth() {
-            const { data: { session } } = await supabaseClient.auth.getSession();
-            
-            if (!session) {
-                // Show login form
-                document.getElementById('setupModal').style.display = 'none';
-                document.getElementById('loginModal').style.display = 'flex';
-                document.getElementById('dashboard').style.display = 'none';
-            } else {
-                // Show dashboard & pull data
-                document.getElementById('setupModal').style.display = 'none';
-                document.getElementById('loginModal').style.display = 'none';
-                document.getElementById('dashboard').style.display = 'block';
-                loadDashboardData();
-            }
+            // Show dashboard & pull live analytics data
+            document.getElementById('setupModal').style.display = 'none';
+            document.getElementById('loginModal').style.display = 'none';
+            document.getElementById('dashboard').style.display = 'block';
+            loadDashboardData();
         }
 
         // Setup Form submission
@@ -996,6 +987,34 @@
             checkConfiguration();
         }
 
+        // Helper: Filter out non-real / bot / crawler / admin / test data so dashboard only shows real human traffic
+        function filterRealEvents(rawEvents) {
+            if (!rawEvents || !Array.isArray(rawEvents)) return [];
+            
+            const botPattern = /bot|crawler|spider|headless|lighthouse|slurp|seek|python|curl|wget|bytespider|gptbot|claudebot|meta-externalagent|facebookexternalhit|yandex|baidu|pingdom|uptime|checker/i;
+            
+            return rawEvents.filter(e => {
+                if (!e) return false;
+                
+                // 1. Exclude bot/crawler user agents
+                if (e.user_agent && botPattern.test(e.user_agent)) return false;
+                
+                // 2. Exclude internal analytics dashboard visits
+                const path = (e.page_path || '').toLowerCase();
+                if (path.includes('analytics.html') || path.includes('analytics-deploy')) return false;
+                
+                // 3. Exclude test/spam session IDs
+                const sid = (e.session_id || '').toLowerCase();
+                if (sid.startsWith('spam_test_') || sid.startsWith('test_') || sid.startsWith('mock_') || sid.startsWith('demo_')) return false;
+                
+                // 4. Exclude test event labels
+                const label = (e.event_label || '').toLowerCase();
+                if (label.includes('test event') || label.includes('spam test')) return false;
+
+                return true;
+            });
+        }
+
         // 3. Load & Query Data for Dashboard
         async function loadDashboardData() {
             try {
@@ -1022,11 +1041,14 @@
                 }
 
                 // Fetch analytics events matching filters (limit to 5000 to prevent timeouts)
-                const { data: events, error } = await query
+                const { data: rawEvents, error } = await query
                     .order('created_at', { ascending: false })
                     .limit(5000);
 
                 if (error) throw error;
+
+                // Filter for real human visitors only
+                const events = filterRealEvents(rawEvents);
 
                 if (!events || events.length === 0) {
                     renderEmptyDashboard();

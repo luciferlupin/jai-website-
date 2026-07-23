@@ -4,13 +4,22 @@
 
 BEGIN;
 
--- 1. Clean up existing spam data (removes mock test spam and rows with abnormally large labels)
+-- 1. Clean up existing spam data (removes bot traffic, internal dashboard visits, mock test spam, and rows with abnormally large labels)
 DELETE FROM analytics_events_raw 
 WHERE session_id LIKE 'spam_test_%' 
+   OR session_id LIKE 'test_%'
+   OR session_id LIKE 'mock_%'
+   OR session_id LIKE 'demo_%'
+   OR page_path LIKE '%analytics.html%'
+   OR page_path LIKE '%analytics-deploy%'
    OR length(event_label) > 1000;
 
 DELETE FROM analytics_sessions 
-WHERE session_id LIKE 'spam_test_%';
+WHERE session_id LIKE 'spam_test_%'
+   OR session_id LIKE 'test_%'
+   OR session_id LIKE 'mock_%'
+   OR session_id LIKE 'demo_%'
+   OR user_agent ~* 'bot|crawler|spider|headless|lighthouse|slurp|seek|python|curl|wget|bytespider|gptbot|claudebot|meta-externalagent|facebookexternalhit|yandex|baidu|pingdom|uptime|checker';
 
 -- 2. Add CHECK constraints to prevent large payload injections (base64 data, files, etc.)
 ALTER TABLE analytics_events_raw DROP CONSTRAINT IF EXISTS check_event_type_length;
