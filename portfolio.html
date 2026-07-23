@@ -43,7 +43,7 @@
     <link rel="stylesheet" href="css/styles.css">
     
     <!-- Asynchronous CSS Loading for Non-Critical Stylesheets to Prevent Render-Blocking -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
     
     <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -597,7 +597,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js" defer></script>
     <script src="js/scripts.js" defer></script>
-    <script src="js/analytics-tracker.js" defer></script>
+    <script src="js/analytics-tracker.js?v=2" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const lenis = new Lenis({
@@ -615,11 +615,19 @@
 
             // Initialize AOS with a brief delay or when idle to prevent blocking the main thread
             const initAOS = () => {
-                AOS.init({
+                if (typeof AOS !== "undefined" && typeof AOS.init === "function") {
+
+                    try {
+
+                        AOS.init({
                     duration: 800,
                     easing: 'ease-in-out',
                     once: true,
                 });
+
+                    } catch (e) {}
+
+                }
             };
             if ('requestIdleCallback' in window) {
                 requestIdleCallback(() => initAOS());
@@ -647,8 +655,10 @@
                     });
 
                     // Refresh AOS layouts
-                    if (window.AOS) {
-                        AOS.refresh();
+                    if (window.AOS && typeof window.AOS.refresh === 'function') {
+                        try {
+                            window.AOS.refresh();
+                        } catch (e) {}
                     }
                 });
             });

@@ -5,6 +5,26 @@
 
 (function () {
     try {
+        // Disable tracker on localhost / loopback / local IPs / dev ports / file protocol
+        const hostname = window.location.hostname || '';
+        const port = window.location.port || '';
+        const isLocal = hostname === 'localhost' || 
+                        hostname === '127.0.0.1' || 
+                        hostname === '0.0.0.0' ||
+                        hostname === '[::1]' ||
+                        hostname.startsWith('192.168.') ||
+                        hostname.startsWith('10.') ||
+                        hostname.startsWith('172.') ||
+                        hostname.endsWith('.local') ||
+                        port === '8080' ||
+                        port === '3000' ||
+                        port === '8000' ||
+                        port === '8085' ||
+                        window.location.protocol === 'file:';
+        if (isLocal) {
+            return;
+        }
+
         // Safe storage helpers to avoid SecurityError crashes in Safari Private Mode or blocked third-party storage on mobile
         function safeGetLocalStorage(key) {
             try {
@@ -60,6 +80,11 @@
                 try { return JSON.parse(cached); } catch (e) {}
             }
 
+            // Skip IP API fetch on localhost
+            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
+                return { ipAddress: null, country: null, region: null, city: null, zipCode: null, latitude: null, longitude: null };
+            }
+
             try {
                 const response = await fetch('https://free.freeipapi.com/api/json');
                 if (response.ok) {
@@ -77,7 +102,7 @@
                     return loc;
                 }
             } catch (e) {
-                console.warn("KK Analytics Location Fetch Error:", e);
+                // Silently handle location fetch errors
             }
             return { ipAddress: null, country: null, region: null, city: null, zipCode: null, latitude: null, longitude: null };
         }
@@ -90,6 +115,16 @@
 
         // 4. Send Event to Supabase
         async function trackEvent(eventType, eventLabel = null) {
+            const h = window.location.hostname || '';
+            const p = window.location.port || '';
+            const isLocal = h === 'localhost' || h === '127.0.0.1' || h === '0.0.0.0' || h === '[::1]' ||
+                            h.startsWith('192.168.') || h.startsWith('10.') || h.startsWith('172.') || h.endsWith('.local') ||
+                            p === '8080' || p === '3000' || p === '8000' || p === '8085' || window.location.protocol === 'file:';
+
+            if (isLocal) {
+                return;
+            }
+
             const loc = await getSessionLocation();
             const payload = {
                 session_id: limitLength(getSessionId(), 100),
@@ -123,10 +158,11 @@
                 });
 
                 if (!response.ok) {
-                    console.error("KK Analytics Error:", response.statusText);
+                    // Suppress verbose error output if response fails
+                    return;
                 }
             } catch (e) {
-                console.error("KK Analytics Network Error:", e);
+                // Silently handle network errors
             }
         }
 

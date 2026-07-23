@@ -420,7 +420,7 @@
     </style>
     
     <!-- Asynchronous CSS Loading for Non-Critical Stylesheets to Prevent Render-Blocking -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
     
     <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -2494,7 +2494,7 @@
     <script src="js/carousel.js" defer></script>
     <script src="js/typing.js" defer></script>
     <script src="js/timeline-animations.js" defer></script>
-    <script src="js/analytics-tracker.js" defer></script>
+    <script src="js/analytics-tracker.js?v=2" defer></script>
 
     <script>
         // Scroll-triggered animations
@@ -2599,13 +2599,17 @@
 
             // Initialize AOS with a brief delay or when idle to prevent blocking the main thread
             const initAOS = () => {
-                AOS.init({
-                    duration: 800,
-                    easing: 'ease-in-out',
-                    once: true,
-                    offset: 100,
-                    mirror: false
-                });
+                if (typeof AOS !== 'undefined' && typeof AOS.init === 'function') {
+                    try {
+                        AOS.init({
+                            duration: 800,
+                            easing: 'ease-in-out',
+                            once: true,
+                            offset: 100,
+                            mirror: false
+                        });
+                    } catch (e) {}
+                }
             };
             if ('requestIdleCallback' in window) {
                 requestIdleCallback(() => initAOS());

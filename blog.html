@@ -101,7 +101,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter+Tight:wght@700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter+Tight:wght@700;800&display=swap" rel="stylesheet"></noscript>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
     
     <!-- CSS Stylesheets -->
@@ -1838,7 +1838,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js" defer></script>
     <script src="js/scripts.js" defer></script>
-    <script src="js/analytics-tracker.js" defer></script>
+    <script src="js/analytics-tracker.js?v=2" defer></script>
     
     <!-- Carousel + Blog Filter Script -->
     <script>
@@ -1906,13 +1906,17 @@
             // AOS (Animate On Scroll) Init
             // ==============================
             const initAOS = () => {
-                AOS.init({
-                    duration: 800,
-                    easing: 'ease-in-out',
-                    once: true,
-                    offset: 100,
-                    mirror: false
-                });
+                if (typeof AOS !== 'undefined' && typeof AOS.init === 'function') {
+                    try {
+                        AOS.init({
+                            duration: 800,
+                            easing: 'ease-in-out',
+                            once: true,
+                            offset: 100,
+                            mirror: false
+                        });
+                    } catch (e) {}
+                }
             };
             if ('requestIdleCallback' in window) {
                 requestIdleCallback(() => initAOS());
@@ -1952,8 +1956,10 @@
                     });
 
                     // Refresh AOS after filtering
-                    if (window.AOS) {
-                        AOS.refresh();
+                    if (window.AOS && typeof window.AOS.refresh === 'function') {
+                        try {
+                            window.AOS.refresh();
+                        } catch (e) {}
                     }
                 });
             });
