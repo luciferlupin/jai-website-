@@ -62,8 +62,7 @@
     <meta name="revisit-after" content="7 days">
     
     <!-- Preconnect hints for external booking calendar -->
-    <link rel="dns-prefetch" href="https://assets.calendly.com">
-    <link rel="dns-prefetch" href="https://calendly.com">
+    <link rel="dns-prefetch" href="https://app.cal.com">
 
     <!-- Technical SEO -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -2298,8 +2297,6 @@
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
             <div class="booking-premium-banner">
                 <!-- Giant background translucent number -->
-                <div class="banner-bg-text">30</div>
-                
                 <!-- Animated wind lines -->
                 <div class="wind-glow wind-1"></div>
                 <div class="wind-glow wind-2"></div>
@@ -2314,69 +2311,30 @@
                     
                     <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; align-items: center;">
                         <a href="contact.html#contact-form-section" class="cta-button primary" style="font-size: 0.95rem; padding: 0.85rem 1.8rem;">Get Your Prototype Free <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></a>
-                        <a href="#calendly-card-wrapper" class="cta-button primary" style="font-size: 0.95rem; padding: 0.85rem 1.8rem;">Book a Discovery Call <i class="far fa-calendar-alt" style="margin-left: 8px;"></i></a>
+                        <a href="#booking-card-wrapper" class="cta-button primary" style="font-size: 0.95rem; padding: 0.85rem 1.8rem;">Book a Discovery Call <i class="far fa-calendar-alt" style="margin-left: 8px;"></i></a>
                     </div>
                 </div>
             </div>
             
             <!-- Overlapping Booking Card -->
-            <div class="calendly-card-wrapper" id="calendly-card-wrapper">
-                <!-- Clean Premium Loading Placeholder -->
-                <div class="calendly-loader-container">
-                    <div class="calendly-loader-circle"></div>
-                    <div class="calendly-loader-text">Loading secure calendar...</div>
-                </div>
-                
-                <!-- Calendly inline widget begin -->
-                <div class="calendly-inline-widget" data-url="https://calendly.com/curiouskaizer/new-meeting" style="min-width:320px;height:700px;"></div>
-                <script>
-                    (function() {
-                        const wrapper = document.querySelector('.calendly-card-wrapper');
-                        const loader = wrapper ? wrapper.querySelector('.calendly-loader-container') : null;
-                        const widget = wrapper ? wrapper.querySelector('.calendly-inline-widget') : null;
-                        
-                        function hideLoader() {
-                            if (loader) {
-                                loader.style.opacity = '0';
-                                loader.style.pointerEvents = 'none';
-                                setTimeout(() => {
-                                    loader.style.display = 'none';
-                                }, 400);
-                            }
-                        }
+            <div class="booking-card-wrapper calendly-card-wrapper" id="booking-card-wrapper">
+                <!-- Cal inline embed code begins -->
+                <div style="width:100%;height:100%;min-height:700px;overflow:hidden;" id="my-cal-inline-30min"></div>
+                <script type="text/javascript">
+                  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+                Cal("init", "30min", {origin:"https://app.cal.com"});
+                Cal.config = Cal.config || {};
+                Cal.config.forwardQueryParams = true;
 
-                        if (wrapper && widget) {
-                            const observer = new IntersectionObserver((entries) => {
-                                entries.forEach(entry => {
-                                    if (entry.isIntersecting) {
-                                        // Load Calendly script dynamically
-                                        const script = document.createElement('script');
-                                        script.src = "https://assets.calendly.com/assets/external/widget.js";
-                                        script.async = true;
-                                        document.body.appendChild(script);
+                  Cal.ns["30min"]("inline", {
+                    elementOrSelector:"#my-cal-inline-30min",
+                    config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"},
+                    calLink: "curiouskaizer/30min",
+                  });
 
-                                        // Poll for iframe mount
-                                        let checkInterval = setInterval(() => {
-                                            const iframe = widget.querySelector('iframe');
-                                            if (iframe) {
-                                                iframe.onload = hideLoader;
-                                                // Fallback: hide loader after 1 second if onload doesn't trigger
-                                                setTimeout(hideLoader, 1000);
-                                                clearInterval(checkInterval);
-                                            }
-                                        }, 50);
-
-                                        // Absolute fallback timeout of 4 seconds from start of load
-                                        setTimeout(hideLoader, 4000);
-
-                                        observer.disconnect();
-                                    }
-                                });
-                            }, { rootMargin: '600px 0px' });
-                            observer.observe(wrapper);
-                        }
-                    })();
-                </script>
+                  Cal.ns["30min"]("ui", {"theme":"light","hideEventTypeDetails":false,"layout":"month_view"});
+                  </script>
+                  <!-- Cal inline embed code ends -->
             </div>
         </div>
     </section>

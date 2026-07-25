@@ -9420,21 +9420,26 @@ select:focus {
 .booking-premium-section {
     padding: 6rem 0 5rem 0;
     background-color: #f8fafc;
+    background-image: 
+        radial-gradient(rgba(148, 163, 184, 0.18) 1px, transparent 1px);
+    background-size: 24px 24px;
     overflow: hidden;
     position: relative;
 }
 
 .booking-premium-banner {
-    background: radial-gradient(circle at 50% 30%, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%);
-    border-radius: 24px;
+    background: radial-gradient(circle at 50% 20%, #1d4ed8 0%, #1e3a8a 45%, #0f172a 100%);
+    border-radius: 28px;
     padding: 5rem 3rem 13rem 3rem; /* Beautiful padding for full-width card layout */
     text-align: center;
     position: relative;
     overflow: hidden;
     color: white;
+    border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 
-        0 10px 15px -3px rgba(37, 99, 235, 0.15), 
-        0 25px 50px -12px rgba(37, 99, 235, 0.25);
+        0 25px 60px -15px rgba(15, 23, 42, 0.5), 
+        0 10px 25px -5px rgba(30, 58, 138, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.2);
 }
 
 /* Translucent giant background text "30" */
@@ -9446,7 +9451,7 @@ select:focus {
     font-size: 24rem; /* Restored back to fit the wider container beautifully */
     font-weight: 900;
     font-family: var(--font-display);
-    color: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.04);
     pointer-events: none;
     user-select: none;
     -webkit-user-select: none;
@@ -9456,46 +9461,47 @@ select:focus {
     z-index: 1;
 }
 
-/* Animated wind/light streaks */
+/* Animated fast wind/light streaks */
 .wind-glow {
     position: absolute;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4) 20%, #ffffff 50%, rgba(255, 255, 255, 0.4) 80%, transparent);
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(147, 197, 253, 0.6) 20%, #ffffff 50%, rgba(147, 197, 253, 0.6) 80%, transparent);
     pointer-events: none;
     z-index: 2;
-    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.9));
+    filter: drop-shadow(0 0 10px rgba(147, 197, 253, 0.9));
     opacity: 0;
+    border-radius: 2px;
 }
 
 .wind-1 {
     top: 15%;
-    width: 250px;
-    animation: windMove 12s linear infinite;
+    width: 280px;
+    animation: windMove 3.5s linear infinite;
 }
 
 .wind-2 {
     top: 38%;
-    width: 350px;
-    animation: windMove 16s linear infinite 2s;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3) 20%, #ffffff 50%, rgba(255, 255, 255, 0.3) 80%, transparent);
+    width: 380px;
+    animation: windMove 4.5s linear infinite 0.8s;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5) 20%, #ffffff 50%, rgba(255, 255, 255, 0.5) 80%, transparent);
 }
 
 .wind-3 {
-    top: 62%;
-    width: 200px;
-    animation: windMove 10s linear infinite 4.5s;
+    top: 60%;
+    width: 240px;
+    animation: windMove 2.8s linear infinite 1.5s;
 }
 
 .wind-4 {
-    top: 78%;
-    width: 300px;
-    animation: windMove 14s linear infinite 7s;
+    top: 76%;
+    width: 320px;
+    animation: windMove 4.0s linear infinite 2.2s;
 }
 
 .wind-5 {
-    top: 90%;
-    width: 180px;
-    animation: windMove 11s linear infinite 9.5s;
+    top: 88%;
+    width: 220px;
+    animation: windMove 3.2s linear infinite 3.0s;
 }
 
 @keyframes windMove {
@@ -9504,11 +9510,11 @@ select:focus {
         opacity: 0;
         transform: scaleX(0.5);
     }
-    10% {
-        opacity: 0.8;
+    15% {
+        opacity: 0.95;
     }
-    90% {
-        opacity: 0.8;
+    85% {
+        opacity: 0.95;
     }
     100% {
         left: 120%;
@@ -9548,28 +9554,46 @@ select:focus {
     line-height: 1.6;
 }
 
-/* Floating booking widget wrapper */
+/* Floating booking widget positioning container */
+.booking-card-wrapper,
 .calendly-card-wrapper {
     position: relative;
     z-index: 10;
-    max-width: 1000px; /* Streamlined center card width within container */
-    margin: -9rem auto 0 auto; /* Balanced overlapping */
-    background: #ffffff;
-    border-radius: 20px;
-    box-shadow: 
-        0 20px 25px -5px rgba(0, 0, 0, 0.08), 
-        0 10px 10px -5px rgba(0, 0, 0, 0.04),
-        0 0 0 1px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
-    padding: 10px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    max-width: 1040px;
+    margin: -8rem auto 0 auto;
+    background: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    overflow: visible;
+    padding: 0 !important;
+    transition: none !important;
 }
 
+.booking-card-wrapper:hover,
 .calendly-card-wrapper:hover {
-    transform: translateY(-5px);
-    box-shadow: 
-        0 25px 35px -5px rgba(0, 0, 0, 0.12), 
-        0 15px 15px -5px rgba(0, 0, 0, 0.06);
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Cal.com Embed Container */
+#my-cal-inline-30min {
+    width: 100% !important;
+    min-height: 660px;
+    height: 100%;
+    overflow: hidden !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+#my-cal-inline-30min iframe {
+    width: 100% !important;
+    min-height: 660px !important;
+    height: 100% !important;
+    border: none !important;
+    border-radius: 0 !important;
 }
 
 /* Premium Inline Loader */
@@ -9643,6 +9667,7 @@ select:focus {
         display: none !important;
     }
     
+    .booking-card-wrapper,
     .calendly-card-wrapper {
         margin: -4.5rem auto 0 auto !important;
         border-radius: 18px;
