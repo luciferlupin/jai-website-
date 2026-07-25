@@ -3217,6 +3217,48 @@ section {
     opacity: 1;
 }
 
+/* Static Solid Blue CTA Button - No Animations */
+.cta-button-blue-static {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    background: #2563eb !important;
+    color: #ffffff !important;
+    border: none !important;
+    cursor: pointer;
+    font-family: var(--font-primary, 'Inter', sans-serif);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: normal;
+    text-transform: none;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+.cta-button-blue-static:hover,
+.cta-button-blue-static:focus,
+.cta-button-blue-static:active {
+    background: #1d4ed8 !important;
+    color: #ffffff !important;
+    transform: none !important;
+    animation: none !important;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3) !important;
+    transition: none !important;
+}
+
+.cta-button-blue-static::before,
+.cta-button-blue-static::after {
+    display: none !important;
+    content: none !important;
+}
+
 /* Add pulse animation for primary button */
 @keyframes pulse {
     0% {

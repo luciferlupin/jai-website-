@@ -53,75 +53,192 @@
     <noscript><link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css"></noscript>
     
     <style>
-        /* Subpage Premium Hero Styling */
+        /* Apple-Inspired Design System for Contact Page (Compact & Screen-Proportional) */
         .subpage-hero {
-            padding: 8rem 0 4rem;
-            background-color: #fafbfc;
-            background-image: linear-gradient(rgba(37, 99, 235, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235, 0.02) 1px, transparent 1px);
-            background-size: 40px 40px;
+            padding: 4.5rem 0 2.5rem;
+            background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);
             text-align: center;
-            border-bottom: 1px solid #f1f5f9;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
         
-        .subpage-hero-title {
-            font-size: 3.5rem;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            color: #0f172a;
-            margin: 1rem 0 1.5rem;
+        .hero-badge-apple {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 14px;
+            background: rgba(37, 99, 235, 0.08);
+            color: #2563eb;
+            font-size: 0.775rem;
+            font-weight: 700;
+            border-radius: 9999px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.8rem;
         }
 
-        /* Contact Section */
+        .subpage-hero-title {
+            font-family: 'Inter Tight', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 2.6rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: #1d1d1f;
+            margin: 0.4rem 0 0.8rem;
+            line-height: 1.15;
+        }
+
+        .section-subtitle {
+            color: #6e6e73;
+            font-size: 1.05rem;
+            line-height: 1.5;
+            font-weight: 400;
+            max-width: 680px;
+            margin: 0 auto 1.6rem;
+        }
+
+        /* Dual Bento Cards in Hero - Compact & Symmetrical */
+        .hero-bento-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: stretch;
+            gap: 1.25rem;
+            max-width: 820px;
+            margin: 1.5rem auto 0;
+            text-align: left;
+        }
+
+        .bento-card {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 20px;
+            padding: 1.5rem 1.6rem;
+            box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            box-sizing: border-box;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.08);
+            border-color: rgba(37, 99, 235, 0.25);
+        }
+
+        .bento-card-primary {
+            background: linear-gradient(135deg, #ffffff 0%, #f4f8ff 100%);
+            border: 1px solid rgba(37, 99, 235, 0.18);
+        }
+
+        .bento-card-body {
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bento-card-tag {
+            font-size: 0.725rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .bento-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 0.35rem;
+            letter-spacing: -0.02em;
+            line-height: 1.25;
+        }
+
+        .bento-card p {
+            color: #6e6e73;
+            font-size: 0.92rem;
+            line-height: 1.48;
+            margin-bottom: 1.25rem;
+        }
+
+        .bento-card-footer {
+            margin-top: auto;
+            width: 100%;
+        }
+
+        /* Contact Details & Form Section */
         .contact-section-premium {
-            padding: 5rem 0;
-            background-color: #ffffff;
+            padding: 3.5rem 0;
+            background-color: #fafbfc;
         }
 
         .contact-grid-premium {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 4rem;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 2.5rem;
+            align-items: start;
         }
 
         .contact-info-panel {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 24px;
-            padding: 3rem;
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 20px;
+            padding: 2.2rem;
+            box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.03);
         }
 
         .contact-info-panel h3 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            color: #0f172a;
-            margin-bottom: 1rem;
+            color: #1d1d1f;
+            margin-bottom: 0.4rem;
+            letter-spacing: -0.02em;
         }
 
         .contact-info-links {
             list-style: none;
             padding: 0;
-            margin: 2rem 0;
+            margin: 1.5rem 0;
         }
 
         .contact-info-links li {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             display: flex;
             align-items: center;
-            gap: 15px;
-            font-size: 1.1rem;
-            color: #334155;
+            gap: 14px;
+            font-size: 0.98rem;
+            color: #1d1d1f;
         }
 
-        .contact-info-links li i {
-            font-size: 1.3rem;
+        .contact-icon-box {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: #f5f5f7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
             color: #2563eb;
-            width: 24px;
+            flex-shrink: 0;
+            transition: all 0.2s ease;
+        }
+
+        .contact-info-links li:hover .contact-icon-box {
+            background: #2563eb;
+            color: #ffffff;
         }
 
         .contact-info-links a {
-            color: #334155;
+            color: #1d1d1f;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
             transition: color 0.2s ease;
         }
 
@@ -129,71 +246,259 @@
             color: #2563eb;
         }
 
-        /* Form styling */
+        /* Apple-style Form Card */
         .contact-form-card {
             background: #ffffff;
-            border: 1px solid #e2e8f0;
+            border: 1px solid rgba(0, 0, 0, 0.08);
             border-radius: 24px;
-            padding: 3rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.01);
+            padding: 2.4rem;
+            box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.04);
+            position: relative;
+        }
+
+        .form-header-apple {
+            margin-bottom: 1.4rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .form-header-apple .form-pre-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #2563eb;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 4px;
+        }
+
+        .form-header-apple h3 {
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: #1d1d1f;
+            margin: 0 0 4px;
+            letter-spacing: -0.02em;
+        }
+
+        .form-header-apple p {
+            color: #86868b;
+            font-size: 0.92rem;
+            margin: 0;
+        }
+
+        .form-service-chips {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 1.25rem;
+        }
+
+        .service-chip {
+            padding: 7px 14px;
+            border-radius: 9999px;
+            background: #f5f5f7;
+            border: 1px solid #e5e5ea;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            user-select: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .service-chip:hover {
+            background: #e8e8ed;
+            border-color: #d2d2d7;
+        }
+
+        .service-chip.active {
+            background: rgba(37, 99, 235, 0.08);
+            color: #2563eb;
+            border-color: rgba(37, 99, 235, 0.3);
+            font-weight: 700;
+        }
+
+        .input-with-icon {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .input-with-icon i {
+            position: absolute;
+            left: 14px;
+            color: #86868b;
+            font-size: 0.9rem;
+            pointer-events: none;
+            transition: color 0.2s ease;
+            z-index: 2;
+        }
+
+        .input-with-icon input,
+        .input-with-icon select {
+            padding-left: 2.5rem !important;
+        }
+
+        .form-group-premium:focus-within .input-with-icon i {
+            color: #2563eb;
         }
 
         .form-row-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
+            gap: 1rem;
+            margin-bottom: 0.9rem;
         }
 
         .form-group-premium {
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            margin-bottom: 1.5rem;
+            gap: 6px;
+            margin-bottom: 0.9rem;
         }
 
         .form-group-premium label {
-            font-size: 0.9rem;
+            font-size: 0.825rem;
             font-weight: 600;
-            color: #475569;
+            color: #1d1d1f;
+            letter-spacing: -0.01em;
         }
 
-        .form-group-premium input, .form-group-premium select, .form-group-premium textarea {
-            padding: 0.8rem 1.2rem;
-            border: 1px solid #cbd5e1;
-            border-radius: 10px;
-            font-family: inherit;
-            font-size: 1rem;
-            color: #0f172a;
-            background: #f8fafc;
-            transition: all 0.2s ease;
+        .form-group-premium label .req-star {
+            color: #2563eb;
+            margin-left: 2px;
+        }
+
+        .form-group-premium input, .form-group-premium textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #d2d2d7;
+            border-radius: 12px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: #1d1d1f;
+            background: #fbfbfd;
+            box-sizing: border-box;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Apple-style Custom Select Dropdown */
+        .form-group-premium select {
+            width: 100%;
+            padding: 0.75rem 2.5rem 0.75rem 1rem;
+            border: 1px solid #d2d2d7;
+            border-radius: 12px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: #1d1d1f;
+            background-color: #fbfbfd;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2386868b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 14px 14px;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            box-sizing: border-box;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .form-group-premium textarea {
+            resize: vertical;
+            min-height: 100px;
         }
 
         .form-group-premium input:focus, .form-group-premium select:focus, .form-group-premium textarea:focus {
             outline: none;
             border-color: #2563eb;
-            background: #ffffff;
-            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+            background-color: #ffffff;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
         }
 
-        /* Booking widget wrapper */
+        .form-submit-btn-apple {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.98rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 24px -4px rgba(37, 99, 235, 0.35);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .form-submit-btn-apple:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 32px -4px rgba(37, 99, 235, 0.45);
+        }
+
+        .form-submit-btn-apple:active {
+            transform: translateY(0);
+        }
+
+        .trust-badges-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 1.25rem;
+            padding-top: 1rem;
+            border-top: 1px dashed #e5e5ea;
+            font-size: 0.8rem;
+            color: #86868b;
+            font-weight: 500;
+        }
+
+        /* Booking Calendar Section */
         .booking-calendar-section {
-            padding: 5rem 0;
-            background-color: #f8fafc;
-            border-top: 1px solid #e2e8f0;
+            padding: 4rem 0;
+            background-color: #ffffff;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .booking-card-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.05);
         }
 
         @media (max-width: 991px) {
+            .subpage-hero {
+                padding: 3.5rem 0 2rem;
+            }
+            .subpage-hero-title {
+                font-size: 2.1rem;
+            }
+            .hero-bento-grid {
+                grid-template-columns: 1fr;
+            }
             .contact-grid-premium {
                 grid-template-columns: 1fr;
-                gap: 2.5rem;
+                gap: 2rem;
+            }
+            .contact-info-panel, .contact-form-card {
+                padding: 1.6rem 1.25rem;
             }
             .form-row-2 {
                 grid-template-columns: 1fr;
-                gap: 0;
+                gap: 0.8rem;
             }
-            .subpage-hero-title {
-                font-size: 2.5rem;
+            .trust-badges-bar {
+                flex-direction: column;
+                gap: 6px;
             }
         }
     </style>
@@ -283,113 +588,193 @@
     <!-- Subpage Hero -->
     <section class="subpage-hero">
         <div class="container">
-            <div class="hero-badge">Get in Touch</div>
+            <div class="hero-badge-apple">
+                <i class="fas fa-sparkles"></i> Direct Consultation &amp; Prototyping
+            </div>
             <h1 class="subpage-hero-title">
-                <span class="seo-subpage-pre-title" style="display: block; font-size: 0.95rem; text-transform: uppercase; font-weight: 800; color: #2563eb; letter-spacing: 0.15em; margin-bottom: 12px; font-family: 'Inter', sans-serif;">Hire Web Developers in Delhi</span>
-                Start a Conversation.<br><span class="highlight-blue">Partner for Growth.</span>
+                Let’s build what moves<br><span class="highlight-blue">your business forward.</span>
             </h1>
-            <p class="section-subtitle" style="margin: 0 auto; max-width: 700px;">Have questions about website making costs, AI configurations, or software scope? Reach out directly or choose a time on our scheduling tool below.</p>
+            <p class="section-subtitle">
+                Websites, apps, SaaS, CRM and AI systems—designed for growth, delivered fast and supported without disappearing.
+            </p>
+
+            <!-- Dual Bento Cards Hero Section -->
+            <div class="hero-bento-grid" data-aos="fade-up" data-aos-delay="100">
+                <!-- Bento Card 1: Interactive Prototype -->
+                <div class="bento-card bento-card-primary">
+                    <div class="bento-card-body">
+                        <div class="bento-card-tag"><i class="fas fa-magic"></i> Risk-Free Offer</div>
+                        <h3>Start with a free prototype</h3>
+                        <p>See your idea come to life with an interactive prototype before making any commitment.</p>
+                    </div>
+                    <div class="bento-card-footer">
+                        <a href="#contact-form-section" id="ctaPrototypeBtn" class="cta-button primary" style="width: 100%; font-size: 0.95rem; justify-content: center;">
+                            Get Your Prototype Free <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Bento Card 2: Discovery Call -->
+                <div class="bento-card">
+                    <div class="bento-card-body">
+                        <div class="bento-card-tag"><i class="far fa-calendar-alt"></i> 1-on-1 Strategy</div>
+                        <h3>Book a discovery call</h3>
+                        <p>Schedule a 30-minute direct session to map out scope, technical architecture, and timelines.</p>
+                    </div>
+                    <div class="bento-card-footer">
+                        <a href="#booking-calendar-section" id="ctaBookCallBtn" class="cta-button primary" style="width: 100%; font-size: 0.95rem; justify-content: center;">
+                            Book a Discovery Call <i class="far fa-calendar-alt" style="margin-left: 8px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Contact details and form -->
-    <section class="contact-section-premium">
+    <section class="contact-section-premium" id="contact-form-section">
         <div class="container">
             
             <div class="contact-grid-premium">
                 
+                <!-- Contact Information Panel -->
                 <div class="contact-info-panel" data-aos="fade-up">
-                    <h3>Contact Information</h3>
-                    <p style="color: #64748b; line-height: 1.6;">Let's align on budget and technical details. Connect with us instantly through direct channels.</p>
+                    <div style="font-size: 0.8rem; font-weight: 700; color: #2563eb; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;">Direct Channels</div>
+                    <h3>Get in Touch</h3>
+                    <p style="color: #6e6e73; line-height: 1.6; font-size: 0.98rem; margin-bottom: 2rem;">Connect directly with our engineering team for inquiries, quotes, or custom software architecture.</p>
                     
                     <ul class="contact-info-links">
                         <li>
-                            <i class="fas fa-envelope"></i>
+                            <div class="contact-icon-box"><i class="fas fa-envelope"></i></div>
                             <a href="mailto:info@curiouskaizer.com">info@curiouskaizer.com</a>
                         </li>
                         <li>
-                            <i class="fas fa-envelope"></i>
+                            <div class="contact-icon-box"><i class="fas fa-envelope-open-text"></i></div>
                             <a href="mailto:curiouskaizer@gmail.com">curiouskaizer@gmail.com</a>
                         </li>
                         <li>
-                            <i class="fas fa-phone-alt"></i>
+                            <div class="contact-icon-box"><i class="fas fa-phone-alt"></i></div>
                             <a href="tel:+918595121436">+91 85951 21436</a>
                         </li>
                         <li>
-                            <i class="fab fa-whatsapp" style="color: #25d366;"></i>
-                            <a href="https://wa.me/918595121436" target="_blank" rel="noopener">Chat on WhatsApp</a>
+                            <div class="contact-icon-box" style="background: rgba(37, 211, 102, 0.1); color: #25d366;"><i class="fab fa-whatsapp"></i></div>
+                            <a href="https://wa.me/918595121436" target="_blank" rel="noopener" style="font-weight: 600;">Chat on WhatsApp</a>
                         </li>
                         <li>
-                            <i class="fab fa-linkedin-in" style="color: #0077b5;"></i>
+                            <div class="contact-icon-box" style="background: rgba(0, 119, 181, 0.1); color: #0077b5;"><i class="fab fa-linkedin-in"></i></div>
                             <a href="https://www.linkedin.com/company/curious-kaizer/" target="_blank" rel="noopener me">Curious Kaizer LinkedIn</a>
                         </li>
                         <li>
-                            <i class="fab fa-instagram" style="color: #e1306c;"></i>
+                            <div class="contact-icon-box" style="background: rgba(225, 48, 108, 0.1); color: #e1306c;"><i class="fab fa-instagram"></i></div>
                             <a href="https://www.instagram.com/curiouskaizer/" target="_blank" rel="noopener me">Curious Kaizer Instagram</a>
                         </li>
                         <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Delhi, India | Remote Services Worldwide</span>
+                            <div class="contact-icon-box"><i class="fas fa-map-marker-alt"></i></div>
+                            <span>Delhi, India | Remote Worldwide</span>
                         </li>
                     </ul>
 
-                    <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 1.5rem; display: flex; align-items: center; gap: 12px;">
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 1.25rem 1.5rem; display: flex; align-items: center; gap: 12px; margin-top: 2rem;">
                         <span class="status-dot-glowing"></span>
-                        <div style="font-size: 0.9rem; font-weight: bold; color: #475569;">Currently open for client bookings.</div>
+                        <div style="font-size: 0.9rem; font-weight: 600; color: #334155;">Currently open for client bookings.</div>
                     </div>
                 </div>
 
+                <!-- Contact Form Card -->
                 <div class="contact-form-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="form-header-apple">
+                        <div class="form-pre-title">Free Prototype &amp; Briefing</div>
+                        <h3>Tell Us About Your Project</h3>
+                        <p>Fill out the briefing details below to receive your free interactive prototype.</p>
+                    </div>
+
+                    <!-- Quick Goal Selection Chips -->
+                    <div style="margin-bottom: 1.15rem;">
+                        <label style="font-size: 0.775rem; font-weight: 700; color: #86868b; text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 8px;">Primary Goal / Interest</label>
+                        <div class="form-service-chips" id="serviceChipGroup">
+                            <div class="service-chip active" data-val="prototype"><i class="fas fa-sparkles"></i> Free Prototype</div>
+                            <div class="service-chip" data-val="startup"><i class="fas fa-laptop-code"></i> Custom Website</div>
+                            <div class="service-chip" data-val="ecommerce"><i class="fas fa-shopping-bag"></i> E-Commerce</div>
+                            <div class="service-chip" data-val="custom"><i class="fas fa-brain"></i> SaaS &amp; AI Agents</div>
+                        </div>
+                    </div>
+
                     <form id="projectInquiryForm" action="#">
                         <div class="form-row-2">
                             <div class="form-group-premium">
-                                <label for="clientName">Full Name *</label>
-                                <input type="text" id="clientName" required placeholder="John Doe">
+                                <label for="clientName">Full Name <span class="req-star">*</span></label>
+                                <div class="input-with-icon">
+                                    <i class="far fa-user"></i>
+                                    <input type="text" id="clientName" required placeholder="John Doe">
+                                </div>
                             </div>
                             <div class="form-group-premium">
-                                <label for="clientEmail">Email Address *</label>
-                                <input type="email" id="clientEmail" required placeholder="john@example.com">
+                                <label for="clientEmail">Email Address <span class="req-star">*</span></label>
+                                <div class="input-with-icon">
+                                    <i class="far fa-envelope"></i>
+                                    <input type="email" id="clientEmail" required placeholder="john@example.com">
+                                </div>
                             </div>
                         </div>
 
                         <div class="form-row-2">
                             <div class="form-group-premium">
                                 <label for="clientPhone">Phone Number</label>
-                                <input type="tel" id="clientPhone" placeholder="+91 XXXXX XXXXX">
+                                <div class="input-with-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <input type="tel" id="clientPhone" placeholder="+91 XXXXX XXXXX">
+                                </div>
                             </div>
                             <div class="form-group-premium">
                                 <label for="clientWebsite">Current Website (optional)</label>
-                                <input type="url" id="clientWebsite" placeholder="https://example.com">
+                                <div class="input-with-icon">
+                                    <i class="fas fa-globe"></i>
+                                    <input type="url" id="clientWebsite" placeholder="https://example.com">
+                                </div>
                             </div>
                         </div>
 
                         <div class="form-row-2">
                             <div class="form-group-premium">
-                                <label for="projectBudget">Budget Target *</label>
-                                <select id="projectBudget" required>
-                                    <option value="">Select range...</option>
-                                    <option value="startup">₹15,200 - Startup Web</option>
-                                    <option value="ecommerce">₹21,900 - E-Commerce</option>
-                                    <option value="custom">₹33,900+ - Custom App</option>
-                                </select>
+                                <label for="projectBudget">Budget / Service Goal <span class="req-star">*</span></label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-coins"></i>
+                                    <select id="projectBudget" required>
+                                        <option value="prototype" selected>✨ Request Free Prototype First</option>
+                                        <option value="startup">₹15,200 - Startup Web</option>
+                                        <option value="ecommerce">₹21,900 - E-Commerce</option>
+                                        <option value="custom">₹33,900+ - Custom App / SaaS / AI</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="form-group-premium">
-                                <label for="projectTimeline">Timeline Goal *</label>
-                                <select id="projectTimeline" required>
-                                    <option value="">Select urgency...</option>
-                                    <option value="immediate">Immediate (Within 7-10 Days)</option>
-                                    <option value="standard">Standard (2-3 Weeks)</option>
-                                    <option value="long">Flexible (4+ Weeks)</option>
-                                </select>
+                                <label for="projectTimeline">Timeline Goal <span class="req-star">*</span></label>
+                                <div class="input-with-icon">
+                                    <i class="far fa-clock"></i>
+                                    <select id="projectTimeline" required>
+                                        <option value="">Select urgency...</option>
+                                        <option value="immediate">Immediate (Within 7-10 Days)</option>
+                                        <option value="standard">Standard (2-3 Weeks)</option>
+                                        <option value="long">Flexible (4+ Weeks)</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
 
                         <div class="form-group-premium">
-                            <label for="projectMsg">How can we help? *</label>
-                            <textarea id="projectMsg" rows="5" required placeholder="Detail your project features, integrations, page numbers..."></textarea>
+                            <label for="projectMsg">How can we help? <span class="req-star">*</span></label>
+                            <textarea id="projectMsg" rows="4" required placeholder="Detail your project goals, features, or AI requirements..."></textarea>
                         </div>
 
-                        <button type="submit" class="cta-button primary" style="width: 100%; border: none; font-size: 1.05rem; cursor: pointer;">Submit Briefing <i class="fas fa-paper-plane" style="margin-left: 8px;"></i></button>
+                        <button type="submit" class="cta-button primary" style="width: 100%; border: none; font-size: 1.05rem; cursor: pointer; padding: 1.1rem; justify-content: center;">
+                            Get Your Prototype Free <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                        </button>
+
+                        <div class="trust-badges-bar">
+                            <span><i class="fas fa-shield-alt" style="color: #2563eb; margin-right: 4px;"></i> Confidential NDA</span>
+                            <span><i class="fas fa-bolt" style="color: #2563eb; margin-right: 4px;"></i> 24h Response</span>
+                            <span><i class="fas fa-magic" style="color: #2563eb; margin-right: 4px;"></i> Free Wireframe Included</span>
+                        </div>
                     </form>
                 </div>
 
@@ -399,14 +784,21 @@
     </section>
 
     <!-- Booking calendar Section -->
-    <section class="booking-calendar-section">
+    <section class="booking-calendar-section" id="booking-calendar-section">
         <div class="container">
-            <div style="text-align: center; margin-bottom: 3.5rem;">
-                <div class="hero-badge">Discovery Booking</div>
-                <h2>Schedule a <span class="highlight-blue">Call</span></h2>
+            <div style="text-align: center; margin-bottom: 3rem;" data-aos="fade-up">
+                <div class="hero-badge-apple">
+                    <i class="far fa-calendar-alt"></i> Live Scheduling
+                </div>
+                <h2 style="font-size: 2.6rem; font-weight: 800; color: #1d1d1f; margin-top: 0.4rem; letter-spacing: -0.035em;">
+                    Schedule a <span class="highlight-blue">Discovery Call</span>
+                </h2>
+                <p style="color: #6e6e73; font-size: 1.15rem; max-width: 660px; margin: 0.8rem auto 0; line-height: 1.55;">
+                    Select a convenient 30-minute direct session to map out scope, explore wireframes, and outline precise delivery timelines.
+                </p>
             </div>
             
-            <div style="max-width: 900px; margin: 0 auto; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 24px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.01);">
+            <div class="booking-card-wrapper" data-aos="fade-up" data-aos-delay="100">
                 <!-- Calendly inline widget begin -->
                 <div class="calendly-inline-widget" data-url="https://calendly.com/curiouskaizer/new-meeting" style="min-width:320px;height:700px;"></div>
             </div>
@@ -534,6 +926,53 @@
                 requestIdleCallback(() => initAOS());
             } else {
                 setTimeout(initAOS, 100);
+            }
+
+            // Interactive Service Chips handler
+            const serviceChips = document.querySelectorAll('.service-chip');
+            const budgetDropdown = document.getElementById('projectBudget');
+            if (serviceChips.length > 0 && budgetDropdown) {
+                serviceChips.forEach(chip => {
+                    chip.addEventListener('click', () => {
+                        serviceChips.forEach(c => c.classList.remove('active'));
+                        chip.classList.add('active');
+                        const val = chip.getAttribute('data-val');
+                        if (val) budgetDropdown.value = val;
+                    });
+                });
+            }
+
+            // Smooth scroll and focus handlers for CTA buttons
+            const prototypeBtn = document.getElementById('ctaPrototypeBtn');
+            if (prototypeBtn) {
+                prototypeBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const target = document.getElementById('contact-form-section');
+                    if (target) {
+                        if (window.lenis) {
+                            window.lenis.scrollTo(target);
+                        } else {
+                            target.scrollIntoView({ behavior: 'smooth' });
+                        }
+                        const nameInput = document.getElementById('clientName');
+                        if (nameInput) setTimeout(() => nameInput.focus(), 600);
+                    }
+                });
+            }
+
+            const bookCallBtn = document.getElementById('ctaBookCallBtn');
+            if (bookCallBtn) {
+                bookCallBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const target = document.getElementById('booking-calendar-section');
+                    if (target) {
+                        if (window.lenis) {
+                            window.lenis.scrollTo(target);
+                        } else {
+                            target.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                });
             }
 
             // Form submission behavior
