@@ -392,8 +392,8 @@
     <link rel="preload" href="./css/styles.css?v=1.5" as="style">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@700;800&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@700;800&display=swap" rel="stylesheet"></noscript>
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css?v=1.5">
@@ -461,7 +461,7 @@
     </header>
 
     <!-- Hero Section - Semantic HTML5 with proper heading hierarchy -->
-    <header id="home" class="hero" role="banner">
+    <header id="home" class="hero" role="banner" style="background-color: #ffffff !important; border-bottom: 1px solid #e2e8f0;">
         <div class="container container-hero-fluid">
             <section class="hero-content" role="main">
                 <!-- 1. Headline with the animated typing text preserved inside -->
@@ -505,194 +505,1132 @@
                 </div>
 
                 <!-- 4. Interactive Animated Flow Graphic representing high-end execution -->
-                <div class="hero-flow-container">
-                    <!-- SVG Wavy Connection Line in Background -->
-                    <svg class="flow-connector-line" viewBox="0 0 1200 240" fill="none" preserveAspectRatio="none">
-                        <path d="M 120 80 C 240 80, 240 150, 360 150 C 480 150, 480 110, 600 110 C 720 110, 720 70, 840 70 C 960 70, 960 160, 1080 160" stroke="url(#line-gradient)" stroke-width="3.5" />
-                        <!-- Traveling Laser Pulse path -->
-                        <path class="flow-pulse-line" d="M 120 80 C 240 80, 240 150, 360 150 C 480 150, 480 110, 600 110 C 720 110, 720 70, 840 70 C 960 70, 960 160, 1080 160" stroke="url(#pulse-gradient)" stroke-width="5" stroke-linecap="round" />
-                        <defs>
-                            <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.2" />
-                                <stop offset="50%" stop-color="#2563eb" stop-opacity="0.8" />
-                                <stop offset="100%" stop-color="#22c55e" stop-opacity="0.2" />
-                            </linearGradient>
-                            <linearGradient id="pulse-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" stop-color="#3b82f6" />
-                                <stop offset="50%" stop-color="#60a5fa" />
-                                <stop offset="100%" stop-color="#22c55e" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-
-                    <!-- Mobile Flow Progress Indicators (Visible only on Mobile) -->
-                    <div class="mobile-flow-indicators">
-                        <div class="indicator-step active" data-index="0">
-                            <span class="indicator-number">1</span>
-                            <span class="indicator-text">Align</span>
-                            <div class="indicator-progress"><div class="progress-bar"></div></div>
+                <!-- 4. Interactive Apple-Style Stepper Graphic (Enhanced) -->
+                <!-- 4. Interactive Apple-Style Stepper Graphic (Apple Keynote Quality) -->
+                <div class="apple-process-container">
+                    <!-- Apple iOS-style Segmented Control for Tabs -->
+                    <div class="apple-stepper-tabs-container">
+                        <div class="apple-stepper-tabs">
+                            <button class="apple-step-tab active" data-step="1">
+                                <span class="step-num">01</span> 
+                                <span class="step-name">Discovery</span>
+                            </button>
+                            <button class="apple-step-tab" data-step="2">
+                                <span class="step-num">02</span> 
+                                <span class="step-name">Blueprint</span>
+                            </button>
+                            <button class="apple-step-tab" data-step="3">
+                                <span class="step-num">03</span> 
+                                <span class="step-name">Execution</span>
+                            </button>
+                            <button class="apple-step-tab" data-step="4">
+                                <span class="step-num">04</span> 
+                                <span class="step-name">Deployment</span>
+                            </button>
                         </div>
-                        <div class="indicator-step" data-index="1">
-                            <span class="indicator-number">2</span>
-                            <span class="indicator-text">Strategy</span>
-                            <div class="indicator-progress"><div class="progress-bar"></div></div>
-                        </div>
-                        <div class="indicator-step" data-index="2">
-                            <span class="indicator-number">3</span>
-                            <span class="indicator-text">Code</span>
-                            <div class="indicator-progress"><div class="progress-bar"></div></div>
-                        </div>
-                        <div class="indicator-step" data-index="3">
-                            <span class="indicator-number">4</span>
-                            <span class="indicator-text">Launch</span>
-                            <div class="indicator-progress"><div class="progress-bar"></div></div>
+                        <div class="apple-tab-progress-track">
+                            <div class="apple-tab-progress-bar" id="stepperProgressBar"></div>
                         </div>
                     </div>
 
-                    <!-- Card 1: Discovery Call (Left) -->
-                    <div class="flow-card card-discovery">
-                        <div class="card-badge">1. Discovery Call</div>
-                        <div class="card-title">Initial Alignment</div>
-                        <p class="card-desc">30-Min Free Strategy Call</p>
-                        <div class="avatar-group">
-                            <div class="avatar">
-                                <span class="avatar-label">You</span>
-                                <div class="avatar-circle you-color">
-                                    <i class="fas fa-user"></i>
+                    <div class="apple-step-content-wrapper">
+                        <!-- Step 1 Content: Discovery & Alignment -->
+                        <div class="apple-step-content active" id="apple-step-1">
+                            <div class="step-content-left">
+                                <div class="step-badge stagger-el" style="--d: 1;">Phase 01 &bull; Alignment</div>
+                                <h3 class="step-title stagger-el" style="--d: 2;">Discovery & Strategy Call</h3>
+                                <p class="step-desc stagger-el" style="--d: 3;">We start with an intensive 30-minute alignment session to understand your vision, map out key business objectives, and define exact project deliverables before writing code.</p>
+                                <ul class="step-bullet-list stagger-el" style="--d: 4;">
+                                    <li><i class="fas fa-bullseye"></i> <div><strong>100% Scope Alignment:</strong> Clear roadmaps & milestones</div></li>
+                                    <li><i class="fas fa-chart-line"></i> <div><strong>Market Positioning:</strong> Competitor & tech feasibility analysis</div></li>
+                                    <li><i class="fas fa-file-contract"></i> <div><strong>Transparent Quote:</strong> Fixed scope, zero hidden costs</div></li>
+                                </ul>
+                            </div>
+                            <div class="step-content-right stagger-graphic">
+                                <div class="full-bleed-apple-card discovery-studio-card">
+                                    <!-- Mac Window Header -->
+                                    <div class="card-mac-header light-header">
+                                        <div class="mac-dots">
+                                            <span class="dot red"></span>
+                                            <span class="dot yellow"></span>
+                                            <span class="dot green"></span>
+                                        </div>
+                                        <div class="live-sync-pill light-pill">
+                                            <span class="pulse-green-dot"></span>
+                                            <span>30-Min Strategy Call &bull; Active</span>
+                                        </div>
+                                        <div class="audio-waveform light-wave">
+                                            <span class="w-bar b1"></span>
+                                            <span class="w-bar b2"></span>
+                                            <span class="w-bar b3"></span>
+                                            <span class="w-bar b4"></span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Apple Keynote Studio Dashboard Body -->
+                                    <div class="discovery-studio-body">
+                                        <!-- Stacked Strategy Deliverable Cards -->
+                                        <div class="studio-deliverables-stack">
+                                            <div class="studio-card-row">
+                                                <div class="studio-icon-circle blue-icon">
+                                                    <i class="fas fa-map-marked-alt"></i>
+                                                </div>
+                                                <div class="studio-card-info">
+                                                    <div class="studio-card-title">100% Scope Alignment</div>
+                                                    <div class="studio-card-sub">Clear roadmaps, deliverables & 7-day sprint milestones</div>
+                                                </div>
+                                                <span class="studio-badge blue-badge">LOCKED</span>
+                                            </div>
+
+                                            <div class="studio-card-row">
+                                                <div class="studio-icon-circle dark-icon">
+                                                    <i class="fas fa-microchip"></i>
+                                                </div>
+                                                <div class="studio-card-info">
+                                                    <div class="studio-card-title">Tech Stack & Market Feasibility</div>
+                                                    <div class="studio-card-sub">Competitor positioning & cloud architecture mapped</div>
+                                                </div>
+                                                <span class="studio-badge dark-badge">PASSED</span>
+                                            </div>
+
+                                            <div class="studio-card-row">
+                                                <div class="studio-icon-circle green-icon">
+                                                    <i class="fas fa-shield-alt"></i>
+                                                </div>
+                                                <div class="studio-card-info">
+                                                    <div class="studio-card-title">Transparent Fixed Quotation</div>
+                                                    <div class="studio-card-sub">Fixed scope commitment, zero extra fees or hidden costs</div>
+                                                </div>
+                                                <span class="studio-badge green-badge">GUARANTEED</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Bottom Live Consultation Footer -->
+                                        <div class="studio-consultation-footer">
+                                            <div class="consultation-avatars-row">
+                                                <div class="c-avatar-item">
+                                                    <div class="c-avatar-ring">
+                                                        <i class="fas fa-user"></i>
+                                                        <span class="c-online-dot"></span>
+                                                    </div>
+                                                    <span>You</span>
+                                                </div>
+                                                <div class="c-sync-link">
+                                                    <i class="fas fa-bolt"></i>
+                                                </div>
+                                                <div class="c-avatar-item">
+                                                    <div class="c-avatar-ring architect">
+                                                        <i class="fas fa-user-tie"></i>
+                                                    </div>
+                                                    <span>Lead Tech Architect</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="studio-progress-box">
+                                                <div class="studio-progress-header">
+                                                    <span>Scope Alignment Status</span>
+                                                    <span class="studio-perc">100% Locked</span>
+                                                </div>
+                                                <div class="studio-progress-track">
+                                                    <div class="studio-progress-fill">
+                                                        <span class="fill-glow-head"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="avatar">
-                                <span class="avatar-label">Consultant</span>
-                                <div class="avatar-circle expert-color">
-                                    <i class="fas fa-user-tie"></i>
+                        </div>
+
+                        <!-- Step 2 Content: Strategy & Blueprint -->
+                        <div class="apple-step-content" id="apple-step-2">
+                            <div class="step-content-left">
+                                <div class="step-badge primary-badge stagger-el" style="--d: 1;">Phase 02 &bull; Architecture</div>
+                                <h3 class="step-title stagger-el" style="--d: 2;">System Blueprint & UI/UX</h3>
+                                <p class="step-desc stagger-el" style="--d: 3;">We architect scalable cloud infrastructure, detail high-performance database models, and design modern, pixel-perfect user interfaces engineered to convert visitors into customers.</p>
+                                <ul class="step-bullet-list stagger-el" style="--d: 4;">
+                                    <li><i class="fas fa-sitemap"></i> <div><strong>Architecture Blueprint:</strong> Full-stack system mapping</div></li>
+                                    <li><i class="fas fa-palette"></i> <div><strong>Apple Aesthetics:</strong> High-end UI/UX & micro-interactions</div></li>
+                                    <li><i class="fas fa-database"></i> <div><strong>Data Schemas:</strong> Structured for blazing speed</div></li>
+                                </ul>
+                            </div>
+                            <div class="step-content-right stagger-graphic">
+                                <div class="full-bleed-apple-card blueprint-light-card">
+                                    <!-- Mac Window Header -->
+                                    <div class="card-mac-header light-header">
+                                        <div class="mac-dots">
+                                            <span class="dot red"></span>
+                                            <span class="dot yellow"></span>
+                                            <span class="dot green"></span>
+                                        </div>
+                                        <span class="mac-title-text light-text">System-Architecture-Blueprint.v2</span>
+                                        <span class="tech-tag-pill light-tag"><i class="fas fa-layer-group"></i> PRODUCTION BLUEPRINT</span>
+                                    </div>
+                                    
+                                    <div class="blueprint-full-body">
+                                        <!-- 1. Animated Full-Stack Data Flow Pipeline -->
+                                        <div class="bp-section-title"><i class="fas fa-network-wired"></i> FULL-STACK SYSTEM PIPELINE</div>
+                                        <div class="pipeline-flow-container light-pipeline">
+                                            <div class="pipe-node light-node">
+                                                <div class="node-icon-circle ui-icon"><i class="fab fa-react"></i></div>
+                                                <span class="p-title light-ptitle">Frontend UI</span>
+                                                <span class="p-sub light-psub">Next.js 14 &bull; React</span>
+                                                <div class="node-status-pill"><span class="tiny-dot blue-dot"></span> 60fps UI</div>
+                                            </div>
+                                            
+                                            <div class="pipe-connector light-connector">
+                                                <div class="animated-pulse-line"></div>
+                                                <i class="fas fa-chevron-right"></i>
+                                            </div>
+                                            
+                                            <div class="pipe-node light-node highlight-light-node">
+                                                <div class="node-icon-circle ai-icon"><i class="fas fa-brain"></i></div>
+                                                <span class="p-title light-ptitle">AI & API Engine</span>
+                                                <span class="p-sub light-psub">Python LLMs &bull; REST</span>
+                                                <div class="node-status-pill purp-pill"><span class="tiny-dot purp-dot"></span> Sub-50ms</div>
+                                            </div>
+                                            
+                                            <div class="pipe-connector light-connector">
+                                                <div class="animated-pulse-line"></div>
+                                                <i class="fas fa-chevron-right"></i>
+                                            </div>
+                                            
+                                            <div class="pipe-node light-node">
+                                                <div class="node-icon-circle db-icon"><i class="fas fa-database"></i></div>
+                                                <span class="p-title light-ptitle">Cloud DB</span>
+                                                <span class="p-sub light-psub">Supabase PG &bull; RLS</span>
+                                                <div class="node-status-pill green-pill"><span class="tiny-dot green-dot"></span> Realtime</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- 2. UI/UX Wireframe & Design System Specifications -->
+                                        <div class="bp-2-col-grid">
+                                            <!-- Left: Design Tokens & Palette -->
+                                            <div class="bp-mini-card">
+                                                <div class="bp-card-label"><i class="fas fa-palette"></i> DESIGN TOKENS</div>
+                                                <div class="token-swatches-row">
+                                                    <div class="swatch-item">
+                                                        <span class="swatch-circle sw-slate"></span>
+                                                        <span class="swatch-hex">#0F172A</span>
+                                                    </div>
+                                                    <div class="swatch-item">
+                                                        <span class="swatch-circle sw-blue"></span>
+                                                        <span class="swatch-hex">#007AFF</span>
+                                                    </div>
+                                                    <div class="swatch-item">
+                                                        <span class="swatch-circle sw-emerald"></span>
+                                                        <span class="swatch-hex">#34C759</span>
+                                                    </div>
+                                                    <div class="swatch-item">
+                                                        <span class="swatch-circle sw-purple"></span>
+                                                        <span class="swatch-hex">#AF52DE</span>
+                                                    </div>
+                                                </div>
+                                                <div class="font-spec-pill">
+                                                    <i class="fas fa-font"></i> <span>SF Pro &bull; Inter &bull; 60fps Spring</span>
+                                                </div>
+                                            </div>
+
+                                            <!-- Right: Blueprint Standards -->
+                                            <div class="bp-mini-card">
+                                                <div class="bp-card-label"><i class="fas fa-shield-alt"></i> BLUEPRINT STANDARDS</div>
+                                                <div class="blueprint-specs-list">
+                                                    <div class="bp-spec-row">
+                                                        <i class="fas fa-check-circle check-icon"></i>
+                                                        <span>100% Mobile Responsive</span>
+                                                    </div>
+                                                    <div class="bp-spec-row">
+                                                        <i class="fas fa-check-circle check-icon"></i>
+                                                        <span>Zero Layout Shift (CLS)</span>
+                                                    </div>
+                                                    <div class="bp-spec-row">
+                                                        <i class="fas fa-check-circle check-icon"></i>
+                                                        <span>Enterprise Security RLS</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <ul class="card-bullet-list">
-                            <li><i class="fas fa-check"></i> Scope Mapping</li>
-                            <li><i class="fas fa-check"></i> Custom Quotation</li>
-                        </ul>
-                        <div class="card-status">
-                            <span class="status-dot pulsing"></span>
-                            <span>Active Booking</span>
-                        </div>
-                    </div>
 
-                    <!-- Node: Glowing Lightbulb on Wavy Line -->
-                    <div class="flow-node node-ideation">
-                        <div class="node-circle">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                        <span class="node-label">Ideation</span>
-                    </div>
-
-                    <!-- Card 2: Strategy Document (Center/Below Button) -->
-                    <div class="flow-card card-strategy">
-                        <div class="card-badge primary-badge">2. Strategy & Scope</div>
-                        <div class="card-title">Website Blueprint</div>
-                        <p class="card-desc">Complete Design Roadmap</p>
-                        <div class="strategy-icon-wrapper">
-                            <div class="strategy-icon">
-                                <i class="fas fa-file-signature"></i>
+                        <!-- Step 3 Content: Execution -->
+                        <div class="apple-step-content" id="apple-step-3">
+                            <div class="step-content-left">
+                                <div class="step-badge build-badge stagger-el" style="--d: 1;">Phase 03 &bull; Rapid Build</div>
+                                <h3 class="step-title stagger-el" style="--d: 2;">Rapid Full-Stack Build</h3>
+                                <p class="step-desc stagger-el" style="--d: 3;">Our engineers build your application using modern frameworks, clean code practices, and robust security protocols. Get a working staging prototype in just 7 days.</p>
+                                <ul class="step-bullet-list stagger-el" style="--d: 4;">
+                                    <li><i class="fas fa-bolt"></i> <div><strong>7-Day Staging Link:</strong> Test working code early</div></li>
+                                    <li><i class="fas fa-laptop-code"></i> <div><strong>Full-Stack Mastery:</strong> React, Next.js, Node & Python</div></li>
+                                    <li><i class="fas fa-microchip"></i> <div><strong>AI Integrations:</strong> LLM agents & smart automation</div></li>
+                                </ul>
                             </div>
-                            <div class="scan-line"></div>
-                        </div>
-                        <ul class="card-bullet-list">
-                            <li><i class="fas fa-check"></i> SEO Keyword Research</li>
-                            <li><i class="fas fa-check"></i> Layout Wireframes</li>
-                        </ul>
-                    </div>
-
-                    <!-- Card 3: 7 Days Launch Card (Right-Middle) -->
-                    <div class="flow-card card-prototype">
-                        <div class="prototype-badge">
-                            <span class="badge-num">3</span>
-                            <span class="badge-text">Development & Code</span>
-                        </div>
-                        <div class="card-title">Rapid Coding</div>
-                        <p class="card-desc">Staging Link in 7 Days</p>
-                        <div class="prototype-preview">
-                            <div class="preview-header">
-                                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                            </div>
-                            <div class="preview-body">
-                                <div class="preview-layout-line long"></div>
-                                <div class="preview-layout-line short"></div>
-                                <div class="preview-blocks">
-                                    <div class="preview-block square"></div>
-                                    <div class="preview-block circle"></div>
+                            <div class="step-content-right stagger-graphic">
+                                <div class="full-bleed-apple-card execution-light-card">
+                                    <div class="card-mac-header light-header">
+                                        <div class="mac-dots">
+                                            <span class="dot red"></span>
+                                            <span class="dot yellow"></span>
+                                            <span class="dot green"></span>
+                                        </div>
+                                        <span class="mac-title-text light-text">Xcode IDE — 7-Day Sprint Build</span>
+                                        <span class="build-status-tag light-btag"><i class="fas fa-check-circle"></i> BUILD PASSING</span>
+                                    </div>
+                                    <div class="ide-full-split">
+                                        <div class="ide-code-panel light-ide">
+                                            <div class="code-line"><span class="c-lpurp">import</span> { AppEngine } <span class="c-lpurp">from</span> <span class="c-lgreen">'@core/framework'</span>;</div>
+                                            <div class="code-line"><span class="c-lpurp">const</span> <span class="c-lblue">app</span> = <span class="c-lpurp">await</span> <span class="c-lyell">initProduction</span>({</div>
+                                            <div class="code-line ind"><span class="c-lgray">framework:</span> <span class="c-lgreen">'Next.js 14 / React'</span>,</div>
+                                            <div class="code-line ind"><span class="c-lgray">aiAgents:</span> <span class="c-lgreen">['LLMs', 'Automation']</span>,</div>
+                                            <div class="code-line ind"><span class="c-lgray">stagingReady:</span> <span class="c-lblue">true</span> <span class="c-lcomm">// Day 7 Delivery</span></div>
+                                            <div class="code-line">});</div>
+                                        </div>
+                                        <div class="staging-progress-box light-spbox">
+                                            <div class="sp-header light-spheader">
+                                                <span>7-Day Staging Build Progress</span>
+                                                <span class="sp-days light-days">Day 7 / 7</span>
+                                            </div>
+                                            <div class="sp-track light-sptrack"><div class="sp-fill light-spfill"></div></div>
+                                            <div class="sp-metrics-row">
+                                                <div class="m-box light-mbox"><strong>45ms</strong><span>API Latency</span></div>
+                                                <div class="m-box light-mbox"><strong>100%</strong><span>Responsive</span></div>
+                                                <div class="m-box light-mbox"><strong>42/42</strong><span>Tests Passed</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <ul class="card-bullet-list">
-                            <li><i class="fas fa-check"></i> Mobile-First Build</li>
-                            <li><i class="fas fa-check"></i> Google Speed Test</li>
-                        </ul>
-                    </div>
 
-                    <!-- Card 4: Success / Website Live Card (Far Right) -->
-                    <div class="flow-card card-success">
-                        <div class="success-header">
-                            <i class="fas fa-check success-check"></i>
-                            <span>4. Website Launch</span>
+                        <!-- Step 4 Content: Deployment & Launch -->
+                        <div class="apple-step-content" id="apple-step-4">
+                            <div class="step-content-left">
+                                <div class="step-badge success-badge stagger-el" style="--d: 1;">Phase 04 &bull; Global Launch</div>
+                                <h3 class="step-title stagger-el" style="--d: 2;">Deployment & Scaling</h3>
+                                <p class="step-desc stagger-el" style="--d: 3;">We handle full DNS setup, SSL certification, server optimization, and Google indexing to launch your platform smoothly with maximum speed and zero downtime.</p>
+                                <ul class="step-bullet-list stagger-el" style="--d: 4;">
+                                    <li><i class="fas fa-server"></i> <div><strong>Cloud Infrastructure:</strong> High-availability server setup</div></li>
+                                    <li><i class="fas fa-shield-alt"></i> <div><strong>SSL & Security:</strong> Enterprise encryption & firewall</div></li>
+                                    <li><i class="fas fa-tachometer-alt"></i> <div><strong>Google Speed 100:</strong> Edge CDN & asset optimization</div></li>
+                                </ul>
+                            </div>
+                            <div class="step-content-right stagger-graphic">
+                                <div class="full-bleed-apple-card launch-light-card">
+                                    <!-- Safari Browser Header -->
+                                    <div class="url-browser-bar light-header">
+                                        <div class="mac-dots">
+                                            <span class="dot red"></span>
+                                            <span class="dot yellow"></span>
+                                            <span class="dot green"></span>
+                                        </div>
+                                        <div class="url-field light-url">
+                                            <i class="fas fa-lock lock-green"></i>
+                                            <span>https://your-brand.com</span>
+                                            <span class="ssl-verified-tag"><i class="fas fa-shield-alt"></i> SSL 256-Bit</span>
+                                        </div>
+                                        <span class="live-production-tag"><span class="pulse-green-dot"></span> LIVE</span>
+                                    </div>
+                                    
+                                    <div class="launch-dashboard-body">
+                                        <!-- 1. 4-Column Google PageSpeed & Audit Performance Scores -->
+                                        <div class="scores-4-column">
+                                            <div class="score-card light-scard">
+                                                <div class="score-num g-green">100</div>
+                                                <span class="score-label light-slabel">Google Speed</span>
+                                                <span class="score-sub-badge green-sub"><i class="fas fa-bolt"></i> 0.4s LCP</span>
+                                            </div>
+                                            <div class="score-card light-scard">
+                                                <div class="score-num g-blue">100</div>
+                                                <span class="score-label light-slabel">SEO Score</span>
+                                                <span class="score-sub-badge blue-sub"><i class="fas fa-search"></i> Indexed</span>
+                                            </div>
+                                            <div class="score-card light-scard">
+                                                <div class="score-num g-purple">100</div>
+                                                <span class="score-label light-slabel">UX Quality</span>
+                                                <span class="score-sub-badge purp-sub"><i class="fas fa-mobile-alt"></i> 60fps UI</span>
+                                            </div>
+                                            <div class="score-card light-scard">
+                                                <div class="score-num g-emerald">A+</div>
+                                                <span class="score-label light-slabel">Security</span>
+                                                <span class="score-sub-badge green-sub"><i class="fas fa-shield-alt"></i> TLS Encryption</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- 2. Global Edge CDN Network Latency Row -->
+                                        <div class="edge-nodes-row light-erow">
+                                            <div class="edge-header-label"><i class="fas fa-globe-americas"></i> EDGE LATENCY</div>
+                                            <div class="edge-item light-eitem"><span class="ping-dot"></span> <strong>US East:</strong> 12ms</div>
+                                            <div class="edge-item light-eitem"><span class="ping-dot"></span> <strong>EU West:</strong> 16ms</div>
+                                            <div class="edge-item light-eitem"><span class="ping-dot"></span> <strong>Asia:</strong> 22ms</div>
+                                        </div>
+
+                                        <!-- 3. Deployment Security & Specs Pills Bar -->
+                                        <div class="deploy-specs-bar">
+                                            <div class="d-spec-pill"><i class="fas fa-rocket"></i> Zero Downtime CI/CD</div>
+                                            <div class="d-spec-pill"><i class="fas fa-database"></i> Daily Cloud Backups</div>
+                                            <div class="d-spec-pill"><i class="fas fa-shield-alt"></i> WAF DDoS Shield</div>
+                                        </div>
+
+                                        <!-- 4. Launch CTA Button -->
+                                        <a href="#book-call" class="full-launch-cta-btn light-cta-btn">
+                                            Start Your Project Now <i class="fas fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-title">Deployment</div>
-                        <p class="card-desc">DNS & Server Setup</p>
-                        <ul class="card-bullet-list" style="margin-bottom: 0.75rem;">
-                            <li><i class="fas fa-check"></i> Google Indexing</li>
-                            <li><i class="fas fa-check"></i> SSL Certificate</li>
-                        </ul>
-                        <div class="success-action-btn">Go Live!</div>
                     </div>
                 </div>
 
-                <div class="hero-trust-bar">
-                    <p>Trusted by 50+ Entrepreneurs & Startups</p>
-                    <div class="trust-logos-rows">
-                        <!-- Row 1: 4 Items -->
-                        <div class="trust-logos-row">
-                            <div class="trust-logo-item">
-                                <i class="fas fa-users-cog"></i> CuriousCRM
-                            </div>
-                            <div class="trust-logo-item">
-                                <i class="fas fa-robot"></i> Browser Buddy
-                            </div>
-                            <div class="trust-logo-item">
-                                <i class="fas fa-car-side"></i> Auco
-                            </div>
-                            <div class="trust-logo-item">
-                                <i class="fas fa-file-signature"></i> Notary Platform
-                            </div>
-                        </div>
-                        <!-- Row 2: 3 Items -->
-                        <div class="trust-logos-row">
-                            <div class="trust-logo-item">
-                                <i class="fas fa-industry"></i> WatFix Chemicals
-                            </div>
-                            <div class="trust-logo-item">
-                                <i class="fas fa-car"></i> AIWA
-                            </div>
-                            <div class="trust-logo-item">
-                                <i class="fas fa-city"></i> Aloha Estate
-                            </div>
-                        </div>
-                        <!-- Row 3: 2 Items -->
-                        <div class="trust-logos-row">
-                            <div class="trust-logo-item">
-                                <i class="fas fa-plane"></i> Arpan Holidays
-                            </div>
-                            <div class="trust-logo-item">
-                                <i class="fas fa-infinity"></i> Alchemy with Tarot
-                            </div>
+                <style>
+                    /* Clean Apple Process Container - Apple Typography (SF Pro / DM Sans) */
+                    .apple-process-container,
+                    .apple-process-container button,
+                    .apple-process-container h3,
+                    .apple-process-container p,
+                    .apple-process-container li,
+                    .apple-process-container span,
+                    .apple-process-container strong,
+                    .apple-process-container div:not(.ide-code-panel):not(.mac-title-text):not(.url-field) {
+                        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "DM Sans", sans-serif !important;
+                    }
+                    .apple-process-container {
+                        max-width: 1080px;
+                        margin: 2.5rem auto 1rem auto;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        position: relative;
+                        z-index: 10;
+                        background: transparent;
+                        padding: 0;
+                    }
+                     /* Ultra-Minimal Apple iOS Segmented Control Stepper Bar */
+                    .apple-stepper-tabs-container {
+                        background: #ffffff !important;
+                        border-radius: 100px;
+                        padding: 4px;
+                        border: none !important;
+                        box-shadow: none !important;
+                        width: 100%;
+                        max-width: 620px;
+                        position: relative;
+                        overflow: hidden;
+                        margin-bottom: 2.25rem;
+                    }
+                    .apple-stepper-tabs {
+                        display: flex;
+                        gap: 4px;
+                        width: 100%;
+                        position: relative;
+                        z-index: 2;
+                    }
+                    .apple-step-tab {
+                        flex: 1;
+                        background: transparent;
+                        border: none !important;
+                        padding: 0.6rem 1.15rem;
+                        border-radius: 100px;
+                        font-size: 0.86rem;
+                        font-weight: 600;
+                        color: #64748b;
+                        cursor: pointer;
+                        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 0.45rem;
+                        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+                        white-space: nowrap;
+                    }
+                    .apple-step-tab:hover { color: #0f172a; }
+                    .apple-step-tab.active {
+                        background: #ffffff !important;
+                        color: #007aff !important;
+                        font-weight: 700 !important;
+                        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+                        border: none !important;
+                    }
+                    .step-num {
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 0.72rem;
+                        font-weight: 700;
+                        letter-spacing: 0.04em;
+                        color: #94a3b8;
+                        transition: all 0.25s ease;
+                    }
+                    .apple-step-tab.active .step-num { color: #007aff !important; font-weight: 800 !important; }
+                    
+                    .apple-tab-progress-track { display: none !important; }
+                    .apple-tab-progress-bar { display: none !important; }
+                    
+                    /* Main Apple Clean Card Component - Completely Borderless & Shadowless */
+                    .apple-step-content-wrapper {
+                        width: 100%;
+                        background: #ffffff !important;
+                        border: none !important;
+                        outline: none !important;
+                        border-radius: 32px;
+                        box-shadow: none !important;
+                        position: relative;
+                        min-height: 480px;
+                        overflow: hidden;
+                    }
+                    
+                    .apple-step-content {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: stretch;
+                        position: absolute;
+                        inset: 0;
+                        opacity: 0;
+                        pointer-events: none;
+                        transform: scale(0.97) translateY(12px);
+                        transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+                    }
+                    .apple-step-content.active {
+                        opacity: 1;
+                        pointer-events: auto;
+                        transform: scale(1) translateY(0);
+                        position: relative;
+                    }
+                    
+                    /* Staggered Content Animations */
+                    .apple-step-content.active .stagger-el {
+                        animation: appleSlideUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+                        animation-delay: calc(var(--d) * 0.07s);
+                        opacity: 0;
+                    }
+                    .apple-step-content.active .stagger-graphic {
+                        animation: applePopIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+                        animation-delay: 0.1s;
+                        opacity: 0;
+                    }
+                    
+                    @keyframes appleSlideUp {
+                        from { opacity: 0; transform: translateY(18px); }
+                        to { opacity: 1; transform: translateY(0); }
+                    }
+                    @keyframes applePopIn {
+                        from { opacity: 0; transform: scale(0.96) translateY(12px); }
+                        to { opacity: 1; transform: scale(1) translateY(0); }
+                    }
+                    
+                    /* Left Content Panel - Transparent Glass Fit */
+                    .step-content-left {
+                        flex: 1;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: flex-start;
+                        padding: 3rem 2.5rem 3rem 3rem;
+                        background: transparent !important;
+                        border-radius: 32px 0 0 32px;
+                        border: none !important;
+                    }
+                    .step-badge {
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 0.4rem;
+                        padding: 0.45rem 1.15rem;
+                        border-radius: 100px;
+                        font-size: 0.75rem;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        letter-spacing: 0.08em;
+                        margin-bottom: 1.15rem;
+                        width: fit-content;
+                        background: #eff6ff;
+                        border: 1px solid #bfdbfe;
+                        color: #007aff;
+                        backdrop-filter: blur(10px);
+                    }
+                    .primary-badge { background: #eff6ff; color: #007aff; border: 1px solid #bfdbfe; }
+                    .build-badge { background: #eff6ff; color: #007aff; border: 1px solid #bfdbfe; }
+                    .success-badge { background: #eff6ff; color: #007aff; border: 1px solid #bfdbfe; }
+                    
+                    .step-title {
+                        font-size: 2.35rem;
+                        font-weight: 800;
+                        color: #0f172a;
+                        margin-bottom: 0.85rem;
+                        letter-spacing: -0.04em;
+                        line-height: 1.12;
+                    }
+                    .step-desc {
+                        font-size: 1rem;
+                        color: #475569;
+                        margin-bottom: 1.75rem;
+                        line-height: 1.6;
+                    }
+                    .step-bullet-list {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.75rem;
+                        width: 100%;
+                    }
+                    .step-bullet-list li {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.85rem;
+                        font-size: 0.92rem;
+                        color: #1e293b;
+                        background: #ffffff;
+                        padding: 0.75rem 1.1rem;
+                        border-radius: 14px;
+                        border: 1px solid #e2e8f0;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.015);
+                        width: 100%;
+                    }
+                    .step-bullet-list i { color: #007aff; font-size: 1.05rem; }
+                    
+                    /* Right Content Showcase Panel - Vertical Center Dividing Line */
+                    .step-content-right {
+                        flex: 1.25;
+                        display: flex;
+                        align-items: stretch;
+                        justify-content: stretch;
+                        background: #ffffff !important;
+                        border-left: 1px solid #e2e8f0 !important; /* Crisp Vertical Center Line */
+                        position: relative;
+                        overflow: hidden;
+                        padding: 0;
+                        border-radius: 0 32px 32px 0;
+                    }
+                    
+                    .full-bleed-apple-card {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        background: #ffffff;
+                        color: #0f172a;
+                        position: relative;
+                        z-index: 2;
+                        padding: 1.85rem 2rem;
+                        box-sizing: border-box;
+                    }
+                    
+                    /* Mac Window Header Light Theme */
+                    .card-mac-header.light-header {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding-bottom: 1.1rem;
+                        border-bottom: 1px solid #f1f5f9;
+                        margin-bottom: 1.35rem;
+                    }
+                    .mac-dots { display: flex; gap: 7px; }
+                    .mac-dots .dot { width: 11px; height: 11px; border-radius: 50%; }
+                    .mac-dots .dot.red { background: #ff5f56; }
+                    .mac-dots .dot.yellow { background: #ffbd2e; }
+                    .mac-dots .dot.green { background: #27c93f; }
+                    .mac-title-text.light-text { font-family: monospace; font-size: 0.8rem; color: #64748b; font-weight: 600; }
+                    
+                    /* Card 1: Discovery Light Studio (Apple Blue & Obsidian Command Center) */
+                    .live-sync-pill.light-pill {
+                        display: flex; align-items: center; gap: 0.45rem;
+                        background: #eff6ff; border: 1px solid #bfdbfe;
+                        color: #007aff; font-size: 0.76rem; font-weight: 700; padding: 0.3rem 0.75rem; border-radius: 100px;
+                    }
+                    .pulse-green-dot {
+                        width: 7px; height: 7px; border-radius: 50%; background: #007aff;
+                        box-shadow: 0 0 8px #007aff; animation: pulseDotG 1.8s infinite;
+                    }
+                    @keyframes pulseDotG { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(1.3); } }
+                    
+                    .audio-waveform.light-wave { display: flex; align-items: center; gap: 3px; }
+                    .audio-waveform.light-wave .w-bar { width: 3px; background: #007aff; border-radius: 100px; animation: wave 1.2s ease-in-out infinite alternate; }
+                    .audio-waveform.light-wave .w-bar.b1 { height: 10px; animation-delay: 0.1s; }
+                    .audio-waveform.light-wave .w-bar.b2 { height: 20px; animation-delay: 0.3s; }
+                    .audio-waveform.light-wave .w-bar.b3 { height: 14px; animation-delay: 0.2s; }
+                    .audio-waveform.light-wave .w-bar.b4 { height: 24px; animation-delay: 0.4s; }
+                    .audio-waveform.light-wave .w-bar.b5 { height: 16px; animation-delay: 0.25s; }
+                    @keyframes wave { 0% { height: 5px; } 100% { height: 22px; } }
+                    
+                    /* Card 1: Apple Studio Discovery Dashboard (Clean Apple Keynote Style) */
+                    .discovery-studio-body {
+                        display: flex; flex-direction: column; justify-content: space-between; flex: 1; gap: 1.1rem; height: 100%;
+                    }
+                    .studio-deliverables-stack {
+                        display: flex; flex-direction: column; gap: 0.75rem;
+                    }
+                    .studio-card-row {
+                        display: flex; align-items: center; gap: 0.9rem; background: #ffffff;
+                        border: 1px solid #e2e8f0; padding: 0.85rem 1.1rem; border-radius: 16px;
+                        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02); transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                    }
+                    .studio-card-row:hover {
+                        transform: translateY(-2px); border-color: #007aff; box-shadow: 0 6px 20px rgba(0, 122, 255, 0.08);
+                    }
+                    .studio-icon-circle {
+                        width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center;
+                        justify-content: center; font-size: 1rem; color: white; flex-shrink: 0;
+                    }
+                    .studio-icon-circle.blue-icon { background: linear-gradient(135deg, #007aff, #0051a8); }
+                    .studio-icon-circle.dark-icon { background: linear-gradient(135deg, #0f172a, #334155); }
+                    .studio-icon-circle.green-icon { background: linear-gradient(135deg, #007aff, #0051a8); }
+                    
+                    .studio-card-info { display: flex; flex-direction: column; flex: 1; }
+                    .studio-card-title { font-size: 0.9rem; font-weight: 700; color: #0f172a; line-height: 1.25; }
+                    .studio-card-sub { font-size: 0.73rem; color: #64748b; margin-top: 0.15rem; }
+                    .studio-badge {
+                        font-size: 0.65rem; font-weight: 800; padding: 0.25rem 0.65rem; border-radius: 100px;
+                        letter-spacing: 0.04em; white-space: nowrap;
+                    }
+                    .studio-badge.blue-badge { background: #eff6ff; color: #007aff; border: 1px solid #bfdbfe; }
+                    .studio-badge.dark-badge { background: #f8fafc; color: #334155; border: 1px solid #e2e8f0; }
+                    .studio-badge.green-badge { background: #eff6ff; color: #007aff; border: 1px solid #bfdbfe; }
+                    
+                    .studio-consultation-footer {
+                        display: flex; flex-direction: column; gap: 0.85rem; background: #ffffff;
+                        border: 1px solid #e2e8f0; padding: 0.95rem 1.1rem; border-radius: 18px;
+                        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+                    }
+                    .consultation-avatars-row { display: flex; align-items: center; justify-content: space-around; }
+                    .c-avatar-item { display: flex; align-items: center; gap: 0.55rem; }
+                    .c-avatar-ring { position: relative; display: inline-flex; flex-shrink: 0; }
+                    .c-avatar-ring i {
+                        width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center;
+                        justify-content: center; font-size: 0.9rem; color: white; background: linear-gradient(135deg, #007aff, #0051a8);
+                    }
+                    .c-avatar-ring.architect i { background: linear-gradient(135deg, #0f172a, #334155); }
+                    .c-online-dot { position: absolute; bottom: 0; right: 0; width: 9px; height: 9px; background: #007aff; border: 2px solid #ffffff; border-radius: 50%; }
+                    .c-verified-badge { position: absolute; bottom: -2px; right: -2px; width: 14px; height: 14px; background: #007aff; color: white; border: 2px solid #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.5rem; }
+                    .c-avatar-item span { font-size: 0.78rem; font-weight: 700; color: #0f172a; }
+                    .c-sync-link { color: #007aff; font-size: 0.95rem; animation: pulseGlow 2s infinite; }
+                    
+                    .studio-progress-box { display: flex; flex-direction: column; gap: 0.4rem; }
+                    .studio-progress-header { display: flex; justify-content: space-between; font-size: 0.75rem; font-weight: 700; color: #475569; }
+                    .studio-perc { color: #007aff; font-weight: 800; }
+                    .studio-progress-track { width: 100%; height: 6px; background: #e2e8f0; border-radius: 100px; overflow: hidden; position: relative; }
+                    .studio-progress-fill { height: 100%; width: 100%; background: linear-gradient(90deg, #007aff, #0051a8); border-radius: 100px; position: relative; }
+                    .fill-glow-head { position: absolute; right: 0; top: 0; bottom: 0; width: 12px; background: #ffffff; opacity: 0.6; filter: blur(2px); border-radius: 100px; }
+                    
+                    /* Card 2: Architecture Blueprint Showcase Card (Apple Blue & Obsidian Theme) */
+                    .tech-tag-pill.light-tag {
+                        font-size: 0.7rem; font-weight: 800; background: #eff6ff;
+                        color: #007aff; border: 1px solid #bfdbfe; padding: 0.25rem 0.65rem; border-radius: 100px;
+                    }
+                    .blueprint-full-body { display: flex; flex-direction: column; justify-content: space-between; flex: 1; gap: 1rem; }
+                    .bp-section-title {
+                        font-size: 0.68rem; font-weight: 800; color: #64748b; letter-spacing: 0.08em;
+                        display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.25rem;
+                    }
+                    .pipeline-flow-container.light-pipeline {
+                        display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
+                        background: #ffffff; border: 1px solid #e2e8f0;
+                        padding: 1.15rem 0.85rem; border-radius: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.015);
+                    }
+                    .pipe-node.light-node {
+                        flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center;
+                        background: #ffffff; border: 1px solid #e2e8f0;
+                        padding: 0.85rem 0.5rem; border-radius: 16px; position: relative;
+                        box-shadow: 0 2px 6px rgba(0,0,0,0.01); transition: transform 0.3s ease;
+                    }
+                    .pipe-node.light-node:hover { transform: translateY(-3px); border-color: #007aff; }
+                    .node-icon-circle {
+                        width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center;
+                        justify-content: center; font-size: 1.1rem; margin-bottom: 0.4rem; color: white;
+                    }
+                    .ui-icon { background: linear-gradient(135deg, #007aff, #0051a8); }
+                    .ai-icon { background: linear-gradient(135deg, #0f172a, #334155); }
+                    .db-icon { background: linear-gradient(135deg, #007aff, #0051a8); }
+                    
+                    .pipe-node .p-title.light-ptitle { font-weight: 700; font-size: 0.82rem; color: #0f172a; }
+                    .pipe-node .p-sub.light-psub { font-size: 0.7rem; color: #64748b; margin-top: 1px; margin-bottom: 0.35rem; }
+                    .node-status-pill {
+                        font-size: 0.65rem; font-weight: 700; color: #007aff; background: #eff6ff;
+                        padding: 0.15rem 0.5rem; border-radius: 100px; display: flex; align-items: center; gap: 0.3rem;
+                    }
+                    .node-status-pill.purp-pill { color: #007aff; background: #eff6ff; }
+                    .node-status-pill.green-pill { color: #007aff; background: #eff6ff; }
+                    .tiny-dot { width: 5px; height: 5px; border-radius: 50%; display: inline-block; }
+                    .blue-dot { background: #007aff; }
+                    .purp-dot { background: #007aff; }
+                    .green-dot { background: #007aff; }
+                    
+                    .pipe-connector.light-connector {
+                        color: #007aff; font-size: 0.85rem; display: flex; align-items: center;
+                        justify-content: center; position: relative; width: 30px;
+                    }
+                    
+                    /* 2-Column Grid for Design Tokens & Blueprint Specs */
+                    .bp-2-col-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
+                    .bp-mini-card {
+                        background: #ffffff; border: 1px solid #e2e8f0; padding: 0.85rem 1rem;
+                        border-radius: 18px; display: flex; flex-direction: column; gap: 0.6rem;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.015);
+                    }
+                    .bp-card-label {
+                        font-size: 0.65rem; font-weight: 800; color: #007aff; letter-spacing: 0.08em;
+                        display: flex; align-items: center; gap: 0.35rem;
+                    }
+                    .token-swatches-row { display: flex; align-items: center; justify-content: space-around; gap: 0.3rem; }
+                    .swatch-item { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; }
+                    .swatch-circle { width: 22px; height: 22px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.08); }
+                    .sw-slate { background: #0f172a; }
+                    .sw-blue { background: #007aff; }
+                    .sw-emerald { background: #0051a8; }
+                    .sw-purple { background: #3b82f6; }
+                    .swatch-hex { font-family: monospace; font-size: 0.65rem; color: #64748b; font-weight: 600; }
+                    
+                    .font-spec-pill {
+                        font-size: 0.72rem; font-weight: 600; color: #334155; background: #f8fafc;
+                        padding: 0.35rem 0.6rem; border-radius: 10px; border: 1px solid #e2e8f0;
+                        display: flex; align-items: center; gap: 0.35rem; justify-content: center;
+                    }
+                    .font-spec-pill i { color: #007aff; font-size: 0.75rem; }
+                    
+                    .blueprint-specs-list { display: flex; flex-direction: column; gap: 0.4rem; }
+                    .bp-spec-row { display: flex; align-items: center; gap: 0.45rem; font-size: 0.75rem; font-weight: 600; color: #1e293b; }
+                    .bp-spec-row .check-icon { color: #007aff; font-size: 0.85rem; }
+                    
+                    /* Card 3: Execution Light IDE Workspace (Apple Blue & Obsidian Theme) */
+                    .build-status-tag.light-btag {
+                        font-size: 0.7rem; font-weight: 800; background: #eff6ff;
+                        color: #007aff; border: 1px solid #bfdbfe; padding: 0.25rem 0.65rem; border-radius: 100px;
+                    }
+                    .ide-full-split { display: flex; flex-direction: column; justify-content: space-between; flex: 1; gap: 1.1rem; }
+                    .ide-code-panel.light-ide {
+                        background: #ffffff; border: 1px solid #e2e8f0; padding: 1.25rem;
+                        border-radius: 18px; font-family: 'Fira Code', monospace; font-size: 0.8rem; line-height: 1.7; color: #0f172a;
+                    }
+                    .c-lpurp { color: #007aff; font-weight: 700; }
+                    .c-lblue { color: #0f172a; font-weight: 700; }
+                    .c-lyell { color: #007aff; font-weight: 600; }
+                    .c-lgreen { color: #0284c7; }
+                    .c-lgray { color: #64748b; }
+                    .c-lcomm { color: #94a3b8; font-style: italic; }
+                    .code-line.ind { padding-left: 1.1rem; }
+                    
+                    .staging-progress-box.light-spbox {
+                        background: #ffffff; border: 1px solid #e2e8f0;
+                        padding: 1.1rem; border-radius: 18px; display: flex; flex-direction: column; gap: 0.65rem;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.015);
+                    }
+                    .sp-header.light-spheader { display: flex; justify-content: space-between; font-size: 0.82rem; font-weight: 700; color: #0f172a; }
+                    .sp-days.light-days { color: #007aff; }
+                    .sp-track.light-sptrack { width: 100%; height: 7px; background: #e2e8f0; border-radius: 100px; overflow: hidden; }
+                    .sp-fill.light-spfill { height: 100%; width: 100%; background: linear-gradient(90deg, #007aff, #0051a8); border-radius: 100px; }
+                    .sp-metrics-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.65rem; text-align: center; }
+                    .m-box.light-mbox { background: #ffffff; padding: 0.5rem; border-radius: 12px; display: flex; flex-direction: column; border: 1px solid #e2e8f0; }
+                    .m-box.light-mbox strong { font-size: 0.95rem; color: #0f172a; }
+                    .m-box.light-mbox span { font-size: 0.68rem; color: #64748b; }
+                    
+                    /* Card 4: Global Deployment Safari Bar (Apple Blue & Obsidian Theme) */
+                    .url-browser-bar.light-header {
+                        display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
+                        padding-bottom: 0.85rem; border-bottom: 1px solid rgba(0,0,0,0.05); margin-bottom: 1rem; width: 100%;
+                    }
+                    .url-field.light-url {
+                        background: #ffffff; border: 1px solid #e2e8f0;
+                        padding: 0.35rem 0.85rem; border-radius: 100px; font-family: monospace; font-size: 0.78rem;
+                        display: flex; align-items: center; gap: 0.4rem; color: #0f172a; font-weight: 600;
+                        box-shadow: 0 2px 6px rgba(0,0,0,0.01);
+                    }
+                    .lock-green { color: #007aff; }
+                    .ssl-verified-tag {
+                        font-size: 0.62rem; font-weight: 700; color: #007aff; background: #eff6ff;
+                        padding: 0.1rem 0.4rem; border-radius: 100px; margin-left: 0.25rem; white-space: nowrap; border: 1px solid #bfdbfe;
+                    }
+                    .live-production-tag {
+                        font-size: 0.65rem; font-weight: 800; background: #007aff; color: white;
+                        padding: 0.3rem 0.65rem; border-radius: 100px; letter-spacing: 0.05em;
+                        display: flex; align-items: center; gap: 0.35rem; box-shadow: 0 4px 12px rgba(0, 122, 255, 0.25); white-space: nowrap;
+                    }
+                    
+                    .launch-dashboard-body { display: flex; flex-direction: column; justify-content: space-between; flex: 1; gap: 0.85rem; width: 100%; }
+                    .scores-4-column { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.55rem; width: 100%; }
+                    .score-card.light-scard {
+                        background: #ffffff; border: 1px solid #e2e8f0;
+                        padding: 0.75rem 0.35rem; border-radius: 16px; text-align: center;
+                        display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.2rem;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.015); transition: transform 0.3s ease;
+                    }
+                    .score-card.light-scard:hover { transform: translateY(-3px); border-color: #007aff; }
+                    .score-num { font-size: 1.65rem; font-weight: 900; line-height: 1; color: #0f172a; }
+                    .g-green { color: #007aff; }
+                    .g-blue { color: #007aff; }
+                    .g-purple { color: #0f172a; }
+                    .g-emerald { color: #007aff; }
+                    .score-label.light-slabel { font-size: 0.62rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.04em; white-space: nowrap; }
+                    .score-sub-badge {
+                        font-size: 0.6rem; font-weight: 700; padding: 0.1rem 0.35rem; border-radius: 100px; margin-top: 2px;
+                        display: flex; align-items: center; gap: 0.25rem; white-space: nowrap;
+                        color: #007aff; background: #eff6ff; border: 1px solid #bfdbfe;
+                    }
+                    .green-sub { color: #007aff; background: #eff6ff; }
+                    .blue-sub { color: #007aff; background: #eff6ff; }
+                    .purp-sub { color: #0f172a; background: #f1f5f9; }
+                    
+                    .edge-nodes-row.light-erow {
+                        display: flex; align-items: center; justify-content: space-between; background: #ffffff;
+                        border: 1px solid #e2e8f0; padding: 0.7rem 0.85rem; border-radius: 16px;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.015); width: 100%;
+                    }
+                    .edge-header-label { font-size: 0.65rem; font-weight: 800; color: #64748b; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.3rem; white-space: nowrap; }
+                    .edge-header-label i { color: #007aff; }
+                    .edge-item.light-eitem { font-size: 0.75rem; color: #334155; display: flex; align-items: center; gap: 0.35rem; white-space: nowrap; }
+                    .ping-dot { width: 7px; height: 7px; border-radius: 50%; background: #007aff; box-shadow: 0 0 7px #007aff; }
+                    
+                    .deploy-specs-bar { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; width: 100%; }
+                    .d-spec-pill {
+                        font-size: 0.66rem; font-weight: 600; color: #334155; background: #ffffff;
+                        padding: 0.4rem 0.5rem; border-radius: 12px; border: 1px solid #e2e8f0;
+                        display: flex; align-items: center; gap: 0.35rem; flex: 1; justify-content: center; white-space: nowrap;
+                    }
+                    .d-spec-pill i { color: #007aff; font-size: 0.75rem; }
+                    
+                    .full-launch-cta-btn.light-cta-btn {
+                        background: linear-gradient(180deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%) !important;
+                        color: #ffffff !important;
+                        padding: 0.92rem 1.75rem !important;
+                        border-radius: 100px !important;
+                        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif !important;
+                        font-weight: 700 !important;
+                        font-size: 0.95rem !important;
+                        text-decoration: none !important;
+                        display: flex !important;
+                        align-items: center !important;
+                        justify-content: center !important;
+                        gap: 0.65rem !important;
+                        width: 100% !important;
+                        border: 1px solid rgba(255, 255, 255, 0.4) !important;
+                        box-shadow: 
+                            0 10px 28px -4px rgba(37, 99, 235, 0.45), 
+                            0 4px 12px rgba(0, 0, 0, 0.08),
+                            inset 0 1px 1px rgba(255, 255, 255, 0.5) !important;
+                        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+                        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+                        margin-top: auto !important;
+                    }
+                    .full-launch-cta-btn.light-cta-btn:hover {
+                        background: linear-gradient(180deg, #60a5fa 0%, #3b82f6 50%, #2563eb 100%) !important;
+                        transform: translateY(-3px) scale(1.01) !important;
+                        box-shadow: 
+                            0 16px 36px -4px rgba(37, 99, 235, 0.55), 
+                            0 6px 16px rgba(0, 0, 0, 0.12),
+                            inset 0 1px 1px rgba(255, 255, 255, 0.7) !important;
+                    }
+                    
+                    @media (max-width: 900px) {
+                        .apple-process-container { padding: 0 1rem; width: 100%; box-sizing: border-box; }
+                        .apple-step-content-wrapper { min-height: auto; border-radius: 24px; }
+                        .apple-step-content.active { flex-direction: column; position: relative; }
+                        .step-content-left { padding: 2rem 1.5rem; text-align: left; align-items: flex-start; border-radius: 24px 24px 0 0; }
+                        .step-title { font-size: 1.85rem; }
+                        .step-content-right { border-left: none !important; border-top: 1px solid #e2e8f0 !important; padding: 0; min-height: auto; border-radius: 0 0 24px 24px; }
+                        .full-bleed-apple-card { padding: 1.35rem 1.15rem !important; border-radius: 0 0 24px 24px; }
+                        .card-inner-grid { grid-template-columns: 1fr; }
+                        .pipeline-flow-container { flex-direction: column; gap: 0.75rem; }
+                        .pipe-connector i { transform: rotate(90deg); }
+                    }
+                    
+                    @media (max-width: 768px) {
+                        .apple-process-container { padding: 0 0.85rem; }
+                        .apple-stepper-tabs-container {
+                            max-width: 100% !important;
+                            border-radius: 16px !important;
+                            padding: 3px !important;
+                            margin-bottom: 1.25rem !important;
+                            border: 1px solid #e2e8f0 !important;
+                        }
+                        .apple-stepper-tabs {
+                            display: flex !important;
+                            gap: 3px !important;
+                            width: 100% !important;
+                            overflow-x: auto !important;
+                            scrollbar-width: none !important;
+                            -webkit-overflow-scrolling: touch !important;
+                        }
+                        .apple-stepper-tabs::-webkit-scrollbar { display: none !important; }
+                        .apple-step-tab {
+                            flex: 1 !important;
+                            min-width: 0 !important;
+                            padding: 0.55rem 0.35rem !important;
+                            border-radius: 12px !important;
+                            font-size: 0.76rem !important;
+                            gap: 0.25rem !important;
+                            justify-content: center !important;
+                        }
+                        .step-num { font-size: 0.68rem !important; }
+                        .step-name {
+                            font-size: 0.74rem !important;
+                            overflow: hidden !important;
+                            text-overflow: ellipsis !important;
+                            white-space: nowrap !important;
+                        }
+                        
+                        .step-content-left { padding: 1.75rem 1.15rem; }
+                        .step-badge { font-size: 0.7rem; padding: 0.35rem 0.85rem; margin-bottom: 0.85rem; }
+                        .step-title { font-size: 1.65rem; margin-bottom: 0.65rem; }
+                        .step-desc { font-size: 0.9rem; margin-bottom: 1.25rem; }
+                        .step-bullet-list { gap: 0.55rem; }
+                        .step-bullet-list li { padding: 0.65rem 0.85rem; font-size: 0.84rem; gap: 0.65rem; }
+                        
+                        .full-bleed-apple-card { padding: 1.15rem 0.95rem !important; }
+                        .studio-card-row { padding: 0.7rem 0.75rem; gap: 0.65rem; }
+                        .studio-icon-circle { width: 32px; height: 32px; font-size: 0.88rem; }
+                        .studio-card-title { font-size: 0.82rem; }
+                        .studio-card-sub { font-size: 0.68rem; }
+                        .studio-badge { font-size: 0.58rem; padding: 0.2rem 0.45rem; }
+                        .studio-consultation-footer { padding: 0.75rem; gap: 0.65rem; }
+                        .c-avatar-ring i { width: 30px; height: 34px; font-size: 0.8rem; }
+                        .c-avatar-item span { font-size: 0.72rem; }
+                        
+                        .bp-2-col-grid { grid-template-columns: 1fr !important; gap: 0.65rem !important; }
+                        .scores-4-column { grid-template-columns: repeat(2, 1fr) !important; gap: 0.55rem !important; }
+                        .edge-nodes-row.light-erow { flex-direction: column !important; align-items: flex-start !important; gap: 0.45rem !important; }
+                        .deploy-specs-bar { flex-direction: column !important; gap: 0.4rem !important; }
+                        .d-spec-pill { width: 100% !important; justify-content: flex-start !important; }
+                    }
+                    
+                    @media (max-width: 480px) {
+                        .apple-process-container { padding: 0 0.5rem; }
+                        .apple-stepper-tabs-container {
+                            border-radius: 14px !important;
+                            padding: 2px !important;
+                        }
+                        .apple-step-tab {
+                            padding: 0.5rem 0.2rem !important;
+                            font-size: 0.72rem !important;
+                        }
+                        .step-num { display: none !important; }
+                        .step-name { font-size: 0.75rem !important; font-weight: 700 !important; }
+                        .step-content-left { padding: 1.35rem 0.85rem; }
+                        .step-title { font-size: 1.45rem; }
+                        .full-bleed-apple-card { padding: 1rem 0.75rem !important; }
+                        .scores-4-column { grid-template-columns: repeat(2, 1fr) !important; }
+                    }
+                </style>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        const tabs = document.querySelectorAll('.apple-step-tab');
+                        const contents = document.querySelectorAll('.apple-step-content');
+                        const progressBar = document.getElementById('stepperProgressBar');
+                        
+                        let currentStep = 1;
+                        const duration = 6000; // 6 seconds per step
+                        let startTime = null;
+                        let animationFrameId = null;
+                        
+                        function showStep(step) {
+                            tabs.forEach(t => t.classList.remove('active'));
+                            contents.forEach(c => c.classList.remove('active'));
+                            
+                            const activeTab = document.querySelector(`.apple-step-tab[data-step="${step}"]`);
+                            const activeContent = document.getElementById(`apple-step-${step}`);
+                            
+                            if (activeTab) activeTab.classList.add('active');
+                            if (activeContent) activeContent.classList.add('active');
+                            
+                            currentStep = parseInt(step);
+                            startTime = performance.now(); // Reset progress bar timer
+                        }
+                        
+                        function updateProgressBar(timestamp) {
+                            if (!startTime) startTime = timestamp;
+                            const elapsed = timestamp - startTime;
+                            const progressPercent = Math.min(100, (elapsed / duration) * 100);
+                            
+                            if (progressBar) {
+                                progressBar.style.width = `${progressPercent}%`;
+                            }
+                            
+                            if (elapsed >= duration) {
+                                let next = currentStep + 1;
+                                if (next > 4) next = 1;
+                                showStep(next);
+                            }
+                            
+                            animationFrameId = requestAnimationFrame(updateProgressBar);
+                        }
+                        
+                        tabs.forEach(tab => {
+                            tab.addEventListener('click', () => {
+                                showStep(tab.dataset.step);
+                            });
+                        });
+                        
+                        // Start animated progress bar loop
+                        animationFrameId = requestAnimationFrame(updateProgressBar);
+                    });
+                </script>
+
+                <div class="apple-trust-bar" style="margin-top: 4rem; padding-top: 3.5rem; border-top: 1px solid #e2e8f0; text-align: center; overflow: hidden; position: relative;">
+                    <p style="font-size: 0.75rem; font-weight: 700; color: #86868b; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 2.5rem;">Trusted by 50+ Entrepreneurs & Startups</p>
+                    
+                    <div class="apple-marquee-container" style="position: relative; width: 100%; max-width: 1100px; margin: 0 auto; overflow: hidden; mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);">
+                        <div class="apple-marquee-track" style="display: flex; gap: 4.5rem; padding-right: 4.5rem; width: max-content; animation: appleScroll 35s linear infinite;">
+                            <!-- Set 1 -->
+                            <div class="apple-logo-item"><i class="fas fa-users-cog"></i> CuriousCRM</div>
+                            <div class="apple-logo-item"><i class="fas fa-robot"></i> Browser Buddy</div>
+                            <div class="apple-logo-item"><i class="fas fa-car-side"></i> Auco</div>
+                            <div class="apple-logo-item"><i class="fas fa-file-signature"></i> Notary Platform</div>
+                            <div class="apple-logo-item"><i class="fas fa-industry"></i> WatFix Chemicals</div>
+                            <div class="apple-logo-item"><i class="fas fa-car"></i> AIWA</div>
+                            <div class="apple-logo-item"><i class="fas fa-city"></i> Aloha Estate</div>
+                            <div class="apple-logo-item"><i class="fas fa-plane"></i> Arpan Holidays</div>
+                            <div class="apple-logo-item"><i class="fas fa-infinity"></i> Alchemy with Tarot</div>
+                            <!-- Set 2 (Duplicate for seamless scroll) -->
+                            <div class="apple-logo-item"><i class="fas fa-users-cog"></i> CuriousCRM</div>
+                            <div class="apple-logo-item"><i class="fas fa-robot"></i> Browser Buddy</div>
+                            <div class="apple-logo-item"><i class="fas fa-car-side"></i> Auco</div>
+                            <div class="apple-logo-item"><i class="fas fa-file-signature"></i> Notary Platform</div>
+                            <div class="apple-logo-item"><i class="fas fa-industry"></i> WatFix Chemicals</div>
+                            <div class="apple-logo-item"><i class="fas fa-car"></i> AIWA</div>
+                            <div class="apple-logo-item"><i class="fas fa-city"></i> Aloha Estate</div>
+                            <div class="apple-logo-item"><i class="fas fa-plane"></i> Arpan Holidays</div>
+                            <div class="apple-logo-item"><i class="fas fa-infinity"></i> Alchemy with Tarot</div>
                         </div>
                     </div>
                 </div>
+
+                <style>
+                    .apple-logo-item {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.6rem;
+                        font-size: 1.25rem;
+                        font-weight: 600;
+                        color: #1d1d1f;
+                        white-space: nowrap;
+                        letter-spacing: -0.03em;
+                        opacity: 0.6;
+                        transition: opacity 0.3s ease;
+                    }
+                    .apple-logo-item:hover {
+                        opacity: 1;
+                    }
+                    .apple-logo-item i {
+                        font-size: 1.35rem;
+                        color: #1d1d1f;
+                    }
+                    @keyframes appleScroll {
+                        0% { transform: translateX(0); }
+                        100% { transform: translateX(-50%); }
+                    }
+                    /* Pause on hover */
+                    .apple-marquee-container:hover .apple-marquee-track {
+                        animation-play-state: paused;
+                    }
+                </style>
             </section>
         </div>
     </header>
 
     <!-- Work Showcase Section -->
-    <section class="work-showcase" data-aos="fade-up" data-aos-duration="800">
+    <section class="work-showcase" data-aos="fade-up" data-aos-duration="800" style="background-color: #ffffff !important; border-bottom: 1px solid #e2e8f0;">
 
         <div class="work-showcase-container">
             <!-- Row 1: Left Scrolling -->
@@ -815,49 +1753,7 @@
                         </div>
                     </div>
                     
-                    <!-- Card 9: Toilet Finder Map -->
-                    <div class="work-showcase-item">
-                        <img src="images/toilet-finder.webp" alt="Toilet Finder Map" loading="lazy" decoding="async" width="1024" height="576">
-                        <div class="showcase-card-footer">
-                            <div class="showcase-icon-wrapper icon-map">
-                                <i class="fas fa-map-marked-alt"></i>
-                            </div>
-                            <div class="showcase-text-wrapper">
-                                <div class="showcase-title">Toilet Finder Map</div>
-                                <p class="showcase-subtitle">Location-Based Maps Web App</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Card 10: Browser Buddy -->
-                    <div class="work-showcase-item">
-                        <img src="images/browser-buddy.webp" alt="Browser Buddy" loading="lazy" decoding="async" width="1024" height="682">
-                        <div class="showcase-card-footer">
-                            <div class="showcase-icon-wrapper icon-browserbuddy">
-                                <i class="fas fa-robot"></i>
-                            </div>
-                            <div class="showcase-text-wrapper">
-                                <div class="showcase-title">Browser Buddy</div>
-                                <p class="showcase-subtitle">Your AI Employee Inside the Browser</p>
-                            </div>
-                        </div>
-                    </div>
-                    
- 
-                    
-                    <!-- Card 12: PropVest -->
-                    <div class="work-showcase-item">
-                        <img src="images/group-buying-real-estate.webp" alt="PropVest" loading="lazy" decoding="async" width="1024" height="1024">
-                        <div class="showcase-card-footer">
-                            <div class="showcase-icon-wrapper icon-home">
-                                <i class="fas fa-home"></i>
-                            </div>
-                            <div class="showcase-text-wrapper">
-                                <div class="showcase-title">PropVest</div>
-                                <p class="showcase-subtitle">Real Estate Co-Investment Platform</p>
-                            </div>
-                        </div>
-                    </div>
+
                     
                     <!-- Card 13: CoinVortex PRO -->
                     <div class="work-showcase-item">
@@ -878,7 +1774,7 @@
     </section>
 
     <!-- Our Process Section -->
-    <section id="process" class="process-section" data-aos="fade-up" data-aos-duration="800" style="background-image: linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px); background-size: 40px 40px; background-color: white;">
+    <section id="process" class="process-section" data-aos="fade-up" data-aos-duration="800" style="background-color: #ffffff !important; border-bottom: 1px solid #e2e8f0;">
         <div class="container">
             <div class="section-header">
                 <div style="text-align: center;">
@@ -946,7 +1842,7 @@
     </section>
 
     <!-- Our Expertise Section -->
-    <section id="expertise" class="expertise-section" style="background-color: #ffffff;">
+    <section id="expertise" class="expertise-section" style="background-color: #ffffff !important; border-bottom: 1px solid #e2e8f0;">
         <div class="container">
             <div class="section-header" style="text-align: center; margin-bottom: 40px;">
                 <div class="hero-badge">Capabilities</div>
@@ -1159,12 +2055,11 @@
     </section>
 
     <!-- Technology Stack Section -->
-    <section id="technology" class="tech-stack-section" style="background-color: #ffffff; position: relative; overflow: hidden;" data-aos="fade-up" data-aos-duration="800">
+    <section id="technology" class="tech-stack-section" style="background-color: #ffffff !important; border-bottom: 1px solid #e2e8f0; position: relative; overflow: hidden;" data-aos="fade-up" data-aos-duration="800">
         <!-- Glowing background overlays for modern dark/light contrast -->
         <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.04) 0%, transparent 60%); pointer-events: none; z-index: 1;"></div>
         
-        <!-- Subtle Grid Pattern background matching the rest of the site -->
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px); background-size: 40px 40px; background-position: -1px -1px; pointer-events: none; z-index: 2;"></div>
+
 
             <!-- Unified Technology Arch Container -->
             <div class="tech-arch-container" data-aos="fade-up" data-aos-duration="1000">
@@ -1399,7 +2294,7 @@
     </section>
 
     <!-- Why Choose Us Section -->
-    <section id="why-us" class="why-us" style="background-color: white;" data-aos="fade-up" data-aos-duration="800">
+    <section id="why-us" class="why-us" style="background-color: #ffffff !important; border-bottom: 1px solid #e2e8f0;" data-aos="fade-up" data-aos-duration="800">
         <div class="container" style="padding: 0 15px;">
             <div class="section-header">
                 <div style="text-align: center;" data-aos="fade-up" data-aos-duration="600">
@@ -1541,8 +2436,268 @@
         </div>
     </section>
 
+    <!-- Testimonials Section (Apple-like design) -->
+    <section class="testimonials-apple-section" style="background-color: #ffffff !important; border-bottom: 1px solid #e2e8f0;">
+        <div class="testimonials-header-container">
+            <div class="testi-badge"><i class="fas fa-star" style="color: #3b82f6; margin-right: 6px;"></i> Testimonials</div>
+            <h2 class="testi-main-heading">
+                <span class="testi-blue-sf">WHY BRANDS</span><br>
+                <span class="testi-black-bold">WORK WITH US</span>
+            </h2>
+            <p class="testi-subheading">
+                Hear from <strong>founders and teams</strong> who turned <br>
+                their ideas into reality with Curious Kaizer. Real stories, Real results.
+            </p>
+        </div>
+
+        <div class="testi-marquee-container">
+            <div class="testi-marquee-track">
+                <!-- Set 1 -->
+                <div class="testi-card">
+                    <p class="testi-quote">"They <span class="testi-highlight">transformed my idea</span> into a scalable MVP, saving me weeks of development time."</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar-letter">C</div>
+                        <div class="testi-author-info">
+                            <span class="testi-name">CuriousCRM</span>
+                            <span class="testi-role">SaaS Platform</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testi-card">
+                    <p class="testi-quote">"Their team <span class="testi-highlight">built a solid MVP fast</span>, allowing me to test features confidently and early."</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar-letter">B</div>
+                        <div class="testi-author-info">
+                            <span class="testi-name">Browser Buddy</span>
+                            <span class="testi-role">Tech Startup</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testi-card">
+                    <p class="testi-quote">"<span class="testi-highlight">My MVP was built in days</span> by Curious Kaizer, giving me & my startup momentum from day one."</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar-letter">A</div>
+                        <div class="testi-author-info">
+                            <span class="testi-name">Auco</span>
+                            <span class="testi-role">Automotive Platform</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testi-card">
+                    <p class="testi-quote">"Their <span class="testi-highlight">fast execution</span> helped me validate features and get real user feedback quickly."</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar-letter">A</div>
+                        <div class="testi-author-info">
+                            <span class="testi-name">Aloha Estate</span>
+                            <span class="testi-role">Real Estate CRM</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Set 2 (Duplicated for seamless infinite loop) -->
+                <div class="testi-card">
+                    <p class="testi-quote">"They <span class="testi-highlight">transformed my idea</span> into a scalable MVP, saving me weeks of development time."</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar-letter">C</div>
+                        <div class="testi-author-info">
+                            <span class="testi-name">CuriousCRM</span>
+                            <span class="testi-role">SaaS Platform</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testi-card">
+                    <p class="testi-quote">"Their team <span class="testi-highlight">built a solid MVP fast</span>, allowing me to test features confidently and early."</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar-letter">B</div>
+                        <div class="testi-author-info">
+                            <span class="testi-name">Browser Buddy</span>
+                            <span class="testi-role">Tech Startup</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testi-card">
+                    <p class="testi-quote">"<span class="testi-highlight">My MVP was built in days</span> by Curious Kaizer, giving me & my startup momentum from day one."</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar-letter">A</div>
+                        <div class="testi-author-info">
+                            <span class="testi-name">Auco</span>
+                            <span class="testi-role">Automotive Platform</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testi-card">
+                    <p class="testi-quote">"Their <span class="testi-highlight">fast execution</span> helped me validate features and get real user feedback quickly."</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar-letter">A</div>
+                        <div class="testi-author-info">
+                            <span class="testi-name">Aloha Estate</span>
+                            <span class="testi-role">Real Estate CRM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <style>
+            .testimonials-apple-section {
+                padding: 6rem 0 4rem 0;
+                background-color: #ffffff;
+                overflow: hidden;
+                border-top: 1px solid rgba(0,0,0,0.05);
+            }
+            .testimonials-header-container {
+                text-align: center;
+                max-width: 600px;
+                margin: 0 auto 4rem auto;
+                padding: 0 1rem;
+            }
+            .testi-badge {
+                display: inline-flex;
+                align-items: center;
+                font-size: 0.8rem;
+                font-weight: 600;
+                color: #3b82f6;
+                background: rgba(59, 130, 246, 0.08);
+                padding: 0.4rem 1rem;
+                border-radius: 100px;
+                margin-bottom: 1.5rem;
+            }
+            .testi-main-heading {
+                font-size: 3.5rem;
+                line-height: 1.1;
+                margin-bottom: 1.5rem;
+            }
+            .testi-blue-sf {
+                font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "DM Sans", sans-serif;
+                color: #3b82f6;
+                font-weight: 600;
+                letter-spacing: -0.02em;
+            }
+            .testi-black-bold {
+                font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "DM Sans", sans-serif;
+                font-weight: 700;
+                color: #111827;
+                letter-spacing: -0.03em;
+            }
+            .testi-subheading {
+                font-size: 1rem;
+                color: #6b7280;
+                line-height: 1.6;
+            }
+            .testi-subheading strong {
+                color: #374151;
+            }
+            
+            .testi-marquee-container {
+                position: relative;
+                width: 100%;
+                overflow: hidden;
+                /* Soft white fade on edges like Apple */
+                mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+                -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+            }
+            .testi-marquee-track {
+                display: flex;
+                gap: 2rem;
+                padding-right: 2rem;
+                width: max-content;
+                animation: testiScroll 45s linear infinite;
+            }
+            .testi-marquee-container:hover .testi-marquee-track {
+                animation-play-state: running !important;
+            }
+            @keyframes testiScroll {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+            }
+            
+            .testi-card {
+                background: #ffffff;
+                border: 1px solid #f3f4f6;
+                border-radius: 20px;
+                padding: 2.5rem;
+                width: 380px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                position: relative;
+            }
+            .testi-card:hover {
+                transform: none !important;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+                border-color: #f3f4f6 !important;
+            }
+            .testi-quote {
+                font-size: 1.15rem;
+                color: #374151;
+                line-height: 1.5;
+                font-weight: 500;
+                margin-bottom: 2rem;
+            }
+            .testi-highlight {
+                color: #3b82f6;
+                font-weight: 600;
+            }
+            .testi-author {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+            .testi-avatar-letter {
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                background: #ebf5ff;
+                color: #3b82f6;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.25rem;
+                font-weight: 700;
+                font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "DM Sans", sans-serif;
+            }
+            .testi-author-info {
+                display: flex;
+                flex-direction: column;
+            }
+            .testi-name {
+                font-size: 0.95rem;
+                font-weight: 700;
+                color: #111827;
+            }
+            .testi-role {
+                font-size: 0.8rem;
+                color: #6b7280;
+            }
+            .testi-quote-mark {
+                position: absolute;
+                bottom: 2rem;
+                right: 2.5rem;
+                font-family: Georgia, serif;
+                font-size: 2.5rem;
+                font-style: italic;
+                color: #3b82f6;
+                font-weight: 700;
+                line-height: 1;
+                opacity: 0.8;
+            }
+            
+            @media (max-width: 768px) {
+                .testi-main-heading { font-size: 2.5rem; }
+                .testi-card { width: 300px; padding: 2rem; }
+            }
+        </style>
+    </section>
+
     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio" data-aos="fade-up" data-aos-duration="800" style="background-color: white;">
+    <section id="portfolio" class="portfolio" data-aos="fade-up" data-aos-duration="800" style="background-color: #ffffff !important; border-bottom: 1px solid #e2e8f0;">
         <div class="container">
             <div style="text-align: center;" data-aos="fade-up" data-aos-duration="600">
                 <div class="hero-badge">Creative Portfolio</div>
@@ -1954,229 +3109,12 @@
                 </div>
             </div>
 
-            <!-- Card 9: Toilet Finder Map -->
-            <div class="portfolio-card-premium" data-aos="fade-up" data-aos-delay="300">
-                <div class="portfolio-card-content">
-                    <div class="portfolio-card-category">Location Discovery / Civic Utility App</div>
-                    <div class="portfolio-card-brand">Toilet Finder Map</div>
-                    <h3 class="portfolio-card-title">Help users instantly find clean, accessible restrooms anywhere.</h3>
-                    <ul class="portfolio-card-checklist">
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>GPS-Based Search:</strong> Instantly locate nearest available restrooms based on live user location.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Interactive Maps:</strong> Visual map interfaces showing markers, routes, and nearby options.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Ratings & Reviews:</strong> Community feedback, hygiene scores, and cleanliness reviews.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Accessibility Filters:</strong> Screen for wheelchair access, baby changing, and gender-neutral stalls.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Community Contributions:</strong> Empower users to add new locations, update times, and upload photos.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Live Status Updates:</strong> View operational status, crowdsourced occupancies, and peak hours.</span>
-                        </li>
 
-                    </ul>
-                </div>
-                <div class="portfolio-card-visual">
-                    <div class="browser-mockup">
-                        <div class="browser-header">
-                            <div class="browser-dots">
-                                <span class="browser-dot red"></span>
-                                <span class="browser-dot yellow"></span>
-                                <span class="browser-dot green"></span>
-                            </div>
-                            <div class="browser-address">toiletfinder.org</div>
-                        </div>
-                        <div class="browser-content">
-                            <img src="images/toilet-finder.webp" alt="Toilet Finder Map Interface" loading="lazy" decoding="async" width="1024" height="576">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 10: Browser Buddy -->
-            <div class="portfolio-card-premium" data-aos="fade-up" data-aos-delay="100">
-                <div class="portfolio-card-content">
-                    <div class="portfolio-card-category">AI Assistant / Automation</div>
-                    <div class="portfolio-card-brand">Browser Buddy</div>
-                    <h3 class="portfolio-card-title">Your AI Employee Inside the Browser</h3>
-                    <ul class="portfolio-card-checklist">
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Voice-Controlled Browsing:</strong> Open websites, search, and summarize using natural speech. <em>“Browse at the speed of conversation.”</em></span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Understands Intent:</strong> It knows what you mean, not just what you say. <em>“It understands what you mean, not just what you say.”</em></span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Takes Action:</strong> Clicks, navigates, fills forms, switches tabs, and scrolls automatically. <em>“From assistant to action-taker.”</em></span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Screen-Aware Assistant:</strong> Ask questions about any webpage and get instant answers or summaries. <em>“Every webpage becomes interactive.”</em></span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Hands-Free Productivity:</strong> Work, research, and multitask without touching the keyboard. <em>“Keep working while your browser works for you.”</em></span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Multi-Step Automation:</strong> Complete entire workflows with a single command. <em>“One command. Multiple actions.”</em></span>
-                        </li>
-
-                    </ul>
-                </div>
-                <div class="portfolio-card-visual">
-                    <div class="browser-mockup">
-                        <div class="browser-header">
-                            <div class="browser-dots">
-                                <span class="browser-dot red"></span>
-                                <span class="browser-dot yellow"></span>
-                                <span class="browser-dot green"></span>
-                            </div>
-                            <div class="browser-address">browserbuddy.ai</div>
-                        </div>
-                        <div class="browser-content">
-                            <img src="images/browser-buddy.webp" alt="Browser Buddy AI Employee Interface" loading="lazy" decoding="async" width="1024" height="682">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <!-- Card 12: PropVest -->
-            <div class="portfolio-card-premium" data-aos="fade-up" data-aos-delay="300">
-                <div class="portfolio-card-content">
-                    <div class="portfolio-card-category">PropTech / Investment Marketplace</div>
-                    <div class="portfolio-card-brand">PropVest</div>
-                    <h3 class="portfolio-card-title">Help investors pool capital, unlock discounts, and make data-driven property investments.</h3>
-                    <ul class="portfolio-card-checklist">
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Property Marketplace:</strong> Browse co-investment properties with detailed pricing and yields.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Group Investment Engine:</strong> Pool capital with other buyers to access developer group pricing discounts.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>ROI Calculator:</strong> Interactive returns calculator tracking monthly yields, cash flow, and profits.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Investment Dashboard:</strong> Unified dashboard detailing portfolio performance and expected returns.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Funding Progress Tracking:</strong> Real-time bars showing capital raised, slots left, and deadlines.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Investor Profiles:</strong> Set preferences, verify credentials, and track transaction logs.</span>
-                        </li>
-
-                    </ul>
-                </div>
-                <div class="portfolio-card-visual">
-                    <div class="browser-mockup">
-                        <div class="browser-header">
-                            <div class="browser-dots">
-                                <span class="browser-dot red"></span>
-                                <span class="browser-dot yellow"></span>
-                                <span class="browser-dot green"></span>
-                            </div>
-                            <div class="browser-address">propvest.in</div>
-                        </div>
-                        <div class="browser-content">
-                            <img src="images/group-buying-real-estate.webp" alt="PropVest Group Buying Real Estate Platform" loading="lazy" decoding="async" width="1024" height="1024">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ROI Calculator Section -->
-                <div class="portfolio-calc-section">
-                    <div class="calc-header">
-                        <h4><i class="fas fa-calculator"></i> Calculate Before You Invest</h4>
-                        <p>Simulate expected returns and cash flows with group buying discounts & appreciation rates</p>
-                    </div>
-                    <div class="calc-grid">
-                        <!-- Inputs -->
-                        <div class="calc-inputs">
-                            <div class="calc-input-group">
-                                <label for="prop-price">Property Price ($) <span class="calc-val" id="prop-price-val">$500,000</span></label>
-                                <input type="range" id="prop-price" min="100000" max="3000000" step="50000" value="500000">
-                            </div>
-                            <div class="calc-input-group">
-                                <label for="group-discount">Group Discount (%) <span class="calc-val" id="group-discount-val">15%</span></label>
-                                <input type="range" id="group-discount" min="5" max="35" step="1" value="15">
-                            </div>
-                            <div class="calc-input-group">
-                                <label for="init-invest">Initial Investment ($) <span class="calc-val" id="init-invest-val">$50,000</span></label>
-                                <input type="range" id="init-invest" min="5000" max="500000" step="5000" value="50000">
-                            </div>
-                            <div class="calc-input-group">
-                                <label for="exp-rent">Expected Monthly Rent ($) <span class="calc-val" id="exp-rent-val">$2,500</span></label>
-                                <input type="range" id="exp-rent" min="500" max="15000" step="100" value="2500">
-                            </div>
-                            <div class="calc-input-group">
-                                <label for="appreciation-rate">Annual Appreciation Rate (%) <span class="calc-val" id="appreciation-rate-val">5%</span></label>
-                                <input type="range" id="appreciation-rate" min="1" max="15" step="0.5" value="5">
-                            </div>
-                            <div class="calc-input-group">
-                                <label for="holding-period">Holding Period (Years) <span class="calc-val" id="holding-period-val">5 Years</span></label>
-                                <input type="range" id="holding-period" min="1" max="15" step="1" value="5">
-                            </div>
-                        </div>
-                        <!-- Outputs -->
-                        <div class="calc-outputs">
-                            <div class="calc-output-card">
-                                <span class="output-label">Annual Rental Yield</span>
-                                <span class="output-val" id="out-yield">6.0%</span>
-                            </div>
-                            <div class="calc-output-card">
-                                <span class="output-label">Monthly Cash Flow</span>
-                                <span class="output-val" id="out-cashflow">$250</span>
-                            </div>
-                            <div class="calc-output-card">
-                                <span class="output-label">Capital Gain Share</span>
-                                <span class="output-val" id="out-capgain">$25,000</span>
-                            </div>
-                            <div class="calc-output-card">
-                                <span class="output-label">Future Property Value</span>
-                                <span class="output-val" id="out-future-val">$638,140</span>
-                            </div>
-                            <div class="calc-output-card">
-                                <span class="output-label">Projected ROI %</span>
-                                <span class="output-val text-green" id="out-roi">12.5%</span>
-                            </div>
-                            <div class="calc-output-card">
-                                <span class="output-label">Total Profit</span>
-                                <span class="output-val text-blue" id="out-total-profit">$35,000</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
     <!-- FAQ Section - Targeting User Search Queries -->
-    <section id="faq" class="faq" data-aos="fade-up" data-aos-duration="800" style="position: relative; background-color: white;">
+    <section id="faq" class="faq" data-aos="fade-up" data-aos-duration="800" style="position: relative; background-color: #ffffff !important; border-bottom: 1px solid #e2e8f0;">
         <div class="container" style="position: relative; z-index: 2;">
             <div class="section-header" style="text-align: center; margin-bottom: 60px;">
                 <div style="text-align: center;" data-aos="fade-up" data-aos-duration="600">
@@ -2293,7 +3231,7 @@
 
 
     <!-- Book a Call Section -->
-    <section id="book-call" class="booking-premium-section" data-aos="fade-up" data-aos-duration="800" style="background-image: linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px); background-size: 40px 40px; background-color: white;">
+    <section id="book-call" class="booking-premium-section" data-aos="fade-up" data-aos-duration="800" style="background-color: #ffffff !important; border-bottom: 1px solid #e2e8f0;">
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
             <div class="booking-premium-banner">
                 <!-- Giant background translucent number -->
@@ -2340,100 +3278,71 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer footer-premium" role="contentinfo">
+    <footer class="footer-wantace" role="contentinfo">
+        <div class="footer-bg-glow"></div>
+        <div class="footer-sparkle sparkle-1"><i class="fas fa-star"></i></div>
+        <div class="footer-sparkle sparkle-2"><i class="fas fa-star"></i></div>
+        <div class="footer-sparkle sparkle-3"><i class="fas fa-star"></i></div>
+        <div class="footer-sparkle sparkle-4"><i class="fas fa-star"></i></div>
+        
         <div class="container">
-            <div class="footer-content">
-                <!-- Column 1: Brand Info -->
-                <div class="footer-brand" data-aos="fade-up" data-aos-duration="600">
-                    <a href="index.html" class="footer-logo-link">
-                        <img src="images/logo.jpg" alt="Curious Kaizer Logo" class="footer-logo-img" width="72" height="72" loading="lazy" decoding="async">
-                    </a>
-                    <p class="subtitle" style="margin-top: 0.5rem;">Where Innovation Meets Digital Excellence</p>
-                    <p class="tagline">
-                        Crafting bespoke, high-performance web applications, custom platforms, and design systems that scale your business. We turn complex requirements into clean, elegant code.
-                    </p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/company/curious-kaizer/" target="_blank" rel="noopener me" aria-label="Curious Kaizer LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.instagram.com/curiouskaizer/" target="_blank" rel="noopener me" aria-label="Curious Kaizer Instagram Profile"><i class="fab fa-instagram"></i></a>
+            <div class="footer-card">
+                <div class="footer-card-grid">
+                    <!-- Column 1: Logo -->
+                    <div class="footer-col" data-aos="fade-up" data-aos-duration="600">
+                        <a href="index.html" class="footer-brand-logo">
+                            <div class="wantace-logo-box"><i class="fas fa-code"></i></div>
+                            <span class="brand-name">Curious Kaizer</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Column 2: LINKS -->
+                    <div class="footer-col" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+                        <div class="col-header">LINKS</div>
+                        <ul class="col-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="portfolio.html">Case Studies</a></li>
+                            <li><a href="index.html#process">Process</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Column 3: COMPANY -->
+                    <div class="footer-col" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+                        <div class="col-header">COMPANY</div>
+                        <ul class="col-links">
+                            <li><a href="index.html#why-us">About</a></li>
+                            <li><a href="pricing.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Column 4: CONTACT -->
+                    <div class="footer-col" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+                        <div class="col-header">CONTACT</div>
+                        <ul class="col-links contact-links">
+                            <li><a href="https://wa.me/918595121436" target="_blank"><span class="contact-icon-circle wa"><i class="fab fa-whatsapp"></i></span>+91 85951 21436</a></li>
+                            <li><a href="mailto:info@curiouskaizer.com"><span class="contact-icon-circle mail"><i class="fas fa-envelope"></i></span>info@curiouskaizer.com</a></li>
+                        </ul>
                     </div>
                 </div>
-
-                <!-- Column 2: Our Services -->
-                <div class="footer-nav-col" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
-                    <h3>Our Services</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="services.html">Custom Websites</a></li>
-                        <li><a href="services.html">E-Commerce Stores</a></li>
-                        <li><a href="services.html">Web Applications</a></li>
-                        <li><a href="crm-product.html">Custom CRM Solutions</a></li>
-                        <li><a href="services.html">AI & Automation Tools</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 3: Quick Links -->
-                <div class="footer-nav-col" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="index.html#home">Home / Process</a></li>
-                        <li><a href="services.html">Capabilities</a></li>
-                        <li><a href="index.html#why-us">Why Choose Us</a></li>
-                        <li><a href="portfolio.html">Our Portfolio</a></li>
-                        <li><a href="pricing.html">Pricing / FAQ</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 4: Contact & Availability -->
-                <div class="footer-contact" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
-                    <h3>Get in Touch</h3>
-                    <ul>
-                        <li>
-                            <i class="fas fa-envelope"></i> 
-                            <a href="mailto:info@curiouskaizer.com">info@curiouskaizer.com</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i> 
-                            <a href="mailto:curiouskaizer@gmail.com">curiouskaizer@gmail.com</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone-alt"></i> 
-                            <a href="tel:+918595121436">+91 85951 21436</a>
-                        </li>
-                        <li>
-                            <i class="fab fa-whatsapp" style="color: #25d366;"></i> 
-                            <a href="https://wa.me/918595121436" target="_blank" rel="noopener">Chat on WhatsApp</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i> Delhi, India | Remote Worldwide
-                        </li>
-                    </ul>
-                    <div class="status-badge">
-                        <span class="status-dot-glowing"></span>
-                        <span>Available for new projects</span>
+                
+                <div class="footer-social-row" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
+                    <span class="social-label">Our Socials</span>
+                    <div class="social-divider"></div>
+                    <div class="social-badges">
+                        <a href="https://www.linkedin.com/company/curious-kaizer/" class="social-badge linkedin-badge" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/curiouskaizer/" class="social-badge instagram-badge" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <div class="footer-left-info">
-                    <p class="copyright">
-                        &copy; 2026 Curious Kaizer. All rights reserved.
-                    </p>
-                    <p class="since">
-                        Crafting digital excellence since 2023. Delhi, India.
-                    </p>
+                
+                <div class="footer-bottom-row" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
+                    <div class="copyright-text">© 2026 Curious Kaizer</div>
+                    <div class="legal-links">
+                        <a href="privacy.html">Privacy Policy</a>
+                        <span class="link-separator">|</span>
+                        <a href="terms.html">Terms of Services</a>
+                    </div>
                 </div>
-                <div class="footer-links">
-                    <a href="privacy.html">Privacy Policy</a>
-                    <span>•</span>
-                    <a href="terms.html">Terms of Service</a>
-                    <span>•</span>
-                    <a href="contact.html">Contact Us</a>
-                </div>
-                <p class="made-with-love">
-                    Made with <i class="fas fa-heart"></i> in India
-                </p>
             </div>
         </div>
     </footer>
