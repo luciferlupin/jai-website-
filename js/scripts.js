@@ -241,8 +241,56 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
-    
+    // Full-Width Process Stage Motion Switcher
+    const stageNavBtns = document.querySelectorAll('.stage-nav-btn');
+    const stagePanes = document.querySelectorAll('.graphic-stage-pane');
+    let currentProcessStage = 1;
+    let processAutoTimer = null;
 
+    function activateProcessStage(stageNum) {
+        currentProcessStage = stageNum;
+        stageNavBtns.forEach(btn => {
+            if (parseInt(btn.getAttribute('data-stage')) === stageNum) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+
+        stagePanes.forEach(pane => {
+            if (pane.id === `stage-pane-${stageNum}`) {
+                pane.classList.add('active');
+            } else {
+                pane.classList.remove('active');
+            }
+        });
+    }
+
+    if (stageNavBtns.length > 0) {
+        stageNavBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const stage = parseInt(btn.getAttribute('data-stage'));
+                activateProcessStage(stage);
+                resetProcessTimer();
+            });
+        });
+
+        function startProcessTimer() {
+            processAutoTimer = setInterval(() => {
+                let nextStage = currentProcessStage + 1;
+                if (nextStage > 4) nextStage = 1;
+                activateProcessStage(nextStage);
+            }, 4500);
+        }
+
+        function resetProcessTimer() {
+            if (processAutoTimer) clearInterval(processAutoTimer);
+            startProcessTimer();
+        }
+
+        startProcessTimer();
+    }
+    
     // Package cards animation
     const packageCards = document.querySelectorAll('.service-card');
     
@@ -411,44 +459,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // 'Our Expertise' Premium Card Scroll Stacking & Visual Dynamics
     const cards = document.querySelectorAll('.saas-scroll-section .sticky-card');
     if (cards.length > 0) {
-        const stackOffset = 30;
-        
         const updateStack = () => {
             const isDesktop = window.innerWidth > 768;
-            const startTop = isDesktop ? 100 : 75;
+            const startTop = isDesktop ? 90 : 75;
             const offsetStep = isDesktop ? 30 : 20;
-            const viewportHeight = window.innerHeight;
-            const eightyPercentViewport = viewportHeight * 0.8;
             
-            // 1. Batch all DOM read operations first
-            const rects = Array.from(cards).map(card => card.getBoundingClientRect());
-            
-            // 2. Batch all DOM write operations next
             cards.forEach((card, index) => {
                 const cardContent = card.querySelector('.card-content');
                 if (!cardContent) return;
                 
-                // Set Sticky positioning offsets for all screen sizes
                 card.style.top = `${startTop + index * offsetStep}px`;
-                card.style.zIndex = index + 1;
-                
-                const rect = rects[index];
-                
-                // If scrolled past 80% viewport threshold, calculate progress
-                const scrollProgress = Math.max(0, Math.min(1, (eightyPercentViewport - rect.top) / 400));
-                
-                if (rect.top <= eightyPercentViewport) {
-                    const scale = 1 - (scrollProgress * 0.05);
-                    const translateY = scrollProgress * -15;
-                    
-                    cardContent.style.setProperty('--card-transform', `scale(${scale}) translateY(${translateY}px)`);
-                    cardContent.style.opacity = '1';
-                    cardContent.style.filter = 'none';
-                } else {
-                    cardContent.style.setProperty('--card-transform', 'scale(1) translateY(0)');
-                    cardContent.style.opacity = '1';
-                    cardContent.style.filter = 'none';
-                }
+                card.style.zIndex = (index + 1) * 10;
             });
         };
         
