@@ -393,21 +393,11 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', animateOnScroll, { passive: true });
     
     // FAQ Accordion Interaction
-    const faqItems = document.querySelectorAll('.faq-item');
+    const faqItems = document.querySelectorAll('.faq-card-item, .faq-item');
     faqItems.forEach(item => {
-        const answer = item.querySelector('.faq-answer');
-        
-        // Hide answers by default in JS
-        if (answer) {
-            answer.style.maxHeight = '0px';
-            answer.style.overflow = 'hidden';
-            answer.style.transition = 'max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease';
-            answer.style.opacity = '0';
-        }
-        
         item.addEventListener('click', function(e) {
             // Prevent close when clicking inside the answer content (like links or paragraphs)
-            if (e.target.closest('.faq-answer')) {
+            if (e.target.closest('.faq-card-answer, .faq-answer')) {
                 return;
             }
             
@@ -417,26 +407,24 @@ document.addEventListener('DOMContentLoaded', function() {
             faqItems.forEach(otherItem => {
                 if (otherItem !== item && otherItem.classList.contains('active')) {
                     otherItem.classList.remove('active');
-                    const otherAnswer = otherItem.querySelector('.faq-answer');
-                    if (otherAnswer) {
-                        otherAnswer.style.maxHeight = '0px';
-                        otherAnswer.style.opacity = '0';
+                    const otherIcon = otherItem.querySelector('.faq-card-toggle i, .faq-toggle-icon i');
+                    if (otherIcon) {
+                        otherIcon.className = 'fas fa-plus';
                     }
                 }
             });
             
             // Toggle current FAQ item
+            const currentIcon = item.querySelector('.faq-card-toggle i, .faq-toggle-icon i');
             if (isOpen) {
                 item.classList.remove('active');
-                if (answer) {
-                    answer.style.maxHeight = '0px';
-                    answer.style.opacity = '0';
+                if (currentIcon) {
+                    currentIcon.className = 'fas fa-plus';
                 }
             } else {
                 item.classList.add('active');
-                if (answer) {
-                    answer.style.maxHeight = `${answer.scrollHeight}px`;
-                    answer.style.opacity = '1';
+                if (currentIcon) {
+                    currentIcon.className = 'fas fa-minus';
                 }
             }
         });

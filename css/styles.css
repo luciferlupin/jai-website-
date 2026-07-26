@@ -2937,12 +2937,26 @@ section {
     padding: 0 20px;
 }
 
-.section-header h2 {
-    font-size: 2.5rem;
-    font-weight: 800;
+.section-header h2,
+.built-main-title,
+.why-us-main-title,
+.testi-main-heading,
+.tech-arch-title {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, sans-serif !important;
+    font-size: 3rem !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    letter-spacing: -0.035em !important;
+    line-height: 1.15 !important;
     margin-bottom: 20px;
-    line-height: 1.2;
-    letter-spacing: -0.5px;
+}
+
+.highlight-blue,
+.highlight-blue-bold,
+.testi-blue-sf,
+.tech-title-highlight {
+    color: #007aff !important;
+    font-weight: 800 !important;
 }
 
 .section-header p {
@@ -7595,7 +7609,7 @@ select:focus {
 }
 
 .tech-title-highlight {
-    color: #2563eb;
+    color: #007aff !important;
     display: block;
     margin-bottom: 2px;
 }
@@ -11354,6 +11368,25 @@ select:focus {
     box-shadow: none !important;
 }
 
+/* Standalone booking section (e.g. contact.html) */
+.booking-calendar-section .booking-card-wrapper {
+    margin: 0 auto !important;
+}
+
+.booking-calendar-section h2 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: #1d1d1f;
+    margin-top: 0.4rem;
+    letter-spacing: -0.035em;
+}
+
+@media (max-width: 768px) {
+    .booking-calendar-section h2 {
+        font-size: 1.75rem !important;
+    }
+}
+
 /* Cal.com Embed Container */
 #my-cal-inline-30min {
     width: 100% !important;
@@ -11416,47 +11449,121 @@ select:focus {
 
 @media (max-width: 768px) {
     .booking-premium-section {
-        padding: 2rem 0 !important;
+        padding: 2rem 0 3rem 0 !important;
     }
 
-    .booking-premium-section .container {
-        padding: 0 16px !important;
+    .booking-premium-section .container,
+    .booking-calendar-section .container {
+        padding: 0 12px !important;
     }
     
     .booking-premium-banner {
-        padding: 2.2rem 1.5rem 6.5rem 1.5rem !important;
-        border-radius: 18px;
-        max-width: 92% !important;
+        padding: 2rem 1.25rem 4.5rem 1.25rem !important;
+        border-radius: 20px !important;
+        max-width: 100% !important;
+        width: 100% !important;
         margin: 0 auto !important;
     }
     
     .banner-title {
-        font-size: 1.4rem !important;
+        font-size: 1.55rem !important;
         line-height: 1.25 !important;
     }
     
     .banner-desc {
-        font-size: 0.85rem !important;
+        font-size: 0.9rem !important;
         line-height: 1.5 !important;
         margin-bottom: 0 !important;
+    }
+
+    .banner-cta-row {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 0.75rem !important;
+        margin-top: 1.25rem !important;
+    }
+
+    .banner-btn-white,
+    .banner-btn-glass {
+        width: 100% !important;
+        padding: 12px 18px !important;
+        font-size: 0.9rem !important;
+        box-sizing: border-box !important;
+        justify-content: center !important;
     }
     
     .banner-bg-text {
         display: none !important;
     }
     
-    .booking-card-wrapper,
-    .calendly-card-wrapper {
-        margin: -4.5rem auto 0 auto !important;
-        border-radius: 18px;
-        padding: 5px;
-        max-width: 92% !important;
+    .booking-premium-section .booking-card-wrapper,
+    .booking-premium-section .calendly-card-wrapper {
+        margin: -2.75rem auto 0 auto !important;
+        border-radius: 16px !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        box-shadow: none !important;
+        border: none !important;
+        background: #ffffff !important;
+        overflow: hidden !important;
     }
 
-    .calendly-inline-widget {
-        min-width: auto !important;
+    .booking-calendar-section .booking-card-wrapper {
+        margin: 0 auto !important;
+        border-radius: 16px !important;
+        padding: 0 !important;
+        max-width: 100% !important;
         width: 100% !important;
-        height: 750px !important;
+        box-shadow: none !important;
+        border: none !important;
+        background: #ffffff !important;
+        overflow: hidden !important;
+    }
+
+    #my-cal-inline-30min,
+    .calendly-inline-widget {
+        min-width: 100% !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 700px !important;
+        height: 720px !important;
+        border-radius: 16px !important;
+        overflow: hidden !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #my-cal-inline-30min iframe,
+    .calendly-inline-widget iframe {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        min-height: 700px !important;
+        height: 100% !important;
+        border: none !important;
+        border-radius: 16px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .booking-premium-section .container,
+    .booking-calendar-section .container {
+        padding: 0 8px !important;
+    }
+
+    .booking-premium-banner {
+        padding: 1.75rem 1rem 3.75rem 1rem !important;
+        border-radius: 16px !important;
+    }
+
+    .banner-title {
+        font-size: 1.35rem !important;
+    }
+
+    #my-cal-inline-30min,
+    .calendly-inline-widget {
+        min-height: 670px !important;
+        height: 690px !important;
     }
 }
 
@@ -11469,23 +11576,26 @@ select:focus {
 }
 
 .bento-card {
-    background: #f5f5f7; /* Apple signature card gray */
-    border-radius: 24px;
-    padding: 2.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.02); /* Extremely subtle border */
+    background: #f5f5f7;
+    border-radius: 28px;
+    padding: 2.2rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, border-color 0.3s ease;
     height: 100%;
     min-height: 290px;
 }
 
 .bento-card:hover {
-    transform: scale(1.02); /* Premium organic Apple scale transition */
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05); /* Extremely soft, natural shadow */
+    transform: translateY(-6px) scale(1.008);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 113, 227, 0.06);
+    background: #ffffff;
+    border-color: rgba(0, 113, 227, 0.25);
 }
 
 /* Bento Column Spanning */
@@ -11503,18 +11613,19 @@ select:focus {
 
 .bento-title {
     margin: 0 0 10px 0;
-    color: #1d1d1f; /* Apple primary text color */
-    font-size: 1.35rem;
-    font-weight: 700;
-    font-family: var(--font-display);
+    color: #1d1d1f;
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", var(--font-display);
 }
 
 .bento-text {
     margin: 0;
-    color: #86868b; /* Apple secondary caption color */
+    color: #6e6e73;
     line-height: 1.55;
-    font-size: 0.95rem;
-    font-family: var(--font-primary);
+    font-size: 0.94rem;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", var(--font-primary);
 }
 
 .bento-icon {
@@ -12137,7 +12248,7 @@ section,
     box-sizing: border-box !important;
 }
 
-/* Premium section transition separator gradient */
+/* Disable section transition separator gradient overlays */
 section::after,
 .expertise-section::after,
 .process-section::after,
@@ -12148,16 +12259,8 @@ section::after,
 .testimonials-section::after,
 .faq::after,
 .contact-section::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 50px;
-    background: linear-gradient(to bottom, rgba(37, 99, 235, 0.02) 0%, rgba(37, 99, 235, 0.005) 60%, transparent 100%);
-    border-top: 1px solid rgba(37, 99, 235, 0.06);
-    pointer-events: none;
-    z-index: 10;
+    content: none !important;
+    display: none !important;
 }
 
 /* Clean professional spacing between Process, Expertise (Capabilities), and Technology sections */
@@ -14648,4 +14751,34 @@ button.nav-toggle {
     .process-track {
         display: none;
     }
+}
+
+/* Global Reset: Remove all divider lines between sections site-wide */
+section, header, footer, .section-padding, .booking-premium-section, .booking-calendar-section, .expertise-section, .process-section, .tech-stack-section, .testimonials-apple-section, .portfolio, .faq, .why-us, .work-showcase {
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+/* Meeting Calendar Section: Pure White Background & No Grey Containers */
+.booking-premium-section,
+.booking-calendar-section,
+#book-call,
+#booking-calendar-section,
+.booking-card-wrapper,
+.calendly-card-wrapper,
+#my-cal-inline-30min,
+.calendly-inline-widget {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    box-shadow: none !important;
+    border: none !important;
+    outline: none !important;
+}
+
+#my-cal-inline-30min iframe,
+.calendly-inline-widget iframe {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    box-shadow: none !important;
+    border: none !important;
 }
