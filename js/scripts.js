@@ -450,7 +450,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const updateStack = () => {
             const isDesktop = window.innerWidth > 768;
             const startTop = isDesktop ? 90 : 75;
-            const offsetStep = isDesktop ? 30 : 20;
+            const offsetStep = 0; // Set to 0 for full overlapping deck effect
             
             cards.forEach((card, index) => {
                 const cardContent = card.querySelector('.card-content');

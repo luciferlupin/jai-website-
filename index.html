@@ -389,14 +389,14 @@
         ]
     }
     </script>
-    <link rel="preload" href="./css/styles.css?v=1.5" as="style">
+    <link rel="preload" href="./css/styles.css?v=1.6" as="style">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@700;800&display=swap" rel="stylesheet"></noscript>
     
     <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.css?v=1.5">
+    <link rel="stylesheet" href="css/styles.css?v=1.6">
     <style>
         /* Scroll Animation Styles */
         .fade-up {
@@ -504,363 +504,95 @@
                     </a>
                 </div>
 
-                <!-- 4. Interactive Animated Flow Graphic representing high-end execution -->
-                <!-- 4. Interactive Apple-Style Stepper Graphic (Enhanced) -->
-                <!-- 4. Interactive Apple-Style Stepper Graphic (Apple Keynote Quality) -->
-                <div class="apple-process-container">
-                    <!-- Apple iOS-style Segmented Control for Tabs -->
-                    <div class="apple-stepper-tabs-container">
-                        <div class="apple-stepper-tabs">
-                            <button class="apple-step-tab active" data-step="1">
-                                <span class="step-num">01</span> 
-                                <span class="step-name">Discovery</span>
-                            </button>
-                            <button class="apple-step-tab" data-step="2">
-                                <span class="step-num">02</span> 
-                                <span class="step-name">Blueprint</span>
-                            </button>
-                            <button class="apple-step-tab" data-step="3">
-                                <span class="step-num">03</span> 
-                                <span class="step-name">Execution</span>
-                            </button>
-                            <button class="apple-step-tab" data-step="4">
-                                <span class="step-num">04</span> 
-                                <span class="step-name">Deployment</span>
-                            </button>
-                        </div>
-                        <div class="apple-tab-progress-track">
-                            <div class="apple-tab-progress-bar" id="stepperProgressBar"></div>
-                        </div>
-                    </div>
+                <!-- Interactive Animated Flow Graphic representing high-end execution -->
+                <div class="apple-process-container" style="width: 100%; max-width: 1100px; margin: 1.5rem auto 1rem auto; padding: 0 15px;">
+                    <!-- Interactive Wavy Connector Line -->
+                    <div class="studio-timeline-flow">
+                        <!-- SVG curved connector path -->
+                        <svg class="timeline-svg-path" viewBox="0 0 600 240" fill="none" preserveAspectRatio="none">
+                            <path d="M 85 95 C 185 95, 150 195, 300 195 C 450 195, 415 75, 515 75" stroke="url(#timeline-grad)" stroke-width="4.5" stroke-linecap="round" />
+                            <defs>
+                                <linearGradient id="timeline-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#007aff" stop-opacity="0.8" />
+                                    <stop offset="50%" stop-color="#7c3aed" stop-opacity="0.9" />
+                                    <stop offset="100%" stop-color="#34c759" stop-opacity="0.8" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
 
-                    <div class="apple-step-content-wrapper">
-                        <!-- Step 1 Content: Discovery & Alignment -->
-                        <div class="apple-step-content active" id="apple-step-1">
-                            <div class="step-content-left">
-                                <div class="step-badge stagger-el" style="--d: 1;">Phase 01 &bull; Alignment</div>
-                                <h3 class="step-title stagger-el" style="--d: 2;">Discovery & Strategy Call</h3>
-                                <p class="step-desc stagger-el" style="--d: 3;">We start with an intensive 30-minute alignment session to map out your vision, define exact project deliverables, and lock in scope with zero hidden costs before writing code.</p>
-                                <ul class="step-bullet-list stagger-el" style="--d: 4;">
-                                    <li><i class="fas fa-check-circle"></i> <div><strong>100% Scope Alignment:</strong> Clear roadmaps & 7-day sprint milestones</div></li>
-                                    <li><i class="fas fa-check-circle"></i> <div><strong>Tech & Market Feasibility:</strong> Architecture & competitor positioning mapped</div></li>
-                                    <li><i class="fas fa-check-circle"></i> <div><strong>Transparent Fixed Quote:</strong> Fixed scope commitment, zero extra fees</div></li>
-                                </ul>
+                        <!-- Node 1: Discovery Call Card -->
+                        <div class="timeline-card card-discovery float-anim-1">
+                            <div class="win-header">
+                                <div class="mac-dots">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                </div>
+                                <span class="win-title">Discovery Call</span>
                             </div>
-                            <div class="step-content-right stagger-graphic">
-                                <div class="full-bleed-apple-card discovery-studio-card">
-                                    <!-- Mac Window Header -->
-                                    <div class="card-mac-header light-header">
-                                        <div class="mac-dots">
-                                            <span class="dot red"></span>
-                                            <span class="dot yellow"></span>
-                                            <span class="dot green"></span>
-                                        </div>
-                                        <div class="live-sync-pill light-pill">
-                                            <span class="pulse-green-dot"></span>
-                                            <span>30-Min Strategy Call &bull; Active</span>
-                                        </div>
-                                        <div class="audio-waveform light-wave">
-                                            <span class="w-bar b1"></span>
-                                            <span class="w-bar b2"></span>
-                                            <span class="w-bar b3"></span>
-                                            <span class="w-bar b4"></span>
-                                        </div>
+                            <div class="win-body">
+                                <div class="avatar-group">
+                                    <div class="avatar-item">
+                                        <img src="images/avatar-you.png" alt="You" class="avatar-circle">
+                                        <span class="avatar-label">You</span>
                                     </div>
-
-                                    <!-- Apple Capabilities-Style Animated Graphic Body -->
-                                    <div class="discovery-studio-body">
-                                        <!-- Stacked Animated Milestone Cards -->
-                                        <div class="studio-deliverables-stack">
-                                            <div class="studio-card-row float-anim-1">
-                                                <div class="studio-icon-circle blue-icon">
-                                                    <i class="fas fa-bullseye"></i>
-                                                </div>
-                                                <div class="studio-card-info">
-                                                    <div class="studio-card-title">100% Scope Alignment</div>
-                                                    <div class="studio-card-sub">Clear roadmaps & 7-day sprint milestones</div>
-                                                </div>
-                                                <span class="studio-badge blue-badge">LOCKED</span>
-                                            </div>
-
-                                            <div class="studio-card-row float-anim-2">
-                                                <div class="studio-icon-circle dark-icon">
-                                                    <i class="fas fa-microchip"></i>
-                                                </div>
-                                                <div class="studio-card-info">
-                                                    <div class="studio-card-title">Tech Stack & Feasibility</div>
-                                                    <div class="studio-card-sub">Competitor positioning & cloud architecture</div>
-                                                </div>
-                                                <span class="studio-badge dark-badge">PASSED</span>
-                                            </div>
-
-                                            <div class="studio-card-row float-anim-3">
-                                                <div class="studio-icon-circle green-icon">
-                                                    <i class="fas fa-shield-alt"></i>
-                                                </div>
-                                                <div class="studio-card-info">
-                                                    <div class="studio-card-title">Transparent Fixed Quotation</div>
-                                                    <div class="studio-card-sub">Fixed scope, zero extra fees or hidden costs</div>
-                                                </div>
-                                                <span class="studio-badge green-badge">GUARANTEED</span>
-                                            </div>
-                                        </div>
-
-                                        <!-- Scope Progress Bar -->
-                                        <div class="studio-consultation-footer">
-                                            <div class="studio-progress-box">
-                                                <div class="studio-progress-header">
-                                                    <span>Scope Alignment Status</span>
-                                                    <span class="studio-perc">100% Locked</span>
-                                                </div>
-                                                <div class="studio-progress-track">
-                                                    <div class="studio-progress-fill">
-                                                        <span class="fill-glow-head"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="avatar-item">
+                                        <img src="images/avatar-kaizer.png" alt="Curious Kaizer" class="avatar-circle">
+                                        <span class="avatar-label">Kaizer</span>
                                     </div>
+                                </div>
+                                <div class="pulsing-pill">
+                                    <span class="pulse-dot"></span>
+                                    <span>ACTIVE</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Step 2 Content: Strategy & Blueprint -->
-                        <div class="apple-step-content" id="apple-step-2">
-                            <div class="step-content-left">
-                                <div class="step-badge primary-badge stagger-el" style="--d: 1;">Phase 02 &bull; Architecture</div>
-                                <h3 class="step-title stagger-el" style="--d: 2;">System Blueprint & UI/UX</h3>
-                                <p class="step-desc stagger-el" style="--d: 3;">We architect scalable cloud infrastructure, detail high-performance database models, and design modern, pixel-perfect user interfaces engineered to convert visitors into customers.</p>
-                                <ul class="step-bullet-list stagger-el" style="--d: 4;">
-                                    <li><i class="fas fa-sitemap"></i> <div><strong>Architecture Blueprint:</strong> Full-stack system mapping</div></li>
-                                    <li><i class="fas fa-palette"></i> <div><strong>Apple Aesthetics:</strong> High-end UI/UX & micro-interactions</div></li>
-                                    <li><i class="fas fa-database"></i> <div><strong>Data Schemas:</strong> Structured for blazing speed</div></li>
-                                </ul>
-                            </div>
-                            <div class="step-content-right stagger-graphic">
-                                <div class="full-bleed-apple-card blueprint-light-card">
-                                    <!-- Mac Window Header -->
-                                    <div class="card-mac-header light-header">
-                                        <div class="mac-dots">
-                                            <span class="dot red"></span>
-                                            <span class="dot yellow"></span>
-                                            <span class="dot green"></span>
-                                        </div>
-                                        <span class="mac-title-text light-text">System-Architecture-Blueprint.v2</span>
-                                        <span class="tech-tag-pill light-tag"><i class="fas fa-layer-group"></i> PRODUCTION BLUEPRINT</span>
-                                    </div>
-                                    
-                                    <div class="blueprint-full-body">
-                                        <!-- 1. Animated Full-Stack Data Flow Pipeline -->
-                                        <div class="bp-section-title"><i class="fas fa-network-wired"></i> FULL-STACK SYSTEM PIPELINE</div>
-                                        <div class="pipeline-flow-container light-pipeline">
-                                            <div class="pipe-node light-node">
-                                                <div class="node-icon-circle ui-icon"><i class="fab fa-react"></i></div>
-                                                <span class="p-title light-ptitle">Frontend UI</span>
-                                                <span class="p-sub light-psub">Next.js 14 &bull; React</span>
-                                                <div class="node-status-pill"><span class="tiny-dot blue-dot"></span> 60fps UI</div>
-                                            </div>
-                                            
-                                            <div class="pipe-connector light-connector">
-                                                <div class="animated-pulse-line"></div>
-                                                <i class="fas fa-chevron-right"></i>
-                                            </div>
-                                            
-                                            <div class="pipe-node light-node highlight-light-node">
-                                                <div class="node-icon-circle ai-icon"><i class="fas fa-brain"></i></div>
-                                                <span class="p-title light-ptitle">AI & API Engine</span>
-                                                <span class="p-sub light-psub">Python LLMs &bull; REST</span>
-                                                <div class="node-status-pill purp-pill"><span class="tiny-dot purp-dot"></span> Sub-50ms</div>
-                                            </div>
-                                            
-                                            <div class="pipe-connector light-connector">
-                                                <div class="animated-pulse-line"></div>
-                                                <i class="fas fa-chevron-right"></i>
-                                            </div>
-                                            
-                                            <div class="pipe-node light-node">
-                                                <div class="node-icon-circle db-icon"><i class="fas fa-database"></i></div>
-                                                <span class="p-title light-ptitle">Cloud DB</span>
-                                                <span class="p-sub light-psub">Supabase PG &bull; RLS</span>
-                                                <div class="node-status-pill green-pill"><span class="tiny-dot green-dot"></span> Realtime</div>
-                                            </div>
-                                        </div>
-
-                                        <!-- 2. UI/UX Wireframe & Design System Specifications -->
-                                        <div class="bp-2-col-grid">
-                                            <!-- Left: Design Tokens & Palette -->
-                                            <div class="bp-mini-card">
-                                                <div class="bp-card-label"><i class="fas fa-palette"></i> DESIGN TOKENS</div>
-                                                <div class="token-swatches-row">
-                                                    <div class="swatch-item">
-                                                        <span class="swatch-circle sw-slate"></span>
-                                                        <span class="swatch-hex">#0F172A</span>
-                                                    </div>
-                                                    <div class="swatch-item">
-                                                        <span class="swatch-circle sw-blue"></span>
-                                                        <span class="swatch-hex">#007AFF</span>
-                                                    </div>
-                                                    <div class="swatch-item">
-                                                        <span class="swatch-circle sw-emerald"></span>
-                                                        <span class="swatch-hex">#34C759</span>
-                                                    </div>
-                                                    <div class="swatch-item">
-                                                        <span class="swatch-circle sw-purple"></span>
-                                                        <span class="swatch-hex">#AF52DE</span>
-                                                    </div>
-                                                </div>
-                                                <div class="font-spec-pill">
-                                                    <i class="fas fa-font"></i> <span>SF Pro &bull; Inter &bull; 60fps Spring</span>
-                                                </div>
-                                            </div>
-
-                                            <!-- Right: Blueprint Standards -->
-                                            <div class="bp-mini-card">
-                                                <div class="bp-card-label"><i class="fas fa-shield-alt"></i> BLUEPRINT STANDARDS</div>
-                                                <div class="blueprint-specs-list">
-                                                    <div class="bp-spec-row">
-                                                        <i class="fas fa-check-circle check-icon"></i>
-                                                        <span>100% Mobile Responsive</span>
-                                                    </div>
-                                                    <div class="bp-spec-row">
-                                                        <i class="fas fa-check-circle check-icon"></i>
-                                                        <span>Zero Layout Shift (CLS)</span>
-                                                    </div>
-                                                    <div class="bp-spec-row">
-                                                        <i class="fas fa-check-circle check-icon"></i>
-                                                        <span>Enterprise Security RLS</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                        <!-- Node 2: Strategy Document Node -->
+                        <div class="timeline-node node-strategy float-anim-2">
+                            <div class="node-marker"><i class="fas fa-file-alt"></i></div>
+                            <div class="node-popup strategy-doc">
+                                <div class="doc-header">
+                                    <span class="doc-tag">Strategy</span>
+                                </div>
+                                <div class="doc-body">
+                                    <div class="doc-line"></div>
+                                    <div class="doc-line"></div>
+                                    <div class="doc-line short"></div>
+                                    <div class="doc-scanline"></div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Step 3 Content: Execution -->
-                        <div class="apple-step-content" id="apple-step-3">
-                            <div class="step-content-left">
-                                <div class="step-badge build-badge stagger-el" style="--d: 1;">Phase 03 &bull; Rapid Build</div>
-                                <h3 class="step-title stagger-el" style="--d: 2;">Rapid Full-Stack Build</h3>
-                                <p class="step-desc stagger-el" style="--d: 3;">Our engineers build your application using modern frameworks, clean code practices, and robust security protocols. Get a working staging prototype in just 7 days.</p>
-                                <ul class="step-bullet-list stagger-el" style="--d: 4;">
-                                    <li><i class="fas fa-bolt"></i> <div><strong>7-Day Staging Link:</strong> Test working code early</div></li>
-                                    <li><i class="fas fa-laptop-code"></i> <div><strong>Full-Stack Mastery:</strong> React, Next.js, Node & Python</div></li>
-                                    <li><i class="fas fa-microchip"></i> <div><strong>AI Integrations:</strong> LLM agents & smart automation</div></li>
-                                </ul>
-                            </div>
-                            <div class="step-content-right stagger-graphic">
-                                <div class="full-bleed-apple-card execution-light-card">
-                                    <div class="card-mac-header light-header">
-                                        <div class="mac-dots">
-                                            <span class="dot red"></span>
-                                            <span class="dot yellow"></span>
-                                            <span class="dot green"></span>
-                                        </div>
-                                        <span class="mac-title-text light-text">Xcode IDE — 7-Day Sprint Build</span>
-                                        <span class="build-status-tag light-btag"><i class="fas fa-check-circle"></i> BUILD PASSING</span>
-                                    </div>
-                                    <div class="ide-full-split">
-                                        <div class="ide-code-panel light-ide">
-                                            <div class="code-line"><span class="c-lpurp">import</span> { AppEngine } <span class="c-lpurp">from</span> <span class="c-lgreen">'@core/framework'</span>;</div>
-                                            <div class="code-line"><span class="c-lpurp">const</span> <span class="c-lblue">app</span> = <span class="c-lpurp">await</span> <span class="c-lyell">initProduction</span>({</div>
-                                            <div class="code-line ind"><span class="c-lgray">framework:</span> <span class="c-lgreen">'Next.js 14 / React'</span>,</div>
-                                            <div class="code-line ind"><span class="c-lgray">aiAgents:</span> <span class="c-lgreen">['LLMs', 'Automation']</span>,</div>
-                                            <div class="code-line ind"><span class="c-lgray">stagingReady:</span> <span class="c-lblue">true</span> <span class="c-lcomm">// Day 7 Delivery</span></div>
-                                            <div class="code-line">});</div>
-                                        </div>
-                                        <div class="staging-progress-box light-spbox">
-                                            <div class="sp-header light-spheader">
-                                                <span>7-Day Staging Build Progress</span>
-                                                <span class="sp-days light-days">Day 7 / 7</span>
-                                            </div>
-                                            <div class="sp-track light-sptrack"><div class="sp-fill light-spfill"></div></div>
-                                            <div class="sp-metrics-row">
-                                                <div class="m-box light-mbox"><strong>45ms</strong><span>API Latency</span></div>
-                                                <div class="m-box light-mbox"><strong>100%</strong><span>Responsive</span></div>
-                                                <div class="m-box light-mbox"><strong>42/42</strong><span>Tests Passed</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
+                        <!-- Node 3: 48 Hours Rapid Mockup Node -->
+                        <div class="timeline-node node-mockup float-anim-3">
+                            <div class="node-marker"><i class="fas fa-clock"></i></div>
+                            <div class="node-popup mockup-card">
+                                <div class="mock-timer">48<span>HRS</span></div>
+                                <div class="mock-layout">
+                                    <span class="mock-logo">LOGO</span>
+                                    <div class="mock-bar"></div>
+                                    <div class="mock-bar short"></div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Step 4 Content: Deployment & Launch -->
-                        <div class="apple-step-content" id="apple-step-4">
-                            <div class="step-content-left">
-                                <div class="step-badge success-badge stagger-el" style="--d: 1;">Phase 04 &bull; Global Launch</div>
-                                <h3 class="step-title stagger-el" style="--d: 2;">Deployment & Scaling</h3>
-                                <p class="step-desc stagger-el" style="--d: 3;">We handle full DNS setup, SSL certification, server optimization, and Google indexing to launch your platform smoothly with maximum speed and zero downtime.</p>
-                                <ul class="step-bullet-list stagger-el" style="--d: 4;">
-                                    <li><i class="fas fa-server"></i> <div><strong>Cloud Infrastructure:</strong> High-availability server setup</div></li>
-                                    <li><i class="fas fa-shield-alt"></i> <div><strong>SSL & Security:</strong> Enterprise encryption & firewall</div></li>
-                                    <li><i class="fas fa-tachometer-alt"></i> <div><strong>Google Speed 100:</strong> Edge CDN & asset optimization</div></li>
-                                </ul>
+                        <!-- Node 4: Website Live Card -->
+                        <div class="timeline-card card-launch float-anim-4">
+                            <div class="win-header">
+                                <i class="fas fa-globe"></i>
+                                <span class="win-title">yourproduct.com</span>
                             </div>
-                            <div class="step-content-right stagger-graphic">
-                                <div class="full-bleed-apple-card launch-light-card">
-                                    <!-- Safari Browser Header -->
-                                    <div class="url-browser-bar light-header">
-                                        <div class="mac-dots">
-                                            <span class="dot red"></span>
-                                            <span class="dot yellow"></span>
-                                            <span class="dot green"></span>
-                                        </div>
-                                        <div class="url-field light-url">
-                                            <i class="fas fa-lock lock-green"></i>
-                                            <span>https://your-brand.com</span>
-                                            <span class="ssl-verified-tag"><i class="fas fa-shield-alt"></i> SSL 256-Bit</span>
-                                        </div>
-                                        <span class="live-production-tag"><span class="pulse-green-dot"></span> LIVE</span>
-                                    </div>
-                                    
-                                    <div class="launch-dashboard-body">
-                                        <!-- 1. 4-Column Google PageSpeed & Audit Performance Scores -->
-                                        <div class="scores-4-column">
-                                            <div class="score-card light-scard">
-                                                <div class="score-num g-green">100</div>
-                                                <span class="score-label light-slabel">Google Speed</span>
-                                                <span class="score-sub-badge green-sub"><i class="fas fa-bolt"></i> 0.4s LCP</span>
-                                            </div>
-                                            <div class="score-card light-scard">
-                                                <div class="score-num g-blue">100</div>
-                                                <span class="score-label light-slabel">SEO Score</span>
-                                                <span class="score-sub-badge blue-sub"><i class="fas fa-search"></i> Indexed</span>
-                                            </div>
-                                            <div class="score-card light-scard">
-                                                <div class="score-num g-purple">100</div>
-                                                <span class="score-label light-slabel">UX Quality</span>
-                                                <span class="score-sub-badge purp-sub"><i class="fas fa-mobile-alt"></i> 60fps UI</span>
-                                            </div>
-                                            <div class="score-card light-scard">
-                                                <div class="score-num g-emerald">A+</div>
-                                                <span class="score-label light-slabel">Security</span>
-                                                <span class="score-sub-badge green-sub"><i class="fas fa-shield-alt"></i> TLS Encryption</span>
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- 2. Global Edge CDN Network Latency Row -->
-                                        <div class="edge-nodes-row light-erow">
-                                            <div class="edge-header-label"><i class="fas fa-globe-americas"></i> EDGE LATENCY</div>
-                                            <div class="edge-item light-eitem"><span class="ping-dot"></span> <strong>US East:</strong> 12ms</div>
-                                            <div class="edge-item light-eitem"><span class="ping-dot"></span> <strong>EU West:</strong> 16ms</div>
-                                            <div class="edge-item light-eitem"><span class="ping-dot"></span> <strong>Asia:</strong> 22ms</div>
-                                        </div>
-
-                                        <!-- 3. Deployment Security & Specs Pills Bar -->
-                                        <div class="deploy-specs-bar">
-                                            <div class="d-spec-pill"><i class="fas fa-rocket"></i> Zero Downtime CI/CD</div>
-                                            <div class="d-spec-pill"><i class="fas fa-database"></i> Daily Cloud Backups</div>
-                                            <div class="d-spec-pill"><i class="fas fa-shield-alt"></i> WAF DDoS Shield</div>
-                                        </div>
-
-                                        <!-- 4. Launch CTA Button -->
-                                        <a href="#book-call" class="full-launch-cta-btn light-cta-btn">
-                                            Start Your Project Now <i class="fas fa-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
+                            <div class="win-body">
+                                <div class="launch-by">By Curious Kaizer</div>
+                                <div class="launch-badge">WE ARE LIVE!</div>
+                                
+                                <!-- Confetti elements -->
+                                <div class="confetti c1"></div>
+                                <div class="confetti c2"></div>
+                                <div class="confetti c3"></div>
+                                <div class="confetti c4"></div>
+                                <div class="confetti c5"></div>
                             </div>
                         </div>
                     </div>
@@ -889,67 +621,6 @@
                         background: transparent;
                         padding: 0;
                     }
-                     /* Ultra-Minimal Apple iOS Segmented Control Stepper Bar */
-                    .apple-stepper-tabs-container {
-                        background: #ffffff !important;
-                        border-radius: 100px;
-                        padding: 4px;
-                        border: none !important;
-                        box-shadow: none !important;
-                        width: 100%;
-                        max-width: 620px;
-                        position: relative;
-                        overflow: hidden;
-                        margin-bottom: 2.25rem;
-                    }
-                    .apple-stepper-tabs {
-                        display: flex;
-                        gap: 4px;
-                        width: 100%;
-                        position: relative;
-                        z-index: 2;
-                    }
-                    .apple-step-tab {
-                        flex: 1;
-                        background: transparent;
-                        border: none !important;
-                        padding: 0.6rem 1.15rem;
-                        border-radius: 100px;
-                        font-size: 0.86rem;
-                        font-weight: 600;
-                        color: #64748b;
-                        cursor: pointer;
-                        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        gap: 0.45rem;
-                        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
-                        white-space: nowrap;
-                    }
-                    .apple-step-tab:hover { color: #0f172a; }
-                    .apple-step-tab.active {
-                        background: #ffffff !important;
-                        color: #007aff !important;
-                        font-weight: 700 !important;
-                        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04) !important;
-                        border: none !important;
-                    }
-                    .step-num {
-                        display: inline-flex;
-                        align-items: center;
-                        justify-content: center;
-                        font-size: 0.72rem;
-                        font-weight: 700;
-                        letter-spacing: 0.04em;
-                        color: #94a3b8;
-                        transition: all 0.25s ease;
-                    }
-                    .apple-step-tab.active .step-num { color: #007aff !important; font-weight: 800 !important; }
-                    
-                    .apple-tab-progress-track { display: none !important; }
-                    .apple-tab-progress-bar { display: none !important; }
-                    
                     /* Main Apple Clean Card Component - Completely Borderless & Shadowless */
                     .apple-step-content-wrapper {
                         width: 100%;
@@ -1002,17 +673,9 @@
                         to { opacity: 1; transform: scale(1) translateY(0); }
                     }
                     
-                    /* Left Content Panel - Transparent Glass Fit */
+                    /* Left Content Panel - Hidden */
                     .step-content-left {
-                        flex: 1;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: flex-start;
-                        padding: 3rem 2.5rem 3rem 3rem;
-                        background: transparent !important;
-                        border-radius: 32px 0 0 32px;
-                        border: none !important;
+                        display: none !important;
                     }
                     .step-badge {
                         display: inline-flex;
@@ -1073,18 +736,19 @@
                     }
                     .step-bullet-list i { color: #007aff; font-size: 1.05rem; }
                     
-                    /* Right Content Showcase Panel - Vertical Center Dividing Line */
+                    /* Right Content Showcase Panel - Full Width */
                     .step-content-right {
-                        flex: 1.25;
+                        flex: 1;
+                        width: 100%;
                         display: flex;
                         align-items: stretch;
                         justify-content: stretch;
                         background: #ffffff !important;
-                        border-left: 1px solid #e2e8f0 !important; /* Crisp Vertical Center Line */
+                        border-left: none !important;
                         position: relative;
                         overflow: hidden;
                         padding: 0;
-                        border-radius: 0 32px 32px 0;
+                        border-radius: 32px;
                     }
                     
                     .full-bleed-apple-card {
@@ -1414,10 +1078,10 @@
                         .apple-process-container { padding: 0 1rem; width: 100%; box-sizing: border-box; }
                         .apple-step-content-wrapper { min-height: auto; border-radius: 24px; }
                         .apple-step-content.active { flex-direction: column; position: relative; }
-                        .step-content-left { padding: 2rem 1.5rem; text-align: left; align-items: flex-start; border-radius: 24px 24px 0 0; }
+                        .step-content-left { display: none !important; }
                         .step-title { font-size: 1.85rem; }
-                        .step-content-right { border-left: none !important; border-top: none !important; padding: 0; min-height: auto; border-radius: 0 0 24px 24px; }
-                        .full-bleed-apple-card { padding: 1.35rem 1.15rem !important; border-radius: 0 0 24px 24px; }
+                        .step-content-right { border-left: none !important; border-top: none !important; padding: 0; min-height: auto; border-radius: 24px !important; }
+                        .full-bleed-apple-card { padding: 1.35rem 1.15rem !important; border-radius: 24px !important; }
                         .card-inner-grid { grid-template-columns: 1fr; }
                         .pipeline-flow-container { flex-direction: column; gap: 0.75rem; }
                         .pipe-connector i { transform: rotate(90deg); }
@@ -1499,61 +1163,528 @@
                         .full-bleed-apple-card { padding: 1rem 0.75rem !important; }
                         .scores-4-column { grid-template-columns: repeat(2, 1fr) !important; }
                     }
-                </style>
 
-                <script>
-                    document.addEventListener('DOMContentLoaded', () => {
-                        const tabs = document.querySelectorAll('.apple-step-tab');
-                        const contents = document.querySelectorAll('.apple-step-content');
-                        const progressBar = document.getElementById('stepperProgressBar');
-                        
-                        let currentStep = 1;
-                        const duration = 6000; // 6 seconds per step
-                        let startTime = null;
-                        let animationFrameId = null;
-                        
-                        function showStep(step) {
-                            tabs.forEach(t => t.classList.remove('active'));
-                            contents.forEach(c => c.classList.remove('active'));
-                            
-                            const activeTab = document.querySelector(`.apple-step-tab[data-step="${step}"]`);
-                            const activeContent = document.getElementById(`apple-step-${step}`);
-                            
-                            if (activeTab) activeTab.classList.add('active');
-                            if (activeContent) activeContent.classList.add('active');
-                            
-                            currentStep = parseInt(step);
-                            startTime = performance.now(); // Reset progress bar timer
+                    /* ==========================================================================
+                       INTERACTIVE STUDIO TIMELINE FLOW (Phase 01 Redesign)
+                       ========================================================================== */
+                    .studio-timeline-flow {
+                        position: relative;
+                        width: 100%;
+                        height: 380px;
+                        background: radial-gradient(circle at 50% 50%, rgba(240, 246, 255, 0.4) 0%, rgba(255, 255, 255, 0) 70%),
+                                    url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='0.6' fill='%23cbd5e1'/%3E%3C/svg%3E") repeat;
+                        border-radius: 24px;
+                        overflow: visible;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        box-sizing: border-box;
+                        padding: 0 50px;
+                        margin: 1.5rem auto;
+                    }
+
+                    /* Wavy background line */
+                    .timeline-svg-path {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        pointer-events: none;
+                        z-index: 1;
+                    }
+                    .timeline-svg-path path {
+                        stroke: #007aff !important; /* Solid premium Apple Blue */
+                        stroke-dasharray: 8 6; /* Dash pattern */
+                        animation: dashFlow 20s linear infinite;
+                    }
+                    @keyframes dashFlow {
+                        from { stroke-dashoffset: 0; }
+                        to { stroke-dashoffset: -1000; }
+                    }
+
+                    /* Floating Animations */
+                    @keyframes floatY1 {
+                        0%, 100% { transform: translateY(0px) rotate(-1deg); }
+                        50% { transform: translateY(-8px) rotate(1deg); }
+                    }
+                    @keyframes floatY2 {
+                        0%, 100% { transform: translateY(0px); }
+                        50% { transform: translateY(-6px); }
+                    }
+                    @keyframes floatY3 {
+                        0%, 100% { transform: translateY(0px); }
+                        50% { transform: translateY(-7px); }
+                    }
+                    @keyframes floatY4 {
+                        0%, 100% { transform: translateY(0px) rotate(1deg); }
+                        50% { transform: translateY(-8px) rotate(-1deg); }
+                    }
+
+                    .float-anim-1 { animation: floatY1 6s ease-in-out infinite; }
+                    .float-anim-2 { animation: floatY2 5s ease-in-out infinite 0.5s; }
+                    .float-anim-3 { animation: floatY3 5.5s ease-in-out infinite 1s; }
+                    .float-anim-4 { animation: floatY4 6.5s ease-in-out infinite 1.5s; }
+
+                    /* Subcards / Windows (Discovery Call & Launch) */
+                    .timeline-card {
+                        position: absolute;
+                        background: #ffffff;
+                        border: 1px solid rgba(226, 232, 240, 0.9);
+                        border-radius: 16px;
+                        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.02);
+                        z-index: 5;
+                        width: 170px;
+                        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                        box-sizing: border-box;
+                    }
+                    .timeline-card:hover {
+                        transform: translateY(-3px) scale(1.02);
+                        border-color: #007aff;
+                        box-shadow: 0 20px 40px rgba(0, 122, 255, 0.08), 0 2px 10px rgba(0, 122, 255, 0.04);
+                    }
+
+                    .timeline-card .win-header {
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                        background: transparent;
+                        padding: 8px 12px;
+                        border-bottom: none;
+                        border-top-left-radius: 15px;
+                        border-top-right-radius: 15px;
+                    }
+                    .timeline-card .win-header .mac-dots {
+                        display: flex;
+                        gap: 4px;
+                    }
+                    .timeline-card .win-header .mac-dots .dot {
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 50%;
+                    }
+                    .timeline-card .win-header .mac-dots .dot.red { background: #ff5f56; }
+                    .timeline-card .win-header .mac-dots .dot.yellow { background: #ffbd2e; }
+                    .timeline-card .win-header .mac-dots .dot.green { background: #27c93f; }
+
+                    .timeline-card .win-header .win-title {
+                        font-size: 0.72rem;
+                        font-weight: 750;
+                        color: #64748b;
+                        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+                        white-space: nowrap;
+                    }
+                    .timeline-card .win-header i {
+                        font-size: 0.72rem;
+                        color: #94a3b8;
+                    }
+
+                    .timeline-card .win-body {
+                        padding: 0 12px 12px 12px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 8px;
+                    }
+
+                    /* Card Specifics - Card 1 (Discovery) */
+                    .timeline-card.card-discovery {
+                        left: 5%;
+                        top: 25px;
+                        width: 180px;
+                    }
+                    .timeline-card.card-discovery .win-header .win-title {
+                        color: #007aff; /* Discovery Call Title in Blue */
+                        font-size: 0.78rem;
+                    }
+                    .timeline-card.card-discovery .avatar-group {
+                        display: flex;
+                        gap: 12px;
+                        justify-content: center;
+                        width: 100%;
+                    }
+                    .timeline-card.card-discovery .avatar-item {
+                        flex: 1;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 4px;
+                        background: #f8fafc;
+                        border: 1px solid #e2e8f0;
+                        border-radius: 10px;
+                        padding: 8px 4px;
+                    }
+                    .timeline-card.card-discovery .avatar-circle {
+                        width: 48px;
+                        height: 48px;
+                        border-radius: 8px; /* Square/slightly rounded like in reference */
+                        object-fit: cover;
+                        background: #ffffff;
+                    }
+                    .timeline-card.card-discovery .avatar-label {
+                        font-size: 0.6rem;
+                        font-weight: 750;
+                        color: #86868b;
+                    }
+
+                    .timeline-card.card-discovery .pulsing-pill {
+                        display: flex;
+                        align-items: center;
+                        gap: 4px;
+                        background: rgba(52, 199, 89, 0.08); /* Green active badge like reference */
+                        color: #34c759;
+                        border: 1px solid rgba(52, 199, 89, 0.15);
+                        padding: 2px 10px;
+                        border-radius: 100px;
+                        font-size: 0.58rem;
+                        font-weight: 800;
+                        letter-spacing: 0.03em;
+                    }
+                    @keyframes pulseDotGreen {
+                        0%, 100% { transform: scale(1); opacity: 0.8; }
+                        50% { transform: scale(1.3); opacity: 1; }
+                    }
+                    .timeline-card.card-discovery .pulsing-pill .pulse-dot {
+                        width: 5px;
+                        height: 5px;
+                        border-radius: 50%;
+                        background: #34c759;
+                        animation: pulseDotGreen 1.6s infinite ease-in-out;
+                    }
+
+                    /* Card Specifics - Card 4 (Launch/Live) */
+                    .timeline-card.card-launch {
+                        right: 5%;
+                        top: 25px;
+                        width: 180px;
+                    }
+                    .timeline-card.card-launch .win-header {
+                        border-bottom: 1px solid #f1f5f9;
+                        padding: 8px 12px;
+                    }
+                    .timeline-card.card-launch .win-header .win-title {
+                        font-size: 0.72rem;
+                        color: #0f172a;
+                        font-weight: 700;
+                    }
+                    .timeline-card.card-launch .win-body {
+                        padding: 12px;
+                        gap: 8px;
+                    }
+                    .timeline-card.card-launch .launch-by {
+                        font-size: 0.62rem;
+                        font-weight: 700;
+                        color: #64748b;
+                    }
+                    .timeline-card.card-launch .launch-badge {
+                        background: #22c55e;
+                        color: #ffffff;
+                        font-size: 0.68rem;
+                        font-weight: 800;
+                        padding: 5px 14px;
+                        border-radius: 8px;
+                        box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+                        letter-spacing: 0.02em;
+                        width: 100%;
+                        text-align: center;
+                    }
+
+                    /* Confetti styling */
+                    .confetti {
+                        position: absolute;
+                        width: 5px;
+                        height: 5px;
+                        border-radius: 50%;
+                        opacity: 0;
+                        pointer-events: none;
+                        z-index: 2;
+                    }
+                    @keyframes confettiBurst {
+                        0% { transform: translate(0, 0) scale(0); opacity: 0; }
+                        20% { opacity: 1; }
+                        100% { transform: translate(var(--tx), var(--ty)) rotate(var(--tr)); opacity: 0; scale: 1.2; }
+                    }
+                    .confetti.c1 { background: #ff5f56; --tx: -30px; --ty: -40px; --tr: 45deg; animation: confettiBurst 2.4s infinite; }
+                    .confetti.c2 { background: #ffbd2e; --tx: 35px; --ty: -35px; --tr: -30deg; animation: confettiBurst 2.2s infinite 0.3s; }
+                    .confetti.c3 { background: #27c93f; --tx: -35px; --ty: 20px; --tr: 90deg; animation: confettiBurst 2.6s infinite 0.6s; }
+                    .confetti.c4 { background: #007aff; --tx: 40px; --ty: 30px; --tr: -60deg; animation: confettiBurst 2.5s infinite 0.1s; }
+                    .confetti.c5 { background: #7c3aed; --tx: 0px; --ty: -45px; --tr: 15deg; animation: confettiBurst 2.3s infinite 0.4s; }
+
+                    /* Timeline Nodes (Strategy & Mockup) */
+                    .timeline-node {
+                        position: absolute;
+                        width: 44px;
+                        height: 44px;
+                        border-radius: 50%;
+                        background: #ffffff;
+                        border: 2px solid #e2e8f0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        z-index: 10;
+                        cursor: pointer;
+                        box-shadow: 0 4px 12px rgba(15,23,42,0.06);
+                        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                    }
+                    .timeline-node:hover {
+                        transform: translateX(-50%) scale(1.1);
+                        border-color: #007aff;
+                        box-shadow: 0 10px 24px rgba(0, 122, 255, 0.12);
+                    }
+                    .timeline-node.node-strategy {
+                        left: 32%;
+                        top: 285px;
+                        transform: translateX(-50%);
+                    }
+                    .timeline-node.node-mockup {
+                        left: 68%;
+                        top: 285px;
+                        transform: translateX(-50%);
+                    }
+                    .timeline-node .node-marker {
+                        font-size: 1.1rem;
+                        color: #94a3b8;
+                        transition: color 0.3s ease;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    .timeline-node:hover .node-marker {
+                        color: #007aff;
+                    }
+
+                    /* Glow indicators for nodes (on-line points) */
+                    .timeline-node::before {
+                        content: '';
+                        position: absolute;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        background: #007aff;
+                        opacity: 0;
+                        transition: opacity 0.3s ease;
+                    }
+                    .timeline-node:hover::before {
+                        opacity: 0.15;
+                        transform: scale(3.5);
+                        animation: nodeGlowPulse 1.5s infinite ease-in-out;
+                    }
+                    @keyframes nodeGlowPulse {
+                        0% { transform: scale(1); opacity: 0.4; }
+                        100% { transform: scale(4); opacity: 0; }
+                    }
+
+                    /* Popup items for Nodes */
+                    .timeline-node .node-popup {
+                        position: absolute;
+                        bottom: calc(100% + 12px);
+                        background: #ffffff;
+                        border: 1px solid rgba(226, 232, 240, 0.9);
+                        border-radius: 12px;
+                        box-shadow: 0 12px 32px rgba(15,23,42,0.08);
+                        opacity: 1;
+                        pointer-events: auto;
+                        transform: scale(1) translateY(0);
+                        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                        display: flex;
+                        flex-direction: column;
+                        gap: 4px;
+                        z-index: 100;
+                    }
+
+                    /* Strategy Document Popup */
+                    .timeline-node .strategy-doc {
+                        width: 90px;
+                        padding: 10px;
+                        border: 1px solid #bfdbfe;
+                        box-shadow: 0 10px 24px rgba(0, 122, 255, 0.05);
+                    }
+                    .timeline-node .strategy-doc .doc-header {
+                        display: flex;
+                        justify-content: center;
+                        margin-bottom: 4px;
+                    }
+                    .timeline-node .strategy-doc .doc-tag {
+                        font-size: 0.6rem;
+                        font-weight: 800;
+                        color: #ffffff;
+                        background: #007aff; /* Strategy Tag in Blue */
+                        padding: 2px 8px;
+                        border-radius: 6px;
+                        letter-spacing: 0.02em;
+                    }
+                    .timeline-node .strategy-doc .doc-body {
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 4px;
+                        overflow: hidden;
+                        padding: 4px 0;
+                    }
+                    .timeline-node .strategy-doc .doc-line {
+                        height: 2px;
+                        background: #e2e8f0;
+                        border-radius: 1px;
+                        width: 100%;
+                    }
+                    .timeline-node .strategy-doc .doc-line.short {
+                        width: 65%;
+                    }
+                    .timeline-node .strategy-doc .doc-scanline {
+                        position: absolute;
+                        top: 0;
+                        left: -5%;
+                        width: 110%;
+                        height: 2px;
+                        background: #007aff;
+                        box-shadow: 0 0 6px #007aff;
+                        animation: docScan 2s linear infinite;
+                    }
+                    @keyframes docScan {
+                        0%, 100% { top: 0; }
+                        50% { top: 22px; }
+                    }
+
+                    /* Mockup Card Popup (48 Hours) */
+                    .timeline-node .mockup-card {
+                        width: 100px;
+                        padding: 8px;
+                        align-items: center;
+                    }
+                    .timeline-node .mockup-card .mock-timer {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+                        width: 44px;
+                        height: 44px;
+                        border-radius: 50%;
+                        border: 2px solid #007aff;
+                        font-size: 1.15rem;
+                        font-weight: 800;
+                        color: #007aff;
+                        line-height: 1;
+                    }
+                    .timeline-node .mockup-card .mock-timer span {
+                        font-size: 0.42rem;
+                        font-weight: 750;
+                        color: #007aff;
+                        letter-spacing: 0.05em;
+                        margin-top: -1px;
+                    }
+                    .timeline-node .mockup-card .mock-layout {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 4px;
+                        width: 100%;
+                        margin-top: 6px;
+                        border-top: 1px dashed #e2e8f0;
+                        padding-top: 6px;
+                        background: #f8fafc;
+                        border-radius: 6px;
+                        padding: 6px;
+                        box-sizing: border-box;
+                    }
+                    .timeline-node .mockup-card .mock-logo {
+                        font-size: 0.42rem;
+                        font-weight: 800;
+                        color: #007aff;
+                        background: #eff6ff;
+                        padding: 1px 4px;
+                        border-radius: 3px;
+                        width: fit-content;
+                    }
+                    .timeline-node .mockup-card .mock-bar {
+                        height: 4px;
+                        background: #e2e8f0;
+                        border-radius: 2px;
+                        width: 90%;
+                    }
+                    .timeline-node .mockup-card .mock-bar.short {
+                        width: 60%;
+                        background: #bfdbfe;
+                    }
+
+                    /* Center CTA Button inside Flow */
+                    .studio-timeline-flow .timeline-center-cta {
+                        position: absolute;
+                        left: 50%;
+                        top: 90px;
+                        transform: translateX(-50%);
+                        z-index: 12;
+                    }
+                    .studio-timeline-flow .proto-cta-btn {
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 8px;
+                        background: #007aff; /* Solid blue button matching 2nd photo */
+                        color: #ffffff !important;
+                        text-decoration: none !important;
+                        font-size: 0.78rem;
+                        font-weight: 750;
+                        padding: 10px 22px;
+                        border-radius: 10px; /* Rectangular/rounded like 2nd photo */
+                        box-shadow: 0 8px 24px rgba(0, 122, 255, 0.35);
+                        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                        white-space: nowrap;
+                        border: 1px solid rgba(255,255,255,0.1);
+                    }
+                    .studio-timeline-flow .proto-cta-btn:hover {
+                        transform: translateY(-2px) scale(1.01);
+                        box-shadow: 0 12px 32px rgba(0, 122, 255, 0.45);
+                    }
+                    .studio-timeline-flow .proto-cta-btn:active {
+                        transform: scale(0.98);
+                    }
+                    .studio-timeline-flow .proto-cta-btn i {
+                        font-size: 0.72rem;
+                        transition: transform 0.3s ease;
+                    }
+                    .studio-timeline-flow .proto-cta-btn:hover i {
+                        transform: translateX(3px);
+                    }
+
+                    /* Mobile Responsive Flow Adaptation */
+                    @media (max-width: 768px) {
+                        .studio-timeline-flow {
+                            height: 380px;
+                            padding: 0 10px;
                         }
-                        
-                        function updateProgressBar(timestamp) {
-                            if (!startTime) startTime = timestamp;
-                            const elapsed = timestamp - startTime;
-                            const progressPercent = Math.min(100, (elapsed / duration) * 100);
-                            
-                            if (progressBar) {
-                                progressBar.style.width = `${progressPercent}%`;
-                            }
-                            
-                            if (elapsed >= duration) {
-                                let next = currentStep + 1;
-                                if (next > 4) next = 1;
-                                showStep(next);
-                            }
-                            
-                            animationFrameId = requestAnimationFrame(updateProgressBar);
+                        .timeline-card.card-discovery {
+                            left: 2%;
+                            top: 20px;
+                            width: 140px;
                         }
-                        
-                        tabs.forEach(tab => {
-                            tab.addEventListener('click', () => {
-                                showStep(tab.dataset.step);
-                            });
-                        });
-                        
-                        // Start animated progress bar loop
-                        animationFrameId = requestAnimationFrame(updateProgressBar);
-                    });
-                </script>
+                        .timeline-card.card-discovery .avatar-circle {
+                            width: 36px;
+                            height: 36px;
+                        }
+                        .timeline-card.card-launch {
+                            right: 2%;
+                            top: 20px;
+                            width: 140px;
+                        }
+                        .timeline-node.node-strategy {
+                            left: 32%;
+                            top: 285px;
+                            transform: translateX(-50%);
+                        }
+                        .timeline-node.node-mockup {
+                            left: 68%;
+                            top: 285px;
+                            transform: translateX(-50%);
+                        }
+                        .studio-timeline-flow .timeline-center-cta {
+                            left: 50%;
+                            top: 90px;
+                            transform: translateX(-50%);
+                        }
+                        .studio-timeline-flow .proto-cta-btn {
+                            padding: 8px 16px;
+                            font-size: 0.68rem;
+                        }
+                    }
+                </style>
 
                 <div class="apple-trust-bar" style="margin-top: 4rem; padding-top: 3.5rem; text-align: center; overflow: hidden; position: relative;">
                     <p style="font-size: 0.75rem; font-weight: 700; color: #86868b; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 2.5rem;">Trusted by 50+ Entrepreneurs & Startups</p>
@@ -1840,8 +1971,8 @@
             
             <div class="saas-scroll-section">
                 <!-- Card 1: Web & Digital Solutions -->
-                <div class="sticky-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card-content">
+                <div class="sticky-card">
+                    <div class="card-content" data-aos="fade-up" data-aos-delay="100">
                         <div class="card-left">
                             <span class="card-number">#01</span>
                             <h3><i class="fas fa-globe" style="color: #2563eb; margin-right: 12px; font-size: 1.6rem;"></i>Web & Digital Solutions</h3>
@@ -1861,7 +1992,7 @@
                                     <span class="browser-dot green"></span>
                                     <div class="browser-address">curiouskaizer.com</div>
                                 </div>
-                                <div class="browser-body">
+                                <div class="browser-body" style="position: relative; overflow: hidden; height: 100%;">
                                     <div class="mock-hero">
                                         <div class="mock-line-title"></div>
                                         <div class="mock-line-subtitle"></div>
@@ -1871,6 +2002,10 @@
                                         <div class="mock-mini-card"></div>
                                         <div class="mock-mini-card active"></div>
                                     </div>
+                                    <!-- Live User Pointer Simulation -->
+                                    <div class="web-mock-cursor" style="position: absolute; bottom: 25px; left: 30px; color: #2563eb; font-size: 0.85rem; pointer-events: none; z-index: 10; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));">
+                                        <i class="fas fa-mouse-pointer"></i>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1878,8 +2013,8 @@
                 </div>
 
                 <!-- Card 2: AI & Automation -->
-                <div class="sticky-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card-content">
+                <div class="sticky-card">
+                    <div class="card-content" data-aos="fade-up" data-aos-delay="200">
                         <div class="card-left">
                             <span class="card-number">#02</span>
                             <h3><i class="fas fa-robot" style="color: #2563eb; margin-right: 12px; font-size: 1.6rem;"></i>AI & Automation</h3>
@@ -1905,7 +2040,7 @@
 5 };
 6 <span>async</span> <span>function</span> run() {
 7   <span>const</span> app = InitApp(config);
-8   app.run();
+8   app.run();<span class="terminal-cursor">|</span>
 9 }</pre>
                                 </div>
                                 <div class="mock-ui-layout">
@@ -1922,8 +2057,8 @@
                 </div>
 
                 <!-- Card 3: Business Intelligence -->
-                <div class="sticky-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card-content">
+                <div class="sticky-card">
+                    <div class="card-content" data-aos="fade-up" data-aos-delay="300">
                         <div class="card-left">
                             <span class="card-number">#03</span>
                             <h3><i class="fas fa-chart-bar" style="color: #2563eb; margin-right: 12px; font-size: 1.6rem;"></i>Business Intelligence</h3>
@@ -1959,8 +2094,8 @@
                 </div>
 
                 <!-- Card 4: Digital Marketing -->
-                <div class="sticky-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="card-content">
+                <div class="sticky-card">
+                    <div class="card-content" data-aos="fade-up" data-aos-delay="400">
                         <div class="card-left">
                             <span class="card-number">#04</span>
                             <h3><i class="fas fa-bullhorn" style="color: #2563eb; margin-right: 12px; font-size: 1.6rem;"></i>Digital Marketing</h3>
@@ -1980,11 +2115,11 @@
                                         <span class="analytics-percentage">+145%</span>
                                     </div>
                                     <div class="mock-bars">
-                                        <div class="mock-bar" style="height: 40%;"></div>
-                                        <div class="mock-bar" style="height: 60%;"></div>
-                                        <div class="mock-bar" style="height: 50%;"></div>
-                                        <div class="mock-bar" style="height: 85%;"></div>
-                                        <div class="mock-bar active" style="height: 95%;"></div>
+                                        <div class="mock-bar"></div>
+                                        <div class="mock-bar"></div>
+                                        <div class="mock-bar"></div>
+                                        <div class="mock-bar"></div>
+                                        <div class="mock-bar active"></div>
                                     </div>
                                 </div>
                                 <div class="mini-metrics">
@@ -1997,8 +2132,8 @@
                 </div>
 
                 <!-- Card 5: Branding & Design -->
-                <div class="sticky-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="card-content">
+                <div class="sticky-card">
+                    <div class="card-content" data-aos="fade-up" data-aos-delay="500">
                         <div class="card-left">
                             <span class="card-number">#05</span>
                             <h3><i class="fas fa-palette" style="color: #2563eb; margin-right: 12px; font-size: 1.6rem;"></i>Branding & Design</h3>
@@ -2027,6 +2162,96 @@
                                     <div class="figma-cursor">
                                         <i class="fas fa-mouse-pointer"></i>
                                         <span class="figma-cursor-tag">Designer</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6: SaaS Platforms & Custom CRM -->
+                <div class="sticky-card">
+                    <div class="card-content" data-aos="fade-up" data-aos-delay="600">
+                        <div class="card-left">
+                            <span class="card-number">#06</span>
+                            <h3><i class="fas fa-users-cog" style="color: #2563eb; margin-right: 12px; font-size: 1.6rem;"></i>SaaS & Custom CRM</h3>
+                            <p>Accelerate efficiency with custom enterprise tooling. We develop tailor-made CRM solutions, client portals, inventory tracking panels, and SaaS apps complete with user permissions.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Role-Based Permissions & Multi-Tenant</li>
+                                <li><i class="fas fa-check"></i> Drag-and-Drop Kanban Pipelines</li>
+                                <li><i class="fas fa-check"></i> Real-time DB Sync & Metrics</li>
+                                <li><i class="fas fa-check"></i> Flagship Product: CuriousCRM</li>
+                            </ul>
+                        </div>
+                        <div class="card-right">
+                            <div class="card-mockup" style="background: #ffffff; border: 1px solid rgba(0,0,0,0.06); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; height: 260px; box-sizing: border-box; overflow: hidden; position: relative;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                                    <div>
+                                        <div style="font-size: 0.65rem; font-weight: 600; color: #86868b; letter-spacing: 0.05em; text-transform: uppercase;">MONTHLY RECURRING REVENUE</div>
+                                        <div style="font-size: 1.8rem; font-weight: 700; color: #1d1d1f; margin-top: 2px;">$48,500 <span style="font-size: 0.75rem; color: #34c759; font-weight: 600;"><i class="fas fa-arrow-up"></i> +24.5%</span></div>
+                                    </div>
+                                    <span style="background: rgba(0, 113, 227, 0.08); color: #0071e3; font-size: 0.7rem; font-weight: 600; padding: 4px 10px; border-radius: 980px; display: inline-flex; align-items: center; gap: 4px;"><span class="sync-dot"></span> Live Sync</span>
+                                </div>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 0.75rem;">
+                                    <div style="background: #f5f5f7; padding: 8px 12px; border-radius: 10px; border: 1px solid rgba(0,0,0,0.03);">
+                                        <div style="font-size: 0.65rem; color: #86868b; font-weight: 500;">ACTIVE PIPELINE</div>
+                                        <div style="font-size: 1rem; font-weight: 700; color: #0071e3; margin-top: 2px;">1,420 Deals</div>
+                                    </div>
+                                    <div style="background: #f5f5f7; padding: 8px 12px; border-radius: 10px; border: 1px solid rgba(0,0,0,0.03);">
+                                        <div style="font-size: 0.65rem; color: #86868b; font-weight: 500;">CONVERSION RATE</div>
+                                        <div style="font-size: 1rem; font-weight: 700; color: #34c759; margin-top: 2px;">4.85%</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 0.68rem; font-weight: 600; color: #515154; margin-bottom: 4px;">Deal Stage Completion</div>
+                                    <div class="crm-progress-bar" style="height: 6px; background: #e5e5ea; border-radius: 980px; overflow: hidden; display: flex;">
+                                        <div style="width: 55%; background: #0071e3;"></div>
+                                        <div style="width: 25%; background: #64d2ff;"></div>
+                                        <div style="width: 20%; background: #34c759;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7: Cloud Infrastructure & API Engineering -->
+                <div class="sticky-card">
+                    <div class="card-content" data-aos="fade-up" data-aos-delay="700">
+                        <div class="card-left">
+                            <span class="card-number">#07</span>
+                            <h3><i class="fas fa-cloud" style="color: #2563eb; margin-right: 12px; font-size: 1.6rem;"></i>Cloud & API Engineering</h3>
+                            <p>Power your ecosystem with resilient cloud infrastructures, custom backend microservices, and serverless API integrations engineered for speed and scale.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Serverless & Microservices (AWS, Vercel)</li>
+                                <li><i class="fas fa-check"></i> High-Speed RESTful & GraphQL APIs</li>
+                                <li><i class="fas fa-check"></i> Database Optimization & Real-Time Sync</li>
+                                <li><i class="fas fa-check"></i> Automated CI/CD & Zero-Downtime</li>
+                            </ul>
+                        </div>
+                        <div class="card-right">
+                            <div class="card-mockup" style="background: #1c1c1e; border: 1px solid rgba(255,255,255,0.1); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; height: 260px; box-sizing: border-box; color: #f5f5f7; overflow: hidden; position: relative;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; margin-bottom: 10px;">
+                                    <span style="font-family: SFMono-Regular, Menlo, monospace; font-size: 0.75rem; color: #64d2ff;"><i class="fas fa-server"></i> AWS Edge Cluster (us-east-1)</span>
+                                    <span class="uptime-badge" style="font-size: 0.65rem; background: rgba(52, 199, 89, 0.2); color: #30d158; padding: 2px 8px; border-radius: 980px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px;"><span class="uptime-dot" style="width: 5px; height: 5px; background: #30d158; border-radius: 50%;"></span> 99.99% UPTIME</span>
+                                </div>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 0.75rem;">
+                                    <div style="background: rgba(255, 255, 255, 0.05); padding: 8px 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.06);">
+                                        <div style="font-size: 0.62rem; color: #8e8e93; font-family: SFMono-Regular, monospace;">LATENCY</div>
+                                        <div style="font-size: 1.1rem; font-weight: 700; color: #64d2ff; font-family: SFMono-Regular, monospace; margin-top: 2px;">18 ms</div>
+                                    </div>
+                                    <div style="background: rgba(255, 255, 255, 0.05); padding: 8px 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.06);">
+                                        <div style="font-size: 0.62rem; color: #8e8e93; font-family: SFMono-Regular, monospace;">THROUGHPUT</div>
+                                        <div style="font-size: 1.1rem; font-weight: 700; color: #30d158; font-family: SFMono-Regular, monospace; margin-top: 2px;">1.2M req/d</div>
+                                    </div>
+                                </div>
+                                <div class="server-logs" style="font-family: SFMono-Regular, Menlo, monospace; font-size: 0.7rem; color: #8e8e93; background: #000000; padding: 8px 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); line-height: 1.4; height: 52px; overflow: hidden; position: relative;">
+                                    <div class="log-stream" style="position: absolute; width: calc(100% - 20px); left: 10px; top: 8px; line-height: 1.5;">
+                                        <span style="color: #30d158;">[200 OK]</span> GET /api/v1/analytics - 12ms<br>
+                                        <span style="color: #30d158;">[200 OK]</span> POST /api/v1/sync - 18ms<br>
+                                        <span style="color: #30d158;">[200 OK]</span> GET /api/v1/user - 8ms<br>
+                                        <span style="color: #30d158;">[200 OK]</span> PUT /api/v1/settings - 15ms<br>
+                                        <span style="color: #30d158;">[200 OK]</span> GET /api/v1/analytics - 12ms
                                     </div>
                                 </div>
                             </div>
@@ -4693,274 +4918,292 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio" data-aos="fade-up" data-aos-duration="800" style="background-color: #ffffff !important;">
-        <div class="container">
-            <div style="text-align: center;" data-aos="fade-up" data-aos-duration="600">
-                <div class="hero-badge">Creative Portfolio</div>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio" data-aos="fade-up" data-aos-duration="800" style="background-color: #ffffff !important; padding: 6rem 0;">
+        <style>
+            .portfolio-case-studies {
+                max-width: 1100px;
+                margin: 0 auto;
+                padding: 0 24px;
+            }
+            .portfolio-case-studies .section-header-centered {
+                text-align: center;
+                margin-bottom: 4rem;
+            }
+            .portfolio-case-studies .portfolio-list-premium {
+                display: flex;
+                flex-direction: column;
+                gap: 4rem;
+                margin-top: 3rem;
+                padding: 0;
+            }
+            .portfolio-case-studies .portfolio-card-premium {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                background: #ffffff !important;
+                border-radius: 24px !important;
+                border: 1px solid rgba(0, 0, 0, 0.06) !important;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.03) !important;
+                padding: 3.5rem !important;
+                gap: 3.5rem !important;
+                transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            }
+            .portfolio-case-studies .portfolio-card-premium:hover {
+                transform: none !important;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.03) !important;
+                border-color: rgba(0, 0, 0, 0.06) !important;
+            }
+            .portfolio-case-studies .portfolio-card-premium:hover .check-bullet {
+                transform: none !important;
+                background: rgba(37, 99, 235, 0.1) !important;
+                color: #2563eb !important;
+            }
+            .portfolio-case-studies .portfolio-card-content {
+                flex: 1.1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: left;
+                padding: 0;
+            }
+            .portfolio-case-studies .portfolio-card-visual {
+                flex: 0.9;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 20px;
+                padding: 2rem;
+                box-sizing: border-box;
+                min-height: 320px;
+                position: relative;
+                overflow: hidden;
+            }
+            .portfolio-case-studies .portfolio-card-image {
+                width: 100%;
+                height: auto;
+                border-radius: 12px;
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+                display: block;
+                object-fit: cover;
+                transition: none !important;
+                /* GPU acceleration and contrast tuning to upscale sharpness on Retina displays */
+                transform: translateZ(0);
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+            }
+            .portfolio-case-studies .portfolio-card-checklist {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+            }
+            .portfolio-case-studies .portfolio-card-checklist li {
+                display: flex;
+                align-items: flex-start;
+                font-size: 0.96rem;
+                color: #475569;
+                line-height: 1.5;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            }
+            .portfolio-case-studies .portfolio-card-checklist li i {
+                color: #86868b;
+                margin-top: 5px;
+                margin-right: 14px;
+                font-size: 0.92rem;
+                flex-shrink: 0;
+            }
+            @media (max-width: 992px) {
+                .portfolio-case-studies .portfolio-card-premium {
+                    padding: 2.5rem !important;
+                    gap: 2.5rem !important;
+                }
+            }
+            @media (max-width: 768px) {
+                .portfolio-case-studies .portfolio-card-premium {
+                    flex-direction: column-reverse !important;
+                    padding: 2rem !important;
+                    gap: 2rem !important;
+                }
+                .portfolio-case-studies .portfolio-card-visual {
+                    min-height: 260px;
+                    padding: 1.5rem;
+                }
+            }
+        </style>
+        
+        <div class="portfolio-case-studies">
+            <div class="section-header-centered" data-aos="fade-up" data-aos-duration="600">
+                <div class="hero-badge" style="background: rgba(0, 0, 0, 0.05); color: #86868b; text-transform: uppercase; font-size: 0.72rem; font-weight: 700; padding: 6px 14px; border-radius: 980px; display: inline-block; letter-spacing: 0.1em; margin-bottom: 12px; font-family: -apple-system, BlinkMacSystemFont, sans-serif;">CASE STUDIES</div>
+                <h2 style="font-weight: 800; font-size: 3rem; color: #1d1d1f; letter-spacing: -0.03em; margin: 0; font-family: -apple-system, BlinkMacSystemFont, sans-serif;"><span class="highlight-blue" style="color: #0071e3;">Success</span> Stories</h2>
             </div>
-            <h2 data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">Our <span class="highlight-blue">Work</span></h2>
-        </div>
-        <div class="portfolio-list-premium">
-            <!-- Card: AUCO Automotive Accessories -->
-            <div class="portfolio-card-premium" data-aos="fade-up" data-aos-delay="100">
-                <div class="portfolio-card-content">
-                    <div class="portfolio-card-category">Automotive & Accessories E-Commerce Platform</div>
-                    <div class="portfolio-card-brand">AUCO</div>
-                    <h3 class="portfolio-card-title">Innovation accessible to every drive: Premium automotive accessories portal</h3>
-                    <ul class="portfolio-card-checklist">
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Custom Showcase:</strong> Elegant dark-mode UI presenting cutting-edge audio, LED lighting, and performance car gear.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Product Reservation:</strong> Seamless online booking and reservation portal for luxury automotive upgrades.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Responsive Design:</strong> High-performance mobile-first experience built for speed and visual impact.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Brand Storytelling:</strong> Interactive philosophy & vision showcase communicating accessible luxury.</span>
-                        </li>
-                    </ul>
+            
+            <div class="portfolio-list-premium">
+                <!-- Card 1: AUCO -->
+                <div class="portfolio-card-premium" data-aos="fade-up" data-aos-delay="100">
+                    <div class="portfolio-card-content">
+                        <!-- AUCO Brand Logo -->
+                        <div class="portfolio-brand-logo" style="font-size: 1.8rem; font-weight: 800; color: #1d1d1f; margin-bottom: 16px; font-family: -apple-system, BlinkMacSystemFont, sans-serif; letter-spacing: -0.03em;">
+                            AUCO
+                        </div>
+                        <h3 class="portfolio-card-title" style="font-weight: 700; font-size: 1.85rem; color: #1d1d1f; line-height: 1.25; margin-top: 0; margin-bottom: 24px; font-family: -apple-system, BlinkMacSystemFont, sans-serif; letter-spacing: -0.025em;">Premium Automotive Accessories Portal</h3>
+                        <ul class="portfolio-card-checklist">
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span><strong>Custom Showcase:</strong> Elegant dark-mode UI presenting audio, LED lighting, and custom car upgrades.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span><strong>Product Reservation:</strong> Seamless online booking and reservation portal for luxury automotive accessory sales.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span><strong>Responsive Design:</strong> High-performance mobile-first experience built for speed and visual impact.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span><strong>Brand Storytelling:</strong> Interactive philosophy & vision showcase communicating accessible luxury.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="portfolio-card-visual" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);">
+                        <img src="images/auco-website.png" alt="AUCO Automotive Accessories Platform" class="portfolio-card-image">
+                    </div>
                 </div>
-                <div class="portfolio-card-visual">
-                    <div class="browser-mockup">
-                        <div class="browser-header">
-                            <div class="browser-dots">
-                                <span class="browser-dot red"></span>
-                                <span class="browser-dot yellow"></span>
-                                <span class="browser-dot green"></span>
-                            </div>
-                            <div class="browser-address">auco.in</div>
+
+                <!-- Card 2: Aloha Estate -->
+                <div class="portfolio-card-premium" data-aos="fade-up" data-aos-delay="200">
+                    <div class="portfolio-card-content">
+                        <!-- Aloha Estate Brand Logo -->
+                        <div class="portfolio-brand-logo" style="font-size: 1.8rem; font-weight: 800; color: #1d1d1f; margin-bottom: 16px; font-family: -apple-system, BlinkMacSystemFont, sans-serif; letter-spacing: -0.03em;">
+                            <span style="color: #0d9488;">Aloha</span> Estate
                         </div>
-                        <div class="browser-content">
-                            <img src="images/auco-website.png" alt="AUCO Automotive Accessories Platform" loading="lazy" decoding="async" width="1024" height="682">
+                        <h3 class="portfolio-card-title" style="font-weight: 700; font-size: 1.85rem; color: #1d1d1f; line-height: 1.25; margin-top: 0; margin-bottom: 24px; font-family: -apple-system, BlinkMacSystemFont, sans-serif; letter-spacing: -0.025em;">Luxury Real Estate Operations & CRM Portal</h3>
+                        <ul class="portfolio-card-checklist">
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span><strong>Executive Dashboard:</strong> Real-time overview of YTD sales volume (₹212 Cr+), active pipeline, and shift statuses.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span><strong>Visual Client Pipeline:</strong> Kanban CRM tracking prospects from Meta Leads through property viewings to deal closing.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span><strong>Meta Ads Lead Sync:</strong> Instant campaign lead integration into agent queues, accelerating response times.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span><strong>Task & Attendance Center:</strong> Task ratings, change workflows, and attendance console with shift timelines.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="portfolio-card-visual" style="background: linear-gradient(135deg, #115e59 0%, #0d9488 100%);">
+                        <img src="images/aloha-estate-portal.png" alt="Aloha Estate Custom Portal UI" class="portfolio-card-image">
+                    </div>
+                </div>
+
+                <!-- Card 3: Curious Kaizer Analytics -->
+                <div class="portfolio-card-premium" data-aos="fade-up" data-aos-delay="300">
+                    <div class="portfolio-card-content">
+                        <!-- Curious Kaizer Analytics Brand Logo -->
+                        <div class="portfolio-brand-logo" style="font-size: 1.8rem; font-weight: 800; color: #1d1d1f; margin-bottom: 16px; font-family: -apple-system, BlinkMacSystemFont, sans-serif; letter-spacing: -0.03em;">
+                            <span style="color: #0071e3;">Curious Kaizer</span> Analytics
                         </div>
+                        <h3 class="portfolio-card-title" style="font-weight: 700; font-size: 1.85rem; color: #1d1d1f; line-height: 1.25; margin-top: 0; margin-bottom: 24px; font-family: -apple-system, BlinkMacSystemFont, sans-serif; letter-spacing: -0.025em;">Real-time Privacy-First Web Analytics</h3>
+                        <ul class="portfolio-card-checklist">
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span><strong>Serverless Backend:</strong> Fast, lightweight, and scalable database integration powered by Supabase.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span><strong>GDPR Compliant Tracking:</strong> Cookie-free analytics respecting user data compliance without consent banners.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span><strong>Live Globe Maps:</strong> Interactive web visualizations showing active visitor locations worldwide in real-time.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span><strong>Custom Goal Tracking:</strong> Monitor call-to-actions, conversion steps, click events, and referrers.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="portfolio-card-visual" style="background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);">
+                        <img src="images/curiouskaizer.png" alt="Curious Kaizer Analytics Console" class="portfolio-card-image">
+                    </div>
+                </div>
+
+                <!-- Card 4: Notary Platform -->
+                <div class="portfolio-card-premium" data-aos="fade-up" data-aos-delay="400">
+                    <div class="portfolio-card-content">
+                        <!-- Notary Platform Brand Logo -->
+                        <div class="portfolio-brand-logo" style="font-size: 1.8rem; font-weight: 800; color: #1d1d1f; margin-bottom: 16px; font-family: -apple-system, BlinkMacSystemFont, sans-serif; letter-spacing: -0.03em;">
+                            <span style="color: #6366f1;">Notary</span> Platform
+                        </div>
+                        <h3 class="portfolio-card-title" style="font-weight: 700; font-size: 1.85rem; color: #1d1d1f; line-height: 1.25; margin-top: 0; margin-bottom: 24px; font-family: -apple-system, BlinkMacSystemFont, sans-serif; letter-spacing: -0.025em;">LegalTech Operations Workspace</h3>
+                        <ul class="portfolio-card-checklist">
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span><strong>Document Pipeline:</strong> Secure upload, metadata organization & digital document approvals.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span><strong>Automated Scheduling:</strong> Central booking console for online & in-person legal sessions.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span><strong>Workflow Automations:</strong> Multi-step verification progress tracks and status notifications.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span><strong>Granular Access Control:</strong> Role-based permissions for clients, notary staff, and administrators.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="portfolio-card-visual" style="background: linear-gradient(135deg, #4338ca 0%, #6366f1 100%);">
+                        <img src="images/notary-platform.webp" alt="Notary Operations Console UI" class="portfolio-card-image">
+                    </div>
+                </div>
+
+                <!-- Card 5: CuriousCRM -->
+                <div class="portfolio-card-premium" data-aos="fade-up" data-aos-delay="500">
+                    <div class="portfolio-card-content">
+                        <!-- CuriousCRM Brand Logo -->
+                        <div class="portfolio-brand-logo" style="font-size: 1.8rem; font-weight: 800; color: #1d1d1f; margin-bottom: 16px; font-family: -apple-system, BlinkMacSystemFont, sans-serif; letter-spacing: -0.03em;">
+                            <span style="color: #8b5cf6;">Curious</span>CRM
+                        </div>
+                        <h3 class="portfolio-card-title" style="font-weight: 700; font-size: 1.85rem; color: #1d1d1f; line-height: 1.25; margin-top: 0; margin-bottom: 24px; font-family: -apple-system, BlinkMacSystemFont, sans-serif; letter-spacing: -0.025em;">All-in-One Sales Operations Portal</h3>
+                        <ul class="portfolio-card-checklist">
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span><strong>Sales Dashboards:</strong> Real-time overview tracking metrics, pipeline stages, and conversion goals.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span><strong>Visual Kanban boards:</strong> Drag-and-drop lead scoring and status progression cards.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span><strong>Performance Analytics:</strong> Interactive revenue trending graphs, top product and client listings.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span><strong>Database Sync:</strong> Centralized client database containing timeline histories and reminders.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="portfolio-card-visual" style="background: linear-gradient(135deg, #6d28d9 0%, #8b5cf6 100%);">
+                        <img src="images/curiouscrm.webp" alt="CuriousCRM Sales Management Dashboard" class="portfolio-card-image">
                     </div>
                 </div>
             </div>
-
-            <!-- Card: Aloha Estate Custom Portal -->
-            <div class="portfolio-card-premium" data-aos="fade-up" data-aos-delay="100">
-                <div class="portfolio-card-content">
-                    <div class="portfolio-card-category">Luxury Real Estate Operations & CRM Portal</div>
-                    <div class="portfolio-card-brand">Aloha Estate</div>
-                    <h3 class="portfolio-card-title">Aloha Estate Custom Portal: Unified real estate operations, Meta lead syncing & team management</h3>
-                    <ul class="portfolio-card-checklist">
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Executive Dashboard:</strong> Real-time overview of YTD sales volume (₹212 Cr+), active client pipeline, Meta campaign leads, and shift status.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Visual Client Pipeline:</strong> Kanban CRM tracking prospects from Meta Leads through Contacted, Property Viewings, Negotiations, and Closed Deals.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Meta Ads Lead Sync:</strong> Instant campaign lead integration into agent queues, accelerating response times and lead attribution.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Task & Roster Center:</strong> Manager approval workflows, priority task ratings, due dates, change requests, and written feedback.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Shift & Attendance Tracking:</strong> Agent check-in/out console, shift timelines, active duty indicators, and individual KPI performance.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Boardroom Chat & Workspace:</strong> Integrated company channels and direct messages keeping operations in one secure tool.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Funnel & Portfolio Analytics:</strong> Conversion stage monitoring, lead acquisition source tracking, and luxury portfolio segment analytics.</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="portfolio-card-visual">
-                    <div class="browser-mockup">
-                        <div class="browser-header">
-                            <div class="browser-dots">
-                                <span class="browser-dot red"></span>
-                                <span class="browser-dot yellow"></span>
-                                <span class="browser-dot green"></span>
-                            </div>
-                            <div class="browser-address">portal.alohaestates.com</div>
-                        </div>
-                        <div class="browser-content">
-                            <img src="images/aloha-estate-portal.png" alt="Aloha Estate Custom Portal UI Collage" loading="lazy" decoding="async" width="1024" height="682">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <!-- Card: Curious Kaizer Analytics -->
-            <div class="portfolio-card-premium" data-aos="fade-up" data-aos-delay="100">
-                <div class="portfolio-card-content">
-                    <div class="portfolio-card-category">Custom Web Analytics / SaaS</div>
-                    <div class="portfolio-card-brand">Curious Kaizer Analytics</div>
-                    <h3 class="portfolio-card-title">Real-time privacy-first web analytics console to track views, sessions, actions, and locations without cookies.</h3>
-                    <ul class="portfolio-card-checklist">
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Serverless Architecture:</strong> Fast, lightweight, and scalable database integration powered by Supabase.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Privacy-First Tracking:</strong> GDPR/CCPA compliant tracking that respects user privacy without intrusive cookie consent banners.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Universal Integration:</strong> Simple JavaScript snippet to connect and monitor existing or new websites seamlessly.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Live Globe Maps:</strong> Interactive 3D globe visualization showing active visitor locations worldwide in real-time.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Goal & CTA Tracking:</strong> Monitor custom call-to-actions, conversions, click events, and landing page referrers.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Advanced Audience Metrics:</strong> Track unique visitors, session lengths, bounce rates, and lead heat indexes at a glance.</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="portfolio-card-visual">
-                    <div class="browser-mockup">
-                        <div class="browser-header">
-                            <div class="browser-dots">
-                                <span class="browser-dot red"></span>
-                                <span class="browser-dot yellow"></span>
-                                <span class="browser-dot green"></span>
-                            </div>
-                            <div class="browser-address">analytics.curiouskaizer.com</div>
-                        </div>
-                        <div class="browser-content">
-                            <img src="images/curiouskaizer.png" alt="Curious Kaizer Analytics Dashboard" loading="lazy" decoding="async" width="1024" height="682">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <!-- Card 2: Notary Operations Platform -->
-            <div class="portfolio-card-premium" data-aos="fade-up" data-aos-delay="200">
-                <div class="portfolio-card-content">
-                    <div class="portfolio-card-category">LegalTech Operations System</div>
-                    <div class="portfolio-card-brand">Notary Platform</div>
-                    <h3 class="portfolio-card-title">Streamline legal and notary operations through automation and centralized management.</h3>
-                    <ul class="portfolio-card-checklist">
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Client Management:</strong> Centralized logs & CRM for client relationships.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Document Management:</strong> Secure upload, metadata organization & digital editing.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Appointment Scheduling:</strong> Automated booking for online & in-person sessions.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Workflow Automation:</strong> Seamless verification states, routing & approvals.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Secure Document Storage:</strong> Encrypted, tamper-proof compliance vault.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Role-Based Access:</strong> Granular permissions for notary staff and admins.</span>
-                        </li>
-
-                    </ul>
-                </div>
-                <div class="portfolio-card-visual">
-                    <div class="browser-mockup">
-                        <div class="browser-header">
-                            <div class="browser-dots">
-                                <span class="browser-dot red"></span>
-                                <span class="browser-dot yellow"></span>
-                                <span class="browser-dot green"></span>
-                            </div>
-                            <div class="browser-address">notary.curiouskaizer.com</div>
-                        </div>
-                        <div class="browser-content">
-                            <img src="images/notary-platform.webp" alt="Notary Operations Platform Dashboard" loading="lazy" decoding="async" width="1024" height="1024">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-
-
-
-
-            <!-- Card 8: CuriousCRM -->
-            <div class="portfolio-card-premium" data-aos="fade-up" data-aos-delay="200">
-                <div class="portfolio-card-content">
-                    <div class="portfolio-card-category">Software</div>
-                    <div class="portfolio-card-brand">CuriousCRM</div>
-                    <h3 class="portfolio-card-title">All-in-One CRM Platform — manage customers, track leads, and close deals from a single dashboard.</h3>
-                    <ul class="portfolio-card-checklist">
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Business Intelligence Dashboard:</strong> Real-time KPIs, revenue tracking, and lead conversion overview at a glance.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Advanced Lead Management:</strong> Visual conversion funnel with lead scoring, pipeline tracking, and multi-source attribution.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Kanban Task Management:</strong> Drag-and-drop boards with priority tags, due dates, and overdue alerts.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Sales Performance Analytics:</strong> Revenue trends, order management, and top product &amp; customer reporting.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Customer Relationship Database:</strong> Centralized profiles with lifetime value, segmentation, and purchase history.</span>
-                        </li>
-                        <li>
-                            <span class="check-bullet"><i class="fas fa-check"></i></span>
-                            <span><strong>Smart Notifications:</strong> Instant alerts for overdue tasks, high-value leads, and follow-up reminders.</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="portfolio-card-visual">
-                    <div class="browser-mockup">
-                        <div class="browser-header">
-                            <div class="browser-dots">
-                                <span class="browser-dot red"></span>
-                                <span class="browser-dot yellow"></span>
-                                <span class="browser-dot green"></span>
-                            </div>
-                            <div class="browser-address">crm.curiouskaizer.com</div>
-                        </div>
-                        <div class="browser-content">
-                            <img src="images/curiouscrm.webp" alt="CuriousCRM Web Application" loading="lazy" decoding="async" width="1024" height="682">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
         </div>
     </section>
 
@@ -5330,7 +5573,7 @@
     <!-- Defer non-critical JavaScript to prevent render-blocking -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js" defer></script>
-    <script src="js/scripts.js" defer></script>
+    <script src="js/scripts.js?v=1.6" defer></script>
     <script src="js/carousel.js" defer></script>
     <script src="js/typing.js" defer></script>
     <script src="js/timeline-animations.js" defer></script>
