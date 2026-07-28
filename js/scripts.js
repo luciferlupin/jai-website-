@@ -1,4 +1,199 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Keep the homepage technical canvas and footer consistent across the site.
+    const isHomepage = Boolean(document.getElementById('home'));
+    document.body.classList.add('home-wantace-background');
+    if (!isHomepage) {
+        document.body.classList.add('shared-home-background');
+    }
+
+    const existingFooter = document.querySelector('footer');
+    if (existingFooter && !existingFooter.classList.contains('footer-wantace')) {
+        existingFooter.outerHTML = `
+            <footer class="footer-wantace" role="contentinfo" data-shared-footer="true">
+                <div class="footer-bg-glow"></div>
+                <div class="container">
+                    <div class="footer-card">
+                        <div class="footer-card-grid">
+                            <div class="footer-col" data-aos="fade-up" data-aos-duration="600">
+                                <a href="index.html" class="footer-brand-logo">
+                                    <div class="wantace-logo-box"><i class="fas fa-code"></i></div>
+                                    <span class="brand-name">Curious Kaizer</span>
+                                </a>
+                            </div>
+
+                            <div class="footer-col" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+                                <div class="col-header">LINKS</div>
+                                <ul class="col-links">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="services.html">Services</a></li>
+                                    <li><a href="portfolio.html">Case Studies</a></li>
+                                    <li><a href="index.html#process">Process</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="footer-col" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+                                <div class="col-header">COMPANY</div>
+                                <ul class="col-links">
+                                    <li><a href="index.html#why-choose-us">About</a></li>
+                                    <li><a href="pricing.html#faq">FAQ</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="footer-col" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+                                <div class="col-header">CONTACT</div>
+                                <ul class="col-links contact-links">
+                                    <li><a href="https://wa.me/918595121436" target="_blank" rel="noopener"><span class="contact-icon-circle wa"><i class="fab fa-whatsapp"></i></span>+91 85951 21436</a></li>
+                                    <li><a href="mailto:info@curiouskaizer.com"><span class="contact-icon-circle mail"><i class="fas fa-envelope"></i></span>info@curiouskaizer.com</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="footer-social-row" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
+                            <span class="social-label">Our Socials</span>
+                            <div class="social-divider"></div>
+                            <div class="social-badges">
+                                <a href="https://www.linkedin.com/company/curious-kaizer/" class="social-badge linkedin-badge" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.instagram.com/curiouskaizer/" class="social-badge instagram-badge" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="footer-bottom-row" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
+                            <div class="copyright-text">© 2026 Curious Kaizer</div>
+                            <div class="legal-links">
+                                <a href="privacy.html">Privacy Policy</a>
+                                <span class="link-separator">|</span>
+                                <a href="terms.html">Terms of Services</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        `;
+    }
+
+    document.querySelectorAll('.footer-sparkle').forEach((sparkle) => sparkle.remove());
+
+    // Use the Capabilities header as the visual system for every primary section heading.
+    const sectionHeadingConfigs = [
+        { selector: '#process .section-header', label: 'Process' },
+        { selector: '#expertise .section-header', label: 'Capabilities' },
+        { selector: '#technology .tech-central-content', label: 'Technology' },
+        { selector: '#why-choose-us .why-us-header', label: 'Why Us' },
+        { selector: '.testimonials-apple-section .testimonials-header-container', label: 'Testimonials' },
+        { selector: '#what-we-built .section-header', label: 'Our Work' },
+        { selector: '#portfolio .section-header-centered', label: 'Case Studies' },
+        { selector: '#faq .section-header', label: 'FAQ' },
+        { selector: '#book-call .banner-content', label: 'Schedule Meeting' },
+        { selector: '.subpage-hero > .container', label: 'Overview' },
+        { selector: '#cta-services > .container', label: 'Get Started' },
+        { selector: '.faq-accordion-section > .container > div:first-child', label: 'FAQ' },
+        { selector: '.booking-calendar-section > .container > div:first-child', label: 'Scheduling' },
+        { selector: '.product-features-section > .container > div:first-child', label: 'Capabilities' },
+        { selector: '.product-pricing-section > .container > div:first-child', label: 'Licensing' },
+        { selector: '.blog-social-feeds .social-feeds-header', label: 'Social' }
+    ];
+
+    const styledSectionHeadings = new Set();
+
+    const addSectionTitleAccent = (title) => {
+        let accent = title.querySelector('.highlight-blue, .highlight-blue-light, .ck-section-title-accent');
+        const directNodes = Array.from(title.childNodes);
+        const trailingTextNode = directNodes
+            .slice()
+            .reverse()
+            .find((node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim());
+
+        if (accent && trailingTextNode && directNodes.indexOf(trailingTextNode) > directNodes.indexOf(accent)) {
+            accent.classList.remove('ck-section-title-accent');
+            accent = null;
+        }
+
+        if (!accent) {
+            if (trailingTextNode && title.children.length > 0) {
+                accent = document.createElement('span');
+                accent.textContent = ` ${trailingTextNode.textContent.trim()}`;
+                trailingTextNode.replaceWith(accent);
+            } else if (title.children.length === 0) {
+                const words = title.textContent.trim().split(/\s+/);
+                const accentWordCount = words.length > 2 ? 2 : 1;
+                const leadWords = words.slice(0, -accentWordCount);
+                const accentWords = words.slice(-accentWordCount);
+
+                title.textContent = '';
+                if (leadWords.length) {
+                    title.append(document.createTextNode(`${leadWords.join(' ')} `));
+                }
+
+                accent = document.createElement('span');
+                accent.textContent = accentWords.join(' ');
+                title.append(accent);
+            } else {
+                accent = Array.from(title.children)
+                    .filter((element) => !element.classList.contains('seo-subpage-pre-title'))
+                    .pop();
+            }
+        }
+
+        if (accent) {
+            accent.classList.add('ck-section-title-accent');
+        }
+
+        title.querySelectorAll('span').forEach((span) => {
+            if (span !== accent && !span.classList.contains('seo-subpage-pre-title')) {
+                span.style.removeProperty('color');
+            }
+        });
+    };
+
+    sectionHeadingConfigs.forEach(({ selector, label }) => {
+        document.querySelectorAll(selector).forEach((headingContainer) => {
+            if (styledSectionHeadings.has(headingContainer)) {
+                return;
+            }
+
+            const section = headingContainer.closest('section');
+            const title = headingContainer.querySelector('h1, h2');
+
+            if (!section || !title) {
+                return;
+            }
+
+            styledSectionHeadings.add(headingContainer);
+            section.classList.add('ck-heading-section');
+            headingContainer.classList.add('ck-section-heading');
+            title.classList.add('ck-section-title');
+
+            let kicker = headingContainer.querySelector(
+                '.hero-badge, .hero-badge-apple, .tech-category-badge, .why-us-badge, .testi-badge, .built-top-badge, .ck-section-kicker'
+            );
+
+            if (!kicker) {
+                const preTitle = title.querySelector('.seo-subpage-pre-title');
+                if (preTitle) {
+                    kicker = preTitle;
+                    headingContainer.insertBefore(kicker, title);
+                }
+            }
+
+            if (!kicker) {
+                kicker = document.createElement('div');
+                kicker.textContent = label;
+                headingContainer.insertBefore(kicker, title);
+            }
+
+            kicker.classList.add('ck-section-kicker');
+
+            const summary = Array.from(headingContainer.children)
+                .find((element) => element.tagName === 'P');
+
+            if (summary) {
+                summary.classList.add('ck-section-summary');
+            }
+
+            addSectionTitleAccent(title);
+        });
+    });
+
     // Mobile Navigation Toggle
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
@@ -541,5 +736,3 @@ document.addEventListener('DOMContentLoaded', function() {
         updateCalculator();
     }
 });
-
-
