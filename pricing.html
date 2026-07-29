@@ -53,28 +53,28 @@
     <noscript><link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css"></noscript>
     
     <style>
-        /* Subpage Premium Hero Styling */
+        /* Subpage Premium Hero Styling - Zero Extra Gap Viewport */
         .subpage-hero {
-            padding: 8rem 0 4rem;
-            background-color: #fafbfc;
-            background-image: linear-gradient(rgba(37, 99, 235, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235, 0.02) 1px, transparent 1px);
-            background-size: 40px 40px;
+            padding: 1.8rem 0 0.2rem !important;
+            background: transparent !important;
             text-align: center;
-            border-bottom: 1px solid #f1f5f9;
+            border-bottom: none !important;
         }
         
         .subpage-hero-title {
-            font-size: 3.5rem;
+            font-size: 2.2rem;
             font-weight: 800;
             letter-spacing: -0.03em;
             color: #0f172a;
-            margin: 1rem 0 1.5rem;
+            margin: 0.2rem 0 0.4rem;
         }
 
         /* Pricing Section */
         .pricing-section {
-            padding: 5rem 0;
-            background-color: #ffffff;
+            padding-top: 0.5rem !important;
+            padding-bottom: 2rem !important;
+            margin-top: 0 !important;
+            background: transparent !important;
         }
 
         .pricing-grid {
@@ -286,10 +286,8 @@
                 <span class="logo-text">Curious Kaizer</span>
             </a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html#home" title="Home" itemprop="url"><span itemprop="name">Home</span></a></li>
-                <li><a href="index.html#process" title="Process" itemprop="url"><span itemprop="name">Process</span></a></li>
+                <li><a href="index.html" title="Home" itemprop="url"><span itemprop="name">Home</span></a></li>
                 <li><a href="services.html" title="Capabilities" itemprop="url"><span itemprop="name">Capabilities</span></a></li>
-                <li><a href="index.html#why-us" title="Why Choose Us" itemprop="url"><span itemprop="name">Why Choose Us</span></a></li>
                 <li><a href="portfolio.html" title="Portfolio" itemprop="url"><span itemprop="name">Portfolio</span></a></li>
                 <li><a href="pricing.html" class="active" title="Pricing" itemprop="url"><span itemprop="name">Pricing</span></a></li>
                 <li><a href="blog.html" title="Blog" itemprop="url"><span itemprop="name">Blog</span></a></li>
@@ -306,75 +304,154 @@
     </header>
 
     <!-- Subpage Hero -->
-    <section class="subpage-hero">
+    <section class="subpage-hero" style="padding: 1.5rem 0 0.2rem;">
         <div class="container">
-            <div class="hero-badge">Pricing Model</div>
-            <h1 class="subpage-hero-title">
-                <span class="seo-subpage-pre-title" style="display: block; font-size: 0.95rem; text-transform: uppercase; font-weight: 800; color: #2563eb; letter-spacing: 0.15em; margin-bottom: 12px; font-family: 'Inter', sans-serif;">Web Development Pricing & Packages</span>
-                Transparent Packages.<br><span class="highlight-blue">Zero Surprises.</span>
+            <div class="hero-badge" style="margin-bottom: 0.3rem;">Pricing Model</div>
+            <h1 class="subpage-hero-title" style="font-size: 2.1rem; margin: 0.2rem 0 0.3rem; line-height: 1.15;">
+                Transparent Packages. <span class="highlight-blue">Zero Surprises.</span>
             </h1>
-            <p class="section-subtitle" style="margin: 0 auto; max-width: 700px;">Select a package aligned with your business objectives. All engagement options feature fixed pricing and dedicated timelines.</p>
+            <p class="section-subtitle" style="margin: 0 auto 0.2rem; max-width: 650px; font-size: 0.9rem;">Select a package aligned with your business objectives. All engagement options feature fixed pricing and dedicated timelines.</p>
         </div>
     </section>
 
     <!-- Pricing Section -->
     <section class="pricing-section">
-        <div class="container">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
             
-            <div class="pricing-grid">
+            <div class="pricing-grid-framer">
                 
-                <!-- Plan 1 -->
-                <div class="pricing-card-premium" data-aos="fade-up" data-aos-delay="100">
-                    <div class="pricing-plan-name">Startup Website</div>
-                    <p style="color: #64748b; font-size: 0.9rem;">Ideal for landing pages, portfolio displays, and standard business listings.</p>
-                    <div class="pricing-plan-price">
-                        ₹15,200 <span>One-time</span>
+                <!-- Card 1: Tier 1: Prototype Sprint -->
+                <div class="pricing-card-framer" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pricing-card-inner">
+                        <div class="popular-badge-slot">
+                            <div class="pricing-card-eyebrow">Validating &amp; Pitching Ideas</div>
+                        </div>
+                        
+                        <div class="pricing-tier-name">Tier 1: Prototype Sprint</div>
+                        <div class="pricing-amount-row">
+                            <span class="price-strikethrough">$200</span>
+                            <span class="price-main">$150</span>
+                            <span class="price-discount-tag">25% OFF</span>
+                        </div>
+                        
+                        <a href="contact.html" class="pricing-btn-dark">
+                            Get My Prototype Now <i class="fas fa-arrow-right"></i>
+                        </a>
+                        
+                        <div class="pricing-guarantee-note">
+                            "Working prototype in 48 hours or full refund"
+                        </div>
+                        
+                        <div class="pricing-features-heading">What's Included:</div>
+                        <ul class="pricing-feature-list">
+                            <li><div class="feature-icon-badge phone"><i class="fas fa-phone-alt"></i></div> 30-minute discovery call</li>
+                            <li><div class="feature-icon-badge brain"><i class="fas fa-brain"></i></div> AI-powered requirements analysis</li>
+                            <li><div class="feature-icon-badge code"><i class="fas fa-laptop-code"></i></div> Working interactive prototype</li>
+                            <li><div class="feature-icon-badge globe"><i class="fas fa-globe"></i></div> Custom subdomain hosting</li>
+                            <li><div class="feature-icon-badge route"><i class="fas fa-route"></i></div> Future roadmap presentation</li>
+                            <li><div class="feature-icon-badge sync"><i class="fas fa-sync-alt"></i></div> 1 round of revisions</li>
+                        </ul>
+                        
+                        <div class="pricing-timeline-footer">
+                            <span><i class="far fa-clock"></i> Timeline: 48 hours</span>
+                            <span class="graphic-micro-badge" style="margin-left: auto;"><span class="radar-dot green"></span> 48h Sprint</span>
+                        </div>
                     </div>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Custom layout & copy writeup</li>
-                        <li><i class="fas fa-check"></i> Responsive Mobile Layouts</li>
-                        <li><i class="fas fa-check"></i> Standard Contact forms</li>
-                        <li><i class="fas fa-check"></i> Basic SEO Optimization</li>
-                        <li><i class="fas fa-check"></i> 7 Days Setup Delivery</li>
-                    </ul>
-                    <a href="contact.html" class="cta-button outline" style="margin-top: auto; text-align: center; display: block;">Select Startup Plan</a>
                 </div>
 
-                <!-- Plan 2 -->
-                <div class="pricing-card-premium popular" data-aos="fade-up" data-aos-delay="200">
-                    <div class="popular-badge">Recommended</div>
-                    <div class="pricing-plan-name">E-Commerce Growth</div>
-                    <p style="color: #64748b; font-size: 0.9rem;">Comprehensive storefront setup to inventory, list, and checkout products.</p>
-                    <div class="pricing-plan-price">
-                        ₹21,900 <span>One-time</span>
+                <!-- Card 2: Tier 2: Full Product Build (MOST POPULAR) -->
+                <div class="pricing-card-framer popular-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pricing-card-inner">
+                        <div class="popular-badge-slot">
+                            <div class="most-popular-pill">
+                                <i class="fas fa-bolt"></i> MOST POPULAR
+                            </div>
+                        </div>
+                        
+                        <div class="pricing-tier-name">Tier 2: Full Product Build</div>
+                        <div class="pricing-amount-row">
+                            <span class="price-subtext">Starting at</span>
+                            <span class="price-main">$750</span>
+                        </div>
+                        
+                        <a href="contact.html" class="pricing-btn-blue">
+                            Start My MVP <i class="fas fa-arrow-right"></i>
+                        </a>
+                        
+                        <div class="pricing-guarantee-note">
+                            "Launch-ready MVP or money back"
+                        </div>
+                        
+                        <div class="pricing-features-heading">Everything in Prototype Sprint, plus:</div>
+                        <ul class="pricing-feature-list">
+                            <li><div class="feature-icon-badge"><i class="fas fa-rocket"></i></div> Production-ready application</li>
+                            <li><div class="feature-icon-badge"><i class="fas fa-user-shield"></i></div> User authentication &amp; database</li>
+                            <li><div class="feature-icon-badge"><i class="fas fa-credit-card"></i></div> Payment processing integration</li>
+                            <li><div class="feature-icon-badge"><i class="fas fa-mobile-alt"></i></div> Mobile-responsive design</li>
+                            <li><div class="feature-icon-badge"><i class="fas fa-chart-line"></i></div> Analytics &amp; monitoring</li>
+                            <li><div class="feature-icon-badge"><i class="fas fa-headset"></i></div> 30 days of support</li>
+                        </ul>
+                        
+                        <div class="pricing-timeline-footer">
+                            <span><i class="far fa-clock"></i> Timeline: 2-3 Weeks</span>
+                            <span class="graphic-micro-badge" style="margin-left: auto;"><span class="radar-dot"></span> Launch Ready</span>
+                        </div>
                     </div>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Secure Checkout Integration</li>
-                        <li><i class="fas fa-check"></i> Dynamic Product Catalog Database</li>
-                        <li><i class="fas fa-check"></i> Inventory Tracking Dashboard</li>
-                        <li><i class="fas fa-check"></i> Mobile Optimization & Speeds</li>
-                        <li><i class="fas fa-check"></i> 14 Days Setup Delivery</li>
-                    </ul>
-                    <a href="contact.html" class="cta-button primary" style="margin-top: auto; text-align: center; display: block;">Select Growth Plan</a>
                 </div>
 
-                <!-- Plan 3 -->
-                <div class="pricing-card-premium" data-aos="fade-up" data-aos-delay="300">
-                    <div class="pricing-plan-name">Custom Software / SaaS</div>
-                    <p style="color: #64748b; font-size: 0.9rem;">Robust apps requiring database syncs, workflows, permissions, and dashboards.</p>
-                    <div class="pricing-plan-price">
-                        ₹33,900<span>+ Custom Quote</span>
+                <!-- Card 3: Tier 3: Dedicated Engineering -->
+                <div class="pricing-card-framer" data-aos="fade-up" data-aos-delay="300">
+                    <div class="pricing-card-inner">
+                        <div class="popular-badge-slot">
+                            <div class="pricing-card-eyebrow">Scaling with Speed</div>
+                        </div>
+                        
+                        <div class="pricing-tier-name">Tier 3: Dedicated Engineering</div>
+                        <div class="pricing-amount-row">
+                            <span class="price-main">$250</span>
+                            <span class="price-subtext">/month</span>
+                        </div>
+                        
+                        <a href="contact.html" class="pricing-btn-dark">
+                            Partner With Us <i class="fas fa-arrow-right"></i>
+                        </a>
+                        
+                        <div class="pricing-guarantee-note">
+                            "Cancel anytime, no questions asked"
+                        </div>
+                        
+                        <div class="pricing-features-heading">What's Included:</div>
+                        <ul class="pricing-feature-list">
+                            <li><div class="feature-icon-badge"><i class="fas fa-code"></i></div> Dedicated development team</li>
+                            <li><div class="feature-icon-badge"><i class="fas fa-calendar-check"></i></div> Weekly feature releases</li>
+                            <li><div class="feature-icon-badge"><i class="fas fa-tachometer-alt"></i></div> Performance optimization</li>
+                            <li><div class="feature-icon-badge"><i class="fas fa-bug"></i></div> Bug fixes &amp; maintenance</li>
+                            <li><div class="feature-icon-badge"><i class="fas fa-lightbulb"></i></div> Strategic consultancy</li>
+                            <li><div class="feature-icon-badge"><i class="fas fa-headset"></i></div> Priority support</li>
+                        </ul>
+                        
+                        <div class="pricing-timeline-footer">
+                            <span><i class="far fa-clock"></i> Timeline: Ongoing</span>
+                            <span class="graphic-micro-badge" style="margin-left: auto;"><span class="radar-dot green"></span> Active Retainer</span>
+                        </div>
                     </div>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Advanced DB Architectures</li>
-                        <li><i class="fas fa-check"></i> Role Permissions & Logins</li>
-                        <li><i class="fas fa-check"></i> Interactive Kanban Pipeline boards</li>
-                        <li><i class="fas fa-check"></i> Automated Email & API triggers</li>
-                        <li><i class="fas fa-check"></i> Dedicated SLA Maintenance support</li>
-                    </ul>
-                    <a href="contact.html" class="cta-button outline" style="margin-top: auto; text-align: center; display: block;">Inquire Custom Quote</a>
+                </div>
+                    </div>
                 </div>
 
+            </div>
+
+            <!-- Bottom Trust Badges Row -->
+            <div class="pricing-trust-badges-bar">
+                <div class="trust-badge-item">
+                    <i class="far fa-credit-card"></i> All major credit cards accepted
+                </div>
+                <div class="trust-badge-item">
+                    <i class="fas fa-tags"></i> Tiered pricing for MVP &amp; Growth
+                </div>
+                <div class="trust-badge-item">
+                    <i class="fas fa-shield-alt"></i> Secure, encrypted transactions
+                </div>
             </div>
 
         </div>
@@ -445,69 +522,70 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer footer-premium" role="contentinfo">
+    <!-- Footer -->
+    <footer class="footer-wantace" role="contentinfo">
+        <div class="footer-bg-glow"></div>
+        
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <a href="index.html" class="footer-logo-link">
-                        <img src="images/logo.jpg" alt="Curious Kaizer Logo" class="footer-logo-img" width="72" height="72" loading="lazy" decoding="async">
-                    </a>
-                    <p class="subtitle" style="margin-top: 0.5rem;">Where Innovation Meets Digital Excellence</p>
-                    <p class="tagline">
-                        Crafting bespoke, high-performance web applications, custom platforms, and design systems that scale your business.
-                    </p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/company/curious-kaizer/" target="_blank" rel="noopener me" aria-label="Curious Kaizer LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.instagram.com/curiouskaizer/" target="_blank" rel="noopener me" aria-label="Curious Kaizer Instagram Profile"><i class="fab fa-instagram"></i></a>
+            <div class="footer-card">
+                <div class="footer-card-grid">
+                    <!-- Column 1: Logo -->
+                    <div class="footer-col">
+                        <a href="index.html" class="footer-brand-logo">
+                            <div class="wantace-logo-box"><i class="fas fa-code"></i></div>
+                            <span class="brand-name">Curious Kaizer</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Column 2: SERVICES -->
+                    <div class="footer-col">
+                        <div class="col-header">SERVICES</div>
+                        <ul class="col-links">
+                            <li><a href="services.html">Custom Websites</a></li>
+                            <li><a href="services.html">E-Commerce Stores</a></li>
+                            <li><a href="services.html">Web Applications</a></li>
+                            <li><a href="crm-product.html">Custom CRM</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Column 3: COMPANY -->
+                    <div class="footer-col">
+                        <div class="col-header">COMPANY</div>
+                        <ul class="col-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="portfolio.html">Case Studies</a></li>
+                            <li><a href="index.html#why-choose-us">About</a></li>
+                            <li><a href="pricing.html#faq">FAQ</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Column 4: CONTACT -->
+                    <div class="footer-col">
+                        <div class="col-header">CONTACT</div>
+                        <ul class="col-links contact-links">
+                            <li><a href="https://wa.me/918595121436" target="_blank"><span class="contact-icon-circle wa"><i class="fab fa-whatsapp"></i></span>+91 85951 21436</a></li>
+                            <li><a href="mailto:info@curiouskaizer.com"><span class="contact-icon-circle mail"><i class="fas fa-envelope"></i></span>info@curiouskaizer.com</a></li>
+                        </ul>
                     </div>
                 </div>
-
-                <div class="footer-nav-col">
-                    <h3>Our Services</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="services.html">Custom Websites</a></li>
-                        <li><a href="services.html">E-Commerce Stores</a></li>
-                        <li><a href="services.html">Web Applications</a></li>
-                        <li><a href="crm-product.html">Custom CRM Solutions</a></li>
-                        <li><a href="services.html">AI & Automation Tools</a></li>
-                    </ul>
+                
+                <div class="footer-social-row">
+                    <span class="social-label">Our Socials</span>
+                    <div class="social-divider"></div>
+                    <div class="social-badges">
+                        <a href="https://www.linkedin.com/company/curious-kaizer/" class="social-badge linkedin-badge" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/curiouskaizer/" class="social-badge instagram-badge" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
-
-                <div class="footer-nav-col">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="index.html#home">Home / Process</a></li>
-                        <li><a href="services.html">Capabilities</a></li>
-                        <li><a href="index.html#why-us">Why Choose Us</a></li>
-                        <li><a href="portfolio.html">Our Portfolio</a></li>
-                        <li><a href="pricing.html">Pricing / FAQ</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-contact">
-                    <h3>Get in Touch</h3>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@curiouskaizer.com">info@curiouskaizer.com</a></li>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:curiouskaizer@gmail.com">curiouskaizer@gmail.com</a></li>
-                        <li><i class="fas fa-phone-alt"></i> <a href="tel:+918595121436">+91 85951 21436</a></li>
-                        <li><i class="fab fa-whatsapp" style="color: #25d366;"></i> <a href="https://wa.me/918595121436" target="_blank" rel="noopener">Chat on WhatsApp</a></li>
-                        <li><i class="fas fa-map-marker-alt"></i> Delhi, India | Remote Worldwide</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <div class="footer-left-info">
-                    <p class="copyright">&copy; 2026 Curious Kaizer. All rights reserved.</p>
-                </div>
-                <div class="footer-links">
-                    <a href="privacy.html">Privacy Policy</a>
-                    <span>•</span>
-                    <a href="terms.html">Terms of Service</a>
-                    <span>•</span>
-                    <a href="contact.html">Contact Us</a>
+                
+                <div class="footer-bottom-row">
+                    <div class="copyright-text">© 2026 Curious Kaizer</div>
+                    <div class="legal-links">
+                        <a href="privacy.html">Privacy Policy</a>
+                        <span class="link-separator">|</span>
+                        <a href="terms.html">Terms of Services</a>
+                    </div>
                 </div>
             </div>
         </div>

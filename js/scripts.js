@@ -289,8 +289,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // IntersectionObserver for Layout-Reflow-Free active section detection
-    if (sections.length > 0 && navAnchorLinks.length > 0) {
+    // IntersectionObserver for Layout-Reflow-Free active section detection (Only on Home Page)
+    const isHomePage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '' || window.location.pathname.endsWith('/');
+    if (isHomePage && sections.length > 0 && navAnchorLinks.length > 0) {
         const observerOptions = {
             root: null,
             rootMargin: '-180px 0px -40% 0px',

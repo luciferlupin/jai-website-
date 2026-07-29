@@ -121,70 +121,63 @@
             font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", sans-serif !important;
         }
 
-        /* Subpage Premium Hero Styling - Fully matching portfolio.html */
+        /* Subpage Premium Hero Styling - Fully matching portfolio.html / pricing.html */
         .subpage-hero {
-            padding: 5rem 0 2.5rem;
+            padding: 2rem 0 0.4rem;
             background: transparent;
             text-align: center;
-            border-bottom: 1px solid #f1f5f9;
+            border-bottom: none;
         }
         
         .subpage-hero-title {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 800;
             letter-spacing: -0.03em;
             color: #0f172a;
-            margin: 0.75rem 0 1rem;
+            margin: 0.4rem 0 0.6rem;
             line-height: 1.15;
             font-family: 'Inter Tight', sans-serif;
         }
 
         .section-subtitle {
             color: #475569;
-            font-size: 1.1rem;
-            line-height: 1.6;
+            font-size: 1.05rem;
+            line-height: 1.55;
+            margin-bottom: 0 !important;
         }
 
-        /* Filter Tab Bar - Cohesive styling */
-        .blog-filter-section {
-            background-color: #ffffff;
-            border-bottom: 1px solid #f1f5f9;
-            padding: 1.25rem 0;
-            position: sticky;
-            top: 70px;
-            z-index: 100;
-        }
-
+        /* Filter Tab Bar - Cohesive Apple Pill Styling */
         .filter-tabs {
             display: flex;
             justify-content: center;
-            gap: 12px;
-            margin-bottom: 0;
+            align-items: center;
+            gap: 10px;
+            margin: 0.5rem auto 1.8rem;
             flex-wrap: wrap;
         }
 
         .filter-tab {
-            padding: 0.6rem 1.5rem;
-            font-size: 0.95rem;
+            padding: 8px 20px;
+            font-size: 0.88rem;
             font-weight: 600;
-            background-color: #f8fafc;
+            background-color: #f1f5f9;
             color: #475569;
-            border: 1px solid #e2e8f0;
-            border-radius: 30px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 100px;
             cursor: pointer;
             transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
             outline: none;
         }
 
         .filter-tab.active, .filter-tab:hover {
-            background-color: #2563eb;
-            color: #ffffff;
-            border-color: #2563eb;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+            background-color: #007aff !important;
+            color: #ffffff !important;
+            border-color: #007aff !important;
+            box-shadow: 0 6px 18px rgba(0, 122, 255, 0.3) !important;
         }
 
         .blog-detail-section {
-            padding: 2.5rem 0;
+            padding: 1.5rem 0 2.5rem;
             background-color: #ffffff;
         }
 
@@ -299,9 +292,7 @@
         }
 
         .blog-author-strip {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            display: none !important;
         }
 
         .blog-author-avatar {
@@ -1213,10 +1204,8 @@
                 <span class="logo-text">Curious Kaizer</span>
             </a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html#home" title="Home" itemprop="url"><span itemprop="name">Home</span></a></li>
-                <li><a href="index.html#process" title="Process" itemprop="url"><span itemprop="name">Process</span></a></li>
+                <li><a href="index.html" title="Home" itemprop="url"><span itemprop="name">Home</span></a></li>
                 <li><a href="services.html" title="Capabilities" itemprop="url"><span itemprop="name">Capabilities</span></a></li>
-                <li><a href="index.html#why-us" title="Why Choose Us" itemprop="url"><span itemprop="name">Why Choose Us</span></a></li>
                 <li><a href="portfolio.html" title="Portfolio" itemprop="url"><span itemprop="name">Portfolio</span></a></li>
                 <li><a href="pricing.html" title="Pricing" itemprop="url"><span itemprop="name">Pricing</span></a></li>
                 <li><a href="blog.html" class="active" title="Blog" itemprop="url"><span itemprop="name">Blog</span></a></li>
@@ -1232,32 +1221,28 @@
     </nav>
     </header>
 
-    <!-- Subpage Hero - Identical to portfolio.html / pricing.html visual layout -->
-    <section class="subpage-hero">
+    <!-- Subpage Hero -->
+    <section class="subpage-hero" style="padding: 1.5rem 0 0.2rem !important;">
         <div class="container">
-            <h1 class="subpage-hero-title" data-aos="fade-up">
-                <span class="seo-subpage-pre-title" style="display: block; font-size: 0.95rem; text-transform: uppercase; font-weight: 800; color: #2563eb; letter-spacing: 0.15em; margin-bottom: 12px; font-family: 'Inter', sans-serif;">KAIZER INSIGHTS</span>
-                Insights & Ideas.<br><span class="highlight-blue">Engineered to perform.</span>
+            <h1 class="subpage-hero-title" style="font-size: 2.1rem; margin: 0.2rem 0 0.3rem;" data-aos="fade-up">
+                <span class="seo-subpage-pre-title" style="display: block; font-size: 0.88rem; text-transform: uppercase; font-weight: 800; color: #2563eb; letter-spacing: 0.15em; margin-bottom: 6px; font-family: 'Inter', sans-serif;">KAIZER INSIGHTS</span>
+                Insights & Ideas. <span class="highlight-blue">Engineered to perform.</span>
             </h1>
-            <p class="section-subtitle" style="margin: 0 auto; max-width: 650px;" data-aos="fade-up" data-aos-delay="100">Deep-dives into custom serverless architectures, database optimizations, and B2B software engineering. Written by Jai Goel.</p>
+            <p class="section-subtitle" style="margin: 0 auto; max-width: 650px; font-size: 0.9rem;" data-aos="fade-up" data-aos-delay="100">Deep-dives into custom serverless architectures, database optimizations, and B2B software engineering.</p>
         </div>
     </section>
 
-    <!-- Sticky Filter Tab Bar -->
-    <section class="blog-filter-section">
-        <div class="container">
-            <div class="filter-tabs" data-aos="fade-up" data-aos-delay="200">
+    <!-- Blog Detail Grid Section -->
+    <section class="blog-detail-section" style="padding: 0.6rem 0 2.5rem !important;">
+        <main class="container">
+            
+            <!-- Filter Tab Bar -->
+            <div class="filter-tabs" data-aos="fade-up">
                 <button class="filter-tab active" data-filter="all">All Stories</button>
                 <button class="filter-tab" data-filter="saas">SaaS & Databases</button>
                 <button class="filter-tab" data-filter="web">Web Design</button>
                 <button class="filter-tab" data-filter="ai">AI & Automation</button>
             </div>
-        </div>
-    </section>
-
-    <!-- Blog Detail Grid Section -->
-    <section class="blog-detail-section">
-        <main class="container">
             
             <!-- Featured Hero Post (AI / Inference Scaling) -->
             <article class="blog-featured-card blog-card-item" data-category="ai" data-aos="fade-up">

@@ -63,14 +63,12 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Subpage Apple Hero Section */
+        /* Subpage Apple Hero Section - Zero Extra Gap Viewport */
         .subpage-hero {
-            padding: 9rem 0 5rem;
-            background-color: transparent;
-            background-image: radial-gradient(circle at 50% 10%, rgba(0, 113, 227, 0.08) 0%, transparent 60%), linear-gradient(rgba(37, 99, 235, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235, 0.035) 1px, transparent 1px);
-            background-size: 100% 100%, 40px 40px, 40px 40px;
+            padding: 1.8rem 0 0.2rem !important;
+            background-color: transparent !important;
             text-align: center;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            border-bottom: none !important;
         }
 
         .hero-badge {
@@ -85,15 +83,15 @@
             font-weight: 600;
             letter-spacing: 0.04em;
             border: 1px solid rgba(0, 113, 227, 0.15);
-            margin-bottom: 1rem;
+            margin-bottom: 0.4rem;
         }
 
         .subpage-hero-title {
-            font-size: 3.6rem;
+            font-size: 2.2rem;
             font-weight: 700;
             letter-spacing: -0.035em;
             color: #1d1d1f;
-            margin: 0.8rem 0 1.2rem;
+            margin: 0.2rem 0 0.4rem;
             line-height: 1.12;
         }
 
@@ -106,13 +104,13 @@
 
         .section-subtitle {
             color: #86868b;
-            font-size: 1.25rem;
+            font-size: 1.05rem;
             line-height: 1.5;
             font-weight: 400;
         }
 
         .services-detail-grid {
-            padding: 4rem 0 6rem;
+            padding: 0.8rem 0 3rem !important;
             background-color: transparent;
         }
 
@@ -396,10 +394,8 @@
                 <span class="logo-text">Curious Kaizer</span>
             </a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html#home" title="Home" itemprop="url"><span itemprop="name">Home</span></a></li>
-                <li><a href="index.html#process" title="Process" itemprop="url"><span itemprop="name">Process</span></a></li>
+                <li><a href="index.html" title="Home" itemprop="url"><span itemprop="name">Home</span></a></li>
                 <li><a href="services.html" class="active" title="Capabilities" itemprop="url"><span itemprop="name">Capabilities</span></a></li>
-                <li><a href="index.html#why-us" title="Why Choose Us" itemprop="url"><span itemprop="name">Why Choose Us</span></a></li>
                 <li><a href="portfolio.html" title="Portfolio" itemprop="url"><span itemprop="name">Portfolio</span></a></li>
                 <li><a href="pricing.html" title="Pricing" itemprop="url"><span itemprop="name">Pricing</span></a></li>
                 <li><a href="blog.html" title="Blog" itemprop="url"><span itemprop="name">Blog</span></a></li>
@@ -416,14 +412,13 @@
     </header>
 
     <!-- Subpage Hero -->
-    <section class="subpage-hero">
+    <section class="subpage-hero" style="padding: 1.5rem 0 0.2rem;">
         <div class="container">
-            <div class="hero-badge">Capabilities</div>
-            <h1 class="subpage-hero-title">
-                <span class="seo-subpage-pre-title" style="display: block; font-size: 0.95rem; text-transform: uppercase; font-weight: 800; color: #2563eb; letter-spacing: 0.15em; margin-bottom: 12px; font-family: 'Inter', sans-serif;">Web Design & Development Capabilities</span>
-                Expert Capabilities.<br><span class="highlight-blue">Engineered for Results.</span>
+            <div class="hero-badge" style="margin-bottom: 0.3rem;">Capabilities</div>
+            <h1 class="subpage-hero-title" style="font-size: 2.1rem; margin: 0.2rem 0 0.3rem; line-height: 1.15;">
+                Expert Capabilities. <span class="highlight-blue">Engineered for Results.</span>
             </h1>
-            <p class="section-subtitle" style="margin: 0 auto; max-width: 700px;">We craft premium digital experiences, AI tools, SaaS systems, and digital marketing funnels that accelerate business performance and scalability.</p>
+            <p class="section-subtitle" style="margin: 0 auto 0.2rem; max-width: 650px; font-size: 0.9rem;">We craft premium digital experiences, AI tools, SaaS systems, and digital marketing funnels that accelerate business performance and scalability.</p>
         </div>
     </section>
 
@@ -731,79 +726,80 @@
     </section>
 
     <!-- Call to Action Banner -->
-    <section class="booking-premium-section" id="cta-services" style="background-color: #fafbfc;">
-        <div class="container" style="text-align: center; padding: 4rem 0;">
-            <div class="hero-badge">Get Started</div>
-            <h2>Let's build something <span class="highlight-blue">extraordinary.</span></h2>
-            <p class="section-subtitle" style="margin: 1rem auto 2rem; max-width: 600px;">Tell us about your project requirements and target goals. We'll deliver a comprehensive strategic brief and pricing mockup.</p>
+    <section class="booking-premium-section" id="cta-services" style="background-color: #fafbfc; padding: 2rem 0 !important;">
+        <div class="container" style="text-align: center; padding: 0.5rem 0;">
+            <div class="hero-badge" style="margin-bottom: 0.4rem;">Get Started</div>
+            <h2 style="font-size: 2.2rem; margin: 0.2rem 0 0.4rem;">Let's build something <span class="highlight-blue">extraordinary.</span></h2>
+            <p class="section-subtitle" style="margin: 0.4rem auto 1.2rem; max-width: 600px; font-size: 0.92rem;">Tell us about your project requirements and target goals. We'll deliver a comprehensive strategic brief and pricing mockup.</p>
             <a href="contact.html" class="cta-button primary">Consult Our Experts <i class="fas fa-arrow-right"></i></a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer footer-premium" role="contentinfo">
+    <!-- Footer -->
+    <footer class="footer-wantace" role="contentinfo">
+        <div class="footer-bg-glow"></div>
+        
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <a href="index.html" class="footer-logo-link">
-                        <img src="images/logo.jpg" alt="Curious Kaizer Logo" class="footer-logo-img" width="72" height="72" loading="lazy" decoding="async">
-                    </a>
-                    <p class="subtitle" style="margin-top: 0.5rem;">Where Innovation Meets Digital Excellence</p>
-                    <p class="tagline">
-                        Crafting bespoke, high-performance web applications, custom platforms, and design systems that scale your business.
-                    </p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/company/curious-kaizer/" target="_blank" rel="noopener me" aria-label="Curious Kaizer LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.instagram.com/curiouskaizer/" target="_blank" rel="noopener me" aria-label="Curious Kaizer Instagram Profile"><i class="fab fa-instagram"></i></a>
+            <div class="footer-card">
+                <div class="footer-card-grid">
+                    <!-- Column 1: Logo -->
+                    <div class="footer-col">
+                        <a href="index.html" class="footer-brand-logo">
+                            <div class="wantace-logo-box"><i class="fas fa-code"></i></div>
+                            <span class="brand-name">Curious Kaizer</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Column 2: SERVICES -->
+                    <div class="footer-col">
+                        <div class="col-header">SERVICES</div>
+                        <ul class="col-links">
+                            <li><a href="services.html">Custom Websites</a></li>
+                            <li><a href="services.html">E-Commerce Stores</a></li>
+                            <li><a href="services.html">Web Applications</a></li>
+                            <li><a href="crm-product.html">Custom CRM</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Column 3: COMPANY -->
+                    <div class="footer-col">
+                        <div class="col-header">COMPANY</div>
+                        <ul class="col-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="portfolio.html">Case Studies</a></li>
+                            <li><a href="index.html#why-choose-us">About</a></li>
+                            <li><a href="pricing.html#faq">FAQ</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Column 4: CONTACT -->
+                    <div class="footer-col">
+                        <div class="col-header">CONTACT</div>
+                        <ul class="col-links contact-links">
+                            <li><a href="https://wa.me/918595121436" target="_blank"><span class="contact-icon-circle wa"><i class="fab fa-whatsapp"></i></span>+91 85951 21436</a></li>
+                            <li><a href="mailto:info@curiouskaizer.com"><span class="contact-icon-circle mail"><i class="fas fa-envelope"></i></span>info@curiouskaizer.com</a></li>
+                        </ul>
                     </div>
                 </div>
-
-                <div class="footer-nav-col">
-                    <h3>Our Services</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="services.html">Custom Websites</a></li>
-                        <li><a href="services.html">E-Commerce Stores</a></li>
-                        <li><a href="services.html">Web Applications</a></li>
-                        <li><a href="crm-product.html">Custom CRM Solutions</a></li>
-                        <li><a href="services.html">AI & Automation Tools</a></li>
-                    </ul>
+                
+                <div class="footer-social-row">
+                    <span class="social-label">Our Socials</span>
+                    <div class="social-divider"></div>
+                    <div class="social-badges">
+                        <a href="https://www.linkedin.com/company/curious-kaizer/" class="social-badge linkedin-badge" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/curiouskaizer/" class="social-badge instagram-badge" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
-
-                <div class="footer-nav-col">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="index.html#home">Home / Process</a></li>
-                        <li><a href="services.html">Capabilities</a></li>
-                        <li><a href="index.html#why-us">Why Choose Us</a></li>
-                        <li><a href="portfolio.html">Our Portfolio</a></li>
-                        <li><a href="pricing.html">Pricing / FAQ</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-contact">
-                    <h3>Get in Touch</h3>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@curiouskaizer.com">info@curiouskaizer.com</a></li>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:curiouskaizer@gmail.com">curiouskaizer@gmail.com</a></li>
-                        <li><i class="fas fa-phone-alt"></i> <a href="tel:+918595121436">+91 85951 21436</a></li>
-                        <li><i class="fab fa-whatsapp" style="color: #25d366;"></i> <a href="https://wa.me/918595121436" target="_blank" rel="noopener">Chat on WhatsApp</a></li>
-                        <li><i class="fas fa-map-marker-alt"></i> Delhi, India | Remote Worldwide</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <div class="footer-left-info">
-                    <p class="copyright">&copy; 2026 Curious Kaizer. All rights reserved.</p>
-                </div>
-                <div class="footer-links">
-                    <a href="privacy.html">Privacy Policy</a>
-                    <span>•</span>
-                    <a href="terms.html">Terms of Service</a>
-                    <span>•</span>
-                    <a href="contact.html">Contact Us</a>
+                
+                <div class="footer-bottom-row">
+                    <div class="copyright-text">© 2026 Curious Kaizer</div>
+                    <div class="legal-links">
+                        <a href="privacy.html">Privacy Policy</a>
+                        <span class="link-separator">|</span>
+                        <a href="terms.html">Terms of Services</a>
+                    </div>
                 </div>
             </div>
         </div>
