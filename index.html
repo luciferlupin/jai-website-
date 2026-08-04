@@ -389,14 +389,14 @@
         ]
     }
     </script>
-    <link rel="preload" href="./css/styles.css?v=1.6" as="style">
+    <link rel="preload" href="./css/styles.css?v=arc-layout-20260730p" as="style">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@700;800&display=swap" rel="stylesheet"></noscript>
     
     <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.css?v=1.6">
+    <link rel="stylesheet" href="css/styles.css?v=arc-layout-20260730p">
     <style>
         /* Scroll Animation Styles */
         .fade-up {
@@ -430,7 +430,13 @@
     
 
 </head>
-<body class="home-wantace-background" itemscope itemtype="https://schema.org/WebPage">
+<body class="home-wantace-background" itemscope itemtype="https://schema.org/WebPage" style="position: relative;">
+
+    <!-- Pure Soft Ambient Glowing Top Half-Circle Gradient (No Lines, Sui-Style) -->
+    <div class="top-glow-arc-container" aria-hidden="true">
+        <div class="top-glow-arc-layer-1"></div>
+        <div class="top-glow-arc-layer-2"></div>
+    </div>
 
     <!-- Navigation -->
     <header class="site-header">
@@ -458,15 +464,15 @@
     </nav>
     </header>
 
-    <header id="home" class="hero" role="banner" style="background-color: transparent !important; min-height: 100vh; display: flex; flex-direction: column;">
-        <div class="container container-hero-fluid" style="flex: 1; display: flex; flex-direction: column;">
+    <header id="home" class="hero" role="banner" style="background-color: transparent !important; min-height: 100vh; display: flex; flex-direction: column; position: relative;">
+        <div class="container container-hero-fluid" style="flex: 1; display: flex; flex-direction: column; position: relative; z-index: 1;">
             <section class="hero-content" role="main" style="flex: 1; display: flex; flex-direction: column;">
                 <!-- 1. Headline with the animated typing text preserved inside -->
                 <h1 aria-label="Best Web Development Company in Delhi - Curious Kaizer" style="margin-top: 36px; margin-bottom: 14px; text-align: center; padding: 0 20px;">
                     <span class="hero-seo-title" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;">Delhi's Best Web Development Company</span>
                     <span style="display: grid; grid-template-columns: 100%; justify-content: center; align-items: center;">
                         <span class="typing-text-ghost" aria-hidden="true" style="grid-area: 1/1; visibility: hidden; pointer-events: none; user-select: none; font-weight: 600; display: block; width: 100%;">Your competitors have a website. Let's build one that's better.</span>
-                        <span class="typing-text" style="grid-area: 1/1; display: block; width: 100%; color: rgb(0, 0, 0);">Your competitors have a website. Let's build one that's better.</span>
+                        <span class="typing-text" style="grid-area: 1/1; display: block; width: 100%; color: #2563eb;">Your competitors have a website. Let's build one that's better.</span>
                     </span>
                 </h1>
 
@@ -529,204 +535,145 @@
                         <!-- Node 1: Discovery Call Card -->
                         <div class="timeline-card card-discovery float-anim-1">
                             <div class="win-header">
-                                <div class="card-stage-icon stage-icon-meeting">
-                                    <i class="fas fa-video" aria-hidden="true"></i>
-                                </div>
-                                <span class="win-title">Discovery Call</span>
+                                <span class="win-dots-light">...</span>
+                                <span class="win-title" style="color: #2563eb; font-weight: 700;">Discovery Call</span>
                             </div>
-                            <div class="win-body">
-                                <div class="meeting-workflow" aria-label="A private discovery call connects and goes live">
-                                    <div class="meeting-participants">
-                                        <div class="meeting-person">
-                                            <span class="meeting-avatar-wrap">
-                                                <img src="images/avatar-you.png" alt="You" class="avatar-circle">
-                                                <i class="fas fa-microphone meeting-presence" aria-hidden="true"></i>
-                                                <span class="meeting-voice-bars" aria-hidden="true">
-                                                    <i></i><i></i><i></i>
-                                                </span>
-                                            </span>
-                                            <span class="avatar-label">You</span>
-                                        </div>
-                                        <div class="meeting-connection" aria-hidden="true">
-                                            <span class="meeting-connection-line"></span>
-                                            <span class="meeting-signal-packet"></span>
-                                            <span class="meeting-video-ripple"></span>
-                                            <i class="fas fa-video"></i>
-                                        </div>
-                                        <div class="meeting-person">
-                                            <span class="meeting-avatar-wrap">
-                                                <img src="images/avatar-kaizer.png" alt="Curious Kaizer" class="avatar-circle">
-                                                <i class="fas fa-headset meeting-presence" aria-hidden="true"></i>
-                                                <span class="meeting-voice-bars" aria-hidden="true">
-                                                    <i></i><i></i><i></i>
-                                                </span>
-                                            </span>
-                                            <span class="avatar-label">Kaizer</span>
-                                        </div>
+                            <div class="win-body" style="padding-bottom: 10px;">
+                                <div class="avatar-pair-row" style="display: flex; gap: 10px; justify-content: center; align-items: center; margin-top: 14px; margin-bottom: 6px;">
+                                    <div style="display: flex; flex-direction: column; align-items: center; position: relative;">
+                                        <img src="images/avatar-you.png" alt="You" style="width: 74px; height: 74px; object-fit: contain; filter: drop-shadow(0 8px 16px rgba(15,23,42,0.12)); margin-bottom: 2px;">
+                                        <span style="font-size: 0.68rem; font-weight: 800; color: #1e293b; background: rgba(241, 245, 249, 0.95); padding: 2px 8px; border-radius: 100px; border: 1px solid rgba(226, 232, 240, 0.85); box-shadow: 0 2px 4px rgba(0,0,0,0.02); letter-spacing: 0.02em;">You</span>
                                     </div>
-                                    <div class="meeting-status-row">
-                                        <span class="meeting-control"><i class="fas fa-microphone" aria-hidden="true"></i></span>
-                                        <span class="meeting-control"><i class="fas fa-video" aria-hidden="true"></i></span>
-                                        <span class="meeting-live-status">
-                                            <i class="fas fa-circle" aria-hidden="true"></i>
-                                            <span class="meeting-status-label meeting-status-joining">Connecting</span>
-                                            <span class="meeting-status-label meeting-status-live">Live · 00:12</span>
-                                        </span>
+                                    <div style="display: flex; flex-direction: column; align-items: center; position: relative;">
+                                        <img src="images/avatar-kaizer.png" alt="Curious Kaizer" style="width: 74px; height: 74px; object-fit: contain; filter: drop-shadow(0 8px 16px rgba(15,23,42,0.12)); margin-bottom: 2px;">
+                                        <span style="font-size: 0.68rem; font-weight: 800; color: #2563eb; background: rgba(239, 246, 255, 0.95); padding: 2px 8px; border-radius: 100px; border: 1px solid rgba(191, 219, 254, 0.85); box-shadow: 0 2px 4px rgba(0,0,0,0.02); letter-spacing: 0.02em;">Kaizer</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Node 2: Strategy Card (Apple Window Style, sized like Card 1) -->
+                        <!-- Node 2: Strategy Blueprint Card with Electric Blue Brackets -->
                         <div class="timeline-card card-strategy float-anim-2">
-                            <div class="win-header">
-                                <div class="card-stage-icon stage-icon-strategy">
-                                    <i class="fas fa-compass" aria-hidden="true"></i>
+                            <div class="corner-bracket corner-bracket-tl">┌</div>
+                            <div class="corner-bracket corner-bracket-tr">┐</div>
+                            <div class="corner-bracket corner-bracket-bl">└</div>
+                            <div class="corner-bracket corner-bracket-br">┘</div>
+
+                            <div class="strategy-card-inner" style="display: flex; flex-direction: column; height: 100%; justify-content: space-between;">
+                                <span class="strategy-solid-badge" style="align-self: flex-start; margin-bottom: 6px;">Strategy</span>
+
+                                <!-- Research Section: Mini Bar Chart and Live Crawling Status -->
+                                <div class="research-status-group" style="display: flex; align-items: center; justify-content: space-between; background: rgba(37,99,235,0.03); border: 1px dashed rgba(37,99,235,0.20); border-radius: 8px; padding: 5px 8px; margin-bottom: 6px;">
+                                    <div style="display: flex; flex-direction: column; gap: 1px;">
+                                        <span style="font-size: 0.48rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em;">Research</span>
+                                        <div class="research-live-tag" style="display: flex; align-items: center; gap: 4px;">
+                                            <span class="live-dot-pulse" style="width: 4px; height: 4px; background: #10b981; border-radius: 50%;"></span>
+                                            <span class="research-status-text" style="font-size: 0.52rem; font-weight: 800; color: #10b981; font-family: monospace;"></span>
+                                        </div>
+                                    </div>
+                                    <!-- Mini 3-bar animated graph -->
+                                    <div class="mini-bar-graph" style="display: flex; gap: 2px; align-items: flex-end; height: 14px;">
+                                        <span class="bar bar-1" style="width: 2.5px; background: #2563eb; border-radius: 1px; display: inline-block;"></span>
+                                        <span class="bar bar-2" style="width: 2.5px; background: #3b82f6; border-radius: 1px; display: inline-block;"></span>
+                                        <span class="bar bar-3" style="width: 2.5px; background: #60a5fa; border-radius: 1px; display: inline-block;"></span>
+                                    </div>
                                 </div>
-                                <span class="win-title">Strategy Plan</span>
-                            </div>
-                            <div class="win-body">
-                                <div class="strategy-workflow" aria-label="Goals become priorities and a delivery roadmap">
-                                    <div class="strategy-workflow-head">
-                                        <span><i class="fas fa-magic" aria-hidden="true"></i> Planning sprint</span>
-                                        <strong class="strategy-step-count" aria-label="Three of three planning steps complete">
-                                            <span class="strategy-count-state strategy-count-one">1/3</span>
-                                            <span class="strategy-count-state strategy-count-two">2/3</span>
-                                            <span class="strategy-count-state strategy-count-three">3/3</span>
-                                        </strong>
+
+                                <!-- Strategy Writing Section: Typing Strategy Items -->
+                                <div class="strategy-writing-box" style="display: flex; flex-direction: column; gap: 4px; font-family: monospace; text-align: left; padding: 2px 0;">
+                                    <div class="writing-line line-1" style="font-size: 0.58rem; color: #1e293b; font-weight: 700; display: flex; align-items: center; gap: 3px;">
+                                        <span style="color: #2563eb; font-weight: 800;">✓</span> <span>Market Map</span>
                                     </div>
-                                    <div class="strategy-workflow-steps">
-                                        <div class="strategy-workflow-step">
-                                            <i class="fas fa-bullseye" aria-hidden="true"></i>
-                                            <span>Goals</span>
-                                            <span class="strategy-step-state" aria-hidden="true"></span>
-                                        </div>
-                                        <div class="strategy-workflow-step">
-                                            <i class="fas fa-list-ul" aria-hidden="true"></i>
-                                            <span>Priorities</span>
-                                            <span class="strategy-step-state" aria-hidden="true"></span>
-                                        </div>
-                                        <div class="strategy-workflow-step">
-                                            <i class="fas fa-route" aria-hidden="true"></i>
-                                            <span>Roadmap</span>
-                                            <span class="strategy-step-state" aria-hidden="true"></span>
-                                        </div>
-                                        <span class="strategy-flow-packet" aria-hidden="true"></span>
+                                    <div class="writing-line line-2" style="font-size: 0.58rem; color: #1e293b; font-weight: 700; display: flex; align-items: center; gap: 3px;">
+                                        <span style="color: #2563eb; font-weight: 800;">✓</span> <span>User Flows</span>
                                     </div>
-                                    <div class="strategy-workflow-progress" aria-hidden="true">
-                                        <span></span>
+                                    <div class="writing-line line-3" style="font-size: 0.58rem; color: #2563eb; font-weight: 800; display: flex; align-items: center; gap: 3px;">
+                                        <span>✎</span> <span class="typing-text-active">Stack Draft</span><span class="typing-cursor">|</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Node 3: 4h Prototype Build Card -->
+                        <!-- Node 3: 48h Prototype Build Card (Split-screen IDE + Mockup) -->
                         <div class="timeline-card card-mockup float-anim-3">
-                            <div class="win-header">
-                                <div class="card-stage-icon stage-icon-build">
-                                    <i class="fas fa-code" aria-hidden="true"></i>
+                            <div class="prototype-card-inner" style="display: flex; flex-direction: column; overflow: hidden; border-radius: 12px; height: 100%;">
+                                <!-- Top Half: Dark Code Editor -->
+                                <div class="prototype-ide-header-dark" style="background: #0f172a; padding: 10px 12px; display: flex; flex-direction: column; gap: 6px;">
+                                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2px;">
+                                        <span class="win-dots-light" style="color: #64748b; font-size: 0.6rem; letter-spacing: 1px;">•••</span>
+                                        <span style="color: #38bdf8; font-family: monospace; font-size: 0.65rem; font-weight: 700;">app.tsx</span>
+                                    </div>
+                                    <div class="code-editor-lines" style="font-family: monospace; font-size: 0.55rem; line-height: 1.4; display: flex; flex-direction: column; gap: 3px; text-align: left;">
+                                        <div><span style="color: #f43f5e;">const</span> <span style="color: #60a5fa;">App</span> = () => {</div>
+                                        <div style="padding-left: 8px; overflow: hidden; white-space: nowrap; border-right: 1.5px solid #38bdf8; width: 0; animation: typeCode 4s steps(20) infinite alternate; display: inline-block;">
+                                            <span style="color: #fbbf24;">return</span> &lt;<span style="color: #34d399;">Logo</span> /&gt;;
+                                        </div>
+                                        <div>};</div>
+                                    </div>
                                 </div>
-                                <span class="win-title">4h Prototype</span>
-                            </div>
-                            <div class="win-body">
-                                <div class="prototype-workflow" aria-label="The interface, API, and quality checks build into a four-hour prototype">
-                                    <div class="prototype-workflow-head">
-                                        <span class="prototype-time"><i class="fas fa-bolt" aria-hidden="true"></i> 4 HRS</span>
-                                        <span class="prototype-build-state" aria-label="Prototype ready">
-                                            <span class="prototype-state-item prototype-state-scaffold">Scaffold</span>
-                                            <span class="prototype-state-item prototype-state-connect">Connect</span>
-                                            <span class="prototype-state-item prototype-state-validate">Validate</span>
-                                            <span class="prototype-state-item prototype-state-ready">Ready</span>
-                                        </span>
+                                <!-- Bottom Half: Light Preview Wireframe / Build Terminal -->
+                                <div class="prototype-ide-body" style="background: #ffffff; padding: 12px; border-top: 1px solid #e2e8f0; display: flex; flex-direction: column; gap: 8px; flex: 1; border-radius: 0 0 12px 12px; position: relative;">
+                                    <!-- Build Terminal / Progress Bar -->
+                                    <div class="build-progress-wrap" style="display: flex; flex-direction: column; gap: 4px; width: 100%;">
+                                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                                            <span class="build-status-text" style="font-size: 0.50rem; font-family: monospace; font-weight: 700; color: #64748b; text-transform: uppercase;"></span>
+                                            <span class="build-percent-text" style="font-size: 0.50rem; font-family: monospace; font-weight: 700; color: #2563eb;"></span>
+                                        </div>
+                                        <!-- Progress Bar Track -->
+                                        <div style="width: 100%; height: 3px; background: #e2e8f0; border-radius: 2px; overflow: hidden;">
+                                            <div class="build-progress-bar" style="height: 100%; width: 0; background: #2563eb; border-radius: 2px;"></div>
+                                        </div>
                                     </div>
-                                    <div class="prototype-build-board">
-                                        <div class="prototype-build-step">
-                                            <i class="fas fa-layer-group" aria-hidden="true"></i>
-                                            <span>UI</span>
-                                            <small>ready</small>
+
+                                    <!-- Compiled App Preview -->
+                                    <div class="compiled-preview-box" style="display: flex; flex-direction: column; gap: 5px; width: 100%; position: absolute; bottom: 12px; left: 12px; right: 12px; width: calc(100% - 24px);">
+                                        <div class="logo-box-placeholder" style="background: rgba(37,99,235,0.06); color: #2563eb; font-weight: 800; font-size: 0.65rem; padding: 6px; border-radius: 4px; text-align: center; letter-spacing: 0.05em; margin-top: 2px; box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);">LOGO</div>
+                                        <div class="code-lines-block" style="display: flex; flex-direction: column; gap: 4px;">
+                                            <span style="display: block; height: 4px; background: #e2e8f0; border-radius: 2px; width: 90%;"></span>
+                                            <span style="display: block; height: 4px; background: #e2e8f0; border-radius: 2px; width: 70%;"></span>
                                         </div>
-                                        <div class="prototype-build-step">
-                                            <i class="fas fa-plug" aria-hidden="true"></i>
-                                            <span>API</span>
-                                            <small>linked</small>
-                                        </div>
-                                        <div class="prototype-build-step">
-                                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
-                                            <span>QA</span>
-                                            <small>passed</small>
-                                        </div>
-                                        <span class="prototype-build-scan" aria-hidden="true"></span>
-                                        <span class="prototype-build-packet" aria-hidden="true"></span>
-                                    </div>
-                                    <div class="prototype-progress-row">
-                                        <div class="prototype-progress-track" aria-hidden="true">
-                                            <span></span>
-                                        </div>
-                                        <strong class="prototype-progress-value" aria-label="Build one hundred percent complete">
-                                            <span class="prototype-progress-state prototype-progress-start">24%</span>
-                                            <span class="prototype-progress-state prototype-progress-middle">68%</span>
-                                            <span class="prototype-progress-state prototype-progress-done">100%</span>
-                                        </strong>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Node 4: Website Live Card -->
+                        <!-- Node 4: Website Live Banner Card -->
                         <div class="timeline-card card-launch float-anim-4">
-                            <div class="win-header">
-                                <div class="card-stage-icon stage-icon-launch">
-                                    <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
-                                </div>
-                                <span class="win-title">Production Deploy</span>
+                            <div class="url-header-row">
+                                <i class="fas fa-globe" style="color: #2563eb;"></i>
+                                <span class="url-text">yourproduct.com</span>
                             </div>
-                            <div class="win-body">
-                                <div class="deploy-workflow" aria-label="Code builds, deploys, and becomes a healthy production release">
-                                    <div class="deploy-environment">
-                                        <span><i class="fas fa-server" aria-hidden="true"></i> Production</span>
-                                        <strong class="deploy-health" aria-label="Version one is healthy">
-                                            <span class="deploy-health-state deploy-health-pending">Deploying</span>
-                                            <span class="deploy-health-state deploy-health-ready">v1.0 · Healthy</span>
-                                        </strong>
-                                    </div>
-                                    <div class="deploy-pipeline">
-                                        <div class="deploy-stage deploy-stage-code">
-                                            <i class="fas fa-code-branch" aria-hidden="true"></i>
-                                            <span>Code</span>
-                                            <small>commit</small>
-                                        </div>
-                                        <span class="deploy-link" aria-hidden="true"></span>
-                                        <div class="deploy-stage deploy-stage-build">
-                                            <i class="fas fa-cog" aria-hidden="true"></i>
-                                            <span>Build</span>
-                                            <small>bundle</small>
-                                        </div>
-                                        <span class="deploy-link" aria-hidden="true"></span>
-                                        <div class="deploy-stage deploy-stage-live">
-                                            <i class="fas fa-globe" aria-hidden="true"></i>
-                                            <span>Live</span>
-                                            <small>global</small>
-                                        </div>
-                                    </div>
-                                    <div class="deploy-live-status">
-                                        <i class="fas fa-signal" aria-hidden="true"></i>
-                                        <span class="deploy-status-label deploy-status-progress">DEPLOYING</span>
-                                        <span class="deploy-status-label deploy-status-live">LIVE · 32MS</span>
-                                    </div>
+                            <div class="by-author-line" style="display: flex; align-items: center; gap: 4px; margin-top: 4px; margin-bottom: 8px; justify-content: center;">
+                                <i class="far fa-user" style="font-size: 0.55rem; color: #64748b;"></i>
+                                <span style="font-size: 0.6rem; color: #64748b; font-weight: 600;">By Curious Kaizer</span>
+                            </div>
+                            <div class="live-pill-container">
+                                <div class="live-badge-green" style="background: #10b981; color: #ffffff; font-size: 0.72rem; font-weight: 800; padding: 6px 14px; border-radius: 100px; display: inline-flex; align-items: center; box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35); letter-spacing: 0.02em;">
+                                    WE ARE LIVE!
                                 </div>
+                                <span class="confetti-sparkle spark-1">✨</span>
+                                <span class="confetti-sparkle spark-2">✨</span>
                             </div>
                         </div>
 
-                        <!-- Curve node: left slope (between Discovery & Strategy) -->
-                        <div class="timeline-node node-strategy">
-                            <div class="node-marker"><i class="fas fa-compass" aria-hidden="true"></i></div>
-                            <span class="node-stage-label">Plan</span>
+                        <!-- Node 1: Meet Node (Blue Circle) -->
+                        <div class="timeline-node node-step-1 node-blue">
+                            <div class="node-marker"><i class="fas fa-video"></i></div>
                         </div>
 
-                        <!-- Curve node: right slope (between Mockup & Launch) -->
-                        <div class="timeline-node node-mockup">
-                            <div class="node-marker"><i class="fas fa-code" aria-hidden="true"></i></div>
-                            <span class="node-stage-label">Build</span>
+                        <!-- Node 2: Strategy Node (White/Blue Circle) -->
+                        <div class="timeline-node node-step-2 node-white-blue">
+                            <div class="node-marker"><i class="fas fa-random"></i></div>
+                        </div>
+
+                        <!-- Node 3: Build Node (White/Blue Circle) -->
+                        <div class="timeline-node node-step-3 node-white-blue">
+                            <div class="node-marker"><i class="fas fa-code"></i></div>
+                        </div>
+
+                        <!-- Node 4: Launch Node (Blue Circle) -->
+                        <div class="timeline-node node-step-4 node-blue">
+                            <div class="node-marker"><i class="fas fa-check"></i></div>
                         </div>
 
                         <!-- Mobile-only active stage indicator -->
@@ -1595,90 +1542,72 @@
                     .confetti.c4 { background: #007aff; --tx: 40px; --ty: 30px; --tr: -60deg; animation: confettiBurst 2.5s infinite 0.1s; }
                     .confetti.c5 { background: #7c3aed; --tx: 0px; --ty: -45px; --tr: 15deg; animation: confettiBurst 2.3s infinite 0.4s; }
 
-                    /* Timeline Nodes (Strategy & Mockup) */
+                    /* Timeline Nodes matching Wantace exactly */
                     .timeline-node {
-                        position: absolute;
-                        width: 44px;
-                        height: 44px;
-                        border-radius: 50%;
-                        background: #ffffff;
-                        border: 2px solid #e2e8f0;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        z-index: 10;
-                        cursor: pointer;
-                        box-shadow: 0 4px 12px rgba(15,23,42,0.06);
-                        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-                    }
-                    .timeline-node:hover {
-                        transform: translateX(-50%) scale(1.1);
-                        border-color: #007aff;
-                        box-shadow: 0 10px 24px rgba(0, 122, 255, 0.12);
-                    }
-                    /*
-                     * Nodes: on the downslope of the arch between outer and inner cards.
-                     * At t≈0.15: screen x≈25%, screen y≈220px → node left:25%, top:208px (center at 230)
-                     */
-                    .timeline-node.node-strategy {
-                        left: 25%;
-                        top: 208px;
-                        transform: translateX(-50%);
-                    }
-                    .timeline-node.node-mockup {
-                        left: 75%;
-                        top: 208px;
-                        transform: translateX(-50%);
+                        width: 34px !important;
+                        height: 34px !important;
+                        border-radius: 50% !important;
+                        background: #ffffff !important;
+                        border: 1.5px solid #2563eb !important;
+                        display: flex !important;
+                        align-items: center !important;
+                        justify-content: center !important;
+                        position: absolute !important;
+                        z-index: 10 !important;
+                        box-shadow: 0 4px 10px rgba(37, 99, 235, 0.15) !important;
+                        transform: translate(-50%, -50%) !important;
+                        transition: all 0.3s ease !important;
                     }
                     .timeline-node .node-marker {
-                        font-size: 1.1rem;
-                        color: #94a3b8;
-                        transition: color 0.3s ease;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
+                        color: #2563eb !important;
+                        font-size: 0.8rem !important;
+                        display: flex !important;
+                        align-items: center !important;
+                        justify-content: center !important;
                     }
-                    .timeline-node:hover .node-marker {
-                        color: #007aff;
+                    .timeline-node.node-step-1 {
+                        left: calc(12.9% + 87.5px) !important;
+                        top: 168px !important;
                     }
-
-                    /* Glow indicators for nodes (on-line points) */
-                    .timeline-node::before {
+                    .timeline-node.node-step-2 {
+                        left: 41.5% !important;
+                        top: 236px !important;
+                    }
+                    .timeline-node.node-step-3 {
+                        left: 65.5% !important;
+                        top: 236px !important;
+                    }
+                    .timeline-node.node-step-4 {
+                        left: calc(86% - 82.5px) !important;
+                        top: 168px !important;
+                    }
+                    .timeline-node.node-blue {
+                        background: #2563eb !important;
+                        border: 1.5px solid #2563eb !important;
+                    }
+                    .timeline-node.node-blue .node-marker {
+                        color: #ffffff !important;
+                    }
+                    .timeline-node.node-white-blue {
+                        background: #ffffff !important;
+                        border: 1.5px solid #2563eb !important;
+                    }
+                    .timeline-node.node-white-blue .node-marker {
+                        color: #2563eb !important;
+                    }
+                    .timeline-node.node-step-1::after,
+                    .timeline-node.node-step-4::after {
                         content: '';
                         position: absolute;
-                        width: 10px;
-                        height: 10px;
+                        inset: -6px;
                         border-radius: 50%;
-                        background: #007aff;
-                        opacity: 0;
-                        transition: opacity 0.3s ease;
+                        border: 1px solid rgba(37, 99, 235, 0.3);
+                        animation: nodePulseGlow 2s infinite ease-out;
+                        pointer-events: none;
                     }
-                    .timeline-node:hover::before {
-                        opacity: 0.15;
-                        transform: scale(3.5);
-                        animation: nodeGlowPulse 1.5s infinite ease-in-out;
-                    }
-                    @keyframes nodeGlowPulse {
-                        0% { transform: scale(1); opacity: 0.4; }
-                        100% { transform: scale(4); opacity: 0; }
-                    }
-
-                    /* Popup items for Nodes */
-                    .timeline-node .node-popup {
-                        position: absolute;
-                        bottom: calc(100% + 12px);
-                        background: #ffffff;
-                        border: 1px solid rgba(226, 232, 240, 0.9);
-                        border-radius: 12px;
-                        box-shadow: 0 12px 32px rgba(15,23,42,0.08);
-                        opacity: 1;
-                        pointer-events: auto;
-                        transform: scale(1) translateY(0);
-                        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-                        display: flex;
-                        flex-direction: column;
-                        gap: 4px;
-                        z-index: 100;
+                    @keyframes nodePulseGlow {
+                        0% { transform: scale(0.9); opacity: 1; }
+                        100% { transform: scale(1.4); opacity: 0; }
                     }
 
                     /* Card 2 — BOTTOM-CENTER-LEFT inner.
@@ -1997,6 +1926,117 @@
                             padding: 8px 16px;
                             font-size: 0.68rem;
                         }
+                    }
+
+                    /* Card 2: Research & Writing Animation Overrides */
+                    @keyframes liveDotPulse {
+                        0%, 100% { opacity: 0.4; transform: scale(0.9); }
+                        50% { opacity: 1; transform: scale(1.1); }
+                    }
+                    .live-dot-pulse {
+                        animation: liveDotPulse 1.2s infinite ease-in-out;
+                    }
+
+                    @keyframes barGrow1 {
+                        0%, 100% { height: 6px; }
+                        50% { height: 16px; }
+                    }
+                    @keyframes barGrow2 {
+                        0%, 100% { height: 14px; }
+                        50% { height: 8px; }
+                    }
+                    @keyframes barGrow3 {
+                        0%, 100% { height: 10px; }
+                        50% { height: 15px; }
+                    }
+                    .mini-bar-graph .bar-1 { animation: barGrow1 1.2s infinite ease-in-out; }
+                    .mini-bar-graph .bar-2 { animation: barGrow2 0.8s infinite ease-in-out; }
+                    .mini-bar-graph .bar-3 { animation: barGrow3 1s infinite ease-in-out; }
+
+                    @keyframes statusCycling {
+                        0%, 33% { content: "ANALYZING"; }
+                        34%, 66% { content: "SCRAPING"; }
+                        67%, 100% { content: "MAPPING"; }
+                    }
+                    .research-status-text::after {
+                        content: "ANALYZING";
+                        animation: statusCycling 3.6s infinite step-end;
+                    }
+
+                    @keyframes revealLine1 {
+                        0%, 5% { opacity: 0; transform: translateY(3px); }
+                        10%, 85% { opacity: 1; transform: translateY(0); }
+                        90%, 100% { opacity: 0; transform: translateY(3px); }
+                    }
+                    @keyframes revealLine2 {
+                        0%, 25% { opacity: 0; transform: translateY(3px); }
+                        30%, 85% { opacity: 1; transform: translateY(0); }
+                        90%, 100% { opacity: 0; transform: translateY(3px); }
+                    }
+                    @keyframes revealLine3 {
+                        0%, 50% { opacity: 0; transform: translateY(3px); }
+                        55%, 85% { opacity: 1; transform: translateY(0); }
+                        90%, 100% { opacity: 0; transform: translateY(3px); }
+                    }
+                    .writing-line.line-1 { animation: revealLine1 6s infinite ease-in-out; }
+                    .writing-line.line-2 { animation: revealLine2 6s infinite ease-in-out; }
+                    .writing-line.line-3 { animation: revealLine3 6s infinite ease-in-out; }
+
+                    @keyframes cursorBlink {
+                        50% { opacity: 0; }
+                    }
+                    .typing-cursor {
+                        animation: cursorBlink 0.8s infinite step-start;
+                    }
+
+                    /* Card 3: Code Typing & Build Cycle Animation Overrides */
+                    @keyframes typeCode {
+                        0%, 10% { width: 0; }
+                        50%, 90% { width: 78px; }
+                        100% { width: 0; }
+                    }
+
+                    @keyframes buildStatusCycle {
+                        0%, 45% { content: "BUILDING..."; color: #64748b; }
+                        50%, 90% { content: "READY"; color: #10b981; }
+                        95%, 100% { content: "BUILDING..."; color: #64748b; }
+                    }
+                    .build-status-text::after {
+                        content: "BUILDING...";
+                        animation: buildStatusCycle 4s infinite step-end;
+                    }
+
+                    @keyframes buildPercentCycle {
+                        0% { content: "0%"; }
+                        10% { content: "24%"; }
+                        20% { content: "48%"; }
+                        30% { content: "72%"; }
+                        40% { content: "95%"; }
+                        45%, 90% { content: "100%"; color: #10b981; }
+                        95%, 100% { content: "0%"; color: #2563eb; }
+                    }
+                    .build-percent-text::after {
+                        content: "0%";
+                        animation: buildPercentCycle 4s infinite step-end;
+                    }
+
+                    @keyframes progressFill {
+                        0% { width: 0%; background: #2563eb; }
+                        45% { width: 100%; background: #2563eb; }
+                        50%, 90% { width: 100%; background: #10b981; }
+                        95%, 100% { width: 0%; background: #2563eb; }
+                    }
+                    .build-progress-bar {
+                        animation: progressFill 4s infinite ease-in-out;
+                    }
+
+                    @keyframes previewReveal {
+                        0%, 48% { opacity: 0; transform: translateY(4px); }
+                        55%, 90% { opacity: 1; transform: translateY(0); }
+                        95%, 100% { opacity: 0; transform: translateY(4px); }
+                    }
+                    .compiled-preview-box {
+                        animation: previewReveal 4s infinite ease-in-out;
                     }
                 </style>
 
@@ -2819,6 +2859,308 @@
 
                 </div>
             </div>
+    </section>
+
+    <!-- Design & Engineering Blueprint Specifications Section (Behance Guardbase Style) -->
+    <section id="design-system-spec" class="design-spec-section" data-aos="fade-up" data-aos-duration="800">
+        <div class="container" style="max-width: 1140px; margin: 0 auto; padding: 0 20px;">
+            
+            <div class="section-header" style="text-align: center;">
+                <div style="text-align: center;">
+                    <div class="hero-badge">Execution Framework</div>
+                </div>
+                <h2 data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">Design Systems &amp; <span class="highlight-blue">Engineering Specs.</span></h2>
+                <p class="section-subtitle">How we structure brand positioning, diagrammatic interactive UI systems, and high-converting full-stack software.</p>
+            </div>
+
+            <!-- Architectural Blueprint Grid Container -->
+            <div class="spec-blueprint-grid">
+                
+                <!-- TOP ROW: Goal & Market Reach Matrix -->
+                <div class="spec-row spec-row-top">
+                    <!-- Top Left: Concentric Market Reach Circles Diagram -->
+                    <div class="spec-col spec-col-tam" title="Client Market Reach Architecture: TAM (Total Addressable Market), SAM (Serviceable Addressable Market), SOM (Serviceable Obtainable Market)">
+                        <div class="spec-crosshair cross-tl">+</div>
+                        <div class="spec-crosshair cross-tr">+</div>
+                        <div class="spec-crosshair cross-bl">+</div>
+                        <div class="spec-crosshair cross-br">+</div>
+
+                        <div class="concentric-circles-wrapper">
+                            <div class="circle-tam" title="TAM: Total Market Expansion ($100B+)">
+                                <span class="circle-label-top">TAM</span>
+                                <span class="circle-val">$100B+</span>
+                                <div class="circle-sam" title="SAM: Serviceable Segment ($15B+)">
+                                    <span class="circle-label-top">SAM</span>
+                                    <span class="circle-val">$15B+</span>
+                                    <div class="circle-som" title="SOM: Core Target Capture ($2B+)">
+                                        <span class="circle-label-top">SOM</span>
+                                        <span class="circle-val">$2B+</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Top Right: The Goal Headline Box -->
+                    <div class="spec-col spec-col-goal">
+                        <div class="spec-crosshair cross-tl">+</div>
+                        <div class="spec-crosshair cross-tr">+</div>
+                        <div class="spec-crosshair cross-bl">+</div>
+                        <div class="spec-crosshair cross-br">+</div>
+
+                        <div class="spec-tag-label"><span class="blue-square">■</span> THE GOAL</div>
+                        <h3 class="spec-goal-headline">Build a commanding brand identity and high-performance digital ecosystem that position Curious Kaizer clients as the indisputable authority in their market.</h3>
+                    </div>
+                </div>
+
+                <!-- MIDDLE ROW: The Process Breakdown (3 Columns) -->
+                <div class="spec-row spec-row-process">
+                    <div class="spec-process-header-bar">
+                        <span class="blue-square">■</span> THE PROCESS
+                    </div>
+
+                    <div class="spec-process-columns">
+                        <!-- Step 01 -->
+                        <div class="spec-col spec-col-step">
+                            <div class="spec-crosshair cross-tl">+</div>
+                            <div class="spec-crosshair cross-tr">+</div>
+                            <div class="spec-crosshair cross-bl">+</div>
+                            <div class="spec-crosshair cross-br">+</div>
+
+                            <span class="spec-step-num">01</span>
+                            <h4 class="spec-step-title">Brand Positioning &amp; Messaging</h4>
+                            <ul class="spec-step-list">
+                                <li><span class="list-gt">&gt;</span> Value proposition &amp; messaging hierarchy</li>
+                                <li><span class="list-gt">&gt;</span> High-converting copywriting &amp; tone of voice</li>
+                                <li><span class="list-gt">&gt;</span> Brand narrative &amp; authority positioning</li>
+                                <li><span class="list-gt">&gt;</span> Key market messaging pillars</li>
+                            </ul>
+                        </div>
+
+                        <!-- Step 02 -->
+                        <div class="spec-col spec-col-step">
+                            <div class="spec-crosshair cross-tl">+</div>
+                            <div class="spec-crosshair cross-tr">+</div>
+                            <div class="spec-crosshair cross-bl">+</div>
+                            <div class="spec-crosshair cross-br">+</div>
+
+                            <span class="spec-step-num">02</span>
+                            <h4 class="spec-step-title">Visual Identity &amp; System Design</h4>
+                            <ul class="spec-step-list">
+                                <li><span class="list-gt">&gt;</span> Custom visual mark &amp; vector branding</li>
+                                <li><span class="list-gt">&gt;</span> Scalable typography token system</li>
+                                <li><span class="list-gt">&gt;</span> Harmonious HSL tokenized palettes</li>
+                                <li><span class="list-gt">&gt;</span> Diagrammatic illustrations &amp; micro-motion</li>
+                            </ul>
+                        </div>
+
+                        <!-- Step 03 -->
+                        <div class="spec-col spec-col-step">
+                            <div class="spec-crosshair cross-tl">+</div>
+                            <div class="spec-crosshair cross-tr">+</div>
+                            <div class="spec-crosshair cross-bl">+</div>
+                            <div class="spec-crosshair cross-br">+</div>
+
+                            <span class="spec-step-num">03</span>
+                            <h4 class="spec-step-title">Full-Stack &amp; AI Engineering</h4>
+                            <ul class="spec-step-list">
+                                <li><span class="list-gt">&gt;</span> Bespoke web &amp; SaaS application engineering</li>
+                                <li><span class="list-gt">&gt;</span> 100/100 Core Web Vitals performance</li>
+                                <li><span class="list-gt">&gt;</span> Autonomous AI Agents &amp; API workflows</li>
+                                <li><span class="list-gt">&gt;</span> Advanced SEO architecture &amp; analytics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BOTTOM ROW: Custom Illustrations & Isometric Icons (Screenshot 1 Layout) -->
+                <div class="spec-row spec-row-illustrations">
+                    
+                    <!-- Left Side: 02 Custom Illustrations & Diagrammatic Cards -->
+                    <div class="spec-col spec-col-illustrations-left">
+                        <div class="spec-crosshair cross-tl">+</div>
+                        <div class="spec-crosshair cross-tr">+</div>
+                        <div class="spec-crosshair cross-bl">+</div>
+                        <div class="spec-crosshair cross-br">+</div>
+
+                        <div class="spec-block-header">
+                            <h3 class="spec-block-title">Custom Illustrations</h3>
+                            <span class="spec-big-num">02</span>
+                        </div>
+                        <p class="spec-block-desc">Curious Kaizer illustrations are functional, not decorative. They visualize complex product flows, AI agent architectures, and data pipelines in a clean, diagrammatic style. Each illustration clarifies — never complicates.</p>
+
+                        <!-- Two Diagrammatic Visual Cards -->
+                        <div class="spec-visual-cards-flex">
+                            <!-- Diagrammatic Card 1: Node Agent Flow -->
+                            <div class="spec-vis-card card-purple" title="Autonomous AI Agent & Workflows Engine">
+                                <div class="vis-node-bg">
+                                    <div class="vis-box vis-box-top" style="display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 700; color: #2563eb; letter-spacing: 0.05em;">USER QUERY</div>
+                                    <div class="vis-box vis-box-bottom">
+                                        <span class="vis-badge-blue">AGENT</span>
+                                    </div>
+                                    <div class="vis-node-line"></div>
+                                    <span class="vis-badge-main">AI ORCHESTRATOR</span>
+                                </div>
+                            </div>
+
+                            <!-- Diagrammatic Card 2: Interactive Arc Gauge Meter -->
+                            <div class="spec-vis-card card-cyan-grid" title="Hover or click to toggle high-performance Core Web Vitals metric sweep">
+                                <div class="spec-crosshair cross-tl">+</div>
+                                <div class="spec-crosshair cross-tr">+</div>
+                                <div class="spec-crosshair cross-bl">+</div>
+                                <div class="spec-crosshair cross-br">+</div>
+
+                                <div class="gauge-card-content">
+                                    <span class="gauge-title">CORE WEB VITALS SCORE</span>
+                                    <div class="gauge-meter-wrapper">
+                                        <svg class="gauge-svg" viewBox="0 0 120 70">
+                                            <path d="M 15 60 A 45 45 0 0 1 105 60" fill="none" stroke="#e2e8f0" stroke-width="8" stroke-linecap="round"/>
+                                            <path class="gauge-arc-path" d="M 15 60 A 45 45 0 1 1 96 40" fill="none" stroke="#10b981" stroke-width="8" stroke-linecap="round" style="transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);"/>
+                                            <circle class="gauge-needle-dot" cx="96" cy="40" r="6" fill="#10b981" stroke="#ffffff" stroke-width="2" style="transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);"/>
+                                        </svg>
+                                        <span class="gauge-value">98%</span>
+                                    </div>
+                                    <div class="gauge-stats-row">
+                                        <span>LCP: <strong>0.38s</strong></span>
+                                        <span>INP: <strong>12ms</strong></span>
+                                    </div>
+                                    <div class="gauge-tags-row">
+                                        <span class="gtag">Performance: <strong>100/100</strong></span>
+                                        <span class="gtag">Build: <strong>Bespoke</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side: 03 Isometric Icons & Technical Cards -->
+                    <div class="spec-col spec-col-illustrations-right">
+                        <div class="spec-crosshair cross-tl">+</div>
+                        <div class="spec-crosshair cross-tr">+</div>
+                        <div class="spec-crosshair cross-bl">+</div>
+                        <div class="spec-crosshair cross-br">+</div>
+
+                        <div class="spec-block-header">
+                            <h3 class="spec-block-title">Isometric Icons</h3>
+                            <span class="spec-big-num">03</span>
+                        </div>
+                        <p class="spec-block-desc">Our isometric and structural icon systems bring precision to abstract digital concepts. We engineer visual components to illustrate SaaS architectures, AI workflows, and data pipelines with absolute clarity.</p>
+
+                        <!-- Two Technical Card Blocks -->
+                        <div class="spec-tech-cards-grid">
+                            <!-- Card 1: Modular SaaS Architecture -->
+                            <div class="spec-tech-card">
+                                <h4>Modular SaaS Architecture</h4>
+                                <p>Engineered with decoupled micro-frontend components, scalable design tokens, and ultra-lean state management for sub-second loading speed.</p>
+                                <div class="iso-sketch-box">
+                                    <svg viewBox="0 0 140 80" fill="none">
+                                        <path d="M70,15 L115,38 L70,61 L25,38 Z" fill="rgba(37, 99, 235, 0.04)" stroke="#3b82f6" stroke-width="1.2"/>
+                                        <path d="M70,30 L95,43 L70,56 L45,43 Z" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3 3"/>
+                                        <circle cx="70" cy="43" r="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+                                    </svg>
+                                </div>
+                                <a href="services.html" class="spec-learn-link">EXPLORE ARCHITECTURE <i class="fas fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- Card 2: Autonomous AI Workflows -->
+                            <div class="spec-tech-card">
+                                <h4>Autonomous AI Workflows</h4>
+                                <p>Deploy intelligent background agents, custom LLM tool pipelines, and automated logic that transform passive visitors into active clients.</p>
+                                <div class="iso-sketch-box">
+                                    <svg viewBox="0 0 140 80" fill="none">
+                                        <path d="M25,25 L70,10 L115,25 L115,60 L70,75 L25,60 Z" fill="none" stroke="#cbd5e1" stroke-width="1.2"/>
+                                        <path d="M45,35 L70,25 L95,35 L95,55 L70,65 L45,55 Z" fill="rgba(37, 99, 235, 0.08)" stroke="#2563eb" stroke-width="1.5"/>
+                                    </svg>
+                                </div>
+                                <a href="services.html" class="spec-learn-link">EXPLORE AI AGENTS <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Capability Icon Matrix Section (Behance Inspired - Light Theme) -->
+    <section id="capability-matrix" class="capability-matrix-section" data-aos="fade-up" data-aos-duration="800">
+        <div class="container" style="max-width: 1140px; margin: 0 auto; padding: 0 20px;">
+            <div class="section-header" style="text-align: center;">
+                <div style="text-align: center;">
+                    <div class="hero-badge">Ecosystem Capabilities</div>
+                </div>
+                <h2 data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">Full-Stack Digital <span class="highlight-blue">Capabilities Matrix.</span></h2>
+                <p class="section-subtitle">Every module, protocol, and tool engineered to scale your digital footprint, automated operations, and customer experience.</p>
+            </div>
+
+            <div class="matrix-grid-container">
+                <div class="matrix-grid-wrapper">
+                    <!-- Row 1 -->
+                    <div class="matrix-icon-cell"><i class="fas fa-folder"></i><span class="matrix-tooltip">File Architecture</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-infinity"></i><span class="matrix-tooltip">Continuous Integration</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-cubes"></i><span class="matrix-tooltip">Modular Stack</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-dollar-sign"></i><span class="matrix-tooltip">Payment Gateway</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-home"></i><span class="matrix-tooltip">Core Platform</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-draw-polygon"></i><span class="matrix-tooltip">Vector Engine</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-file-code"></i><span class="matrix-tooltip">API Specifications</span></div>
+
+                    <!-- Row 2 -->
+                    <div class="matrix-icon-cell"><i class="fas fa-user-astronaut"></i><span class="matrix-tooltip">AI Persona Agents</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-play"></i><span class="matrix-tooltip">Automated Workflows</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-magic"></i><span class="matrix-tooltip">Generative AI</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-lock"></i><span class="matrix-tooltip">Zero-Trust Vault</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-store"></i><span class="matrix-tooltip">E-Commerce Engine</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-brain"></i><span class="matrix-tooltip">Neural Inference</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-eye"></i><span class="matrix-tooltip">Vision AI</span></div>
+
+                    <!-- Row 3 -->
+                    <div class="matrix-icon-cell"><i class="fas fa-clock"></i><span class="matrix-tooltip">Cron Task Scheduling</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-chart-line"></i><span class="matrix-tooltip">Growth Analytics</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-balance-scale"></i><span class="matrix-tooltip">Load Balancing</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-search"></i><span class="matrix-tooltip">Vector RAG Search</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-tachometer-alt"></i><span class="matrix-tooltip">Ultra Speed INP</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-code"></i><span class="matrix-tooltip">Clean Code Base</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-handshake"></i><span class="matrix-tooltip">B2B Portal Integration</span></div>
+
+                    <!-- Row 4 -->
+                    <div class="matrix-icon-cell"><i class="fas fa-bolt"></i><span class="matrix-tooltip">Edge Compute</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-microchip"></i><span class="matrix-tooltip">Hardware Accelerators</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-landmark"></i><span class="matrix-tooltip">Enterprise System</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-crosshairs"></i><span class="matrix-tooltip">Precision Targeting</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-th-large"></i><span class="matrix-tooltip">Bento Grid UI</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-database"></i><span class="matrix-tooltip">Distributed DB</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-leaf"></i><span class="matrix-tooltip">Eco Infrastructure</span></div>
+
+                    <!-- Row 5 -->
+                    <div class="matrix-icon-cell"><i class="fas fa-tint"></i><span class="matrix-tooltip">Fluid Design Tokens</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-coins"></i><span class="matrix-tooltip">Fintech Vault</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-sync-alt"></i><span class="matrix-tooltip">Real-Time Sync</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-layer-group"></i><span class="matrix-tooltip">Layered Architecture</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-pause"></i><span class="matrix-tooltip">State Machine</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-bug"></i><span class="matrix-tooltip">Automated Testing</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-id-card"></i><span class="matrix-tooltip">OAuth 2.0 Auth</span></div>
+
+                    <!-- Row 6 -->
+                    <div class="matrix-icon-cell"><i class="fas fa-terminal"></i><span class="matrix-tooltip">CLI Automation</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-rocket"></i><span class="matrix-tooltip">Instant Deployment</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-sitemap"></i><span class="matrix-tooltip">Topology Graph</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-envelope"></i><span class="matrix-tooltip">Webhooks & Mail</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-seedling"></i><span class="matrix-tooltip">Scalable Growth</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-globe"></i><span class="matrix-tooltip">Global CDN Edge</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-trophy"></i><span class="matrix-tooltip">SEO Core Vitals</span></div>
+
+                    <!-- Row 7 -->
+                    <div class="matrix-icon-cell"><i class="fas fa-pen-nib"></i><span class="matrix-tooltip">Custom UX/UI</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-shield-alt"></i><span class="matrix-tooltip">Threat Prevention</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-bell"></i><span class="matrix-tooltip">Realtime Alerting</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-gem"></i><span class="matrix-tooltip">Premium Design</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-thumbs-up"></i><span class="matrix-tooltip">99.9% Uptime SLA</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-history"></i><span class="matrix-tooltip">Audit History</span></div>
+                    <div class="matrix-icon-cell"><i class="fas fa-microphone"></i><span class="matrix-tooltip">Voice AI Integration</span></div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Why Choose Curious Kaizer Section (Standalone Apple Bento Grid Section) -->
@@ -5880,8 +6222,9 @@
     <script src="js/carousel.js" defer></script>
     <script src="js/typing.js" defer></script>
     <script src="js/timeline-animations.js" defer></script>
-    <script src="js/hero-process-sequence.js" defer></script>
+    <script src="js/hero-process-sequence.js?v=arc-layout-20260730e" defer></script>
     <script src="js/homepage-motion.js" defer></script>
+    <script src="js/isometric-animations.js" defer></script>
     <script src="js/analytics-tracker.js?v=2" defer></script>
 
     <script>
@@ -6006,5 +6349,6 @@
             }
         });
     </script>
+    <script src="js/design-spec-interactions.js" defer></script>
 </body>
 </html>

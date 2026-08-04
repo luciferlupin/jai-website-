@@ -222,4 +222,239 @@
 - `node --check js/scripts.js`, `node --check js/hero-process-sequence.js`, and `git diff --check` passed.
 - Browser diagnostics returned no warnings or errors.
 
+## 2026-07-30 — Hero arc, card, and milestone positioning
+
+**Source and rendered evidence**
+
+- Source visual truth: `/var/folders/sz/zr_fytr90z12zs7kynzxzg340000gn/T/TemporaryItems/NSIRD_screencaptureui_DgzADM/Screenshot 2026-07-30 at 10.09.23 AM.png`
+- Source pixels: 1920 x 1080 including browser chrome; normalized page crop: 1728 x 881 resized to 1280 x 653 at 1x density.
+- Normalized source: `/Users/harshitgoyal/jai website/design-reference/section-heading-system/hero-arc-source-normalized-1280x653.png`
+- Browser-rendered implementation: `/Users/harshitgoyal/jai website/design-reference/section-heading-system/hero-arc-final-1280x653.png`
+- Same-input side-by-side comparison: `/Users/harshitgoyal/jai website/design-reference/section-heading-system/hero-arc-source-vs-implementation.png`
+- Comparison state: completed one-time process, with all four cards and milestone icons visible.
+
+**Findings and fixes**
+
+- P1 before fix: the desktop curve was too deep and low, the two inner cards were oversized relative to the journey, and the circular milestone icons did not sit on the rendered SVG path.
+- Fix: matched the reference's shallow U-curve, high outer-card / low inner-card composition, and compact card proportions while retaining Curious Kaizer's existing card content and styling.
+- Fix: replaced fixed marker top guesses with responsive cubic-Bezier coordinate calculations, keeping all four icon centers on the actual curve after resizing.
+- Post-fix: the Discovery and Live cards sit above the two curve ends; Strategy and Prototype occupy the lower middle positions; all four milestones follow the curve from left to right.
+
+**Required fidelity surfaces**
+
+- Fonts and typography: intentionally unchanged outside the scaled process cards; the user's existing Curious Kaizer heading, CTA, and card typography remain active.
+- Spacing and layout rhythm: arc width, depth, card anchors, milestone spacing, and outer-card clearances now follow the supplied composition.
+- Colors and visual tokens: existing Curious Kaizer blue, green live state, white cards, shadows, and technical background remain unchanged.
+- Image and icon quality: existing avatar images and Font Awesome workflow icons remain intact; the curve is a crisp 1.25 px vector stroke.
+- Copy and content: no hero, navigation, CTA, card, trust-row, or later-section copy was changed.
+
+**Responsive and regression checks**
+
+- Desktop 1280 x 720: no horizontal overflow; all four cards complete once; milestones remain centered on the curve.
+- Tablet 900 x 900: existing tablet composition remains intact with no horizontal overflow.
+- Phone 390 x 844: existing single-stage phone process remains intact with no horizontal overflow.
+- The edit is scoped to the desktop hero process arc, cards, and milestones; navigation, hero content, trust logos, and later sections are untouched.
+- JavaScript syntax validation passed for `js/hero-process-sequence.js`.
+
+**Comparison history**
+
+- Pass 1 aligned the curve and card anchors but revealed markers visually overlapping the outer cards.
+- Pass 2 corrected marker-to-curve math and verified exact icon centers on the curve.
+- Pass 3 normalized card proportions and restored the source's high-outer / low-inner journey rhythm without changing the site's own content or styling.
+- No actionable P0, P1, or P2 issue remains in the requested scope.
+
+## 2026-07-30 — Enlarged and lowered hero process refinement
+
+**Rendered evidence**
+
+- Desktop implementation: `/Users/harshitgoyal/jai website/design-reference/section-heading-system/hero-arc-enlarged-lowered-1280x653.png`
+- Source/implementation comparison: `/Users/harshitgoyal/jai website/design-reference/section-heading-system/hero-arc-source-vs-enlarged-lowered.png`
+- Source and implementation were normalized to 1280 x 653 at 1x density.
+- State: completed one-time process with all four desktop cards and milestones visible.
+
+**Findings and fixes**
+
+- P2 before fix: the process cards felt undersized and the overall card motion group sat slightly high.
+- Fix: enlarged all four cards proportionally and lowered their desktop anchors without changing card content, animations, or surrounding hero elements.
+- P2 before fix: enlarging the cards initially caused the first and last milestone circles to touch their card edges.
+- Fix: lowered the visible vector curve by 24 px; the responsive cubic calculation then realigned every milestone center to that rendered curve.
+- Post-fix outer-card clearance is 20.38 px at Discovery and 11.33 px at Launch, with no icon/card collision.
+
+**Fidelity and regression checks**
+
+- Typography, colors, images, icons, shadows, card content, and copy remain unchanged.
+- Desktop 1280 x 720 has no horizontal overflow and completes with all milestones centered on the curve.
+- Tablet 900 x 900 and phone 390 x 844 do not receive the desktop transform and have no horizontal overflow.
+- Phone completion still stops with only the Launch card visible and the running state removed.
+- The change remains scoped to the desktop hero process composition.
+- No actionable P0, P1, or P2 issue remains in the requested scope.
+
+## 2026-07-30 — Large-desktop card fill and node clearance
+
+**Source and rendered evidence**
+
+- Source visual truth: `/var/folders/sz/zr_fytr90z12zs7kynzxzg340000gn/T/TemporaryItems/NSIRD_screencaptureui_PpFmsX/Screenshot 2026-07-30 at 10.37.42 AM.png`
+- Source page crop and implementation were normalized to 1905 x 1000 at 1x density.
+- Normalized source: `/Users/harshitgoyal/jai website/design-reference/section-heading-system/hero-large-before-normalized-1905x1000.png`
+- Browser-rendered implementation: `/Users/harshitgoyal/jai website/design-reference/section-heading-system/hero-large-cards-no-node-overlap-1905x1000.png`
+- Same-input comparison: `/Users/harshitgoyal/jai website/design-reference/section-heading-system/hero-large-before-vs-after.png`
+- State: completed one-time process with all four cards and milestones visible.
+
+**Findings and fixes**
+
+- P1 before fix: the large-desktop cards were too small for the available hero height, leaving roughly 255 px of visually unused space before the trust row.
+- Fix: restored the cards to near-native desktop width, enlarged their vertical workflow areas, and lowered the process curve into the available area.
+- Post-fix: the remaining card-to-trust spacing is 136 px, creating a balanced handoff to the trust row without touching that row.
+- P1 before fix: the Strategy and Build milestone positions could intersect enlarged cards.
+- Fix: moved the Strategy milestone to a clear position before Card 2 and retained cubic path alignment for every node.
+- Automated rectangle checks at 1905 x 1000 and 1280 x 720 report zero node/card intersections.
+
+**Required fidelity and regression checks**
+
+- Typography and copy: unchanged.
+- Colors and visual tokens: unchanged.
+- Images and icon assets: existing avatars and Font Awesome workflow icons remain unchanged and crisp.
+- Spacing and layout rhythm: the enlarged cards now occupy the previously empty hero band while remaining separated from the trust row.
+- Desktop 1905 x 1000 and 1280 x 720 have no horizontal overflow and complete the process once.
+- Tablet 900 x 900 and phone 390 x 844 remain outside the desktop override and have no horizontal overflow.
+- Navigation, CTA, trust row, hero copy, and later sections were not modified.
+- No actionable P0, P1, or P2 issue remains in the requested scope.
+
+## 2026-07-30 — Wantace process-arc geometry match
+
+**Source and rendered evidence**
+
+- Source visual truth: `/Users/harshitgoyal/Desktop/Screenshot 2026-07-30 at 10.44.37 AM.png`
+- Source pixels: 1920 x 1080. Browser chrome was removed with a 1905 x 1000 crop beginning at y=30; no density resampling was used.
+- Normalized source: `/Users/harshitgoyal/jai website/design-reference/section-heading-system/hero-wantace-reference-normalized-1905x1000.png`
+- Browser-rendered implementation: `/Users/harshitgoyal/jai website/design-reference/section-heading-system/hero-wantace-exact-1905x1000.png`
+- Full-view same-input comparison: `/Users/harshitgoyal/jai website/design-reference/section-heading-system/hero-wantace-exact-source-vs-implementation.png`
+- Focused process-band comparison: `/Users/harshitgoyal/jai website/design-reference/section-heading-system/hero-wantace-exact-process-band.png`
+- CSS viewport: 1905 x 1000 at device scale 1.
+- State: one-time process animation completed; `.is-complete` present and `.is-running` absent.
+
+**Comparison history**
+
+- P1 before fix: the implementation used a wide, deep arc and oversized cards, so its milestone rhythm did not match the reference.
+- Fix: matched the reference's 59.1%-wide shallow arc, its outer endpoints, four card dimensions, asymmetric high-outer/low-inner card placement, and three visible milestone circles.
+- P2 before fix: the extra code milestone crowded the prototype card, and the Strategy milestone could touch its card at narrower desktop widths.
+- Fix: removed the redundant desktop code milestone and added scoped Strategy-node offsets for 901-1400 px desktop widths.
+- P2 found during normalized comparison: the complete process band sat 30 px below the browser-content coordinates in the source screenshot.
+- Fix: moved only the desktop arc, cards, and calculated node path upward by 30 px.
+- Post-fix evidence: the focused comparison shows matching arc endpoints, curvature, card centers, and milestone order; automated rectangle checks report zero node/card intersections at 1905, 1280, 1024, and 901 px widths.
+
+**Required fidelity surfaces**
+
+- Fonts and typography: existing Curious Kaizer typography and brand copy were intentionally preserved; card hierarchy remains readable at the matched reference scale.
+- Spacing and layout rhythm: arc x=385.5, y=468.1, width=1117, height=86 at 1905 x 1000; the four cards occupy the same high-outer/low-inner rhythm as the normalized source.
+- Colors and visual tokens: existing Curious Kaizer blue and hero background remain unchanged; only the process geometry was requested.
+- Image and icon quality: existing avatar assets and Font Awesome workflow icons remain crisp; no placeholder or approximate replacement asset was introduced.
+- Copy and content: Curious Kaizer card workflows and CTA copy remain unchanged.
+
+**Responsive and functional checks**
+
+- Desktop checks at 1905 x 1000, 1280 x 720, 1024 x 768, and 901 x 900 have no horizontal overflow and no node/card collisions.
+- Phone 390 x 844 remains outside the desktop override, keeps its existing mobile process behavior, and has no horizontal overflow.
+- The process completes once and stops; resize-driven curve alignment remains active.
+- Navigation, CTA behavior, trust row, hero text, tablet/mobile presentation, and all later sections were not modified.
+- Browser console errors checked: none.
+- No actionable P0, P1, or P2 finding remains in the requested scope.
+
+## 2026-07-30 — Lowered equal-card process and verified reveal sequence
+
+**Source and rendered evidence**
+
+- Source visual truth: `/var/folders/sz/zr_fytr90z12zs7kynzxzg340000gn/T/TemporaryItems/NSIRD_screencaptureui_BXJf4J/Screenshot 2026-07-30 at 10.53.33 AM.png`
+- Source pixels: 1920 x 1080. Browser chrome was removed with a 1905 x 1000 crop beginning at y=30; no density resampling was used.
+- Normalized source: `/Users/harshitgoyal/jai website/design-reference/section-heading-system/hero-spacing-before-normalized-1905x1000.png`
+- Browser-rendered implementation: `/Users/harshitgoyal/jai website/design-reference/section-heading-system/hero-equal-cards-lowered-final-1905x1000.png`
+- Same-input comparison: `/Users/harshitgoyal/jai website/design-reference/section-heading-system/hero-spacing-before-vs-equal-lowered.png`
+- Focused five-stage animation evidence: `/Users/harshitgoyal/jai website/design-reference/section-heading-system/hero-sequence-five-stages.png`
+- CSS viewport: 1905 x 1000 at device scale 1.
+- Final state: `.process-sequence` has `data-process-state="complete"` and `data-active-stage="complete"`.
+
+**Comparison history**
+
+- P1 before fix: the four process cards rendered at visibly different dimensions and left an oversized empty band before the trust row.
+- Fix: assigned every desktop card the same 190 x 154 base frame and the same 0.88 scale, producing matching 167.2 x 135.5 rendered frames. The arc and process cards were lowered into the unused area while the heading, tags, CTA, trust row, and later sections remained fixed.
+- P1 before fix: `opacity: 1 !important` on every process card defeated the reveal keyframes, so later cards were already visible while the arc was still progressing.
+- Fix: restored hidden initial states and retained the existing four-stop timing. Observed sequence: Discovery only, arc to Strategy and Strategy reveal, arc to Prototype and Prototype reveal, arc to Launch and Launch reveal, then a stable completed state.
+- P2 during responsive QA: the larger Strategy and Launch cards initially touched their milestone circles.
+- Fix: anchored the Strategy node 125 px before the Strategy card center and lifted the Launch card clear of its endpoint node. Automated rectangle checks report zero node/card collisions at 1905, 1280, 1024, and 901 px desktop widths.
+
+**Required fidelity surfaces**
+
+- Fonts and typography: unchanged; the existing Curious Kaizer type hierarchy and card labels are preserved.
+- Spacing and layout rhythm: all desktop cards now share one size, the process fills more of the available hero height, and the final card-to-trust transition remains clear.
+- Colors and visual tokens: unchanged; existing blue, green, shadows, and background treatment remain intact.
+- Image and icon quality: existing avatar assets and Font Awesome process icons remain unchanged and sharp.
+- Copy and content: all Curious Kaizer headings, CTA copy, workflow labels, and trust content remain unchanged.
+
+**Responsive and functional checks**
+
+- Desktop widths 1905, 1280, 1024, and 901 px have no horizontal overflow, trust-row collisions, or node/card collisions.
+- Phone 390 x 844 stays outside the desktop equal-card override and has no horizontal overflow.
+- Timed browser sampling confirmed card opacities progress 1/0/0/0, 1/1/0/0, 1/1/1/0, and 1/1/1/1 while the arc clip advances to each stop.
+- The sequence completes once, removes the running state, and does not restart.
+- Browser console errors checked: none.
+- No actionable P0, P1, or P2 finding remains in the requested scope.
+
+## 2026-07-30 — Card-centered arc endpoints and lowered third card
+
+**Source and rendered evidence**
+
+- Source visual truth: `/var/folders/sz/zr_fytr90z12zs7kynzxzg340000gn/T/TemporaryItems/NSIRD_screencaptureui_sweubu/Screenshot 2026-07-30 at 11.03.28 AM.png`
+- The source browser region was cropped from the framed desktop screenshot to 847 x 860 at 1x density.
+- Normalized source: `/Users/harshitgoyal/jai website/design-reference/section-heading-system/hero-endpoint-source-crop-847x860.png`
+- Browser-rendered implementation: `/Users/harshitgoyal/jai website/design-reference/section-heading-system/hero-connected-endpoints-final-top-847x860.png`
+- Same-input comparison: `/Users/harshitgoyal/jai website/design-reference/section-heading-system/hero-endpoint-source-vs-final.png`
+- State: completed one-time process at the top of the page.
+
+**Comparison history**
+
+- P1 before fix: the visible curve extended beyond the outer milestone circles instead of beginning and ending at them.
+- Fix: the SVG now begins at 26.6% and ends at 74.3%, exactly matching the horizontal centers of the first and last cards. The video and tick nodes use those same coordinates.
+- P1 before fix: the node-alignment calculation subtracted half the node height even though the node already uses a centered transform, placing node centers 17 px above the rendered curve.
+- Fix: removed the double offset. At 847 x 860, measured arc-to-node deltas are 0 px on both x and y for the start and end.
+- P2 before fix: the Launch card used a right-position rule that was overridden at the 601-900 px layout, so its center did not align with the tick endpoint.
+- Fix: anchored the Launch card directly at 74.3% with an explicit left position. First-card/video and last-card/tick center deltas are now 0 px.
+- P2 before fix: Card 3 remained visually high and could touch the ending milestone region.
+- Fix: lowered Card 3 by 40 px relative to Card 2. The final layout has no unintended node/card collision.
+
+**Required fidelity surfaces**
+
+- Fonts and typography: unchanged.
+- Spacing and layout rhythm: the curve now originates and terminates at the bottom-center milestone of its outer cards; Card 3 is visibly lower.
+- Colors and visual tokens: unchanged.
+- Image and icon quality: existing avatars and Font Awesome milestone icons remain unchanged and crisp.
+- Copy and content: unchanged.
+
+**Responsive and functional checks**
+
+- Exact card-center, node-center, and arc-endpoint alignment was verified at 1905, 1280, 1024, 901, and 847 px widths.
+- No horizontal overflow was introduced at those widths.
+- The 390 px phone layout remains outside the new 601 px minimum and is unchanged.
+- The one-time process still completes and stops.
+- Browser console errors checked: none.
+- No actionable P0, P1, or P2 finding remains in the requested scope.
+
+## 2026-07-30 — Card 3 slight upward adjustment
+
+**Source and rendered evidence**
+
+- Source visual truth: `/Users/harshitgoyal/jai website/design-reference/section-heading-system/hero-connected-endpoints-final-top-847x860.png`
+- Browser-rendered implementation: `/Users/harshitgoyal/jai website/design-reference/section-heading-system/hero-card3-slightly-up-847x860.png`
+- CSS viewport: 847 x 860 at device scale 1.
+- State: completed one-time process at the top of the page.
+- Focused comparison was sufficient because the request changes one existing desktop card coordinate only; the previous full-view source comparison remains `/Users/harshitgoyal/jai website/design-reference/section-heading-system/hero-endpoint-source-vs-final.png`.
+
+**Findings and verification**
+
+- Requested refinement: Card 3 moved upward by 15 px, from `top: 237px` to `top: 222px`.
+- Card 3 remains 25 px lower than Card 2, preserving the intended stepped process flow without over-lifting it.
+- Fonts and typography, colors and visual tokens, image/icon quality, copy/content, card size, horizontal placement, arch geometry, node positions, and animation timing are unchanged.
+- Browser measurement confirmed equal Card 2/Card 3 rendered dimensions, no node/card collisions, no horizontal overflow, all four cards visible after completion, and the process still finishes once in its `complete` state.
+- Browser console errors checked: none.
+- No actionable P0, P1, or P2 finding remains in the requested scope.
+
 final result: passed

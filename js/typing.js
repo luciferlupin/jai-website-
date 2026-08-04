@@ -37,12 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             charIndex++;
             typingSpeed = 50 + Math.random() * 30;
             
-            // Color transition from blue (#2563eb) to black based on character position
-            const progress = charIndex / currentText.length;
-            const redValue = Math.round(37 * (1 - progress));
-            const greenValue = Math.round(99 * (1 - progress));
-            const blueValue = Math.round(235 * (1 - progress));
-            typingText.style.color = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
+            typingText.style.color = '#2563eb';
         }
         
         if (!isDeleting && charIndex === currentText.length) {
@@ -58,8 +53,8 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(type, typingSpeed);
     }
     
-    // Set initial color to match fully typed black text
-    typingText.style.color = 'rgb(0, 0, 0)';
+    // Set initial color to electric blue (#2563eb)
+    typingText.style.color = '#2563eb';
     setTimeout(type, pauseEnd); // Wait for the pause before deleting first text
 
     // Tech stack dynamic info cycling

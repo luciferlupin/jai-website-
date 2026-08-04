@@ -7,9 +7,9 @@
         const strategyCard = flow?.querySelector('.card-strategy');
         const mockupCard = flow?.querySelector('.card-mockup');
         const launchCard = flow?.querySelector('.card-launch');
-        const deployCompletion = flow?.querySelector('.deploy-live-status');
+        const deployCompletion = flow?.querySelector('.deploy-live-status') || launchCard;
 
-        if (!flow || !svg || !path || !discoveryCard || !strategyCard || !mockupCard || !launchCard || !deployCompletion) {
+        if (!flow || !svg || !path || !discoveryCard || !strategyCard || !mockupCard || !launchCard) {
             return;
         }
 
@@ -28,6 +28,53 @@
             return 100 - (reachedProgress * 100);
         };
 
+        const nodes = [
+            flow.querySelector('.node-step-1'),
+            flow.querySelector('.node-step-2'),
+            flow.querySelector('.node-step-3'),
+            flow.querySelector('.node-step-4')
+        ];
+
+        const alignNodeToPath = (node) => {
+            if (!node) return;
+            const svgRect = svg.getBoundingClientRect();
+            if (svgRect.width === 0) return;
+
+            const nodeRect = node.getBoundingClientRect();
+            const nodeCenterX = nodeRect.left + (nodeRect.width / 2);
+            const targetX = clamp((nodeCenterX - svgRect.left) / svgRect.width, 0, 1);
+            const cubicAt = (p0, p1, p2, p3, t) => {
+                const inverse = 1 - t;
+                return (inverse ** 3 * p0)
+                    + (3 * inverse ** 2 * t * p1)
+                    + (3 * inverse * t ** 2 * p2)
+                    + (t ** 3 * p3);
+            };
+
+            // Normalized control points for the visible journey curve:
+            // M 1 1 C 252 108, 748 108, 999 1 in a 1000 × 110 viewBox.
+            let low = 0;
+            let high = 1;
+            let curveT = 0;
+
+            for (let i = 0; i < 15; i++) {
+                curveT = (low + high) / 2;
+                const curveX = cubicAt(0.001, 0.252, 0.748, 0.999, curveT);
+                if (curveX < targetX) {
+                    low = curveT;
+                } else {
+                    high = curveT;
+                }
+            }
+
+            const curveY = cubicAt(1 / 110, 108 / 110, 108 / 110, 1 / 110, curveT);
+            const flowRect = flow.getBoundingClientRect();
+            const svgLocalTop = svgRect.top - flowRect.top;
+            const targetLocalTop = svgLocalTop
+                + (curveY * svgRect.height);
+            node.style.setProperty('top', `${targetLocalTop}px`, 'important');
+        };
+
         let frameRequest = 0;
 
         const updateResponsiveStops = () => {
@@ -40,6 +87,9 @@
                 flow.style.setProperty('--arch-clip-three', `${mockupStop.toFixed(3)}%`);
                 flow.dataset.archClipTwo = strategyStop.toFixed(3);
                 flow.dataset.archClipThree = mockupStop.toFixed(3);
+
+                // Align all nodes exactly to the SVG curve path
+                nodes.forEach(alignNodeToPath);
             });
         };
 

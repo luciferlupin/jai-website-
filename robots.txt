@@ -1,46 +1,52 @@
-# Robots.txt for Curious Kaizer - Optimized for SEO
-# Created: 2025-02-25
-# Updated: 2026-07-20
-# Purpose: Maximize search engine crawling and indexing
+# Robots.txt for Curious Kaizer - Optimized for SEO & Search Engine Indexing
+# Updated: 2026-08-04
+# Purpose: Maximize search engine indexing for Curious Kaizer homepage and core services
 
 User-agent: *
 Allow: /
 
-# Allow all important crawling
+# Allow indexing of asset directories & pages
 Allow: /css/
 Allow: /js/
 Allow: /images/
 Allow: /blog-*.html
+Allow: /sitemap.xml
 
-# Block unnecessary files
+# Block internal & verification utility files
 Disallow: /admin/
 Disallow: /private/
 Disallow: /temp/
 Disallow: /analytics.html
 Disallow: /analytics-deploy/
+Disallow: /googledccfa22a0725d83d.html
 Disallow: /*.json$
-Disallow: /*?utm*
 
-# Sitemap location
-Sitemap: https://www.curiouskaizer.com/sitemap.xml
-
-# Crawl delay for respectful crawling
-Crawl-delay: 1
-
-# Specific instructions for major search engines
+# Major Search Engine Crawler Settings
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 0.5
+
+User-agent: Googlebot-Image
+Allow: /images/
 
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 1
 
 User-agent: Slurp
 Allow: /
-Crawl-delay: 1
 
-# Allow social media crawlers
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# Social Media & Open Graph Crawlers
 User-agent: facebookexternalhit
 Allow: /
 
@@ -50,7 +56,10 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
-# Allow AI crawlers for better indexing
+User-agent: WhatsApp
+Allow: /
+
+# AI Crawlers & Knowledge Indexers
 User-agent: GPTBot
 Allow: /
 
@@ -59,3 +68,12 @@ Allow: /
 
 User-agent: Google-Extended
 Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# Sitemap Location
+Sitemap: https://www.curiouskaizer.com/sitemap.xml
