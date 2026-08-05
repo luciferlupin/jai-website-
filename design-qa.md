@@ -457,4 +457,36 @@
 - Browser console errors checked: none.
 - No actionable P0, P1, or P2 finding remains in the requested scope.
 
+## 2026-08-05 — Homepage Case Studies aligned to Portfolio layout
+
+**Source and rendered evidence**
+
+- Source visual truth: `/Users/harshitgoyal/jai website/design-reference/section-heading-system/portfolio-layout-reference-1280x900.png`
+- Browser-rendered implementation: `/Users/harshitgoyal/jai website/design-reference/section-heading-system/case-studies-portfolio-layout-1280x900.png`
+- Same-input comparison: `/Users/harshitgoyal/jai website/design-reference/section-heading-system/portfolio-reference-vs-home-case-studies.png`
+- CSS viewport: 1280 x 900 at device scale 1.
+- State: homepage Case Studies heading and first project row visible; Portfolio page first project row used as the visual reference.
+
+**Comparison history**
+
+- P1 before fix: homepage projects were enclosed in large white rounded cards with heavy internal padding, while the Portfolio reference uses open two-column project rows on the page background.
+- Fix: scoped the homepage Case Studies cards to the Portfolio row geometry: content-left/image-right grid, transparent project surface, full-width visual frame, subtle row divider, Portfolio typography scale, and matching vertical rhythm.
+- Post-fix: the project row composition, image proportion, content alignment, background treatment, border radius, shadow treatment, and section spacing follow the Portfolio reference while retaining the homepage's original project copy and checklist content.
+
+**Required fidelity surfaces**
+
+- Fonts and typography: the existing site font stack is preserved; project brand, title, checklist hierarchy, weight, line height, and spacing now follow the Portfolio detail presentation.
+- Spacing and layout rhythm: desktop rows use the Portfolio 1fr/1.2fr split, 4rem column gap, 6rem row gap, and 4rem divider spacing.
+- Colors and visual tokens: project shells are transparent, visual frames use the Portfolio neutral surface and border, and existing brand accent colors remain intact.
+- Image quality and asset fidelity: every original project image is reused at its natural ratio with no crop, replacement, placeholder, or generated asset.
+- Copy and content: the Case Studies label, heading, subtitle, project names, titles, checklist copy, and image alt text are unchanged.
+
+**Responsive and regression checks**
+
+- The scoped mobile rule collapses each project row to one column below 768 px while retaining the Portfolio order: content first, image second.
+- Desktop browser measurement confirmed a 1152 px row, 494.5/593.5 px columns, no horizontal overflow, a transparent project surface, zero card shadow, and the expected divider treatment.
+- The change is contained inside `.portfolio-case-studies`; navigation, hero, earlier homepage sections, footer, Portfolio page, and project content are untouched.
+- Browser console errors checked: none.
+- No actionable P0, P1, or P2 finding remains in the requested scope.
+
 final result: passed

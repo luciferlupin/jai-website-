@@ -5570,7 +5570,7 @@
     <section id="portfolio" class="portfolio" data-aos="fade-up" data-aos-duration="800" style="background-color: transparent !important; padding: 6rem 0;">
         <style>
             .portfolio-case-studies {
-                max-width: 1100px;
+                max-width: 1200px;
                 margin: 0 auto;
                 padding: 0 24px;
             }
@@ -5581,27 +5581,32 @@
             .portfolio-case-studies .portfolio-list-premium {
                 display: flex;
                 flex-direction: column;
-                gap: 4rem;
-                margin-top: 3rem;
+                gap: 6rem;
+                margin-top: 4rem;
                 padding: 0;
             }
             .portfolio-case-studies .portfolio-card-premium {
-                display: flex;
-                flex-direction: row;
+                display: grid !important;
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
                 align-items: center;
-                justify-content: space-between;
-                background: #ffffff !important;
-                border-radius: 24px !important;
-                border: 1px solid rgba(0, 0, 0, 0.06) !important;
-                box-shadow: 0 10px 40px rgba(0,0,0,0.03) !important;
-                padding: 3.5rem !important;
-                gap: 3.5rem !important;
-                transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+                background: transparent !important;
+                border-radius: 0 !important;
+                border: 0 !important;
+                border-bottom: 1px solid #f1f5f9 !important;
+                box-shadow: none !important;
+                padding: 0 0 4rem !important;
+                gap: 4rem !important;
+                overflow: visible !important;
+                transition: none !important;
+            }
+            .portfolio-case-studies .portfolio-card-premium:last-child {
+                border-bottom: 0 !important;
+                padding-bottom: 0 !important;
             }
             .portfolio-case-studies .portfolio-card-premium:hover {
                 transform: none !important;
-                box-shadow: 0 10px 40px rgba(0,0,0,0.03) !important;
-                border-color: rgba(0, 0, 0, 0.06) !important;
+                box-shadow: none !important;
+                border-color: #f1f5f9 !important;
             }
             .portfolio-case-studies .portfolio-card-premium:hover .check-bullet {
                 transform: none !important;
@@ -5609,30 +5614,48 @@
                 color: #2563eb !important;
             }
             .portfolio-case-studies .portfolio-card-content {
-                flex: 1.1;
+                width: auto !important;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 text-align: left;
                 padding: 0;
             }
+            .portfolio-case-studies .portfolio-brand-logo {
+                font-size: 2.2rem !important;
+                font-weight: 700 !important;
+                color: #0f172a !important;
+                letter-spacing: -0.025em !important;
+                margin-bottom: 0.5rem !important;
+            }
+            .portfolio-case-studies .portfolio-card-title {
+                font-size: 1.05rem !important;
+                font-weight: 500 !important;
+                color: #475569 !important;
+                line-height: 1.7 !important;
+                letter-spacing: 0 !important;
+                margin-bottom: 1.5rem !important;
+            }
             .portfolio-case-studies .portfolio-card-visual {
-                flex: 0.9;
+                width: auto !important;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 border-radius: 20px;
-                padding: 2rem;
+                border: 1px solid #e2e8f0;
+                background: #fafbfc !important;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+                padding: 0;
                 box-sizing: border-box;
-                min-height: 320px;
+                min-height: 0;
                 position: relative;
                 overflow: hidden;
             }
             .portfolio-case-studies .portfolio-card-image {
                 width: 100%;
                 height: auto;
-                border-radius: 12px;
-                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+                border-radius: 0;
+                box-shadow: none;
                 display: block;
                 object-fit: cover;
                 transition: none !important;
@@ -5649,14 +5672,14 @@
                 margin: 0;
                 display: flex;
                 flex-direction: column;
-                gap: 16px;
+                gap: 10px;
             }
             .portfolio-case-studies .portfolio-card-checklist li {
                 display: flex;
                 align-items: flex-start;
-                font-size: 0.96rem;
+                font-size: 0.92rem;
                 color: #475569;
-                line-height: 1.5;
+                line-height: 1.55;
                 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             }
             .portfolio-case-studies .portfolio-card-checklist li i {
@@ -5668,19 +5691,22 @@
             }
             @media (max-width: 992px) {
                 .portfolio-case-studies .portfolio-card-premium {
-                    padding: 2.5rem !important;
+                    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
                     gap: 2.5rem !important;
                 }
             }
             @media (max-width: 768px) {
+                .portfolio-case-studies .portfolio-list-premium {
+                    gap: 4rem;
+                }
                 .portfolio-case-studies .portfolio-card-premium {
-                    flex-direction: column-reverse !important;
-                    padding: 2rem !important;
+                    grid-template-columns: 1fr;
+                    padding: 0 0 3.5rem !important;
                     gap: 2rem !important;
                 }
                 .portfolio-case-studies .portfolio-card-visual {
-                    min-height: 260px;
-                    padding: 1.5rem;
+                    min-height: 0;
+                    padding: 0;
                 }
             }
         </style>
