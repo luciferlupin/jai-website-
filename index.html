@@ -697,8 +697,19 @@
                 <style>
                     /* ===== FULL-SCREEN HERO OVERRIDES ===== */
                     /* Remove max-width and overflow constraints so cards go full-width */
+                    @media (min-width: 601px) {
+                        #home.hero {
+                            min-height: 100vh !important;
+                        }
+                    }
+                    @media (max-width: 600px) {
+                        #home.hero {
+                            min-height: auto !important;
+                            height: auto !important;
+                            padding-bottom: 0 !important;
+                        }
+                    }
                     #home.hero {
-                        min-height: 100vh !important;
                         display: flex !important;
                         flex-direction: column !important;
                         overflow: hidden;
@@ -2102,6 +2113,11 @@
         </div>
     </header>
 
+    <!-- Section Divider -->
+    <div class="apple-section-divider-wrapper" data-aos="fade-up" data-aos-duration="600">
+        <div class="apple-section-divider"></div>
+    </div>
+
     <!-- Work Showcase Section -->
     <section class="work-showcase" data-aos="fade-up" data-aos-duration="800" style="background-color: transparent !important;">
 
@@ -2246,6 +2262,11 @@
         </div>
     </section>
 
+    <!-- Section Divider -->
+    <div class="apple-section-divider-wrapper" data-aos="fade-up" data-aos-duration="600">
+        <div class="apple-section-divider"></div>
+    </div>
+
     <!-- Our Process Section -->
     <section id="process" class="process-section" data-aos="fade-up" data-aos-duration="800" style="background-color: transparent !important;">
         <div class="container">
@@ -2313,6 +2334,11 @@
             </div>
         </div>
     </section>
+
+    <!-- Section Divider -->
+    <div class="apple-section-divider-wrapper" data-aos="fade-up" data-aos-duration="600">
+        <div class="apple-section-divider"></div>
+    </div>
 
     <!-- Our Expertise Section -->
     <section id="expertise" class="expertise-section" style="background-color: transparent !important;">
@@ -2623,6 +2649,11 @@
         </div>
     </section>
 
+    <!-- Section Divider -->
+    <div class="apple-section-divider-wrapper" data-aos="fade-up" data-aos-duration="600">
+        <div class="apple-section-divider"></div>
+    </div>
+
     <!-- Technology Stack Section -->
     <section id="technology" class="tech-stack-section" style="background-color: transparent !important; position: relative; overflow: hidden;" data-aos="fade-up" data-aos-duration="800">
         <!-- Glowing background overlays for modern dark/light contrast -->
@@ -2861,6 +2892,11 @@
             </div>
     </section>
 
+    <!-- Section Divider -->
+    <div class="apple-section-divider-wrapper" data-aos="fade-up" data-aos-duration="600">
+        <div class="apple-section-divider"></div>
+    </div>
+
     <!-- Design & Engineering Blueprint Specifications Section (Behance Guardbase Style) -->
     <section id="design-system-spec" class="design-spec-section" data-aos="fade-up" data-aos-duration="800">
         <div class="container" style="max-width: 1140px; margin: 0 auto; padding: 0 20px;">
@@ -3083,6 +3119,11 @@
         </div>
     </section>
 
+    <!-- Section Divider -->
+    <div class="apple-section-divider-wrapper" data-aos="fade-up" data-aos-duration="600">
+        <div class="apple-section-divider"></div>
+    </div>
+
     <!-- Interactive Capability Icon Matrix Section (Behance Inspired - Light Theme) -->
     <section id="capability-matrix" class="capability-matrix-section" data-aos="fade-up" data-aos-duration="800">
         <div class="container" style="max-width: 1140px; margin: 0 auto; padding: 0 20px;">
@@ -3162,6 +3203,11 @@
             </div>
         </div>
     </section>
+
+    <!-- Section Divider -->
+    <div class="apple-section-divider-wrapper" data-aos="fade-up" data-aos-duration="600">
+        <div class="apple-section-divider"></div>
+    </div>
 
     <!-- Why Choose Curious Kaizer Section (Standalone Apple Bento Grid Section) -->
     <section id="why-choose-us" class="why-us-apple-section" style="background-color: transparent !important; padding: 100px 0 80px 0;" data-aos="fade-up" data-aos-duration="800">
@@ -3310,6 +3356,11 @@
             </div>
         </div>
     </section>
+
+    <!-- Section Divider -->
+    <div class="apple-section-divider-wrapper" data-aos="fade-up" data-aos-duration="600">
+        <div class="apple-section-divider"></div>
+    </div>
 
     <!-- Testimonials Section (Apple-like design) -->
     <section class="testimonials-apple-section" style="background-color: transparent !important;">
@@ -3570,2000 +3621,10 @@
         </style>
     </section>
 
-    <!-- "Here's What We've Built" Bento Grid Section (Exact Screenshot Replica & Apple Aesthetics) -->
-    <section id="what-we-built" class="built-section" data-aos="fade-up" data-aos-duration="800" style="background-color: transparent !important;">
-        <div class="container" style="max-width: 1140px; margin: 0 auto; padding: 0 20px;">
-            <div class="section-header">
-                <div style="text-align: center;">
-                    <div class="hero-badge">Our Solutions</div>
-                </div>
-                <h2 data-aos="fade-up" data-aos-duration="600">Perfect For Any Industry — <span class="highlight-blue">Here's What We've Built</span></h2>
-                <p class="section-subtitle">Custom web applications, e-commerce stores, and enterprise tools engineered for performance and growth.</p>
-            </div>
-
-            <div class="built-grid">
-                <!-- Card 1: Finance & Money (Real Finance & Budget Planner Software UI) -->
-                <div class="built-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="built-card-visual finance-visual">
-                        <!-- Real Budget Planner Software Application Container -->
-                        <div class="real-finance-planner-app">
-                            <!-- Top App Header -->
-                            <div class="fin-app-header">
-                                <div class="fin-title-group">
-                                    <span class="fin-live-dot"></span>
-                                    <span class="fin-app-title"><i class="fas fa-wallet text-orange" style="margin-right: 4px;"></i> Budget Planner &bull; Aug 2025</span>
-                                </div>
-                                <span class="fin-sync-pill">AUTO-SYNCED</span>
-                            </div>
-
-                            <!-- Net Savings & Balance Summary Box -->
-                            <div class="fin-balance-hero">
-                                <div class="fin-hero-left">
-                                    <span class="fin-hero-lbl">NET MONTHLY SAVINGS</span>
-                                    <span class="fin-hero-val">$7,800.00</span>
-                                </div>
-                                <span class="fin-hero-growth"><i class="fas fa-arrow-up"></i> +12% Saved</span>
-                            </div>
-
-                            <!-- 2 Real Budget Allocation Categories -->
-                            <div class="fin-categories-list">
-                                <!-- Category 1: Housing & Utilities -->
-                                <div class="fin-cat-row">
-                                    <div class="fin-cat-top">
-                                        <span class="fin-cat-name"><i class="fas fa-home text-blue" style="margin-right: 4px;"></i> Housing & Bills</span>
-                                        <span class="fin-cat-val">$1,800 / $2,000</span>
-                                    </div>
-                                    <div class="fin-cat-track"><div class="fin-cat-fill bg-blue-fill" style="width: 90%;"></div></div>
-                                </div>
-
-                                <!-- Category 2: Investments & Wealth -->
-                                <div class="fin-cat-row">
-                                    <div class="fin-cat-top">
-                                        <span class="fin-cat-name"><i class="fas fa-chart-pie text-green" style="margin-right: 4px;"></i> Wealth & Savings</span>
-                                        <span class="fin-cat-val">$1,450 / $2,000</span>
-                                    </div>
-                                    <div class="fin-cat-track"><div class="fin-cat-fill bg-green-fill" style="width: 72.5%;"></div></div>
-                                </div>
-                            </div>
-
-                            <!-- Live Auto-Categorized Transaction Toast -->
-                            <div class="fin-live-toast">
-                                <i class="fas fa-check-circle text-green" style="margin-right: 5px;"></i>
-                                <span>Stripe Auto-Payout <strong>+$4,250.00</strong> Categorized</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="built-card-content">
-                        <span class="built-badge-pill">Budget Planners</span>
-                        <h3 class="built-card-title">Finance & Money</h3>
-                        <p class="built-card-desc">Budget planners, expense trackers, investment monitors, savings goal dashboards, bill reminders</p>
-                    </div>
-                </div>
-
-                <!-- Card 2: Business & Productivity (Real Work OS Software Dashboard UI) -->
-                <div class="built-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="built-card-visual productivity-visual">
-                        <!-- Real Work OS Dashboard Window Container -->
-                        <div class="real-work-os-dashboard">
-                            <!-- Top App Window Bar -->
-                            <div class="os-window-header">
-                                <div class="os-traffic-lights">
-                                    <span class="t-light t-red"></span>
-                                    <span class="t-light t-yellow"></span>
-                                    <span class="t-light t-green"></span>
-                                </div>
-                                <div class="os-tab-title"><i class="fas fa-layer-group" style="color: #007aff; margin-right: 4px;"></i> Work OS CRM &bull; Live</div>
-                                <div class="os-avatars-row">
-                                    <span class="os-av av-blue">JK</span>
-                                    <span class="os-av av-green">AM</span>
-                                </div>
-                            </div>
-
-                            <!-- Dashboard Content Grid Body -->
-                            <div class="os-dashboard-body">
-                                <!-- Left Stat Cards Column -->
-                                <div class="os-stats-col">
-                                    <div class="os-mini-card">
-                                        <span class="os-m-label">CLOSED DEALS</span>
-                                        <span class="os-m-val">$24,800</span>
-                                        <span class="os-m-growth"><i class="fas fa-arrow-up"></i> +18.4%</span>
-                                    </div>
-                                    <div class="os-mini-card">
-                                        <span class="os-m-label">SPRINT ROADMAP</span>
-                                        <span class="os-m-val">14 / 16 Tasks</span>
-                                        <div class="os-m-progress"><div class="os-m-fill" style="width: 87.5%;"></div></div>
-                                    </div>
-                                </div>
-
-                                <!-- Right Animated Bar Chart Column -->
-                                <div class="os-chart-col">
-                                    <div class="os-chart-top">
-                                        <span class="os-c-title">Tasks Completed</span>
-                                        <span class="os-c-dd">Today ▼</span>
-                                    </div>
-                                    <div class="os-bars-row">
-                                        <div class="os-bar-item">
-                                            <div class="os-bar-bg"><div class="os-bar-inner bg-blue-bar" style="height: 65%;"></div></div>
-                                            <span class="os-bar-lbl">CRM</span>
-                                        </div>
-                                        <div class="os-bar-item">
-                                            <div class="os-bar-bg"><div class="os-bar-inner bg-orange-bar" style="height: 48%;"></div></div>
-                                            <span class="os-bar-lbl">Meet</span>
-                                        </div>
-                                        <div class="os-bar-item">
-                                            <div class="os-bar-bg"><div class="os-bar-inner bg-green-bar" style="height: 85%;"></div></div>
-                                            <span class="os-bar-lbl">Invoices</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Live Deal Win Activity Stream Toast -->
-                            <div class="os-live-toast">
-                                <i class="fas fa-check-circle text-green" style="margin-right: 5px;"></i>
-                                <span>Acme Corp <strong>$24k Deal Closed Won</strong> &bull; Just now</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="built-card-content">
-                        <span class="built-badge-pill">Work OS</span>
-                        <h3 class="built-card-title">Business & Productivity</h3>
-                        <p class="built-card-desc">Task management dashboards, CRM systems, appointment booking, invoice tracking, team collaboration tools</p>
-                    </div>
-                </div>
-
-                <!-- Card 3: AI Systems & Automation (Real n8n AI Automation Workflow Canvas) -->
-                <div class="built-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="built-card-visual ai-agent-visual">
-                        <!-- Real n8n AI Workflow Pipeline Container -->
-                        <div class="n8n-workflow-container">
-                            <!-- Top Status Bar -->
-                            <div class="n8n-header-bar">
-                                <div class="n8n-title-group">
-                                    <span class="n8n-live-dot"></span>
-                                    <span class="n8n-main-title"><i class="fas fa-network-wired text-cyan" style="margin-right: 4px;"></i> n8n AI Workflow Pipeline</span>
-                                </div>
-                                <span class="n8n-status-pill">RUNNING ⚡</span>
-                            </div>
-
-                            <!-- Visual Canvas with Connected Nodes & Particle Beams -->
-                            <div class="n8n-nodes-canvas">
-                                <!-- Node 1: Webhook Trigger -->
-                                <div class="n8n-node node-trigger node-pulse-1">
-                                    <div class="n8n-node-icon icon-purple"><i class="fas fa-bolt"></i></div>
-                                    <div class="n8n-node-info">
-                                        <span class="n8n-node-name">Webhook Trigger</span>
-                                        <span class="n8n-node-sub">Form Submitted</span>
-                                    </div>
-                                </div>
-
-                                <!-- Connector Beam 1 with Travelling Pulse Dot -->
-                                <div class="n8n-connector-beam beam-1">
-                                    <span class="beam-line"></span>
-                                    <span class="beam-dot dot-1"></span>
-                                </div>
-
-                                <!-- Node 2: GPT-4o AI Qualifier -->
-                                <div class="n8n-node node-ai node-pulse-2">
-                                    <div class="n8n-node-icon icon-cyan"><i class="fas fa-brain"></i></div>
-                                    <div class="n8n-node-info">
-                                        <span class="n8n-node-name">GPT-4o Qualifier</span>
-                                        <span class="n8n-node-sub">Score: 98/100</span>
-                                    </div>
-                                </div>
-
-                                <!-- Connector Beam 2 with Travelling Pulse Dot -->
-                                <div class="n8n-connector-beam beam-2">
-                                    <span class="beam-line"></span>
-                                    <span class="beam-dot dot-2"></span>
-                                </div>
-
-                                <!-- Node 3: Voice AI & Booking -->
-                                <div class="n8n-node node-action node-pulse-3">
-                                    <div class="n8n-node-icon icon-green"><i class="fas fa-phone-alt"></i></div>
-                                    <div class="n8n-node-info">
-                                        <span class="n8n-node-name">Voice AI & Cal Sync</span>
-                                        <span class="n8n-node-sub">Call Scheduled</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Bottom Execution Status Stream Toast -->
-                            <div class="n8n-execution-foot">
-                                <i class="fas fa-check-circle text-green" style="margin-right: 5px;"></i>
-                                <span>⚡ Executed in <strong>42ms</strong> &bull; Lead Qualified & Voice AI Call Triggered</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="built-card-content">
-                        <span class="built-badge-pill">AI Solutions</span>
-                        <h3 class="built-card-title">AI Systems & Automation</h3>
-                        <p class="built-card-desc">Custom LLM integrations, autonomous AI agents, voice assistants, automated lead qualifiers, intelligent web scrapers</p>
-                    </div>
-                </div>
-
-                <!-- Card 4: Scheduling & Live Booking (Exact Framer Screenshot 1 & 2 Replica) -->
-                <div class="built-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="built-card-visual schedule-visual">
-                        <div class="sched-calendar-widget">
-                            <div class="sched-widget-header">
-                                <i class="fas fa-bars sched-menu-icon"></i>
-                                <span class="sched-date-text">Thu 28</span>
-                                <span class="sched-month-text">July</span>
-                            </div>
-                            
-                            <div class="sched-slots-list">
-                                <div class="sched-slot-row">
-                                    <span class="slot-time">12:00 PM</span>
-                                    <div class="slot-pill green-pill">
-                                        <span>4 New Posts are scheduled for today</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="sched-slot-row relative-row">
-                                    <span class="slot-time">03:00 PM</span>
-                                    <div class="slot-pill slate-pill">
-                                        <span>Meeting with Harry today at 3:15PM</span>
-                                    </div>
-                                    <!-- Animated Cursor with Adam Max Badge from Screenshot 2 -->
-                                    <div class="adam-cursor-wrapper">
-                                        <svg class="cursor-svg" viewBox="0 0 24 24" width="18" height="18" fill="#007aff">
-                                            <path d="M3 3l7 18 3-7 7-3L3 3z"/>
-                                        </svg>
-                                        <span class="adam-name-badge">Adam Max</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="sched-slot-row">
-                                    <span class="slot-time">05:00 PM</span>
-                                    <div class="slot-pill slate-pill">
-                                        <span>Lunch @cafebean with Harry at 5PM</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="sched-slot-row">
-                                    <span class="slot-time">07:00 PM</span>
-                                    <div class="slot-pill blue-outline-pill">
-                                        <i class="far fa-calendar-alt" style="margin-right: 6px;"></i>
-                                        <span>Jason booked a call for today at 7PM</span>
-                                    </div>
-                                </div>
-
-                                <div class="sched-slot-row">
-                                    <span class="slot-time">09:00 PM</span>
-                                    <div class="slot-pill green-outline-pill">
-                                        <i class="far fa-calendar-alt" style="margin-right: 6px;"></i>
-                                        <span>Dinner @diner with Brook at 9:15PM</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="built-card-content">
-                        <span class="built-badge-pill">SaaS Engine</span>
-                        <h3 class="built-card-title">Scheduling & Live Booking</h3>
-                        <p class="built-card-desc">Real-time calendar booking systems, automated reminders, timezone conversion, team scheduling, CRM sync</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <style>
-            /* "Here's What We've Built" Bento Grid Section Styling */
-            .built-section {
-                padding: 6rem 0 5rem 0;
-                background-color: #ffffff !important;
-                position: relative;
-            }
-            
-            .built-main-title {
-                font-size: 3rem;
-                font-weight: 800;
-                color: #0f172a;
-                letter-spacing: -0.035em;
-                margin-bottom: 0.85rem;
-                font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
-            }
-            
-            .built-sub-title {
-                font-size: 1.1rem;
-                color: #64748b;
-                max-width: 680px;
-                margin: 0 auto;
-                line-height: 1.6;
-            }
-            
-            .built-grid {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 28px;
-                margin-top: 3rem;
-            }
-            
-            .built-card {
-                background: #f5f5f7;
-                border-radius: 28px;
-                padding: 28px;
-                border: 1px solid rgba(0, 0, 0, 0.05);
-                box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, border-color 0.3s ease;
-                overflow: hidden;
-            }
-            
-            .built-card:hover {
-                transform: translateY(-6px) scale(1.008);
-                box-shadow: 0 20px 48px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 122, 255, 0.06);
-                background: #ffffff;
-                border-color: rgba(0, 122, 255, 0.25);
-            }
-            
-            .built-card-visual {
-                background: #ffffff;
-                border-radius: 20px;
-                min-height: 280px;
-                height: 280px;
-                padding: 20px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                position: relative;
-                overflow: hidden;
-                border: 1px solid rgba(0, 0, 0, 0.06);
-                box-shadow: inset 0 1px 3px rgba(0,0,0,0.02), 0 2px 8px rgba(0,0,0,0.02);
-            }
-            
-            .built-card-content {
-                margin-top: 24px;
-                display: flex;
-                flex-direction: column;
-                gap: 8px;
-            }
-            
-            .built-badge-pill {
-                display: inline-flex;
-                align-items: center;
-                background: #eff6ff;
-                color: #007aff;
-                font-size: 0.76rem;
-                font-weight: 700;
-                padding: 5px 14px;
-                border-radius: 100px;
-                width: fit-content;
-                letter-spacing: 0.02em;
-                border: 1px solid rgba(0, 122, 255, 0.15);
-                box-shadow: 0 2px 6px rgba(0, 122, 255, 0.06);
-            }
-            
-            .built-card-title {
-                font-size: 1.55rem;
-                font-weight: 800;
-                color: #1d1d1f;
-                margin: 4px 0 0 0;
-                letter-spacing: -0.025em;
-                font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", sans-serif;
-            }
-            
-            .built-card-desc {
-                font-size: 0.93rem;
-                color: #6e6e73;
-                line-height: 1.55;
-                margin: 0;
-                font-weight: 400;
-                font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
-            }
-
-            /* ==========================================================================
-               ANIMATED SAAS DASHBOARD SHOWCASE WITH LOOPING UI MICRO-INTERACTIONS
-               ========================================================================== */
-            
-            /* 1. Fade + Slide Transitions */
-            .micro-fade-slide {
-                animation: microFadeSlide 4s cubic-bezier(0.16, 1, 0.3, 1) infinite alternate;
-            }
-            @keyframes microFadeSlide {
-                0% { opacity: 0.65; transform: translateY(6px); }
-                100% { opacity: 1; transform: translateY(0); }
-            }
-
-            /* 2. Staggered Reveals */
-            .stag-1 { animation-delay: 0s !important; }
-            .stag-2 { animation-delay: 0.4s !important; }
-            .stag-3 { animation-delay: 0.8s !important; }
-
-            /* 3 & 4. Chart-Growth & Progress-Fill Animations */
-            .f-cat-meter-bar {
-                height: 100%;
-                border-radius: 100px;
-                animation: microProgressFill 3.5s cubic-bezier(0.34, 1.56, 0.64, 1) infinite alternate;
-                transform-origin: left;
-            }
-            @keyframes microProgressFill {
-                0% { transform: scaleX(0.2); opacity: 0.6; }
-                100% { transform: scaleX(1); opacity: 1; }
-            }
-
-            /* 5. Scale / Pop Effects */
-            .micro-scale-pop {
-                animation: microScalePop 3.2s cubic-bezier(0.34, 1.56, 0.64, 1) infinite alternate;
-            }
-            @keyframes microScalePop {
-                0% { transform: scale(0.96); }
-                100% { transform: scale(1.03); }
-            }
-
-            /* 6 & 8. Crossfades & Infinite Looping Sequences */
-            .micro-crossfade-loop {
-                animation: microCrossfade 5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-            }
-            @keyframes microCrossfade {
-                0%, 100% { opacity: 1; filter: blur(0px); }
-                50% { opacity: 0.85; filter: blur(0.2px); }
-            }
-
-            /* 7. Smooth Ease-out / Spring Easing Utilities */
-            .built-card-visual * {
-                transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
-            }
-
-            /* Card 1: Finance Visual (Real Budget Planner Dashboard Mockup) */
-            .finance-visual {
-                background: #ffffff;
-                justify-content: space-between;
-                align-items: stretch;
-                padding: 16px !important;
-                position: relative;
-                gap: 10px;
-            }
-            .f-budget-top-bar {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                width: 100%;
-            }
-            .f-budget-summary { display: flex; flex-direction: column; gap: 1px; }
-            .f-b-label { font-size: 0.62rem; font-weight: 800; color: #94a3b8; letter-spacing: 0.05em; }
-            .f-b-val-row { display: flex; align-items: baseline; gap: 6px; }
-            .f-b-spent { font-size: 1.35rem; font-weight: 800; color: #0f172a; letter-spacing: -0.03em; }
-            .f-b-total { font-size: 0.72rem; color: #64748b; font-weight: 600; }
-
-            .f-savings-goal-pill {
-                font-size: 0.68rem;
-                font-weight: 700;
-                color: #16a34a;
-                background: #dcfce7;
-                padding: 4px 10px;
-                border-radius: 100px;
-                display: inline-flex;
-                align-items: center;
-                border: 1px solid rgba(22, 163, 74, 0.15);
-            }
-            .text-green { color: #16a34a; }
-            .text-blue { color: #007aff; }
-
-            /* ==========================================================================
-               EXACT FRAMER SCREENSHOT REPLICA VISUAL STYLES
-               ========================================================================== */
-
-            /* ==========================================================================
-               APPLE WWDC DESIGN SYSTEM & FIXED PLACEHOLDER BOUNDS
-               ========================================================================== */
-
-            /* Card Visual Base Containers (Seamless Transparent Floating Style) */
-            .built-card-visual {
-                background: transparent !important;
-                border-radius: 20px 20px 0 0;
-                height: 240px !important;
-                position: relative;
-                overflow: hidden;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                padding: 16px !important;
-                box-shadow: none !important;
-                border: none !important;
-            }
-
-            .finance-visual,
-            .productivity-visual,
-            .ai-agent-visual,
-            .schedule-visual {
-                background: transparent !important;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                align-items: center;
-                padding: 12px 14px !important;
-                height: 240px !important;
-                position: relative;
-                overflow: hidden;
-                box-shadow: none !important;
-                border: none !important;
-            }
-
-            /* Card 1: Real Budget Planner Software Application Container */
-            .real-finance-planner-app {
-                background: #ffffff;
-                border: 1px solid rgba(0,0,0,0.08);
-                border-radius: 14px;
-                padding: 10px 12px;
-                width: 100%;
-                height: 100%;
-                box-shadow: 0 8px 24px rgba(0,0,0,0.04);
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                box-sizing: border-box;
-            }
-
-            .fin-app-header {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                padding-bottom: 6px;
-                border-bottom: 1px solid #f0f0f4;
-            }
-            .fin-title-group { display: flex; align-items: center; gap: 6px; }
-            .fin-live-dot {
-                width: 6px;
-                height: 6px;
-                border-radius: 50%;
-                background: #ff9500;
-                box-shadow: 0 0 8px #ff9500;
-                animation: dotPulse 1.5s ease-in-out infinite alternate;
-            }
-            .fin-app-title { font-size: 0.64rem; font-weight: 800; color: #0f172a; }
-            .fin-sync-pill { font-size: 0.55rem; font-weight: 800; color: #ff9500; background: #fff7ed; border: 1px solid rgba(255,149,0,0.3); padding: 1px 6px; border-radius: 100px; }
-
-            /* Net Savings Hero Card */
-            .fin-balance-hero {
-                background: #f8fafc;
-                border: 1px solid #e2e8f0;
-                border-radius: 10px;
-                padding: 6px 10px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                margin: 4px 0;
-            }
-            .fin-hero-left { display: flex; flex-direction: column; gap: 1px; }
-            .fin-hero-lbl { font-size: 0.52rem; font-weight: 800; color: #86868b; letter-spacing: 0.04em; }
-            .fin-hero-val { font-size: 1rem; font-weight: 800; color: #0f172a; letter-spacing: -0.03em; }
-            .fin-hero-growth { font-size: 0.6rem; font-weight: 700; color: #34c759; background: #dcfce7; padding: 2px 7px; border-radius: 100px; }
-
-            /* Budget Categories List */
-            .fin-categories-list { display: flex; flex-direction: column; gap: 6px; margin: 2px 0; }
-            .fin-cat-row { display: flex; flex-direction: column; gap: 3px; }
-            .fin-cat-top { display: flex; align-items: center; justify-content: space-between; font-size: 0.6rem; font-weight: 700; color: #1d1d1f; }
-            .fin-cat-name { display: flex; align-items: center; }
-            .fin-cat-val { color: #64748b; font-size: 0.58rem; }
-
-            .fin-cat-track { height: 5px; background: #e2e8f0; border-radius: 100px; overflow: hidden; }
-            .fin-cat-fill { height: 100%; border-radius: 100px; }
-            .bg-blue-fill { background: #007aff; animation: finFill1 4s ease-out infinite alternate; }
-            .bg-green-fill { background: #34c759; animation: finFill2 4s ease-out infinite alternate; }
-
-            @keyframes finFill1 { 0% { width: 10%; } 100% { width: 90%; } }
-            @keyframes finFill2 { 0% { width: 15%; } 100% { width: 72.5%; } }
-
-            /* Live Transaction Foot */
-            .fin-live-toast {
-                background: #fff7ed;
-                border: 1px solid rgba(255, 149, 0, 0.3);
-                border-radius: 100px;
-                padding: 3px 8px;
-                font-size: 0.56rem;
-                color: #c2410c;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                animation: toastPop 4s ease-in-out infinite alternate;
-            }
-
-            .os-window-header {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                padding-bottom: 6px;
-                border-bottom: 1px solid #f0f0f4;
-            }
-            .os-traffic-lights { display: flex; gap: 4px; }
-            .t-light { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
-            .t-red { background: #ff5f56; }
-            .t-yellow { background: #ffbd2e; }
-            .t-green { background: #27c93f; }
-
-            .os-tab-title { font-size: 0.64rem; font-weight: 700; color: #1d1d1f; display: flex; align-items: center; }
-            .os-avatars-row { display: flex; gap: 3px; }
-            .os-av {
-                width: 16px;
-                height: 16px;
-                border-radius: 50%;
-                font-size: 0.5rem;
-                font-weight: 800;
-                color: #ffffff;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .av-blue { background: #007aff; }
-            .av-green { background: #34c759; }
-
-            /* Dashboard Grid Body */
-            .os-dashboard-body {
-                display: flex;
-                gap: 10px;
-                align-items: stretch;
-                margin: 6px 0;
-                flex: 1;
-            }
-
-            /* Stats Column */
-            .os-stats-col {
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                gap: 6px;
-            }
-            .os-mini-card {
-                background: #f8fafc;
-                border: 1px solid #e2e8f0;
-                border-radius: 10px;
-                padding: 6px 8px;
-                display: flex;
-                flex-direction: column;
-                gap: 2px;
-            }
-            .os-m-label { font-size: 0.52rem; font-weight: 800; color: #86868b; letter-spacing: 0.04em; }
-            .os-m-val { font-size: 0.85rem; font-weight: 800; color: #0f172a; letter-spacing: -0.02em; }
-            .os-m-growth { font-size: 0.58rem; color: #34c759; font-weight: 700; }
-            .os-m-progress { height: 4px; background: #e2e8f0; border-radius: 100px; overflow: hidden; margin-top: 2px; }
-            .os-m-fill { height: 100%; background: #007aff; border-radius: 100px; animation: mFill 3s ease-out infinite alternate; }
-            @keyframes mFill { 0% { width: 20%; } 100% { width: 87.5%; } }
-
-            /* Chart Column */
-            .os-chart-col {
-                flex: 1.1;
-                background: #f8fafc;
-                border: 1px solid #e2e8f0;
-                border-radius: 10px;
-                padding: 6px 8px;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-            }
-            .os-chart-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
-            .os-c-title { font-size: 0.58rem; font-weight: 800; color: #0f172a; }
-            .os-c-dd { font-size: 0.54rem; font-weight: 700; color: #64748b; background: #ffffff; padding: 1px 5px; border-radius: 4px; }
-
-            .os-bars-row { display: flex; align-items: flex-end; justify-content: space-between; height: 60px; gap: 6px; }
-            .os-bar-item { display: flex; flex-direction: column; align-items: center; gap: 2px; flex: 1; height: 100%; justify-content: flex-end; }
-            .os-bar-bg { width: 100%; height: 44px; background: #e2e8f0; border-radius: 4px; display: flex; align-items: flex-end; overflow: hidden; }
-            .os-bar-inner { width: 100%; border-radius: 4px; transition: height 0.5s ease; }
-            .bg-blue-bar { background: #007aff; animation: bGrow1 4s ease-in-out infinite alternate; }
-            .bg-orange-bar { background: #ff9500; animation: bGrow2 4s ease-in-out infinite alternate; }
-            .bg-green-bar { background: #34c759; animation: bGrow3 4s ease-in-out infinite alternate; }
-
-            @keyframes bGrow1 { 0% { height: 20%; } 100% { height: 65%; } }
-            @keyframes bGrow2 { 0% { height: 15%; } 100% { height: 48%; } }
-            @keyframes bGrow3 { 0% { height: 30%; } 100% { height: 85%; } }
-
-            .os-bar-lbl { font-size: 0.52rem; color: #64748b; font-weight: 700; }
-
-            /* Card 3: Real n8n AI Workflow Canvas Container */
-            .n8n-workflow-container {
-                background: #ffffff;
-                border: 1px solid rgba(0,0,0,0.08);
-                border-radius: 14px;
-                padding: 10px 12px;
-                width: 100%;
-                height: 100%;
-                box-shadow: 0 8px 24px rgba(0,0,0,0.04);
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                box-sizing: border-box;
-            }
-
-            .n8n-header-bar {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                padding-bottom: 6px;
-                border-bottom: 1px solid #f0f0f4;
-            }
-            .n8n-title-group { display: flex; align-items: center; gap: 6px; }
-            .n8n-live-dot {
-                width: 6px;
-                height: 6px;
-                border-radius: 50%;
-                background: #06b6d4;
-                box-shadow: 0 0 8px #06b6d4;
-                animation: dotPulse 1.5s ease-in-out infinite alternate;
-            }
-            .n8n-main-title { font-size: 0.64rem; font-weight: 800; color: #0f172a; }
-            .n8n-status-pill { font-size: 0.55rem; font-weight: 800; color: #06b6d4; background: #ecfeff; border: 1px solid rgba(6,182,212,0.3); padding: 1px 6px; border-radius: 100px; }
-            .text-cyan { color: #06b6d4; }
-
-            /* n8n Node Canvas */
-            .n8n-nodes-canvas {
-                display: flex;
-                flex-direction: column;
-                gap: 6px;
-                margin: 4px 0;
-                position: relative;
-            }
-
-            .n8n-node {
-                background: #f8fafc;
-                border: 1px solid #e2e8f0;
-                border-radius: 10px;
-                padding: 6px 10px;
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                transition: all 0.3s ease;
-            }
-
-            .n8n-node-icon {
-                width: 22px;
-                height: 22px;
-                border-radius: 6px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 0.65rem;
-            }
-            .icon-purple { background: #f3e8ff; color: #9333ea; }
-            .icon-cyan { background: #ecfeff; color: #0891b2; }
-            .icon-green { background: #dcfce7; color: #16a34a; }
-
-            .n8n-node-info { display: flex; flex-direction: column; gap: 1px; }
-            .n8n-node-name { font-size: 0.68rem; font-weight: 700; color: #0f172a; }
-            .n8n-node-sub { font-size: 0.56rem; font-weight: 500; color: #64748b; }
-
-            /* Node Sequential Active Glow Pulsing */
-            .node-pulse-1 { animation: n8nPulse1 4.5s ease-in-out infinite; }
-            .node-pulse-2 { animation: n8nPulse2 4.5s ease-in-out infinite; }
-            .node-pulse-3 { animation: n8nPulse3 4.5s ease-in-out infinite; }
-
-            @keyframes n8nPulse1 {
-                0%, 30% { border-color: #9333ea; box-shadow: 0 0 12px rgba(147, 51, 234, 0.2); transform: scale(1.02); }
-                40%, 100% { border-color: #e2e8f0; box-shadow: none; transform: scale(1); }
-            }
-            @keyframes n8nPulse2 {
-                0%, 30% { border-color: #e2e8f0; box-shadow: none; transform: scale(1); }
-                35%, 65% { border-color: #06b6d4; box-shadow: 0 0 12px rgba(6, 182, 212, 0.25); transform: scale(1.02); }
-                75%, 100% { border-color: #e2e8f0; box-shadow: none; transform: scale(1); }
-            }
-            @keyframes n8nPulse3 {
-                0%, 65% { border-color: #e2e8f0; box-shadow: none; transform: scale(1); }
-                70%, 95% { border-color: #34c759; box-shadow: 0 0 12px rgba(52, 199, 89, 0.25); transform: scale(1.02); }
-                100% { border-color: #e2e8f0; box-shadow: none; transform: scale(1); }
-            }
-
-            /* Beam Connectors */
-            .n8n-connector-beam { height: 6px; position: relative; margin: -2px 0 -2px 20px; }
-            .beam-line { position: absolute; left: 0; top: 0; width: 2px; height: 100%; background: repeating-linear-gradient(to bottom, #cbd5e1 0, #cbd5e1 2px, transparent 2px, transparent 4px); }
-
-            /* n8n Execution Status Foot */
-            .n8n-execution-foot {
-                background: #ecfeff;
-                border: 1px solid rgba(6, 182, 212, 0.3);
-                border-radius: 100px;
-                padding: 3px 8px;
-                font-size: 0.56rem;
-                color: #0891b2;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                animation: toastPop 4.5s ease-in-out infinite alternate;
-            }
-
-            .f-cards-stack {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                width: 100%;
-                height: 75px;
-                position: relative;
-                margin: 4px 0;
-            }
-
-            /* Card 1: Live Fintech Stream Header Pill (Zero Overlap Flow) */
-            .f-live-header {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                gap: 6px;
-                background: rgba(0, 122, 255, 0.06);
-                border: 1px solid rgba(0, 122, 255, 0.15);
-                border-radius: 100px;
-                padding: 3px 10px;
-                position: relative;
-                z-index: 5;
-                box-shadow: 0 2px 6px rgba(0, 122, 255, 0.04);
-                white-space: nowrap;
-            }
-            .f-live-pulse-dot {
-                width: 6px;
-                height: 6px;
-                border-radius: 50%;
-                background: #34c759;
-                box-shadow: 0 0 8px #34c759;
-                animation: dotPulse 1.5s ease-in-out infinite alternate;
-            }
-            @keyframes dotPulse {
-                0% { transform: scale(0.8); opacity: 0.6; }
-                100% { transform: scale(1.3); opacity: 1; }
-            }
-            .f-live-label { font-size: 0.6rem; font-weight: 800; color: #007aff; letter-spacing: 0.04em; }
-            .f-live-time { font-size: 0.58rem; color: #86868b; font-weight: 600; }
-
-            .f-sparkline-area { display: flex; flex-direction: column; gap: 4px; position: relative; }
-            .sparkline-svg { width: 100%; height: 18px; }
-            .sparkline-path { stroke-dasharray: 200; stroke-dashoffset: 0; animation: dashDraw 3s ease-out infinite alternate; }
-            @keyframes dashDraw {
-                0% { stroke-dashoffset: 200; }
-                100% { stroke-dashoffset: 0; }
-            }
-
-            /* Card 1: 3 Distinct Sequential Cards Entrance Sequence */
-            .f-balance-card {
-                background: #ffffff;
-                border: 1px solid rgba(0,0,0,0.06);
-                border-radius: 16px;
-                padding: 12px 16px;
-                width: 230px;
-                box-shadow: 0 8px 24px rgba(0,0,0,0.04);
-                display: flex;
-                flex-direction: column;
-                gap: 4px;
-                position: absolute;
-            }
-            .f-invoices-card {
-                background: #ffffff;
-                border: 1px solid rgba(0,0,0,0.06);
-                border-radius: 100px;
-                padding: 8px 16px;
-                width: 210px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                box-shadow: 0 6px 20px rgba(0,0,0,0.03);
-                position: absolute;
-            }
-            .text-blue-bg { background: #007aff !important; }
-
-            .f-seq-card-1 { animation: seqCard1 7s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
-            .f-seq-card-2 { animation: seqCard2 7s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
-            .f-seq-card-3 { animation: seqCard3 7s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
-
-            @keyframes seqCard1 {
-                0% { opacity: 0; transform: translateY(16px) scale(0.94); }
-                8%, 28% { opacity: 1; transform: translateY(0) scale(1); }
-                36%, 100% { opacity: 0; transform: translateY(-10px) scale(0.97); }
-            }
-            @keyframes seqCard2 {
-                0%, 26% { opacity: 0; transform: translateY(16px) scale(0.94); }
-                34%, 54% { opacity: 1; transform: translateY(0) scale(1); }
-                62%, 100% { opacity: 0; transform: translateY(-10px) scale(0.97); }
-            }
-            @keyframes seqCard3 {
-                0%, 52% { opacity: 0; transform: translateY(16px) scale(0.94); }
-                60%, 78% { opacity: 1; transform: translateY(0) scale(1); }
-                86%, 100% { opacity: 0; transform: translateY(-10px) scale(0.97); }
-            }
-
-            /* Animated Financial Growth Graph (Enters Later in Sequence) */
-            .f-graph-wrapper {
-                background: #ffffff;
-                border: 1px solid rgba(0,0,0,0.06);
-                border-radius: 14px;
-                padding: 10px 14px;
-                width: 230px;
-                box-shadow: 0 6px 20px rgba(0,0,0,0.03);
-                display: flex;
-                flex-direction: column;
-                gap: 8px;
-                margin-top: 6px;
-                animation: seqGraph 7s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-            }
-            @keyframes seqGraph {
-                0%, 76% { opacity: 0.3; transform: translateY(8px) scale(0.96); }
-                84%, 96% { opacity: 1; transform: translateY(0) scale(1); }
-                100% { opacity: 0.3; transform: translateY(8px) scale(0.96); }
-            }
-
-            .f-graph-header { display: flex; align-items: center; justify-content: space-between; }
-            .f-g-title { font-size: 0.58rem; font-weight: 800; color: #86868b; letter-spacing: 0.05em; }
-            .f-g-badge { font-size: 0.65rem; font-weight: 700; color: #34c759; }
-
-            .f-graph-bars {
-                display: flex;
-                align-items: flex-end;
-                justify-content: space-between;
-                height: 48px;
-                gap: 4px;
-                padding-top: 4px;
-            }
-            .f-g-bar-col {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 4px;
-                flex: 1;
-                height: 100%;
-                justify-content: flex-end;
-            }
-            .f-g-bar-fill {
-                width: 100%;
-                background: #e5e5ea;
-                border-radius: 4px;
-                transition: height 0.4s ease;
-            }
-            .f-g-bar-fill.active-bar {
-                background: linear-gradient(180deg, #007aff 0%, #34c759 100%);
-            }
-            .f-g-month { font-size: 0.56rem; color: #86868b; font-weight: 600; }
-
-            /* Card 2: Live Deal Toast Micro-Interaction */
-            .p-live-toast {
-                background: #ffffff;
-                border: 1px solid rgba(52, 199, 89, 0.25);
-                border-radius: 100px;
-                padding: 4px 12px;
-                font-size: 0.65rem;
-                color: #1d1d1f;
-                box-shadow: 0 4px 16px rgba(52, 199, 89, 0.12);
-                display: flex;
-                align-items: center;
-                margin-top: 10px;
-                animation: toastPopSeq 5s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
-            }
-            @keyframes toastPopSeq {
-                0%, 55% { opacity: 0; transform: translateY(12px) scale(0.9); }
-                65%, 92% { opacity: 1; transform: translateY(0) scale(1); }
-                100% { opacity: 0; transform: translateY(-8px) scale(0.95); }
-            }
-
-            /* Card 2: Sequential Bar Rise + Dropdown Open Sequence */
-            .blue-t-bar { animation: barGrow1 5s cubic-bezier(0.34, 1.56, 0.64, 1) infinite; }
-            .orange-t-bar { animation: barGrow2 5s cubic-bezier(0.34, 1.56, 0.64, 1) infinite; }
-            .green-t-bar { animation: barGrow3 5s cubic-bezier(0.34, 1.56, 0.64, 1) infinite; }
-
-            @keyframes barGrow1 {
-                0% { height: 0%; opacity: 0; }
-                15%, 85% { height: 56%; opacity: 1; }
-                100% { height: 0%; opacity: 0; }
-            }
-            @keyframes barGrow2 {
-                0%, 15% { height: 0%; opacity: 0; }
-                30%, 85% { height: 42%; opacity: 1; }
-                100% { height: 0%; opacity: 0; }
-            }
-            @keyframes barGrow3 {
-                0%, 30% { height: 0%; opacity: 0; }
-                45%, 85% { height: 70%; opacity: 1; }
-                100% { height: 0%; opacity: 0; }
-            }
-
-            .tasks-dropdown-menu {
-                position: absolute;
-                top: 28px;
-                right: 0;
-                background: #ffffff;
-                border: 1px solid rgba(0,0,0,0.08);
-                border-radius: 10px;
-                padding: 6px;
-                box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-                display: flex;
-                flex-direction: column;
-                gap: 2px;
-                width: 80px;
-                z-index: 10;
-                animation: dropdownOpenSeq 5s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
-            }
-            @keyframes dropdownOpenSeq {
-                0%, 50% { opacity: 0; transform: translateY(-6px) scale(0.9); visibility: hidden; }
-                65%, 90% { opacity: 1; transform: translateY(0) scale(1); visibility: visible; }
-                100% { opacity: 0; transform: translateY(-6px) scale(0.9); visibility: hidden; }
-            }
-
-            /* Card 3: Sequential Progress Meter Expansion (6 Bars) */
-            .cal-bar-row:nth-child(1) .cal-fill { animation: seqFill1 4.5s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
-            .cal-bar-row:nth-child(2) .cal-fill { animation: seqFill2 4.5s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
-            .cal-bar-row:nth-child(3) .cal-fill { animation: seqFill3 4.5s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
-            .cal-bar-row:nth-child(4) .cal-fill { animation: seqFill4 4.5s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
-            .cal-bar-row:nth-child(5) .cal-fill { animation: seqFill5 4.5s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
-            .cal-bar-row:nth-child(6) .cal-fill { animation: seqFill6 4.5s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
-
-            @keyframes seqFill1 { 0% { width: 0%; } 15%, 85% { width: 65%; } 100% { width: 0%; } }
-            @keyframes seqFill2 { 0%, 10% { width: 0%; } 25%, 85% { width: 82%; } 100% { width: 0%; } }
-            @keyframes seqFill3 { 0%, 20% { width: 0%; } 35%, 85% { width: 58%; } 100% { width: 0%; } }
-            @keyframes seqFill4 { 0%, 30% { width: 0%; } 45%, 85% { width: 52%; } 100% { width: 0%; } }
-            @keyframes seqFill5 { 0%, 40% { width: 0%; } 55%, 85% { width: 72%; } 100% { width: 0%; } }
-            @keyframes seqFill6 { 0%, 50% { width: 0%; } 65%, 85% { width: 66%; } 100% { width: 0%; } }
-
-            /* Card 4: WWDC Adam Max Cursor Glide & Click Ripple Sequence */
-            .adam-cursor-wrapper {
-                position: absolute;
-                right: 18px;
-                top: 50%;
-                transform: translateY(-50%);
-                display: flex;
-                align-items: center;
-                gap: 4px;
-                animation: cursorGlideSeq 5s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
-            }
-            .click-ripple-ring {
-                position: absolute;
-                top: -6px;
-                left: -6px;
-                width: 28px;
-                height: 28px;
-                border-radius: 50%;
-                border: 2px solid rgba(0, 122, 255, 0.6);
-                animation: rippleExpand 5s ease-out infinite;
-                pointer-events: none;
-            }
-            @keyframes rippleExpand {
-                0%, 30% { transform: scale(0.2); opacity: 0; }
-                35% { transform: scale(1.4); opacity: 0.85; }
-                45%, 100% { transform: scale(2.2); opacity: 0; }
-            }
-            @keyframes cursorGlideSeq {
-                0% { opacity: 0; transform: translate(40px, 30px); }
-                25%, 80% { opacity: 1; transform: translate(0, 0); }
-                35% { transform: scale(0.88); }
-                100% { opacity: 0; transform: translate(40px, 30px); }
-            }
-
-            .f-bal-top { display: flex; align-items: center; justify-content: space-between; }
-            .f-bal-title-group { display: flex; align-items: center; gap: 8px; }
-            .f-bal-icon-box { font-size: 0.85rem; }
-            .f-bal-title { font-size: 0.82rem; font-weight: 700; color: #1d1d1f; }
-
-            .f-bal-amount-badge {
-                background: #f5f5f7;
-                border-radius: 100px;
-                padding: 3px 10px;
-                font-size: 0.78rem;
-                font-weight: 800;
-                color: #1d1d1f;
-                display: flex;
-                align-items: center;
-                gap: 3px;
-            }
-            .f-currency-icon {
-                width: 15px;
-                height: 15px;
-                border-radius: 50%;
-                background: #34c759;
-                color: #ffffff;
-                font-size: 0.55rem;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                font-weight: 900;
-            }
-            .f-bal-sub { font-size: 0.68rem; color: #86868b; margin-top: 2px; }
-            .f-bal-growth { font-size: 0.68rem; color: #86868b; }
-            .text-green-bold { color: #34c759; font-weight: 700; }
-
-            .f-invoices-card {
-                background: #ffffff;
-                border: 1px solid rgba(0,0,0,0.06);
-                border-radius: 100px;
-                padding: 8px 18px;
-                width: 220px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                box-shadow: 0 6px 20px rgba(0,0,0,0.03);
-            }
-            .f-inv-left { display: flex; align-items: center; gap: 8px; }
-            .f-inv-icon { font-size: 0.85rem; }
-            .f-inv-title { font-size: 0.78rem; font-weight: 700; color: #1d1d1f; }
-            .f-inv-amount { font-size: 0.78rem; font-weight: 800; color: #86868b; display: flex; align-items: center; gap: 4px; }
-            .f-inv-amount .f-currency-icon { background: #34c759; }
-
-            /* Card 2: Business & Productivity Dropdown Menu & Chart */
-            .tasks-dropdown-wrapper { position: relative; }
-            .tasks-dropdown-pill {
-                background: #f5f5f7;
-                border-radius: 8px;
-                padding: 4px 10px;
-                font-size: 0.74rem;
-                font-weight: 600;
-                color: #1d1d1f;
-                display: flex;
-                align-items: center;
-                gap: 6px;
-                cursor: pointer;
-            }
-            .tasks-dropdown-menu {
-                position: absolute;
-                top: 28px;
-                right: 0;
-                background: #ffffff;
-                border: 1px solid rgba(0,0,0,0.08);
-                border-radius: 10px;
-                padding: 6px;
-                box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-                display: flex;
-                flex-direction: column;
-                gap: 2px;
-                width: 80px;
-                z-index: 10;
-                animation: ddPulse 4s ease-in-out infinite alternate;
-            }
-            @keyframes ddPulse {
-                0%, 40% { opacity: 0; transform: translateY(-4px); visibility: hidden; }
-                50%, 100% { opacity: 1; transform: translateY(0); visibility: visible; }
-            }
-            .dd-item { font-size: 0.7rem; color: #6e6e73; padding: 3px 8px; border-radius: 6px; }
-            .dd-item.active-dd { background: #f5f5f7; color: #1d1d1f; font-weight: 700; }
-
-            /* Card 3: Calories Burned Tracker (6 Horizontal Progress Bars from Screenshot 2) */
-            .cal-tracker-container {
-                display: flex;
-                flex-direction: column;
-                gap: 12px;
-                width: 100%;
-                padding: 10px;
-            }
-            .cal-header-row {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                width: 100%;
-            }
-            .cal-title-group { display: flex; align-items: center; gap: 8px; }
-            .cal-fire-icon { color: #ff3b30; font-size: 1.1rem; }
-            .cal-main-title { font-size: 1.1rem; font-weight: 800; color: #1d1d1f; letter-spacing: -0.02em; }
-            .cal-dropdown-pill {
-                background: #f5f5f7;
-                border-radius: 8px;
-                padding: 4px 10px;
-                font-size: 0.74rem;
-                font-weight: 600;
-                color: #1d1d1f;
-                display: flex;
-                align-items: center;
-                gap: 6px;
-            }
-            .cal-bars-list { display: flex; flex-direction: column; gap: 8px; width: 100%; }
-            .cal-bar-row { display: flex; align-items: center; gap: 12px; font-size: 0.72rem; color: #6e6e73; font-weight: 600; }
-            .cal-lbl { width: 55px; text-align: right; }
-            .cal-track { flex: 1; height: 12px; background: #eef2ff; border-radius: 100px; overflow: hidden; }
-            .cal-fill { height: 100%; background: linear-gradient(90deg, #007aff 0%, #34c759 100%); border-radius: 100px; }
-            @keyframes flowPulse {
-                0% { left: -2px; opacity: 0; }
-                50% { opacity: 1; }
-                100% { left: 12px; opacity: 0; }
-            }
-
-            /* Card 2: Business & Productivity Visual (Work OS & CRM Software Workflow Mockup) */
-            .p-software-workflow-list {
-                display: flex;
-                flex-direction: column;
-                gap: 8px;
-                width: 100%;
-            }
-            .p-wf-row {
-                background: #f8fafc;
-                border: 1px solid #e2e8f0;
-                border-radius: 12px;
-                padding: 8px 10px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                gap: 8px;
-                transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-            }
-            .p-wf-row:hover {
-                background: #ffffff;
-                border-color: #007aff;
-                box-shadow: 0 4px 14px rgba(0, 122, 255, 0.08);
-                transform: translateY(-1px);
-            }
-            .row-highlight-green {
-                background: #ffffff;
-                border-color: #16a34a;
-                box-shadow: 0 4px 14px rgba(22, 163, 74, 0.1);
-            }
-            .p-wf-left { display: flex; align-items: center; gap: 8px; }
-            .p-chk-box { font-size: 0.82rem; }
-            .chk-done { color: #007aff; }
-            .chk-win { color: #16a34a; }
-            .chk-paid { color: #9333ea; }
-
-            .p-wf-details { display: flex; flex-direction: column; gap: 2px; }
-            .p-wf-title { font-size: 0.74rem; font-weight: 700; color: #0f172a; white-space: nowrap; }
-            .p-wf-meta { display: flex; align-items: center; gap: 6px; font-size: 0.62rem; color: #64748b; }
-            
-            .p-tag-pill {
-                font-size: 0.58rem;
-                font-weight: 700;
-                padding: 1px 6px;
-                border-radius: 100px;
-            }
-            .tag-blue { background: #eff6ff; color: #007aff; }
-            .tag-green { background: #dcfce7; color: #16a34a; }
-            .tag-purple { background: #f3e8ff; color: #9333ea; }
-
-            .p-assignee { font-weight: 600; color: #475569; }
-
-            .p-status-badge {
-                font-size: 0.6rem;
-                font-weight: 800;
-                padding: 2px 7px;
-                border-radius: 100px;
-                white-space: nowrap;
-            }
-            .status-progress { background: #eff6ff; color: #007aff; }
-            .status-win { background: #dcfce7; color: #16a34a; }
-            .status-paid { background: #f3e8ff; color: #9333ea; }
-
-            .p-wf-anim-1 { animation: pRowHighlight 4s ease-in-out infinite; animation-delay: 0s; }
-            .p-wf-anim-2 { animation: pRowHighlight 4s ease-in-out infinite; animation-delay: 1.3s; }
-            .p-wf-anim-3 { animation: pRowHighlight 4s ease-in-out infinite; animation-delay: 2.6s; }
-
-            @keyframes pRowHighlight {
-                0%, 100% { opacity: 0.85; transform: scale(1); }
-                30%, 60% { opacity: 1; transform: scale(1.015); }
-            }
-
-            /* Card 2: Productivity Visual (Apple Work OS & CRM Mockup) */
-            .productivity-visual {
-                background: #ffffff;
-                justify-content: space-between;
-                align-items: stretch;
-                padding: 18px !important;
-                position: relative;
-                gap: 12px;
-            }
-            .p-work-os-header {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                gap: 10px;
-                width: 100%;
-            }
-            .p-search-input-box {
-                flex: 1;
-                background: #f8fafc;
-                border: 1px solid #e2e8f0;
-                border-radius: 100px;
-                padding: 6px 14px;
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                font-size: 0.74rem;
-                color: #94a3b8;
-            }
-            .search-icon { color: #94a3b8; font-size: 0.72rem; }
-            .search-placeholder { font-weight: 500; font-size: 0.72rem; }
-
-            .p-team-avatars {
-                display: flex;
-                align-items: center;
-            }
-            .avatar-circle {
-                width: 26px;
-                height: 26px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 0.65rem;
-                font-weight: 800;
-                color: #ffffff;
-                border: 2px solid #ffffff;
-                margin-left: -8px;
-                position: relative;
-            }
-            .av-1 { background: #007aff; }
-            .av-2 { background: #0f172a; }
-            .av-3 { background: #34c759; }
-            .av-dot {
-                position: absolute;
-                bottom: -1px;
-                right: -1px;
-                width: 7px;
-                height: 7px;
-                border-radius: 50%;
-                background: #34c759;
-                border: 1.5px solid #ffffff;
-            }
-
-            /* Live Work OS Kanban Task Stream Cards */
-            .p-kanban-stream {
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-            }
-            .p-kanban-card {
-                background: #f8fafc;
-                border: 1px solid #e2e8f0;
-                border-radius: 14px;
-                padding: 10px 14px;
-                display: flex;
-                flex-direction: column;
-                gap: 6px;
-                transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease;
-            }
-            .p-kanban-card.card-active-glow {
-                background: #ffffff;
-                border-color: #007aff;
-                box-shadow: 0 6px 20px rgba(0, 122, 255, 0.12);
-            }
-            .p-anim-1 { animation: pCardFloat 3.5s cubic-bezier(0.34, 1.56, 0.64, 1) infinite alternate; }
-            .p-anim-2 { animation: pCardFloat 3.5s cubic-bezier(0.34, 1.56, 0.64, 1) infinite alternate; animation-delay: 0.8s; }
-
-            @keyframes pCardFloat {
-                0% { transform: translateY(0); }
-                100% { transform: translateY(-3px); }
-            }
-
-            .p-k-card-header {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-            }
-            .p-badge-blue {
-                font-size: 0.68rem;
-                font-weight: 700;
-                color: #007aff;
-                background: #eff6ff;
-                padding: 2px 8px;
-                border-radius: 100px;
-            }
-            .p-badge-green {
-                font-size: 0.68rem;
-                font-weight: 700;
-                color: #16a34a;
-                background: #dcfce7;
-                padding: 2px 8px;
-                border-radius: 100px;
-            }
-            .p-status-win {
-                font-size: 0.65rem;
-                font-weight: 800;
-                color: #16a34a;
-                background: #dcfce7;
-                padding: 2px 7px;
-                border-radius: 100px;
-            }
-            .p-status-paid {
-                font-size: 0.65rem;
-                font-weight: 700;
-                color: #007aff;
-                background: #eff6ff;
-                padding: 2px 7px;
-                border-radius: 100px;
-            }
-            .p-k-title {
-                font-size: 0.84rem;
-                font-weight: 700;
-                color: #0f172a;
-                letter-spacing: -0.01em;
-            }
-            .p-k-meta {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                font-size: 0.7rem;
-                color: #64748b;
-                margin-top: 2px;
-            }
-            .meta-subtasks { font-weight: 600; color: #334155; }
-            .meta-subtasks .text-blue { color: #007aff; margin-right: 4px; }
-            .meta-assignee { font-weight: 600; color: #475569; }
-
-            /* Card 3: AI Solutions Visual (Apple Autonomous AI Agent Node Canvas Mockup) */
-            .ai-sparkle-circle {
-                width: 28px;
-                height: 28px;
-                border-radius: 50%;
-                background: #eff6ff;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .ai-node-canvas {
-                display: flex;
-                flex-direction: column;
-                gap: 6px;
-                width: 100%;
-                position: relative;
-            }
-            .ai-canvas-node {
-                background: #f8fafc;
-                border: 1px solid #e2e8f0;
-                border-radius: 12px;
-                padding: 8px 10px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                gap: 10px;
-                transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease;
-            }
-            .ai-canvas-node:hover {
-                background: #ffffff;
-                box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-                transform: translateY(-2px);
-            }
-            .node-icon-wrapper {
-                width: 28px;
-                height: 28px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 0.72rem;
-            }
-            .node-green .node-icon-wrapper { background: #dcfce7; color: #16a34a; }
-            .node-purple .node-icon-wrapper { background: #f3e8ff; color: #9333ea; }
-            .node-blue .node-icon-wrapper { background: #eff6ff; color: #007aff; }
-
-            .node-body { display: flex; flex-direction: column; gap: 1px; flex: 1; }
-            .n-title { font-size: 0.74rem; font-weight: 700; color: #0f172a; }
-            .n-sub { font-size: 0.62rem; color: #64748b; font-weight: 500; }
-
-            .n-ms {
-                font-size: 0.6rem;
-                font-weight: 800;
-                color: #007aff;
-                background: #eff6ff;
-                padding: 2px 7px;
-                border-radius: 100px;
-            }
-
-            /* Flow Connector Particle Beams */
-            .ai-flow-beam {
-                height: 8px;
-                width: 2px;
-                background: #cbd5e1;
-                margin: 0 auto;
-                position: relative;
-            }
-            .beam-particle {
-                width: 4px;
-                height: 4px;
-                border-radius: 50%;
-                background: #9333ea;
-                position: absolute;
-                left: -1px;
-                animation: beamParticle 1.8s linear infinite;
-            }
-            @keyframes beamParticle {
-                0% { top: 0; opacity: 0; }
-                50% { opacity: 1; }
-                100% { top: 8px; opacity: 0; }
-            }
-
-            .node-anim-1 { animation: aiNodePulse 3.8s ease-in-out infinite; animation-delay: 0s; }
-            .node-anim-2 { animation: aiNodePulse 3.8s ease-in-out infinite; animation-delay: 1.2s; }
-            .node-anim-3 { animation: aiNodePulse 3.8s ease-in-out infinite; animation-delay: 2.4s; }
-
-            @keyframes aiNodePulse {
-                0%, 100% { background: #f8fafc; border-color: #e2e8f0; }
-                25%, 65% { background: #ffffff; border-color: #9333ea; box-shadow: 0 4px 16px rgba(147, 51, 234, 0.12); transform: scale(1.015); }
-            }
-            .f-chart-wrapper {
-                display: flex;
-                align-items: flex-end;
-                gap: 10px;
-                width: 100%;
-                height: 100%;
-                max-height: 220px;
-                position: relative;
-                padding-left: 32px;
-                padding-bottom: 24px;
-            }
-            .f-y-axis {
-                position: absolute;
-                left: 0;
-                top: 0;
-                bottom: 24px;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                font-size: 0.68rem;
-                font-weight: 600;
-                color: #94a3b8;
-                text-align: right;
-                width: 24px;
-            }
-            .f-bars-track {
-                flex: 1;
-                display: flex;
-                align-items: flex-end;
-                justify-content: space-between;
-                height: 100%;
-                gap: 4px;
-            }
-            .f-cat-col {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 6px;
-                flex: 1;
-                height: 100%;
-                justify-content: flex-end;
-                position: relative;
-                cursor: pointer;
-            }
-            .f-cat-bar {
-                width: 100%;
-                max-width: 14px;
-                height: var(--h);
-                background: #a5b4fc;
-                border-radius: 100px;
-                transform-origin: bottom;
-                animation: springBarGrow 3s cubic-bezier(0.34, 1.56, 0.64, 1) infinite alternate;
-                transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-            }
-            .f-cat-col:nth-child(1) .f-cat-bar { animation-delay: 0s; }
-            .f-cat-col:nth-child(2) .f-cat-bar { animation-delay: 0.15s; }
-            .f-cat-col:nth-child(3) .f-cat-bar { animation-delay: 0.3s; }
-            .f-cat-col:nth-child(4) .f-cat-bar { animation-delay: 0.45s; }
-            .f-cat-col:nth-child(5) .f-cat-bar { animation-delay: 0.6s; }
-            .f-cat-col:nth-child(6) .f-cat-bar { animation-delay: 0.75s; }
-            .f-cat-col:nth-child(7) .f-cat-bar { animation-delay: 0.9s; }
-            .f-cat-col:nth-child(8) .f-cat-bar { animation-delay: 1.05s; }
-            .f-cat-col:nth-child(9) .f-cat-bar { animation-delay: 1.2s; }
-
-            .f-cat-col:hover .f-cat-bar {
-                background: #4f46e5;
-                transform: scaleY(1.12);
-                box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
-            }
-            @keyframes springBarGrow {
-                0% { transform: scaleY(0.65); opacity: 0.85; }
-                100% { transform: scaleY(1.06); opacity: 1; }
-            }
-            .f-cat-name {
-                font-size: 0.64rem;
-                font-weight: 600;
-                color: #94a3b8;
-                position: absolute;
-                bottom: -22px;
-                white-space: nowrap;
-                transition: color 0.2s ease;
-            }
-            .f-cat-col:hover .f-cat-name {
-                color: #4f46e5;
-                font-weight: 700;
-            }
-
-            /* Card 2: Tasks Completed Bar Chart Replica */
-            .productivity-visual {
-                background: #ffffff;
-                justify-content: center;
-                align-items: center;
-                padding: 16px !important;
-            }
-            .tasks-chart-container {
-                width: 100%;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-            }
-            .tasks-header-row {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-            }
-            .tasks-main-title {
-                font-size: 0.95rem;
-                font-weight: 700;
-                color: #334155;
-            }
-            .tasks-dropdown-pill {
-                display: flex;
-                align-items: center;
-                gap: 6px;
-                background: #f8fafc;
-                border: 1px solid #e2e8f0;
-                padding: 4px 12px;
-                border-radius: 100px;
-                font-size: 0.72rem;
-                font-weight: 600;
-                color: #64748b;
-                cursor: pointer;
-                transition: all 0.25s ease;
-            }
-            .tasks-dropdown-pill:hover {
-                background: #eff6ff;
-                border-color: #007aff;
-                color: #007aff;
-            }
-            .tasks-bars-row {
-                display: flex;
-                align-items: flex-end;
-                justify-content: space-around;
-                height: 170px;
-                margin-top: 10px;
-                gap: 16px;
-            }
-            .t-bar-col {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 8px;
-                flex: 1;
-                height: 100%;
-                justify-content: flex-end;
-                cursor: pointer;
-            }
-            .t-bar-fill {
-                width: 100%;
-                max-width: 54px;
-                border-radius: 12px 12px 0 0;
-                display: flex;
-                align-items: flex-start;
-                justify-content: center;
-                padding-top: 10px;
-                transform-origin: bottom;
-                animation: taskSpringPulse 3.5s cubic-bezier(0.34, 1.56, 0.64, 1) infinite alternate;
-                transition: transform 0.25s ease, filter 0.25s ease;
-            }
-            .t-bar-col:hover .t-bar-fill {
-                transform: scaleY(1.08);
-                filter: brightness(1.1);
-            }
-            @keyframes taskSpringPulse {
-                0% { transform: scaleY(0.82); }
-                100% { transform: scaleY(1.06); }
-            }
-            .blue-t-bar { background: #007aff; box-shadow: 0 4px 14px rgba(0, 122, 255, 0.25); }
-            .orange-t-bar { background: #ff9500; box-shadow: 0 4px 14px rgba(255, 149, 0, 0.25); }
-            .green-t-bar { background: linear-gradient(180deg, #34c759 0%, #22c55e 100%); box-shadow: 0 4px 14px rgba(52, 199, 89, 0.25); }
-
-            .t-bar-val {
-                font-size: 0.92rem;
-                font-weight: 800;
-                color: #ffffff;
-            }
-            .t-bar-label {
-                font-size: 0.68rem;
-                font-weight: 600;
-                color: #64748b;
-                text-align: center;
-                line-height: 1.2;
-            }
-
-            /* Card 3: AI Solutions & Agent Animation */
-            .ai-agent-visual {
-                background: #ffffff;
-                justify-content: center;
-                align-items: center;
-            }
-            .ai-agent-card {
-                width: 100%;
-                background: #f8fafc;
-                border: 1px solid #e2e8f0;
-                border-radius: 16px;
-                padding: 14px;
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-            }
-            .ai-card-header {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-            }
-            .ai-header-left {
-                display: flex;
-                align-items: center;
-                gap: 6px;
-            }
-            .ai-pulse-dot {
-                width: 8px;
-                height: 8px;
-                border-radius: 50%;
-                background: #16a34a;
-                box-shadow: 0 0 8px #16a34a;
-                animation: greenDotPulse 1.8s infinite;
-            }
-            @keyframes greenDotPulse {
-                0% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7); }
-                70% { box-shadow: 0 0 0 6px rgba(22, 163, 74, 0); }
-                100% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); }
-            }
-            .ai-title-text {
-                font-size: 0.76rem;
-                font-weight: 700;
-                color: #334155;
-            }
-            .ai-model-tag {
-                font-size: 0.68rem;
-                font-weight: 700;
-                color: #007aff;
-                background: #eff6ff;
-                padding: 2px 8px;
-                border-radius: 100px;
-            }
-            .ai-prompt-box {
-                background: #ffffff;
-                border: 1px solid #e2e8f0;
-                border-radius: 12px;
-                padding: 10px 12px;
-                display: flex;
-                align-items: center;
-                gap: 10px;
-            }
-            .ai-sparkle-icon {
-                font-size: 1.1rem;
-                color: #007aff;
-                animation: sparkleSpin 4s linear infinite;
-            }
-            @keyframes sparkleSpin {
-                0% { transform: scale(1) rotate(0deg); }
-                50% { transform: scale(1.18) rotate(180deg); }
-                100% { transform: scale(1) rotate(360deg); }
-            }
-            .ai-prompt-label {
-                font-size: 0.62rem;
-                font-weight: 800;
-                color: #94a3b8;
-                letter-spacing: 0.05em;
-            }
-            .ai-prompt-str {
-                font-size: 0.76rem;
-                font-weight: 600;
-                color: #0f172a;
-            }
-
-            /* Live 3-Step AI Workflow Execution Timeline */
-            .ai-timeline-box {
-                display: flex;
-                flex-direction: column;
-                gap: 6px;
-                background: #ffffff;
-                border: 1px solid #e2e8f0;
-                border-radius: 12px;
-                padding: 10px 12px;
-            }
-            .ai-step-row {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                font-size: 0.73rem;
-                color: #475569;
-            }
-            .ai-step-row.active-step {
-                color: #007aff;
-                font-weight: 700;
-            }
-            .step-icon.green-icon { color: #16a34a; margin-right: 6px; }
-            .step-icon.blue-icon { color: #007aff; margin-right: 6px; }
-            .step-txt { flex: 1; }
-            .step-ms { font-size: 0.66rem; font-weight: 700; color: #94a3b8; background: #f8fafc; padding: 1px 6px; border-radius: 100px; }
-
-            /* Card 4 Specific Calendar Schedule Widget (Screenshot Match & Video Cursor Animation) */
-            .schedule-visual {
-                background: #ffffff;
-                padding: 16px 20px;
-                justify-content: flex-start;
-            }
-            
-            .sched-calendar-widget {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                gap: 12px;
-                font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
-            }
-            
-            .sched-widget-header {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                padding-bottom: 8px;
-                border-bottom: 1px solid #f1f5f9;
-                color: #64748b;
-                font-size: 0.85rem;
-                font-weight: 600;
-            }
-            .sched-header-left { display: flex; align-items: center; gap: 8px; }
-            .sched-menu-icon { font-size: 0.9rem; color: #94a3b8; }
-            .sched-date-text { color: #334155; font-weight: 700; }
-            .sched-month-text { color: #64748b; }
-            .sched-tz-badge { font-size: 0.68rem; font-weight: 700; color: #007aff; background: #eff6ff; padding: 2px 8px; border-radius: 100px; }
-            
-            .sched-slots-list {
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .sched-slot-row {
-                display: flex;
-                align-items: center;
-                gap: 14px;
-                font-size: 0.78rem;
-            }
-            
-            .sched-slot-row.relative-row {
-                position: relative;
-            }
-            
-            .slot-time {
-                color: #64748b;
-                font-weight: 600;
-                min-width: 60px;
-                font-size: 0.76rem;
-            }
-            
-            .slot-pill {
-                flex: 1;
-                padding: 8px 14px;
-                border-radius: 10px;
-                font-size: 0.78rem;
-                font-weight: 500;
-                line-height: 1.3;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-            }
-            
-            .slot-pill.green-pill {
-                background: #dcfea3;
-                color: #276700;
-            }
-            
-            .slot-pill.slate-pill {
-                background: #f8fafc;
-                color: #475569;
-                border: 1px solid #e2e8f0;
-                transition: all 0.3s ease;
-            }
-            
-            .sched-slot-row.relative-row .slot-pill.slate-pill {
-                animation: slotActiveGlow 4.5s ease-in-out infinite;
-            }
-            @keyframes slotActiveGlow {
-                0%, 45% { background: #f8fafc; border-color: #e2e8f0; }
-                55%, 75% { background: #eff6ff; border-color: #007aff; color: #007aff; box-shadow: 0 4px 14px rgba(0,122,255,0.15); }
-                85%, 100% { background: #f8fafc; border-color: #e2e8f0; }
-            }
-            
-            .confirmed-tag {
-                font-size: 0.65rem;
-                font-weight: 800;
-                color: #16a34a;
-                background: #dcfce7;
-                padding: 2px 6px;
-                border-radius: 100px;
-                margin-left: 6px;
-            }
-
-            .slot-pill.blue-outline-pill {
-                background: #ffffff;
-                color: #007aff;
-                border: 1px solid #cbd5e1;
-                display: flex;
-                align-items: center;
-            }
-            
-            /* Floating & Interactive Adam Max Cursor Video Animation with Click Ripple */
-            .adam-cursor-wrapper {
-                position: absolute;
-                right: 20px;
-                top: 50%;
-                transform: translateY(-50%);
-                display: flex;
-                align-items: center;
-                gap: 4px;
-                z-index: 5;
-                animation: adamCursorMove 4.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
-            }
-
-            .click-ripple-ring {
-                position: absolute;
-                left: 4px;
-                top: 4px;
-                width: 14px;
-                height: 14px;
-                border-radius: 50%;
-                border: 2px solid #007aff;
-                opacity: 0;
-                transform: scale(0.5);
-                animation: clickRipple 4.5s infinite;
-            }
-
-            @keyframes clickRipple {
-                0%, 55% { opacity: 0; transform: scale(0.5); }
-                60% { opacity: 0.9; transform: scale(2.2); }
-                70% { opacity: 0; transform: scale(3.5); }
-                100% { opacity: 0; transform: scale(0.5); }
-            }
-            
-            @keyframes adamCursorMove {
-                0% { transform: translate(15px, 20px) scale(1); }
-                25% { transform: translate(-30px, -18px) scale(0.95); }
-                50% { transform: translate(-75px, 2px) scale(0.9); }
-                60% { transform: translate(-75px, 2px) scale(1.15); }
-                75% { transform: translate(-20px, -10px) scale(1); }
-                100% { transform: translate(15px, 20px) scale(1); }
-            }
-            
-            .cursor-svg {
-                filter: drop-shadow(0 2px 4px rgba(0,0,0,0.18));
-            }
-            
-            .adam-name-badge {
-                background: #007aff;
-                color: #ffffff;
-                font-size: 0.72rem;
-                font-weight: 700;
-                padding: 3px 10px;
-                border-radius: 100px;
-                box-shadow: 0 4px 14px rgba(0, 122, 255, 0.4);
-                white-space: nowrap;
-            }
-
-            /* Responsive Adjustments for Mobile & Tablets */
-            @media (max-width: 991px) {
-                .built-grid {
-                    grid-template-columns: 1fr;
-                    gap: 24px;
-                }
-                .built-main-title {
-                    font-size: 2.4rem !important;
-                }
-                .built-script-sub {
-                    font-size: 1.8rem !important;
-                }
-            }
-
-            @media (max-width: 480px) {
-                .built-card-visual {
-                    min-height: 240px;
-                    height: 240px;
-                    padding: 12px !important;
-                }
-                .f-chart-wrapper {
-                    padding-left: 24px;
-                    gap: 3px;
-                }
-                .f-cat-bar {
-                    max-width: 10px;
-                }
-                .f-cat-name {
-                    font-size: 0.52rem;
-                }
-                .t-bar-fill {
-                    max-width: 42px;
-                }
-                .t-bar-val {
-                    font-size: 0.8rem;
-                }
-                .sched-slot-row {
-                    gap: 8px;
-                }
-                .slot-time {
-                    min-width: 48px;
-                    font-size: 0.7rem;
-                }
-                .slot-pill {
-                    font-size: 0.72rem;
-                    padding: 6px 10px;
-                }
-            }
-        </style>
-    </section>
+    <!-- Section Divider -->
+    <div class="apple-section-divider-wrapper" data-aos="fade-up" data-aos-duration="600">
+        <div class="apple-section-divider"></div>
+    </div>
 
     <!-- Portfolio Section -->
     <!-- Portfolio Section -->
@@ -5749,8 +3810,15 @@
                         </ul>
                     </div>
                     <div class="portfolio-card-visual" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);">
-                        <img src="images/auco-website.png" alt="AUCO Automotive Accessories Platform" class="portfolio-card-image">
+                        <img src="images/auco-website.png" alt="AUCO Automotive Accessories Platform" class="portfolio-card-image" loading="lazy" decoding="async">
                     </div>
+                </div>
+
+                <!-- Project Divider -->
+                <div class="portfolio-divider" data-aos="fade-up">
+                    <span class="divider-line"></span>
+                    <span class="divider-dot"></span>
+                    <span class="divider-line"></span>
                 </div>
 
                 <!-- Card 2: Aloha Estate -->
@@ -5781,8 +3849,15 @@
                         </ul>
                     </div>
                     <div class="portfolio-card-visual" style="background: linear-gradient(135deg, #115e59 0%, #0d9488 100%);">
-                        <img src="images/aloha-estate-portal.png" alt="Aloha Estate Custom Portal UI" class="portfolio-card-image">
+                        <img src="images/aloha-estate-portal.png" alt="Aloha Estate Custom Portal UI" class="portfolio-card-image" loading="lazy" decoding="async">
                     </div>
+                </div>
+
+                <!-- Project Divider -->
+                <div class="portfolio-divider" data-aos="fade-up">
+                    <span class="divider-line"></span>
+                    <span class="divider-dot"></span>
+                    <span class="divider-line"></span>
                 </div>
 
                 <!-- Card 3: Curious Kaizer Analytics -->
@@ -5813,8 +3888,15 @@
                         </ul>
                     </div>
                     <div class="portfolio-card-visual" style="background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);">
-                        <img src="images/curiouskaizer.png" alt="Curious Kaizer Analytics Console" class="portfolio-card-image">
+                        <img src="images/curiouskaizer.png" alt="Curious Kaizer Analytics Console" class="portfolio-card-image" loading="lazy" decoding="async">
                     </div>
+                </div>
+
+                <!-- Project Divider -->
+                <div class="portfolio-divider" data-aos="fade-up">
+                    <span class="divider-line"></span>
+                    <span class="divider-dot"></span>
+                    <span class="divider-line"></span>
                 </div>
 
                 <!-- Card 4: Notary Platform -->
@@ -5845,8 +3927,15 @@
                         </ul>
                     </div>
                     <div class="portfolio-card-visual" style="background: linear-gradient(135deg, #4338ca 0%, #6366f1 100%);">
-                        <img src="images/notary-platform.webp" alt="Notary Operations Console UI" class="portfolio-card-image">
+                        <img src="images/notary-platform.webp" alt="Notary Operations Console UI" class="portfolio-card-image" loading="lazy" decoding="async">
                     </div>
+                </div>
+
+                <!-- Project Divider -->
+                <div class="portfolio-divider" data-aos="fade-up">
+                    <span class="divider-line"></span>
+                    <span class="divider-dot"></span>
+                    <span class="divider-line"></span>
                 </div>
 
                 <!-- Card 5: CuriousCRM -->
@@ -5877,12 +3966,17 @@
                         </ul>
                     </div>
                     <div class="portfolio-card-visual" style="background: linear-gradient(135deg, #6d28d9 0%, #8b5cf6 100%);">
-                        <img src="images/curiouscrm.webp" alt="CuriousCRM Sales Management Dashboard" class="portfolio-card-image">
+                        <img src="images/curiouscrm.webp" alt="CuriousCRM Sales Management Dashboard" class="portfolio-card-image" loading="lazy" decoding="async">
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Section Divider -->
+    <div class="apple-section-divider-wrapper" data-aos="fade-up" data-aos-duration="600">
+        <div class="apple-section-divider"></div>
+    </div>
 
     <!-- FAQ Section - Card Accordion Style Match -->
     <section id="faq" class="faq" data-aos="fade-up" data-aos-duration="800" style="position: relative; background-color: transparent !important; padding: 5.5rem 0;">
@@ -6115,7 +4209,12 @@
             }
         }
     </style>
+    </section>
 
+    <!-- Section Divider -->
+    <div class="apple-section-divider-wrapper" data-aos="fade-up" data-aos-duration="600">
+        <div class="apple-section-divider"></div>
+    </div>
 
     <!-- Book a Call Section -->
     <section id="book-call" class="booking-premium-section" data-aos="fade-up" data-aos-duration="800" style="background-color: transparent !important;">
@@ -6130,7 +4229,7 @@
                 <div class="wind-glow wind-5"></div>
                 
                 <div class="banner-content">
-                    <div class="hero-badge" style="margin-bottom: 1.5rem !important;">Schedule Meeting</div>
+                    <div class="hero-badge">Schedule Meeting</div>
                     <h2 class="banner-title">Let’s build what moves <span class="highlight-blue-light">your business forward.</span></h2>
                     <p class="banner-desc">Websites, apps, SaaS, CRM and AI systems—designed for growth, delivered fast and supported without disappearing.</p>
                     
@@ -6144,7 +4243,7 @@
             <!-- Overlapping Booking Card -->
             <div class="booking-card-wrapper calendly-card-wrapper" id="booking-card-wrapper">
                 <!-- Cal inline embed code begins -->
-                <div style="width:100%;height:100%;min-height:700px;overflow:hidden;" id="my-cal-inline-30min"></div>
+                <div style="width:100%;height:100%;overflow:hidden;" id="my-cal-inline-30min"></div>
                 <script type="text/javascript">
                   (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
                 Cal("init", "30min", {origin:"https://app.cal.com"});
@@ -6248,7 +4347,7 @@
     <script src="js/carousel.js" defer></script>
     <script src="js/typing.js" defer></script>
     <script src="js/timeline-animations.js" defer></script>
-    <script src="js/hero-process-sequence.js?v=arc-layout-20260730e" defer></script>
+    <script src="js/hero-process-sequence.js?v=loop-20260806" defer></script>
     <script src="js/homepage-motion.js" defer></script>
     <script src="js/isometric-animations.js" defer></script>
     <script src="js/analytics-tracker.js?v=2" defer></script>

@@ -660,7 +660,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('scroll', () => {
             window.requestAnimationFrame(updateStack);
         }, { passive: true });
-        window.addEventListener('resize', updateStack);
+        window.addEventListener('resize', updateStack, { passive: true });
         // Initial run
         updateStack();
     }

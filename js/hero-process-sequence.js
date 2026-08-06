@@ -104,7 +104,19 @@
             observer.observe(mockupCard);
         }
 
-        const stageTimers = [];
+        const isMobile = () => window.matchMedia('(max-width: 600px)').matches;
+
+        let loopTimeout = null;
+        let stageTimers = [];
+
+        const clearAllTimers = () => {
+            stageTimers.forEach(window.clearTimeout);
+            stageTimers = [];
+            if (loopTimeout) {
+                window.clearTimeout(loopTimeout);
+                loopTimeout = null;
+            }
+        };
 
         const setActiveStage = (stage) => {
             flow.dataset.activeStage = stage;
@@ -119,11 +131,44 @@
                 return;
             }
 
-            stageTimers.forEach(window.clearTimeout);
+            clearAllTimers();
             flow.dataset.processState = 'complete';
             flow.dataset.activeStage = 'complete';
             flow.classList.add('is-complete');
             flow.classList.remove('is-running');
+        };
+
+        const startSequence = () => {
+            clearAllTimers();
+            flow.dataset.processState = 'running';
+            flow.classList.remove('is-complete');
+            flow.classList.remove('is-running');
+
+            // Force reflow while is-running is removed so CSS animations restart cleanly from 0s
+            void flow.offsetWidth;
+
+            setActiveStage('meeting');
+            flow.classList.add('is-running');
+            queueStage('strategy', 1660);
+            queueStage('build', 3270);
+            queueStage('launch', 4980);
+
+            if (isMobile()) {
+                // On phone screen: loop endlessly back to Discovery card after cycle completes (~6740ms)
+                loopTimeout = window.setTimeout(() => {
+                    if (isMobile() && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                        flow.classList.remove('is-running');
+                        requestAnimationFrame(() => {
+                            startSequence();
+                        });
+                    } else {
+                        finishSequence();
+                    }
+                }, 6740);
+            } else {
+                // On desktop: finish sequence after one complete run
+                loopTimeout = window.setTimeout(finishSequence, 7200);
+            }
         };
 
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -133,22 +178,26 @@
 
         requestAnimationFrame(() => {
             requestAnimationFrame(() => {
-                flow.dataset.processState = 'running';
-                setActiveStage('meeting');
-                flow.classList.add('is-running');
-                queueStage('strategy', 1660);
-                queueStage('build', 3270);
-                queueStage('launch', 4980);
+                startSequence();
             });
         });
 
         deployCompletion.addEventListener('animationend', (event) => {
-            if (event.animationName === 'deployLiveComplete') {
+            if (!isMobile() && event.animationName === 'deployLiveComplete') {
                 finishSequence();
             }
-        }, { once: true });
+        });
 
-        window.setTimeout(finishSequence, 7200);
+        // Handle resize between mobile and desktop dynamically
+        let wasMobile = isMobile();
+        window.addEventListener('resize', () => {
+            updateResponsiveStops();
+            const nowMobile = isMobile();
+            if (nowMobile !== wasMobile) {
+                wasMobile = nowMobile;
+                startSequence();
+            }
+        }, { passive: true });
     };
 
     if (document.readyState === 'loading') {
