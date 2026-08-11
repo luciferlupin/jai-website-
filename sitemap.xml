@@ -67,6 +67,46 @@
         <priority>0.9</priority>
     </url>
     
+    <!-- Blog Article - Multi Agent Orchestration 2026 -->
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-multi-agent-orchestration-2026.html</loc>
+        <lastmod>2026-08-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Blog Article - Hybrid Search & Vector Indexing -->
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-vector-database-indexing-hybrid-search.html</loc>
+        <lastmod>2026-08-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Blog Article - Serverless Postgres Neon Supabase -->
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-serverless-postgres-neon-supabase.html</loc>
+        <lastmod>2026-08-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Blog Article - Rust & WebAssembly Microservices -->
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-rust-webassembly-microservices.html</loc>
+        <lastmod>2026-08-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Blog Article - Context Engineering over Prompt Engineering -->
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-context-engineering-llm-apps.html</loc>
+        <lastmod>2026-07-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
     <!-- Blog Article - Browser AI Agent Automation -->
     <url>
         <loc>https://www.curiouskaizer.com/blog-browser-ai-agent-automation.html</loc>
