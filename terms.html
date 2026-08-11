@@ -116,11 +116,27 @@
             .subpage-hero-title {
                 font-size: 2.5rem;
             }
-            .legal-content-section {
-                padding: 3rem 0;
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.curiouskaizer.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Terms of Service",
+                "item": "https://www.curiouskaizer.com/terms.html"
             }
-        }
-    </style>
+        ]
+    }
+    </script>
 </head>
 <body itemscope itemtype="https://schema.org/WebPage">
 

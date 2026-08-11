@@ -1,6 +1,13 @@
 {
-    "name": "Curious Kaizer",
+    "name": "Curious Kaizer | Custom SaaS & Web Engineering Agency",
     "short_name": "CuriousKaizer",
+    "description": "Bespoke custom SaaS platforms, AI agent automation, Three.js 3D web configurators, and e-commerce software.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#2563eb",
+    "orientation": "portrait-primary",
+    "categories": ["business", "technology", "developer tools", "productivity"],
     "icons": [
         {
             "src": "/favicon-16x16.png",
@@ -18,8 +25,30 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#2563eb",
-    "background_color": "#ffffff",
-    "display": "standalone",
-    "start_url": "/index.html"
+    "shortcuts": [
+        {
+            "name": "Book Discovery Call",
+            "short_name": "Book Call",
+            "description": "Schedule a free consultation call with Jai Goel",
+            "url": "/contact.html"
+        },
+        {
+            "name": "Our Capabilities",
+            "short_name": "Services",
+            "description": "Explore custom SaaS, AI, and web development services",
+            "url": "/services.html"
+        },
+        {
+            "name": "Featured Portfolio",
+            "short_name": "Portfolio",
+            "description": "View live client case studies and 3D web applications",
+            "url": "/portfolio.html"
+        },
+        {
+            "name": "Pricing Packages",
+            "short_name": "Pricing",
+            "description": "Transparent website making costs and hosting plans",
+            "url": "/pricing.html"
+        }
+    ]
 }
