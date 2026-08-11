@@ -5768,8 +5768,18 @@ section {
     font-weight: 600;
 }
 
-/* Mobile 5-Step Process Timeline - Perfectly Centered & Aligned */
+/* Mobile 5-Step Process Timeline & Tech Stack Capabilities Matrix - Perfectly Fitted & Spaced */
 @media (max-width: 768px) {
+    .process-section {
+        padding: 48px 0 36px 0 !important;
+        scroll-margin-top: 70px;
+    }
+
+    .process-section .unified-header-wrapper {
+        margin-bottom: 28px !important;
+        padding: 0 16px !important;
+    }
+
     .process-timeline {
         padding: 0 16px !important;
         position: relative !important;
@@ -5780,10 +5790,10 @@ section {
 
     .timeline-line {
         position: absolute !important;
-        left: 38px !important; /* 16px container padding + 22px circle radius = exact center */
-        top: 22px !important;
-        bottom: 22px !important;
-        height: calc(100% - 44px) !important;
+        left: 36px !important; /* 16px container padding + 20px circle radius = 36px exact center */
+        top: 20px !important;
+        bottom: 20px !important;
+        height: calc(100% - 40px) !important;
         width: 2px !important;
         background: #1d6bf3 !important;
         opacity: 0.8 !important;
@@ -5799,7 +5809,7 @@ section {
         flex-direction: row !important;
         align-items: flex-start !important;
         justify-content: flex-start !important;
-        margin-bottom: 2rem !important;
+        margin-bottom: 1.5rem !important;
         position: relative !important;
         width: 100% !important;
         z-index: 2 !important;
@@ -5813,15 +5823,15 @@ section {
         left: 0 !important;
         top: 0 !important;
         transform: none !important;
-        width: 44px !important;
-        height: 44px !important;
+        width: 40px !important;
+        height: 40px !important;
         border-radius: 50% !important;
         background: #1d6bf3 !important;
         color: #ffffff !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        font-size: 1.1rem !important;
+        font-size: 1rem !important;
         font-weight: 500 !important;
         flex-shrink: 0 !important;
         z-index: 3 !important;
@@ -5834,15 +5844,17 @@ section {
     .process-step:nth-child(odd) .step-content,
     .process-step:nth-child(even) .step-content {
         flex: 1 1 auto !important;
-        width: calc(100% - 60px) !important;
+        width: calc(100% - 56px) !important;
         margin-left: 16px !important;
         margin-right: 0 !important;
         margin-top: 0 !important;
-        padding: 16px 18px !important;
+        padding: 16px 16px !important;
         border-radius: 16px !important;
-        background: #ffffff !important;
-        border: 1px solid #e2e8f0 !important;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03) !important;
+        background: rgba(255, 255, 255, 0.85) !important;
+        backdrop-filter: blur(28px) saturate(190%) !important;
+        -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+        border: 1px solid rgba(255, 255, 255, 0.85) !important;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05) !important;
         opacity: 1 !important;
         transform: none !important;
         box-sizing: border-box !important;
@@ -5865,34 +5877,50 @@ section {
         margin: 0 !important;
         line-height: 1.5 !important;
     }
-}
 
-@media (max-width: 576px) {
-    .process-section {
-        padding: 4rem 0;
+    .process-cta {
+        margin-top: 2rem !important;
+        padding: 0 1rem !important;
     }
-    
-    .process-section h2 {
-        font-size: 2rem;
+
+    /* Capabilities Tech Stack Section Mobile Fixes */
+    .tech-stack-section {
+        padding: 48px 0 40px 0 !important;
+        scroll-margin-top: 70px;
     }
-    
-    .process-step {
-        margin-bottom: 2.5rem;
+
+    .tech-stack-section .unified-header-wrapper {
+        margin-bottom: 20px !important;
+        padding: 0 16px !important;
     }
-    
-    .step-content {
-        padding: 1.5rem;
-        width: calc(100% - 70px);
+
+    .tech-matrix-marquee-container {
+        margin-top: 18px !important;
+        gap: 12px !important;
+        padding: 10px 0 !important;
+        mask-image: linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%) !important;
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%) !important;
     }
-    
-    .step-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
+
+    .tech-matrix-marquee-row {
+        padding: 4px 0 !important;
     }
-    
-    .process-cta p {
-        font-size: 1.1rem;
+
+    .tech-matrix-track {
+        gap: 12px !important;
+    }
+
+    .matrix-icon-cell {
+        width: 60px !important;
+        height: 60px !important;
+        border-radius: 14px !important;
+    }
+
+    .matrix-icon-cell img,
+    .matrix-icon-cell svg,
+    .matrix-icon-cell i {
+        width: 52% !important;
+        height: 52% !important;
     }
 }
 
