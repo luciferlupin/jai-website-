@@ -70,41 +70,61 @@
     <!-- Blog Article - Multi Agent Orchestration 2026 -->
     <url>
         <loc>https://www.curiouskaizer.com/blog-multi-agent-orchestration-2026.html</loc>
-        <lastmod>2026-08-10</lastmod>
+        <lastmod>2026-08-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/blog-multi-agent-orchestration.png</image:loc>
+            <image:title>Multi-Agent Orchestration Architecture Diagram</image:title>
+        </image:image>
     </url>
 
     <!-- Blog Article - Hybrid Search & Vector Indexing -->
     <url>
         <loc>https://www.curiouskaizer.com/blog-vector-database-indexing-hybrid-search.html</loc>
-        <lastmod>2026-08-08</lastmod>
+        <lastmod>2026-08-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/blog-vector-hybrid-search.png</image:loc>
+            <image:title>Hybrid Search HNSW and BM25 Architecture Diagram</image:title>
+        </image:image>
     </url>
 
     <!-- Blog Article - Serverless Postgres Neon Supabase -->
     <url>
         <loc>https://www.curiouskaizer.com/blog-serverless-postgres-neon-supabase.html</loc>
-        <lastmod>2026-08-05</lastmod>
+        <lastmod>2026-08-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/blog-serverless-postgres.png</image:loc>
+            <image:title>Serverless Postgres Database Branching Architecture</image:title>
+        </image:image>
     </url>
 
     <!-- Blog Article - Rust & WebAssembly Microservices -->
     <url>
         <loc>https://www.curiouskaizer.com/blog-rust-webassembly-microservices.html</loc>
-        <lastmod>2026-08-02</lastmod>
+        <lastmod>2026-08-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/blog-rust-webassembly.png</image:loc>
+            <image:title>Rust WebAssembly vs Docker Microservices Infrastructure</image:title>
+        </image:image>
     </url>
 
     <!-- Blog Article - Context Engineering over Prompt Engineering -->
     <url>
         <loc>https://www.curiouskaizer.com/blog-context-engineering-llm-apps.html</loc>
-        <lastmod>2026-07-28</lastmod>
+        <lastmod>2026-08-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/blog-context-engineering.png</image:loc>
+            <image:title>Context Engineering vs Prompt Engineering GraphRAG Diagram</image:title>
+        </image:image>
     </url>
 
     <!-- Blog Article - Browser AI Agent Automation -->
