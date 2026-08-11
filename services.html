@@ -61,61 +61,83 @@
     }
     </script>
 
-    <!-- JSON-LD Service Schema -->
+    <!-- JSON-LD WebPage & Service Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Software Engineering & Custom Web Capabilities",
-        "serviceType": "Custom SaaS Development, AI Automation & Web Engineering",
-        "provider": {
-            "@type": "Organization",
-            "name": "Curious Kaizer",
-            "url": "https://www.curiouskaizer.com/",
-            "sameAs": [
-                "https://www.linkedin.com/company/curious-kaizer/",
-                "https://www.instagram.com/curiouskaizer/"
-            ]
-        },
-        "areaServed": "Worldwide",
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Curious Kaizer Core Engineering Capabilities",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Custom SaaS & Web Application Development",
-                        "description": "Bespoke web applications, customer portals, and real-time CRM dashboards built with Next.js and Supabase."
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Multi-Agent AI Swarm & Browser Automation",
-                        "description": "Autonomous AI agent workflows, LangGraph graph state engines, and function calling integration."
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Three.js & WebGL 3D Interactive Configurators",
-                        "description": "3D product visualizers and custom ring customization engines rendering real-time 60fps WebGL assets."
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Serverless Database Infrastructure & Hybrid Search",
-                        "description": "PostgreSQL database branching, Neon serverless scaling, pgvector hybrid search, and BM25 rank fusion."
-                    }
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "@id": "https://www.curiouskaizer.com/services.html",
+                "url": "https://www.curiouskaizer.com/services.html",
+                "name": "Our Capabilities & Engineering Services | Curious Kaizer",
+                "description": "Custom SaaS platforms, autonomous AI agent swarms, Three.js 3D web configurators, B2B procurement portals, real estate CRMs, and performance optimization.",
+                "isPartOf": {
+                    "@type": "WebSite",
+                    "name": "Curious Kaizer",
+                    "url": "https://www.curiouskaizer.com/"
                 }
-            ]
-        }
+            },
+            {
+                "@type": "Service",
+                "name": "Software Engineering & Custom Web Capabilities",
+                "serviceType": "Custom SaaS Development, AI Automation & Web Engineering",
+                "url": "https://www.curiouskaizer.com/services.html",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Curious Kaizer",
+                    "url": "https://www.curiouskaizer.com/",
+                    "logo": "https://www.curiouskaizer.com/images/logo-icon.jpg",
+                    "sameAs": [
+                        "https://www.linkedin.com/company/curious-kaizer/",
+                        "https://www.instagram.com/curiouskaizer/",
+                        "https://github.com/luciferlupin/jai-website-"
+                    ]
+                },
+                "areaServed": {
+                    "@type": "Country",
+                    "name": "Worldwide"
+                },
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "Curious Kaizer Core Engineering Capabilities",
+                    "itemListElement": [
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Custom SaaS & Web Application Development",
+                                "description": "Bespoke web applications, customer portals, and real-time CRM dashboards built with Next.js and Supabase."
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Multi-Agent AI Swarm & Browser Automation",
+                                "description": "Autonomous AI agent workflows, LangGraph graph state engines, and function calling integration."
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Three.js & WebGL 3D Interactive Configurators",
+                                "description": "3D product visualizers and custom ring customization engines rendering real-time 60fps WebGL assets."
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Serverless Database Infrastructure & Hybrid Search",
+                                "description": "PostgreSQL database branching, Neon serverless scaling, pgvector hybrid search, and BM25 rank fusion."
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
     }
     </script>
     
