@@ -35,8 +35,8 @@
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@700;800&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet"></noscript>
     
     <!-- Stylesheets Preload -->
     <link rel="preload" href="css/styles.css" as="style">
@@ -63,7 +63,7 @@
         
         .subpage-hero-title {
             font-size: 2.2rem;
-            font-weight: 800;
+            font-weight: 300;
             letter-spacing: -0.03em;
             color: #0f172a;
             margin: 0.2rem 0 0.4rem;
@@ -219,7 +219,7 @@
         "@context": "https://schema.org",
         "@type": "CollectionPage",
         "name": "SaaS & Web Development Portfolio - Curious Kaizer",
-        "description": "Explore custom web development and SaaS engineering portfolio of Curious Kaizer, showcasing 3D jewelry stores, legal platforms, travel portals, and CRM projects.",
+        "description": "Explore custom web development and SaaS engineering portfolio of Curious Kaizer, showcasing legal platforms, travel portals, e-commerce applications, and CRM projects.",
         "url": "https://www.curiouskaizer.com/portfolio.html",
         "publisher": {
             "@type": "LocalBusiness",
@@ -239,12 +239,7 @@
                     "name": "Real Estate Group-Buying SaaS Portal",
                     "description": "Custom real estate group purchasing platform with fractional token investment calculators."
                 },
-                {
-                    "@type": "ListItem",
-                    "position": 2,
-                    "name": "Three.js 3D Jewelry Customizer Storefront",
-                    "description": "Interactive Three.js 3D gold ring configurator and e-commerce cart."
-                },
+
                 {
                     "@type": "ListItem",
                     "position": 3,
@@ -305,8 +300,9 @@
     <section class="portfolio-detail-section">
         <div class="container">
             
-            <div class="filter-tabs">
+            <div class="portfolio-filter-tabs">
                 <button class="filter-tab active" data-filter="all">All Projects</button>
+                <button class="filter-tab" data-filter="3d">Interactive 3D</button>
                 <button class="filter-tab" data-filter="saas">SaaS & Web Apps</button>
                 <button class="filter-tab" data-filter="ecommerce">E-Commerce</button>
                 <button class="filter-tab" data-filter="ai">AI & Automation</button>
@@ -314,7 +310,160 @@
 
             <div class="portfolio-detail-grid">
                 
-                <!-- Project 1: AUCO Automotive -->
+                <!-- Project 1: DODD // Aero Lab R&D (Interactive 3D) -->
+                <div class="portfolio-item-premium" data-category="3d" data-aos="fade-up">
+                    <div class="portfolio-item-content">
+                        <div class="portfolio-item-meta">Interactive 3D WebGL Configurator</div>
+                        <h3>DODD // Aero Lab R&D</h3>
+                        <p class="portfolio-item-desc">A state-of-the-art interactive 3D footwear configurator featuring 360° orbital camera presets, real-time anatomical spec hotspots, dynamic colorway customizers, and live material HUD telemetry.</p>
+                        
+                        <div class="portfolio-item-features" style="margin: 16px 0; display: flex; flex-direction: column; gap: 8px;">
+                            <div style="font-size: 0.8rem; font-weight: 700; color: #ef4444; text-transform: uppercase; letter-spacing: 0.05em;">Key Capabilities</div>
+                            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; font-size: 0.88rem; color: #475569;">
+                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #ef4444; margin-top: 3px;"></i> <span><strong>360° Orbit & Camera Presets:</strong> Hero 3/4, Exploded View, Sole Tread, Heel Lock, and Top Down angles.</span></li>
+                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #ef4444; margin-top: 3px;"></i> <span><strong>Anatomical Spec Hotspots:</strong> Airflow, Nitrogen Cushioning, Heel Cradle, and Lateral callout badges.</span></li>
+                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #ef4444; margin-top: 3px;"></i> <span><strong>Dynamic 8-Colorway Switcher:</strong> Pulse Red, Reverse Mocha, Solar Orange, and Emerald Matrix live rendering.</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="tech-tags">
+                            <span class="tech-tag">Three.js</span>
+                            <span class="tech-tag">WebGL Shaders</span>
+                            <span class="tech-tag">GSAP Motion</span>
+                            <span class="tech-tag">3D Orbit Controls</span>
+                        </div>
+                        <a href="contact.html" class="cta-button primary">Request 3D Configurator</a>
+                    </div>
+                    <div class="portfolio-item-visual">
+                        <video autoplay loop muted playsinline poster="images/dodd-aero-lab.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
+                            <source src="videos/dodd-aero-lab.mp4" type="video/mp4">
+                            <img src="images/dodd-aero-lab.png" alt="DODD Aero Lab 3D Footwear Configurator UI">
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Project 2: HIS DRINK 3D Carousel (Interactive 3D) -->
+                <div class="portfolio-item-premium" data-category="3d ecommerce" data-aos="fade-up">
+                    <div class="portfolio-item-content">
+                        <div class="portfolio-item-meta">Interactive 3D Motion Showcase</div>
+                        <h3>HIS DRINK 3D Carousel</h3>
+                        <p class="portfolio-item-desc">An interactive 3D beverage retail experience showcasing zero-gravity product carousels, 360° drag-rotation physics, floating particle canvasses, and real-time telemetry overlays.</p>
+                        
+                        <div class="portfolio-item-features" style="margin: 16px 0; display: flex; flex-direction: column; gap: 8px;">
+                            <div style="font-size: 0.8rem; font-weight: 700; color: #007aff; text-transform: uppercase; letter-spacing: 0.05em;">Key Capabilities</div>
+                            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; font-size: 0.88rem; color: #475569;">
+                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #007aff; margin-top: 3px;"></i> <span><strong>3D Product Orbit:</strong> 7 vibrant 3D can renders (Tropical Cyan, Sunburst Citrus, Electric Melon).</span></li>
+                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #007aff; margin-top: 3px;"></i> <span><strong>360° Touch & Drag Physics:</strong> Smooth mouse/touch rotation with floating geometric particle physics.</span></li>
+                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #007aff; margin-top: 3px;"></i> <span><strong>Live Nutrition Overlay:</strong> Real-time 0g Sugar, 110mg Caffeine, and 15% Coconut Water telemetry.</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="tech-tags">
+                            <span class="tech-tag">Three.js</span>
+                            <span class="tech-tag">GLTF 3D Models</span>
+                            <span class="tech-tag">WebGL Particles</span>
+                            <span class="tech-tag">React Three Fiber</span>
+                        </div>
+                        <a href="contact.html" class="cta-button primary">Request 3D Showcase</a>
+                    </div>
+                    <div class="portfolio-item-visual">
+                        <video autoplay loop muted playsinline poster="images/his-drink-3d.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
+                            <source src="videos/his-drink-3d.mp4" type="video/mp4">
+                            <img src="images/his-drink-3d.png" alt="HIS DRINK 3D Interactive Beverage Showcase UI">
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Project 3: IRASTRA Celestial Universe (Interactive 3D) -->
+                <div class="portfolio-item-premium" data-category="3d" data-aos="fade-up">
+                    <div class="portfolio-item-content">
+                        <div class="portfolio-item-meta">Real-Time 3D Celestial Universe</div>
+                        <h3>IRASTRA Celestial Universe</h3>
+                        <p class="portfolio-item-desc">A real-time 3D planetary solar system and celestial navigation engine mapping planetary orbits to astronomical birth chart algorithms in an interactive space environment.</p>
+                        
+                        <div class="portfolio-item-features" style="margin: 16px 0; display: flex; flex-direction: column; gap: 8px;">
+                            <div style="font-size: 0.8rem; font-weight: 700; color: #9333ea; text-transform: uppercase; letter-spacing: 0.05em;">Key Capabilities</div>
+                            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; font-size: 0.88rem; color: #475569;">
+                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #9333ea; margin-top: 3px;"></i> <span><strong>3D Solar System Engine:</strong> Interactive planetary orbit animation (Sun, Earth, Mars, Moon).</span></li>
+                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #9333ea; margin-top: 3px;"></i> <span><strong>Birth Chart Calculations:</strong> Real-time astronomical mapping connecting 3D planets to birth data.</span></li>
+                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #9333ea; margin-top: 3px;"></i> <span><strong>Celestial Shaders:</strong> Emissive sun lighting, star field particles, and glassmorphic UI overlay.</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="tech-tags">
+                            <span class="tech-tag">Three.js / WebGL</span>
+                            <span class="tech-tag">Astronomical Engine</span>
+                            <span class="tech-tag">GLSL Shaders</span>
+                            <span class="tech-tag">Canvas Motion</span>
+                        </div>
+                        <a href="contact.html" class="cta-button primary">Request 3D Experience</a>
+                    </div>
+                    <div class="portfolio-item-visual">
+                        <video autoplay loop muted playsinline poster="images/irastra-celestial.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
+                            <source src="videos/irastra-celestial.mp4" type="video/mp4">
+                            <img src="images/irastra-celestial.png" alt="IRASTRA Interactive 3D Solar System UI">
+                        </video>
+                    </div>
+                </div>
+                
+                <!-- Project 1: StaySphere PMS (Latest) -->
+                <div class="portfolio-item-premium" data-category="saas" data-aos="fade-up">
+                    <div class="portfolio-item-content">
+                        <div class="portfolio-item-meta">Hospitality Operations & PMS SaaS</div>
+                        <h3>StaySphere PMS</h3>
+                        <p class="portfolio-item-desc">An all-in-one hotel management workspace featuring live room occupancy matrix, automated front desk check-ins, guest folio tracking, revenue analytics, and integrated channel booking engines.</p>
+                        
+                        <div class="portfolio-item-features" style="margin: 16px 0; display: flex; flex-direction: column; gap: 8px;">
+                            <div style="font-size: 0.8rem; font-weight: 700; color: #2563eb; text-transform: uppercase; letter-spacing: 0.05em;">Key Capabilities</div>
+                            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; font-size: 0.88rem; color: #475569;">
+                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #2563eb; margin-top: 3px;"></i> <span><strong>Live Room Status Matrix:</strong> Color-coded grid tracking available, occupied, dirty, and maintenance rooms in real time.</span></li>
+                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #2563eb; margin-top: 3px;"></i> <span><strong>Front Desk Workspace:</strong> One-click arrival check-ins, guest folio balances, and automated settlement alerts.</span></li>
+                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #2563eb; margin-top: 3px;"></i> <span><strong>Revenue & Channel Manager:</strong> Syncs room rates and availability across OTAs, direct booking engines, and night audits.</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="tech-tags">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                        </div>
+                        <a href="contact.html" class="cta-button primary">Request PMS Demo</a>
+                    </div>
+                    <div class="portfolio-item-visual">
+                        <img src="images/staysphere.png" alt="StaySphere PMS Hotel Management Dashboard UI" loading="lazy" decoding="async" width="1024" height="682">
+                    </div>
+                </div>
+
+                <!-- Project 2: AlmostReal Club (Latest) -->
+                <div class="portfolio-item-premium" data-category="ecommerce" data-aos="fade-up">
+                    <div class="portfolio-item-content">
+                        <div class="portfolio-item-meta">Luxury E-Commerce & Private Club</div>
+                        <h3>AlmostReal Club®</h3>
+                        <p class="portfolio-item-desc">An ultra-luxury digital fashion showroom and private access club storefront featuring dark high-fashion editorial aesthetics, gated membership portals, and high-converting checkout flows.</p>
+                        
+                        <div class="portfolio-item-features" style="margin: 16px 0; display: flex; flex-direction: column; gap: 8px;">
+                            <div style="font-size: 0.8rem; font-weight: 700; color: #2563eb; text-transform: uppercase; letter-spacing: 0.05em;">Key Capabilities</div>
+                            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; font-size: 0.88rem; color: #475569;">
+                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #2563eb; margin-top: 3px;"></i> <span><strong>Exclusive Gated Access:</strong> Private member entry portal with tokenized access and drop-time collection unlocks.</span></li>
+                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #2563eb; margin-top: 3px;"></i> <span><strong>Editorial Fashion Visuals:</strong> Dark luxury aesthetic, micro-animations, and full-bleed high-definition lookbooks.</span></li>
+                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #2563eb; margin-top: 3px;"></i> <span><strong>High-Speed E-Commerce Engine:</strong> Sub-second global page loads, bespoke shopping cart, and multi-currency checkout.</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="tech-tags">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">Three.js</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">Shopify Plus</span>
+                        </div>
+                        <a href="contact.html" class="cta-button primary">Explore Storefront</a>
+                    </div>
+                    <div class="portfolio-item-visual">
+                        <img src="images/almostreal-club.png" alt="AlmostReal Club Luxury Private Access Showroom" loading="lazy" decoding="async" width="1024" height="682">
+                    </div>
+                </div>
                 <div class="portfolio-item-premium" data-category="ecommerce" data-aos="fade-up">
                     <div class="portfolio-item-content">
                         <div class="portfolio-item-meta">Automotive & E-Commerce</div>
@@ -484,23 +633,7 @@
                     </div>
                 </div>
 
-                <!-- Project 6: Luxury Jewelry -->
-                <div class="portfolio-item-premium" data-category="ecommerce" data-aos="fade-up">
-                    <div class="portfolio-item-content">
-                        <div class="portfolio-item-meta">E-Commerce & 3D</div>
-                        <h3>Luxury Jewelry Store</h3>
-                        <p class="portfolio-item-desc">An interactive online shop featuring real-time 3D models and ring previews, providing high-end consumers with a virtual custom jewelry checkout flow.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Three.js</span>
-                            <span class="tech-tag">React Three Fiber</span>
-                            <span class="tech-tag">Shopify API</span>
-                        </div>
-                        <a href="contact.html" class="cta-button primary">Request Demo</a>
-                    </div>
-                    <div class="portfolio-item-visual">
-                        <img src="images/3d-jewelry-store.webp" alt="Interactive 3D Luxury Jewelry Store UI" loading="lazy" decoding="async" width="1024" height="576">
-                    </div>
-                </div>
+
 
             </div>
 

@@ -167,6 +167,28 @@
                 }
             }, 1200);
         }
+
+        // 5. Tech Stack Orbiting Cards Active Wave Pulse
+        const techArchCards = Array.from(document.querySelectorAll('.tech-card-arch'));
+        if (techArchCards.length > 0) {
+            const initialTechActive = [0, 4, 9, 14];
+            initialTechActive.forEach(idx => {
+                if (techArchCards[idx]) techArchCards[idx].classList.add('is-active');
+            });
+
+            setInterval(() => {
+                const currentActive = techArchCards.filter(c => c.classList.contains('is-active'));
+                if (currentActive.length > 0) {
+                    const cellToDeactivate = currentActive[Math.floor(Math.random() * currentActive.length)];
+                    cellToDeactivate.classList.remove('is-active');
+                }
+                const inactiveCells = techArchCards.filter(c => !c.classList.contains('is-active'));
+                if (inactiveCells.length > 0) {
+                    const cellToActivate = inactiveCells[Math.floor(Math.random() * inactiveCells.length)];
+                    cellToActivate.classList.add('is-active');
+                }
+            }, 1400);
+        }
     };
 
     if (document.readyState === 'loading') {

@@ -59,19 +59,6 @@ const initTimeline = () => {
             if (metric.top <= scrollTop + viewportHeight * 0.9) {
                 metric.animated = true;
                 metric.element.classList.add('animate');
-                
-                // Animate step number
-                if (metric.stepNumber) {
-                    setTimeout(() => {
-                        metric.stepNumber.style.animation = 'scaleIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards, pulse 1.5s ease-out 0.5s 2';
-                    }, 100);
-                }
-                
-                // Fade in step content
-                if (metric.content) {
-                    metric.content.style.opacity = '1';
-                    metric.content.style.transform = 'translateY(0)';
-                }
             }
         });
     };
