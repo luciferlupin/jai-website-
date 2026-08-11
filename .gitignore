@@ -33,3 +33,5 @@ Thumbs.db
 server.log
 server_temp.log
 *.mov
+cert.pem
+key.pem

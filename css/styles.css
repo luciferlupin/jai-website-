@@ -2395,25 +2395,8 @@ section {
     
     /* Process section mobile spacing */
     .process-step {
-        margin-bottom: 30px;
-        padding: 25px 20px;
-    }
-    
-    .step-number {
-        width: 50px;
-        height: 50px;
-        font-size: 20px;
-        margin-bottom: 15px;
-    }
-    
-    .step-content h3 {
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
-    
-    .step-content p {
-        font-size: 15px;
-        line-height: 1.5;
+        margin-bottom: 20px !important;
+        padding: 0 !important;
     }
     
     /* Testimonials mobile spacing */
@@ -5707,17 +5690,18 @@ section {
 .process-step:nth-child(5) { transition-delay: 0.5s; }
 
 .step-content {
-    background: #ffffff;
-    border-radius: 20px;
-    padding: 2.2rem 2.4rem;
-    border: 1px solid rgba(0, 0, 0, 0.04);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.035), 0 2px 6px rgba(0, 0, 0, 0.015);
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    background: #ffffff !important;
+    border-radius: 12px !important;
+    padding: 24px 28px !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02) !important;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease !important;
 }
 
 .process-step:hover .step-content {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.07);
+    transform: translateY(-3px) !important;
+    border-color: #1d6bf3 !important;
+    box-shadow: 0 12px 28px rgba(29, 107, 243, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04) !important;
 }
 
 .step-icon {
@@ -5790,10 +5774,10 @@ section {
 
     .timeline-line {
         position: absolute !important;
-        left: 36px !important; /* 16px container padding + 20px circle radius = 36px exact center */
-        top: 20px !important;
-        bottom: 20px !important;
-        height: calc(100% - 40px) !important;
+        left: 34px !important; /* 16px container padding + 18px badge radius = 34px exact center */
+        top: 18px !important;
+        bottom: 18px !important;
+        height: calc(100% - 36px) !important;
         width: 2px !important;
         background: #1d6bf3 !important;
         opacity: 0.8 !important;
@@ -5809,52 +5793,59 @@ section {
         flex-direction: row !important;
         align-items: flex-start !important;
         justify-content: flex-start !important;
-        margin-bottom: 1.5rem !important;
+        margin-bottom: 1.25rem !important;
+        padding: 0 !important;
         position: relative !important;
         width: 100% !important;
+        max-width: 100% !important;
         z-index: 2 !important;
         gap: 0 !important;
         opacity: 1 !important;
         transform: none !important;
     }
 
-    .process-step .step-number {
+    .process-step .step-number,
+    .process-step:nth-child(odd) .step-number,
+    .process-step:nth-child(even) .step-number {
         position: relative !important;
         left: 0 !important;
+        right: auto !important;
         top: 0 !important;
         transform: none !important;
-        width: 40px !important;
-        height: 40px !important;
+        width: 36px !important;
+        height: 36px !important;
         border-radius: 50% !important;
-        background: #1d6bf3 !important;
+        background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
         color: #ffffff !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        font-size: 1rem !important;
-        font-weight: 500 !important;
+        font-size: 0.95rem !important;
+        font-weight: 700 !important;
         flex-shrink: 0 !important;
         z-index: 3 !important;
         opacity: 1 !important;
         animation: none !important;
-        outline: 4px solid #ffffff !important;
+        outline: 3px solid #ffffff !important;
+        box-shadow: 0 3px 10px rgba(37, 99, 235, 0.35) !important;
+        margin-top: 4px !important;
     }
 
     .process-step .step-content,
     .process-step:nth-child(odd) .step-content,
     .process-step:nth-child(even) .step-content {
-        flex: 1 1 auto !important;
-        width: calc(100% - 56px) !important;
-        margin-left: 16px !important;
+        flex: 1 1 0% !important;
+        width: calc(100% - 48px) !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin-left: 12px !important;
         margin-right: 0 !important;
         margin-top: 0 !important;
-        padding: 16px 16px !important;
-        border-radius: 16px !important;
-        background: rgba(255, 255, 255, 0.85) !important;
-        backdrop-filter: blur(28px) saturate(190%) !important;
-        -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
-        border: 1px solid rgba(255, 255, 255, 0.85) !important;
-        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05) !important;
+        padding: 20px 22px !important;
+        border-radius: 14px !important;
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: 0 4px 18px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(0, 0, 0, 0.02) !important;
         opacity: 1 !important;
         transform: none !important;
         box-sizing: border-box !important;
@@ -5862,20 +5853,21 @@ section {
     }
 
     .process-step .step-content h3 {
-        font-size: 1.08rem !important;
-        font-weight: 500 !important;
+        font-size: 1.15rem !important;
+        font-weight: 750 !important;
         color: #0f172a !important;
+        letter-spacing: -0.015em !important;
         margin-top: 0 !important;
         margin-bottom: 6px !important;
-        line-height: 1.3 !important;
+        line-height: 1.35 !important;
     }
 
     .process-step .step-content p {
-        font-size: 0.88rem !important;
+        font-size: 0.93rem !important;
         font-weight: 400 !important;
-        color: #64748b !important;
+        color: #475569 !important;
         margin: 0 !important;
-        line-height: 1.5 !important;
+        line-height: 1.55 !important;
     }
 
     .process-cta {
@@ -7628,7 +7620,6 @@ section {
 .card,
 .card-content,
 .sticky-card,
-.step-content,
 .pricing-card,
 .testimonial-card,
 .testimonial-item,
@@ -21672,7 +21663,6 @@ b, strong {
 .expertise-card,
 .pricing-card,
 .bento-card,
-.process-step .step-content,
 .hero-flow-container .timeline-card,
 .wantace-compare-card {
     background: rgba(255, 255, 255, 0.78) !important;
@@ -21696,8 +21686,7 @@ b, strong {
     .service-card:hover,
     .expertise-card:hover,
     .pricing-card:hover,
-    .bento-card:hover,
-    .process-step .step-content:hover {
+    .bento-card:hover {
         border-color: rgba(29, 107, 243, 0.35) !important;
         box-shadow: 
             0 24px 54px rgba(29, 107, 243, 0.12),
