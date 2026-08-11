@@ -1,38 +1,6 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "redirects": [
-    {
-      "source": "/services",
-      "destination": "/services.html",
-      "permanent": true
-    },
-    {
-      "source": "/portfolio",
-      "destination": "/portfolio.html",
-      "permanent": true
-    },
-    {
-      "source": "/pricing",
-      "destination": "/pricing.html",
-      "permanent": true
-    },
-    {
-      "source": "/contact",
-      "destination": "/contact.html",
-      "permanent": true
-    },
-    {
-      "source": "/blog",
-      "destination": "/blog.html",
-      "permanent": true
-    },
-    {
-      "source": "/crm",
-      "destination": "/crm-product.html",
-      "permanent": true
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
