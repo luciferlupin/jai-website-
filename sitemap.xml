@@ -19,6 +19,14 @@
         </image:image>
     </url>
     
+    <!-- About Page - Company & Leadership -->
+    <url>
+        <loc>https://www.curiouskaizer.com/about</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
     <!-- Services Page - Core Offerings -->
     <url>
         <loc>https://www.curiouskaizer.com/services</loc>

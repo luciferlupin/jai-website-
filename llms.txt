@@ -18,13 +18,14 @@
 ## Navigation Map
 
 - [Home Page](https://www.curiouskaizer.com/) - Main overview, process timeline, and value proposition.
-- [Our Services](https://www.curiouskaizer.com/services.html) - Detailed breakdown of capabilities (SaaS, AI, E-Commerce, Dashboards).
-- [Portfolio & Case Studies](https://www.curiouskaizer.com/portfolio.html) - Live projects including real estate SaaS portals, 3D ring customizers, and legal databases.
-- [Pricing & FAQ](https://www.curiouskaizer.com/pricing.html) - Pricing packages, transparent licensing cost, and common web development FAQs.
-- [CRM Product Demo](https://www.curiouskaizer.com/crm-product.html) - Overview of CRM Pro, our flagship customizable Kanban business dashboard.
-- [Contact Us](https://www.curiouskaizer.com/contact.html) - Book a free discovery call or send an inquiry.
-- [Privacy Policy](https://www.curiouskaizer.com/privacy.html) - Our user data, cookies, and privacy policy terms.
-- [Terms of Service](https://www.curiouskaizer.com/terms.html) - Standard service agreement terms for our projects.
+- [About Us](https://www.curiouskaizer.com/about) - Agency background, founder Jai Goel, engineering philosophy, and capabilities.
+- [Our Services](https://www.curiouskaizer.com/services) - Detailed breakdown of capabilities (SaaS, AI, E-Commerce, Dashboards).
+- [Portfolio & Case Studies](https://www.curiouskaizer.com/portfolio) - Live projects including real estate SaaS portals, 3D ring customizers, and legal databases.
+- [Pricing & FAQ](https://www.curiouskaizer.com/pricing) - Pricing packages, transparent licensing cost, and common web development FAQs.
+- [CRM Product Demo](https://www.curiouskaizer.com/crm-product) - Overview of CRM Pro, our flagship customizable Kanban business dashboard.
+- [Contact Us](https://www.curiouskaizer.com/contact) - Book a free discovery call or send an inquiry.
+- [Privacy Policy](https://www.curiouskaizer.com/privacy) - Our user data, cookies, and privacy policy terms.
+- [Terms of Service](https://www.curiouskaizer.com/terms) - Standard service agreement terms for our projects.
 
 ## Contact Information
 
