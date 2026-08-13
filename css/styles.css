@@ -1452,18 +1452,17 @@ section {
     display: flex;
     flex-direction: row;
     gap: 40px;
-    padding: 3.5rem 3rem;
+    padding: 50px;
     align-items: center;
     justify-content: space-between;
-    background: #ffffff !important; /* Pure opaque white card for clean overlapping */
+    background: #ffffff !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
-    border: 1px solid rgba(0, 0, 0, 0.06) !important;
-    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02) !important;
-    border-radius: 32px;
+    border: none !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+    border-radius: 24px;
     width: 100%;
-    min-height: 520px;
-    height: auto;
+    height: 460px;
     box-sizing: border-box;
     transform: var(--card-transform, none);
     transition: transform 0.15s ease-out, opacity 0.15s ease-out, filter 0.15s ease-out, box-shadow 0.3s ease;
@@ -1471,7 +1470,8 @@ section {
 
 .saas-scroll-section .sticky-card .card-content:hover {
     transform: var(--card-transform, none) !important;
-    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 113, 227, 0.2) !important;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05) !important;
+    border-color: rgba(37, 99, 235, 0.2);
 }
 
 .saas-scroll-section .card-left {
@@ -1479,7 +1479,6 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
 }
 
 .saas-scroll-section .card-right {
@@ -1488,79 +1487,67 @@ section {
     align-items: center;
     justify-content: center;
     min-width: 320px;
-    width: 100%;
 }
 
-.saas-scroll-section .card-left .capability-badge-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 16px;
-    border-radius: 980px;
-    background: #eff6ff;
-    color: #2563eb;
-    font-size: 0.8rem;
-    font-weight: 700;
-    margin-bottom: 1.25rem;
-    border: 1px solid rgba(37, 99, 235, 0.1);
+.saas-scroll-section .card-number {
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1.5px #2563eb;
+    margin-bottom: 16px;
+    font-family: 'Inter', sans-serif;
+    display: block;
+    opacity: 0.8;
+    letter-spacing: -2px;
 }
 
 .saas-scroll-section .card-left h3 {
-    font-size: 2.1rem;
-    font-weight: 750;
+    font-size: 1.8rem;
+    font-weight: 800;
     color: #0f172a;
     margin-top: 0;
     margin-bottom: 14px;
     display: flex;
     align-items: center;
-    letter-spacing: -0.02em;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
-    line-height: 1.2;
+    letter-spacing: -0.5px;
 }
 
 .saas-scroll-section .card-left p {
-    font-size: 0.98rem;
-    line-height: 1.65;
-    color: #64748b;
-    margin-bottom: 22px;
-    font-weight: 450;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #475569;
+    margin-bottom: 24px;
 }
 
-.saas-scroll-section .card-left .service-features-list {
+.saas-scroll-section .card-left ul {
     list-style: none;
     padding: 0;
-    margin: 0 0 24px 0;
+    margin: 0;
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.7rem;
-    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 16px;
 }
 
-.saas-scroll-section .card-left .service-features-list li {
-    font-size: 0.95rem;
-    color: #1d1d1f;
-    font-weight: 500;
+.saas-scroll-section .card-left ul li {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #334155;
     display: flex;
     align-items: center;
-    gap: 12px;
-    background: #f5f5f7;
-    padding: 0.8rem 1.2rem;
-    border-radius: 14px;
-    border: 1px solid rgba(0, 0, 0, 0.03);
-    transition: all 0.25s ease;
+    gap: 8px;
 }
 
-.saas-scroll-section .card-left .service-features-list li:hover {
-    background: #ffffff;
-    border-color: rgba(0, 113, 227, 0.3);
-    transform: translateX(4px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-}
-
-.saas-scroll-section .card-left .service-features-list li i {
-    color: #0071e3;
-    font-size: 1.1rem;
-    flex-shrink: 0;
+.saas-scroll-section .card-left ul li i {
+    color: #2563eb;
+    background: transparent;
+    border-radius: 0;
+    width: auto;
+    height: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
 }
 
 .saas-scroll-section .card-left .cta-button.primary {
