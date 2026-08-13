@@ -9,7 +9,7 @@ Allow: /
 Allow: /css/
 Allow: /js/
 Allow: /images/
-Allow: /blog-*.html
+Allow: /blog-*
 Allow: /sitemap.xml
 
 # Block internal & verification utility files
