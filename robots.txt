@@ -101,9 +101,6 @@ User-agent: meta-externalagent
 Allow: /
 
 # Directory & SEO Audit Crawlers
-User-agent: GoodFirmsBot
-Allow: /
-
 User-agent: ClutchBot
 Allow: /
 

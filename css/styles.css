@@ -6581,6 +6581,7 @@ section {
 .social-badge.instagram-badge { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: #ffffff; }
 .social-badge.wa-badge { background: #25d366; color: #ffffff; }
 .social-badge.f6s-badge { background: #ff2a00; color: #ffffff; font-weight: 800; font-size: 0.7rem; font-family: system-ui, -apple-system, sans-serif; letter-spacing: -0.5px; }
+.social-badge.yourstory-badge { background: #eb2227; color: #ffffff; font-weight: 800; font-size: 0.7rem; font-family: system-ui, -apple-system, sans-serif; letter-spacing: -0.5px; }
 .social-badge.github-badge { background: #24292e; color: #ffffff; }
 
 .social-badge:hover {
