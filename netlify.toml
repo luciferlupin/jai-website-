@@ -1,3 +1,33 @@
+[[redirects]]
+  from = "/about-us"
+  to = "/about"
+  status = 200
+
+[[redirects]]
+  from = "/company"
+  to = "/about"
+  status = 200
+
+[[redirects]]
+  from = "/team"
+  to = "/about"
+  status = 200
+
+[[redirects]]
+  from = "/contact-us"
+  to = "/contact"
+  status = 200
+
+[[redirects]]
+  from = "/work"
+  to = "/portfolio"
+  status = 200
+
+[[redirects]]
+  from = "/case-studies"
+  to = "/portfolio"
+  status = 200
+
 [[headers]]
   for = "/*"
   [headers.values]

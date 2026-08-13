@@ -58,6 +58,15 @@
       ]
     },
     {
+      "source": "/(about|services|portfolio|pricing|contact|crm-product|blog|privacy|terms|ecommerce-website-development-delhi|wordpress-website-development-delhi|website-redesign-services-delhi|website-design-cost-calculator|website-designing-company-in-delhi|website-designing-company-south-delhi|website-design-company-noida|website-design-company-gurgaon|blog-.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
+      ]
+    },
+    {
       "source": "/css/(.*)",
       "headers": [
         {

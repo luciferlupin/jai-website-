@@ -1,37 +1,41 @@
-# Robots.txt for Curious Kaizer - Optimized for SEO & Search Engine Indexing
-# Updated: 2026-08-04
-# Purpose: Maximize search engine indexing for Curious Kaizer homepage and core services
+# Robots.txt for Curious Kaizer (https://www.curiouskaizer.com)
+# Enterprise Grade Configuration for Maximum Search Engine & AI Crawler Dominance
+# Updated: 2026-08-13
 
 User-agent: *
 Allow: /
-
-# Allow indexing of asset directories & pages
 Allow: /css/
 Allow: /js/
 Allow: /images/
+Allow: /videos/
 Allow: /blog-*
+Allow: /site.webmanifest
 Allow: /sitemap.xml
+Allow: /llms.txt
+Allow: /.well-known/
 
-# Block internal & verification utility files
-Disallow: /admin/
-Disallow: /private/
-Disallow: /temp/
+# Disallow Internal & Private Utility Files
+Disallow: /analytics
 Disallow: /analytics.html
 Disallow: /analytics-deploy/
 Disallow: /googledccfa22a0725d83d.html
-Disallow: /*.json$
+Disallow: /server.log
+Disallow: /server.py
+Disallow: /*.sql$
+Disallow: /*.pem$
 
-# Major Search Engine Crawler Settings
+# Major Search Engine Crawlers
 User-agent: Googlebot
 Allow: /
 
 User-agent: Googlebot-Image
 Allow: /images/
-
-User-agent: Bingbot
 Allow: /
 
-User-agent: Slurp
+User-agent: Googlebot-Mobile
+Allow: /
+
+User-agent: Bingbot
 Allow: /
 
 User-agent: DuckDuckBot
@@ -46,7 +50,10 @@ Allow: /
 User-agent: Baiduspider
 Allow: /
 
-# Social Media & Open Graph Crawlers
+User-agent: Slurp
+Allow: /
+
+# Social Media & OpenGraph Preview Crawlers
 User-agent: facebookexternalhit
 Allow: /
 
@@ -59,7 +66,13 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
-# AI Crawlers & Knowledge Indexers
+User-agent: TelegramBot
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+# AI Crawlers & LLM Indexers
 User-agent: GPTBot
 Allow: /
 
@@ -69,11 +82,40 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-User-agent: PerplexityBot
-Allow: /
-
 User-agent: ClaudeBot
 Allow: /
 
-# Sitemap Location
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# Directory & SEO Audit Crawlers
+User-agent: GoodFirmsBot
+Allow: /
+
+User-agent: ClutchBot
+Allow: /
+
+User-agent: SemrushBot
+Allow: /
+
+User-agent: AhrefsBot
+Allow: /
+
+User-agent: Screaming Frog SEO Spider
+Allow: /
+
+# Host & Sitemap Directives
+Host: https://www.curiouskaizer.com
 Sitemap: https://www.curiouskaizer.com/sitemap.xml

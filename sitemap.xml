@@ -5,7 +5,7 @@
     <!-- Homepage - Highest Priority -->
     <url>
         <loc>https://www.curiouskaizer.com/</loc>
-        <lastmod>2026-08-11</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -30,7 +30,7 @@
     <!-- Services Page - Core Offerings -->
     <url>
         <loc>https://www.curiouskaizer.com/services</loc>
-        <lastmod>2026-08-11</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -38,7 +38,7 @@
     <!-- Portfolio Page - Showcasing Best Work -->
     <url>
         <loc>https://www.curiouskaizer.com/portfolio</loc>
-        <lastmod>2026-08-11</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -55,7 +55,7 @@
     <!-- Pricing Page - Cost & Packages -->
     <url>
         <loc>https://www.curiouskaizer.com/pricing</loc>
-        <lastmod>2026-08-11</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -63,7 +63,7 @@
     <!-- CRM Product Page - Detailed Software Offering -->
     <url>
         <loc>https://www.curiouskaizer.com/crm-product</loc>
-        <lastmod>2026-08-11</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -76,7 +76,7 @@
     <!-- Contact Page - Local SEO Contact & Map -->
     <url>
         <loc>https://www.curiouskaizer.com/contact</loc>
-        <lastmod>2026-08-11</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -84,7 +84,7 @@
     <!-- Blog Hub Page - Articles & Tech Insights -->
     <url>
         <loc>https://www.curiouskaizer.com/blog</loc>
-        <lastmod>2026-08-11</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>
@@ -92,7 +92,7 @@
     <!-- Blog Article - Multi Agent Orchestration 2026 -->
     <url>
         <loc>https://www.curiouskaizer.com/blog-multi-agent-orchestration-2026</loc>
-        <lastmod>2026-08-11</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
         <image:image>
@@ -104,7 +104,7 @@
     <!-- Blog Article - Hybrid Search & Vector Indexing -->
     <url>
         <loc>https://www.curiouskaizer.com/blog-vector-database-indexing-hybrid-search</loc>
-        <lastmod>2026-08-11</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
         <image:image>
@@ -116,7 +116,7 @@
     <!-- Blog Article - Serverless Postgres Neon Supabase -->
     <url>
         <loc>https://www.curiouskaizer.com/blog-serverless-postgres-neon-supabase</loc>
-        <lastmod>2026-08-11</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
         <image:image>
@@ -128,7 +128,7 @@
     <!-- Blog Article - Rust & WebAssembly Microservices -->
     <url>
         <loc>https://www.curiouskaizer.com/blog-rust-webassembly-microservices</loc>
-        <lastmod>2026-08-11</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
         <image:image>
@@ -140,7 +140,7 @@
     <!-- Blog Article - Context Engineering over Prompt Engineering -->
     <url>
         <loc>https://www.curiouskaizer.com/blog-context-engineering-llm-apps</loc>
-        <lastmod>2026-08-11</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
         <image:image>
@@ -152,7 +152,7 @@
     <!-- Blog Article - Browser AI Agent Automation -->
     <url>
         <loc>https://www.curiouskaizer.com/blog-browser-ai-agent-automation</loc>
-        <lastmod>2026-08-11</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -160,7 +160,7 @@
     <!-- Blog Article - Real Estate Operations Portal -->
     <url>
         <loc>https://www.curiouskaizer.com/blog-real-estate-operations-portal</loc>
-        <lastmod>2026-08-11</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -168,7 +168,7 @@
     <!-- Blog Article - RAG Latency Edge Optimization -->
     <url>
         <loc>https://www.curiouskaizer.com/blog-rag-latency-optimization</loc>
-        <lastmod>2026-08-11</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -176,7 +176,7 @@
     <!-- Blog Article - Database Normalization -->
     <url>
         <loc>https://www.curiouskaizer.com/blog-database-normalization</loc>
-        <lastmod>2026-08-11</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -184,7 +184,7 @@
     <!-- Blog Article - Canonical Redirect Loops -->
     <url>
         <loc>https://www.curiouskaizer.com/blog-canonical-redirect-loops</loc>
-        <lastmod>2026-08-11</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -192,7 +192,7 @@
     <!-- Blog Article - B2B Chemical Procurement Case Study -->
     <url>
         <loc>https://www.curiouskaizer.com/blog-b2b-procurement-case-study</loc>
-        <lastmod>2026-08-11</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -200,7 +200,7 @@
     <!-- Blog Article - Voice AI Gemini Integration -->
     <url>
         <loc>https://www.curiouskaizer.com/blog-voice-ai-gemini-integration</loc>
-        <lastmod>2026-08-11</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -208,7 +208,7 @@
     <!-- Blog Article - Vanilla JS CRM Architecture -->
     <url>
         <loc>https://www.curiouskaizer.com/blog-vanilla-js-crm</loc>
-        <lastmod>2026-08-11</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -216,7 +216,7 @@
     <!-- Blog Article - AI Inference at the Edge -->
     <url>
         <loc>https://www.curiouskaizer.com/blog-edge-ai-inference</loc>
-        <lastmod>2026-08-11</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -224,7 +224,7 @@
     <!-- Blog Article - Edge Rendering in 2026 -->
     <url>
         <loc>https://www.curiouskaizer.com/blog-edge-rendering-2026</loc>
-        <lastmod>2026-08-11</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -232,7 +232,7 @@
     <!-- Blog Article - INP Core Web Vitals -->
     <url>
         <loc>https://www.curiouskaizer.com/blog-inp-core-web-vitals</loc>
-        <lastmod>2026-08-11</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -240,7 +240,7 @@
     <!-- Blog Article - WebAssembly at the Edge -->
     <url>
         <loc>https://www.curiouskaizer.com/blog-webassembly-edge</loc>
-        <lastmod>2026-08-11</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -248,7 +248,7 @@
     <!-- Blog Article - Inference Compute Scaling -->
     <url>
         <loc>https://www.curiouskaizer.com/blog-inference-compute-scaling</loc>
-        <lastmod>2026-08-11</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -256,7 +256,7 @@
     <!-- Blog Article - Liquid Foundation Models -->
     <url>
         <loc>https://www.curiouskaizer.com/blog-liquid-foundation-models</loc>
-        <lastmod>2026-08-11</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -264,7 +264,7 @@
     <!-- Privacy Policy Page -->
     <url>
         <loc>https://www.curiouskaizer.com/privacy</loc>
-        <lastmod>2026-08-11</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
@@ -272,7 +272,7 @@
     <!-- Terms of Service Page -->
     <url>
         <loc>https://www.curiouskaizer.com/terms</loc>
-        <lastmod>2026-08-11</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
