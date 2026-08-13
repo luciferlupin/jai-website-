@@ -21983,3 +21983,23 @@ b, strong {
     }
 }
 
+/* Custom Software Architecture & System Pills */
+.sys-pill {
+    background: rgba(255, 255, 255, 0.08);
+    color: #e2e8f0;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.78rem;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+.sys-pill:hover {
+    background: rgba(59, 130, 246, 0.25);
+    border-color: rgba(96, 165, 250, 0.5);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
