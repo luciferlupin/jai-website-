@@ -589,11 +589,11 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', animateOnScroll, { passive: true });
     
     // FAQ Accordion Interaction
-    const faqItems = document.querySelectorAll('.faq-card-item, .faq-item');
+    const faqItems = document.querySelectorAll('.faq-card-item, .faq-item, .faq-item-accordion');
     faqItems.forEach(item => {
         item.addEventListener('click', function(e) {
             // Prevent close when clicking inside the answer content (like links or paragraphs)
-            if (e.target.closest('.faq-card-answer, .faq-answer')) {
+            if (e.target.closest('.faq-card-answer, .faq-answer, .faq-body-accordion')) {
                 return;
             }
             
@@ -603,23 +603,25 @@ document.addEventListener('DOMContentLoaded', function() {
             faqItems.forEach(otherItem => {
                 if (otherItem !== item && otherItem.classList.contains('active')) {
                     otherItem.classList.remove('active');
-                    const otherIcon = otherItem.querySelector('.faq-card-toggle i, .faq-toggle-icon i');
+                    const otherIcon = otherItem.querySelector('.faq-card-toggle i, .faq-toggle-icon i, .faq-header-accordion i');
                     if (otherIcon) {
-                        otherIcon.className = 'fas fa-plus';
+                        if (otherIcon.classList.contains('fa-minus') || otherIcon.classList.contains('fa-plus')) {
+                            otherIcon.className = 'fas fa-plus';
+                        }
                     }
                 }
             });
             
             // Toggle current FAQ item
-            const currentIcon = item.querySelector('.faq-card-toggle i, .faq-toggle-icon i');
+            const currentIcon = item.querySelector('.faq-card-toggle i, .faq-toggle-icon i, .faq-header-accordion i');
             if (isOpen) {
                 item.classList.remove('active');
-                if (currentIcon) {
+                if (currentIcon && (currentIcon.classList.contains('fa-minus') || currentIcon.classList.contains('fa-plus'))) {
                     currentIcon.className = 'fas fa-plus';
                 }
             } else {
                 item.classList.add('active');
-                if (currentIcon) {
+                if (currentIcon && (currentIcon.classList.contains('fa-minus') || currentIcon.classList.contains('fa-plus'))) {
                     currentIcon.className = 'fas fa-minus';
                 }
             }

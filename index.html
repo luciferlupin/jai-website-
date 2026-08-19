@@ -954,14 +954,14 @@
         ]
     }
     </script>
-    <link rel="preload" href="./css/styles.css?v=case-studies-20260805a" as="style">
+    <link rel="preload" href="./css/styles.css?v=realestate-dashboard-photo-20260813l" as="style">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@700;800&display=swap" rel="stylesheet"></noscript>
     
     <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.css?v=case-studies-20260805a">
+    <link rel="stylesheet" href="css/styles.css?v=realestate-dashboard-photo-20260813l">
     <style>
         /* Scroll Animation Styles */
         .fade-up {
@@ -3281,7 +3281,7 @@
     <section class="industry-solutions-apple-section" id="industries">
         <div class="container">
             
-            <div class="unified-header-wrapper" data-aos="fade-up" style="margin-bottom: 22px;">
+            <div class="unified-header-wrapper ck-aligned-section-heading" data-aos="fade-up" style="margin-bottom: 22px;">
                 <div class="header-sub-blue">"Domain-Engineered Architecture"</div>
                 <h2 class="header-main-title" style="font-size: clamp(1.8rem, 3.5vw, 2.3rem);">INDUSTRY-SPECIFIC WEB SOLUTIONS</h2>
                 <p style="color: #6e6e73; font-size: 0.98rem; max-width: 740px; margin: 6px auto 0 auto; text-align: center; line-height: 1.55;">
@@ -3429,7 +3429,7 @@
                                 <span class="studio-dot red"></span>
                                 <span class="studio-dot yellow"></span>
                                 <span class="studio-dot green"></span>
-                                <span class="studio-window-title"><i class="fas fa-map-marked-alt" style="color:#0071e3; margin-right:4px;"></i> alohaestates.in/spatial-viewer</span>
+                                <span class="studio-window-title"><i class="fas fa-building" style="color:#0071e3; margin-right:4px;"></i> alohaestates.app/superadmin</span>
                             </div>
                             <div class="studio-window-body">
                                 <div style="background: #1c1c1e; border-radius: 10px; padding: 12px; color: #ffffff;">
@@ -3576,7 +3576,7 @@
                                 <span class="studio-dot red"></span>
                                 <span class="studio-dot yellow"></span>
                                 <span class="studio-dot green"></span>
-                                <span class="studio-window-title"><i class="fas fa-concierge-bell" style="color:#0071e3; margin-right:4px;"></i> kaizerstays.com/direct-booking</span>
+                                <span class="studio-window-title"><i class="fas fa-hotel" style="color:#0071e3; margin-right:4px;"></i> kaizerstays.app/hotel-overview</span>
                             </div>
                             <div class="studio-window-body">
                                 <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -3709,7 +3709,7 @@
                                 <span class="studio-dot red"></span>
                                 <span class="studio-dot yellow"></span>
                                 <span class="studio-dot green"></span>
-                                <span class="studio-window-title"><i class="fas fa-shield-alt" style="color:#0071e3; margin-right:4px;"></i> notarycore.in/secure-vault</span>
+                                <span class="studio-window-title"><i class="fas fa-balance-scale" style="color:#0071e3; margin-right:4px;"></i> advocate.app/super-admin</span>
                             </div>
                             <div class="studio-window-body">
                                 <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -3752,1665 +3752,186 @@
             });
         }
     }
+
+    var industrySoftwareMocks = {
+        healthcare:
+            '<div class="software-dashboard software-healthcare">' +
+                '<div class="software-summary">' +
+                    '<div><span class="software-eyebrow">CLINIC OPERATIONS</span><strong>Today at SRB Healthcare</strong><small>Live OPD, doctors and patient flow</small></div>' +
+                    '<span class="software-live"><i class="fas fa-circle"></i> Live</span>' +
+                '</div>' +
+                '<div class="software-metrics">' +
+                    '<div class="software-metric"><span>Appointments</span><strong>48</strong><small><i class="fas fa-arrow-up"></i> 12% today</small></div>' +
+                    '<div class="software-metric"><span>Avg. wait</span><strong>08m</strong><small>Target under 10m</small></div>' +
+                    '<div class="software-metric"><span>Doctors online</span><strong>7/8</strong><small>2 slots open</small></div>' +
+                '</div>' +
+                '<div class="software-workspace">' +
+                    '<div class="software-panel software-panel-wide">' +
+                        '<div class="software-panel-head"><strong>OPD appointment queue</strong><span>View schedule</span></div>' +
+                        '<div class="software-table-head"><span>Patient</span><span>Doctor</span><span>Time</span><span>Status</span></div>' +
+                        '<div class="software-table-row"><span><b>RM</b> Riya Mehta</span><span>Dr. Verma</span><span>11:30</span><em class="status-blue">Checked in</em></div>' +
+                        '<div class="software-table-row"><span><b>AK</b> Aman Khanna</span><span>Dr. Rao</span><span>11:45</span><em class="status-green">Confirmed</em></div>' +
+                        '<div class="software-table-row"><span><b>NS</b> Neha Suri</span><span>Dr. Verma</span><span>12:00</span><em class="status-gray">Waiting</em></div>' +
+                    '</div>' +
+                    '<div class="software-panel software-side-panel"><div class="software-panel-head"><strong>Capacity</strong><span>This hour</span></div><div class="software-ring"><strong>82%</strong><span>OPD load</span></div><div class="software-mini-note"><i class="fab fa-whatsapp"></i><span><strong>Token updates active</strong><small>42 patients notified</small></span></div></div>' +
+                '</div>' +
+            '</div>',
+        realestate:
+            '<div class="software-dashboard software-realestate">' +
+                '<div class="software-summary"><div><span class="software-eyebrow">PROPERTY SALES OS</span><strong>Aloha Estates Command Centre</strong><small>Inventory, leads and site visits in one view</small></div><span class="software-live"><i class="fas fa-circle"></i> Synced</span></div>' +
+                '<div class="software-metrics"><div class="software-metric"><span>Active inventory</span><strong>126</strong><small>Across 4 projects</small></div><div class="software-metric"><span>Qualified leads</span><strong>84</strong><small><i class="fas fa-arrow-up"></i> 18 this week</small></div><div class="software-metric"><span>Site visits</span><strong>12</strong><small>Next 7 days</small></div></div>' +
+                '<div class="software-workspace">' +
+                    '<div class="software-panel software-panel-wide"><div class="software-panel-head"><strong>Project inventory</strong><span>Sector 62</span></div><div class="software-table-head"><span>Unit</span><span>Type</span><span>Price</span><span>Status</span></div><div class="software-table-row"><span><b>B4</b> Tower B-402</span><span>3 BHK</span><span>₹1.42 Cr</span><em class="status-green">Available</em></div><div class="software-table-row"><span><b>A8</b> Tower A-801</span><span>4 BHK</span><span>₹2.18 Cr</span><em class="status-blue">On hold</em></div><div class="software-table-row"><span><b>C2</b> Tower C-204</span><span>2 BHK</span><span>₹96 L</span><em class="status-gray">Site visit</em></div></div>' +
+                    '<div class="software-panel software-side-panel"><div class="software-panel-head"><strong>Lead funnel</strong><span>30 days</span></div><div class="software-funnel"><div><span>New leads</span><strong>148</strong></div><div><span>Qualified</span><strong>84</strong></div><div><span>Visits</span><strong>31</strong></div><div><span>Bookings</span><strong>9</strong></div></div><div class="software-mini-note"><i class="fas fa-map-marker-alt"></i><span><strong>3D tour enabled</strong><small>62 sessions today</small></span></div></div>' +
+                '</div>' +
+            '</div>',
+        manufacturing:
+            '<div class="software-dashboard software-manufacturing">' +
+                '<div class="software-summary"><div><span class="software-eyebrow">B2B RFQ COMMAND</span><strong>AUCO Export Operations</strong><small>Quotes, production and dispatch visibility</small></div><span class="software-live"><i class="fas fa-circle"></i> ERP sync</span></div>' +
+                '<div class="software-metrics"><div class="software-metric"><span>Open RFQs</span><strong>24</strong><small>₹1.8 Cr pipeline</small></div><div class="software-metric"><span>In production</span><strong>11</strong><small>3 due this week</small></div><div class="software-metric"><span>On-time dispatch</span><strong>96%</strong><small><i class="fas fa-arrow-up"></i> 4.2%</small></div></div>' +
+                '<div class="software-workspace"><div class="software-panel software-panel-wide"><div class="software-panel-head"><strong>Quote pipeline</strong><span>Multi-currency</span></div><div class="software-table-head"><span>RFQ</span><span>Buyer</span><span>Value</span><span>Stage</span></div><div class="software-table-row"><span><b>Q8</b> RFQ-4820</span><span>Helios GmbH</span><span>€42.8K</span><em class="status-blue">Pricing</em></div><div class="software-table-row"><span><b>Q7</b> RFQ-4817</span><span>Al Noor LLC</span><span>$31.2K</span><em class="status-green">Approved</em></div><div class="software-table-row"><span><b>Q6</b> RFQ-4809</span><span>Vega India</span><span>₹18.6L</span><em class="status-gray">Review</em></div></div><div class="software-panel software-side-panel"><div class="software-panel-head"><strong>Production</strong><span>Live</span></div><div class="software-progress-list"><div><span>Machining</span><i><b style="width:82%"></b></i><small>82%</small></div><div><span>Quality check</span><i><b style="width:64%"></b></i><small>64%</small></div><div><span>Packing</span><i><b style="width:38%"></b></i><small>38%</small></div></div><div class="software-mini-note"><i class="fas fa-file-pdf"></i><span><strong>Spec sheets ready</strong><small>18 PDFs generated</small></span></div></div></div>' +
+            '</div>',
+        hospitality:
+            '<div class="software-dashboard software-hospitality">' +
+                '<div class="software-summary"><div><span class="software-eyebrow">HOSPITALITY OS</span><strong>KaizerStays Front Desk</strong><small>Reservations, rooms and revenue control</small></div><span class="software-live"><i class="fas fa-circle"></i> PMS online</span></div>' +
+                '<div class="software-metrics"><div class="software-metric"><span>Occupancy</span><strong>86%</strong><small>43 of 50 rooms</small></div><div class="software-metric"><span>Today revenue</span><strong>₹3.8L</strong><small><i class="fas fa-arrow-up"></i> 14% vs LY</small></div><div class="software-metric"><span>Arrivals</span><strong>18</strong><small>6 checked in</small></div></div>' +
+                '<div class="software-workspace"><div class="software-panel software-panel-wide"><div class="software-panel-head"><strong>Front desk timeline</strong><span>13 August</span></div><div class="software-table-head"><span>Guest</span><span>Room</span><span>Arrival</span><span>Status</span></div><div class="software-table-row"><span><b>MK</b> Maya Kapoor</span><span>Villa 04</span><span>12:30</span><em class="status-green">Checked in</em></div><div class="software-table-row"><span><b>RS</b> Rohan Shah</span><span>Suite 218</span><span>14:00</span><em class="status-blue">Pre-arrival</em></div><div class="software-table-row"><span><b>AP</b> Aditi Paul</span><span>Room 311</span><span>15:15</span><em class="status-gray">Payment due</em></div></div><div class="software-panel software-side-panel"><div class="software-panel-head"><strong>Room status</strong><span>50 total</span></div><div class="software-room-grid"><span class="ready">101</span><span class="ready">102</span><span class="busy">103</span><span class="clean">104</span><span class="ready">105</span><span class="busy">106</span><span class="clean">107</span><span class="ready">108</span></div><div class="software-legend"><span><i class="ready"></i>Ready</span><span><i class="busy"></i>Occupied</span><span><i class="clean"></i>Cleaning</span></div><div class="software-mini-note"><i class="fas fa-bell"></i><span><strong>2 service requests</strong><small>Average SLA 4.2m</small></span></div></div></div>' +
+            '</div>',
+        ecommerce:
+            '<div class="software-dashboard software-ecommerce">' +
+                '<div class="software-summary"><div><span class="software-eyebrow">COMMERCE CONTROL</span><strong>Remedy Store Dashboard</strong><small>Orders, inventory and conversion performance</small></div><span class="software-live"><i class="fas fa-circle"></i> Store live</span></div>' +
+                '<div class="software-metrics"><div class="software-metric"><span>Net sales</span><strong>₹8.42L</strong><small><i class="fas fa-arrow-up"></i> 21.4%</small></div><div class="software-metric"><span>Conversion</span><strong>4.8%</strong><small>1.6% above avg.</small></div><div class="software-metric"><span>Orders today</span><strong>186</strong><small>24 processing</small></div></div>' +
+                '<div class="software-workspace"><div class="software-panel software-panel-wide"><div class="software-panel-head"><strong>Recent orders</strong><span>Live feed</span></div><div class="software-table-head"><span>Order</span><span>Customer</span><span>Total</span><span>Status</span></div><div class="software-table-row"><span><b>#8</b> CK-1088</span><span>Nisha Arora</span><span>₹4,890</span><em class="status-green">Paid</em></div><div class="software-table-row"><span><b>#8</b> CK-1087</span><span>Ritika Jain</span><span>₹2,640</span><em class="status-blue">Packing</em></div><div class="software-table-row"><span><b>#8</b> CK-1086</span><span>Samir Gill</span><span>₹6,180</span><em class="status-gray">COD verify</em></div></div><div class="software-panel software-side-panel"><div class="software-panel-head"><strong>Inventory alerts</strong><span>3 SKUs</span></div><div class="software-stock"><div><span>Glow Serum</span><strong>08 left</strong></div><div><span>Night Repair</span><strong>12 left</strong></div><div><span>Face Mist</span><strong>18 left</strong></div></div><div class="software-mini-note"><i class="fab fa-whatsapp"></i><span><strong>Recovery automation</strong><small>₹46K recovered today</small></span></div></div></div>' +
+            '</div>',
+        legal:
+            '<div class="software-dashboard software-legal">' +
+                '<div class="software-summary"><div><span class="software-eyebrow">MATTER MANAGEMENT</span><strong>NotaryCore Secure Workspace</strong><small>Cases, documents, retainers and deadlines</small></div><span class="software-live"><i class="fas fa-shield-alt"></i> Encrypted</span></div>' +
+                '<div class="software-metrics"><div class="software-metric"><span>Active matters</span><strong>38</strong><small>7 priority cases</small></div><div class="software-metric"><span>Documents</span><strong>1,284</strong><small>All vault verified</small></div><div class="software-metric"><span>Deadlines</span><strong>6</strong><small>Next 14 days</small></div></div>' +
+                '<div class="software-workspace"><div class="software-panel software-panel-wide"><div class="software-panel-head"><strong>Active matters</strong><span>Confidential</span></div><div class="software-table-head"><span>Matter</span><span>Client</span><span>Next date</span><span>Status</span></div><div class="software-table-row"><span><b>M4</b> M&A Advisory</span><span>Northstar Pvt.</span><span>16 Aug</span><em class="status-blue">Due diligence</em></div><div class="software-table-row"><span><b>C2</b> Contract Review</span><span>Orion Labs</span><span>19 Aug</span><em class="status-green">On track</em></div><div class="software-table-row"><span><b>IP</b> Trademark Filing</span><span>Avani Retail</span><span>24 Aug</span><em class="status-gray">Client input</em></div></div><div class="software-panel software-side-panel"><div class="software-panel-head"><strong>Vault activity</strong><span>Today</span></div><div class="software-activity"><div><i class="fas fa-file-signature"></i><span><strong>NDA executed</strong><small>10:42 AM</small></span></div><div><i class="fas fa-file-upload"></i><span><strong>3 files received</strong><small>09:18 AM</small></span></div><div><i class="fas fa-calendar-check"></i><span><strong>Hearing scheduled</strong><small>08:35 AM</small></span></div></div><div class="software-mini-note"><i class="fas fa-lock"></i><span><strong>AES-256 vault</strong><small>Audit trail complete</small></span></div></div></div>' +
+            '</div>'
+    };
+
+    /* Research-led, workflow-specific software previews. Each industry now
+       presents a different operational interface instead of a repeated KPI shell. */
+    var industrySoftwareMocksV2 = {
+        healthcare: `
+            <div class="industry-app app-healthcare">
+                <div class="app-commandbar">
+                    <div class="app-brand"><span class="app-brand-icon"><i class="fas fa-heartbeat"></i></span><div><strong>SRB CareFlow</strong><small>OPD command centre</small></div></div>
+                    <div class="app-command-actions"><span><i class="fas fa-circle"></i> 7 doctors online</span><button type="button"><i class="fas fa-plus"></i> New token</button></div>
+                </div>
+                <div class="clinic-command-grid">
+                    <aside class="clinic-rail">
+                        <span class="rail-label">CARE LANES</span>
+                        <div class="clinic-lane active"><i class="fas fa-user-clock"></i><span>Waiting</span><b>06</b></div>
+                        <div class="clinic-lane"><i class="fas fa-stethoscope"></i><span>In consult</span><b>04</b></div>
+                        <div class="clinic-lane"><i class="fas fa-vial"></i><span>Diagnostics</span><b>03</b></div>
+                        <div class="clinic-lane"><i class="fas fa-prescription-bottle-alt"></i><span>Pharmacy</span><b>02</b></div>
+                        <div class="clinic-room-state"><span>Avg. wait</span><strong>08 min</strong><small>Target under 10 min</small></div>
+                    </aside>
+                    <section class="clinic-flow-panel">
+                        <div class="app-panel-title"><div><strong>Live patient flow</strong><small>Thursday, 13 August · Cardiology</small></div><span>48 appointments</span></div>
+                        <div class="patient-flow-head"><span>Token</span><span>Patient</span><span>Care step</span><span>ETA</span></div>
+                        <div class="patient-flow-row priority"><b>OPD-31</b><span><i>RM</i> Riya Mehta</span><em>Vitals complete</em><time>Now</time></div>
+                        <div class="patient-flow-row"><b>OPD-32</b><span><i>AK</i> Aman Khanna</span><em>Waiting for Dr. Rao</em><time>06m</time></div>
+                        <div class="patient-flow-row"><b>OPD-33</b><span><i>NS</i> Neha Suri</span><em>ECG requested</em><time>12m</time></div>
+                        <div class="patient-flow-row"><b>OPD-34</b><span><i>VG</i> Varun Goel</span><em>Checked in</em><time>18m</time></div>
+                    </section>
+                    <aside class="clinic-insight-panel">
+                        <div class="care-alert"><span><i class="fas fa-bell"></i> Triage alert</span><strong>OPD-29 · BP 168/96</strong><small>Escalated to Dr. Verma</small></div>
+                        <div class="doctor-capacity"><div><span>Dr. Verma</span><b>5 / 7</b></div><meter min="0" max="7" value="5"></meter><div><span>Dr. Rao</span><b>6 / 8</b></div><meter min="0" max="8" value="6"></meter></div>
+                        <div class="notification-card"><i class="fab fa-whatsapp"></i><span><strong>42 token updates sent</strong><small>No missed notifications</small></span></div>
+                    </aside>
+                </div>
+            </div>`,
+        realestate: `
+            <figure class="legal-dashboard-capture realestate-dashboard-capture">
+                <a href="images/aloha-estates-superadmin-dashboard.png" target="_blank" rel="noopener" aria-label="Open the Aloha Estates superadmin dashboard capture at full size">
+                    <span class="legal-dashboard-crop realestate-dashboard-crop">
+                        <img src="images/aloha-estates-superadmin-dashboard.png" alt="Aloha Estates real estate operations dashboard showing sales analytics, lead pipeline, agent status, workflow tasks and company activity" loading="lazy" decoding="async">
+                    </span>
+                    <span class="legal-dashboard-badge"><i class="fas fa-expand-alt"></i> Actual product capture</span>
+                </a>
+                <figcaption><span><i class="fas fa-building"></i> Aloha Estates live sales operations</span><em>Open full dashboard</em></figcaption>
+            </figure>`,
+        manufacturing: `
+            <div class="industry-app app-manufacturing">
+                <div class="app-commandbar mes-commandbar">
+                    <div class="app-brand"><span class="app-brand-icon"><i class="fas fa-industry"></i></span><div><strong>AUCO Plant 02</strong><small>MES · Shift B · Live production</small></div></div>
+                    <div class="mes-clock"><span><i class="fas fa-circle"></i> PLC connected</span><strong>14:32:08</strong></div>
+                </div>
+                <div class="mes-status-strip">
+                    <div><span>OEE</span><strong>87.4%</strong><small>Target 85%</small></div><div><span>Output</span><strong>1,842</strong><small>of 2,100 units</small></div><div><span>Scrap</span><strong>1.7%</strong><small>Within limit</small></div><div class="warning"><span>Downtime</span><strong>12m</strong><small>Cell M-04</small></div>
+                </div>
+                <div class="mes-floor-grid">
+                    <section class="production-line-panel">
+                        <div class="app-panel-title"><div><strong>Valve assembly line</strong><small>Work order WO-4820 · Hydro Valve AU-48</small></div><span>82% complete</span></div>
+                        <div class="line-flow">
+                            <div class="line-station complete"><i class="fas fa-check"></i><strong>CNC-01</strong><small>Machining</small><b>468 pcs</b></div>
+                            <i class="fas fa-chevron-right"></i>
+                            <div class="line-station live"><i class="fas fa-cog fa-spin"></i><strong>ASM-03</strong><small>Assembly</small><b>412 pcs</b></div>
+                            <i class="fas fa-chevron-right"></i>
+                            <div class="line-station"><i class="fas fa-microscope"></i><strong>QC-02</strong><small>Pressure test</small><b>386 pcs</b></div>
+                            <i class="fas fa-chevron-right"></i>
+                            <div class="line-station"><i class="fas fa-box"></i><strong>PKG-01</strong><small>Packing</small><b>352 pcs</b></div>
+                        </div>
+                        <div class="machine-event"><span><i class="fas fa-exclamation-triangle"></i> Cell M-04 vibration above baseline</span><b>Maintenance ETA 06m</b></div>
+                    </section>
+                    <aside class="work-order-panel">
+                        <span class="mes-label">ACTIVE WORK ORDER</span><strong>WO-4820 / Helios GmbH</strong><small>Dispatch due 16 Aug · Hamburg</small>
+                        <dl><div><dt>Material issued</dt><dd>94%</dd></div><div><dt>First-pass yield</dt><dd>98.3%</dd></div><div><dt>QC samples</dt><dd>18 / 24</dd></div></dl>
+                        <div class="spec-control"><i class="fas fa-file-pdf"></i><span><strong>Rev C specification</strong><small>ISO 9001 · EN 10204 3.1</small></span><em>Verified</em></div>
+                    </aside>
+                </div>
+            </div>`,
+        hospitality: `
+            <figure class="legal-dashboard-capture hotel-dashboard-capture">
+                <a href="images/kaizerstays-pms-overview-dashboard.png" target="_blank" rel="noopener" aria-label="Open the KaizerStays PMS overview dashboard capture at full size">
+                    <span class="legal-dashboard-crop hotel-dashboard-crop">
+                        <img src="images/kaizerstays-pms-overview-dashboard.png" alt="KaizerStays hotel PMS overview showing arrivals, room status, housekeeping alerts and operational audit activity" loading="lazy" decoding="async">
+                    </span>
+                    <span class="legal-dashboard-badge"><i class="fas fa-expand-alt"></i> Actual product capture</span>
+                </a>
+                <figcaption><span><i class="fas fa-hotel"></i> KaizerStays live hotel operations</span><em>Open full dashboard</em></figcaption>
+            </figure>`,
+        ecommerce: `
+            <div class="industry-app app-ecommerce">
+                <div class="app-commandbar commerce-commandbar">
+                    <div class="app-brand"><span class="app-brand-icon"><i class="fas fa-shopping-bag"></i></span><div><strong>Remedy Commerce</strong><small>Order orchestration · All channels</small></div></div>
+                    <div class="commerce-pulse"><span><i class="fas fa-bolt"></i> 186 orders today</span><strong>₹8.42L net sales</strong></div>
+                </div>
+                <div class="commerce-workspace">
+                    <section class="order-board">
+                        <div class="order-column new"><div><strong>To confirm</strong><b>08</b></div><article><span>#CK-1089</span><strong>₹5,240 · UPI</strong><small>Nisha Arora · Website</small><em><i class="fas fa-shield-alt"></i> Risk passed</em></article><article><span>#CK-1088</span><strong>₹2,890 · COD</strong><small>Rahul Jain · Instagram</small><em class="attention"><i class="fas fa-phone"></i> Verify COD</em></article></div>
+                        <div class="order-column packing"><div><strong>Packing</strong><b>24</b></div><article><span>#CK-1087</span><strong>3 items · BlueDart</strong><small>Picklist BLR-22</small><em><i class="fas fa-check"></i> Picked</em></article><article><span>#CK-1086</span><strong>1 item · Delhivery</strong><small>Gift wrap requested</small><em><i class="fas fa-box"></i> At station 04</em></article></div>
+                        <div class="order-column dispatch"><div><strong>Ready to ship</strong><b>16</b></div><article><span>Manifest BD-804</span><strong>12 parcels</strong><small>Pickup window 16:00–16:30</small><em><i class="fas fa-truck"></i> Courier assigned</em></article></div>
+                    </section>
+                    <aside class="commerce-side-panel">
+                        <div class="stock-risk"><div><strong>Stock risk</strong><span>3 SKUs</span></div><ul><li><i class="fas fa-flask"></i><span>Glow Serum<small>8 left · 2.4 days</small></span><b>Reorder</b></li><li><i class="fas fa-pump-soap"></i><span>Night Repair<small>12 left · 4.1 days</small></span><b>Watch</b></li></ul></div>
+                        <div class="recovery-card"><i class="fab fa-whatsapp"></i><div><span>CART RECOVERY</span><strong>₹46,280 recovered</strong><small>18 of 64 sessions converted</small></div><b>28%</b></div>
+                        <div class="channel-split"><span>Website <b>62%</b></span><span>Marketplace <b>24%</b></span><span>Social <b>14%</b></span></div>
+                    </aside>
+                </div>
+            </div>`,
+        legal: `
+            <figure class="legal-dashboard-capture">
+                <a href="images/advocate-super-admin-dashboard.png" target="_blank" rel="noopener" aria-label="Open the Advocate super-admin dashboard capture at full size">
+                    <span class="legal-dashboard-crop">
+                        <img src="images/advocate-super-admin-dashboard.png" alt="Advocate super-admin dashboard showing vendor metrics and recent notary applications" loading="lazy" decoding="async">
+                    </span>
+                    <span class="legal-dashboard-badge"><i class="fas fa-expand-alt"></i> Actual product capture</span>
+                </a>
+                <figcaption><span><i class="fas fa-shield-alt"></i> Advocate multi-tenant notary ledger</span><em>Open full dashboard</em></figcaption>
+            </figure>`
+    };
+
+    Object.keys(industrySoftwareMocksV2).forEach(function(industry) {
+        var body = document.querySelector('#stage-' + industry + ' .studio-window-body');
+        if (body) body.innerHTML = industrySoftwareMocksV2[industry];
+    });
     </script>
 
-
-    <!-- End-to-End Bespoke Software Directory Section -->
-    <section id="custom-systems" class="custom-systems-directory-section" data-aos="fade-up" data-aos-duration="800">
-        <div class="container">
-            
-            <div class="systems-directory-header">
-                <div class="header-sub-blue">"End-to-End Bespoke Systems"</div>
-                <h2 class="header-main-title" style="font-size: clamp(1.8rem, 3.5vw, 2.5rem);">CUSTOM SOFTWARE &amp; OPERATING SYSTEMS</h2>
-                <p style="color: #64748b; font-size: 1.05rem; line-height: 1.65; max-width: 820px; margin: 12px auto 0 auto;">
-                    Custom Software — <strong>CRM, ERP, PMS, POS, HRMS, WMS, OMS, SCM, LMS, DMS, SaaS, AI Agents &amp; Business Automation.</strong><br>
-                    <span style="color: #0071e3; font-weight: 600;">“Don't see your system? We build custom software around your workflow.”</span>
-                </p>
-            </div>
-
-            <!-- Interactive Category Tabs -->
-            <div class="systems-tabs-wrapper">
-                <button class="systems-tab-btn active" onclick="switchSystemsCategory('business', this)">
-                    <i class="fas fa-building"></i> Business Software <span class="badge-count">25</span>
-                </button>
-                <button class="systems-tab-btn" onclick="switchSystemsCategory('industry', this)">
-                    <i class="fas fa-industry"></i> Industry-Specific <span class="badge-count">10</span>
-                </button>
-                <button class="systems-tab-btn" onclick="switchSystemsCategory('modern', this)">
-                    <i class="fas fa-bolt"></i> Modern &amp; High-Value <span class="badge-count">12</span>
-                </button>
-                <button class="systems-tab-btn" onclick="switchSystemsCategory('all', this)">
-                    <i class="fas fa-th-large"></i> View All Systems <span class="badge-count">47</span>
-                </button>
-            </div>
-
-            <!-- Panel 1: Business Software -->
-            <div id="panel-business" class="systems-category-panel active">
-                <div class="systems-bento-grid">
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(37,99,235,0.1); color: #2563eb;">
-                                    <i class="fas fa-users-cog"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(37,99,235,0.1); color: #2563eb;">HRMS</span>
-                            </div>
-                            <h4>HRMS — Employee & HR Management</h4>
-                            <p>Complete workforce operating system covering payroll, biometric attendance, performance reviews, leave tracking, and employee self-service portals.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=HRMS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(16,185,129,0.1); color: #059669;">
-                                    <i class="fas fa-warehouse"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(16,185,129,0.1); color: #059669;">WMS</span>
-                            </div>
-                            <h4>WMS — Warehouse Management</h4>
-                            <p>Real-time barcode/RFID bin tracking, multi-location inventory routing, picker optimization, and automated low-stock fulfillment triggers.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=WMS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(245,158,11,0.1); color: #d97706;">
-                                    <i class="fas fa-shopping-cart"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(245,158,11,0.1); color: #d97706;">OMS</span>
-                            </div>
-                            <h4>OMS — Order Management</h4>
-                            <p>Centralized omnichannel order processing across marketplaces, real-time dispatch routing, delivery SLA monitoring, and automated returns workflows.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=OMS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(139,92,246,0.1); color: #7c3aed;">
-                                    <i class="fas fa-truck-loading"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(139,92,246,0.1); color: #7c3aed;">SCM</span>
-                            </div>
-                            <h4>SCM — Supply Chain Management</h4>
-                            <p>End-to-end supply chain visibility, vendor demand forecasting, purchase requisition approval pipelines, and multi-node logistics coordination.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=SCM">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(6,182,212,0.1); color: #0891b2;">
-                                    <i class="fas fa-folder-open"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(6,182,212,0.1); color: #0891b2;">DMS</span>
-                            </div>
-                            <h4>DMS — Document Management</h4>
-                            <p>Secure cloud document repository with OCR full-text search, role-based access controls, immutable audit logging, and digital signature workflows.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=DMS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(236,72,153,0.1); color: #db2777;">
-                                    <i class="fas fa-graduation-cap"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(236,72,153,0.1); color: #db2777;">LMS</span>
-                            </div>
-                            <h4>LMS — Learning Management</h4>
-                            <p>Corporate training and certification platform featuring interactive course modules, SCORM compliance, video streaming, and employee skill matrix tracking.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=LMS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(99,102,241,0.1); color: #4f46e5;">
-                                    <i class="fas fa-user-tie"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(99,102,241,0.1); color: #4f46e5;">ATS</span>
-                            </div>
-                            <h4>ATS — Recruitment & Applicant Tracking</h4>
-                            <p>Automated resume parsing, multi-stage hiring funnels, interviewer scorecard collaboration, automated candidate email sequences, and offer letter generation.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=ATS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(234,88,12,0.1); color: #c2410c;">
-                                    <i class="fas fa-tools"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(234,88,12,0.1); color: #c2410c;">CMMS</span>
-                            </div>
-                            <h4>CMMS — Maintenance Management</h4>
-                            <p>Preventive equipment maintenance scheduling, automated work order dispatching, downtime telemetry logging, and spare parts inventory tracking.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=CMMS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(16,185,129,0.1); color: #059669;">
-                                    <i class="fas fa-map-marked-alt"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(16,185,129,0.1); color: #059669;">FSM</span>
-                            </div>
-                            <h4>FSM — Field Service Management</h4>
-                            <p>GPS technician dispatching, real-time route optimization, mobile proof-of-work capture, customer sign-off, and on-site digital invoicing.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=FSM">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(37,99,235,0.1); color: #2563eb;">
-                                    <i class="fas fa-route"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(37,99,235,0.1); color: #2563eb;">TMS</span>
-                            </div>
-                            <h4>TMS — Transportation Management</h4>
-                            <p>Freight load consolidation, dynamic route planning, multi-carrier rate comparison, electronic bills of lading (eBOL), and multi-modal shipment tracking.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=TMS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(245,158,11,0.1); color: #d97706;">
-                                    <i class="fas fa-truck-moving"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(245,158,11,0.1); color: #d97706;">FMS</span>
-                            </div>
-                            <h4>FMS — Fleet Management</h4>
-                            <p>Live GPS vehicle tracking, engine diagnostic alerts, driver safety scoring, fuel expense logs, and automated preventive service scheduling.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=FMS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(139,92,246,0.1); color: #7c3aed;">
-                                    <i class="fas fa-clipboard-check"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(139,92,246,0.1); color: #7c3aed;">QMS</span>
-                            </div>
-                            <h4>QMS — Quality Management</h4>
-                            <p>Standard Operating Procedure (SOP) enforcement, non-conformance logging, regulatory audit compliance workflows, and CAPA resolution tracking.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=QMS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(6,182,212,0.1); color: #0891b2;">
-                                    <i class="fas fa-industry"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(6,182,212,0.1); color: #0891b2;">MES</span>
-                            </div>
-                            <h4>MES — Manufacturing Execution</h4>
-                            <p>Real-time shop floor machine telemetry, production run scheduling, bill of materials (BOM) tracking, material yield analysis, and scrap reduction analytics.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=MES">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(37,99,235,0.1); color: #2563eb;">
-                                    <i class="fas fa-file-invoice-dollar"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(37,99,235,0.1); color: #2563eb;">PROCURE</span>
-                            </div>
-                            <h4>Procurement Management System</h4>
-                            <p>Automated purchase orders, 3-way matching with invoices, multi-tier departmental budget approvals, and RFP/RFQ vendor bidding management.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=PROCURE">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(16,185,129,0.1); color: #059669;">
-                                    <i class="fas fa-handshake"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(16,185,129,0.1); color: #059669;">VMS</span>
-                            </div>
-                            <h4>Vendor Management System</h4>
-                            <p>Supplier onboarding verification, compliance documentation vaults, SLA performance scorecards, contract renewal alerts, and automated payout runs.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=VMS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(99,102,241,0.1); color: #4f46e5;">
-                                    <i class="fas fa-laptop-code"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(99,102,241,0.1); color: #4f46e5;">ASSETS</span>
-                            </div>
-                            <h4>Asset Management System</h4>
-                            <p>Full lifecycle tracking of IT and physical hardware, automated depreciation calculation, warranty alerts, maintenance history, and custodian handoff logs.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=ASSETS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(234,88,12,0.1); color: #c2410c;">
-                                    <i class="fas fa-boxes"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(234,88,12,0.1); color: #c2410c;">INVENTORY</span>
-                            </div>
-                            <h4>Inventory Management System</h4>
-                            <p>Real-time multi-channel SKU tracking, automated reorder points, batch/lot/expiry date tracking, barcode generation, and cross-warehouse transfers.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=INVENTORY">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(236,72,153,0.1); color: #db2777;">
-                                    <i class="fas fa-tasks"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(236,72,153,0.1); color: #db2777;">PROJECTS</span>
-                            </div>
-                            <h4>Project Management System</h4>
-                            <p>Agile sprint boards, interactive Gantt timelines, team resource capacity planning, milestone dependency tracking, and billable hour logging.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=PROJECTS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(37,99,235,0.1); color: #2563eb;">
-                                    <i class="fas fa-headset"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(37,99,235,0.1); color: #2563eb;">SUPPORT</span>
-                            </div>
-                            <h4>Help Desk & Ticketing System</h4>
-                            <p>Multi-channel customer ticket triage (email, chat, WhatsApp), automated SLA escalation rules, self-service knowledge base, and CSAT scoring.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=SUPPORT">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(16,185,129,0.1); color: #059669;">
-                                    <i class="fas fa-receipt"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(16,185,129,0.1); color: #059669;">BILLING</span>
-                            </div>
-                            <h4>Billing & Invoicing System</h4>
-                            <p>Automated GST/tax invoice generation, customizable payment reminder schedules, multi-gateway reconciliation, and overdue dunning automation.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=BILLING">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(139,92,246,0.1); color: #7c3aed;">
-                                    <i class="fas fa-sync-alt"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(139,92,246,0.1); color: #7c3aed;">SAAS REVENUE</span>
-                            </div>
-                            <h4>Subscription Management System</h4>
-                            <p>Usage-based metering, recurring credit card vaults, multi-tier pricing plan management, coupon engines, and automated churn prevention.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=SAAS REVENUE">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(6,182,212,0.1); color: #0891b2;">
-                                    <i class="fas fa-calendar-alt"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(6,182,212,0.1); color: #0891b2;">BOOKINGS</span>
-                            </div>
-                            <h4>Appointment & Scheduling System</h4>
-                            <p>Real-time calendar availability sync, automated 2-way WhatsApp/SMS reminders, staff roster allocation, deposit payment capture, and no-show mitigation.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=BOOKINGS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(245,158,11,0.1); color: #d97706;">
-                                    <i class="fas fa-id-badge"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(245,158,11,0.1); color: #d97706;">VISITORS</span>
-                            </div>
-                            <h4>Visitor Management System</h4>
-                            <p>Digital lobby iPad kiosk check-in, host arrival alerts, NDA digital e-signing, visitor badge printing, and real-time building occupancy logs.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=VISITORS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(236,72,153,0.1); color: #db2777;">
-                                    <i class="fas fa-store-alt"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(236,72,153,0.1); color: #db2777;">FRANCHISE</span>
-                            </div>
-                            <h4>Franchise Management System</h4>
-                            <p>Multi-unit royalty fee accounting, brand standard audit checklists, centralized inventory ordering, franchise marketing portal, and unit P&L KPIs.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=FRANCHISE">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(99,102,241,0.1); color: #4f46e5;">
-                                    <i class="fas fa-award"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(99,102,241,0.1); color: #4f46e5;">LOYALTY</span>
-                            </div>
-                            <h4>Loyalty & Rewards System</h4>
-                            <p>Dynamic points accrual engine, tier-based VIP perks, customer referral tracking, Apple/Google wallet pass integration, and promotional voucher campaigns.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=LOYALTY">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Panel 2: Industry-Specific Software -->
-            <div id="panel-industry" class="systems-category-panel">
-                <div class="systems-bento-grid">
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(37,99,235,0.1); color: #2563eb;">
-                                    <i class="fas fa-hotel"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(37,99,235,0.1); color: #2563eb;">HOSPITALITY</span>
-                            </div>
-                            <h4>Hotel Channel Manager</h4>
-                            <p>Instant 2-way rate and room availability synchronization across OTAs (Booking.com, Expedia, Agoda, Airbnb) eliminating double-booking risks.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=HOSPITALITY">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(16,185,129,0.1); color: #059669;">
-                                    <i class="fas fa-calendar-check"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(16,185,129,0.1); color: #059669;">DIRECT BOOKING</span>
-                            </div>
-                            <h4>Booking & Reservation Engine</h4>
-                            <p>Zero-commission direct guest booking portal featuring dynamic seasonal pricing, add-on packages, room upgrade prompts, and instant checkout.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=DIRECT BOOKING">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(234,88,12,0.1); color: #c2410c;">
-                                    <i class="fas fa-utensils"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(234,88,12,0.1); color: #c2410c;">RESTAURANT</span>
-                            </div>
-                            <h4>Restaurant Kitchen Display System (KDS)</h4>
-                            <p>Real-time order cook time tracking, color-coded ticket routing by prep station (grill, salad, bar), item modifiers, and server paging integration.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=RESTAURANT">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(6,182,212,0.1); color: #0891b2;">
-                                    <i class="fas fa-hospital-user"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(6,182,212,0.1); color: #0891b2;">HEALTHCARE</span>
-                            </div>
-                            <h4>Hospital Management System (HMIS)</h4>
-                            <p>End-to-end OPD/IPD patient registration, electronic medical records (EMR/EHR), pharmacy stock dispensing, bed allocation, and NABH-compliant billing.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=HEALTHCARE">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(139,92,246,0.1); color: #7c3aed;">
-                                    <i class="fas fa-vial"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(139,92,246,0.1); color: #7c3aed;">DIAGNOSTICS</span>
-                            </div>
-                            <h4>Laboratory Information System (LIS)</h4>
-                            <p>Sample barcode tube tracking, bi-directional analyzer machine interfacing, QC validation, automated doctor digital sign-off, and WhatsApp report dispatch.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=DIAGNOSTICS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(236,72,153,0.1); color: #db2777;">
-                                    <i class="fas fa-school"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(236,72,153,0.1); color: #db2777;">EDUCATION</span>
-                            </div>
-                            <h4>School/Student Information System (SIS)</h4>
-                            <p>Student admissions pipeline, automated tuition fee collection with receipt generation, digital gradebooks, attendance tracking, and parent mobile portal.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=EDUCATION">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(37,99,235,0.1); color: #2563eb;">
-                                    <i class="fas fa-building"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(37,99,235,0.1); color: #2563eb;">REAL ESTATE</span>
-                            </div>
-                            <h4>Real Estate Management System</h4>
-                            <p>Interactive unit availability matrix, broker commission tracking, automated EMI schedule generation, customer payment milestone vaults, and buyer portals.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=REAL ESTATE">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(245,158,11,0.1); color: #d97706;">
-                                    <i class="fas fa-hard-hat"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(245,158,11,0.1); color: #d97706;">CONSTRUCTION</span>
-                            </div>
-                            <h4>Construction Management System</h4>
-                            <p>Daily site progress logs, subcontractor Running Account (RA) billing, raw material consumption tracking, safety compliance audits, and milestone Gantt charts.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=CONSTRUCTION">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(99,102,241,0.1); color: #4f46e5;">
-                                    <i class="fas fa-store"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(99,102,241,0.1); color: #4f46e5;">E-COMMERCE</span>
-                            </div>
-                            <h4>E-commerce Management Platform</h4>
-                            <p>Custom multi-vendor marketplace core, advanced product catalog taxonomy, hierarchical discount rules, abandoned cart recovery, and fulfillment routing.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=E-COMMERCE">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(16,185,129,0.1); color: #059669;">
-                                    <i class="fas fa-shipping-fast"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(16,185,129,0.1); color: #059669;">LOGISTICS</span>
-                            </div>
-                            <h4>Logistics Management System</h4>
-                            <p>First-mile to last-mile parcel tracking, automated multi-courier API dispatching, Non-Delivery Report (NDR) resolution workflows, and COD remittance accounting.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=LOGISTICS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Panel 3: Modern & High-Value Systems -->
-            <div id="panel-modern" class="systems-category-panel">
-                <div class="systems-bento-grid">
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(37,99,235,0.1); color: #2563eb;">
-                                    <i class="fas fa-robot"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(37,99,235,0.1); color: #2563eb;">AUTONOMOUS AI</span>
-                            </div>
-                            <h4>AI Agent Platforms</h4>
-                            <p>Custom LLM-powered autonomous agents capable of multi-step reasoning, context engineering, database querying, external API tool execution, and 24/7 client triage.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=AUTONOMOUS AI">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(16,185,129,0.1); color: #059669;">
-                                    <i class="fas fa-cogs"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(16,185,129,0.1); color: #059669;">AUTOMATION</span>
-                            </div>
-                            <h4>Workflow Automation Systems</h4>
-                            <p>Cross-application webhook pipelines, event-driven data synchronization, automated document generation, and intelligent business process automation.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=AUTOMATION">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(139,92,246,0.1); color: #7c3aed;">
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(139,92,246,0.1); color: #7c3aed;">EXECUTIVE BI</span>
-                            </div>
-                            <h4>Business Intelligence Dashboards</h4>
-                            <p>Real-time KPI visualization, multi-source data warehousing, executive summary drill-downs, predictive revenue modeling, and scheduled PDF reporting.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=EXECUTIVE BI">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(6,182,212,0.1); color: #0891b2;">
-                                    <i class="fas fa-user-circle"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(6,182,212,0.1); color: #0891b2;">CLIENT PORTAL</span>
-                            </div>
-                            <h4>Customer Portals</h4>
-                            <p>Branded self-service client hubs for real-time project milestones, order status, support ticket tracking, billing history, and encrypted file exchange.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=CLIENT PORTAL">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(99,102,241,0.1); color: #4f46e5;">
-                                    <i class="fas fa-id-card"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(99,102,241,0.1); color: #4f46e5;">INTERNAL HUB</span>
-                            </div>
-                            <h4>Employee Portals</h4>
-                            <p>Unified digital intranet for company announcements, policy repositories, internal tooling access, PTO requests, and organization-wide employee directories.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=INTERNAL HUB">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(234,88,12,0.1); color: #c2410c;">
-                                    <i class="fas fa-network-wired"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(234,88,12,0.1); color: #c2410c;">B2B WHOLESALE</span>
-                            </div>
-                            <h4>Dealer/Distributor Portals</h4>
-                            <p>B2B self-service ordering, credit limit management, tiered bulk pricing matrices, outstanding aging ledger views, and real-time inventory allocation.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=B2B WHOLESALE">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(37,99,235,0.1); color: #2563eb;">
-                                    <i class="fas fa-cloud"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(37,99,235,0.1); color: #2563eb;">CLOUD SAAS</span>
-                            </div>
-                            <h4>Multi-Tenant SaaS Platforms</h4>
-                            <p>High-scale multi-tenant architectures featuring schema/database isolation, role-based access control (RBAC), subscription metering, and automated onboarding.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=CLOUD SAAS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(236,72,153,0.1); color: #db2777;">
-                                    <i class="fas fa-desktop"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(236,72,153,0.1); color: #db2777;">OPS CORE</span>
-                            </div>
-                            <h4>Internal Operations Platforms</h4>
-                            <p>Bespoke central command centers custom-engineered to consolidate all fragmented company software into one unified, ultra-fast proprietary dashboard.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=OPS CORE">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(245,158,11,0.1); color: #d97706;">
-                                    <i class="fas fa-plug"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(245,158,11,0.1); color: #d97706;">MIDDLEWARE</span>
-                            </div>
-                            <h4>API Integration Platforms</h4>
-                            <p>High-throughput enterprise middleware connecting legacy ERPs, payment gateways, CRM databases, shipping APIs, and third-party SaaS tools with sub-20ms latency.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=MIDDLEWARE">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(16,185,129,0.1); color: #059669;">
-                                    <i class="fas fa-microchip"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(16,185,129,0.1); color: #059669;">IOT TELEMETRY</span>
-                            </div>
-                            <h4>IoT Management Dashboards</h4>
-                            <p>Real-time sensor telemetry streaming, device fleet health monitoring, remote Over-The-Air (OTA) firmware deployment, and automated threshold alerts.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=IOT TELEMETRY">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(139,92,246,0.1); color: #7c3aed;">
-                                    <i class="fas fa-book"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(139,92,246,0.1); color: #7c3aed;">AI KNOWLEDGE</span>
-                            </div>
-                            <h4>Knowledge Management Systems</h4>
-                            <p>AI-vectorized searchable organizational knowledge bases, SOP documentation wikis, version-controlled guidelines, and contextual employee Q&A bots.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=AI KNOWLEDGE">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(6,182,212,0.1); color: #0891b2;">
-                                    <i class="fas fa-shield-alt"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(6,182,212,0.1); color: #0891b2;">AUDIT & RISK</span>
-                            </div>
-                            <h4>Compliance Management Systems</h4>
-                            <p>Automated regulatory audit trail logging, policy version acknowledgment tracking, risk scoring matrices, and statutory compliance reporting engines.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=AUDIT & RISK">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Panel 4: All Systems Combined -->
-            <div id="panel-all" class="systems-category-panel">
-                <div class="systems-bento-grid">
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(37,99,235,0.1); color: #2563eb;">
-                                    <i class="fas fa-users-cog"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(37,99,235,0.1); color: #2563eb;">HRMS</span>
-                            </div>
-                            <h4>HRMS — Employee & HR Management</h4>
-                            <p>Complete workforce operating system covering payroll, biometric attendance, performance reviews, leave tracking, and employee self-service portals.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=HRMS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(16,185,129,0.1); color: #059669;">
-                                    <i class="fas fa-warehouse"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(16,185,129,0.1); color: #059669;">WMS</span>
-                            </div>
-                            <h4>WMS — Warehouse Management</h4>
-                            <p>Real-time barcode/RFID bin tracking, multi-location inventory routing, picker optimization, and automated low-stock fulfillment triggers.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=WMS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(245,158,11,0.1); color: #d97706;">
-                                    <i class="fas fa-shopping-cart"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(245,158,11,0.1); color: #d97706;">OMS</span>
-                            </div>
-                            <h4>OMS — Order Management</h4>
-                            <p>Centralized omnichannel order processing across marketplaces, real-time dispatch routing, delivery SLA monitoring, and automated returns workflows.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=OMS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(139,92,246,0.1); color: #7c3aed;">
-                                    <i class="fas fa-truck-loading"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(139,92,246,0.1); color: #7c3aed;">SCM</span>
-                            </div>
-                            <h4>SCM — Supply Chain Management</h4>
-                            <p>End-to-end supply chain visibility, vendor demand forecasting, purchase requisition approval pipelines, and multi-node logistics coordination.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=SCM">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(6,182,212,0.1); color: #0891b2;">
-                                    <i class="fas fa-folder-open"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(6,182,212,0.1); color: #0891b2;">DMS</span>
-                            </div>
-                            <h4>DMS — Document Management</h4>
-                            <p>Secure cloud document repository with OCR full-text search, role-based access controls, immutable audit logging, and digital signature workflows.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=DMS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(236,72,153,0.1); color: #db2777;">
-                                    <i class="fas fa-graduation-cap"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(236,72,153,0.1); color: #db2777;">LMS</span>
-                            </div>
-                            <h4>LMS — Learning Management</h4>
-                            <p>Corporate training and certification platform featuring interactive course modules, SCORM compliance, video streaming, and employee skill matrix tracking.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=LMS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(99,102,241,0.1); color: #4f46e5;">
-                                    <i class="fas fa-user-tie"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(99,102,241,0.1); color: #4f46e5;">ATS</span>
-                            </div>
-                            <h4>ATS — Recruitment & Applicant Tracking</h4>
-                            <p>Automated resume parsing, multi-stage hiring funnels, interviewer scorecard collaboration, automated candidate email sequences, and offer letter generation.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=ATS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(234,88,12,0.1); color: #c2410c;">
-                                    <i class="fas fa-tools"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(234,88,12,0.1); color: #c2410c;">CMMS</span>
-                            </div>
-                            <h4>CMMS — Maintenance Management</h4>
-                            <p>Preventive equipment maintenance scheduling, automated work order dispatching, downtime telemetry logging, and spare parts inventory tracking.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=CMMS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(16,185,129,0.1); color: #059669;">
-                                    <i class="fas fa-map-marked-alt"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(16,185,129,0.1); color: #059669;">FSM</span>
-                            </div>
-                            <h4>FSM — Field Service Management</h4>
-                            <p>GPS technician dispatching, real-time route optimization, mobile proof-of-work capture, customer sign-off, and on-site digital invoicing.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=FSM">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(37,99,235,0.1); color: #2563eb;">
-                                    <i class="fas fa-route"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(37,99,235,0.1); color: #2563eb;">TMS</span>
-                            </div>
-                            <h4>TMS — Transportation Management</h4>
-                            <p>Freight load consolidation, dynamic route planning, multi-carrier rate comparison, electronic bills of lading (eBOL), and multi-modal shipment tracking.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=TMS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(245,158,11,0.1); color: #d97706;">
-                                    <i class="fas fa-truck-moving"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(245,158,11,0.1); color: #d97706;">FMS</span>
-                            </div>
-                            <h4>FMS — Fleet Management</h4>
-                            <p>Live GPS vehicle tracking, engine diagnostic alerts, driver safety scoring, fuel expense logs, and automated preventive service scheduling.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=FMS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(139,92,246,0.1); color: #7c3aed;">
-                                    <i class="fas fa-clipboard-check"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(139,92,246,0.1); color: #7c3aed;">QMS</span>
-                            </div>
-                            <h4>QMS — Quality Management</h4>
-                            <p>Standard Operating Procedure (SOP) enforcement, non-conformance logging, regulatory audit compliance workflows, and CAPA resolution tracking.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=QMS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(6,182,212,0.1); color: #0891b2;">
-                                    <i class="fas fa-industry"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(6,182,212,0.1); color: #0891b2;">MES</span>
-                            </div>
-                            <h4>MES — Manufacturing Execution</h4>
-                            <p>Real-time shop floor machine telemetry, production run scheduling, bill of materials (BOM) tracking, material yield analysis, and scrap reduction analytics.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=MES">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(37,99,235,0.1); color: #2563eb;">
-                                    <i class="fas fa-file-invoice-dollar"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(37,99,235,0.1); color: #2563eb;">PROCURE</span>
-                            </div>
-                            <h4>Procurement Management System</h4>
-                            <p>Automated purchase orders, 3-way matching with invoices, multi-tier departmental budget approvals, and RFP/RFQ vendor bidding management.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=PROCURE">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(16,185,129,0.1); color: #059669;">
-                                    <i class="fas fa-handshake"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(16,185,129,0.1); color: #059669;">VMS</span>
-                            </div>
-                            <h4>Vendor Management System</h4>
-                            <p>Supplier onboarding verification, compliance documentation vaults, SLA performance scorecards, contract renewal alerts, and automated payout runs.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=VMS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(99,102,241,0.1); color: #4f46e5;">
-                                    <i class="fas fa-laptop-code"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(99,102,241,0.1); color: #4f46e5;">ASSETS</span>
-                            </div>
-                            <h4>Asset Management System</h4>
-                            <p>Full lifecycle tracking of IT and physical hardware, automated depreciation calculation, warranty alerts, maintenance history, and custodian handoff logs.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=ASSETS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(234,88,12,0.1); color: #c2410c;">
-                                    <i class="fas fa-boxes"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(234,88,12,0.1); color: #c2410c;">INVENTORY</span>
-                            </div>
-                            <h4>Inventory Management System</h4>
-                            <p>Real-time multi-channel SKU tracking, automated reorder points, batch/lot/expiry date tracking, barcode generation, and cross-warehouse transfers.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=INVENTORY">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(236,72,153,0.1); color: #db2777;">
-                                    <i class="fas fa-tasks"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(236,72,153,0.1); color: #db2777;">PROJECTS</span>
-                            </div>
-                            <h4>Project Management System</h4>
-                            <p>Agile sprint boards, interactive Gantt timelines, team resource capacity planning, milestone dependency tracking, and billable hour logging.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=PROJECTS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(37,99,235,0.1); color: #2563eb;">
-                                    <i class="fas fa-headset"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(37,99,235,0.1); color: #2563eb;">SUPPORT</span>
-                            </div>
-                            <h4>Help Desk & Ticketing System</h4>
-                            <p>Multi-channel customer ticket triage (email, chat, WhatsApp), automated SLA escalation rules, self-service knowledge base, and CSAT scoring.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=SUPPORT">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(16,185,129,0.1); color: #059669;">
-                                    <i class="fas fa-receipt"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(16,185,129,0.1); color: #059669;">BILLING</span>
-                            </div>
-                            <h4>Billing & Invoicing System</h4>
-                            <p>Automated GST/tax invoice generation, customizable payment reminder schedules, multi-gateway reconciliation, and overdue dunning automation.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=BILLING">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(139,92,246,0.1); color: #7c3aed;">
-                                    <i class="fas fa-sync-alt"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(139,92,246,0.1); color: #7c3aed;">SAAS REVENUE</span>
-                            </div>
-                            <h4>Subscription Management System</h4>
-                            <p>Usage-based metering, recurring credit card vaults, multi-tier pricing plan management, coupon engines, and automated churn prevention.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=SAAS REVENUE">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(6,182,212,0.1); color: #0891b2;">
-                                    <i class="fas fa-calendar-alt"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(6,182,212,0.1); color: #0891b2;">BOOKINGS</span>
-                            </div>
-                            <h4>Appointment & Scheduling System</h4>
-                            <p>Real-time calendar availability sync, automated 2-way WhatsApp/SMS reminders, staff roster allocation, deposit payment capture, and no-show mitigation.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=BOOKINGS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(245,158,11,0.1); color: #d97706;">
-                                    <i class="fas fa-id-badge"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(245,158,11,0.1); color: #d97706;">VISITORS</span>
-                            </div>
-                            <h4>Visitor Management System</h4>
-                            <p>Digital lobby iPad kiosk check-in, host arrival alerts, NDA digital e-signing, visitor badge printing, and real-time building occupancy logs.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=VISITORS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(236,72,153,0.1); color: #db2777;">
-                                    <i class="fas fa-store-alt"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(236,72,153,0.1); color: #db2777;">FRANCHISE</span>
-                            </div>
-                            <h4>Franchise Management System</h4>
-                            <p>Multi-unit royalty fee accounting, brand standard audit checklists, centralized inventory ordering, franchise marketing portal, and unit P&L KPIs.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=FRANCHISE">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(99,102,241,0.1); color: #4f46e5;">
-                                    <i class="fas fa-award"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(99,102,241,0.1); color: #4f46e5;">LOYALTY</span>
-                            </div>
-                            <h4>Loyalty & Rewards System</h4>
-                            <p>Dynamic points accrual engine, tier-based VIP perks, customer referral tracking, Apple/Google wallet pass integration, and promotional voucher campaigns.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=LOYALTY">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(37,99,235,0.1); color: #2563eb;">
-                                    <i class="fas fa-hotel"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(37,99,235,0.1); color: #2563eb;">HOSPITALITY</span>
-                            </div>
-                            <h4>Hotel Channel Manager</h4>
-                            <p>Instant 2-way rate and room availability synchronization across OTAs (Booking.com, Expedia, Agoda, Airbnb) eliminating double-booking risks.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=HOSPITALITY">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(16,185,129,0.1); color: #059669;">
-                                    <i class="fas fa-calendar-check"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(16,185,129,0.1); color: #059669;">DIRECT BOOKING</span>
-                            </div>
-                            <h4>Booking & Reservation Engine</h4>
-                            <p>Zero-commission direct guest booking portal featuring dynamic seasonal pricing, add-on packages, room upgrade prompts, and instant checkout.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=DIRECT BOOKING">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(234,88,12,0.1); color: #c2410c;">
-                                    <i class="fas fa-utensils"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(234,88,12,0.1); color: #c2410c;">RESTAURANT</span>
-                            </div>
-                            <h4>Restaurant Kitchen Display System (KDS)</h4>
-                            <p>Real-time order cook time tracking, color-coded ticket routing by prep station (grill, salad, bar), item modifiers, and server paging integration.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=RESTAURANT">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(6,182,212,0.1); color: #0891b2;">
-                                    <i class="fas fa-hospital-user"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(6,182,212,0.1); color: #0891b2;">HEALTHCARE</span>
-                            </div>
-                            <h4>Hospital Management System (HMIS)</h4>
-                            <p>End-to-end OPD/IPD patient registration, electronic medical records (EMR/EHR), pharmacy stock dispensing, bed allocation, and NABH-compliant billing.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=HEALTHCARE">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(139,92,246,0.1); color: #7c3aed;">
-                                    <i class="fas fa-vial"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(139,92,246,0.1); color: #7c3aed;">DIAGNOSTICS</span>
-                            </div>
-                            <h4>Laboratory Information System (LIS)</h4>
-                            <p>Sample barcode tube tracking, bi-directional analyzer machine interfacing, QC validation, automated doctor digital sign-off, and WhatsApp report dispatch.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=DIAGNOSTICS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(236,72,153,0.1); color: #db2777;">
-                                    <i class="fas fa-school"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(236,72,153,0.1); color: #db2777;">EDUCATION</span>
-                            </div>
-                            <h4>School/Student Information System (SIS)</h4>
-                            <p>Student admissions pipeline, automated tuition fee collection with receipt generation, digital gradebooks, attendance tracking, and parent mobile portal.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=EDUCATION">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(37,99,235,0.1); color: #2563eb;">
-                                    <i class="fas fa-building"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(37,99,235,0.1); color: #2563eb;">REAL ESTATE</span>
-                            </div>
-                            <h4>Real Estate Management System</h4>
-                            <p>Interactive unit availability matrix, broker commission tracking, automated EMI schedule generation, customer payment milestone vaults, and buyer portals.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=REAL ESTATE">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(245,158,11,0.1); color: #d97706;">
-                                    <i class="fas fa-hard-hat"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(245,158,11,0.1); color: #d97706;">CONSTRUCTION</span>
-                            </div>
-                            <h4>Construction Management System</h4>
-                            <p>Daily site progress logs, subcontractor Running Account (RA) billing, raw material consumption tracking, safety compliance audits, and milestone Gantt charts.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=CONSTRUCTION">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(99,102,241,0.1); color: #4f46e5;">
-                                    <i class="fas fa-store"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(99,102,241,0.1); color: #4f46e5;">E-COMMERCE</span>
-                            </div>
-                            <h4>E-commerce Management Platform</h4>
-                            <p>Custom multi-vendor marketplace core, advanced product catalog taxonomy, hierarchical discount rules, abandoned cart recovery, and fulfillment routing.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=E-COMMERCE">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(16,185,129,0.1); color: #059669;">
-                                    <i class="fas fa-shipping-fast"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(16,185,129,0.1); color: #059669;">LOGISTICS</span>
-                            </div>
-                            <h4>Logistics Management System</h4>
-                            <p>First-mile to last-mile parcel tracking, automated multi-courier API dispatching, Non-Delivery Report (NDR) resolution workflows, and COD remittance accounting.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=LOGISTICS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(37,99,235,0.1); color: #2563eb;">
-                                    <i class="fas fa-robot"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(37,99,235,0.1); color: #2563eb;">AUTONOMOUS AI</span>
-                            </div>
-                            <h4>AI Agent Platforms</h4>
-                            <p>Custom LLM-powered autonomous agents capable of multi-step reasoning, context engineering, database querying, external API tool execution, and 24/7 client triage.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=AUTONOMOUS AI">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(16,185,129,0.1); color: #059669;">
-                                    <i class="fas fa-cogs"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(16,185,129,0.1); color: #059669;">AUTOMATION</span>
-                            </div>
-                            <h4>Workflow Automation Systems</h4>
-                            <p>Cross-application webhook pipelines, event-driven data synchronization, automated document generation, and intelligent business process automation.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=AUTOMATION">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(139,92,246,0.1); color: #7c3aed;">
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(139,92,246,0.1); color: #7c3aed;">EXECUTIVE BI</span>
-                            </div>
-                            <h4>Business Intelligence Dashboards</h4>
-                            <p>Real-time KPI visualization, multi-source data warehousing, executive summary drill-downs, predictive revenue modeling, and scheduled PDF reporting.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=EXECUTIVE BI">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(6,182,212,0.1); color: #0891b2;">
-                                    <i class="fas fa-user-circle"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(6,182,212,0.1); color: #0891b2;">CLIENT PORTAL</span>
-                            </div>
-                            <h4>Customer Portals</h4>
-                            <p>Branded self-service client hubs for real-time project milestones, order status, support ticket tracking, billing history, and encrypted file exchange.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=CLIENT PORTAL">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(99,102,241,0.1); color: #4f46e5;">
-                                    <i class="fas fa-id-card"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(99,102,241,0.1); color: #4f46e5;">INTERNAL HUB</span>
-                            </div>
-                            <h4>Employee Portals</h4>
-                            <p>Unified digital intranet for company announcements, policy repositories, internal tooling access, PTO requests, and organization-wide employee directories.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=INTERNAL HUB">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(234,88,12,0.1); color: #c2410c;">
-                                    <i class="fas fa-network-wired"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(234,88,12,0.1); color: #c2410c;">B2B WHOLESALE</span>
-                            </div>
-                            <h4>Dealer/Distributor Portals</h4>
-                            <p>B2B self-service ordering, credit limit management, tiered bulk pricing matrices, outstanding aging ledger views, and real-time inventory allocation.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=B2B WHOLESALE">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(37,99,235,0.1); color: #2563eb;">
-                                    <i class="fas fa-cloud"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(37,99,235,0.1); color: #2563eb;">CLOUD SAAS</span>
-                            </div>
-                            <h4>Multi-Tenant SaaS Platforms</h4>
-                            <p>High-scale multi-tenant architectures featuring schema/database isolation, role-based access control (RBAC), subscription metering, and automated onboarding.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=CLOUD SAAS">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(236,72,153,0.1); color: #db2777;">
-                                    <i class="fas fa-desktop"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(236,72,153,0.1); color: #db2777;">OPS CORE</span>
-                            </div>
-                            <h4>Internal Operations Platforms</h4>
-                            <p>Bespoke central command centers custom-engineered to consolidate all fragmented company software into one unified, ultra-fast proprietary dashboard.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=OPS CORE">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(245,158,11,0.1); color: #d97706;">
-                                    <i class="fas fa-plug"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(245,158,11,0.1); color: #d97706;">MIDDLEWARE</span>
-                            </div>
-                            <h4>API Integration Platforms</h4>
-                            <p>High-throughput enterprise middleware connecting legacy ERPs, payment gateways, CRM databases, shipping APIs, and third-party SaaS tools with sub-20ms latency.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=MIDDLEWARE">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(16,185,129,0.1); color: #059669;">
-                                    <i class="fas fa-microchip"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(16,185,129,0.1); color: #059669;">IOT TELEMETRY</span>
-                            </div>
-                            <h4>IoT Management Dashboards</h4>
-                            <p>Real-time sensor telemetry streaming, device fleet health monitoring, remote Over-The-Air (OTA) firmware deployment, and automated threshold alerts.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=IOT TELEMETRY">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(139,92,246,0.1); color: #7c3aed;">
-                                    <i class="fas fa-book"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(139,92,246,0.1); color: #7c3aed;">AI KNOWLEDGE</span>
-                            </div>
-                            <h4>Knowledge Management Systems</h4>
-                            <p>AI-vectorized searchable organizational knowledge bases, SOP documentation wikis, version-controlled guidelines, and contextual employee Q&A bots.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=AI KNOWLEDGE">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                    <div class="system-bento-card">
-                        <div>
-                            <div class="system-card-top">
-                                <div class="system-icon-box" style="background: rgba(6,182,212,0.1); color: #0891b2;">
-                                    <i class="fas fa-shield-alt"></i>
-                                </div>
-                                <span class="system-tag" style="background: rgba(6,182,212,0.1); color: #0891b2;">AUDIT & RISK</span>
-                            </div>
-                            <h4>Compliance Management Systems</h4>
-                            <p>Automated regulatory audit trail logging, policy version acknowledgment tracking, risk scoring matrices, and statutory compliance reporting engines.</p>
-                        </div>
-                        <div class="system-card-footer">
-                            <a href="contact.html?system=AUDIT & RISK">Request Blueprint <i class="fas fa-arrow-right"></i></a>
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Custom Built</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Custom Engineering Call-To-Action Banner -->
-            <div class="system-cta-banner" data-aos="fade-up">
-                <div>
-                    <h3>Need a System Tailored to Your Proprietary Logic?</h3>
-                    <p>Every enterprise has unique internal operational logic. We build zero-template software, custom SQL database architectures, role hierarchies, and automated API bridges to power your entire company.</p>
-                </div>
-                <div style="flex-shrink: 0;">
-                    <a href="contact.html" class="cta-button primary" style="background: #0071e3; color: #ffffff; padding: 14px 28px; border-radius: 980px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; font-size: 0.95rem;">
-                        Architect Custom System <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <script>
-    function switchSystemsCategory(category, btn) {
-        document.querySelectorAll('.systems-tab-btn').forEach(function(b) { b.classList.remove('active'); });
-        document.querySelectorAll('.systems-category-panel').forEach(function(p) { p.classList.remove('active'); });
-        btn.classList.add('active');
-        var target = document.getElementById('panel-' + category);
-        if (target) target.classList.add('active');
-    }
-    </script>
-
-
-    <!-- Structured Comparison Table Section -->
-    <section class="tech-comparison-section" id="comparison" style="padding: 70px 0; background: transparent; position: relative;">
-        <div class="container">
-            <div class="unified-header-wrapper" data-aos="fade-up">
-                <div class="header-sub-blue">"The Architecture Difference"</div>
-                <h2 class="header-main-title">HOW WE COMPARE AGAINST TEMPLATES</h2>
-                <p style="color: #64748b; font-size: 1.05rem; max-width: 720px; margin: 12px auto 0 auto; text-align: center; line-height: 1.6;">
-                    Why modern high-growth businesses choose custom engineering over slow WordPress plugins and expensive subscription builders.
-                </p>
-            </div>
-
-            <div style="max-width: 1100px; margin: 0 auto; overflow-x: auto; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.03);" data-aos="fade-up">
-                <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;">
-                    <thead>
-                        <tr style="border-bottom: 2px solid #e2e8f0; background: #f8fafc;">
-                            <th style="padding: 18px 20px; font-weight: 700; color: #0f172a; font-size: 0.95rem;">Feature / Metric</th>
-                            <th style="padding: 18px 20px; font-weight: 700; color: #64748b;">Basic Static HTML</th>
-                            <th style="padding: 18px 20px; font-weight: 700; color: #64748b;">WordPress / Elementor</th>
-                            <th style="padding: 18px 20px; font-weight: 700; color: #64748b;">Shopify / Wix</th>
-                            <th style="padding: 18px 20px; font-weight: 800; color: #2563eb; background: #eff6ff; border-left: 2px solid #bfdbfe; border-right: 2px solid #bfdbfe;">Curious Kaizer (Custom)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="border-bottom: 1px solid #f1f5f9;">
-                            <td style="padding: 16px 20px; font-weight: 600; color: #0f172a;">⚡ Speed &amp; Core Web Vitals (INP)</td>
-                            <td style="padding: 16px 20px; color: #16a34a;">Fast (<100ms)</td>
-                            <td style="padding: 16px 20px; color: #dc2626;">Slow (400–1200ms)</td>
-                            <td style="padding: 16px 20px; color: #d97706;">Moderate (250–500ms)</td>
-                            <td style="padding: 16px 20px; font-weight: 700; color: #2563eb; background: #eff6ff; border-left: 2px solid #bfdbfe; border-right: 2px solid #bfdbfe;">Sub-50ms Ultra-Fast ⚡</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #f1f5f9;">
-                            <td style="padding: 16px 20px; font-weight: 600; color: #0f172a;">🔒 Security &amp; Hacking Risk</td>
-                            <td style="padding: 16px 20px; color: #16a34a;">Zero Attack Surface</td>
-                            <td style="padding: 16px 20px; color: #dc2626;">High (PHP/Plugin Exploits)</td>
-                            <td style="padding: 16px 20px; color: #16a34a;">Hosted (Secure)</td>
-                            <td style="padding: 16px 20px; font-weight: 700; color: #2563eb; background: #eff6ff; border-left: 2px solid #bfdbfe; border-right: 2px solid #bfdbfe;">Bank-Grade Edge Shielded 🛡️</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #f1f5f9;">
-                            <td style="padding: 16px 20px; font-weight: 600; color: #0f172a;">🎨 Custom Design &amp; 3D/AI Features</td>
-                            <td style="padding: 16px 20px; color: #d97706;">Limited</td>
-                            <td style="padding: 16px 20px; color: #d97706;">Restricted to Theme</td>
-                            <td style="padding: 16px 20px; color: #d97706;">App Store Dependent</td>
-                            <td style="padding: 16px 20px; font-weight: 700; color: #2563eb; background: #eff6ff; border-left: 2px solid #bfdbfe; border-right: 2px solid #bfdbfe;">100% Bespoke, 3D &amp; AI Agents ✦</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #f1f5f9;">
-                            <td style="padding: 16px 20px; font-weight: 600; color: #0f172a;">💰 Monthly Recurring Plugin Costs</td>
-                            <td style="padding: 16px 20px; color: #16a34a;">₹0 / month</td>
-                            <td style="padding: 16px 20px; color: #dc2626;">₹3,000 – ₹15,000/mo</td>
-                            <td style="padding: 16px 20px; color: #dc2626;">₹2,500 – ₹30,000/mo</td>
-                            <td style="padding: 16px 20px; font-weight: 700; color: #2563eb; background: #eff6ff; border-left: 2px solid #bfdbfe; border-right: 2px solid #bfdbfe;">₹0 / No Mandatory Subscriptions</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #f1f5f9;">
-                            <td style="padding: 16px 20px; font-weight: 600; color: #0f172a;">📈 Google Search &amp; Local Delhi SEO</td>
-                            <td style="padding: 16px 20px; color: #16a34a;">Good</td>
-                            <td style="padding: 16px 20px; color: #d97706;">Requires SEO Plugins</td>
-                            <td style="padding: 16px 20px; color: #d97706;">Basic URL Control</td>
-                            <td style="padding: 16px 20px; font-weight: 700; color: #2563eb; background: #eff6ff; border-left: 2px solid #bfdbfe; border-right: 2px solid #bfdbfe;">Native JSON-LD &amp; Local Schema 🚀</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 16px 20px; font-weight: 600; color: #0f172a;">📦 Code Ownership &amp; Portability</td>
-                            <td style="padding: 16px 20px; color: #16a34a;">100% Owned</td>
-                            <td style="padding: 16px 20px; color: #d97706;">PHP Dependent</td>
-                            <td style="padding: 16px 20px; color: #dc2626;">Vendor Locked</td>
-                            <td style="padding: 16px 20px; font-weight: 700; color: #2563eb; background: #eff6ff; border-left: 2px solid #bfdbfe; border-right: 2px solid #bfdbfe;">100% Git Full Source Code Rights ✨</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-<section class="testimonials-apple-section" style="padding: 40px 0 60px 0; background-color: transparent !important;">
+    <section class="testimonials-apple-section" style="padding: 40px 0 60px 0; background-color: transparent !important;">
         <div class="unified-header-wrapper" data-aos="fade-up" style="margin-bottom: 36px !important;">
             <div class="header-sub-blue">"Real Stories, Real Results"</div>
             <h2 class="header-main-title">WHY BRANDS WORK WITH US</h2>
@@ -6618,58 +5139,7 @@
 
             </div>
 
-            <!-- Wantace Comparison Section Header -->
-            <div class="unified-header-wrapper" data-aos="fade-up">
-                <div class="header-sub-blue">"The Engineering Difference"</div>
-                <h2 class="header-main-title">WHY FOUNDERS CHOOSE OUR SPRINTS</h2>
-            </div>
 
-            <!-- Wantace 3-Column Comparison Grid (Exact Framer Blueprint) -->
-            <div class="wantace-compare-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; margin-bottom: 70px;">
-                
-                <!-- Column 1: Traditional Development -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 24px; padding: 36px 28px; position: relative; display: flex; flex-direction: column;">
-                    <div style="position: absolute; top: -16px; right: 24px; width: 42px; height: 42px; border-radius: 50%; background: #1d6bf3; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1.05rem; box-shadow: 0 4px 14px rgba(29, 107, 243, 0.35);">
-                        <i class="fas fa-hourglass-half"></i>
-                    </div>
-                    <h3 style="font-size: 1.35rem; font-weight: 500; color: #0f172a; margin-bottom: 24px; margin-top: 0;">Legacy Agencies &amp; Freelancers</h3>
-                    <div style="display: flex; flex-direction: column; gap: 18px; font-size: 0.95rem; color: #64748b; font-weight: 400;">
-                        <div style="display: flex; align-items: center; gap: 12px;"><i class="fas fa-circle-xmark" style="color: #ef4444; font-size: 1.05rem; width: 20px; text-align: center;"></i> <span>$15k–$50k+ upfront with heavy scope creep</span></div>
-                        <div style="display: flex; align-items: center; gap: 12px;"><i class="fas fa-circle-xmark" style="color: #ef4444; font-size: 1.05rem; width: 20px; text-align: center;"></i> <span>Takes 3–6 months to see a testable build</span></div>
-                        <div style="display: flex; align-items: center; gap: 12px;"><i class="fas fa-circle-xmark" style="color: #ef4444; font-size: 1.05rem; width: 20px; text-align: center;"></i> <span>High financial risk before user validation</span></div>
-                        <div style="display: flex; align-items: center; gap: 12px;"><i class="fas fa-circle-xmark" style="color: #ef4444; font-size: 1.05rem; width: 20px; text-align: center;"></i> <span>Endless sync meetings &amp; bloated slide decks</span></div>
-                    </div>
-                </div>
-
-                <!-- Column 2: Our Solution (Center Highlighted Solid Blue Card) -->
-                <div style="background: #1d6bf3; border-radius: 24px; padding: 36px 28px; position: relative; display: flex; flex-direction: column; box-shadow: 0 16px 40px rgba(29, 107, 243, 0.3); transform: scale(1.02); z-index: 2;">
-                    <div style="position: absolute; top: -16px; right: 24px; width: 42px; height: 42px; border-radius: 50%; background: #ffffff; color: #1d6bf3; display: flex; align-items: center; justify-content: center; font-size: 1.05rem; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3 style="font-size: 1.35rem; font-weight: 500; color: #ffffff; margin-bottom: 24px; margin-top: 0;">Curious Kaizer Sprints</h3>
-                    <div style="display: flex; flex-direction: column; gap: 18px; font-size: 0.95rem; color: #ffffff; font-weight: 500;">
-                        <div style="display: flex; align-items: center; gap: 12px;"><i class="fas fa-check-circle" style="color: #ffffff; font-size: 1.05rem; width: 20px; text-align: center;"></i> <span>Interactive prototype ready in &lt; 4 hours</span></div>
-                        <div style="display: flex; align-items: center; gap: 12px;"><i class="fas fa-check-circle" style="color: #ffffff; font-size: 1.05rem; width: 20px; text-align: center;"></i> <span>Full production-ready MVP in 1–1.5 weeks</span></div>
-                        <div style="display: flex; align-items: center; gap: 12px;"><i class="fas fa-check-circle" style="color: #ffffff; font-size: 1.05rem; width: 20px; text-align: center;"></i> <span>Direct engineering access — zero agency layers</span></div>
-                        <div style="display: flex; align-items: center; gap: 12px;"><i class="fas fa-check-circle" style="color: #ffffff; font-size: 1.05rem; width: 20px; text-align: center;"></i> <span>Apple-grade UX built to scale &amp; convert</span></div>
-                    </div>
-                </div>
-
-                <!-- Column 3: DIY Approach -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 24px; padding: 36px 28px; position: relative; display: flex; flex-direction: column;">
-                    <div style="position: absolute; top: -16px; right: 24px; width: 42px; height: 42px; border-radius: 50%; background: #1d6bf3; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1.05rem; box-shadow: 0 4px 14px rgba(29, 107, 243, 0.35);">
-                        <i class="fas fa-layer-group"></i>
-                    </div>
-                    <h3 style="font-size: 1.35rem; font-weight: 500; color: #0f172a; margin-bottom: 24px; margin-top: 0;">DIY &amp; Template Builders</h3>
-                    <div style="display: flex; flex-direction: column; gap: 18px; font-size: 0.95rem; color: #64748b; font-weight: 400;">
-                        <div style="display: flex; align-items: center; gap: 12px;"><i class="fas fa-circle-xmark" style="color: #ef4444; font-size: 1.05rem; width: 20px; text-align: center;"></i> <span>Fragile plugin chains &amp; heavy technical debt</span></div>
-                        <div style="display: flex; align-items: center; gap: 12px;"><i class="fas fa-circle-xmark" style="color: #ef4444; font-size: 1.05rem; width: 20px; text-align: center;"></i> <span>Weeks lost debugging low-code limitations</span></div>
-                        <div style="display: flex; align-items: center; gap: 12px;"><i class="fas fa-circle-xmark" style="color: #ef4444; font-size: 1.05rem; width: 20px; text-align: center;"></i> <span>Generic templates that damage buyer trust</span></div>
-                        <div style="display: flex; align-items: center; gap: 12px;"><i class="fas fa-circle-xmark" style="color: #ef4444; font-size: 1.05rem; width: 20px; text-align: center;"></i> <span>Zero code ownership &amp; painful migration</span></div>
-                    </div>
-                </div>
-
-            </div>
 
             </div>
         </div>
@@ -7117,136 +5587,101 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    
-    <!-- Local Delhi SEO & Google Business Profile Section -->
-    <section class="local-seo-gbp-section" id="delhi-studio" style="padding: 60px 0; background: transparent; position: relative;">
+    <!-- Delhi NCR Studio Section -->
+    <section class="delhi-studio-section" style="padding: 70px 0; background: transparent; position: relative;">
         <div class="container">
             <div class="unified-header-wrapper" data-aos="fade-up" style="margin-bottom: 40px !important;">
                 <div class="header-sub-blue">"Local Expertise • Global Standards"</div>
                 <h2 class="header-main-title">DELHI NCR STUDIO &amp; LOCAL PRESENCE</h2>
-                <p style="color: #64748b; font-size: 1rem; max-width: 680px; margin: 12px auto 0 auto; text-align: center; line-height: 1.6;">
+                <p style="color: #64748b; font-size: 1.02rem; max-width: 680px; margin: 12px auto 0 auto; text-align: center; line-height: 1.6;">
                     Serving businesses, clinics, manufacturers, and startups across Delhi NCR and India with bespoke web design, custom e-commerce, and high-performance software engineering.
                 </p>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; max-width: 1160px; margin: 0 auto;">
-                
-                <!-- Card 1: Google Business Profile & NAP Card -->
-                <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 24px; padding: 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: space-between;" data-aos="fade-up" data-aos-delay="100">
-                    <div>
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
-                            <div style="display: flex; align-items: center; gap: 10px;">
-                                <div style="width: 44px; height: 44px; border-radius: 12px; background: #eff6ff; color: #2563eb; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">
-                                    <i class="fab fa-google"></i>
-                                </div>
-                                <div>
-                                    <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0;">Curious Kaizer</h3>
-                                    <span style="font-size: 0.78rem; color: #10b981; font-weight: 600;">● Verified Google Business Profile</span>
-                                </div>
+            <!-- Single Centered Apple Studio Card -->
+            <div style="max-width: 840px; margin: 0 auto;" data-aos="fade-up">
+                <div style="background: #ffffff; border: 1px solid rgba(226, 232, 240, 0.95); border-radius: 26px; padding: 38px 44px; box-shadow: 0 16px 48px rgba(15, 23, 42, 0.05); transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);">
+                    
+                    <!-- Card Top Header Row -->
+                    <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 30px; padding-bottom: 24px; border-bottom: 1px solid #f1f5f9; flex-wrap: wrap;">
+                        <div style="display: flex; align-items: center; gap: 14px;">
+                            <div style="width: 52px; height: 52px; border-radius: 16px; background: #eff6ff; color: #2563eb; display: flex; align-items: center; justify-content: center; font-size: 1.45rem; border: 1px solid #dbeafe; flex-shrink: 0;">
+                                <i class="fab fa-google"></i>
                             </div>
-                            <div style="display: flex; align-items: center; gap: 4px; background: #fef3c7; padding: 4px 10px; border-radius: 100px; border: 1px solid #fde68a;">
-                                <span style="font-size: 0.85rem; font-weight: 800; color: #b45309;">5.0</span>
-                                <div style="color: #f59e0b; font-size: 0.7rem; display: flex; gap: 1px;">
-                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                </div>
+                            <div>
+                                <h3 style="font-size: 1.35rem; font-weight: 700; color: #0f172a; margin: 0; line-height: 1.25; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;">Curious Kaizer</h3>
+                                <span style="font-size: 0.85rem; color: #10b981; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; margin-top: 4px;">
+                                    <span style="width: 8px; height: 8px; background: #10b981; border-radius: 50%;"></span> Verified Google Business Profile
+                                </span>
                             </div>
                         </div>
 
-                        <!-- NAP Details List -->
-                        <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px;">
-                            <div style="display: flex; align-items: flex-start; gap: 12px;">
-                                <div style="width: 32px; height: 32px; border-radius: 8px; background: #f8fafc; color: #64748b; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.9rem;">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div>
-                                    <div style="font-size: 0.75rem; font-weight: 700; color: #64748b; text-transform: uppercase;">Official Studio Address</div>
-                                    <div style="font-size: 0.9rem; font-weight: 600; color: #0f172a; line-height: 1.4;">Delhi NCR, India • PIN 110001</div>
-                                    <div style="font-size: 0.75rem; color: #94a3b8;">Coordinates: 28.6139° N, 77.2090° E</div>
-                                </div>
-                            </div>
-
-                            <div style="display: flex; align-items: flex-start; gap: 12px;">
-                                <div style="width: 32px; height: 32px; border-radius: 8px; background: #f8fafc; color: #64748b; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.9rem;">
-                                    <i class="fas fa-phone-alt"></i>
-                                </div>
-                                <div>
-                                    <div style="font-size: 0.75rem; font-weight: 700; color: #64748b; text-transform: uppercase;">Direct Line / Call Consultation</div>
-                                    <a href="tel:+918595121436" style="font-size: 0.92rem; font-weight: 700; color: #2563eb; text-decoration: none;">+91 85951 21436</a>
-                                </div>
-                            </div>
-
-                            <div style="display: flex; align-items: flex-start; gap: 12px;">
-                                <div style="width: 32px; height: 32px; border-radius: 8px; background: #f8fafc; color: #64748b; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.9rem;">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <div style="font-size: 0.75rem; font-weight: 700; color: #64748b; text-transform: uppercase;">Official Email</div>
-                                    <a href="mailto:info@curiouskaizer.com" style="font-size: 0.92rem; font-weight: 600; color: #0f172a; text-decoration: none;">info@curiouskaizer.com</a>
-                                </div>
-                            </div>
-
-                            <div style="display: flex; align-items: flex-start; gap: 12px;">
-                                <div style="width: 32px; height: 32px; border-radius: 8px; background: #f8fafc; color: #64748b; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.9rem;">
-                                    <i class="far fa-clock"></i>
-                                </div>
-                                <div>
-                                    <div style="font-size: 0.75rem; font-weight: 700; color: #64748b; text-transform: uppercase;">Working Hours</div>
-                                    <div style="font-size: 0.88rem; font-weight: 500; color: #334155;">Mon – Fri: 10:00 AM – 7:00 PM IST (Weekend Support Available)</div>
-                                </div>
+                        <div style="display: flex; align-items: center; gap: 6px; background: #fef3c7; padding: 6px 16px; border-radius: 980px; border: 1px solid #fde68a; box-shadow: 0 2px 8px rgba(245,158,11,0.12);">
+                            <span style="font-size: 0.95rem; font-weight: 800; color: #b45309;">5.0</span>
+                            <div style="color: #f59e0b; font-size: 0.78rem; display: flex; gap: 2px;">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Action Buttons -->
-                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                        <a href="https://www.google.com/search?q=curiouskaizer" target="_blank" rel="noopener" class="cta-button primary" style="flex: 1; min-width: 140px; justify-content: center; font-size: 0.85rem; padding: 10px 16px;">
+                    <!-- 2x2 Details Grid -->
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 32px;" class="studio-info-grid">
+                        <div style="display: flex; align-items: flex-start; gap: 14px;">
+                            <div style="width: 40px; height: 40px; border-radius: 12px; background: #f8fafc; color: #0071e3; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1rem;">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <div style="font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 3px;">Official Studio Address</div>
+                                <div style="font-size: 0.95rem; font-weight: 700; color: #0f172a; line-height: 1.4;">Delhi NCR, India • PIN 110001</div>
+                                <div style="font-size: 0.76rem; color: #94a3b8; margin-top: 2px;">Coordinates: 28.6139° N, 77.2090° E</div>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: flex-start; gap: 14px;">
+                            <div style="width: 40px; height: 40px; border-radius: 12px; background: #f8fafc; color: #0071e3; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1rem;">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <div style="font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 3px;">Direct Line / Call Consultation</div>
+                                <a href="tel:+918595121436" style="font-size: 0.98rem; font-weight: 700; color: #0071e3; text-decoration: none;">+91 85951 21436</a>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: flex-start; gap: 14px;">
+                            <div style="width: 40px; height: 40px; border-radius: 12px; background: #f8fafc; color: #0071e3; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1rem;">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div style="font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 3px;">Official Email</div>
+                                <a href="mailto:info@curiouskaizer.com" style="font-size: 0.95rem; font-weight: 700; color: #0f172a; text-decoration: none;">info@curiouskaizer.com</a>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: flex-start; gap: 14px;">
+                            <div style="width: 40px; height: 40px; border-radius: 12px; background: #f8fafc; color: #0071e3; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1rem;">
+                                <i class="far fa-clock"></i>
+                            </div>
+                            <div>
+                                <div style="font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 3px;">Working Hours</div>
+                                <div style="font-size: 0.9rem; font-weight: 600; color: #334155;">Mon – Fri: 10:00 AM – 7:00 PM IST</div>
+                                <div style="font-size: 0.76rem; color: #64748b;">(Weekend Support Available)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Action Buttons -->
+                    <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+                        <a href="https://www.google.com/search?q=curiouskaizer" target="_blank" rel="noopener" class="cta-button primary" style="flex: 1; min-width: 200px; justify-content: center; font-size: 0.92rem; padding: 14px 24px; background: #0071e3; color: #ffffff; border-radius: 980px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 14px rgba(0,113,227,0.3);">
                             <i class="fas fa-directions" style="margin-right: 6px;"></i> View on Google Maps
                         </a>
-                        <a href="https://wa.me/918595121436?text=Hi%20Jai,%20I%20am%20looking%20for%20website%20making%20services%20in%20Delhi." target="_blank" rel="noopener" style="background: #25d366; color: #ffffff; padding: 10px 16px; border-radius: 100px; font-weight: 600; font-size: 0.85rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(37,211,102,0.2);">
+                        <a href="https://wa.me/918595121436?text=Hi%20Jai,%20I%20am%20looking%20for%20website%20making%20services%20in%20Delhi." target="_blank" rel="noopener" style="flex: 1; min-width: 200px; justify-content: center; background: #25d366; color: #ffffff; padding: 14px 24px; border-radius: 980px; font-weight: 600; font-size: 0.92rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 14px rgba(37,211,102,0.3);">
                             <i class="fab fa-whatsapp"></i> Chat on WhatsApp
                         </a>
                     </div>
+
                 </div>
-
-                <!-- Card 2: Delhi NCR Coverage Areas & Local Business Citations -->
-                <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 24px; padding: 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: space-between;" data-aos="fade-up" data-aos-delay="200">
-                    <div>
-                        <div style="font-size: 0.8rem; font-weight: 700; color: #2563eb; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;">Regional Footprint</div>
-                        <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 16px 0;">Delhi NCR Service Coverage</h3>
-                        
-                        <!-- Location Chips -->
-                        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px;">
-                            <span style="background: #f1f5f9; color: #334155; font-size: 0.75rem; font-weight: 600; padding: 5px 10px; border-radius: 6px; border: 1px solid #e2e8f0;"><i class="fas fa-map-pin" style="color: #2563eb; margin-right: 4px;"></i> South Delhi (Hauz Khas, Saket, GK)</span>
-                            <span style="background: #f1f5f9; color: #334155; font-size: 0.75rem; font-weight: 600; padding: 5px 10px; border-radius: 6px; border: 1px solid #e2e8f0;"><i class="fas fa-map-pin" style="color: #2563eb; margin-right: 4px;"></i> Central Delhi (Connaught Place)</span>
-                            <span style="background: #f1f5f9; color: #334155; font-size: 0.75rem; font-weight: 600; padding: 5px 10px; border-radius: 6px; border: 1px solid #e2e8f0;"><i class="fas fa-map-pin" style="color: #2563eb; margin-right: 4px;"></i> West Delhi (Janakpuri, Rajouri Garden, Dwarka)</span>
-                            <span style="background: #f1f5f9; color: #334155; font-size: 0.75rem; font-weight: 600; padding: 5px 10px; border-radius: 6px; border: 1px solid #e2e8f0;"><i class="fas fa-map-pin" style="color: #2563eb; margin-right: 4px;"></i> North Delhi (Rohini, Pitampura, NSP)</span>
-                            <span style="background: #f1f5f9; color: #334155; font-size: 0.75rem; font-weight: 600; padding: 5px 10px; border-radius: 6px; border: 1px solid #e2e8f0;"><i class="fas fa-map-pin" style="color: #2563eb; margin-right: 4px;"></i> East Delhi (Laxmi Nagar, Preet Vihar)</span>
-                            <span style="background: #f1f5f9; color: #334155; font-size: 0.75rem; font-weight: 600; padding: 5px 10px; border-radius: 6px; border: 1px solid #e2e8f0;"><i class="fas fa-map-pin" style="color: #2563eb; margin-right: 4px;"></i> Gurgaon (Cyber City, Golf Course Rd)</span>
-                            <span style="background: #f1f5f9; color: #334155; font-size: 0.75rem; font-weight: 600; padding: 5px 10px; border-radius: 6px; border: 1px solid #e2e8f0;"><i class="fas fa-map-pin" style="color: #2563eb; margin-right: 4px;"></i> Noida &amp; Greater Noida (Sec 62, Expressway)</span>
-                        </div>
-
-                        <!-- Verified Indian Directory Citations -->
-                        <div style="border-top: 1px solid #f1f5f9; padding-top: 16px;">
-                            <div style="font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 10px;">Verified Indian Citations &amp; Portals</div>
-                            <div style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 0.78rem;">
-                                <a href="https://www.justdial.com/Delhi/Curious-Kaizer" target="_blank" rel="noopener" style="color: #ea580c; text-decoration: none; font-weight: 600; background: #fff7ed; padding: 3px 8px; border-radius: 4px; border: 1px solid #ffedd5;">Justdial Verified</a>
-                                <a href="https://www.indiamart.com/curious-kaizer/" target="_blank" rel="noopener" style="color: #0284c7; text-decoration: none; font-weight: 600; background: #f0f9ff; padding: 3px 8px; border-radius: 4px; border: 1px solid #e0f2fe;">IndiaMART TrustSEAL</a>
-                                <a href="https://www.sulekha.com/curious-kaizer-delhi" target="_blank" rel="noopener" style="color: #e11d48; text-decoration: none; font-weight: 600; background: #fff1f2; padding: 3px 8px; border-radius: 4px; border: 1px solid #ffe4e6;">Sulekha</a>
-                                <a href="https://www.tradeindia.com/Seller-Curious-Kaizer/" target="_blank" rel="noopener" style="color: #16a34a; text-decoration: none; font-weight: 600; background: #f0fdf4; padding: 3px 8px; border-radius: 4px; border: 1px solid #dcfce7;">TradeIndia</a>
-                                <a href="https://clutch.co/profile/curiouskaizer" target="_blank" rel="noopener" style="color: #0f172a; text-decoration: none; font-weight: 600; background: #f8fafc; padding: 3px 8px; border-radius: 4px; border: 1px solid #e2e8f0;">Clutch</a>
-                                <a href="https://yourstory.com/companies/curiouskaizer" target="_blank" rel="noopener" style="color: #eb2227; text-decoration: none; font-weight: 600; background: #fef2f2; padding: 3px 8px; border-radius: 4px; border: 1px solid #fee2e2;">YourStory</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style="background: #f8fafc; border-radius: 12px; padding: 12px 16px; margin-top: 18px; font-size: 0.78rem; color: #475569; display: flex; align-items: center; gap: 8px;">
-                        <i class="fas fa-shield-alt" style="color: #2563eb;"></i>
-                        <span>100% NAP Consistency (Name, Address, Phone) verified across major Indian business directories.</span>
-                    </div>
-                </div>
-
             </div>
+
         </div>
     </section>
 

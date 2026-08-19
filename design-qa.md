@@ -489,4 +489,442 @@
 - Browser console errors checked: none.
 - No actionable P0, P1, or P2 finding remains in the requested scope.
 
+## 2026-08-13 — Apple-inspired industry solutions showcase
+
+**Source and rendered evidence**
+
+- Source visual truth: `/Users/harshitgoyal/Desktop/Screenshot 2026-08-13 at 11.46.58 AM.png`
+- Browser-rendered desktop implementation: `/Users/harshitgoyal/jai website/design-reference/industry-apple/industry-after-1440x900.png`
+- Browser-rendered mobile implementation: `/Users/harshitgoyal/jai website/design-reference/industry-apple/industry-mobile-390x844.png`
+- Side-by-side comparison: `/Users/harshitgoyal/jai website/design-reference/industry-apple/industry-comparison.png`
+- Verified viewports: 1440 x 900 desktop and 390 x 844 phone.
+
+**Comparison history**
+
+- P1 before fix: the six-item industry selector exceeded its available width and clipped the final `Legal & CA` item.
+- Fix: rebuilt the selector as an equal-width six-column segmented control on desktop, three columns on tablet, and two columns on phone. All six industries are now fully visible with equal hit areas.
+- P2 before fix: the main showcase used small type, tight internal spacing, and a visually flat card/window treatment that weakened hierarchy.
+- Fix: added a larger editorial title hierarchy, aligned spacing rhythm, elevated translucent card surface, consistent feature rows, refined status/icon chips, a stronger CTA, and a deeper framed product-window presentation.
+- P2 before fix: content and the UI mockup did not feel optically balanced inside the card.
+- Fix: changed the desktop grid to a 0.92/1.08 split with responsive gutters, explicit minimum widths, and consistent vertical alignment.
+
+**Required fidelity surfaces**
+
+- Fonts and typography: existing site font families remain; only this section's size, weight, line height, and letter spacing were refined.
+- Spacing and layout rhythm: heading, selector, card, content groups, features, CTA, and visual mockup now follow a consistent spacing system.
+- Colors and visual tokens: existing blue, neutral, and green colors remain; the new surfaces use restrained translucent whites, subtle borders, and soft Apple-like shadows.
+- Icons and content: all original Font Awesome icons, industry copy, SEO tags, proof badges, feature lists, CTA labels, and interactive mockups are preserved.
+
+**Responsive and functional checks**
+
+- The selector exposes every industry without clipping at desktop and phone widths.
+- The `Legal & CA` control was clicked successfully and its matching stage rendered; switching back to Healthcare also succeeded.
+- The 390 px layout shows the complete two-column industry selector and a single-column showcase card with no selector overflow.
+- CSS cache-busting was updated to `industry-apple-20260813a` so visitors receive the revised stylesheet.
+- `git diff --check` passes with no whitespace errors.
+- No actionable P0, P1, or P2 finding remains in the requested scope.
+
+## 2026-08-13 — Industry-specific software dashboard previews
+
+**Source and rendered evidence**
+
+- Source visual truth: `/Users/harshitgoyal/Desktop/Screenshot 2026-08-13 at 11.46.58 AM.png`
+- Browser-rendered Healthcare dashboard: `/Users/harshitgoyal/jai website/design-reference/industry-software/healthcare-dashboard-1440x900.png`
+- Browser-rendered Legal dashboard: `/Users/harshitgoyal/jai website/design-reference/industry-software/legal-dashboard-1440x900.png`
+- Browser-rendered mobile state: `/Users/harshitgoyal/jai website/design-reference/industry-software/mobile-healthcare-390x844.png`
+- Full-view comparison: `/Users/harshitgoyal/jai website/design-reference/industry-software/industry-software-comparison.png`
+- CSS viewports: 1440 x 900 desktop and 390 x 844 phone at device scale 1.
+- State: Healthcare active for the primary comparison; every other industry tab was activated separately.
+
+**Comparison history**
+
+- P1 before fix: every right-side preview was a sparse three-row composition that did not read as credible industry software.
+- Fix: replaced all six previews with dense, industry-specific product dashboards containing contextual metrics, operational tables, statuses, workflows, and secondary control panels.
+- P2 before fix: the same generic visual structure was repeated despite materially different industry workflows.
+- Fix: Healthcare now shows OPD operations; Real Estate shows inventory and lead funnel; Manufacturing shows RFQs and production; Hospitality shows front desk and room state; E-Commerce shows orders and stock; Legal shows matters and vault activity.
+- Post-fix evidence: the Healthcare and Legal screenshots visibly show distinct dashboard information architectures, while browser interaction checks confirmed the remaining four dashboard titles and core panels render after tab activation.
+
+**Required fidelity surfaces**
+
+- Fonts and typography: existing Apple/Inter stack is preserved with a compact software UI hierarchy for headings, metrics, table labels, statuses, and supporting metadata.
+- Spacing and layout rhythm: each preview follows a consistent summary, metric, workspace, table, and side-panel system without changing the outer section geometry.
+- Colors and visual tokens: existing blue, green, white, and neutral tokens are preserved; semantic state colors are used consistently for live, approved, active, and pending states.
+- Image and icon quality: the previous empty visual treatment is replaced with rendered software UI and existing Font Awesome interface icons; no placeholder images or raster assets are introduced.
+- Copy and content: each software preview now uses industry-relevant, realistic operational copy while the original section headings, descriptions, features, and CTAs remain unchanged.
+
+**Responsive and functional checks**
+
+- All six industry tabs were activated successfully and rendered their matching software dashboard content.
+- Healthcare, Real Estate, Manufacturing, Hospitality, E-Commerce, and Legal dashboard identifiers were verified in the browser.
+- At 390 px the showcase remains single-column, retains the complete industry selector, and simplifies the dashboard to its primary metrics and operational table.
+- Stylesheet cache-busting was advanced to `industry-software-20260813b`.
+- `git diff --check` passes with no whitespace errors.
+- No actionable P0, P1, or P2 finding remains in the requested scope.
+
+## 2026-08-13 — Spatial custom software catalogue
+
+**Source and rendered evidence**
+
+- Source visual truth: `/Users/harshitgoyal/jai website/design-reference/spatial-systems/before-1440x900.png`
+- Browser-rendered desktop implementation: `/Users/harshitgoyal/jai website/design-reference/spatial-systems/after-1440x900.png`
+- Browser-rendered phone implementation: `/Users/harshitgoyal/jai website/design-reference/spatial-systems/mobile-390x844.png`
+- Same-viewport full-view comparison: `/Users/harshitgoyal/jai website/design-reference/spatial-systems/comparison.png`
+- Viewports: 1440 x 900 desktop and 390 x 844 phone at device scale 1.
+- State: Business Software active for the primary comparison; Industry-Specific, Modern & High-Value, and View All Systems were activated separately.
+
+**Comparison history**
+
+- P1 before fix: the segmented category control exceeded its visible left boundary, clipping the Business Software label.
+- Fix: rebuilt the control as a four-column desktop and two-column mobile grid with equal hit areas and no horizontal clipping.
+- P1 before fix: software cards were visually generic text containers and did not communicate software architecture or workflow.
+- Fix: every card now includes a compact spatial product panel with a live architecture state, system core, three-stage workflow, API readiness, and workflow-fit metric.
+- P2 before fix: system descriptions lacked quickly scannable technical terms.
+- Fix: added three curated keywords per software type, including domain terms such as payroll, RFID tracking, dispatch SLA, OCR search, SCORM, CAPA, metering, RAG search, and audit evidence.
+- P2 before fix: typography, spacing, card depth, and footer affordances were visually flat.
+- Fix: introduced a stronger Apple-style hierarchy, larger radii, restrained translucent surfaces, softer elevation, aligned card heights, clearer blueprint actions, and engineered-to-fit status labels.
+
+**Required fidelity surfaces**
+
+- Fonts and typography: the site font stack remains unchanged; the section now has a cleaner display hierarchy and compact software-interface labels.
+- Spacing and layout rhythm: header, tabs, three-column catalogue, card internals, keywords, and footer actions follow a consistent spacing scale; tablet and phone layouts collapse predictably.
+- Colors and visual tokens: existing Curious Kaizer blue and category accent colors are preserved with neutral Apple-style surfaces and semantic green live states.
+- Image and icon quality: existing Font Awesome system icons remain crisp and are reused within the spatial panels; no placeholder imagery was introduced.
+- Copy and content: all original system names, descriptions, counts, categories, and Request Blueprint links remain intact; curated keywords and architecture labels were added.
+
+**Responsive and functional checks**
+
+- All four category controls were exercised in the browser; Industry-Specific and Modern panels displayed their unique system cards, while View All exposed the combined catalogue.
+- Browser inspection confirmed 94 rendered card instances across the category panels and their duplicated View All entries; all 94 received a spatial graphic and keyword row.
+- The 390 px layout shows the complete two-column category control and single-column card catalogue without clipped labels.
+- Stylesheet cache-busting was advanced to `spatial-systems-20260813c`.
+- `git diff --check` passes with no whitespace errors.
+- No actionable P0, P1, or P2 finding remains in the requested scope.
+
+## 2026-08-13 — Useful platform comparison table
+
+**Source and rendered evidence**
+
+- Source visual truth: `/Users/harshitgoyal/jai website/design-reference/useful-comparison/reference.png`
+- Browser-rendered desktop implementation: `/Users/harshitgoyal/jai website/design-reference/useful-comparison/after-1440x900.png`
+- Browser-rendered phone implementation: `/Users/harshitgoyal/jai website/design-reference/useful-comparison/mobile-390x844.png`
+- Normalized side-by-side comparison: `/Users/harshitgoyal/jai website/design-reference/useful-comparison/comparison.png`
+- Viewports: 1440 x 900 desktop and 390 x 844 phone at device scale 1.
+- State: comparison section entered the viewport, one-time row reveal completed, table at its initial horizontal position.
+
+**Comparison history**
+
+- P1 before fix: several claims were overly absolute or not decision-safe, including guaranteed response times, zero attack surface, universal plugin cost ranges and blanket platform security labels.
+- Fix: replaced them with qualified, implementation-aware comparisons across best fit, Core Web Vitals control, workflow extensibility, security responsibility, technical SEO, portability, long-term cost and launch-speed trade-offs.
+- P1 before fix: the table was framed as a universal ranking rather than a practical architecture decision tool.
+- Fix: added an explicit best-fit row and a methodology note stating that results depend on implementation, hosting, content, apps, traffic and maintenance, and that the simplest suitable architecture should be chosen.
+- P2 before fix: SEO content was limited to a vague local-search row.
+- Fix: added precise technical SEO terminology covering LCP, INP, CLS, crawlability, indexation, canonicals, sitemaps, redirects, JSON-LD, structured data, programmatic pages and rendering strategy.
+- P2 before fix: emoji markers, inline styles and a flat grid weakened consistency with the site's current visual system.
+- Fix: replaced emoji with Font Awesome interface icons, moved styling into scoped CSS, added a translucent Apple-style shell, sticky decision column, highlighted custom-engineered column, compact keyword strip and restrained staggered row animation.
+
+**Required fidelity surfaces**
+
+- Fonts and typography: existing site fonts are preserved; title, decision factors, platform headers, primary findings and supporting qualifications now have distinct optical hierarchy.
+- Spacing and layout rhythm: header, topic keywords, table toolbar, column headers, eight comparison rows and methodology note follow a consistent spacing system.
+- Colors and visual tokens: existing Curious Kaizer blue, semantic green and caution amber are retained with neutral translucent surfaces and accessible text contrast.
+- Image and icon quality: all table markers use the site's existing Font Awesome icon library; no emoji, placeholder artwork or raster replacements remain.
+- Copy and content: comparison language is now specific, balanced and useful for platform selection rather than relying on unsupported guarantees.
+
+**Responsive and functional checks**
+
+- Browser inspection confirmed eight comparison rows and successful IntersectionObserver activation of the staggered reveal state.
+- The table is keyboard-focusable, horizontally scrollable on narrow screens and exposes a visible `Swipe to compare all platforms` hint at 390 px.
+- The first decision-factor column remains sticky while users compare the remaining platforms.
+- Reduced-motion preferences disable the row animation and expose all rows immediately.
+- Stylesheet cache-busting was advanced to `useful-comparison-20260813d`.
+- `git diff --check` passes with no whitespace errors.
+- No actionable P0, P1 or P2 finding remains in the requested scope.
+
+## 2026-08-13 — Distinct industry mockups and architecture patterns
+
+**Source and rendered evidence**
+
+- Industry source visual: `/var/folders/sz/zr_fytr90z12zs7kynzxzg340000gn/T/TemporaryItems/NSIRD_screencaptureui_3AuK8r/Screenshot 2026-08-13 at 12.06.09 PM.png`
+- Bespoke-system source visual: `/var/folders/sz/zr_fytr90z12zs7kynzxzg340000gn/T/TemporaryItems/NSIRD_screencaptureui_h5woO8/Screenshot 2026-08-13 at 12.07.19 PM.png`
+- Six-state industry comparison: `/Users/harshitgoyal/jai website/design-reference/distinct-mockups/industry-six-state-contact-sheet.png`
+- Updated Real Estate state: `/Users/harshitgoyal/jai website/design-reference/distinct-mockups/real-estate-final.png`
+- Updated Hospitality state: `/Users/harshitgoyal/jai website/design-reference/distinct-mockups/hospitality-final.png`
+- Architecture before/after comparison: `/Users/harshitgoyal/jai website/design-reference/distinct-mockups/systems-before-after.png`
+- Mobile architecture capture: `/Users/harshitgoyal/jai website/design-reference/distinct-mockups/systems-mobile-390x844.png`
+- Viewports: 1440 x 900 desktop and 390 x 844 phone at device scale 1.
+
+**Comparison history**
+
+- P1 before fix: all six industry previews used the same summary, KPI row and table/side-panel order, making different products feel like recoloured versions of one template.
+- Fix: kept a clinical queue/capacity layout for Healthcare; moved Real Estate to a lead-funnel and property-inventory-first layout; built a dark industrial RFQ/production console; moved Hospitality to a warm front-desk and room-state workspace; created a violet commerce orders/inventory cockpit; and moved Legal to a secure vault/matter-first structure.
+- P1 before fix: every bespoke-system card repeated the same core, three-step flow and fabricated workflow-fit percentage.
+- Fix: removed the unsupported percentage and introduced six real software-architecture patterns: rules-based workflow engine, domain hub, layered application stack, event-driven orchestration, API gateway and modular service mesh.
+- P2 before fix: colour treatment was nearly identical across every product and architecture card.
+- Fix: introduced controlled blue, emerald, violet, amber, cyan and rose architecture palettes plus industry-specific clinical blue, property green, industrial charcoal/amber, hospitality sand, commerce violet and legal navy.
+- Post-fix evidence: browser inspection confirmed all six industry states, all six architecture variants, 94 upgraded card instances, and no remaining `workflow fit` text.
+
+**Required fidelity surfaces**
+
+- Fonts and typography: existing site typography is preserved; product labels, architecture layers, services, events and supporting metadata use consistent compact UI weights.
+- Spacing and layout rhythm: the outer cards remain aligned while internal information architecture now varies by product workflow; architecture diagrams retain equal visual height across the grid.
+- Colors and visual tokens: all new colours remain restrained, accessible and compatible with the site's existing blue/neutral theme.
+- Image and icon quality: real Font Awesome system and interface icons are reused throughout; no placeholder images, emoji or fabricated raster graphics were introduced.
+- Copy and content: original system names, descriptions, keywords, CTAs and industry data are preserved; architecture labels now describe recognisable implementation patterns rather than arbitrary scores.
+
+**Responsive and functional checks**
+
+- All six industry tabs were activated and their matching themed product interfaces rendered successfully.
+- Browser counts confirmed architecture variant distribution across all 94 rendered card instances: 16 workflow engines, 16 domain hubs, 16 layered stacks, 16 event-driven diagrams, 15 API gateways and 15 service meshes.
+- The 390 px catalogue retains the complete category selector and readable workflow architecture without the removed fake percentage.
+- Stylesheet cache-busting was advanced to `distinct-mockups-20260813f`.
+- `git diff --check` passes with no whitespace errors.
+- No actionable P0, P1 or P2 finding remains in the requested scope.
+
+final result: passed
+
+## Real Estate industry product-capture integration QA — 2026-08-13
+
+**Source visual truth**
+
+- Supplied Aloha Estates superadmin dashboard: `/Users/harshitgoyal/jai website/images/aloha-estates-superadmin-dashboard.png`.
+- Source pixels: 1920 × 1080 at the supplied image density.
+- Intended state: Real Estate & Infra selected in the industry showcase.
+
+**Rendered implementation evidence**
+
+- Browser-rendered capture: `/Users/harshitgoyal/jai website/design-reference/industry-realestate-photo/implementation.png`.
+- Implementation capture: 1280 × 720 pixels in the in-app browser's current desktop viewport.
+- Combined source/implementation evidence: `/Users/harshitgoyal/jai website/design-reference/industry-realestate-photo/source-implementation-comparison.jpg`.
+- The combined evidence was opened and visually inspected at original detail.
+
+**Comparison history and findings**
+
+- [P1] Earlier implementation used a fabricated deal-desk interface instead of the supplied Aloha Estates product capture.
+  - Fix: replaced only the Real Estate mockup body with the real Aloha Estates superadmin dashboard image.
+  - Post-fix evidence: the comparison shows the source dashboard's navigation, sales metrics, analytics chart, team status, workflow tasks and company activity feed inside the website card.
+- [P2] The source includes the macOS menu bar, which should not appear inside the website's mock browser.
+  - Fix: reused the existing non-destructive capture crop so the visible mockup begins with the Aloha Estates application interface.
+  - Post-fix evidence: the dashboard fills the browser frame without stretching or exposing the macOS menu bar.
+- [P2] The old mock-browser title described the replaced spatial visualizer.
+  - Fix: updated only the Real Estate mock-browser title to `alohaestates.app/superadmin`.
+
+**Required fidelity surfaces**
+
+- Fonts and typography: the supplied product typography remains raster-faithful; the surrounding website typography is unchanged.
+- Spacing and layout rhythm: the capture is centred in the existing Apple-style frame and aligns with the Real Estate copy column.
+- Colors and visual tokens: the original monochrome Aloha Estates interface, green status details and red workflow indicators are preserved without filters.
+- Image quality and asset fidelity: the original 1920 × 1080 PNG is used directly, remains linked at full resolution, and is neither stretched nor recreated.
+- Copy and content: descriptive alt text identifies the visible analytics, pipeline, agent-status and activity workflows.
+
+**Functional checks**
+
+- Real Estate & Infra activation passed with `stage-realestate` as the selected pane.
+- Image loaded at its full natural dimensions of 1920 × 1080 and is visible in the selected pane.
+- Full-resolution image link opens in a new tab and includes an accessible label.
+- Cache-busting advanced to `realestate-dashboard-photo-20260813l`.
+- `git diff --check` passes.
+- No actionable P0, P1 or P2 finding remains in the requested scope.
+
+final result: passed
+
+## Hotel industry product-capture integration QA — 2026-08-13
+
+**Source visual truth**
+
+- Supplied KaizerStays hotel PMS dashboard: `/Users/harshitgoyal/jai website/images/kaizerstays-pms-overview-dashboard.png`.
+- Source pixels: 1920 × 1080 at the supplied image density.
+- Intended state: Hotels & Dining selected in the industry showcase.
+
+**Rendered implementation evidence**
+
+- Browser-rendered capture: `/Users/harshitgoyal/jai website/design-reference/industry-hotel-photo/implementation.png`.
+- Implementation capture: 1001 × 777 pixels in the in-app browser's current desktop viewport.
+- Combined source/implementation evidence: `/Users/harshitgoyal/jai website/design-reference/industry-hotel-photo/source-implementation-comparison.jpg`.
+- The combined evidence was opened and visually inspected at original detail.
+
+**Comparison history and findings**
+
+- [P1] Earlier implementation used a fabricated hospitality dashboard instead of the supplied KaizerStays product capture.
+  - Fix: replaced only the Hotels & Dining mockup body with the real KaizerStays PMS overview image.
+  - Post-fix evidence: the combined comparison shows the source dashboard's operations sidebar, arrival queue, room-status grid, housekeeping alerts and audit feed inside the website card.
+- [P2] The source includes the macOS menu bar, which should not appear inside the product mock browser.
+  - Fix: reused the existing non-destructive product-capture crop so the browser frame begins with the KaizerStays application interface.
+  - Post-fix evidence: the final implementation keeps the complete PMS workspace visible without stretching or exposing the macOS menu bar.
+- [P2] The old mock-browser title referenced a generic direct-booking screen.
+  - Fix: updated only the hotel mock-browser title to `kaizerstays.app/hotel-overview`.
+
+**Required fidelity surfaces**
+
+- Fonts and typography: the supplied dashboard typography remains raster-faithful; surrounding website typography and content are unchanged.
+- Spacing and layout rhythm: the 16:9 capture is centred inside the existing Apple-style browser frame and aligned with the hotel card's text column.
+- Colors and visual tokens: the source blue, green, amber and neutral PMS states are shown directly without filters in the default state.
+- Image quality and asset fidelity: the original 1920 × 1080 PNG is used directly, remains available at full resolution, and is not stretched or recreated.
+- Copy and content: descriptive alt text identifies the visible arrivals, room status, housekeeping and audit workflow.
+
+**Functional checks**
+
+- Hotels & Dining tab activation passed with `stage-hospitality` as the selected pane.
+- Image loaded at its full natural dimensions of 1920 × 1080 and is visible in the selected pane.
+- Full-resolution image link opens in a new tab and includes an accessible label.
+- Cache-busting advanced to `hotel-dashboard-photo-20260813k`.
+- No actionable P0, P1 or P2 finding remains in the requested scope.
+
+final result: passed
+
+## Bespoke systems architecture catalogue QA — 2026-08-13
+
+**Requested scope**
+
+- Redesigned only the Custom Software & Operating Systems card architecture previews.
+- Preserved the section heading, four category tabs, system names, descriptions, keyword chips, blueprint links, navigation, backgrounds and all surrounding sections.
+
+**Source and implementation comparison**
+
+- Source visual truth: the user-provided earlier catalogue capture showing the repeated Core / Capture / Orchestrate / Control preview shell.
+- Normalized before/after comparison: `/Users/harshitgoyal/jai website/design-reference/bespoke-architectures/before-after-comparison.jpg`.
+- Final focused capture: `/Users/harshitgoyal/jai website/design-reference/bespoke-architectures/after.png`.
+- Final all-systems capture: `/Users/harshitgoyal/jai website/design-reference/bespoke-architectures/all-systems.png`.
+
+**Design and architecture findings**
+
+- [P1] The previous catalogue repeated six generic diagrams across 47 systems and labelled them as live architecture, so materially different products looked interchangeable.
+  - Fix: replaced the index-based six-card rotation with 47 tag-keyed solution blueprints and changed the label to Delivery blueprint so the visual does not imply a deployed customer integration.
+  - Post-fix evidence: browser QA reports 47 unique systems, 47 unique architecture patterns and zero fallback patterns across all 94 rendered card instances.
+- [P1] Architecture content did not express the actual operational boundary of each product.
+  - Fix: every system now shows four domain-specific components plus its data foundation, runtime/orchestration layer and reliability/security signal.
+  - Examples include HRMS role-scoped workforce records, WMS scanner-to-bin events, DMS OCR and e-sign routing, MES shop-floor event processing, SaaS metering and entitlements, and permission-aware RAG.
+- [P2] The old visuals shared one information architecture with cosmetic colour changes.
+  - Fix: introduced 14 topology families including secure core, event bus, hub, document pipeline, stack, AI pipeline, scheduler, realtime rail, gateway, edge mesh, ledger, automation, data pipeline and service mesh.
+- [P2] Platform labels were generic.
+  - Fix: blueprint metadata now uses credible, system-appropriate combinations of custom services, Supabase, Neon, Railway, Render, n8n and Zapier without claiming those are already live.
+
+**Visual and functional checks**
+
+- The Apple-like card shell, restrained shadows, compact status chips, readable service nodes and semantic accent colours remain consistent with the existing site language.
+- All 94 rendered cards contain four component nodes and three foundation signals.
+- The four tabs activate exactly one matching panel and expose 25, 10, 12 and 47 cards respectively.
+- Browser console returned no errors.
+- Reduced-motion handling disables the hover pulse animation.
+- Stylesheet cache-busting advanced to `bespoke-architectures-20260813i`.
+- `git diff --check` passes with no whitespace errors.
+- No actionable P0, P1 or P2 finding remains in the requested scope.
+
+final result: passed
+
+## Industry workflow dashboard redesign QA — 2026-08-13
+
+**Source visual truth and research grounding**
+
+- Existing six-state implementation: `/Users/harshitgoyal/jai website/design-reference/distinct-mockups/industry-six-state-contact-sheet.png` (1800 x 920 px).
+- Research references: KiviCare clinic operations on Behance; Landify real-estate CRM on Dribbble; Evrone's production-efficiency system on Behance; Hotel Shift Dashboard on Behance; Dash Store Admin on Dribbble; and Juris/Chronolex legal workflow case studies on Behance.
+- The research was used for workflow hierarchy and realistic operational content, not copied artwork or branding.
+
+**Rendered implementation evidence**
+
+- Browser viewport and CSS viewport: 1280 x 720 px at device scale 1.
+- State coverage: all six industry navigation tabs selected individually with exactly one active pane at a time.
+- Full six-state implementation sheet: `/Users/harshitgoyal/jai website/design-reference/industry-workflows/six-workflows-contact-sheet.jpg` (1800 x 676 px).
+- Normalized before/after comparison: `/Users/harshitgoyal/jai website/design-reference/industry-workflows/before-after-comparison.jpg` (1800 x 675 px).
+- Focused captures: `healthcare.png`, `real-estate.png`, `manufacturing.png`, `hospitality.png`, `ecommerce.png`, and `legal.png` in `/Users/harshitgoyal/jai website/design-reference/industry-workflows/` (each 1280 x 720 px).
+
+**Findings and comparison history**
+
+- [P1] Earlier previews shared the same summary, three KPI cards, table and side panel, making six industries look like recoloured versions of one dashboard.
+  - Fix: replaced that repeated shell with six different operating models: clinical care lanes and triage; property inventory and buyer pipeline; live MES production flow; room and arrival operations; fulfilment kanban and stock risk; and deadline-first matter/document control.
+  - Post-fix evidence: the six-state sheet shows different information architecture, component families, visual density and content in every tab.
+- [P2] The first commerce capture inherited an oversized product label because the product-name text node lacked a compact UI font size.
+  - Fix: scoped the inventory product label to the commerce panel's compact type scale.
+  - Post-fix evidence: `/Users/harshitgoyal/jai website/design-reference/industry-workflows/ecommerce.png` shows both SKU names aligned with the surrounding UI.
+
+**Required fidelity surfaces**
+
+- Fonts and typography: existing DM Sans site typography is preserved outside the mockups; each interface uses the same compact operational type system with readable weights and hierarchy.
+- Spacing and layout rhythm: each dashboard fits the existing Apple studio frame, maintains consistent outer alignment and uses its own workflow-appropriate internal grid.
+- Colors and tokens: clinic blue, property green, MES charcoal/amber, hospitality sand, commerce violet and legal navy remain restrained and semantically distinct.
+- Image and icon quality: Font Awesome interface icons are used for recognizable actions and system states; no emoji, placeholder imagery, copied portfolio artwork or fabricated brand assets were introduced.
+- Copy and content: every preview now contains domain-specific roles, statuses, records, operational metrics, exceptions and next actions rather than generic dashboard filler.
+
+**Functional and responsive checks**
+
+- All six tab buttons activated their correct preview in sequence.
+- Browser console returned no errors.
+- The stylesheet contains responsive one-column reductions for phone layouts; secondary side panels collapse while the core workflow remains visible.
+- JavaScript syntax validation and `git diff --check` pass.
+- Stylesheet cache-busting advanced to `industry-workflows-20260813h`.
+- No actionable P0, P1 or P2 finding remains in the requested scope.
+
+final result: passed
+
+## Shared architecture-section typography QA — 2026-08-13
+
+**Requested scope**
+
+- Standardized the heading typography in the Industry-Specific Web Solutions, Custom Software & Operating Systems, and Architecture Decision Guide sections only.
+- Preserved the industry interfaces, bespoke-system architecture cards, comparison table, section backgrounds, navigation and interactions.
+
+**Typography alignment**
+
+- All three sections now use the site's loaded DM Sans display and body stacks.
+- Blue eyebrow lines share the same light 300 weight, responsive scale, line height, letter spacing and colour.
+- Uppercase primary headings share the same responsive scale, 300 weight, balanced wrapping and dark ink colour.
+- Supporting paragraphs share the same size, line height, width and muted text colour.
+- The custom-system emphasis line and the comparison guide pill/keyword chips retain their meaning while using the same family and controlled weights.
+- Added scoped phone typography rules so the large titles reduce cleanly without changing card layouts.
+
+**Rendered checks**
+
+- Browser confirmed all three `.ck-aligned-section-heading` instances render on the live local preview.
+- Industry heading capture: `/Users/harshitgoyal/jai website/design-reference/aligned-headings/industry.png`
+- Custom systems heading capture: `/Users/harshitgoyal/jai website/design-reference/aligned-headings/custom-systems.png`
+- Comparison heading capture: `/Users/harshitgoyal/jai website/design-reference/aligned-headings/comparison.png`
+- All six comparison keyword chips remain visible and aligned.
+- Stylesheet cache-busting advanced to `aligned-headings-20260813g`.
+- `git diff --check` passes with no whitespace errors.
+
+final result: passed
+
+## Legal industry product-capture integration QA — 2026-08-13
+
+**Source visual truth**
+
+- Supplied Advocate super-admin dashboard: `/Users/harshitgoyal/jai website/images/advocate-super-admin-dashboard.png`.
+- Source pixels: 1920 × 1080 at the supplied image density.
+- Intended state: Legal, CA & Consultancies selected in the industry showcase.
+
+**Rendered implementation evidence**
+
+- Browser-rendered capture: `/Users/harshitgoyal/jai website/design-reference/industry-legal-photo/implementation.png`.
+- Implementation capture: 1035 × 777 pixels in the in-app browser's current desktop viewport.
+- Combined source/implementation evidence: `/Users/harshitgoyal/jai website/design-reference/industry-legal-photo/source-implementation-comparison.jpg` (1280 × 1488).
+- Focused-region comparison was not required because the dashboard image and its complete browser-style frame are clearly readable in the combined evidence.
+
+**Comparison history and findings**
+
+- [P1] Earlier implementation used a fabricated NotaryCore dashboard instead of the supplied product capture.
+  - Fix: replaced only the Legal/CA mockup body with the real Advocate dashboard image.
+  - Post-fix evidence: the combined comparison shows the same sidebar, metric cards, application table and Advocate branding inside the website mockup.
+- [P2] A first fitting pass left unnecessary vertical space around the 16:9 product capture.
+  - Fix: allowed the Legal studio window to size to the source aspect ratio and vertically centred it in the visual column.
+  - Post-fix evidence: the final implementation screenshot shows the complete dashboard at its native proportions without stretching.
+- [P2] The old mock-browser title still referenced NotaryCore.
+  - Fix: updated the isolated Legal mock-browser title to `advocate.app/super-admin`.
+
+**Required fidelity surfaces**
+
+- Fonts and typography: the supplied dashboard typography remains raster-faithful; surrounding website typography is unchanged.
+- Spacing and layout rhythm: the capture is centred, preserves its 1920:1050 content crop and uses the existing Apple-style window radius and elevation.
+- Colors and visual tokens: the supplied navy, blue, green and violet dashboard accents are preserved without filters in the default state.
+- Image quality and asset fidelity: the original 1920 × 1080 PNG is used directly; the macOS menu bar is removed by a non-destructive CSS crop, with no stretching or recreation.
+- Copy and content: the product screenshot content is unchanged; alt text describes the visible Advocate dashboard, and the full-resolution image remains accessible from the mockup.
+
+**Functional checks**
+
+- Legal/CA tab activation passed with exactly one active industry pane.
+- Image loaded at its full natural dimensions of 1920 × 1080.
+- Full-resolution image link and accessible alt text are present.
+- Browser console returned no errors.
+- Cache-busting advanced to `legal-dashboard-photo-20260813j`.
+- `git diff --check` passes.
+- No actionable P0, P1 or P2 finding remains in the requested scope.
+
 final result: passed
