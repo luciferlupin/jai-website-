@@ -11,6 +11,10 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Browser Cache Control to force fresh rendering -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     
     <!-- Primary SEO Meta Tags -->
     <title>Our Capabilities & Engineering Services | Custom SaaS, AI & Web Development - Curious Kaizer</title>
@@ -158,8 +162,8 @@
     <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet"></noscript>
     
     <!-- Stylesheets Preload -->
-    <link rel="preload" href="css/styles.css" as="style">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preload" href="css/styles.css?v=20260820_fresh" as="style">
+    <link rel="stylesheet" href="css/styles.css?v=20260820_fresh">
     
     <!-- Asynchronous CSS Loading for Non-Critical Stylesheets to Prevent Render-Blocking -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -417,6 +421,364 @@
                 font-size: 2.6rem;
             }
         }
+
+        /* ==========================================================================
+           2026 Apple Clean & Minimal Architecture Comparison Table System
+           ========================================================================== */
+        .tech-comparison-section {
+            padding: 80px 0 90px !important;
+            background: transparent;
+            position: relative;
+            scroll-margin-top: 110px;
+        }
+
+        .tech-comparison-section .container {
+            width: min(100%, 1240px);
+            margin: 0 auto;
+            padding-inline: 24px;
+        }
+
+        .tech-comparison-section .unified-header-wrapper {
+            text-align: center;
+            margin-bottom: 44px;
+        }
+
+        .comparison-highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 36px;
+        }
+
+        .bento-stat-pill {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 20px;
+            padding: 24px 22px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .bento-stat-pill:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+            border-color: rgba(37, 99, 235, 0.3);
+        }
+
+        .bento-stat-pill .stat-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .bento-stat-pill .stat-number {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .bento-stat-pill .stat-desc {
+            font-size: 0.82rem;
+            color: #64748b;
+            line-height: 1.45;
+        }
+
+        /* Apple Comparison Card */
+        .apple-comparison-card {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.09);
+            border-radius: 24px;
+            box-shadow: 0 10px 40px -10px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(0, 0, 0, 0.02);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .apple-table-scroll-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            width: 100%;
+        }
+
+        .apple-comparison-table {
+            width: 100%;
+            min-width: 960px;
+            border-collapse: collapse;
+            text-align: left;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", sans-serif;
+        }
+
+        .apple-comparison-table thead th {
+            padding: 22px 20px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #64748b;
+            border-bottom: 1px solid #e2e8f0;
+            background: #fafbfc;
+            vertical-align: bottom;
+        }
+
+        .apple-comparison-table thead th.col-feature {
+            width: 26%;
+            font-size: 0.94rem;
+            font-weight: 700;
+            color: #0f172a;
+            padding-left: 28px;
+        }
+
+        .apple-comparison-table thead th.col-static {
+            width: 18%;
+        }
+
+        .apple-comparison-table thead th.col-wp {
+            width: 18%;
+        }
+
+        .apple-comparison-table thead th.col-shopify {
+            width: 18%;
+        }
+
+        .apple-comparison-table thead th.col-custom {
+            width: 20%;
+            background: linear-gradient(180deg, #eff6ff 0%, #f4f8ff 100%);
+            border-left: 2px solid #3b82f6;
+            border-right: 2px solid #3b82f6;
+            border-bottom: 1px solid #bfdbfe;
+            padding: 22px 24px;
+            position: relative;
+        }
+
+        .apple-comparison-table thead th.col-custom .recommended-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: #2563eb;
+            color: #ffffff;
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 4px 10px;
+            border-radius: 980px;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+            margin-bottom: 6px;
+        }
+
+        .apple-comparison-table thead th.col-custom .custom-col-title {
+            display: block;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -0.02em;
+        }
+
+        .apple-comparison-table tbody tr {
+            border-bottom: 1px solid #f1f5f9;
+            transition: background 0.18s ease;
+        }
+
+        .apple-comparison-table tbody tr:hover {
+            background: #f8fafc;
+        }
+
+        .apple-comparison-table tbody tr:hover td.cell-custom {
+            background: #eef6ff;
+        }
+
+        .apple-comparison-table tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        .apple-comparison-table tbody td {
+            padding: 20px 20px;
+            vertical-align: middle;
+        }
+
+        .apple-comparison-table tbody td.cell-feature {
+            padding-left: 28px;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .apple-comparison-table tbody td.cell-custom {
+            background: #f8fbff;
+            border-left: 2px solid #3b82f6;
+            border-right: 2px solid #3b82f6;
+            padding: 20px 24px;
+        }
+
+        .feature-cell-content {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .feature-icon-pill {
+            width: 38px;
+            height: 38px;
+            border-radius: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            flex-shrink: 0;
+        }
+
+        .feature-title {
+            font-size: 0.94rem;
+            font-weight: 700;
+            color: #0f172a;
+            letter-spacing: -0.01em;
+        }
+
+        .feature-subtitle {
+            font-size: 0.78rem;
+            color: #64748b;
+            font-weight: 400;
+            margin-top: 2px;
+            line-height: 1.35;
+        }
+
+        .apple-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            line-height: 1.35;
+            font-size: 0.84rem;
+            font-weight: 600;
+            padding: 6px 13px;
+            border-radius: 8px;
+        }
+
+        .badge-hero-blue {
+            background: #eff6ff;
+            color: #1d4ed8;
+            border: 1.5px solid #93c5fd;
+            font-weight: 700;
+            padding: 7px 16px;
+            border-radius: 980px;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+        }
+
+        .badge-hero-green {
+            background: #f0fdf4;
+            color: #047857;
+            border: 1.5px solid #86efac;
+            font-weight: 700;
+            padding: 7px 16px;
+            border-radius: 980px;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.1);
+        }
+
+        .badge-positive {
+            background: #f0fdf4;
+            color: #15803d;
+            border: 1px solid #bbf7d0;
+        }
+
+        .badge-warning {
+            background: #fffbeb;
+            color: #b45309;
+            border: 1px solid #fde68a;
+        }
+
+        .badge-danger {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
+        }
+
+        .comparison-cta-card {
+            margin-top: 36px;
+            background: linear-gradient(135deg, #0071e3 0%, #1d6bf3 100%);
+            border-radius: 22px;
+            padding: 32px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            color: #ffffff;
+            box-shadow: 0 16px 40px rgba(0, 113, 227, 0.22);
+            flex-wrap: wrap;
+        }
+
+        .comparison-cta-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 0 0 6px 0;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+        }
+
+        .comparison-cta-text {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.94);
+            font-size: 0.96rem;
+            max-width: 680px;
+            line-height: 1.5;
+        }
+
+        .comparison-cta-btn {
+            background: #ffffff;
+            color: #0071e3;
+            padding: 14px 28px;
+            border-radius: 980px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+            flex-shrink: 0;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .comparison-cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+            color: #005bb5;
+        }
+
+        @media (max-width: 992px) {
+            .comparison-highlight-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .tech-comparison-section {
+                padding: 56px 0 64px !important;
+            }
+
+            .tech-comparison-section .container {
+                padding-inline: 16px;
+            }
+
+            .comparison-highlight-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .comparison-cta-card {
+                padding: 24px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .comparison-cta-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
     </style>
     
     <!-- JSON-LD Service Schema -->
@@ -528,67 +890,7 @@
             <p class="section-subtitle" style="margin: 0 auto 0.2rem; max-width: 650px; font-size: 0.9rem;">We craft premium digital experiences, AI tools, SaaS systems, and digital marketing funnels that accelerate business performance and scalability.</p>
         </div>
     </section>
-    <!-- Verified Authority & Ratings Trust Banner -->
-    <section class="verified-trust-section" style="max-width: 1160px; margin: 30px auto 30px auto; padding: 0 20px; position: relative; z-index: 10;">
-        <div style="background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(226, 232, 240, 0.95); box-shadow: 0 12px 36px rgba(15, 23, 42, 0.05); border-radius: 20px; padding: 18px 26px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
-            
-            <!-- Google Reviews -->
-            <a href="https://www.google.com/search?q=curiouskaizer" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #0f172a; transition: transform 0.2s ease;" class="trust-badge-item" title="Verified 5.0 Star Google Reviews for Website Making in Delhi">
-                <div style="width: 38px; height: 38px; border-radius: 12px; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: #4285F4; border: 1px solid #e2e8f0;">
-                    <i class="fab fa-google"></i>
-                </div>
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 4px;">
-                        <span style="font-weight: 700; font-size: 0.95rem; color: #0f172a;">5.0</span>
-                        <div style="color: #f59e0b; font-size: 0.72rem; display: flex; gap: 1px;">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <span style="font-size: 0.72rem; color: #64748b; font-weight: 600;">24+ Google Reviews</span>
-                </div>
-            </a>
 
-            <div style="width: 1px; height: 28px; background: #e2e8f0;" class="trust-divider"></div>
-
-            <!-- Clutch -->
-            <a href="https://clutch.co/profile/curiouskaizer" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #0f172a;" class="trust-badge-item" title="Clutch Verified Web Developer in Delhi">
-                <div style="width: 38px; height: 38px; border-radius: 12px; background: #1e293b; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em;">
-                    C<span style="color: #ff3d2e;">.</span>
-                </div>
-                <div style="display: flex; flex-direction: column;">
-                    <span style="font-weight: 700; font-size: 0.95rem; color: #0f172a;">Clutch 5.0</span>
-                    <span style="font-size: 0.72rem; color: #64748b; font-weight: 600;">Verified Developer</span>
-                </div>
-            </a>
-
-            <div style="width: 1px; height: 28px; background: #e2e8f0;" class="trust-divider"></div>
-
-            <!-- F6S -->
-            <a href="https://www.f6s.com/curiouskaizer" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #0f172a;" class="trust-badge-item" title="F6S Verified Company">
-                <div style="width: 38px; height: 38px; border-radius: 12px; background: #ff2a00; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; color: #ffffff;">
-                    F6S
-                </div>
-                <div style="display: flex; flex-direction: column;">
-                    <span style="font-weight: 700; font-size: 0.95rem; color: #0f172a;">F6S</span>
-                    <span style="font-size: 0.72rem; color: #64748b; font-weight: 600;">Verified Company</span>
-                </div>
-            </a>
-
-            <div style="width: 1px; height: 28px; background: #e2e8f0;" class="trust-divider"></div>
-
-            <!-- YourStory -->
-            <a href="https://yourstory.com/companies/curiouskaizer" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #0f172a;" class="trust-badge-item" title="YourStory Featured Company">
-                <div style="width: 38px; height: 38px; border-radius: 12px; background: #eb2227; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em;">
-                    YS
-                </div>
-                <div style="display: flex; flex-direction: column;">
-                    <span style="font-weight: 700; font-size: 0.95rem; color: #0f172a;">YourStory</span>
-                    <span style="font-size: 0.72rem; color: #64748b; font-weight: 600;">Featured Company</span>
-                </div>
-            </a>
-
-        </div>
-    </section>
 
 
     <!-- Services Detail Section -->
@@ -1211,10 +1513,9 @@
         </div>
     </section>
 
-
     <!-- Architecture & Platform Comparison Experience Section -->
-    <section class="tech-comparison-section" id="comparison" style="padding: 80px 0; background: transparent; position: relative;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+    <section class="tech-comparison-section" id="comparison">
+        <div class="container">
             
             <!-- Section Header -->
             <div class="unified-header-wrapper" data-aos="fade-up" style="text-align: center; margin-bottom: 44px;">
@@ -1225,217 +1526,217 @@
                 </p>
             </div>
 
-            <!-- Top Visual Metric Highlights (4 Bento Feature Pills) -->
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 36px;" class="comparison-highlight-grid" data-aos="fade-up">
+            <!-- Top Visual Metric Highlights (4 Apple Bento Stat Pills) -->
+            <div class="comparison-highlight-grid" data-aos="fade-up">
                 
-                <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 18px; padding: 20px 18px; box-shadow: 0 4px 18px rgba(0,0,0,0.02); display: flex; flex-direction: column; gap: 8px;">
-                    <div style="font-size: 0.72rem; font-weight: 700; color: #2563eb; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px;">
+                <div class="bento-stat-pill">
+                    <div class="stat-tag" style="color: #2563eb;">
                         <i class="fas fa-bolt"></i> Speed &amp; Latency
                     </div>
-                    <div style="font-size: 1.35rem; font-weight: 800; color: #0f172a;">Sub-50ms ⚡</div>
-                    <div style="font-size: 0.78rem; color: #64748b; line-height: 1.35;">Vs 400–1200ms slow PHP database bloat.</div>
+                    <div class="stat-number">Sub-50ms ⚡</div>
+                    <div class="stat-desc">Vs 400–1200ms slow PHP database bloat.</div>
                 </div>
 
-                <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 18px; padding: 20px 18px; box-shadow: 0 4px 18px rgba(0,0,0,0.02); display: flex; flex-direction: column; gap: 8px;">
-                    <div style="font-size: 0.72rem; font-weight: 700; color: #10b981; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px;">
+                <div class="bento-stat-pill">
+                    <div class="stat-tag" style="color: #10b981;">
                         <i class="fas fa-shield-alt"></i> Security Level
                     </div>
-                    <div style="font-size: 1.35rem; font-weight: 800; color: #0f172a;">Edge Shielded 🛡️</div>
-                    <div style="font-size: 0.78rem; color: #64748b; line-height: 1.35;">Zero attack surface &amp; zero plugin exploits.</div>
+                    <div class="stat-number">Edge Shielded 🛡️</div>
+                    <div class="stat-desc">Zero attack surface &amp; zero plugin exploits.</div>
                 </div>
 
-                <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 18px; padding: 20px 18px; box-shadow: 0 4px 18px rgba(0,0,0,0.02); display: flex; flex-direction: column; gap: 8px;">
-                    <div style="font-size: 0.72rem; font-weight: 700; color: #8b5cf6; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px;">
+                <div class="bento-stat-pill">
+                    <div class="stat-tag" style="color: #8b5cf6;">
                         <i class="fas fa-wallet"></i> Operating Cost
                     </div>
-                    <div style="font-size: 1.35rem; font-weight: 800; color: #0f172a;">₹0 / Mo Fees 💰</div>
-                    <div style="font-size: 0.78rem; color: #64748b; line-height: 1.35;">Save ₹36k–₹3.6L/yr in mandatory apps.</div>
+                    <div class="stat-number">₹0 / Mo Fees 💰</div>
+                    <div class="stat-desc">Save ₹36k–₹3.6L/yr in mandatory apps.</div>
                 </div>
 
-                <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 18px; padding: 20px 18px; box-shadow: 0 4px 18px rgba(0,0,0,0.02); display: flex; flex-direction: column; gap: 8px;">
-                    <div style="font-size: 0.72rem; font-weight: 700; color: #ec4899; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px;">
+                <div class="bento-stat-pill">
+                    <div class="stat-tag" style="color: #ec4899;">
                         <i class="fas fa-code-branch"></i> Source Ownership
                     </div>
-                    <div style="font-size: 1.35rem; font-weight: 800; color: #0f172a;">100% Git IP ✨</div>
-                    <div style="font-size: 0.78rem; color: #64748b; line-height: 1.35;">Full source code rights &amp; zero vendor lock-in.</div>
+                    <div class="stat-number">100% Git IP ✨</div>
+                    <div class="stat-desc">Full source code rights &amp; zero vendor lock-in.</div>
                 </div>
 
             </div>
 
-            <!-- Main Comparison Table Card -->
-            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 24px; box-shadow: 0 16px 48px rgba(15,23,42,0.05); overflow: hidden;" data-aos="fade-up">
-                <div style="overflow-x: auto;">
-                    <table style="width: 100%; border-collapse: collapse; text-align: left; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'DM Sans', sans-serif;">
+            <!-- Main Apple Clean Comparison Table Card -->
+            <div class="apple-comparison-card" data-aos="fade-up">
+                <div class="apple-table-scroll-container">
+                    <table class="apple-comparison-table">
                         <thead>
-                            <tr style="border-bottom: 2px solid #e2e8f0; background: #f8fafc;">
-                                <th style="padding: 22px 24px; font-weight: 700; color: #0f172a; font-size: 0.95rem; width: 25%;">Feature / Metric</th>
-                                <th style="padding: 22px 20px; font-weight: 600; color: #64748b; font-size: 0.9rem; width: 18%;">Basic Static HTML</th>
-                                <th style="padding: 22px 20px; font-weight: 600; color: #64748b; font-size: 0.9rem; width: 20%;">WordPress / Elementor</th>
-                                <th style="padding: 22px 20px; font-weight: 600; color: #64748b; font-size: 0.9rem; width: 18%;">Shopify / Wix</th>
-                                <th style="padding: 22px 24px; font-weight: 800; color: #0071e3; background: #eff6ff; border-left: 2px solid #bfdbfe; border-right: 2px solid #bfdbfe; font-size: 1rem; width: 24%; position: relative;">
-                                    <span style="display: block; font-size: 0.68rem; font-weight: 800; color: #2563eb; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2px;">RECOMMENDED ARCHITECTURE</span>
-                                    Curious Kaizer (Custom)
+                            <tr>
+                                <th class="col-feature" scope="col">Feature / Metric</th>
+                                <th class="col-static" scope="col">Basic Static HTML</th>
+                                <th class="col-wp" scope="col">WordPress / Elementor</th>
+                                <th class="col-shopify" scope="col">Shopify / Wix</th>
+                                <th class="col-custom" scope="col">
+                                    <span class="recommended-badge"><i class="fas fa-crown"></i> RECOMMENDED ARCHITECTURE</span>
+                                    <span class="custom-col-title">Curious Kaizer (Custom)</span>
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
                             <!-- Row 1: Speed -->
-                            <tr style="border-bottom: 1px solid #f1f5f9; transition: background 0.2s ease;">
-                                <td style="padding: 20px 24px; font-weight: 700; color: #0f172a;">
-                                    <div style="display: flex; align-items: center; gap: 10px;">
-                                        <div style="width: 32px; height: 32px; border-radius: 8px; background: #eff6ff; color: #2563eb; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0;"><i class="fas fa-bolt"></i></div>
+                            <tr>
+                                <td class="cell-feature">
+                                    <div class="feature-cell-content">
+                                        <div class="feature-icon-pill" style="background: #eff6ff; color: #2563eb;"><i class="fas fa-bolt"></i></div>
                                         <div>
-                                            <div>Speed &amp; Core Web Vitals (INP)</div>
-                                            <div style="font-size: 0.74rem; color: #94a3b8; font-weight: 400; margin-top: 1px;">Google LCP &amp; INP response time</div>
+                                            <div class="feature-title">Speed &amp; Core Web Vitals (INP)</div>
+                                            <div class="feature-subtitle">Google LCP &amp; INP response time</div>
                                         </div>
                                     </div>
                                 </td>
-                                <td style="padding: 20px 20px; color: #16a34a; font-weight: 600;">
-                                    <span style="background: #f0fdf4; color: #16a34a; padding: 4px 10px; border-radius: 6px; border: 1px solid #bbf7d0; font-size: 0.82rem; display: inline-block;">Fast (&lt;100ms)</span>
+                                <td>
+                                    <span class="apple-badge badge-positive">Fast (&lt;100ms)</span>
                                 </td>
-                                <td style="padding: 20px 20px; color: #dc2626; font-weight: 600;">
-                                    <span style="background: #fef2f2; color: #dc2626; padding: 4px 10px; border-radius: 6px; border: 1px solid #fecaca; font-size: 0.82rem; display: inline-block;">Slow (400–1200ms)</span>
+                                <td>
+                                    <span class="apple-badge badge-danger">Slow (400–1200ms)</span>
                                 </td>
-                                <td style="padding: 20px 20px; color: #d97706; font-weight: 600;">
-                                    <span style="background: #fffbeb; color: #d97706; padding: 4px 10px; border-radius: 6px; border: 1px solid #fde68a; font-size: 0.82rem; display: inline-block;">Moderate (250–500ms)</span>
+                                <td>
+                                    <span class="apple-badge badge-warning">Moderate (250–500ms)</span>
                                 </td>
-                                <td style="padding: 20px 24px; font-weight: 700; color: #2563eb; background: #eff6ff; border-left: 2px solid #bfdbfe; border-right: 2px solid #bfdbfe;">
-                                    <span style="background: #2563eb; color: #ffffff; padding: 6px 14px; border-radius: 980px; font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(37,99,235,0.25);">
+                                <td class="cell-custom">
+                                    <span class="apple-badge badge-hero-blue">
                                         <i class="fas fa-bolt"></i> Sub-50ms Ultra-Fast ⚡
                                     </span>
                                 </td>
                             </tr>
 
                             <!-- Row 2: Security -->
-                            <tr style="border-bottom: 1px solid #f1f5f9; transition: background 0.2s ease;">
-                                <td style="padding: 20px 24px; font-weight: 700; color: #0f172a;">
-                                    <div style="display: flex; align-items: center; gap: 10px;">
-                                        <div style="width: 32px; height: 32px; border-radius: 8px; background: #f0fdf4; color: #16a34a; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0;"><i class="fas fa-shield-alt"></i></div>
+                            <tr>
+                                <td class="cell-feature">
+                                    <div class="feature-cell-content">
+                                        <div class="feature-icon-pill" style="background: #f0fdf4; color: #16a34a;"><i class="fas fa-shield-alt"></i></div>
                                         <div>
-                                            <div>Security &amp; Hacking Risk</div>
-                                            <div style="font-size: 0.74rem; color: #94a3b8; font-weight: 400; margin-top: 1px;">Vulnerability surface &amp; maintenance</div>
+                                            <div class="feature-title">Security &amp; Hacking Risk</div>
+                                            <div class="feature-subtitle">Vulnerability surface &amp; maintenance</div>
                                         </div>
                                     </div>
                                 </td>
-                                <td style="padding: 20px 20px; color: #16a34a; font-weight: 600;">
-                                    <span style="background: #f0fdf4; color: #16a34a; padding: 4px 10px; border-radius: 6px; border: 1px solid #bbf7d0; font-size: 0.82rem; display: inline-block;">Zero Attack Surface</span>
+                                <td>
+                                    <span class="apple-badge badge-positive">Zero Attack Surface</span>
                                 </td>
-                                <td style="padding: 20px 20px; color: #dc2626; font-weight: 600;">
-                                    <span style="background: #fef2f2; color: #dc2626; padding: 4px 10px; border-radius: 6px; border: 1px solid #fecaca; font-size: 0.82rem; display: inline-block;">High (PHP/Plugin Exploits)</span>
+                                <td>
+                                    <span class="apple-badge badge-danger">High (PHP/Plugin Exploits)</span>
                                 </td>
-                                <td style="padding: 20px 20px; color: #16a34a; font-weight: 600;">
-                                    <span style="background: #f0fdf4; color: #16a34a; padding: 4px 10px; border-radius: 6px; border: 1px solid #bbf7d0; font-size: 0.82rem; display: inline-block;">Hosted (Secure)</span>
+                                <td>
+                                    <span class="apple-badge badge-positive">Hosted (Secure)</span>
                                 </td>
-                                <td style="padding: 20px 24px; font-weight: 700; color: #2563eb; background: #eff6ff; border-left: 2px solid #bfdbfe; border-right: 2px solid #bfdbfe;">
-                                    <span style="background: #ffffff; color: #0071e3; padding: 6px 14px; border-radius: 980px; border: 1px solid #bfdbfe; font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(0,113,227,0.08);">
+                                <td class="cell-custom">
+                                    <span class="apple-badge badge-hero-blue">
                                         <i class="fas fa-lock"></i> Bank-Grade Edge Shielded 🛡️
                                     </span>
                                 </td>
                             </tr>
 
                             <!-- Row 3: Custom Design & Features -->
-                            <tr style="border-bottom: 1px solid #f1f5f9; transition: background 0.2s ease;">
-                                <td style="padding: 20px 24px; font-weight: 700; color: #0f172a;">
-                                    <div style="display: flex; align-items: center; gap: 10px;">
-                                        <div style="width: 32px; height: 32px; border-radius: 8px; background: #faf5ff; color: #9333ea; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0;"><i class="fas fa-palette"></i></div>
+                            <tr>
+                                <td class="cell-feature">
+                                    <div class="feature-cell-content">
+                                        <div class="feature-icon-pill" style="background: #faf5ff; color: #9333ea;"><i class="fas fa-palette"></i></div>
                                         <div>
-                                            <div>Custom Design &amp; 3D/AI Features</div>
-                                            <div style="font-size: 0.74rem; color: #94a3b8; font-weight: 400; margin-top: 1px;">Tailored UI/UX &amp; AI tool integration</div>
+                                            <div class="feature-title">Custom Design &amp; 3D/AI Features</div>
+                                            <div class="feature-subtitle">Tailored UI/UX &amp; AI tool integration</div>
                                         </div>
                                     </div>
                                 </td>
-                                <td style="padding: 20px 20px; color: #d97706; font-weight: 600;">
-                                    <span style="background: #fffbeb; color: #d97706; padding: 4px 10px; border-radius: 6px; border: 1px solid #fde68a; font-size: 0.82rem; display: inline-block;">Limited</span>
+                                <td>
+                                    <span class="apple-badge badge-warning">Limited</span>
                                 </td>
-                                <td style="padding: 20px 20px; color: #d97706; font-weight: 600;">
-                                    <span style="background: #fffbeb; color: #d97706; padding: 4px 10px; border-radius: 6px; border: 1px solid #fde68a; font-size: 0.82rem; display: inline-block;">Restricted to Theme</span>
+                                <td>
+                                    <span class="apple-badge badge-warning">Restricted to Theme</span>
                                 </td>
-                                <td style="padding: 20px 20px; color: #d97706; font-weight: 600;">
-                                    <span style="background: #fffbeb; color: #d97706; padding: 4px 10px; border-radius: 6px; border: 1px solid #fde68a; font-size: 0.82rem; display: inline-block;">App Store Dependent</span>
+                                <td>
+                                    <span class="apple-badge badge-warning">App Store Dependent</span>
                                 </td>
-                                <td style="padding: 20px 24px; font-weight: 700; color: #2563eb; background: #eff6ff; border-left: 2px solid #bfdbfe; border-right: 2px solid #bfdbfe;">
-                                    <span style="background: #ffffff; color: #0071e3; padding: 6px 14px; border-radius: 980px; border: 1px solid #bfdbfe; font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(0,113,227,0.08);">
+                                <td class="cell-custom">
+                                    <span class="apple-badge badge-hero-blue">
                                         <i class="fas fa-sparkles"></i> 100% Bespoke, 3D &amp; AI Agents ✦
                                     </span>
                                 </td>
                             </tr>
 
                             <!-- Row 4: Monthly Recurring Costs -->
-                            <tr style="border-bottom: 1px solid #f1f5f9; transition: background 0.2s ease;">
-                                <td style="padding: 20px 24px; font-weight: 700; color: #0f172a;">
-                                    <div style="display: flex; align-items: center; gap: 10px;">
-                                        <div style="width: 32px; height: 32px; border-radius: 8px; background: #fdf2f8; color: #db2777; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0;"><i class="fas fa-tags"></i></div>
+                            <tr>
+                                <td class="cell-feature">
+                                    <div class="feature-cell-content">
+                                        <div class="feature-icon-pill" style="background: #fdf2f8; color: #db2777;"><i class="fas fa-tags"></i></div>
                                         <div>
-                                            <div>Monthly Recurring Plugin Costs</div>
-                                            <div style="font-size: 0.74rem; color: #94a3b8; font-weight: 400; margin-top: 1px;">Plugin subscriptions &amp; app fees</div>
+                                            <div class="feature-title">Monthly Recurring Plugin Costs</div>
+                                            <div class="feature-subtitle">Plugin subscriptions &amp; app fees</div>
                                         </div>
                                     </div>
                                 </td>
-                                <td style="padding: 20px 20px; color: #16a34a; font-weight: 600;">
-                                    <span style="background: #f0fdf4; color: #16a34a; padding: 4px 10px; border-radius: 6px; border: 1px solid #bbf7d0; font-size: 0.82rem; display: inline-block;">₹0 / month</span>
+                                <td>
+                                    <span class="apple-badge badge-positive">₹0 / month</span>
                                 </td>
-                                <td style="padding: 20px 20px; color: #dc2626; font-weight: 600;">
-                                    <span style="background: #fef2f2; color: #dc2626; padding: 4px 10px; border-radius: 6px; border: 1px solid #fecaca; font-size: 0.82rem; display: inline-block;">₹3,000 – ₹15,000/mo</span>
+                                <td>
+                                    <span class="apple-badge badge-danger">₹3,000 – ₹15,000/mo</span>
                                 </td>
-                                <td style="padding: 20px 20px; color: #dc2626; font-weight: 600;">
-                                    <span style="background: #fef2f2; color: #dc2626; padding: 4px 10px; border-radius: 6px; border: 1px solid #fecaca; font-size: 0.82rem; display: inline-block;">₹2,500 – ₹30,000/mo</span>
+                                <td>
+                                    <span class="apple-badge badge-danger">₹2,500 – ₹30,000/mo</span>
                                 </td>
-                                <td style="padding: 20px 24px; font-weight: 700; color: #2563eb; background: #eff6ff; border-left: 2px solid #bfdbfe; border-right: 2px solid #bfdbfe;">
-                                    <span style="background: #10b981; color: #ffffff; padding: 6px 14px; border-radius: 980px; font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(16,185,129,0.25);">
+                                <td class="cell-custom">
+                                    <span class="apple-badge badge-hero-green">
                                         <i class="fas fa-check"></i> ₹0 / No Mandatory Subscriptions
                                     </span>
                                 </td>
                             </tr>
 
                             <!-- Row 5: SEO -->
-                            <tr style="border-bottom: 1px solid #f1f5f9; transition: background 0.2s ease;">
-                                <td style="padding: 20px 24px; font-weight: 700; color: #0f172a;">
-                                    <div style="display: flex; align-items: center; gap: 10px;">
-                                        <div style="width: 32px; height: 32px; border-radius: 8px; background: #ecfeff; color: #0891b2; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0;"><i class="fas fa-chart-line"></i></div>
+                            <tr>
+                                <td class="cell-feature">
+                                    <div class="feature-cell-content">
+                                        <div class="feature-icon-pill" style="background: #ecfeff; color: #0891b2;"><i class="fas fa-chart-line"></i></div>
                                         <div>
-                                            <div>Google Search &amp; Local Delhi SEO</div>
-                                            <div style="font-size: 0.74rem; color: #94a3b8; font-weight: 400; margin-top: 1px;">JSON-LD Schema &amp; technical ranking</div>
+                                            <div class="feature-title">Google Search &amp; Local Delhi SEO</div>
+                                            <div class="feature-subtitle">JSON-LD Schema &amp; technical ranking</div>
                                         </div>
                                     </div>
                                 </td>
-                                <td style="padding: 20px 20px; color: #16a34a; font-weight: 600;">
-                                    <span style="background: #f0fdf4; color: #16a34a; padding: 4px 10px; border-radius: 6px; border: 1px solid #bbf7d0; font-size: 0.82rem; display: inline-block;">Good</span>
+                                <td>
+                                    <span class="apple-badge badge-positive">Good</span>
                                 </td>
-                                <td style="padding: 20px 20px; color: #d97706; font-weight: 600;">
-                                    <span style="background: #fffbeb; color: #d97706; padding: 4px 10px; border-radius: 6px; border: 1px solid #fde68a; font-size: 0.82rem; display: inline-block;">Requires SEO Plugins</span>
+                                <td>
+                                    <span class="apple-badge badge-warning">Requires SEO Plugins</span>
                                 </td>
-                                <td style="padding: 20px 20px; color: #d97706; font-weight: 600;">
-                                    <span style="background: #fffbeb; color: #d97706; padding: 4px 10px; border-radius: 6px; border: 1px solid #fde68a; font-size: 0.82rem; display: inline-block;">Basic URL Control</span>
+                                <td>
+                                    <span class="apple-badge badge-warning">Basic URL Control</span>
                                 </td>
-                                <td style="padding: 20px 24px; font-weight: 700; color: #2563eb; background: #eff6ff; border-left: 2px solid #bfdbfe; border-right: 2px solid #bfdbfe;">
-                                    <span style="background: #ffffff; color: #0071e3; padding: 6px 14px; border-radius: 980px; border: 1px solid #bfdbfe; font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(0,113,227,0.08);">
+                                <td class="cell-custom">
+                                    <span class="apple-badge badge-hero-blue">
                                         <i class="fas fa-rocket"></i> Native JSON-LD &amp; Local Schema 🚀
                                     </span>
                                 </td>
                             </tr>
 
                             <!-- Row 6: Code Ownership -->
-                            <tr style="transition: background 0.2s ease;">
-                                <td style="padding: 20px 24px; font-weight: 700; color: #0f172a;">
-                                    <div style="display: flex; align-items: center; gap: 10px;">
-                                        <div style="width: 32px; height: 32px; border-radius: 8px; background: #f0fdf4; color: #059669; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0;"><i class="fas fa-box-open"></i></div>
+                            <tr>
+                                <td class="cell-feature">
+                                    <div class="feature-cell-content">
+                                        <div class="feature-icon-pill" style="background: #f0fdf4; color: #059669;"><i class="fas fa-box-open"></i></div>
                                         <div>
-                                            <div>Code Ownership &amp; Portability</div>
-                                            <div style="font-size: 0.74rem; color: #94a3b8; font-weight: 400; margin-top: 1px;">Git repository &amp; IP rights</div>
+                                            <div class="feature-title">Code Ownership &amp; Portability</div>
+                                            <div class="feature-subtitle">Git repository &amp; IP rights</div>
                                         </div>
                                     </div>
                                 </td>
-                                <td style="padding: 20px 20px; color: #16a34a; font-weight: 600;">
-                                    <span style="background: #f0fdf4; color: #16a34a; padding: 4px 10px; border-radius: 6px; border: 1px solid #bbf7d0; font-size: 0.82rem; display: inline-block;">100% Owned</span>
+                                <td>
+                                    <span class="apple-badge badge-positive">100% Owned</span>
                                 </td>
-                                <td style="padding: 20px 20px; color: #d97706; font-weight: 600;">
-                                    <span style="background: #fffbeb; color: #d97706; padding: 4px 10px; border-radius: 6px; border: 1px solid #fde68a; font-size: 0.82rem; display: inline-block;">PHP Dependent</span>
+                                <td>
+                                    <span class="apple-badge badge-warning">PHP Dependent</span>
                                 </td>
-                                <td style="padding: 20px 20px; color: #dc2626; font-weight: 600;">
-                                    <span style="background: #fef2f2; color: #dc2626; padding: 4px 10px; border-radius: 6px; border: 1px solid #fecaca; font-size: 0.82rem; display: inline-block;">Vendor Locked</span>
+                                <td>
+                                    <span class="apple-badge badge-danger">Vendor Locked</span>
                                 </td>
-                                <td style="padding: 20px 24px; font-weight: 700; color: #2563eb; background: #eff6ff; border-left: 2px solid #bfdbfe; border-right: 2px solid #bfdbfe;">
-                                    <span style="background: #ffffff; color: #0071e3; padding: 6px 14px; border-radius: 980px; border: 1px solid #bfdbfe; font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(0,113,227,0.08);">
+                                <td class="cell-custom">
+                                    <span class="apple-badge badge-hero-blue">
                                         <i class="fas fa-code-branch"></i> 100% Git Full Source Code Rights ✨
                                     </span>
                                 </td>
@@ -1447,12 +1748,12 @@
             </div>
 
             <!-- Bottom Call To Action Banner -->
-            <div style="margin-top: 36px; background: linear-gradient(135deg, #0071e3 0%, #1d6bf3 100%); border-radius: 22px; padding: 32px 40px; display: flex; align-items: center; justify-content: space-between; gap: 20px; color: #ffffff; box-shadow: 0 16px 40px rgba(0,113,227,0.25); flex-wrap: wrap;" data-aos="fade-up">
+            <div class="comparison-cta-card" data-aos="fade-up">
                 <div>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; margin: 0 0 6px 0; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;">Ready to Ditch Slow Templates &amp; Vendor Lock-In?</h3>
-                    <p style="margin: 0; color: rgba(255,255,255,0.9); font-size: 0.98rem; max-width: 680px; line-height: 1.5;">Build a custom, lightning-fast web application with sub-50ms speed, 100% Git source code ownership, and zero monthly builder fees.</p>
+                    <h3 class="comparison-cta-title">Ready to Ditch Slow Templates &amp; Vendor Lock-In?</h3>
+                    <p class="comparison-cta-text">Build a custom, lightning-fast web application with sub-50ms speed, 100% Git source code ownership, and zero monthly builder fees.</p>
                 </div>
-                <a href="contact.html" style="background: #ffffff; color: #0071e3; padding: 14px 28px; border-radius: 980px; font-weight: 700; font-size: 0.95rem; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(0,0,0,0.1); flex-shrink: 0; transition: transform 0.25s ease;">
+                <a href="contact.html" class="comparison-cta-btn">
                     Architect Custom Platform <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
@@ -1553,8 +1854,8 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js" defer></script>
-    <script src="js/scripts.js?v=section-heading-20260729d" defer></script>
-    <script src="js/analytics-tracker.js?v=2" defer></script>
+    <script src="js/scripts.js?v=20260820_fresh" defer></script>
+    <script src="js/analytics-tracker.js?v=20260820_fresh" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const lenis = new Lenis({
