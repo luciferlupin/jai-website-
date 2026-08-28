@@ -49,11 +49,31 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
 
                         <div class="footer-social-row" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
-                            <span class="social-label">Our Socials</span>
+                            <span class="social-label">Verified Profiles &amp; Ratings</span>
                             <div class="social-divider"></div>
                             <div class="social-badges">
-                                <a href="https://www.linkedin.com/company/curious-kaizer/" class="social-badge linkedin-badge" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="https://www.instagram.com/curiouskaizer/" class="social-badge instagram-badge" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.google.com/search?q=curiouskaizer" class="social-badge google-badge" target="_blank" rel="noopener" aria-label="Google Business Profile &amp; Reviews" title="Google 5.0 Star Verified Reviews">
+                                    <i class="fab fa-google"></i>
+                                    <span class="google-rating-score">5.0</span><span class="google-rating-star">★</span>
+                                </a>
+                                <a href="https://clutch.co/profile/curiouskaizer" class="social-badge clutch-badge" target="_blank" rel="noopener" aria-label="Clutch Profile" title="Clutch Verified Top Developer">
+                                    <span>Clutch</span><span class="clutch-dot">●</span>
+                                </a>
+                                <a href="https://yourstory.com/companies/curiouskaizer" class="social-badge yourstory-badge" target="_blank" rel="noopener" aria-label="YourStory Profile" title="YourStory Featured Company">
+                                    <span>YourStory</span>
+                                </a>
+                                <a href="https://github.com/luciferlupin" class="social-badge github-badge" target="_blank" rel="noopener" aria-label="GitHub Profile" title="GitHub (@luciferlupin)">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/company/curious-kaizer/" class="social-badge linkedin-badge" target="_blank" rel="noopener" aria-label="LinkedIn Profile" title="LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://www.instagram.com/curiouskaizer/" class="social-badge instagram-badge" target="_blank" rel="noopener" aria-label="Instagram Profile" title="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://www.f6s.com/curiouskaizer" class="social-badge f6s-badge" target="_blank" rel="noopener" aria-label="F6S Profile" title="Curious Kaizer on F6S">
+                                    <span>F6S</span>
+                                </a>
                             </div>
                         </div>
 

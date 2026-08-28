@@ -1551,27 +1551,28 @@ section {
 }
 
 .saas-scroll-section .card-left .cta-button.primary {
-    border-radius: 980px;
-    background: #0071e3;
-    color: #ffffff;
-    padding: 12px 26px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 4px 14px rgba(0, 113, 227, 0.25);
-    transition: all 0.25s ease;
-    border: none;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+    border-radius: 10px !important;
+    background: linear-gradient(180deg, #0077ed 0%, #0062cc 100%) !important;
+    color: #ffffff !important;
+    padding: 13px 26px !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    border: 1px solid rgba(0, 85, 204, 0.45) !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 5px 16px rgba(0, 113, 227, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.28), inset 0 -1px 0 rgba(0, 0, 0, 0.2) !important;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15) !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    text-transform: none;
+    letter-spacing: -0.01em;
 }
 
 .saas-scroll-section .card-left .cta-button.primary:hover {
-    background: #0077ed;
-    transform: scale(1.02);
-    box-shadow: 0 8px 22px rgba(0, 113, 227, 0.35);
+    background: linear-gradient(180deg, #1484f5 0%, #006ae0 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16), 0 10px 28px rgba(0, 113, 227, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.38), inset 0 -1px 0 rgba(0, 0, 0, 0.2) !important;
 }
 
 .saas-scroll-section .service-detail-visual {
@@ -6578,54 +6579,193 @@ section {
     display: flex;
     align-items: center;
     margin: 2.5rem 0 1.75rem 0;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 .social-label {
     font-size: 0.825rem;
-    font-weight: 500;
+    font-weight: 600;
     color: #64748b;
     white-space: nowrap;
+    letter-spacing: -0.01em;
 }
 
 .social-divider {
     flex: 1;
+    min-width: 20px;
     height: 1px;
     background: #e2e8f0;
-    margin: 0 1.25rem;
+    margin: 0 0.5rem;
 }
 
 .social-badges {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 8px;
 }
 
 .social-badge {
-    width: 32px;
     height: 32px;
-    border-radius: 6px;
+    min-width: 32px;
+    width: auto;
+    border-radius: 8px;
     background: #0f172a;
     color: #ffffff;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
-    font-size: 0.85rem;
-    transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+    gap: 6px;
+    padding: 0 11px;
+    text-decoration: none !important;
+    font-size: 0.82rem;
+    font-weight: 700;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", sans-serif;
+    line-height: 1;
+    white-space: nowrap;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease, border-color 0.2s ease;
+    cursor: pointer;
+    flex-shrink: 0;
 }
 
-.social-badge.x-badge { background: #000000; color: #ffffff; }
-.social-badge.linkedin-badge { background: #0a66c2; color: #ffffff; }
-.social-badge.instagram-badge { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: #ffffff; }
-.social-badge.wa-badge { background: #25d366; color: #ffffff; }
-.social-badge.f6s-badge { background: #ff2a00; color: #ffffff; font-weight: 800; font-size: 0.7rem; font-family: system-ui, -apple-system, sans-serif; letter-spacing: -0.5px; }
-.social-badge.yourstory-badge { background: #eb2227; color: #ffffff; font-weight: 800; font-size: 0.7rem; font-family: system-ui, -apple-system, sans-serif; letter-spacing: -0.5px; }
-.social-badge.github-badge { background: #24292e; color: #ffffff; }
+/* Icon-only Badges (1:1 square) */
+.social-badge.github-badge,
+.social-badge.linkedin-badge,
+.social-badge.instagram-badge,
+.social-badge.x-badge,
+.social-badge.wa-badge {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    min-width: 32px;
+    font-size: 0.95rem;
+}
 
 .social-badge:hover {
     transform: translateY(-2px);
-    opacity: 0.9;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    opacity: 1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.social-badge:active {
+    transform: translateY(0);
+}
+
+/* Specific Badge Brand Colorways */
+.social-badge.google-badge {
+    background: #ffffff !important;
+    color: #4285F4 !important;
+    border: 1px solid #e2e8f0 !important;
+    padding: 0 11px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+.social-badge.google-badge .google-rating-score {
+    color: #0f172a;
+    font-weight: 700;
+    font-size: 0.78rem;
+    margin-left: 2px;
+}
+.social-badge.google-badge .google-rating-star {
+    color: #f59e0b;
+    font-size: 0.82rem;
+    margin-left: 2px;
+}
+.social-badge.google-badge:hover {
+    border-color: #cbd5e1 !important;
+    box-shadow: 0 4px 12px rgba(66, 133, 244, 0.15) !important;
+}
+
+.social-badge.clutch-badge {
+    background: #17313b !important;
+    color: #ffffff !important;
+    padding: 0 11px !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    font-weight: 800 !important;
+    font-size: 0.8rem !important;
+    letter-spacing: -0.02em !important;
+}
+.social-badge.clutch-badge .clutch-dot {
+    color: #ff492c;
+    font-size: 0.85rem;
+    line-height: 0;
+    margin-left: 1px;
+}
+.social-badge.clutch-badge:hover {
+    background: #1e3f4c !important;
+    box-shadow: 0 4px 12px rgba(23, 49, 59, 0.35) !important;
+}
+
+.social-badge.yourstory-badge {
+    background: #eb2227 !important;
+    color: #ffffff !important;
+    padding: 0 11px !important;
+    border: 1px solid rgba(235, 34, 39, 0.3) !important;
+    font-weight: 800 !important;
+    font-size: 0.8rem !important;
+    letter-spacing: -0.02em !important;
+}
+.social-badge.yourstory-badge:hover {
+    background: #d6181d !important;
+    box-shadow: 0 4px 12px rgba(235, 34, 39, 0.35) !important;
+}
+
+.social-badge.github-badge {
+    background: #24292e !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+.social-badge.github-badge:hover {
+    background: #1b1f23 !important;
+    box-shadow: 0 4px 12px rgba(36, 41, 46, 0.35) !important;
+}
+
+.social-badge.linkedin-badge {
+    background: #0a66c2 !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(10, 102, 194, 0.3) !important;
+}
+.social-badge.linkedin-badge:hover {
+    background: #08529d !important;
+    box-shadow: 0 4px 12px rgba(10, 102, 194, 0.35) !important;
+}
+
+.social-badge.instagram-badge {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(220, 39, 67, 0.3) !important;
+}
+.social-badge.instagram-badge:hover {
+    box-shadow: 0 4px 12px rgba(220, 39, 67, 0.4) !important;
+}
+
+.social-badge.f6s-badge {
+    background: #ff2a00 !important;
+    color: #ffffff !important;
+    padding: 0 10px !important;
+    border: 1px solid rgba(255, 42, 0, 0.3) !important;
+    font-weight: 900 !important;
+    font-size: 0.78rem !important;
+    letter-spacing: -0.03em !important;
+}
+.social-badge.f6s-badge:hover {
+    background: #e62600 !important;
+    box-shadow: 0 4px 12px rgba(255, 42, 0, 0.35) !important;
+}
+
+.social-badge.x-badge {
+    background: #000000 !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+.social-badge.wa-badge {
+    background: #25d366 !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(37, 211, 102, 0.3) !important;
 }
 
 /* Bottom Row */
@@ -21381,53 +21521,57 @@ body .ck-section-heading .ck-section-summary {
 }
 
 .pricing-btn-dark {
-    background: #0f172a !important;
+    background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%) !important;
     color: #ffffff !important;
-    border-radius: 100px !important;
-    padding: 11px 20px !important;
-    font-weight: 700 !important;
-    font-size: 0.88rem !important;
+    border-radius: 10px !important;
+    padding: 13px 22px !important;
+    font-weight: 600 !important;
+    font-size: 0.92rem !important;
     text-align: center;
     text-decoration: none !important;
     display: flex !important;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    transition: all 0.25s ease !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 4px 14px rgba(15, 23, 42, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.18), inset 0 -1px 0 rgba(0, 0, 0, 0.4) !important;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4) !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
     width: 100% !important;
     box-sizing: border-box !important;
 }
 
 .pricing-btn-dark:hover {
-    background: #1e293b !important;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.25) !important;
+    background: linear-gradient(180deg, #334155 0%, #1e293b 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 10px 24px rgba(15, 23, 42, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.4) !important;
 }
 
 .pricing-btn-blue {
-    background: linear-gradient(135deg, #007aff 0%, #0056b3 50%, #007aff 100%) !important;
-    background-size: 200% auto !important;
+    background: linear-gradient(180deg, #0077ed 0%, #0062cc 100%) !important;
     color: #ffffff !important;
-    border-radius: 100px !important;
-    padding: 11px 20px !important;
-    font-weight: 700 !important;
-    font-size: 0.88rem !important;
+    border-radius: 10px !important;
+    padding: 13px 22px !important;
+    font-weight: 600 !important;
+    font-size: 0.92rem !important;
     text-align: center;
     text-decoration: none !important;
     display: flex !important;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    border: 1px solid rgba(0, 85, 204, 0.45) !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 5px 16px rgba(0, 113, 227, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.28), inset 0 -1px 0 rgba(0, 0, 0, 0.2) !important;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15) !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
     width: 100% !important;
     box-sizing: border-box !important;
-    box-shadow: 0 6px 18px rgba(0, 122, 255, 0.35) !important;
 }
 
 .pricing-btn-blue:hover {
-    background-position: right center !important;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(0, 122, 255, 0.45) !important;
+    background: linear-gradient(180deg, #1484f5 0%, #006ae0 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16), 0 10px 28px rgba(0, 113, 227, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.38), inset 0 -1px 0 rgba(0, 0, 0, 0.2) !important;
 }
 
 .pricing-btn-dark i, .pricing-btn-blue i {
@@ -25268,25 +25412,27 @@ b, strong {
 }
 
 .comparison-cta-btn {
-    background: #ffffff;
-    color: #0071e3;
-    padding: 14px 28px;
-    border-radius: 980px;
-    font-weight: 700;
-    font-size: 0.95rem;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    background: linear-gradient(180deg, #ffffff 0%, #f4f6f8 100%) !important;
+    color: #0071e3 !important;
+    padding: 13px 26px !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    border: 1px solid rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.9), inset 0 -1px 0 rgba(0, 0, 0, 0.06) !important;
     flex-shrink: 0;
-    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .comparison-cta-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-    color: #005bb5;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16), 0 8px 22px rgba(0, 0, 0, 0.14), inset 0 1px 0 #ffffff !important;
+    background: linear-gradient(180deg, #ffffff 0%, #eaf2fc 100%) !important;
+    color: #0062cc !important;
 }
 
 @media (max-width: 992px) {
@@ -27219,11 +27365,190 @@ b, strong {
 }
 
 /* ==========================================================================
-   Apple-Style Secondary CTA Button Component
+   UNIFIED APPLE 3D RECTANGULAR CTA DESIGN SYSTEM
    ========================================================================== */
+
+/* Base Apple 3D Rectangle CTA - Primary Blue */
+.cta-button,
+.cta-button.primary,
+a.cta-button,
+a.cta-button.primary,
+.hero-cta-button,
+#home .hero-cta-button,
+.nav-cta-btn,
+.nav-cta-btn-mobile,
+.btn,
+.btn-primary,
+.faq-card-cta-btn,
+.comparison-cta-btn,
+.pricing-btn-blue,
+.hosting-btn.primary,
+.process-cta .cta-button,
+.studio-cta-map,
+.service-detail-content .cta-button.primary {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    background: linear-gradient(180deg, #0077ed 0%, #0062cc 100%) !important;
+    color: #ffffff !important;
+    border-radius: 10px !important; /* Proper Apple Squircle Rectangle Box */
+    padding: 13px 26px !important;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Segoe UI", sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    letter-spacing: -0.01em !important;
+    text-decoration: none !important;
+    text-transform: none !important;
+    border: 1px solid rgba(0, 85, 204, 0.45) !important;
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.12),
+        0 5px 16px rgba(0, 113, 227, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.28),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.2) !important;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15) !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    transform: translateY(0) scale(1) !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 2 !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+}
+
+.cta-button::before,
+.cta-button::after,
+a.cta-button::before,
+a.cta-button::after,
+.hero-cta-button::before,
+.hero-cta-button::after {
+    display: none !important;
+}
+
+/* Primary Hover State */
+.cta-button:hover,
+.cta-button.primary:hover,
+a.cta-button:hover,
+a.cta-button.primary:hover,
+.hero-cta-button:hover,
+#home .hero-cta-button:hover,
+.nav-cta-btn:hover,
+.nav-cta-btn-mobile:hover,
+.btn:hover,
+.btn-primary:hover,
+.faq-card-cta-btn:hover,
+.comparison-cta-btn:hover,
+.pricing-btn-blue:hover,
+.hosting-btn.primary:hover,
+.process-cta .cta-button:hover,
+.studio-cta-map:hover,
+.service-detail-content .cta-button.primary:hover {
+    color: #ffffff !important;
+    background: linear-gradient(180deg, #1484f5 0%, #006ae0 100%) !important;
+    border-color: rgba(0, 85, 204, 0.6) !important;
+    transform: translateY(-2px) !important;
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.16),
+        0 10px 28px rgba(0, 113, 227, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.38),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Primary Active / Pressed State */
+.cta-button:active,
+.cta-button.primary:active,
+a.cta-button:active,
+a.cta-button.primary:active,
+.hero-cta-button:active,
+#home .hero-cta-button:active,
+.nav-cta-btn:active,
+.nav-cta-btn-mobile:active,
+.btn:active,
+.btn-primary:active,
+.faq-card-cta-btn:active,
+.comparison-cta-btn:active,
+.pricing-btn-blue:active,
+.hosting-btn.primary:active,
+.process-cta .cta-button:active,
+.studio-cta-map:active,
+.service-detail-content .cta-button.primary:active {
+    transform: translateY(1px) scale(0.99) !important;
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.15),
+        0 2px 6px rgba(0, 113, 227, 0.2),
+        inset 0 1px 1px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Apple 3D Rectangle CTA - WhatsApp Green */
+.cta-whatsapp,
+.studio-cta-wa,
+.cta-button.cta-whatsapp,
+a.cta-whatsapp,
+a.studio-cta-wa {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    background: linear-gradient(180deg, #25d366 0%, #1ebe5d 100%) !important;
+    color: #ffffff !important;
+    border-radius: 10px !important; /* Proper Apple Squircle Rectangle Box */
+    padding: 13px 26px !important;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    letter-spacing: -0.01em !important;
+    text-decoration: none !important;
+    text-transform: none !important;
+    border: 1px solid rgba(22, 163, 74, 0.45) !important;
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.12),
+        0 5px 16px rgba(37, 211, 102, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.32),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.2) !important;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15) !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    transform: translateY(0) scale(1) !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 2 !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+}
+
+.cta-whatsapp:hover,
+.studio-cta-wa:hover,
+.cta-button.cta-whatsapp:hover,
+a.cta-whatsapp:hover,
+a.studio-cta-wa:hover {
+    color: #ffffff !important;
+    background: linear-gradient(180deg, #32dc71 0%, #20b853 100%) !important;
+    border-color: rgba(22, 163, 74, 0.6) !important;
+    transform: translateY(-2px) !important;
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.16),
+        0 10px 28px rgba(37, 211, 102, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.42),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.2) !important;
+}
+
+.cta-whatsapp:active,
+.studio-cta-wa:active,
+.cta-button.cta-whatsapp:active,
+a.cta-whatsapp:active,
+a.studio-cta-wa:active {
+    transform: translateY(1px) scale(0.99) !important;
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.15),
+        0 2px 6px rgba(37, 211, 102, 0.2),
+        inset 0 1px 1px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Apple 3D Rectangle CTA - Secondary / Light Ghost */
 .cta-button.secondary,
 a.cta-button.secondary,
-.btn-secondary {
+.btn-secondary,
+.cta-button.outline,
+.hosting-btn.outline {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -27231,47 +27556,109 @@ a.cta-button.secondary,
     padding: 12px 24px !important;
     font-size: 0.92rem !important;
     font-weight: 600 !important;
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "DM Sans", sans-serif !important;
-    color: #2563eb !important;
-    background: #eff6ff !important;
-    border: 1.5px solid rgba(37, 99, 235, 0.3) !important;
-    border-radius: 980px !important;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", sans-serif !important;
+    color: #0071e3 !important;
+    background: linear-gradient(180deg, #ffffff 0%, #f4f6f8 100%) !important;
+    border: 1px solid rgba(0, 113, 227, 0.25) !important;
+    border-radius: 10px !important; /* Proper Apple Squircle Rectangle Box */
     text-decoration: none !important;
+    text-transform: none !important;
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    box-shadow: 0 2px 10px rgba(37, 99, 235, 0.08) !important;
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.05),
+        0 3px 8px rgba(0, 0, 0, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.06) !important;
     cursor: pointer !important;
     position: relative !important;
     z-index: 2 !important;
-}
-
-.cta-button.secondary::before,
-.cta-button.secondary::after,
-a.cta-button.secondary::before,
-a.cta-button.secondary::after {
-    display: none !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
 }
 
 .cta-button.secondary:hover,
 a.cta-button.secondary:hover,
-.btn-secondary:hover {
-    color: #ffffff !important;
-    background: #2563eb !important;
-    border-color: #2563eb !important;
-    box-shadow: 0 6px 22px rgba(37, 99, 235, 0.35) !important;
-    transform: translateY(-2px) scale(1.02) !important;
-}
-
-.cta-button.secondary:hover i,
-a.cta-button.secondary:hover i,
-.btn-secondary:hover i {
-    color: #ffffff !important;
+.btn-secondary:hover,
+.cta-button.outline:hover,
+.hosting-btn.outline:hover {
+    color: #0062cc !important;
+    background: linear-gradient(180deg, #ffffff 0%, #eaf2fc 100%) !important;
+    border-color: rgba(0, 113, 227, 0.45) !important;
+    box-shadow:
+        0 4px 12px rgba(0, 113, 227, 0.12),
+        0 8px 20px rgba(0, 113, 227, 0.1),
+        inset 0 1px 0 #ffffff,
+        inset 0 -1px 0 rgba(0, 0, 0, 0.06) !important;
+    transform: translateY(-2px) !important;
 }
 
 .cta-button.secondary:active,
 a.cta-button.secondary:active,
-.btn-secondary:active {
-    transform: translateY(0) scale(0.98) !important;
-    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2) !important;
+.btn-secondary:active,
+.cta-button.outline:active,
+.hosting-btn.outline:active {
+    transform: translateY(1px) scale(0.99) !important;
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.1),
+        inset 0 1px 1px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Apple 3D Rectangle CTA - Dark / Carbon */
+.cta-dark,
+.cta-button.cta-dark,
+.pricing-btn-dark,
+.reserve-spot-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%) !important;
+    color: #ffffff !important;
+    border-radius: 10px !important; /* Proper Apple Squircle Rectangle Box */
+    padding: 12px 24px !important;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 0.92rem !important;
+    letter-spacing: -0.01em !important;
+    text-decoration: none !important;
+    text-transform: none !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.3),
+        0 4px 14px rgba(15, 23, 42, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.4) !important;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4) !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    transform: translateY(0) scale(1) !important;
+    cursor: pointer !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+}
+
+.cta-dark:hover,
+.cta-button.cta-dark:hover,
+.pricing-btn-dark:hover,
+.reserve-spot-btn:hover {
+    color: #ffffff !important;
+    background: linear-gradient(180deg, #334155 0%, #1e293b 100%) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    transform: translateY(-2px) !important;
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.4),
+        0 10px 24px rgba(15, 23, 42, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.4) !important;
+}
+
+.cta-dark:active,
+.cta-button.cta-dark:active,
+.pricing-btn-dark:active,
+.reserve-spot-btn:active {
+    transform: translateY(1px) scale(0.99) !important;
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.3),
+        inset 0 1px 1px rgba(0, 0, 0, 0.4) !important;
 }
 
 @media (max-width: 768px) {
@@ -27281,11 +27668,325 @@ a.cta-button.secondary:active,
     }
 }
 
-.industry-bento-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(0, 113, 227, 0.25) !important;
-    border-color: rgba(0, 113, 227, 0.25) !important;
+/* ==========================================================================
+   PAN-INDIA CUSTOMER NETWORK - PROMINENT APPLE LIGHT VECTOR MAP
+   ========================================================================== */
+.india-network-section {
+    padding: 55px 0 75px 0;
+    position: relative;
+    background: transparent;
+    overflow: hidden;
 }
+
+.network-telemetry-compact-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 22px auto 30px auto;
+    flex-wrap: wrap;
+    max-width: 980px;
+}
+
+.network-mini-pill {
+    background: #ffffff;
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    border-radius: 100px;
+    padding: 9px 22px;
+    box-shadow: 0 2px 12px rgba(15, 23, 42, 0.03);
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 0.86rem;
+    color: #475569;
+    font-weight: 500;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.network-mini-pill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.09);
+    border-color: #bfdbfe;
+}
+
+.network-mini-pill strong {
+    font-size: 1.02rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+}
+
+/* Standalone Prominent Map Stage (Apple Light Aesthetic) */
+.apple-map-stage {
+    position: relative;
+    width: 100%;
+    max-width: 1020px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.apple-map-stage-bg {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 720px;
+    height: 720px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, rgba(56, 189, 248, 0.03) 50%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.apple-india-svg {
+    width: 100%;
+    height: auto;
+    max-height: 640px;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 18px 40px rgba(37, 99, 235, 0.08)) drop-shadow(0 2px 8px rgba(15, 23, 42, 0.04));
+}
+
+/* State Styling (Crisp Apple Pearl-Ice Palette) */
+.india-state {
+    fill: #eaf1fa !important;
+    fill-opacity: 0.95 !important;
+    stroke: #b4cbdf !important;
+    stroke-opacity: 0.95 !important;
+    stroke-width: 1px !important;
+    stroke-linejoin: round !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    cursor: pointer !important;
+}
+
+.india-state:hover {
+    fill: #93c5fd !important;
+    fill-opacity: 1 !important;
+    stroke: #2563eb !important;
+    stroke-opacity: 1 !important;
+    stroke-width: 1.6px !important;
+    filter: drop-shadow(0 2px 12px rgba(37, 99, 235, 0.28)) !important;
+}
+
+/* Central Command State (Delhi / NCR) */
+#state-dl {
+    fill: #2563eb !important;
+    fill-opacity: 1 !important;
+    stroke: #1d4ed8 !important;
+    stroke-width: 2px !important;
+}
+
+/* Network Laser Arcs */
+.network-arc {
+    stroke: #2563eb !important;
+    stroke-width: 1.35px !important;
+    stroke-dasharray: 5 3.5 !important;
+    opacity: 0.8 !important;
+    animation: networkArcFlow 18s linear infinite !important;
+    pointer-events: none !important;
+}
+
+@keyframes networkArcFlow {
+    from { stroke-dashoffset: 200; }
+    to { stroke-dashoffset: 0; }
+}
+
+/* City Pins & Hotspots */
+.city-hotspot {
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.city-hotspot:hover {
+    transform: scale(1.15);
+}
+
+.city-pulse-ring {
+    animation: mapPulseRingLight 2.4s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    transform-origin: center;
+}
+
+@keyframes mapPulseRingLight {
+    0% { r: 5px; opacity: 0.85; stroke-width: 2px; }
+    50% { opacity: 0.4; }
+    100% { r: 24px; opacity: 0; stroke-width: 0.5px; }
+}
+
+.city-label-tag {
+    font-size: 11px;
+    font-weight: 700;
+    fill: #0f172a;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+    letter-spacing: 0.01em;
+    pointer-events: none;
+}
+
+.city-subtag {
+    font-size: 9.5px;
+    font-weight: 700;
+    fill: #2563eb;
+    pointer-events: none;
+}
+
+/* Professional Apple Telemetry HUD Card */
+.apple-map-hud-pro {
+    max-width: 860px;
+    width: 100%;
+    margin: 24px auto 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    border-radius: 20px;
+    padding: 16px 26px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
+    z-index: 5;
+    flex-wrap: wrap;
+    transition: all 0.25s ease;
+}
+
+.hud-left-pro {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.hud-icon-pro {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #2563eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+}
+
+.hud-title-pro {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.01em;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hud-desc-pro {
+    font-size: 0.84rem;
+    color: #64748b;
+    margin-top: 3px;
+    line-height: 1.4;
+}
+
+.live-beacon-dot-pro {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 8px #10b981;
+    display: inline-block;
+    animation: liveBeaconAnim 2s infinite;
+}
+
+@keyframes liveBeaconAnim {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.hud-right-pro {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.hud-badge-pro {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #2563eb;
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.hud-wa-btn-pro {
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    color: #ffffff;
+    border-radius: 100px;
+    padding: 8px 18px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+    box-shadow: 0 3px 12px rgba(37, 211, 102, 0.3);
+}
+
+.hud-wa-btn-pro:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+}
+
+/* Regional SEO Bar */
+.pan-india-links-bar {
+    max-width: 960px;
+    margin: 22px auto 0 auto;
+    padding: 14px 22px;
+    background: #ffffff;
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    border-radius: 16px;
+    font-size: 0.82rem;
+    color: #64748b;
+    line-height: 1.75;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.02);
+}
+
+.pan-india-links-bar a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.pan-india-links-bar a:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .apple-map-hud-pro {
+        border-radius: 18px;
+        padding: 16px 18px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+    .hud-right-pro {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+
+
+
 
 
 
