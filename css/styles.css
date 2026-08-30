@@ -27946,19 +27946,90 @@ a.cta-button.secondary:active,
     box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
 }
 
-/* Regional SEO Bar */
+/* Regional Hubs & Capabilities Bar */
+.regional-hubs-container,
 .pan-india-links-bar {
     max-width: 960px;
-    margin: 22px auto 0 auto;
-    padding: 14px 22px;
+    margin: 20px auto 0 auto;
+    padding: 16px 20px;
     background: #ffffff;
     border: 1px solid rgba(226, 232, 240, 0.95);
-    border-radius: 16px;
-    font-size: 0.82rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.03), 0 1px 3px rgba(15, 23, 42, 0.02);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.regional-hubs-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.regional-hubs-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: #64748b;
-    line-height: 1.75;
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.02);
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 4px 12px;
+    border-radius: 100px;
+}
+
+.regional-hubs-badge i {
+    color: #2563eb;
+    font-size: 0.75rem;
+}
+
+.regional-hubs-chips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px 10px;
+    width: 100%;
+}
+
+.hub-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 14px;
+    background: #f8fafc;
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    border-radius: 100px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #334155;
+    text-decoration: none;
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.02);
+    white-space: nowrap;
+}
+
+.hub-chip i {
+    font-size: 0.78rem;
+    color: #64748b;
+    transition: color 0.22s ease;
+}
+
+.hub-chip:hover {
+    background: #eff6ff;
+    border-color: #93c5fd;
+    color: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
+}
+
+.hub-chip:hover i {
+    color: #2563eb;
 }
 
 .pan-india-links-bar a {
@@ -27985,6 +28056,39 @@ a.cta-button.secondary:active,
         width: 100%;
         justify-content: space-between;
     }
+    .regional-hubs-container {
+        padding: 14px 16px;
+        margin-top: 16px;
+        border-radius: 16px;
+    }
+    .hub-chip {
+        padding: 6px 11px;
+        font-size: 0.78rem;
+    }
+}
+
+/* Footer Taxonomy Coverage Bar */
+.footer-taxonomy-bar {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.8rem;
+    color: #94a3b8;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.footer-taxonomy-bar a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.footer-taxonomy-bar a:hover {
+    color: #60a5fa;
+    background: rgba(96, 165, 250, 0.08);
 }
 
 

@@ -5388,18 +5388,81 @@
         transform: translateY(-2px) !important;
         box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4) !important;
     }
+    .regional-hubs-container,
     .pan-india-links-bar {
         max-width: 960px !important;
-        margin: 24px auto 0 auto !important;
-        padding: 14px 22px !important;
+        margin: 20px auto 0 auto !important;
+        padding: 16px 20px !important;
         background: #ffffff !important;
         border: 1px solid rgba(226, 232, 240, 0.95) !important;
-        border-radius: 16px !important;
-        font-size: 0.82rem !important;
+        border-radius: 20px !important;
+        box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.03), 0 1px 3px rgba(15, 23, 42, 0.02) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 12px !important;
+    }
+    .regional-hubs-header {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    .regional-hubs-badge {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        font-size: 0.72rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.08em !important;
+        text-transform: uppercase !important;
         color: #64748b !important;
-        line-height: 1.75 !important;
-        text-align: center !important;
-        box-shadow: 0 2px 10px rgba(15, 23, 42, 0.02) !important;
+        background: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+        padding: 4px 12px !important;
+        border-radius: 100px !important;
+    }
+    .regional-hubs-badge i {
+        color: #2563eb !important;
+        font-size: 0.75rem !important;
+    }
+    .regional-hubs-chips {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 8px 10px !important;
+        width: 100% !important;
+    }
+    .hub-chip {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 7px !important;
+        padding: 7px 14px !important;
+        background: #f8fafc !important;
+        border: 1px solid rgba(226, 232, 240, 0.95) !important;
+        border-radius: 100px !important;
+        font-size: 0.82rem !important;
+        font-weight: 600 !important;
+        color: #334155 !important;
+        text-decoration: none !important;
+        transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.02) !important;
+        white-space: nowrap !important;
+    }
+    .hub-chip i {
+        font-size: 0.78rem !important;
+        color: #64748b !important;
+        transition: color 0.22s ease !important;
+    }
+    .hub-chip:hover {
+        background: #eff6ff !important;
+        border-color: #93c5fd !important;
+        color: #1d4ed8 !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12) !important;
+    }
+    .hub-chip:hover i {
+        color: #2563eb !important;
     }
     .pan-india-links-bar a {
         color: #2563eb !important;
@@ -5683,17 +5746,48 @@
                 </div>
             </div>
 
-            <!-- Regional Quick Links Bar -->
-            <div class="pan-india-links-bar" data-aos="fade-up" data-aos-delay="250">
-                <span style="font-weight: 700; color: #0f172a; margin-right: 6px;">Regional Hubs:</span>
-                <span><a href="website-designing-company-in-delhi.html">Delhi Web Design</a></span> • 
-                <span><a href="website-design-company-gurgaon.html">Gurgaon Tech</a></span> • 
-                <span><a href="website-design-company-noida.html">Noida Enterprise</a></span> • 
-                <span><a href="website-designing-company-south-delhi.html">South Delhi Luxury</a></span> • 
-                <span><a href="ecommerce-website-development-delhi.html">Pan-India E-Commerce</a></span> • 
-                <span><a href="wordpress-website-development-delhi.html">WordPress &amp; CMS</a></span> • 
-                <span><a href="website-redesign-services-delhi.html">Enterprise Redesign</a></span> • 
-                <span><a href="crm-product.html">Custom Business CRM</a></span>
+            <!-- Regional Hubs & Capabilities Section -->
+            <div class="regional-hubs-container" data-aos="fade-up" data-aos-delay="250">
+                <div class="regional-hubs-header">
+                    <span class="regional-hubs-badge">
+                        <i class="fas fa-map-pin"></i>
+                        <span>Regional Hubs &amp; Specialized Capabilities</span>
+                    </span>
+                </div>
+                <div class="regional-hubs-chips">
+                    <a href="website-designing-company-in-delhi.html" class="hub-chip">
+                        <i class="fas fa-location-dot"></i>
+                        <span>Delhi Web Design</span>
+                    </a>
+                    <a href="website-design-company-gurgaon.html" class="hub-chip">
+                        <i class="fas fa-building"></i>
+                        <span>Gurgaon Tech</span>
+                    </a>
+                    <a href="website-design-company-noida.html" class="hub-chip">
+                        <i class="fas fa-city"></i>
+                        <span>Noida Enterprise</span>
+                    </a>
+                    <a href="website-designing-company-south-delhi.html" class="hub-chip">
+                        <i class="fas fa-gem"></i>
+                        <span>South Delhi Luxury</span>
+                    </a>
+                    <a href="ecommerce-website-development-delhi.html" class="hub-chip">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span>Pan-India E-Commerce</span>
+                    </a>
+                    <a href="wordpress-website-development-delhi.html" class="hub-chip">
+                        <i class="fab fa-wordpress-simple"></i>
+                        <span>WordPress &amp; CMS</span>
+                    </a>
+                    <a href="website-redesign-services-delhi.html" class="hub-chip">
+                        <i class="fas fa-rotate"></i>
+                        <span>Enterprise Redesign</span>
+                    </a>
+                    <a href="crm-product.html" class="hub-chip">
+                        <i class="fas fa-cubes"></i>
+                        <span>Custom Business CRM</span>
+                    </a>
+                </div>
             </div>
 
         </div>
