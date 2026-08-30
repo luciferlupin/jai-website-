@@ -20374,14 +20374,17 @@ section, header, footer, .section-padding, .booking-premium-section, .booking-ca
     }
 
     #home .apple-trust-bar {
-        margin-top: 0 !important;
-        padding-top: 0 !important;
+        margin-top: 4px !important;
+        padding-top: 2px !important;
         margin-bottom: 0 !important;
         padding-bottom: 0 !important;
     }
 
-    #home .apple-trust-bar > p {
-        margin-bottom: 0.5rem !important;
+    #home .apple-trust-bar > p,
+    #home .apple-trust-title {
+        margin-bottom: 4px !important;
+        font-size: 0.65rem !important;
+        letter-spacing: 0.08em !important;
     }
 
     #home .apple-marquee-track {
@@ -20390,8 +20393,8 @@ section, header, footer, .section-padding, .booking-premium-section, .booking-ca
 
     body.home-wantace-background .work-showcase,
     .work-showcase {
-        padding-top: 12px !important;
-        padding-bottom: 32px !important;
+        padding-top: 6px !important;
+        padding-bottom: 24px !important;
         margin-top: 0 !important;
     }
 }
@@ -28156,16 +28159,16 @@ a.cta-button.secondary:active,
 /* Mobile Responsive (max-width: 768px) */
 @media (max-width: 768px) {
     .verified-trust-section {
-        margin: 20px auto 28px;
-        padding: 0 14px;
+        margin: 10px auto 10px !important;
+        padding: 0 12px !important;
     }
 
     .verified-trust-card {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 12px 14px !important;
-        padding: 16px 14px !important;
-        border-radius: 18px !important;
+        gap: 10px 12px !important;
+        padding: 12px 12px !important;
+        border-radius: 16px !important;
     }
 
     .trust-divider {
@@ -28175,8 +28178,8 @@ a.cta-button.secondary:active,
     .trust-badge-item {
         display: flex !important;
         align-items: center !important;
-        gap: 10px !important;
-        padding: 8px 10px !important;
+        gap: 8px !important;
+        padding: 7px 8px !important;
         background: rgba(248, 250, 252, 0.7) !important;
         border: 1px solid rgba(226, 232, 240, 0.8) !important;
         border-radius: 12px !important;
@@ -28189,35 +28192,45 @@ a.cta-button.secondary:active,
     }
 
     .trust-icon-box {
-        width: 36px !important;
-        height: 36px !important;
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    .apple-section-divider-wrapper {
+        padding: 4px 14px 6px !important;
+        margin: 0 auto !important;
     }
 }
 
 @media (max-width: 380px) {
+    .verified-trust-section {
+        margin: 8px auto 8px !important;
+        padding: 0 8px !important;
+    }
+
     .verified-trust-card {
         gap: 8px 8px !important;
-        padding: 12px 10px !important;
+        padding: 10px 8px !important;
     }
 
     .trust-badge-item {
-        gap: 7px !important;
-        padding: 6px 6px !important;
+        gap: 6px !important;
+        padding: 5px 6px !important;
     }
 
     .trust-icon-box {
-        width: 32px !important;
-        height: 32px !important;
-        font-size: 0.75rem !important;
+        width: 30px !important;
+        height: 30px !important;
+        font-size: 0.72rem !important;
     }
 
     .trust-score,
     .trust-title {
-        font-size: 0.82rem !important;
+        font-size: 0.80rem !important;
     }
 
     .trust-sub {
-        font-size: 0.62rem !important;
+        font-size: 0.60rem !important;
     }
 }
 
