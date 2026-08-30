@@ -375,7 +375,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    let isScrollTicking = false;
+    window.addEventListener('scroll', function() {
+        if (!isScrollTicking) {
+            requestAnimationFrame(function() {
+                handleScroll();
+                isScrollTicking = false;
+            });
+            isScrollTicking = true;
+        }
+    }, { passive: true });
     // Initial run on DOM load to set correct initial highlights
     handleScroll();
     
@@ -507,75 +516,18 @@ document.addEventListener('DOMContentLoaded', function() {
         startProcessTimer();
     }
     
-    // Package cards animation
-    const packageCards = document.querySelectorAll('.service-card');
-    
-    // Add initial styles to package cards
-    packageCards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = `opacity 0.6s ease-out ${index * 0.15}s, transform 0.6s ease-out ${index * 0.15}s`;
-    });
-    
-    // Intersection Observer for package cards
-    const packageObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, { threshold: 0.1 });
-    
-    // Observe each package card
-    packageCards.forEach(card => {
-        packageObserver.observe(card);
-    });
-    
-    // Form Submission
+    // Contact Form Submission
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Get form values
             const formData = new FormData(contactForm);
             const formValues = Object.fromEntries(formData.entries());
-            
-            // Here you would typically send the form data to a server
             console.log('Form submitted:', formValues);
-            
-            // Reset form
             contactForm.reset();
         });
     }
-    
-    // Add animation on scroll
-    const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.service-card, .portfolio-item, .contact-info');
-        
-        elements.forEach((element, index) => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.2;
-            
-            if (elementPosition < screenPosition) {
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
-            }
-        });
-    };
-    
-    // Set initial styles for animation
-    const elements = document.querySelectorAll('.service-card, .portfolio-item, .contact-info');
-    elements.forEach((element, index) => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
-        element.style.transition = `opacity 0.5s ease-out ${index * 0.1}s, transform 0.5s ease-out ${index * 0.1}s`;
-    });
-    
-    // Trigger initial animation
-    setTimeout(animateOnScroll, 100);
-    
+
     // Newsletter form handling
     const newsletterForm = document.getElementById('newsletter-form');
     const successMessage = document.getElementById('subscription-success');
@@ -583,56 +535,47 @@ document.addEventListener('DOMContentLoaded', function() {
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
             const formData = new FormData(newsletterForm);
             
-            // Submit the form using fetch
             fetch(newsletterForm.action, {
                 method: 'POST',
                 body: formData,
                 mode: 'no-cors'
             })
             .then(() => {
-                // Hide form and show success message
                 newsletterForm.style.display = 'none';
-                successMessage.style.display = 'block';
-                successMessage.scrollIntoView({ behavior: 'smooth' });
+                if (successMessage) {
+                    successMessage.style.display = 'block';
+                    successMessage.scrollIntoView({ behavior: 'smooth' });
+                }
             })
             .catch(error => {
                 console.error('Error:', error);
-                // Fallback to normal form submission if fetch fails
                 newsletterForm.submit();
             });
         });
     }
-    // Listen for scroll events
-    window.addEventListener('scroll', animateOnScroll, { passive: true });
-    
+
     // FAQ Accordion Interaction
     const faqItems = document.querySelectorAll('.faq-card-item, .faq-item, .faq-item-accordion');
     faqItems.forEach(item => {
         item.addEventListener('click', function(e) {
-            // Prevent close when clicking inside the answer content (like links or paragraphs)
             if (e.target.closest('.faq-card-answer, .faq-answer, .faq-body-accordion')) {
                 return;
             }
             
             const isOpen = item.classList.contains('active');
             
-            // Close other FAQ items
             faqItems.forEach(otherItem => {
                 if (otherItem !== item && otherItem.classList.contains('active')) {
                     otherItem.classList.remove('active');
                     const otherIcon = otherItem.querySelector('.faq-card-toggle i, .faq-toggle-icon i, .faq-header-accordion i');
-                    if (otherIcon) {
-                        if (otherIcon.classList.contains('fa-minus') || otherIcon.classList.contains('fa-plus')) {
-                            otherIcon.className = 'fas fa-plus';
-                        }
+                    if (otherIcon && (otherIcon.classList.contains('fa-minus') || otherIcon.classList.contains('fa-plus'))) {
+                        otherIcon.className = 'fas fa-plus';
                     }
                 }
             });
             
-            // Toggle current FAQ item
             const currentIcon = item.querySelector('.faq-card-toggle i, .faq-toggle-icon i, .faq-header-accordion i');
             if (isOpen) {
                 item.classList.remove('active');
@@ -648,19 +591,67 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add loading animation
-    const loader = document.createElement('div');
-    loader.className = 'page-loader';
-    loader.innerHTML = '<div class="spinner"></div>';
-    document.body.appendChild(loader);
-    
-    // Remove loader after page is fully loaded
-    setTimeout(function() {
-        loader.style.opacity = '0';
-        setTimeout(function() {
-            loader.style.display = 'none';
-        }, 500);
-    }, 500);
+    // Unified High-Performance Scroll Reveal Engine (Native GPU-accelerated IntersectionObserver)
+    (function initScrollReveal() {
+        const animatedSelectors = [
+            '[data-aos]',
+            '.fade-up',
+            '.ck-reveal-item',
+            '.service-card',
+            '.feature-card',
+            '.expertise-card',
+            '.testi-card',
+            '.built-card',
+            '.portfolio-card-premium',
+            '.bento-card',
+            '.spec-col',
+            '.spec-vis-card',
+            '.spec-tech-card'
+        ];
+
+        const revealElement = (el) => {
+            el.classList.add('aos-animate', 'visible', 'is-revealed');
+        };
+
+        const elements = document.querySelectorAll(animatedSelectors.join(', '));
+        
+        if (!('IntersectionObserver' in window)) {
+            elements.forEach(revealElement);
+            return;
+        }
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    revealElement(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.05,
+            rootMargin: '0px 0px 80px 0px' // Reveal smoothly right before entering viewport
+        });
+
+        elements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            // Instantly reveal elements already visible or in top fold
+            if (rect.top < window.innerHeight + 120) {
+                revealElement(el);
+            } else {
+                revealObserver.observe(el);
+            }
+        });
+
+        // Add js-ready class on documentElement
+        document.documentElement.classList.add('js-ready');
+    })();
+
+    // Safe fallback for window.AOS to prevent third-party / inline errors
+    window.AOS = window.AOS || {
+        init: function() {},
+        refresh: function() {},
+        refreshHard: function() {}
+    };
 
     // 'Our Expertise' Premium Card Scroll Stacking & Visual Dynamics
     const cards = document.querySelectorAll('.saas-scroll-section .sticky-card');

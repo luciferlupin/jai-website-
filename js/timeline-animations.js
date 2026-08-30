@@ -66,12 +66,18 @@ const initTimeline = () => {
     // Calculate metrics initially
     updateMetrics();
 
-    // Listen to Lenis scroll event
-    if (window.lenis) {
-        window.lenis.on('scroll', handleScroll);
-    } else {
-        window.addEventListener('scroll', handleScroll, { passive: true });
-    }
+    // Listen to scroll event with requestAnimationFrame throttle
+    let isTimelineTicking = false;
+    const requestTimelineTick = () => {
+        if (!isTimelineTicking) {
+            requestAnimationFrame(() => {
+                handleScroll();
+                isTimelineTicking = false;
+            });
+            isTimelineTicking = true;
+        }
+    };
+    window.addEventListener('scroll', requestTimelineTick, { passive: true });
     
     // Initial check on load
     handleScroll();

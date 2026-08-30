@@ -3,7 +3,10 @@
         const desktop = window.matchMedia('(min-width: 1200px)');
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-        if (!desktop.matches) {
+        if (!desktop.matches || reducedMotion.matches) {
+            document.querySelectorAll('.ck-reveal-item').forEach((el) => {
+                el.classList.add('is-revealed');
+            });
             return;
         }
 
@@ -24,7 +27,6 @@
 
         revealGroups.forEach((selectors) => {
             let index = 0;
-
             selectors.forEach((selector) => {
                 document.querySelectorAll(selector).forEach((element) => {
                     element.classList.add('ck-reveal-item');
@@ -37,26 +39,31 @@
 
         document.body.classList.add('ck-motion-ready');
 
-        if (reducedMotion.matches || !('IntersectionObserver' in window)) {
+        if (!('IntersectionObserver' in window)) {
             elements.forEach((element) => element.classList.add('is-revealed'));
             return;
         }
 
-        const observer = new IntersectionObserver((entries) => {
+        const observer = new IntersectionObserver((entries, obs) => {
             entries.forEach((entry) => {
-                if (!entry.isIntersecting) {
-                    return;
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-revealed');
+                    obs.unobserve(entry.target);
                 }
-
-                entry.target.classList.add('is-revealed');
-                observer.unobserve(entry.target);
             });
         }, {
-            threshold: 0.08,
-            rootMargin: '0px 0px -8% 0px'
+            threshold: 0.05,
+            rootMargin: '0px 0px 80px 0px'
         });
 
-        elements.forEach((element) => observer.observe(element));
+        elements.forEach((element) => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top < window.innerHeight + 100) {
+                element.classList.add('is-revealed');
+            } else {
+                observer.observe(element);
+            }
+        });
     };
 
     if (document.readyState === 'loading') {

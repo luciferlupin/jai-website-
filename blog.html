@@ -165,14 +165,6 @@
     <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="css/styles.css?v=20260820_fresh">
 
-    <!-- AOS (Animate On Scroll) CSS -->
-    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
-
-    <!-- Lenis Smooth Scroll CSS -->
-    <link rel="preload" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css"></noscript>
-    
     <!-- Apple-style & Curious Kaizer Cohesive Style Sheets -->
     <style>
         body {
@@ -2029,8 +2021,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-    <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js" defer></script>
     <script src="js/scripts.js?v=20260820_fresh" defer></script>
     <script src="js/analytics-tracker.js?v=20260820_fresh" defer></script>
     
@@ -2065,96 +2055,25 @@
         };
 
         document.addEventListener('DOMContentLoaded', () => {
-
-            // ==============================
-            // Lenis Smooth Scroll Init
-            // ==============================
-            const lenis = new Lenis({
-                lerp: 0.1,
-                orientation: 'vertical',
-                gestureOrientation: 'vertical',
-                smoothWheel: true,
-                wheelMultiplier: 1.0,
-                touchMultiplier: 1.5,
-                infinite: false,
-            });
-            window.lenis = lenis;
-
-            function raf(time) {
-                lenis.raf(time);
-                requestAnimationFrame(raf);
-            }
-            requestAnimationFrame(raf);
-
-            // Synchronize scroll events for AOS and other scroll listeners
-            let isSyncingScroll = false;
-            lenis.on('scroll', () => {
-                if (!isSyncingScroll) {
-                    isSyncingScroll = true;
-                    window.dispatchEvent(new Event('scroll'));
-                    isSyncingScroll = false;
-                }
-            });
-
-            // ==============================
-            // AOS (Animate On Scroll) Init
-            // ==============================
-            const initAOS = () => {
-                if (typeof AOS !== 'undefined' && typeof AOS.init === 'function') {
-                    try {
-                        AOS.init({
-                            duration: 800,
-                            easing: 'ease-in-out',
-                            once: true,
-                            offset: 100,
-                            mirror: false
-                        });
-                    } catch (e) {}
-                }
-            };
-            if ('requestIdleCallback' in window) {
-                requestIdleCallback(() => initAOS());
-            } else {
-                setTimeout(initAOS, 100);
-            }
-
-            // ==============================
             // Interactive Category Filter
-            // ==============================
             const filterTabs = document.querySelectorAll('.filter-tab');
             const blogCards = document.querySelectorAll('.blog-card-item');
 
             filterTabs.forEach(tab => {
                 tab.addEventListener('click', () => {
-                    // Update active button classes
                     filterTabs.forEach(t => t.classList.remove('active'));
                     tab.classList.add('active');
 
-                    // Filter cards
                     const category = tab.getAttribute('data-filter');
 
                     blogCards.forEach(card => {
                         const cardCategory = card.getAttribute('data-category');
-                        
                         if (category === 'all' || cardCategory === category) {
                             card.classList.remove('hidden');
-                            // Add smooth fade animation
-                            card.style.opacity = '0';
-                            setTimeout(() => {
-                                card.style.transition = 'opacity 0.4s ease';
-                                card.style.opacity = '1';
-                            }, 50);
                         } else {
                             card.classList.add('hidden');
                         }
                     });
-
-                    // Refresh AOS after filtering
-                    if (window.AOS && typeof window.AOS.refresh === 'function') {
-                        try {
-                            window.AOS.refresh();
-                        } catch (e) {}
-                    }
                 });
             });
         });

@@ -2842,18 +2842,21 @@ section {
         transition: border-color 0.3s ease !important;
     }
 
-    /* Mobile scroll-triggered animations */
+    /* Mobile scroll-triggered animations - resilient baseline */
     .fade-up {
-        opacity: 0 !important;
-        transform: translateY(30px) !important;
-        transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) !important;
-        will-change: transform, opacity;
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    html.js-ready .fade-up:not(.visible) {
+        opacity: 0;
+        transform: translateY(24px);
     }
 
     .fade-up.visible {
         opacity: 1 !important;
         transform: translateY(0) !important;
-        transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
 
     /* Mobile loading animations */
@@ -12557,13 +12560,18 @@ html.lenis, html.lenis body {
     overflow: hidden;
 }
 
-/* Custom premium scroll transition with Apple-like blur & fade flow */
+/* Resilient scroll transitions with high-performance GPU animations */
 [data-aos="fade-up"] {
-    transform: translateY(40px) !important;
-    opacity: 0 !important;
-    filter: blur(12px) !important;
-    transition-property: transform, opacity, filter !important;
-    will-change: transform, opacity, filter;
+    opacity: 1;
+    transform: translateY(0);
+    filter: none;
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+}
+
+html.js-ready [data-aos="fade-up"]:not(.aos-animate) {
+    opacity: 0;
+    transform: translateY(28px);
+    filter: blur(4px);
 }
 
 [data-aos="fade-up"].aos-animate {
@@ -12572,7 +12580,7 @@ html.lenis, html.lenis body {
     filter: blur(0) !important;
 }
 
-/* Force premium unblur scrolling transitions on cards and items, overriding specific hover !important rules */
+/* Force premium smooth scrolling transitions on cards and items */
 .pricing-card[data-aos],
 .portfolio-item[data-aos],
 .sticky-card[data-aos],
@@ -12580,10 +12588,7 @@ html.lenis, html.lenis body {
 .bento-card[data-aos],
 .service-card[data-aos],
 .fade-up {
-    transition-property: transform, opacity !important;
-    transition-duration: 0.9s !important;
-    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
-    will-change: transform, opacity;
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 /* Restore quick hover transition responsiveness once scrolled in and active */
@@ -12594,10 +12599,7 @@ html.lenis, html.lenis body {
 .bento-card.aos-animate:hover,
 .service-card.aos-animate:hover,
 .fade-up.visible:hover {
-    transition-property: transform, box-shadow !important;
-    transition-duration: 0.3s !important;
-    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
-    transition-delay: 0s !important; /* Instantly respond to hover */
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 /* Minimize bottom spacing for why choose us section */
@@ -21187,23 +21189,24 @@ body.home-wantace-background {
         max-width: var(--ck-page-rail);
     }
 
-    /* Coordinated one-time section entrance. */
-    body.ck-motion-ready .ck-reveal-item {
-        opacity: 0 !important;
-        transform: translate3d(0, 24px, 0) scale(0.985) !important;
-        filter: blur(4px);
-        transition:
-            opacity 0.72s cubic-bezier(0.16, 1, 0.3, 1),
-            transform 0.82s cubic-bezier(0.16, 1, 0.3, 1),
-            filter 0.72s ease !important;
-        transition-delay: calc(var(--ck-reveal-index, 0) * 70ms) !important;
-        will-change: opacity, transform, filter;
+    /* Coordinated one-time section entrance - Resilient baseline */
+    .ck-reveal-item {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        filter: none;
+        transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+    }
+
+    body.ck-motion-ready .ck-reveal-item:not(.is-revealed) {
+        opacity: 0;
+        transform: translate3d(0, 20px, 0) scale(0.985);
+        filter: blur(3px);
     }
 
     body.ck-motion-ready .ck-reveal-item.is-revealed {
         opacity: 1 !important;
         transform: translate3d(0, 0, 0) scale(1) !important;
-        filter: blur(0);
+        filter: blur(0) !important;
     }
 
 /* Site-wide homepage visual consistency. */

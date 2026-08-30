@@ -19,10 +19,7 @@
                         hostname.startsWith('10.') ||
                         hostname.startsWith('172.') ||
                         hostname.endsWith('.local') ||
-                        port === '8080' ||
-                        port === '3000' ||
-                        port === '8000' ||
-                        port === '8085' ||
+                        (port !== '' && port !== '80' && port !== '443') ||
                         window.location.protocol === 'file:';
         if (isLocal) {
             return;
@@ -66,11 +63,15 @@
             }
         }
 
-        // Configuration - Fallback pattern (Global config -> LocalStorage -> Default)
-        const SUPABASE_URL = window.SUPABASE_URL || safeGetLocalStorage('supabase_url') || "https://umuetoqaoaqlhelgoyfx.supabase.co";
-        const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || safeGetLocalStorage('supabase_anon_key') || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVtdWV0b3Fhb2FxbGhlbGdveWZ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIxMzk5MzcsImV4cCI6MjA5NzcxNTkzN30.PCgA5s8nlK_eadT3W4hUG9zzL_ISn5-zMqk2SRS2EuQ";
+        // Configuration - Only run if a valid, active Supabase endpoint is explicitly configured
+        const SUPABASE_URL = window.SUPABASE_URL || safeGetLocalStorage('supabase_url') || "";
+        const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || safeGetLocalStorage('supabase_anon_key') || "";
 
-        if (!SUPABASE_URL || SUPABASE_URL === "YOUR_SUPABASE_URL" || !SUPABASE_ANON_KEY || SUPABASE_ANON_KEY === "YOUR_SUPABASE_ANON_KEY") {
+        if (!SUPABASE_URL || 
+            SUPABASE_URL === "YOUR_SUPABASE_URL" || 
+            SUPABASE_URL.includes("umuetoqaoaqlhelgoyfx") || 
+            !SUPABASE_ANON_KEY || 
+            SUPABASE_ANON_KEY === "YOUR_SUPABASE_ANON_KEY") {
             return;
         }
 
