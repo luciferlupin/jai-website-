@@ -27782,21 +27782,6 @@ a.cta-button.secondary:active,
     stroke-width: 2px !important;
 }
 
-/* Network Laser Arcs */
-.network-arc {
-    stroke: #2563eb !important;
-    stroke-width: 1.35px !important;
-    stroke-dasharray: 5 3.5 !important;
-    opacity: 0.8 !important;
-    animation: networkArcFlow 18s linear infinite !important;
-    pointer-events: none !important;
-}
-
-@keyframes networkArcFlow {
-    from { stroke-dashoffset: 200; }
-    to { stroke-dashoffset: 0; }
-}
-
 /* City Pins & Hotspots */
 .city-hotspot {
     cursor: pointer;
