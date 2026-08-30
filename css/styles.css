@@ -15799,10 +15799,10 @@ section, header, footer, .section-padding, .booking-premium-section, .booking-ca
 #home .journey-arch-svg {
     position: absolute;
     z-index: 1;
-    top: 168px;
-    left: calc(12.9% + 90px);
+    top: 160px;
+    left: calc(4% + 95px);
     right: auto;
-    width: calc(73.1% - 170px);
+    width: calc(92% - 190px);
     height: 110px;
     overflow: visible;
     pointer-events: none;
@@ -15898,9 +15898,9 @@ section, header, footer, .section-padding, .booking-premium-section, .booking-ca
 
 /* Card 1: Discovery Call (Spatial Glass) */
 #home .timeline-card.card-discovery {
-    left: 12.9%;
-    top: 24px;
-    width: 185px;
+    left: 4%;
+    top: 20px;
+    width: 190px;
     padding: 10px 12px !important;
     background: rgba(255, 255, 255, 0.84) !important;
     backdrop-filter: blur(28px) saturate(190%) !important;
@@ -15999,9 +15999,9 @@ section, header, footer, .section-padding, .booking-premium-section, .booking-ca
 
 /* Card 2: Strategy Blueprint Document Card (Spatial Glass) */
 #home .timeline-card.card-strategy {
-    left: 41.5%;
-    top: 173px;
-    width: 155px;
+    left: 36%;
+    top: 155px;
+    width: 170px;
     transform: translateX(-50%) !important;
     padding: 12px !important;
     background: rgba(255, 255, 255, 0.84) !important;
@@ -16074,9 +16074,9 @@ section, header, footer, .section-padding, .booking-premium-section, .booking-ca
 
 /* Card 3: 48h Prototype Card (Spatial Glass) */
 #home .timeline-card.card-mockup {
-    left: 68.5%;
-    top: 173px;
-    width: 160px;
+    left: 64%;
+    top: 155px;
+    width: 170px;
     transform: translateX(-50%) !important;
     padding: 0 !important;
     background: rgba(255, 255, 255, 0.84) !important;
@@ -16176,9 +16176,10 @@ section, header, footer, .section-padding, .booking-premium-section, .booking-ca
 
 /* Card 4: Website Live Banner Card (Spatial Glass) */
 #home .timeline-card.card-launch {
-    right: 8.5%;
-    top: 28.7px;
-    width: 170px;
+    right: 4% !important;
+    left: auto !important;
+    top: 20px;
+    width: 190px;
     padding: 12px !important;
     background: rgba(255, 255, 255, 0.84) !important;
     backdrop-filter: blur(28px) saturate(190%) !important;
@@ -27977,6 +27978,247 @@ a.cta-button.secondary:active,
 .footer-taxonomy-bar a:hover {
     color: #60a5fa;
     background: rgba(96, 165, 250, 0.08);
+}
+
+/* ==========================================================================
+   Verified Authority & Ratings Trust Banner (Apple Spatial Glass)
+   ========================================================================== */
+.verified-trust-section {
+    max-width: 1160px;
+    margin: 32px auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.verified-trust-card {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    box-shadow:
+        0 14px 38px -6px rgba(15, 23, 42, 0.06),
+        0 4px 12px rgba(0, 0, 0, 0.02),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 16px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.verified-trust-card:hover {
+    box-shadow:
+        0 20px 48px -8px rgba(37, 99, 235, 0.08),
+        0 6px 16px rgba(0, 0, 0, 0.03),
+        inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.trust-badge-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #0f172a;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+    border-radius: 12px;
+    padding: 6px 10px;
+}
+
+.trust-badge-item:hover {
+    transform: translateY(-2px);
+    background: rgba(248, 250, 252, 0.8);
+}
+
+.trust-badge-item:active {
+    transform: scale(0.97);
+}
+
+.trust-icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.trust-badge-item:hover .trust-icon-box {
+    transform: scale(1.05);
+}
+
+.trust-icon-google {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    color: #4285f4;
+    font-size: 1.25rem;
+}
+
+.trust-icon-clutch {
+    background: #1e293b;
+    color: #ffffff;
+    font-size: 0.88rem;
+    letter-spacing: -0.02em;
+}
+
+.trust-icon-clutch .dot-red {
+    color: #ff3d2e;
+}
+
+.trust-icon-f6s {
+    background: #ff2a00;
+    color: #ffffff;
+    font-size: 0.78rem;
+}
+
+.trust-icon-yourstory {
+    background: #eb2227;
+    color: #ffffff;
+    font-size: 0.84rem;
+    letter-spacing: -0.02em;
+}
+
+.trust-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.trust-rating-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.trust-score,
+.trust-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #0f172a;
+    line-height: 1.2;
+}
+
+.trust-stars {
+    color: #f59e0b;
+    font-size: 0.7rem;
+    display: flex;
+    gap: 1.5px;
+}
+
+.trust-sub {
+    font-size: 0.72rem;
+    color: #64748b;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.trust-divider {
+    width: 1px;
+    height: 32px;
+    background: #e2e8f0;
+    flex-shrink: 0;
+}
+
+/* Tablet & iPad Responsive (max-width: 991px) */
+@media (max-width: 991px) {
+    .verified-trust-section {
+        margin: 24px auto;
+        padding: 0 16px;
+    }
+    .verified-trust-card {
+        padding: 14px 18px;
+        gap: 10px;
+    }
+    .trust-badge-item {
+        gap: 8px;
+        padding: 4px 6px;
+    }
+    .trust-icon-box {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+    }
+    .trust-score,
+    .trust-title {
+        font-size: 0.88rem;
+    }
+    .trust-sub {
+        font-size: 0.68rem;
+    }
+}
+
+/* Mobile Responsive (max-width: 768px) */
+@media (max-width: 768px) {
+    .verified-trust-section {
+        margin: 20px auto 28px;
+        padding: 0 14px;
+    }
+
+    .verified-trust-card {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px 14px !important;
+        padding: 16px 14px !important;
+        border-radius: 18px !important;
+    }
+
+    .trust-divider {
+        display: none !important;
+    }
+
+    .trust-badge-item {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        padding: 8px 10px !important;
+        background: rgba(248, 250, 252, 0.7) !important;
+        border: 1px solid rgba(226, 232, 240, 0.8) !important;
+        border-radius: 12px !important;
+    }
+
+    .trust-badge-item:hover,
+    .trust-badge-item:active {
+        background: rgba(239, 246, 255, 0.9) !important;
+        border-color: rgba(191, 219, 254, 0.9) !important;
+    }
+
+    .trust-icon-box {
+        width: 36px !important;
+        height: 36px !important;
+    }
+}
+
+@media (max-width: 380px) {
+    .verified-trust-card {
+        gap: 8px 8px !important;
+        padding: 12px 10px !important;
+    }
+
+    .trust-badge-item {
+        gap: 7px !important;
+        padding: 6px 6px !important;
+    }
+
+    .trust-icon-box {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 0.75rem !important;
+    }
+
+    .trust-score,
+    .trust-title {
+        font-size: 0.82rem !important;
+    }
+
+    .trust-sub {
+        font-size: 0.62rem !important;
+    }
 }
 
 
