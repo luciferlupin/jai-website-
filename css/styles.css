@@ -27764,7 +27764,8 @@ a.cta-button.secondary:active,
     cursor: pointer !important;
 }
 
-.india-state:hover {
+.india-state:hover,
+.india-state.active-state {
     fill: #93c5fd !important;
     fill-opacity: 1 !important;
     stroke: #2563eb !important;
