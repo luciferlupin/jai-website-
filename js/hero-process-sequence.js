@@ -7,12 +7,13 @@
         const strategyCard = flow?.querySelector('.card-strategy');
         const mockupCard = flow?.querySelector('.card-mockup');
         const launchCard = flow?.querySelector('.card-launch');
-        const deployCompletion = flow?.querySelector('.deploy-live-status') || launchCard;
 
         if (!flow || !svg || !path || !discoveryCard || !strategyCard || !mockupCard || !launchCard) {
             return;
         }
 
+        const cards = [discoveryCard, strategyCard, mockupCard, launchCard];
+        const stepPills = flow.querySelectorAll('.mobile-step-pill');
         const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
         const clipInsetForCard = (card) => {
@@ -24,7 +25,6 @@
                 0,
                 1
             );
-
             return 100 - (reachedProgress * 100);
         };
 
@@ -51,8 +51,6 @@
                     + (t ** 3 * p3);
             };
 
-            // Normalized control points for the visible journey curve:
-            // M 1 1 C 252 108, 748 108, 999 1 in a 1000 × 110 viewBox.
             let low = 0;
             let high = 1;
             let curveT = 0;
@@ -70,14 +68,13 @@
             const curveY = cubicAt(1 / 110, 108 / 110, 108 / 110, 1 / 110, curveT);
             const flowRect = flow.getBoundingClientRect();
             const svgLocalTop = svgRect.top - flowRect.top;
-            const targetLocalTop = svgLocalTop
-                + (curveY * svgRect.height);
+            const targetLocalTop = svgLocalTop + (curveY * svgRect.height);
             node.style.setProperty('top', `${targetLocalTop}px`, 'important');
         };
 
         let frameRequest = 0;
-
         const updateResponsiveStops = () => {
+            if (window.innerWidth <= 768) return;
             cancelAnimationFrame(frameRequest);
             frameRequest = requestAnimationFrame(() => {
                 const strategyStop = clipInsetForCard(strategyCard);
@@ -88,7 +85,6 @@
                 flow.dataset.archClipTwo = strategyStop.toFixed(3);
                 flow.dataset.archClipThree = mockupStop.toFixed(3);
 
-                // Align all nodes exactly to the SVG curve path
                 nodes.forEach(alignNodeToPath);
             });
         };
@@ -100,104 +96,128 @@
             const observer = new ResizeObserver(updateResponsiveStops);
             observer.observe(flow);
             observer.observe(svg);
-            observer.observe(strategyCard);
-            observer.observe(mockupCard);
         }
 
-        const isMobile = () => window.matchMedia('(max-width: 600px)').matches;
+        // ==========================================
+        // Mobile Interactive Step Controller
+        // ==========================================
+        const isMobile = () => window.innerWidth <= 768;
+        let currentStepIndex = 0;
+        let mobileTimer = null;
+        let isUserInteracting = false;
+        let userResumeTimer = null;
 
-        let loopTimeout = null;
-        let stageTimers = [];
+        const setMobileStep = (index, userInitiated = false) => {
+            currentStepIndex = (index + cards.length) % cards.length;
+            flow.dataset.mobileStep = currentStepIndex;
 
-        const clearAllTimers = () => {
-            stageTimers.forEach(window.clearTimeout);
-            stageTimers = [];
-            if (loopTimeout) {
-                window.clearTimeout(loopTimeout);
-                loopTimeout = null;
+            // Activate target card, deactivate others
+            cards.forEach((card, i) => {
+                if (i === currentStepIndex) {
+                    card.classList.add('is-mobile-active');
+                } else {
+                    card.classList.remove('is-mobile-active');
+                }
+            });
+
+            // Update interactive step pills
+            stepPills.forEach((pill, i) => {
+                const isActive = (i === currentStepIndex);
+                pill.classList.toggle('active', isActive);
+                pill.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            });
+
+            if (userInitiated) {
+                isUserInteracting = true;
+                clearTimeout(userResumeTimer);
+                clearInterval(mobileTimer);
+                // Pause auto-play for 4.5s after manual user tap, then resume
+                userResumeTimer = setTimeout(() => {
+                    isUserInteracting = false;
+                    startMobileAutoPlay();
+                }, 4500);
             }
         };
 
-        const setActiveStage = (stage) => {
-            flow.dataset.activeStage = stage;
+        const startMobileAutoPlay = () => {
+            clearInterval(mobileTimer);
+            if (!isMobile()) return;
+            mobileTimer = setInterval(() => {
+                if (isMobile() && !isUserInteracting && !document.hidden) {
+                    setMobileStep(currentStepIndex + 1);
+                }
+            }, 3200);
         };
 
-        const queueStage = (stage, delay) => {
-            stageTimers.push(window.setTimeout(() => setActiveStage(stage), delay));
-        };
-
-        const finishSequence = () => {
-            if (flow.dataset.processState === 'complete') {
-                return;
-            }
-
-            clearAllTimers();
-            flow.dataset.processState = 'complete';
-            flow.dataset.activeStage = 'complete';
-            flow.classList.add('is-complete');
-            flow.classList.remove('is-running');
-        };
-
-        const startSequence = () => {
-            clearAllTimers();
-            flow.dataset.processState = 'running';
-            flow.classList.remove('is-complete');
-            flow.classList.remove('is-running');
-
-            // Force reflow while is-running is removed so CSS animations restart cleanly from 0s
-            void flow.offsetWidth;
-
-            setActiveStage('meeting');
-            flow.classList.add('is-running');
-            queueStage('strategy', 1660);
-            queueStage('build', 3270);
-            queueStage('launch', 4980);
-
-            if (isMobile()) {
-                // On phone screen: loop endlessly back to Discovery card after cycle completes (~6740ms)
-                loopTimeout = window.setTimeout(() => {
-                    if (isMobile() && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                        flow.classList.remove('is-running');
-                        requestAnimationFrame(() => {
-                            startSequence();
-                        });
-                    } else {
-                        finishSequence();
-                    }
-                }, 6740);
-            } else {
-                // On desktop: finish sequence after one complete run
-                loopTimeout = window.setTimeout(finishSequence, 7200);
-            }
-        };
-
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            finishSequence();
-            return;
-        }
-
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                startSequence();
+        // Attach click listeners to mobile step pills
+        stepPills.forEach((pill, index) => {
+            pill.addEventListener('click', (e) => {
+                e.stopPropagation();
+                setMobileStep(index, true);
             });
         });
 
-        deployCompletion.addEventListener('animationend', (event) => {
-            if (!isMobile() && event.animationName === 'deployLiveComplete') {
-                finishSequence();
-            }
+        // Tapping card on mobile advances to next step
+        cards.forEach((card) => {
+            card.addEventListener('click', () => {
+                if (isMobile()) {
+                    setMobileStep(currentStepIndex + 1, true);
+                }
+            });
         });
 
-        // Handle resize between mobile and desktop dynamically
-        let wasMobile = isMobile();
-        window.addEventListener('resize', () => {
-            updateResponsiveStops();
-            const nowMobile = isMobile();
-            if (nowMobile !== wasMobile) {
-                wasMobile = nowMobile;
-                startSequence();
+        // Swipe gesture support on mobile cards
+        let touchStartX = 0;
+        let touchEndX = 0;
+        flow.addEventListener('touchstart', (e) => {
+            if (!isMobile()) return;
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        flow.addEventListener('touchend', (e) => {
+            if (!isMobile()) return;
+            touchEndX = e.changedTouches[0].screenX;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 40) {
+                if (diff > 0) {
+                    // Swiped left -> next step
+                    setMobileStep(currentStepIndex + 1, true);
+                } else {
+                    // Swiped right -> previous step
+                    setMobileStep(currentStepIndex - 1, true);
+                }
             }
         }, { passive: true });
+
+        // Initialize state based on current viewport
+        const handleViewportInit = () => {
+            if (isMobile()) {
+                setMobileStep(0);
+                startMobileAutoPlay();
+            } else {
+                clearInterval(mobileTimer);
+                cards.forEach(card => card.classList.remove('is-mobile-active'));
+                flow.classList.add('is-running');
+                updateResponsiveStops();
+            }
+        };
+
+        handleViewportInit();
+
+        let resizeTimer = null;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(handleViewportInit, 150);
+        }, { passive: true });
+
+        // Pause timer when tab is inactive
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                clearInterval(mobileTimer);
+            } else if (isMobile()) {
+                startMobileAutoPlay();
+            }
+        });
     };
 
     if (document.readyState === 'loading') {

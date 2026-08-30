@@ -20261,24 +20261,18 @@ section, header, footer, .section-padding, .booking-premium-section, .booking-ca
 
     #home .apple-process-container,
     #home .studio-timeline-flow {
-        height: var(--hero-journey-height) !important;
-        flex: 0 0 var(--hero-journey-height) !important;
+        height: 290px !important;
+        flex: 0 0 290px !important;
+        position: relative !important;
     }
 
     #home .apple-process-container {
-        margin-top: 0 !important;
+        margin-top: 6px !important;
     }
 
-    #home .studio-timeline-flow {
-        --arch-clip-two: 66% !important;
-        --arch-clip-three: 33% !important;
-    }
-
-    #home .journey-arch-svg {
-        top: 156px;
-        left: 20px;
-        width: calc(100% - 40px);
-        height: 2px;
+    #home .journey-arch-svg,
+    #home .process-sequence .timeline-node {
+        display: none !important;
     }
 
     #home .process-sequence .timeline-card,
@@ -20286,151 +20280,96 @@ section, header, footer, .section-padding, .booking-premium-section, .booking-ca
     #home .timeline-card.card-strategy,
     #home .timeline-card.card-mockup,
     #home .timeline-card.card-launch {
-        top: 18px !important;
+        position: absolute !important;
+        top: 8px !important;
         right: auto !important;
         left: 50% !important;
-        width: 232px !important;
-        min-height: 142px;
-        transform: translateX(-50%) !important;
-        visibility: hidden;
-    }
-
-    #home .timeline-card .win-header {
-        padding: 7px 9px;
-    }
-
-    #home .timeline-card .win-body {
-        min-height: 102px;
-        padding: 7px 10px 9px;
-    }
-
-    #home .timeline-card .win-header .win-title {
-        font-size: 0.7rem;
-    }
-
-    #home .card-stage-icon {
-        width: 22px;
-        height: 22px;
-        flex-basis: 22px;
-        font-size: 0.58rem;
-    }
-
-    #home .process-sequence.is-running .card-discovery {
-        animation: heroProcessMobileCardWindow 1.66s cubic-bezier(0.16, 1, 0.3, 1) 0.04s 1 both !important;
-    }
-
-    #home .process-sequence.is-running .card-strategy {
-        animation: heroProcessMobileCardWindow 1.56s cubic-bezier(0.16, 1, 0.3, 1) 1.7s 1 both !important;
-    }
-
-    #home .process-sequence.is-running .card-mockup {
-        animation: heroProcessMobileCardWindow 1.7s cubic-bezier(0.16, 1, 0.3, 1) 3.3s 1 both !important;
-    }
-
-    #home .process-sequence.is-running .card-launch {
-        animation: heroProcessMobileCardWindow 1.66s cubic-bezier(0.16, 1, 0.3, 1) 5.08s 1 both !important;
-    }
-
-    #home .process-sequence .timeline-node {
-        display: none !important;
-    }
-
-    #home .mobile-process-stage {
-        position: absolute;
-        z-index: 8;
-        top: 172px;
-        left: 50%;
-        width: 88px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 6px;
-        transform: translateX(-50%);
-        pointer-events: none;
-    }
-
-    #home .mobile-process-stage-icon {
-        position: relative;
-        width: 38px;
-        height: 38px;
-        border: 1px solid #dbeafe;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.96);
-        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.14);
-    }
-
-    #home .mobile-stage-state {
-        position: absolute;
-        inset: 0;
-        display: grid;
-        place-items: center;
-        border-radius: inherit;
-        color: #2563eb;
-        font-size: 0.78rem;
-        opacity: 0;
-    }
-
-    #home .mobile-process-stage-copy {
-        position: relative;
-        width: 88px;
-        height: 20px;
-    }
-
-    #home .mobile-stage-copy-state {
-        position: absolute;
-        inset: 0;
-        display: grid;
-        place-items: center;
-        border-radius: 999px;
-        background: #2563eb;
-        color: #ffffff;
-        font-size: 0.48rem;
-        font-weight: 850;
-        white-space: nowrap;
-        opacity: 0;
-        box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
-    }
-
-    #home .process-sequence.is-running .mobile-stage-meeting,
-    #home .process-sequence.is-running .mobile-copy-meeting {
-        animation: mobileProcessStageWindow 1.66s ease 0.04s 1 both;
-    }
-
-    #home .process-sequence.is-running .mobile-stage-strategy,
-    #home .process-sequence.is-running .mobile-copy-strategy {
-        animation: mobileProcessStageWindow 1.56s ease 1.7s 1 both;
-    }
-
-    #home .process-sequence.is-running .mobile-stage-build,
-    #home .process-sequence.is-running .mobile-copy-build {
-        animation: mobileProcessStageWindow 1.7s ease 3.3s 1 both;
-    }
-
-    #home .process-sequence.is-running .mobile-stage-live,
-    #home .process-sequence.is-running .mobile-copy-live {
-        animation: mobileProcessStageWindow 1.66s ease 5.08s 1 both;
-    }
-
-    #home .process-sequence.is-complete .timeline-card:not(.card-launch) {
+        width: min(295px, 88vw) !important;
+        max-width: 320px !important;
+        min-height: 185px !important;
+        transform: translateX(-50%) scale(0.96) !important;
         opacity: 0 !important;
         visibility: hidden !important;
         pointer-events: none !important;
+        z-index: 5 !important;
+        transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.45s !important;
     }
 
-    #home .process-sequence.is-complete .card-launch {
+    #home .process-sequence .timeline-card.is-mobile-active,
+    #home .timeline-card.card-discovery.is-mobile-active,
+    #home .timeline-card.card-strategy.is-mobile-active,
+    #home .timeline-card.card-mockup.is-mobile-active,
+    #home .timeline-card.card-launch.is-mobile-active {
         opacity: 1 !important;
         visibility: visible !important;
+        pointer-events: auto !important;
+        transform: translateX(-50%) scale(1) !important;
+        z-index: 10 !important;
     }
 
-    #home .process-sequence.is-complete .mobile-stage-state,
-    #home .process-sequence.is-complete .mobile-stage-copy-state {
-        animation: none !important;
-        opacity: 0 !important;
+    #home .timeline-card .win-header {
+        padding: 8px 10px;
     }
 
-    #home .process-sequence.is-complete .mobile-stage-live,
-    #home .process-sequence.is-complete .mobile-copy-live {
-        opacity: 1 !important;
+    #home .timeline-card .win-body {
+        padding: 8px 12px 10px;
+    }
+
+    #home .timeline-card .win-header .win-title {
+        font-size: 0.72rem;
+    }
+
+    #home .mobile-process-stage {
+        position: absolute !important;
+        z-index: 20 !important;
+        bottom: 6px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: auto !important;
+        max-width: 95vw !important;
+        display: flex !important;
+        justify-content: center !important;
+        pointer-events: auto !important;
+    }
+
+    #home .mobile-step-pills-wrap {
+        display: flex !important;
+        gap: 3px !important;
+        background: rgba(255, 255, 255, 0.94) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        padding: 3px !important;
+        border-radius: 999px !important;
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08) !important;
+    }
+
+    #home .mobile-step-pill {
+        border: none !important;
+        background: transparent !important;
+        color: #64748b !important;
+        font-size: 0.68rem !important;
+        font-weight: 600 !important;
+        padding: 5px 9px !important;
+        border-radius: 999px !important;
+        cursor: pointer !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 4px !important;
+        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        white-space: nowrap !important;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    #home .mobile-step-pill i {
+        font-size: 0.62rem !important;
+    }
+
+    #home .mobile-step-pill.active {
+        background: #2563eb !important;
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35) !important;
     }
 
     #home .apple-trust-bar {
@@ -20453,59 +20392,6 @@ section, header, footer, .section-padding, .booking-premium-section, .booking-ca
         padding-top: 12px !important;
         padding-bottom: 32px !important;
         margin-top: 0 !important;
-    }
-
-    @keyframes heroProcessMobileCardWindow {
-        0% {
-            opacity: 0;
-            visibility: visible;
-            translate: 0 12px;
-            scale: 0.96;
-            filter: blur(4px);
-        }
-        12%,
-        84% {
-            opacity: 1;
-            visibility: visible;
-            translate: 0 0;
-            scale: 1;
-            filter: blur(0);
-        }
-        100% {
-            opacity: 0;
-            visibility: hidden;
-            translate: 0 -7px;
-            scale: 0.985;
-            filter: blur(2px);
-        }
-    }
-
-    @keyframes heroProcessMobileFinalCard {
-        0% {
-            opacity: 0;
-            visibility: visible;
-            translate: 0 12px;
-            scale: 0.96;
-            filter: blur(4px);
-        }
-        100% {
-            opacity: 1;
-            visibility: visible;
-            translate: 0 0;
-            scale: 1;
-            filter: blur(0);
-        }
-    }
-
-    @keyframes mobileProcessStageWindow {
-        0% { opacity: 0; scale: 0.8; }
-        14%, 82% { opacity: 1; scale: 1; }
-        100% { opacity: 0; scale: 0.86; }
-    }
-
-    @keyframes mobileProcessFinalStage {
-        from { opacity: 0; scale: 0.8; }
-        to { opacity: 1; scale: 1; }
     }
 }
 

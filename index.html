@@ -1330,19 +1330,21 @@
                             <div class="node-marker"><i class="fas fa-check"></i></div>
                         </div>
 
-                        <!-- Mobile-only active stage indicator -->
-                        <div class="mobile-process-stage" aria-hidden="true">
-                            <div class="mobile-process-stage-icon">
-                                <span class="mobile-stage-state mobile-stage-meeting"><i class="fas fa-video"></i></span>
-                                <span class="mobile-stage-state mobile-stage-strategy"><i class="fas fa-compass"></i></span>
-                                <span class="mobile-stage-state mobile-stage-build"><i class="fas fa-code"></i></span>
-                                <span class="mobile-stage-state mobile-stage-live"><i class="fas fa-cloud-upload-alt"></i></span>
-                            </div>
-                            <div class="mobile-process-stage-copy">
-                                <span class="mobile-stage-copy-state mobile-copy-meeting">Step 1 · Meet</span>
-                                <span class="mobile-stage-copy-state mobile-copy-strategy">Step 2 · Plan</span>
-                                <span class="mobile-stage-copy-state mobile-copy-build">Step 3 · Build</span>
-                                <span class="mobile-stage-copy-state mobile-copy-live">Step 4 · Launch</span>
+                        <!-- Mobile-only Interactive Step Controls -->
+                        <div class="mobile-process-stage" role="tablist" aria-label="Process Steps">
+                            <div class="mobile-step-pills-wrap">
+                                <button type="button" class="mobile-step-pill active" data-step="0" role="tab" aria-selected="true" aria-label="Step 1: Discovery Call">
+                                    <i class="fas fa-video"></i> <span>1. Meet</span>
+                                </button>
+                                <button type="button" class="mobile-step-pill" data-step="1" role="tab" aria-selected="false" aria-label="Step 2: Strategy Blueprint">
+                                    <i class="fas fa-compass"></i> <span>2. Plan</span>
+                                </button>
+                                <button type="button" class="mobile-step-pill" data-step="2" role="tab" aria-selected="false" aria-label="Step 3: 48h Prototype Build">
+                                    <i class="fas fa-code"></i> <span>3. Build</span>
+                                </button>
+                                <button type="button" class="mobile-step-pill" data-step="3" role="tab" aria-selected="false" aria-label="Step 4: Live Launch">
+                                    <i class="fas fa-rocket"></i> <span>4. Launch</span>
+                                </button>
                             </div>
                         </div>
                     </div>
