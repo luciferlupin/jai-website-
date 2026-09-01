@@ -35,3 +35,4 @@ server_temp.log
 *.mov
 cert.pem
 key.pem
+.antigravity/

@@ -23923,16 +23923,18 @@ b, strong {
 
 .hosting-table th,
 .hosting-table td {
-    padding: 14px 20px;
+    padding: 10px 16px;
     border-bottom: 1px solid #f1f5f9;
-    font-size: 0.9rem;
+    font-size: 0.84rem;
+    line-height: 1.35;
 }
 
 .hosting-table th {
     background: #f8fafc;
     font-weight: 700;
     color: #0f172a;
-    font-size: 0.95rem;
+    font-size: 0.88rem;
+    padding: 12px 16px;
 }
 
 .hosting-table th.col-feature {
@@ -23955,16 +23957,16 @@ b, strong {
 }
 
 .hosting-table .tier-header-name {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 800;
     color: #0f172a;
 }
 
 .hosting-table .tier-header-price {
-    font-size: 1.35rem;
+    font-size: 1.2rem;
     font-weight: 850;
     color: #2563eb;
-    margin-top: 2px;
+    margin-top: 1px;
 }
 
 @media (max-width: 991px) {
@@ -28232,6 +28234,111 @@ a.cta-button.secondary:active,
     .trust-sub {
         font-size: 0.60rem !important;
     }
+}
+
+/* Development Packages Comparison Matrix */
+.dev-matrix-section {
+    margin-top: 3.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.dev-matrix-table-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.dev-matrix-table-subtitle {
+    text-align: center;
+    font-size: 0.92rem;
+    color: #64748b;
+    margin-bottom: 1.8rem;
+}
+
+.matrix-category-row td {
+    background: #f1f5f9 !important;
+    font-size: 0.8rem !important;
+    font-weight: 750 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #334155 !important;
+    padding: 10px 20px !important;
+    border-top: 2px solid #e2e8f0;
+    border-bottom: 1px solid #cbd5e1;
+}
+
+.matrix-feature-name {
+    font-weight: 600;
+    color: #0f172a;
+    display: block;
+}
+
+.matrix-feature-desc {
+    font-size: 0.78rem;
+    color: #64748b;
+    font-weight: 400;
+    margin-top: 2px;
+    display: block;
+}
+
+.cell-tier-highlight {
+    background: #f8fafc;
+}
+
+.matrix-popular-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 0.65rem;
+    font-weight: 750;
+    padding: 2px 8px;
+    border-radius: 999px;
+    margin-bottom: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.matrix-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    padding: 9px 14px;
+    font-size: 0.84rem;
+    font-weight: 700;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.matrix-action-btn.dark {
+    background: #0f172a;
+    color: #ffffff;
+    border: 1px solid #1e293b;
+}
+
+.matrix-action-btn.dark:hover {
+    background: #1e293b;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+.matrix-action-btn.primary {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+}
+
+.matrix-action-btn.primary:hover {
+    background: linear-gradient(135deg, #1d4ed8, #1e40af);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
 }
 
 
