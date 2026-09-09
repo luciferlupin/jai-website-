@@ -1040,6 +1040,38 @@
             text-align: center !important;
             text-transform: uppercase !important;
         }
+
+        @media (max-width: 768px) {
+            .unified-header-wrapper,
+            .section-header {
+                margin: 0 auto 20px auto !important;
+                padding: 0 16px !important;
+            }
+            .unified-header-wrapper .header-sub-blue,
+            .section-header .header-sub-blue {
+                font-size: 0.82rem !important;
+                font-weight: 500 !important;
+                letter-spacing: 0.04em !important;
+                margin-bottom: 4px !important;
+            }
+            .unified-header-wrapper .header-main-title,
+            .unified-header-wrapper h2,
+            .section-header .header-main-title,
+            .section-header h2 {
+                font-size: 1.52rem !important;
+                letter-spacing: -0.02em !important;
+                line-height: 1.2 !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .unified-header-wrapper .header-main-title,
+            .unified-header-wrapper h2,
+            .section-header .header-main-title,
+            .section-header h2 {
+                font-size: 1.35rem !important;
+            }
+        }
     </style>
     
     <!-- Asynchronous CSS Loading for Non-Critical Stylesheets to Prevent Render-Blocking -->
@@ -4091,7 +4123,7 @@
                     
                     <!-- Left Column: Jai G. Portrait Photo -->
                     <div style="position: relative;">
-                        <img src="images/jai-g-founder.jpg" alt="Jai G. - Founder &amp; Lead Architect" style="width: 100%; height: 500px; object-fit: cover; object-position: center; border-radius: 20px; box-shadow: 0 12px 36px rgba(0,0,0,0.08); display: block; filter: brightness(1.08) contrast(1.04);" />
+                        <img class="wantace-founder-img" src="images/jai-g-founder.jpg" alt="Jai G. - Founder &amp; Lead Architect" style="width: 100%; height: 500px; object-fit: cover; object-position: center; border-radius: 20px; box-shadow: 0 12px 36px rgba(0,0,0,0.08); display: block; filter: brightness(1.08) contrast(1.04);" />
                     </div>
 
                     <!-- Right Column: Founder Story & Philosophy -->
@@ -4226,7 +4258,7 @@
             <div class="wantace-diff-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 40px;">
                 
                 <!-- Feature Card 1: Solid Electric Blue (#1d6bf3) -->
-                <div style="background: #1d6bf3; border-radius: 20px; padding: 40px 32px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; min-height: 190px; box-shadow: 0 12px 30px rgba(29, 107, 243, 0.25);">
+                <div class="wantace-diff-card" style="background: #1d6bf3; border-radius: 20px; padding: 40px 32px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; min-height: 190px; box-shadow: 0 12px 30px rgba(29, 107, 243, 0.25);">
                     <!-- Concentric Radar Background Circles -->
                     <div style="position: absolute; top: -40px; right: -40px; width: 220px; height: 220px; pointer-events: none; opacity: 0.35;">
                         <div style="position: absolute; width: 80px; height: 80px; border-radius: 50%; border: 1px solid #ffffff; top: 70px; right: 70px;"></div>
@@ -4244,7 +4276,7 @@
                 </div>
 
                 <!-- Feature Card 2: Light Crisp (#f8fafc) -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 40px 32px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; min-height: 190px; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
+                <div class="wantace-diff-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 40px 32px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; min-height: 190px; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
                     <!-- Concentric Radar Background Circles -->
                     <div style="position: absolute; top: -40px; right: -40px; width: 220px; height: 220px; pointer-events: none; opacity: 0.5;">
                         <div style="position: absolute; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(29, 107, 243, 0.12); top: 70px; right: 70px;"></div>
@@ -4262,7 +4294,7 @@
                 </div>
 
                 <!-- Feature Card 3: Light Crisp (#f8fafc) -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 40px 32px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; min-height: 190px; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
+                <div class="wantace-diff-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 40px 32px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; min-height: 190px; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
                     <!-- Concentric Radar Background Circles -->
                     <div style="position: absolute; top: -40px; right: -40px; width: 220px; height: 220px; pointer-events: none; opacity: 0.5;">
                         <div style="position: absolute; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(29, 107, 243, 0.12); top: 70px; right: 70px;"></div>
@@ -4280,7 +4312,7 @@
                 </div>
 
                 <!-- Feature Card 4: Solid Electric Blue (#1d6bf3) -->
-                <div style="background: #1d6bf3; border-radius: 20px; padding: 40px 32px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; min-height: 190px; box-shadow: 0 12px 30px rgba(29, 107, 243, 0.25);">
+                <div class="wantace-diff-card" style="background: #1d6bf3; border-radius: 20px; padding: 40px 32px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; min-height: 190px; box-shadow: 0 12px 30px rgba(29, 107, 243, 0.25);">
                     <!-- Concentric Radar Background Circles -->
                     <div style="position: absolute; top: -40px; right: -40px; width: 220px; height: 220px; pointer-events: none; opacity: 0.35;">
                         <div style="position: absolute; width: 80px; height: 80px; border-radius: 50%; border: 1px solid #ffffff; top: 70px; right: 70px;"></div>
@@ -4300,7 +4332,7 @@
             </div>
 
             <!-- Current Availability - Ultra Minimalist Apple Banner -->
-            <div style="background: rgba(255, 255, 255, 0.9); border: 1px solid rgba(0, 0, 0, 0.06); border-radius: 20px; padding: 22px 28px; margin-bottom: 60px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02); max-width: 960px; margin-left: auto; margin-right: auto; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+            <div class="wantace-availability-banner" style="background: rgba(255, 255, 255, 0.9); border: 1px solid rgba(0, 0, 0, 0.06); border-radius: 20px; padding: 22px 28px; margin-bottom: 60px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02); max-width: 960px; margin-left: auto; margin-right: auto; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
                 <div style="display: flex; align-items: center; gap: 14px;">
                     <div style="width: 10px; height: 10px; border-radius: 50%; background: #10b981; box-shadow: 0 0 10px rgba(16, 185, 129, 0.6); flex-shrink: 0;"></div>
                     <div>
@@ -4329,7 +4361,7 @@
             <div class="wantace-figures-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 60px;">
                 
                 <!-- Stat Card 1: Company (Light Crisp Card) -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 36px 32px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; min-height: 190px; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
+                <div class="wantace-figure-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 36px 32px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; min-height: 190px; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
                     <!-- Concentric Radar Background Circles -->
                     <div style="position: absolute; top: -40px; right: -40px; width: 220px; height: 220px; pointer-events: none; opacity: 0.4;">
                         <div style="position: absolute; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(29, 107, 243, 0.12); top: 70px; right: 70px;"></div>
@@ -4337,17 +4369,17 @@
                         <div style="position: absolute; width: 200px; height: 200px; border-radius: 50%; border: 1px solid rgba(29, 107, 243, 0.12); top: 10px; right: 10px;"></div>
                     </div>
                     <!-- Top Pill Badge -->
-                    <div style="display: inline-block; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 100px; padding: 4px 16px; font-size: 0.85rem; font-weight: 700; color: #475569; width: fit-content; z-index: 2;">
+                    <div class="wantace-stat-badge" style="display: inline-block; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 100px; padding: 4px 16px; font-size: 0.85rem; font-weight: 700; color: #475569; width: fit-content; z-index: 2;">
                         Company
                     </div>
                     <div style="position: relative; z-index: 2; margin-top: 24px;">
-                        <div style="font-size: clamp(2.8rem, 5vw, 3.6rem); font-weight: 500; color: #0f172a; line-height: 1; letter-spacing: -0.02em;">2024</div>
-                        <div style="font-size: 0.95rem; font-weight: 500; color: #64748b; margin-top: 6px;">Founded</div>
+                        <div class="wantace-stat-num" style="font-size: clamp(2.8rem, 5vw, 3.6rem); font-weight: 500; color: #0f172a; line-height: 1; letter-spacing: -0.02em;">2024</div>
+                        <div class="wantace-stat-label" style="font-size: 0.95rem; font-weight: 500; color: #64748b; margin-top: 6px;">Founded</div>
                     </div>
                 </div>
 
                 <!-- Stat Card 2: Success Rate (Solid Electric Blue Card) -->
-                <div style="background: #1d6bf3; border-radius: 20px; padding: 36px 32px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; min-height: 190px; box-shadow: 0 12px 30px rgba(29, 107, 243, 0.25);">
+                <div class="wantace-figure-card" style="background: #1d6bf3; border-radius: 20px; padding: 36px 32px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; min-height: 190px; box-shadow: 0 12px 30px rgba(29, 107, 243, 0.25);">
                     <!-- Concentric Radar Background Circles -->
                     <div style="position: absolute; top: -40px; right: -40px; width: 220px; height: 220px; pointer-events: none; opacity: 0.35;">
                         <div style="position: absolute; width: 80px; height: 80px; border-radius: 50%; border: 1px solid #ffffff; top: 70px; right: 70px;"></div>
@@ -4355,17 +4387,17 @@
                         <div style="position: absolute; width: 200px; height: 200px; border-radius: 50%; border: 1px solid #ffffff; top: 10px; right: 10px;"></div>
                     </div>
                     <!-- Top Pill Badge -->
-                    <div style="display: inline-block; background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.35); border-radius: 100px; padding: 4px 16px; font-size: 0.85rem; font-weight: 500; color: #ffffff; width: fit-content; z-index: 2;">
+                    <div class="wantace-stat-badge" style="display: inline-block; background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.35); border-radius: 100px; padding: 4px 16px; font-size: 0.85rem; font-weight: 500; color: #ffffff; width: fit-content; z-index: 2;">
                         Success Rate
                     </div>
                     <div style="position: relative; z-index: 2; margin-top: 24px;">
-                        <div style="font-size: clamp(2.8rem, 5vw, 3.6rem); font-weight: 500; color: #ffffff; line-height: 1; letter-spacing: -0.02em;">94%</div>
-                        <div style="font-size: 0.95rem; font-weight: 400; color: rgba(255, 255, 255, 0.9); margin-top: 6px;">83% client satisfaction rate</div>
+                        <div class="wantace-stat-num" style="font-size: clamp(2.8rem, 5vw, 3.6rem); font-weight: 500; color: #ffffff; line-height: 1; letter-spacing: -0.02em;">94%</div>
+                        <div class="wantace-stat-label" style="font-size: 0.95rem; font-weight: 400; color: rgba(255, 255, 255, 0.9); margin-top: 6px;">83% client satisfaction rate</div>
                     </div>
                 </div>
 
                 <!-- Stat Card 3: Team Size (Solid Electric Blue Card) -->
-                <div style="background: #1d6bf3; border-radius: 20px; padding: 36px 32px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; min-height: 190px; box-shadow: 0 12px 30px rgba(29, 107, 243, 0.25);">
+                <div class="wantace-figure-card" style="background: #1d6bf3; border-radius: 20px; padding: 36px 32px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; min-height: 190px; box-shadow: 0 12px 30px rgba(29, 107, 243, 0.25);">
                     <!-- Concentric Radar Background Circles -->
                     <div style="position: absolute; top: -40px; right: -40px; width: 220px; height: 220px; pointer-events: none; opacity: 0.35;">
                         <div style="position: absolute; width: 80px; height: 80px; border-radius: 50%; border: 1px solid #ffffff; top: 70px; right: 70px;"></div>
@@ -4373,17 +4405,17 @@
                         <div style="position: absolute; width: 200px; height: 200px; border-radius: 50%; border: 1px solid #ffffff; top: 10px; right: 10px;"></div>
                     </div>
                     <!-- Top Pill Badge -->
-                    <div style="display: inline-block; background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.35); border-radius: 100px; padding: 4px 16px; font-size: 0.85rem; font-weight: 500; color: #ffffff; width: fit-content; z-index: 2;">
+                    <div class="wantace-stat-badge" style="display: inline-block; background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.35); border-radius: 100px; padding: 4px 16px; font-size: 0.85rem; font-weight: 500; color: #ffffff; width: fit-content; z-index: 2;">
                         Team Size
                     </div>
                     <div style="position: relative; z-index: 2; margin-top: 24px;">
-                        <div style="font-size: clamp(2.8rem, 5vw, 3.6rem); font-weight: 500; color: #ffffff; line-height: 1; letter-spacing: -0.02em;">7</div>
-                        <div style="font-size: 0.95rem; font-weight: 500; color: rgba(255, 255, 255, 0.9); margin-top: 6px;">dedicated builders</div>
+                        <div class="wantace-stat-num" style="font-size: clamp(2.8rem, 5vw, 3.6rem); font-weight: 500; color: #ffffff; line-height: 1; letter-spacing: -0.02em;">7</div>
+                        <div class="wantace-stat-label" style="font-size: 0.95rem; font-weight: 500; color: rgba(255, 255, 255, 0.9); margin-top: 6px;">dedicated builders</div>
                     </div>
                 </div>
 
                 <!-- Stat Card 4: Clients Served (Light Crisp Card) -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 36px 32px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; min-height: 190px; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
+                <div class="wantace-figure-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 36px 32px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; min-height: 190px; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
                     <!-- Concentric Radar Background Circles -->
                     <div style="position: absolute; top: -40px; right: -40px; width: 220px; height: 220px; pointer-events: none; opacity: 0.4;">
                         <div style="position: absolute; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(29, 107, 243, 0.12); top: 70px; right: 70px;"></div>
@@ -4391,12 +4423,12 @@
                         <div style="position: absolute; width: 200px; height: 200px; border-radius: 50%; border: 1px solid rgba(29, 107, 243, 0.12); top: 10px; right: 10px;"></div>
                     </div>
                     <!-- Top Pill Badge -->
-                    <div style="display: inline-block; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 100px; padding: 4px 16px; font-size: 0.85rem; font-weight: 700; color: #475569; width: fit-content; z-index: 2;">
+                    <div class="wantace-stat-badge" style="display: inline-block; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 100px; padding: 4px 16px; font-size: 0.85rem; font-weight: 700; color: #475569; width: fit-content; z-index: 2;">
                         Products Built
                     </div>
                     <div style="position: relative; z-index: 2; margin-top: 24px;">
-                        <div style="font-size: clamp(2.8rem, 5vw, 3.6rem); font-weight: 800; color: #0f172a; line-height: 1; letter-spacing: -0.03em;">50+</div>
-                        <div style="font-size: 0.95rem; font-weight: 600; color: #64748b; margin-top: 6px;">shipped globally</div>
+                        <div class="wantace-stat-num" style="font-size: clamp(2.8rem, 5vw, 3.6rem); font-weight: 800; color: #0f172a; line-height: 1; letter-spacing: -0.03em;">50+</div>
+                        <div class="wantace-stat-label" style="font-size: 0.95rem; font-weight: 600; color: #64748b; margin-top: 6px;">shipped globally</div>
                     </div>
                 </div>
 
@@ -4412,7 +4444,7 @@
             <div class="wantace-clients-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 60px;">
                 
                 <!-- Client Card 1: Enterprise Innovation Teams -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 32px 28px; position: relative; overflow: hidden; display: flex; align-items: flex-start; gap: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
+                <div class="wantace-client-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 32px 28px; position: relative; overflow: hidden; display: flex; align-items: flex-start; gap: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
                     <div style="position: absolute; top: -40px; right: -40px; width: 220px; height: 220px; pointer-events: none; opacity: 0.4;">
                         <div style="position: absolute; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(29, 107, 243, 0.12); top: 70px; right: 70px;"></div>
                         <div style="position: absolute; width: 140px; height: 140px; border-radius: 50%; border: 1px solid rgba(29, 107, 243, 0.12); top: 40px; right: 40px;"></div>
@@ -4428,7 +4460,7 @@
                 </div>
 
                 <!-- Client Card 2: Growth & Modern Businesses -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 32px 28px; position: relative; overflow: hidden; display: flex; align-items: flex-start; gap: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
+                <div class="wantace-client-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 32px 28px; position: relative; overflow: hidden; display: flex; align-items: flex-start; gap: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
                     <div style="position: absolute; top: -40px; right: -40px; width: 220px; height: 220px; pointer-events: none; opacity: 0.4;">
                         <div style="position: absolute; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(29, 107, 243, 0.12); top: 70px; right: 70px;"></div>
                         <div style="position: absolute; width: 140px; height: 140px; border-radius: 50%; border: 1px solid rgba(29, 107, 243, 0.12); top: 40px; right: 40px;"></div>
@@ -4444,7 +4476,7 @@
                 </div>
 
                 <!-- Client Card 3: Venture Startups -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 32px 28px; position: relative; overflow: hidden; display: flex; align-items: flex-start; gap: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
+                <div class="wantace-client-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 32px 28px; position: relative; overflow: hidden; display: flex; align-items: flex-start; gap: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
                     <div style="position: absolute; top: -40px; right: -40px; width: 220px; height: 220px; pointer-events: none; opacity: 0.4;">
                         <div style="position: absolute; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(29, 107, 243, 0.12); top: 70px; right: 70px;"></div>
                         <div style="position: absolute; width: 140px; height: 140px; border-radius: 50%; border: 1px solid rgba(29, 107, 243, 0.12); top: 40px; right: 40px;"></div>
@@ -4460,7 +4492,7 @@
                 </div>
 
                 <!-- Client Card 4: Founders & Investors -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 32px 28px; position: relative; overflow: hidden; display: flex; align-items: flex-start; gap: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
+                <div class="wantace-client-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 32px 28px; position: relative; overflow: hidden; display: flex; align-items: flex-start; gap: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
                     <div style="position: absolute; top: -40px; right: -40px; width: 220px; height: 220px; pointer-events: none; opacity: 0.4;">
                         <div style="position: absolute; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(29, 107, 243, 0.12); top: 70px; right: 70px;"></div>
                         <div style="position: absolute; width: 140px; height: 140px; border-radius: 50%; border: 1px solid rgba(29, 107, 243, 0.12); top: 40px; right: 40px;"></div>
@@ -4487,7 +4519,7 @@
             <div class="wantace-speed-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 60px;">
                 
                 <!-- Speed Card 1: Prototype -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 32px 28px; position: relative; overflow: hidden; display: flex; align-items: flex-start; gap: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
+                <div class="wantace-speed-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 32px 28px; position: relative; overflow: hidden; display: flex; align-items: flex-start; gap: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
                     <div style="position: absolute; top: -40px; right: -40px; width: 220px; height: 220px; pointer-events: none; opacity: 0.4;">
                         <div style="position: absolute; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(29, 107, 243, 0.12); top: 70px; right: 70px;"></div>
                         <div style="position: absolute; width: 140px; height: 140px; border-radius: 50%; border: 1px solid rgba(29, 107, 243, 0.12); top: 40px; right: 40px;"></div>
@@ -4503,7 +4535,7 @@
                 </div>
 
                 <!-- Speed Card 2: Updates -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 32px 28px; position: relative; overflow: hidden; display: flex; align-items: flex-start; gap: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
+                <div class="wantace-speed-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 32px 28px; position: relative; overflow: hidden; display: flex; align-items: flex-start; gap: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
                     <div style="position: absolute; top: -40px; right: -40px; width: 220px; height: 220px; pointer-events: none; opacity: 0.4;">
                         <div style="position: absolute; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(29, 107, 243, 0.12); top: 70px; right: 70px;"></div>
                         <div style="position: absolute; width: 140px; height: 140px; border-radius: 50%; border: 1px solid rgba(29, 107, 243, 0.12); top: 40px; right: 40px;"></div>
@@ -4519,7 +4551,7 @@
                 </div>
 
                 <!-- Speed Card 3: MVP -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 32px 28px; position: relative; overflow: hidden; display: flex; align-items: flex-start; gap: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
+                <div class="wantace-speed-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 32px 28px; position: relative; overflow: hidden; display: flex; align-items: flex-start; gap: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
                     <div style="position: absolute; top: -40px; right: -40px; width: 220px; height: 220px; pointer-events: none; opacity: 0.4;">
                         <div style="position: absolute; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(29, 107, 243, 0.12); top: 70px; right: 70px;"></div>
                         <div style="position: absolute; width: 140px; height: 140px; border-radius: 50%; border: 1px solid rgba(29, 107, 243, 0.12); top: 40px; right: 40px;"></div>
@@ -4535,7 +4567,7 @@
                 </div>
 
                 <!-- Speed Card 4: Support -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 32px 28px; position: relative; overflow: hidden; display: flex; align-items: flex-start; gap: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
+                <div class="wantace-speed-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 32px 28px; position: relative; overflow: hidden; display: flex; align-items: flex-start; gap: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
                     <div style="position: absolute; top: -40px; right: -40px; width: 220px; height: 220px; pointer-events: none; opacity: 0.4;">
                         <div style="position: absolute; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(29, 107, 243, 0.12); top: 70px; right: 70px;"></div>
                         <div style="position: absolute; width: 140px; height: 140px; border-radius: 50%; border: 1px solid rgba(29, 107, 243, 0.12); top: 40px; right: 40px;"></div>
@@ -4571,7 +4603,7 @@
             <div class="wantace-proof-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 36px;">
                 
                 <!-- Card 1 (Top Left: Solid Electric Blue) -->
-                <div style="background: #1d6bf3; border-radius: 20px; padding: 44px 38px; display: flex; align-items: center; gap: 28px; box-shadow: 0 12px 30px rgba(29, 107, 243, 0.22); transition: all 0.3s ease;">
+                <div class="wantace-proof-card" style="background: #1d6bf3; border-radius: 20px; padding: 44px 38px; display: flex; align-items: center; gap: 28px; box-shadow: 0 12px 30px rgba(29, 107, 243, 0.22); transition: all 0.3s ease;">
                     <div style="font-size: 3.8rem; color: #ffffff; line-height: 1; flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 70px;">
                         <i class="fas fa-rocket"></i>
                     </div>
@@ -4582,7 +4614,7 @@
                 </div>
 
                 <!-- Card 2 (Top Right: Crisp Light Card) -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 44px 38px; display: flex; align-items: center; gap: 28px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); transition: all 0.3s ease;">
+                <div class="wantace-proof-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 44px 38px; display: flex; align-items: center; gap: 28px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); transition: all 0.3s ease;">
                     <div style="font-size: 3.8rem; color: #475569; line-height: 1; flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 70px;">
                         <i class="fas fa-arrow-trend-up"></i>
                     </div>
@@ -4593,7 +4625,7 @@
                 </div>
 
                 <!-- Card 3 (Bottom Left: Crisp Light Card) -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 44px 38px; display: flex; align-items: center; gap: 28px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); transition: all 0.3s ease;">
+                <div class="wantace-proof-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 44px 38px; display: flex; align-items: center; gap: 28px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); transition: all 0.3s ease;">
                     <div style="font-size: 3.8rem; color: #475569; line-height: 1; flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 70px;">
                         <i class="fas fa-code"></i>
                     </div>
@@ -4604,7 +4636,7 @@
                 </div>
 
                 <!-- Card 4 (Bottom Right: Solid Electric Blue) -->
-                <div style="background: #1d6bf3; border-radius: 20px; padding: 44px 38px; display: flex; align-items: center; gap: 28px; box-shadow: 0 12px 30px rgba(29, 107, 243, 0.22); transition: all 0.3s ease;">
+                <div class="wantace-proof-card" style="background: #1d6bf3; border-radius: 20px; padding: 44px 38px; display: flex; align-items: center; gap: 28px; box-shadow: 0 12px 30px rgba(29, 107, 243, 0.22); transition: all 0.3s ease;">
                     <div style="font-size: 3.8rem; color: #ffffff; line-height: 1; flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 70px;">
                         <i class="fas fa-bolt"></i>
                     </div>

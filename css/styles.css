@@ -23742,13 +23742,21 @@ html {
 }
 
 @media (max-width: 768px) {
-    .wantace-proof-grid,
-    .wantace-diff-grid,
-    .wantace-clients-grid,
+    /* 2x2 Compact Stat & Speed Grids on Mobile Phone */
+    .wantace-figures-grid,
     .wantace-speed-grid,
-    .wantace-figures-grid {
+    .wantace-proof-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        margin-bottom: 28px !important;
+    }
+
+    /* Single Column Compact Grids */
+    .wantace-diff-grid,
+    .wantace-clients-grid {
         grid-template-columns: 1fr !important;
-        gap: 16px !important;
+        gap: 10px !important;
+        margin-bottom: 24px !important;
     }
 }
 
@@ -28627,6 +28635,499 @@ a.cta-button.secondary:active,
         font-size: 0.65rem !important;
     }
 }
+
+/* ==========================================================================
+   CLEAN MINIMAL MOBILE VIEWPORT & PROPORTIONAL HIERARCHY SYSTEM
+   Ensures tight visual hierarchy, zero awkward vertical stretching,
+   compact cards, and ergonomic mobile screen flows across all pages.
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* 1. Global Section Spacing & Viewport Ergonomics */
+    section:not(.hero-section):not(.hero) {
+        padding: 36px 0 !important;
+    }
+
+    .why-us-apple-section,
+    #why-choose-us {
+        padding: 36px 0 28px 0 !important;
+    }
+
+    .work-showcase,
+    .testimonials-apple-section,
+    .expertise-section,
+    .tech-stack-section {
+        padding: 34px 0 24px 0 !important;
+    }
+
+    #faq,
+    section#faq {
+        padding: 30px 0 20px 0 !important;
+    }
+
+    #book-call,
+    body.home-wantace-background #book-call {
+        padding: 26px 0 34px 0 !important;
+    }
+
+    /* 2. Unified Header Typography & Spacing */
+    .unified-header-wrapper,
+    .section-header,
+    .ck-aligned-section-heading {
+        margin: 0 auto 18px auto !important;
+        padding: 0 16px !important;
+    }
+
+    .unified-header-wrapper .header-sub-blue,
+    .section-header .header-sub-blue,
+    .ck-aligned-section-heading .header-sub-blue,
+    .header-sub-blue {
+        font-size: 0.82rem !important;
+        font-weight: 500 !important;
+        letter-spacing: 0.04em !important;
+        margin-bottom: 4px !important;
+        text-transform: uppercase !important;
+        line-height: 1.3 !important;
+    }
+
+    .unified-header-wrapper .header-main-title,
+    .unified-header-wrapper h2,
+    .section-header .header-main-title,
+    .section-header h2,
+    .ck-aligned-section-heading .header-main-title,
+    .header-main-title,
+    .built-main-title,
+    .why-us-main-title,
+    .testi-main-heading,
+    .tech-arch-title {
+        font-size: 1.52rem !important;
+        line-height: 1.2 !important;
+        letter-spacing: -0.02em !important;
+        margin: 0 !important;
+    }
+
+    /* 3. Curious Kaizer in Figures (Compact 2x2 Grid) */
+    .wantace-figures-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        margin-bottom: 24px !important;
+    }
+
+    .wantace-figures-grid > div,
+    .wantace-figure-card {
+        padding: 14px 12px !important;
+        min-height: 105px !important;
+        border-radius: 16px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03) !important;
+    }
+
+    .wantace-stat-badge,
+    .wantace-figures-grid > div > div:first-of-type {
+        padding: 3px 8px !important;
+        font-size: 0.7rem !important;
+        font-weight: 600 !important;
+        border-radius: 9999px !important;
+        margin-bottom: 6px !important;
+    }
+
+    .wantace-stat-num,
+    .wantace-figures-grid [style*="clamp(2.8rem"],
+    .wantace-figures-grid [style*="font-size: clamp"] {
+        font-size: 1.75rem !important;
+        font-weight: 600 !important;
+        line-height: 1 !important;
+        letter-spacing: -0.02em !important;
+        margin-top: 6px !important;
+    }
+
+    .wantace-stat-label,
+    .wantace-figures-grid [style*="font-size: 0.95rem"] {
+        font-size: 0.74rem !important;
+        font-weight: 400 !important;
+        margin-top: 3px !important;
+        line-height: 1.3 !important;
+    }
+
+    /* 4. Speed & Delivery (Compact 2x2 Grid) */
+    .wantace-speed-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        margin-bottom: 24px !important;
+    }
+
+    .wantace-speed-grid > div,
+    .wantace-speed-card {
+        padding: 12px 10px !important;
+        border-radius: 16px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 8px !important;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03) !important;
+    }
+
+    .wantace-speed-grid > div > div:nth-child(2),
+    .wantace-speed-card > div:nth-child(2) {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 0.9rem !important;
+        margin-bottom: 0 !important;
+        border-radius: 50% !important;
+    }
+
+    .wantace-speed-grid h3,
+    .wantace-speed-card h3 {
+        font-size: 0.92rem !important;
+        font-weight: 600 !important;
+        margin: 0 0 2px 0 !important;
+        line-height: 1.3 !important;
+    }
+
+    .wantace-speed-grid p,
+    .wantace-speed-card p {
+        font-size: 0.76rem !important;
+        line-height: 1.35 !important;
+        margin: 0 !important;
+    }
+
+    /* 5. Our Clients Grid (Clean Minimal Compact Row Cards) */
+    .wantace-clients-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+        margin-bottom: 24px !important;
+    }
+
+    .wantace-clients-grid > div,
+    .wantace-client-card {
+        padding: 12px 14px !important;
+        border-radius: 14px !important;
+        gap: 12px !important;
+        display: flex !important;
+        align-items: center !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02) !important;
+    }
+
+    .wantace-clients-grid > div > div:nth-child(2),
+    .wantace-client-card > div:nth-child(2) {
+        width: 34px !important;
+        height: 34px !important;
+        font-size: 0.95rem !important;
+        flex-shrink: 0 !important;
+        border-radius: 50% !important;
+    }
+
+    .wantace-clients-grid h3,
+    .wantace-client-card h3 {
+        font-size: 0.96rem !important;
+        font-weight: 500 !important;
+        margin: 0 0 2px 0 !important;
+        line-height: 1.25 !important;
+    }
+
+    .wantace-clients-grid p,
+    .wantace-client-card p {
+        font-size: 0.8rem !important;
+        line-height: 1.35 !important;
+        margin: 0 !important;
+    }
+
+    /* 6. What Makes Us Different Grid */
+    .wantace-diff-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+        margin-bottom: 24px !important;
+    }
+
+    .wantace-diff-grid > div,
+    .wantace-diff-card {
+        padding: 14px 14px !important;
+        min-height: auto !important;
+        border-radius: 14px !important;
+        position: relative !important;
+    }
+
+    .wantace-diff-grid > div > div:nth-child(2),
+    .wantace-diff-card > div:nth-child(2) {
+        top: 12px !important;
+        right: 12px !important;
+        width: 30px !important;
+        height: 30px !important;
+        font-size: 0.85rem !important;
+    }
+
+    .wantace-diff-grid h3,
+    .wantace-diff-card h3 {
+        font-size: 1.02rem !important;
+        margin-bottom: 3px !important;
+        font-weight: 500 !important;
+    }
+
+    .wantace-diff-grid p,
+    .wantace-diff-card p {
+        font-size: 0.8rem !important;
+        line-height: 1.4 !important;
+        max-width: 86% !important;
+        margin: 0 !important;
+    }
+
+    /* 7. Social Proof 2x2 Grid */
+    .wantace-proof-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        margin-top: 16px !important;
+    }
+
+    .wantace-proof-grid > div,
+    .wantace-proof-card {
+        padding: 14px 12px !important;
+        border-radius: 16px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 6px !important;
+        min-height: 100px !important;
+    }
+
+    .wantace-proof-grid > div > div:first-child,
+    .wantace-proof-card > div:first-child {
+        font-size: 1.3rem !important;
+        width: auto !important;
+        height: auto !important;
+        line-height: 1 !important;
+    }
+
+    .wantace-proof-grid [style*="clamp(2.8rem"],
+    .wantace-proof-grid [style*="font-size: clamp"] {
+        font-size: 1.6rem !important;
+        line-height: 1 !important;
+        font-weight: 700 !important;
+    }
+
+    .wantace-proof-grid [style*="font-size: 1.1rem"] {
+        font-size: 0.72rem !important;
+        margin-top: 2px !important;
+        line-height: 1.3 !important;
+    }
+
+    /* 8. Founder & Architect Section */
+    .wantace-founder-card {
+        padding: 16px 14px !important;
+        border-radius: 20px !important;
+        margin-bottom: 24px !important;
+    }
+
+    .wantace-founder-grid {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+    }
+
+    .wantace-founder-grid img,
+    .wantace-founder-img {
+        height: 200px !important;
+        max-height: 200px !important;
+        width: 100% !important;
+        border-radius: 14px !important;
+        object-fit: cover !important;
+        object-position: center 20% !important;
+        display: block !important;
+    }
+
+    .wantace-founder-grid [style*="MEET THE ARCHITECT"] {
+        font-size: 0.74rem !important;
+        margin-bottom: 4px !important;
+        letter-spacing: 0.05em !important;
+    }
+
+    .wantace-founder-grid h2 {
+        font-size: 1.28rem !important;
+        line-height: 1.25 !important;
+        margin: 0 0 10px 0 !important;
+    }
+
+    .wantace-founder-grid p {
+        font-size: 0.84rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 8px !important;
+    }
+
+    /* 9. Apple Git Contribution Card */
+    .apple-git-chart-card {
+        padding: 14px 12px !important;
+        border-radius: 16px !important;
+        margin-bottom: 24px !important;
+    }
+
+    .apple-git-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+    }
+
+    .apple-git-title-text h4 {
+        font-size: 0.92rem !important;
+    }
+
+    .apple-git-title-text p {
+        font-size: 0.76rem !important;
+    }
+
+    .apple-git-stats-badges {
+        gap: 6px !important;
+        flex-wrap: wrap !important;
+    }
+
+    .apple-stat-pill {
+        padding: 3px 8px !important;
+        font-size: 0.7rem !important;
+    }
+
+    /* 10. Availability Banner */
+    .wantace-availability-banner {
+        padding: 12px 14px !important;
+        border-radius: 14px !important;
+        margin-bottom: 24px !important;
+        gap: 10px !important;
+    }
+
+    .wantace-availability-banner [style*="font-size: 0.98rem"] {
+        font-size: 0.88rem !important;
+    }
+
+    .wantace-availability-banner [style*="font-size: 0.83rem"] {
+        font-size: 0.75rem !important;
+    }
+
+    .wantace-availability-banner .cta-dark {
+        padding: 6px 12px !important;
+        font-size: 0.78rem !important;
+    }
+
+    /* 11. FAQ Section & Accordion Cards */
+    .card-faq-container {
+        gap: 8px !important;
+        max-width: 100% !important;
+    }
+
+    .faq-card-item,
+    .faq-item-accordion,
+    .faq-item {
+        border-radius: 14px !important;
+    }
+
+    .faq-card-question,
+    .faq-header-accordion,
+    .faq-question {
+        padding: 11px 13px !important;
+        gap: 10px !important;
+    }
+
+    .faq-card-question h3,
+    .faq-header-accordion,
+    .faq-question h3 {
+        font-size: 0.88rem !important;
+        line-height: 1.35 !important;
+        font-weight: 500 !important;
+    }
+
+    .faq-card-toggle,
+    .faq-toggle-icon,
+    .faq-header-accordion i {
+        width: 26px !important;
+        height: 26px !important;
+        font-size: 0.7rem !important;
+    }
+
+    .faq-card-answer,
+    .faq-body-accordion,
+    .faq-answer {
+        padding: 0 13px !important;
+    }
+
+    .faq-card-item.active .faq-card-answer,
+    .faq-item-accordion.active .faq-body-accordion,
+    .faq-item.active .faq-answer {
+        padding: 6px 13px 12px 13px !important;
+    }
+
+    .faq-card-answer p,
+    .faq-body-accordion p,
+    .faq-answer p {
+        font-size: 0.82rem !important;
+        line-height: 1.5 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .faq-card-cta-box {
+        margin-top: 18px !important;
+    }
+
+    .faq-card-cta-btn {
+        padding: 9px 18px !important;
+        font-size: 0.82rem !important;
+    }
+
+    /* 12. Book Call / Cal.com Section */
+    #book-call .unified-header-wrapper {
+        margin-bottom: 14px !important;
+    }
+
+    .booking-card-wrapper,
+    body.home-wantace-background #book-call .booking-card-wrapper,
+    #book-call .booking-card-wrapper {
+        min-height: 520px !important;
+        height: auto !important;
+        border-radius: 16px !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06) !important;
+    }
+
+    #my-cal-inline-30min {
+        min-height: 520px !important;
+        height: 530px !important;
+        border-radius: 16px !important;
+    }
+
+    #my-cal-inline-30min iframe {
+        min-height: 520px !important;
+        height: 530px !important;
+        border-radius: 16px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .unified-header-wrapper .header-main-title,
+    .unified-header-wrapper h2,
+    .section-header .header-main-title,
+    .section-header h2,
+    .ck-aligned-section-heading .header-main-title,
+    .header-main-title,
+    .built-main-title,
+    .why-us-main-title,
+    .testi-main-heading,
+    .tech-arch-title {
+        font-size: 1.35rem !important;
+    }
+
+    .booking-card-wrapper,
+    body.home-wantace-background #book-call .booking-card-wrapper,
+    #book-call .booking-card-wrapper {
+        min-height: 490px !important;
+    }
+
+    #my-cal-inline-30min,
+    #my-cal-inline-30min iframe {
+        min-height: 490px !important;
+        height: 500px !important;
+    }
+}
+
 
 
 
