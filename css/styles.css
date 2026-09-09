@@ -6803,36 +6803,232 @@ section {
 }
 
 @media (max-width: 768px) {
-    .footer-card {
-        padding: 2rem 1.75rem 1.5rem 1.75rem;
+    .footer-wantace,
+    body.home-wantace-background .footer-wantace {
+        padding: 1.5rem 0 1rem 0 !important;
+        border-radius: 24px 24px 0 0 !important;
     }
+
+    .footer-wantace .container,
+    body.home-wantace-background .footer-wantace > .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 0.85rem !important;
+    }
+
+    .footer-card {
+        padding: 1.35rem 1.15rem 1rem 1.15rem !important;
+        border-radius: 16px !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05) !important;
+    }
+
+    /* 2-Column Grid: Services & Company side-by-side; Logo & Contact full width */
     .footer-card-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 1.75rem;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1.15rem 1rem !important;
+        margin-bottom: 0.85rem !important;
+    }
+
+    /* Column 1: Brand Logo full width */
+    .footer-card-grid .footer-col:first-child {
+        grid-column: 1 / -1 !important;
+        padding-bottom: 0.35rem;
+        border-bottom: 1px solid #f1f5f9;
+        margin-bottom: 0.15rem;
+    }
+
+    .footer-brand-logo {
+        gap: 8px;
+    }
+
+    .wantace-logo-box {
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 0.82rem !important;
+        border-radius: 7px !important;
+    }
+
+    .brand-name {
+        font-size: 1.22rem !important;
+        font-weight: 700 !important;
+        letter-spacing: -0.02em !important;
+    }
+
+    /* Columns 2 & 3: SERVICES and COMPANY side by side */
+    .col-header {
+        font-size: 0.68rem !important;
+        font-weight: 700 !important;
+        color: #64748b !important;
+        letter-spacing: 0.08em !important;
+        text-transform: uppercase !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .col-links {
+        gap: 0.4rem !important;
+    }
+
+    .col-links li a {
+        font-size: 0.83rem !important;
+        color: #334155 !important;
+        line-height: 1.35 !important;
+    }
+
+    /* Column 4: Contact full width, rendered as modern interactive touch badges */
+    .footer-card-grid .footer-col:last-child {
+        grid-column: 1 / -1 !important;
+        padding-top: 0.45rem;
+        border-top: 1px solid #f1f5f9;
+        margin-top: 0.2rem;
+    }
+
+    .footer-card-grid .footer-col:last-child .col-header {
+        margin-bottom: 0.4rem !important;
+    }
+
+    .contact-links {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+        margin-top: 0.25rem !important;
+    }
+
+    .contact-links li {
+        margin: 0 !important;
+    }
+
+    .contact-links li a {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        font-size: 0.78rem !important;
+        font-weight: 600 !important;
+        color: #1e293b !important;
+        background: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 8px !important;
+        padding: 5px 10px !important;
+        text-decoration: none !important;
+        transition: all 0.2s ease;
+    }
+
+    .contact-links li a:hover {
+        background: #f1f5f9 !important;
+        border-color: #cbd5e1 !important;
+    }
+
+    .contact-icon-circle {
+        width: 18px !important;
+        height: 18px !important;
+        font-size: 0.65rem !important;
+    }
+
+    /* Social Row: Compact header and badges */
+    .footer-social-row {
+        margin: 0.85rem 0 0.75rem 0 !important;
+        padding-top: 0.75rem !important;
+        border-top: 1px solid #f1f5f9 !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0.5rem !important;
+    }
+
+    .social-label {
+        font-size: 0.68rem !important;
+        font-weight: 700 !important;
+        color: #64748b !important;
+        letter-spacing: 0.05em !important;
+        text-transform: uppercase !important;
+    }
+
+    .social-divider {
+        display: none !important;
+    }
+
+    .social-badges {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 5px !important;
+        align-items: center !important;
+    }
+
+    .social-badge {
+        height: 26px !important;
+        min-width: 26px !important;
+        padding: 0 8px !important;
+        font-size: 0.72rem !important;
+        border-radius: 6px !important;
+    }
+
+    .social-badge.github-badge,
+    .social-badge.linkedin-badge,
+    .social-badge.instagram-badge,
+    .social-badge.x-badge,
+    .social-badge.wa-badge {
+        width: 26px !important;
+        height: 26px !important;
+        min-width: 26px !important;
+        padding: 0 !important;
+        font-size: 0.8rem !important;
+    }
+
+    /* Taxonomy Bar: Compact & subtle for scannability */
+    .footer-taxonomy-bar {
+        margin-top: 0.7rem !important;
+        padding-top: 0.6rem !important;
+        border-top: 1px solid #f1f5f9 !important;
+        font-size: 0.68rem !important;
+        line-height: 1.45 !important;
+        color: #64748b !important;
+    }
+
+    .footer-taxonomy-bar div {
+        font-size: 0.65rem !important;
+        margin-bottom: 2px !important;
+        color: #475569 !important;
+    }
+
+    /* Bottom Row: Compact horizontal flex */
+    .footer-bottom-row {
+        margin-top: 0.65rem !important;
+        padding-top: 0.65rem !important;
+        border-top: 1px solid #f1f5f9 !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        font-size: 0.72rem !important;
+        gap: 8px !important;
+    }
+
+    .copyright-text {
+        font-size: 0.72rem !important;
+        color: #94a3b8 !important;
+    }
+
+    .legal-links {
+        display: flex !important;
+        gap: 6px !important;
+        align-items: center !important;
+    }
+
+    .legal-links a {
+        font-size: 0.72rem !important;
+        color: #64748b !important;
     }
 }
 
-@media (max-width: 576px) {
-    .footer-wantace {
-        padding: 3.5rem 0 2.5rem 0;
+@media (max-width: 480px) {
+    .footer-card {
+        padding: 1.15rem 0.85rem 0.85rem 0.85rem !important;
     }
-    .footer-card-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    .footer-social-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.85rem;
-    }
-    .social-divider {
-        width: 100%;
-        margin: 0;
-    }
+
     .footer-bottom-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.65rem;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 4px !important;
     }
 }
 
@@ -21085,14 +21281,16 @@ body.home-wantace-background {
         }
     }
 
-    body.home-wantace-background .footer-wantace {
-        min-height: 0;
-        padding: 110px 0 48px;
-    }
+    @media (min-width: 769px) {
+        body.home-wantace-background .footer-wantace {
+            min-height: 0;
+            padding: 110px 0 48px;
+        }
 
-    body.home-wantace-background .footer-wantace > .container {
-        width: min(var(--ck-page-rail), calc(100% - 48px));
-        max-width: var(--ck-page-rail);
+        body.home-wantace-background .footer-wantace > .container {
+            width: min(var(--ck-page-rail), calc(100% - 48px));
+            max-width: var(--ck-page-rail);
+        }
     }
 
     /* Coordinated one-time section entrance - Resilient baseline */
