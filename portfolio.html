@@ -125,48 +125,188 @@
             padding-bottom: 4rem;
         }
 
+        @media (min-width: 992px) {
+            .portfolio-item-premium.reverse-layout,
+            .portfolio-item-premium:nth-child(even) {
+                grid-template-columns: 1.2fr 1fr;
+            }
+
+            .portfolio-item-premium.reverse-layout .portfolio-item-content,
+            .portfolio-item-premium:nth-child(even) .portfolio-item-content {
+                order: 2;
+            }
+
+            .portfolio-item-premium.reverse-layout .portfolio-item-visual,
+            .portfolio-item-premium:nth-child(even) .portfolio-item-visual {
+                order: 1;
+            }
+        }
+
         .portfolio-item-premium:last-child {
             border-bottom: none;
             padding-bottom: 0;
         }
 
-        .portfolio-item-content h3 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #0f172a;
-            margin-bottom: 0.5rem;
+        .portfolio-item-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .portfolio-item-meta {
-            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.72rem;
             font-weight: 700;
             color: #2563eb;
+            background: #eff6ff;
+            border: 1px solid #dbeafe;
+            padding: 4px 12px;
+            border-radius: 9999px;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 1.5rem;
+            letter-spacing: 0.07em;
+            margin-bottom: 0.95rem;
+            width: fit-content;
+            line-height: 1.2;
+        }
+
+        .portfolio-item-content h3 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -0.035em;
+            line-height: 1.2;
+            margin: 0 0 0.85rem 0;
         }
 
         .portfolio-item-desc {
             color: #475569;
-            font-size: 1.05rem;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
+            font-size: 0.98rem;
+            line-height: 1.65;
+            margin: 0 0 1.35rem 0;
+            font-weight: 400;
+        }
+
+        .portfolio-item-features {
+            margin: 0 0 1.4rem 0;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.1rem 1.25rem;
+        }
+
+        .features-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+        }
+
+        .features-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            color: #475569;
+        }
+
+        .features-list li i {
+            color: #2563eb;
+            font-size: 0.75rem;
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+
+        .features-list li strong {
+            color: #0f172a;
+            font-weight: 600;
         }
 
         .tech-tags {
             display: flex;
-            gap: 8px;
+            gap: 6px;
             flex-wrap: wrap;
-            margin-bottom: 2rem;
+            margin-bottom: 1.6rem;
         }
 
         .tech-tag {
-            font-size: 0.85rem;
-            font-weight: 600;
-            background-color: #f1f5f9;
-            color: #334155;
-            padding: 0.3rem 0.8rem;
+            font-size: 0.78rem;
+            font-weight: 500;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            color: #475569;
+            padding: 4px 10px;
             border-radius: 6px;
+            letter-spacing: 0.01em;
+            transition: all 0.2s ease;
+        }
+
+        .tech-tag:hover {
+            border-color: #cbd5e1;
+            color: #0f172a;
+            background: #f8fafc;
+        }
+
+        .portfolio-item-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .portfolio-item-actions .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.72rem 1.4rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 9px;
+            text-decoration: none;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .portfolio-item-actions .cta-button.primary {
+            background: #0f172a;
+            color: #ffffff;
+            border: 1px solid #0f172a;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+        }
+
+        .portfolio-item-actions .cta-button.primary:hover {
+            background: #2563eb;
+            border-color: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(37, 99, 235, 0.22);
+        }
+
+        .portfolio-item-actions .cta-button.secondary {
+            background: #ffffff;
+            color: #334155;
+            border: 1px solid #cbd5e1;
+        }
+
+        .portfolio-item-actions .cta-button.secondary:hover {
+            background: #f8fafc;
+            color: #0f172a;
+            border-color: #94a3b8;
+            transform: translateY(-2px);
         }
 
         .portfolio-item-visual {
@@ -177,7 +317,8 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.02);
         }
 
-        .portfolio-item-visual img {
+        .portfolio-item-visual img,
+        .portfolio-item-visual video {
             width: 100%;
             height: auto;
             display: block;
@@ -186,9 +327,15 @@
 
         @media (max-width: 991px) {
             .portfolio-item-premium {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr !important;
                 gap: 2.5rem;
                 padding-bottom: 3.5rem;
+            }
+            .portfolio-item-premium .portfolio-item-content {
+                order: 1 !important;
+            }
+            .portfolio-item-premium .portfolio-item-visual {
+                order: 2 !important;
             }
             .portfolio-detail-grid {
                 gap: 4rem;
@@ -347,32 +494,156 @@
 
             <div class="portfolio-detail-grid">
                 
-                <!-- Project 1: DODD // Aero Lab R&D (Interactive 3D) -->
-                <div class="portfolio-item-premium" data-category="3d" data-aos="fade-up">
+                <!-- Project 1: HANBORO Watches (Rank 1) -->
+                <div class="portfolio-item-premium" data-category="ecommerce 3d" data-aos="fade-up">
                     <div class="portfolio-item-content">
-                        <div class="portfolio-item-meta">Interactive 3D WebGL Configurator</div>
-                        <h3>DODD // Aero Lab R&D</h3>
-                        <p class="portfolio-item-desc">A state-of-the-art interactive 3D footwear configurator featuring 360° orbital camera presets, real-time anatomical spec hotspots, dynamic colorway customizers, and live material HUD telemetry.</p>
+                        <div class="portfolio-item-meta">Luxury Horology &amp; E-Commerce</div>
+                        <h3>HANBORO Watches</h3>
+                        <p class="portfolio-item-desc">An avant-garde mechanical timepieces showcase featuring interactive daylight-to-luminescence split-sliders, kinetic complication reels, and micromechanical engineering breakdowns.</p>
                         
-                        <div class="portfolio-item-features" style="margin: 16px 0; display: flex; flex-direction: column; gap: 8px;">
-                            <div style="font-size: 0.8rem; font-weight: 700; color: #ef4444; text-transform: uppercase; letter-spacing: 0.05em;">Key Capabilities</div>
-                            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; font-size: 0.88rem; color: #475569;">
-                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #ef4444; margin-top: 3px;"></i> <span><strong>360° Orbit & Camera Presets:</strong> Hero 3/4, Exploded View, Sole Tread, Heel Lock, and Top Down angles.</span></li>
-                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #ef4444; margin-top: 3px;"></i> <span><strong>Anatomical Spec Hotspots:</strong> Airflow, Nitrogen Cushioning, Heel Cradle, and Lateral callout badges.</span></li>
-                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #ef4444; margin-top: 3px;"></i> <span><strong>Dynamic 8-Colorway Switcher:</strong> Pulse Red, Reverse Mocha, Solar Orange, and Emerald Matrix live rendering.</span></li>
+                        <div class="portfolio-item-features">
+                            <div class="features-label"><i class="fas fa-layer-group"></i> Key Capabilities</div>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i> <span><strong>Day-to-Night Split Slider:</strong> Interactive drag comparison between skeleton tonneau case and Super-LumiNova Grade X1 glow</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Kinetic Video Reel Engine:</strong> Video-first showcase highlighting automatic complications like the Sichuan Opera face-change</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Micromechanical Spec HUD:</strong> Citizen 8N24 automatic calibres, 21,600 bph frequency &amp; 42h power reserve telemetry</span></li>
                             </ul>
                         </div>
 
                         <div class="tech-tags">
-                            <span class="tech-tag" style="background: #000; color: #fff;"><i class="fas fa-play" style="font-size: 0.7rem; margin-right: 4px;"></i> Vercel Edge</span>
+                            <span class="tech-tag">Interactive Split Slider</span>
+                            <span class="tech-tag">Video Reel Engine</span>
+                            <span class="tech-tag">Horological HUD</span>
+                            <span class="tech-tag">Luxury E-Commerce</span>
+                        </div>
+                        <div class="portfolio-item-actions">
+                            <a href="contact.html" class="cta-button primary"><i class="fas fa-gem"></i> Request Luxury Store</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item-visual">
+                        <img src="images/hanboro-watches.png" alt="HANBORO Watches Luxury Mechanical Horology &amp; Interactive E-Commerce Experience" loading="lazy" decoding="async" width="1024" height="682">
+                    </div>
+                </div>
+
+                <!-- Project 2: Club Re Straddle (Rank 2) -->
+                <div class="portfolio-item-premium reverse-layout" data-category="saas" data-aos="fade-up">
+                    <div class="portfolio-item-content">
+                        <div class="portfolio-item-meta">Private Club Management &amp; Access Control</div>
+                        <h3>Club Re Straddle</h3>
+                        <p class="portfolio-item-desc">A unified multi-portal digital club management ecosystem connecting members, floor security teams, entrance scanners, and executive administrators through one real-time platform.</p>
+                        
+                        <div class="portfolio-item-features">
+                            <div class="features-label"><i class="fas fa-layer-group"></i> Key Capabilities</div>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i> <span><strong>Member Profiles &amp; Digital Passes:</strong> Dedicated player profiles with verified KYC badges, visit histories &amp; dynamic scannable QR passes</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Live Gate &amp; Security Clearance:</strong> Structured entrance verification workflow with real-time pass scanning &amp; clearance queues</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Executive Admin Command Centre:</strong> Live attendance oversight, tournament schedules &amp; immutable operational audit logs</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="tech-tags">
+                            <span class="tech-tag">Enterprise SaaS</span>
+                            <span class="tech-tag">QR Access Control</span>
+                            <span class="tech-tag">KYC Compliance</span>
+                            <span class="tech-tag">Real-Time Floor Feeds</span>
+                            <span class="tech-tag">Role-Based Auth</span>
+                        </div>
+                        <div class="portfolio-item-actions">
+                            <a href="contact.html" class="cta-button primary"><i class="fas fa-shield-alt"></i> Request Club System</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item-visual">
+                        <img src="images/club-re-straddle-system.png" alt="Club Re Straddle Multi-Portal Club Management Ecosystem UI" loading="lazy" decoding="async" width="1024" height="682">
+                    </div>
+                </div>
+
+                <!-- Project 3: AUCO x AIWA Enterprise Operations Portal (Rank 3) -->
+                <div class="portfolio-item-premium" data-category="saas ecommerce" data-aos="fade-up">
+                    <div class="portfolio-item-content">
+                        <div class="portfolio-item-meta">Multi-Brand Enterprise ERP &amp; CRM</div>
+                        <h3>AUCO × AIWA Operations Portal</h3>
+                        <p class="portfolio-item-desc">A unified dual-brand enterprise management ecosystem consolidating CRM pipelines, pan-India client maps, warehouse inventory, and GST billing into a single operational command center.</p>
+                        
+                        <div class="portfolio-item-features">
+                            <div class="features-label"><i class="fas fa-layer-group"></i> Key Capabilities</div>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i> <span><strong>Unified Multi-Brand Workspace:</strong> Seamless brand switching between AUCO and AIWA with entity isolation and global oversight</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Pan-India Sales CRM Pipeline:</strong> 7-stage visual pipeline with interactive geospatial telemetry across 12 industrial cities</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Inventory &amp; Dispatch Controls:</strong> Real-time warehouse safety thresholds, equipment dispatches &amp; repair ticket tracking</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="tech-tags">
+                            <span class="tech-tag">Enterprise ERP</span>
+                            <span class="tech-tag">Dual-Brand Engine</span>
+                            <span class="tech-tag">Pan-India Client Map</span>
+                            <span class="tech-tag">Inventory &amp; Dispatch</span>
+                            <span class="tech-tag">GST Finance Flow</span>
+                        </div>
+                        <div class="portfolio-item-actions">
+                            <a href="contact.html" class="cta-button primary"><i class="fas fa-laptop-code"></i> Request ERP Architecture</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item-visual">
+                        <img src="images/auco-aiwa-operations-portal.png" alt="AUCO × AIWA Business Management System and Multi-Brand Operations Portal UI" loading="lazy" decoding="async" width="1024" height="640">
+                    </div>
+                </div>
+
+                <!-- Project 4: Aloha Estate Custom Portal (Rank 4) -->
+                <div class="portfolio-item-premium reverse-layout" data-category="saas" data-aos="fade-up">
+                    <div class="portfolio-item-content">
+                        <div class="portfolio-item-meta">Real Estate Operations &amp; Lead CRM</div>
+                        <h3>Aloha Estate Custom Portal</h3>
+                        <p class="portfolio-item-desc">A high-performance real estate operations portal combining automated Meta lead synchronization, visual deal pipelines, agent performance metrics, and client engagement tools.</p>
+                        
+                        <div class="portfolio-item-features">
+                            <div class="features-label"><i class="fas fa-layer-group"></i> Key Capabilities</div>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i> <span><strong>Meta Lead Ads Sync:</strong> Real-time instant ingestion of Facebook and Instagram buyer inquiries with zero lead latency</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Deal Pipeline Kanban:</strong> Multi-stage opportunity funnel tracking property inquiries from initial tour to escrow</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Team Workspace &amp; Chat:</strong> Dedicated agent-to-manager discussion threads, activity logs &amp; automated follow-up cadences</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="tech-tags">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">Meta Lead Sync API</span>
+                            <span class="tech-tag">Supabase</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                        <div class="portfolio-item-actions">
+                            <a href="contact.html" class="cta-button primary"><i class="fas fa-building"></i> Request Real Estate Portal</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item-visual">
+                        <img src="images/aloha-estate-portal.png" alt="Aloha Estate Custom Portal UI Collage" loading="lazy" decoding="async" width="1024" height="682">
+                    </div>
+                </div>
+
+                <!-- Project 5: DODD // Aero Lab R&D (Rank 5) -->
+                <div class="portfolio-item-premium" data-category="3d" data-aos="fade-up">
+                    <div class="portfolio-item-content">
+                        <div class="portfolio-item-meta">Interactive 3D WebGL Configurator</div>
+                        <h3>DODD // Aero Lab R&D</h3>
+                        <p class="portfolio-item-desc">A state-of-the-art interactive 3D footwear visualizer featuring 360° orbital camera presets, real-time anatomical spec hotspots, dynamic colorway customizers, and live material HUD telemetry.</p>
+                        
+                        <div class="portfolio-item-features">
+                            <div class="features-label"><i class="fas fa-layer-group"></i> Key Capabilities</div>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i> <span><strong>360° Orbit &amp; Camera:</strong> Hero 3/4, exploded view, sole tread &amp; heel lock angles</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Anatomical Spec Hotspots:</strong> Real-time airflow, nitrogen cushioning &amp; lateral cradle telemetry</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Dynamic 8-Colorway Switcher:</strong> Pulse Red, Reverse Mocha, Solar Orange &amp; Emerald Matrix rendering</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="tech-tags">
                             <span class="tech-tag">Three.js</span>
                             <span class="tech-tag">WebGL Shaders</span>
                             <span class="tech-tag">GSAP Motion</span>
                             <span class="tech-tag">3D Orbit Controls</span>
                         </div>
-                        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                            <a href="https://shoes-ten-pi.vercel.app/" target="_blank" rel="noopener" class="cta-button primary" style="background: #000; color: #fff; border-color: #000;"><i class="fas fa-external-link-alt" style="margin-right: 6px;"></i> Live Vercel App</a>
-                            <a href="contact.html" class="cta-button secondary"><i class="fas fa-cube" style="margin-right: 6px;"></i> Request 3D Build</a>
+                        <div class="portfolio-item-actions">
+                            <a href="contact.html" class="cta-button primary"><i class="fas fa-cube"></i> Request 3D Build</a>
                         </div>
                     </div>
                     <div class="portfolio-item-visual">
@@ -383,32 +654,30 @@
                     </div>
                 </div>
 
-                <!-- Project 2: HIS DRINK 3D Carousel (Interactive 3D) -->
-                <div class="portfolio-item-premium" data-category="3d ecommerce" data-aos="fade-up">
+                <!-- Project 6: HIS DRINK 3D Carousel (Rank 6) -->
+                <div class="portfolio-item-premium reverse-layout" data-category="3d ecommerce" data-aos="fade-up">
                     <div class="portfolio-item-content">
                         <div class="portfolio-item-meta">Interactive 3D Motion Showcase</div>
                         <h3>HIS DRINK 3D Carousel</h3>
                         <p class="portfolio-item-desc">An interactive 3D beverage retail experience showcasing zero-gravity product carousels, 360° drag-rotation physics, floating particle canvasses, and real-time telemetry overlays.</p>
                         
-                        <div class="portfolio-item-features" style="margin: 16px 0; display: flex; flex-direction: column; gap: 8px;">
-                            <div style="font-size: 0.8rem; font-weight: 700; color: #007aff; text-transform: uppercase; letter-spacing: 0.05em;">Key Capabilities</div>
-                            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; font-size: 0.88rem; color: #475569;">
-                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #007aff; margin-top: 3px;"></i> <span><strong>3D Product Orbit:</strong> 7 vibrant 3D can renders (Tropical Cyan, Sunburst Citrus, Electric Melon).</span></li>
-                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #007aff; margin-top: 3px;"></i> <span><strong>360° Touch & Drag Physics:</strong> Smooth mouse/touch rotation with floating geometric particle physics.</span></li>
-                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #007aff; margin-top: 3px;"></i> <span><strong>Live Nutrition Overlay:</strong> Real-time 0g Sugar, 110mg Caffeine, and 15% Coconut Water telemetry.</span></li>
+                        <div class="portfolio-item-features">
+                            <div class="features-label"><i class="fas fa-layer-group"></i> Key Capabilities</div>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i> <span><strong>3D Product Orbit:</strong> 7 vibrant beverage renders with real-time lighting physics</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>360° Touch Physics:</strong> Smooth inertia mouse/touch rotation with floating particle fields</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Live Nutrition Overlay:</strong> Real-time zero-sugar, caffeine &amp; electrolyte HUD</span></li>
                             </ul>
                         </div>
 
                         <div class="tech-tags">
-                            <span class="tech-tag" style="background: #000; color: #fff;"><i class="fas fa-play" style="font-size: 0.7rem; margin-right: 4px;"></i> Vercel Edge</span>
                             <span class="tech-tag">Three.js</span>
                             <span class="tech-tag">GLTF 3D Models</span>
                             <span class="tech-tag">WebGL Particles</span>
                             <span class="tech-tag">React Three Fiber</span>
                         </div>
-                        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                            <a href="https://3d-brown-iota.vercel.app/" target="_blank" rel="noopener" class="cta-button primary" style="background: #000; color: #fff; border-color: #000;"><i class="fas fa-external-link-alt" style="margin-right: 6px;"></i> Live Vercel App</a>
-                            <a href="contact.html" class="cta-button secondary"><i class="fas fa-cube" style="margin-right: 6px;"></i> Request 3D Build</a>
+                        <div class="portfolio-item-actions">
+                            <a href="contact.html" class="cta-button primary"><i class="fas fa-cube"></i> Request 3D Build</a>
                         </div>
                     </div>
                     <div class="portfolio-item-visual">
@@ -419,32 +688,30 @@
                     </div>
                 </div>
 
-                <!-- Project 3: IRASTRA Celestial Universe (Interactive 3D) -->
+                <!-- Project 7: IRASTRA Celestial Universe (Rank 7) -->
                 <div class="portfolio-item-premium" data-category="3d" data-aos="fade-up">
                     <div class="portfolio-item-content">
                         <div class="portfolio-item-meta">Real-Time 3D Celestial Universe</div>
                         <h3>IRASTRA Celestial Universe</h3>
                         <p class="portfolio-item-desc">A real-time 3D planetary solar system and celestial navigation engine mapping planetary orbits to astronomical birth chart algorithms in an interactive space environment.</p>
                         
-                        <div class="portfolio-item-features" style="margin: 16px 0; display: flex; flex-direction: column; gap: 8px;">
-                            <div style="font-size: 0.8rem; font-weight: 700; color: #9333ea; text-transform: uppercase; letter-spacing: 0.05em;">Key Capabilities</div>
-                            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; font-size: 0.88rem; color: #475569;">
-                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #9333ea; margin-top: 3px;"></i> <span><strong>3D Solar System Engine:</strong> Interactive planetary orbit animation (Sun, Earth, Mars, Moon).</span></li>
-                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #9333ea; margin-top: 3px;"></i> <span><strong>Birth Chart Calculations:</strong> Real-time astronomical mapping connecting 3D planets to birth data.</span></li>
-                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #9333ea; margin-top: 3px;"></i> <span><strong>Celestial Shaders:</strong> Emissive sun lighting, star field particles, and glassmorphic UI overlay.</span></li>
+                        <div class="portfolio-item-features">
+                            <div class="features-label"><i class="fas fa-layer-group"></i> Key Capabilities</div>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i> <span><strong>3D Solar System Engine:</strong> Interactive planetary orbits (Sun, Earth, Mars, Moon) at 60fps</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Birth Chart Calculations:</strong> Real-time astronomical mapping connecting 3D positions to user charts</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Celestial Shaders:</strong> Emissive sun lighting, star field particle engines &amp; glassmorphic HUD</span></li>
                             </ul>
                         </div>
 
                         <div class="tech-tags">
-                            <span class="tech-tag" style="background: #000; color: #fff;"><i class="fas fa-play" style="font-size: 0.7rem; margin-right: 4px;"></i> Vercel Edge</span>
                             <span class="tech-tag">Three.js / WebGL</span>
                             <span class="tech-tag">Astronomical Engine</span>
                             <span class="tech-tag">GLSL Shaders</span>
                             <span class="tech-tag">Canvas Motion</span>
                         </div>
-                        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                            <a href="https://irastra.vercel.app/" target="_blank" rel="noopener" class="cta-button primary" style="background: #000; color: #fff; border-color: #000;"><i class="fas fa-external-link-alt" style="margin-right: 6px;"></i> Live Vercel App</a>
-                            <a href="contact.html" class="cta-button secondary"><i class="fas fa-cube" style="margin-right: 6px;"></i> Request 3D Experience</a>
+                        <div class="portfolio-item-actions">
+                            <a href="contact.html" class="cta-button primary"><i class="fas fa-cube"></i> Request 3D Experience</a>
                         </div>
                     </div>
                     <div class="portfolio-item-visual">
@@ -455,32 +722,30 @@
                     </div>
                 </div>
                 
-                <!-- Project 4: StaySphere PMS (Latest) -->
-                <div class="portfolio-item-premium" data-category="saas" data-aos="fade-up">
+                <!-- Project 8: StaySphere PMS (Rank 8) -->
+                <div class="portfolio-item-premium reverse-layout" data-category="saas" data-aos="fade-up">
                     <div class="portfolio-item-content">
-                        <div class="portfolio-item-meta">Hospitality Operations & PMS SaaS</div>
+                        <div class="portfolio-item-meta">Hospitality Operations &amp; PMS SaaS</div>
                         <h3>StaySphere PMS</h3>
                         <p class="portfolio-item-desc">An all-in-one hotel management workspace featuring live room occupancy matrix, automated front desk check-ins, guest folio tracking, revenue analytics, and integrated channel booking engines.</p>
                         
-                        <div class="portfolio-item-features" style="margin: 16px 0; display: flex; flex-direction: column; gap: 8px;">
-                            <div style="font-size: 0.8rem; font-weight: 700; color: #2563eb; text-transform: uppercase; letter-spacing: 0.05em;">Key Capabilities</div>
-                            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; font-size: 0.88rem; color: #475569;">
-                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #2563eb; margin-top: 3px;"></i> <span><strong>Live Room Status Matrix:</strong> Color-coded grid tracking available, occupied, dirty, and maintenance rooms in real time.</span></li>
-                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #2563eb; margin-top: 3px;"></i> <span><strong>Front Desk Workspace:</strong> One-click arrival check-ins, guest folio balances, and automated settlement alerts.</span></li>
-                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #2563eb; margin-top: 3px;"></i> <span><strong>Revenue & Channel Manager:</strong> Syncs room rates and availability across OTAs, direct booking engines, and night audits.</span></li>
+                        <div class="portfolio-item-features">
+                            <div class="features-label"><i class="fas fa-layer-group"></i> Key Capabilities</div>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i> <span><strong>Live Room Status Matrix:</strong> Real-time visual grid tracking available, occupied &amp; clean rooms</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Front Desk Workspace:</strong> One-click arrival check-ins, guest folio balances &amp; settlement alerts</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Revenue &amp; Channel Manager:</strong> Synchronizes room rates and inventory across OTAs and booking engines</span></li>
                             </ul>
                         </div>
 
                         <div class="tech-tags">
-                            <span class="tech-tag" style="background: #000; color: #fff;"><i class="fas fa-play" style="font-size: 0.7rem; margin-right: 4px;"></i> Vercel Edge</span>
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">TypeScript</span>
                             <span class="tech-tag">Node.js</span>
                             <span class="tech-tag">PostgreSQL</span>
                         </div>
-                        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                            <a href="https://staysphere-phi.vercel.app/" target="_blank" rel="noopener" class="cta-button primary" style="background: #000; color: #fff; border-color: #000;"><i class="fas fa-external-link-alt" style="margin-right: 6px;"></i> Live Vercel App</a>
-                            <a href="contact.html" class="cta-button secondary"><i class="fas fa-hammer" style="margin-right: 6px;"></i> Request PMS Build</a>
+                        <div class="portfolio-item-actions">
+                            <a href="contact.html" class="cta-button primary"><i class="fas fa-hammer"></i> Request PMS Build</a>
                         </div>
                     </div>
                     <div class="portfolio-item-visual">
@@ -488,95 +753,61 @@
                     </div>
                 </div>
 
-                <!-- Project 5: AlmostReal Club (Latest) -->
+                <!-- Project 9: AlmostReal Club (Rank 9) -->
                 <div class="portfolio-item-premium" data-category="ecommerce" data-aos="fade-up">
                     <div class="portfolio-item-content">
-                        <div class="portfolio-item-meta">Luxury E-Commerce & Private Club</div>
+                        <div class="portfolio-item-meta">Luxury E-Commerce &amp; Private Club</div>
                         <h3>AlmostReal Club®</h3>
                         <p class="portfolio-item-desc">An ultra-luxury digital fashion showroom and private access club storefront featuring dark high-fashion editorial aesthetics, gated membership portals, and high-converting checkout flows.</p>
                         
-                        <div class="portfolio-item-features" style="margin: 16px 0; display: flex; flex-direction: column; gap: 8px;">
-                            <div style="font-size: 0.8rem; font-weight: 700; color: #2563eb; text-transform: uppercase; letter-spacing: 0.05em;">Key Capabilities</div>
-                            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; font-size: 0.88rem; color: #475569;">
-                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #2563eb; margin-top: 3px;"></i> <span><strong>Exclusive Gated Access:</strong> Private member entry portal with tokenized access and drop-time collection unlocks.</span></li>
-                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #2563eb; margin-top: 3px;"></i> <span><strong>Editorial Fashion Visuals:</strong> Dark luxury aesthetic, micro-animations, and full-bleed high-definition lookbooks.</span></li>
-                                <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fas fa-check-circle" style="color: #2563eb; margin-top: 3px;"></i> <span><strong>High-Speed E-Commerce Engine:</strong> Sub-second global page loads, bespoke shopping cart, and multi-currency checkout.</span></li>
+                        <div class="portfolio-item-features">
+                            <div class="features-label"><i class="fas fa-layer-group"></i> Key Capabilities</div>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i> <span><strong>Exclusive Gated Access:</strong> Private member entry portal with tokenized access and drop-time unlocks</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Editorial Fashion Visuals:</strong> Dark luxury aesthetic, micro-animations &amp; full-bleed lookbooks</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>High-Speed Commerce:</strong> Sub-second global page loads, custom cart &amp; multi-currency checkout</span></li>
                             </ul>
                         </div>
 
                         <div class="tech-tags">
-                            <span class="tech-tag" style="background: #000; color: #fff;"><i class="fas fa-play" style="font-size: 0.7rem; margin-right: 4px;"></i> Vercel Edge</span>
                             <span class="tech-tag">Next.js</span>
                             <span class="tech-tag">Three.js</span>
                             <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">E-Commerce</span>
                         </div>
-                        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                            <a href="https://almostreal-club.vercel.app/" target="_blank" rel="noopener" class="cta-button primary" style="background: #000; color: #fff; border-color: #000;"><i class="fas fa-external-link-alt" style="margin-right: 6px;"></i> Live Vercel App</a>
-                            <a href="contact.html" class="cta-button secondary"><i class="fas fa-store" style="margin-right: 6px;"></i> Explore Storefront</a>
+                        <div class="portfolio-item-actions">
+                            <a href="contact.html" class="cta-button primary"><i class="fas fa-store"></i> Explore Storefront</a>
                         </div>
                     </div>
                     <div class="portfolio-item-visual">
                         <img src="images/almostreal-club.png" alt="AlmostReal Club Luxury Private Access Showroom" loading="lazy" decoding="async" width="1024" height="682">
                     </div>
                 </div>
-                <div class="portfolio-item-premium" data-category="ecommerce" data-aos="fade-up">
-                    <div class="portfolio-item-content">
-                        <div class="portfolio-item-meta">Automotive & E-Commerce</div>
-                        <h3>AUCO</h3>
-                        <p class="portfolio-item-desc">A premium dark-themed automotive accessories platform engineered to elevate every drive with cutting-edge audio, LED lighting, and custom car upgrades.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag" style="background: #000; color: #fff;"><i class="fas fa-play" style="font-size: 0.7rem; margin-right: 4px;"></i> Vercel Edge</span>
-                            <span class="tech-tag">HTML5 / CSS3</span>
-                            <span class="tech-tag">Vanilla JS</span>
-                            <span class="tech-tag">E-Commerce</span>
-                        </div>
-                        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                            <a href="https://auco-co.vercel.app/" target="_blank" rel="noopener" class="cta-button primary" style="background: #000; color: #fff; border-color: #000;"><i class="fas fa-external-link-alt" style="margin-right: 6px;"></i> Live Vercel App</a>
-                            <a href="contact.html" class="cta-button secondary"><i class="fas fa-laptop-code" style="margin-right: 6px;"></i> Request Demo</a>
-                        </div>
-                    </div>
-                    <div class="portfolio-item-visual">
-                        <img src="images/auco-website.png" alt="AUCO Automotive Accessories Platform UI Preview" loading="lazy" decoding="async" width="1024" height="682">
-                    </div>
-                </div>
 
-                <!-- Project 7: Aloha Estate Custom Portal -->
-                <div class="portfolio-item-premium" data-category="saas" data-aos="fade-up">
+                <!-- Project 10: Notary & Legal System (Rank 10) -->
+                <div class="portfolio-item-premium reverse-layout" data-category="saas" data-aos="fade-up">
                     <div class="portfolio-item-content">
-                        <div class="portfolio-item-meta">Real Estate & Operations SaaS</div>
-                        <h3>Aloha Estate Custom Portal</h3>
-                        <p class="portfolio-item-desc">A complete real estate operations portal combining CRM, Meta lead syncing, task management, team monitoring, internal chat, and executive business analytics.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag" style="background: #000; color: #fff;"><i class="fas fa-play" style="font-size: 0.7rem; margin-right: 4px;"></i> Vercel Edge</span>
-                            <span class="tech-tag">React / Next.js</span>
-                            <span class="tech-tag">Meta Lead Sync API</span>
-                            <span class="tech-tag">Supabase</span>
-                        </div>
-                        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                            <a href="https://aloha-estate.vercel.app/" target="_blank" rel="noopener" class="cta-button primary" style="background: #000; color: #fff; border-color: #000;"><i class="fas fa-external-link-alt" style="margin-right: 6px;"></i> Live Vercel App</a>
-                            <a href="contact.html" class="cta-button secondary"><i class="fas fa-laptop-code" style="margin-right: 6px;"></i> Request Demo</a>
-                        </div>
-                    </div>
-                    <div class="portfolio-item-visual">
-                        <img src="images/aloha-estate-portal.png" alt="Aloha Estate Custom Portal UI Collage" loading="lazy" decoding="async" width="1024" height="682">
-                    </div>
-                </div>
-
-                <!-- Project 8: Notary & Legal System -->
-                <div class="portfolio-item-premium" data-category="saas" data-aos="fade-up">
-                    <div class="portfolio-item-content">
-                        <div class="portfolio-item-meta">LegalTech Operations</div>
+                        <div class="portfolio-item-meta">LegalTech Operations &amp; Case Management</div>
                         <h3>Notary Case System</h3>
-                        <p class="portfolio-item-desc">An all-in-one workspace helping notary experts manage clients, securely upload document PDFs, schedule online appointments, and digitalize operations.</p>
+                        <p class="portfolio-item-desc">A centralized digital workspace engineered for legal and notary firms to streamline document workflows, track case progression, manage client calendars, and safeguard records.</p>
+                        
+                        <div class="portfolio-item-features">
+                            <div class="features-label"><i class="fas fa-layer-group"></i> Key Capabilities</div>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i> <span><strong>Document Vault &amp; Indexing:</strong> Encrypted cloud storage with automated PDF indexing, metadata tagging &amp; secure delivery</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Casework Status Kanban:</strong> Visual workflow tracking notarial certifications from submission through stamp clearance</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Client Intake &amp; Calendar:</strong> Integrated booking links with SMS/Email notifications and structured digital intake forms</span></li>
+                            </ul>
+                        </div>
+
                         <div class="tech-tags">
-                            <span class="tech-tag" style="background: #000; color: #fff;"><i class="fas fa-play" style="font-size: 0.7rem; margin-right: 4px;"></i> Vercel Edge</span>
                             <span class="tech-tag">Vue.js</span>
                             <span class="tech-tag">Node.js</span>
                             <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Document Vault</span>
                         </div>
-                        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                            <a href="https://notatry-system.vercel.app/" target="_blank" rel="noopener" class="cta-button primary" style="background: #000; color: #fff; border-color: #000;"><i class="fas fa-external-link-alt" style="margin-right: 6px;"></i> Live Vercel App</a>
-                            <a href="contact.html" class="cta-button secondary"><i class="fas fa-laptop-code" style="margin-right: 6px;"></i> Request Demo</a>
+                        <div class="portfolio-item-actions">
+                            <a href="contact.html" class="cta-button primary"><i class="fas fa-gavel"></i> Request LegalTech Build</a>
                         </div>
                     </div>
                     <div class="portfolio-item-visual">
@@ -584,21 +815,30 @@
                     </div>
                 </div>
 
-                <!-- Project 9: CuriousCRM Pro -->
+                <!-- Project 11: CuriousCRM Pro (Rank 11) -->
                 <div class="portfolio-item-premium" data-category="saas" data-aos="fade-up">
                     <div class="portfolio-item-content">
-                        <div class="portfolio-item-meta">Enterprise CRM</div>
+                        <div class="portfolio-item-meta">Enterprise Sales Pipeline &amp; CRM</div>
                         <h3>CuriousCRM Pro</h3>
-                        <p class="portfolio-item-desc">Our flagship customer relationship management console, including interactive task Kanban boards, lead-scoring mechanics, conversion indicators, and database syncs.</p>
+                        <p class="portfolio-item-desc">A modular customer relationship management platform engineered for mid-market teams, featuring drag-and-drop opportunity pipelines, predictive lead scoring, and actionable revenue intelligence.</p>
+                        
+                        <div class="portfolio-item-features">
+                            <div class="features-label"><i class="fas fa-layer-group"></i> Key Capabilities</div>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i> <span><strong>Interactive Deal Kanban:</strong> Drag-and-drop opportunity stages with custom win probability triggers and stage SLAs</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Smart Lead Scoring:</strong> Algorithmic prioritization highlighting high-intent contacts based on touchpoint telemetry</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Rep Performance HUD:</strong> Visual conversion indicators, quarterly quota tracking &amp; automated follow-up cadences</span></li>
+                            </ul>
+                        </div>
+
                         <div class="tech-tags">
-                            <span class="tech-tag" style="background: #000; color: #fff;"><i class="fas fa-play" style="font-size: 0.7rem; margin-right: 4px;"></i> Vercel Edge</span>
                             <span class="tech-tag">Vanilla JS</span>
                             <span class="tech-tag">Tailwind CSS</span>
                             <span class="tech-tag">Supabase</span>
+                            <span class="tech-tag">REST APIs</span>
                         </div>
-                        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                            <a href="https://crm-coral-one.vercel.app/" target="_blank" rel="noopener" class="cta-button primary" style="background: #000; color: #fff; border-color: #000;"><i class="fas fa-external-link-alt" style="margin-right: 6px;"></i> Live Vercel App</a>
-                            <a href="crm-product.html" class="cta-button secondary"><i class="fas fa-sliders-h" style="margin-right: 6px;"></i> Product Specs</a>
+                        <div class="portfolio-item-actions">
+                            <a href="crm-product.html" class="cta-button primary"><i class="fas fa-sliders-h"></i> Product Specs</a>
                         </div>
                     </div>
                     <div class="portfolio-item-visual">
@@ -606,104 +846,30 @@
                     </div>
                 </div>
 
-                <!-- Project 10: AyurDiet Official Web Platform -->
-                <div class="portfolio-item-premium" data-category="saas ecommerce" data-aos="fade-up">
+                <!-- Project 12: Analytics Engine (Rank 12) -->
+                <div class="portfolio-item-premium reverse-layout" data-category="saas" data-aos="fade-up">
                     <div class="portfolio-item-content">
-                        <div class="portfolio-item-meta">Ayurvedic Health & E-Commerce</div>
-                        <h3>AyurDiet Official Platform</h3>
-                        <p class="portfolio-item-desc">Custom health diet planning and organic wellness e-commerce platform with automated diet calculator engines and appointment scheduling.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag" style="background: #2563eb; color: #fff;"><i class="fas fa-globe" style="font-size: 0.7rem; margin-right: 4px;"></i> Production Domain</span>
-                            <span class="tech-tag">Custom Web</span>
-                            <span class="tech-tag">E-Commerce</span>
-                        </div>
-                        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                            <a href="https://www.ayurdiet.co.in/" target="_blank" rel="noopener" class="cta-button primary" style="background: #2563eb; color: #fff; border-color: #2563eb;"><i class="fas fa-external-link-alt" style="margin-right: 6px;"></i> Visit AyurDiet.co.in</a>
-                            <a href="contact.html" class="cta-button secondary"><i class="fas fa-hammer" style="margin-right: 6px;"></i> Request Build</a>
-                        </div>
-                    </div>
-                    <div class="portfolio-item-visual">
-                        <img src="images/curiouskaizer.png" alt="AyurDiet Official Web Platform UI" loading="lazy" decoding="async" width="1024" height="682">
-                    </div>
-                </div>
-
-                <!-- Project 11: Aloha Events Platform -->
-                <div class="portfolio-item-premium" data-category="saas" data-aos="fade-up">
-                    <div class="portfolio-item-content">
-                        <div class="portfolio-item-meta">Event Operations & Management</div>
-                        <h3>Aloha Events Platform</h3>
-                        <p class="portfolio-item-desc">Enterprise event management software featuring ticket booking workflows, attendee check-in dashboards, and live venue schedules.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag" style="background: #000; color: #fff;"><i class="fas fa-play" style="font-size: 0.7rem; margin-right: 4px;"></i> Vercel Edge</span>
-                            <span class="tech-tag">React / Next.js</span>
-                            <span class="tech-tag">Tailwind CSS</span>
-                        </div>
-                        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                            <a href="https://aloha-events.vercel.app/" target="_blank" rel="noopener" class="cta-button primary" style="background: #000; color: #fff; border-color: #000;"><i class="fas fa-external-link-alt" style="margin-right: 6px;"></i> Live Vercel App</a>
-                            <a href="contact.html" class="cta-button secondary"><i class="fas fa-hammer" style="margin-right: 6px;"></i> Request Build</a>
-                        </div>
-                    </div>
-                    <div class="portfolio-item-visual">
-                        <img src="images/aloha-estate-portal.png" alt="Aloha Events Management Platform UI" loading="lazy" decoding="async" width="1024" height="682">
-                    </div>
-                </div>
-
-                <!-- Project 12: Alchemy with Tarot -->
-                <div class="portfolio-item-premium" data-category="3d saas" data-aos="fade-up">
-                    <div class="portfolio-item-content">
-                        <div class="portfolio-item-meta">Cosmic & Interactive Web Platform</div>
-                        <h3>Alchemy with Tarot</h3>
-                        <p class="portfolio-item-desc">An interactive cosmic web app rendering 3D tarot card spreads, daily guidance algorithms, and glassmorphic aesthetic interfaces.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag" style="background: #000; color: #fff;"><i class="fas fa-play" style="font-size: 0.7rem; margin-right: 4px;"></i> Vercel Edge</span>
-                            <span class="tech-tag">Three.js</span>
-                            <span class="tech-tag">Canvas Animation</span>
-                        </div>
-                        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                            <a href="https://alchemywithtarot.vercel.app/" target="_blank" rel="noopener" class="cta-button primary" style="background: #000; color: #fff; border-color: #000;"><i class="fas fa-external-link-alt" style="margin-right: 6px;"></i> Live Vercel App</a>
-                            <a href="contact.html" class="cta-button secondary"><i class="fas fa-hammer" style="margin-right: 6px;"></i> Request Build</a>
-                        </div>
-                    </div>
-                    <div class="portfolio-item-visual">
-                        <img src="images/irastra-celestial.png" alt="Alchemy with Tarot Web Platform UI" loading="lazy" decoding="async" width="1024" height="682">
-                    </div>
-                </div>
-
-                <!-- Project 13: Magic of Numbers -->
-                <div class="portfolio-item-premium" data-category="saas" data-aos="fade-up">
-                    <div class="portfolio-item-content">
-                        <div class="portfolio-item-meta">Analytical Numerology Engine</div>
-                        <h3>Magic of Numbers</h3>
-                        <p class="portfolio-item-desc">Interactive numerology calculation engine mapping name and date inputs to complex chart report generators.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag" style="background: #000; color: #fff;"><i class="fas fa-play" style="font-size: 0.7rem; margin-right: 4px;"></i> Vercel Edge</span>
-                            <span class="tech-tag">JavaScript ES6</span>
-                            <span class="tech-tag">Algorithms</span>
-                        </div>
-                        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                            <a href="https://magic-of-numbers.vercel.app/" target="_blank" rel="noopener" class="cta-button primary" style="background: #000; color: #fff; border-color: #000;"><i class="fas fa-external-link-alt" style="margin-right: 6px;"></i> Live Vercel App</a>
-                            <a href="contact.html" class="cta-button secondary"><i class="fas fa-hammer" style="margin-right: 6px;"></i> Request Build</a>
-                        </div>
-                    </div>
-                    <div class="portfolio-item-visual">
-                        <img src="images/irastra-celestial.png" alt="Magic of Numbers Analytical Platform UI" loading="lazy" decoding="async" width="1024" height="682">
-                    </div>
-                </div>
-
-                <!-- Project 14: Analytics Engine -->
-                <div class="portfolio-item-premium" data-category="saas" data-aos="fade-up">
-                    <div class="portfolio-item-content">
-                        <div class="portfolio-item-meta">Real-Time Data Console</div>
+                        <div class="portfolio-item-meta">Privacy-First Real-Time Telemetry</div>
                         <h3>Analytics Engine</h3>
-                        <p class="portfolio-item-desc">A privacy-first serverless analytics dashboard tracking user sessions, click funnels, and performance telemetry.</p>
+                        <p class="portfolio-item-desc">A lightweight, privacy-focused serverless analytics platform tracking real-time web sessions, conversion funnel drop-offs, and custom event telemetry without third-party cookies.</p>
+                        
+                        <div class="portfolio-item-features">
+                            <div class="features-label"><i class="fas fa-layer-group"></i> Key Capabilities</div>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i> <span><strong>Zero-Cookie Telemetry:</strong> Ultra-lightweight tracking script (&lt;3KB) compliant with GDPR/CCPA that never stores PII</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Click Funnel Visualizer:</strong> Step-by-step conversion funnel drop-off analysis with real-time cohort filtering</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Custom Event Emitter:</strong> Instant visualization of CTA clicks, scroll depths &amp; revenue conversion goals</span></li>
+                            </ul>
+                        </div>
+
                         <div class="tech-tags">
-                            <span class="tech-tag" style="background: #000; color: #fff;"><i class="fas fa-play" style="font-size: 0.7rem; margin-right: 4px;"></i> Vercel Edge</span>
                             <span class="tech-tag">Supabase</span>
                             <span class="tech-tag">Chart.js</span>
+                            <span class="tech-tag">Edge Functions</span>
+                            <span class="tech-tag">Privacy Analytics</span>
                         </div>
-                        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                            <a href="https://analytics-indol-psi.vercel.app/" target="_blank" rel="noopener" class="cta-button primary" style="background: #000; color: #fff; border-color: #000;"><i class="fas fa-external-link-alt" style="margin-right: 6px;"></i> Live Vercel App</a>
-                            <a href="contact.html" class="cta-button secondary"><i class="fas fa-hammer" style="margin-right: 6px;"></i> Request Build</a>
+                        <div class="portfolio-item-actions">
+                            <a href="contact.html" class="cta-button primary"><i class="fas fa-chart-line"></i> Request Analytics Build</a>
                         </div>
                     </div>
                     <div class="portfolio-item-visual">
@@ -711,20 +877,30 @@
                     </div>
                 </div>
 
-                <!-- Project 15: Civic Infrastructure Portal -->
+                <!-- Project 13: Civic Infrastructure Portal (Rank 13) -->
                 <div class="portfolio-item-premium" data-category="saas" data-aos="fade-up">
                     <div class="portfolio-item-content">
-                        <div class="portfolio-item-meta">Public Utilities & Geo Mapping</div>
+                        <div class="portfolio-item-meta">Civic Tech &amp; Geospatial Utilities</div>
                         <h3>Civic Infrastructure Portal</h3>
-                        <p class="portfolio-item-desc">A public infrastructure locator mapping civic amenities with real-time GPS geolocation and status reporting.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag" style="background: #000; color: #fff;"><i class="fas fa-play" style="font-size: 0.7rem; margin-right: 4px;"></i> Vercel Edge</span>
-                            <span class="tech-tag">Geolocation API</span>
-                            <span class="tech-tag">Mapbox</span>
+                        <p class="portfolio-item-desc">A public geospatial infrastructure portal enabling citizens and municipal teams to locate, inspect, and report on municipal utilities and road assets in real time.</p>
+                        
+                        <div class="portfolio-item-features">
+                            <div class="features-label"><i class="fas fa-layer-group"></i> Key Capabilities</div>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i> <span><strong>Interactive Mapbox GIS:</strong> Vector geospatial mapping with dynamic amenity clustering &amp; GPS route navigation</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Crowd-Sourced Reporting:</strong> One-click citizen ticket submission with photo attachments and exact coordinate pins</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Municipal Admin Dashboard:</strong> City operations console prioritizing repair dispatches &amp; maintenance statuses</span></li>
+                            </ul>
                         </div>
-                        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                            <a href="https://public-toilet-sepia.vercel.app/" target="_blank" rel="noopener" class="cta-button primary" style="background: #000; color: #fff; border-color: #000;"><i class="fas fa-external-link-alt" style="margin-right: 6px;"></i> Live Vercel App</a>
-                            <a href="contact.html" class="cta-button secondary"><i class="fas fa-hammer" style="margin-right: 6px;"></i> Request Build</a>
+
+                        <div class="tech-tags">
+                            <span class="tech-tag">Mapbox GL</span>
+                            <span class="tech-tag">Geolocation API</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                        <div class="portfolio-item-actions">
+                            <a href="contact.html" class="cta-button primary"><i class="fas fa-map-marked-alt"></i> Request Civic Build</a>
                         </div>
                     </div>
                     <div class="portfolio-item-visual">
@@ -855,6 +1031,20 @@
             const tabs = document.querySelectorAll('.filter-tab');
             const items = document.querySelectorAll('.portfolio-item-premium');
 
+            function updateAlternatingLayout() {
+                let visibleIndex = 0;
+                items.forEach(item => {
+                    if (item.style.display !== 'none') {
+                        if (visibleIndex % 2 === 1) {
+                            item.classList.add('reverse-layout');
+                        } else {
+                            item.classList.remove('reverse-layout');
+                        }
+                        visibleIndex++;
+                    }
+                });
+            }
+
             tabs.forEach(tab => {
                 tab.addEventListener('click', () => {
                     tabs.forEach(t => t.classList.remove('active'));
@@ -863,14 +1053,19 @@
                     const filter = tab.getAttribute('data-filter');
 
                     items.forEach(item => {
-                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        const categories = (item.getAttribute('data-category') || '').split(' ');
+                        if (filter === 'all' || categories.includes(filter)) {
                             item.style.display = 'grid';
                         } else {
                             item.style.display = 'none';
                         }
                     });
+
+                    updateAlternatingLayout();
                 });
             });
+
+            updateAlternatingLayout();
         });
     </script>
 </body>
