@@ -4136,20 +4136,24 @@
                             <span style="color: #1d6bf3;">of Modern AI &amp; Engineering</span>
                         </h2>
 
-                        <p style="font-size: 1.02rem; color: #334155; line-height: 1.7; font-weight: 400; margin-bottom: 16px;">
+                        <p class="founder-desktop-p" style="font-size: 1.02rem; color: #334155; line-height: 1.7; font-weight: 400; margin-bottom: 16px;">
                             Traditional agencies take 6 months and $80k to build a v1. <strong style="color: #0f172a; font-weight: 500;">We ship production-grade digital infrastructure in 7 to 14 days.</strong>
                         </p>
 
-                        <p style="font-size: 1.02rem; color: #334155; line-height: 1.7; font-weight: 400; margin-bottom: 16px;">
+                        <p class="founder-desktop-p" style="font-size: 1.02rem; color: #334155; line-height: 1.7; font-weight: 400; margin-bottom: 16px;">
                             By combining custom AI agent pipelines, high-performance WebGL, and battle-tested cloud architectures, <strong style="color: #0f172a; font-weight: 500;">we compress months of engineering into days without compromising on quality or scale.</strong>
                         </p>
 
-                        <p style="font-size: 1.02rem; color: #334155; line-height: 1.7; font-weight: 400; margin-bottom: 16px;">
+                        <p class="founder-desktop-p" style="font-size: 1.02rem; color: #334155; line-height: 1.7; font-weight: 400; margin-bottom: 16px;">
                             Having shipped <strong style="color: #0f172a; font-weight: 500;">50+ live products generating $1M+ in client value</strong>, I founded Curious Kaizer to give ambitious founders the ultimate unfair advantage: <strong style="color: #0f172a; font-weight: 500;">hyper-speed execution to capture markets first.</strong>
                         </p>
 
-                        <p style="font-size: 1.02rem; color: #475569; line-height: 1.7; font-weight: 400; margin-bottom: 24px;">
+                        <p class="founder-desktop-p" style="font-size: 1.02rem; color: #475569; line-height: 1.7; font-weight: 400; margin-bottom: 24px;">
                             No bloated teams. No endless sprint meetings. Just relentless execution, high-status design, and clean scalable code delivered at market pace.
+                        </p>
+
+                        <p class="founder-mobile-p">
+                            Traditional agencies take 6 months and $80k to build a v1. <strong style="color: #0f172a; font-weight: 600;">We ship production-grade digital infrastructure in 7 to 14 days.</strong> With <strong style="color: #0f172a; font-weight: 600;">50+ live products generating $1M+ in client value</strong>, we compress months into days without compromising on scale.
                         </p>
 
                         <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
@@ -5539,16 +5543,140 @@
         text-decoration: underline !important;
     }
     @media (max-width: 768px) {
+        .founder-desktop-p {
+            display: none !important;
+        }
+        .founder-mobile-p {
+            display: block !important;
+            font-size: 0.82rem !important;
+            line-height: 1.48 !important;
+            color: #334155 !important;
+            margin-bottom: 10px !important;
+        }
+        .india-network-section {
+            padding: 36px 0 46px 0 !important;
+        }
+        .network-telemetry-compact-bar {
+            gap: 6px !important;
+            margin: 12px auto 16px auto !important;
+            display: flex !important;
+            flex-wrap: nowrap !important;
+            justify-content: center !important;
+            overflow-x: auto !important;
+            -webkit-overflow-scrolling: touch !important;
+            scrollbar-width: none !important;
+            padding: 2px 4px !important;
+        }
+        .network-telemetry-compact-bar::-webkit-scrollbar {
+            display: none !important;
+        }
+        .network-mini-pill {
+            padding: 5px 11px !important;
+            gap: 6px !important;
+            font-size: 0.72rem !important;
+            white-space: nowrap !important;
+            flex-shrink: 0 !important;
+            border-radius: 80px !important;
+        }
+        .network-mini-pill strong {
+            font-size: 0.80rem !important;
+        }
+        .network-mini-pill i {
+            font-size: 0.74rem !important;
+        }
+        .apple-map-stage {
+            max-width: 100% !important;
+            margin: 0 auto !important;
+        }
+        .apple-india-svg {
+            max-height: 310px !important;
+            width: 100% !important;
+            margin: 0 auto !important;
+            filter: drop-shadow(0 10px 24px rgba(37, 99, 235, 0.08)) !important;
+        }
+        .apple-map-stage-bg {
+            width: 320px !important;
+            height: 320px !important;
+        }
         .apple-map-hud-pro {
-            border-radius: 18px !important;
-            padding: 16px 18px !important;
+            border-radius: 16px !important;
+            padding: 12px 14px !important;
+            margin: 14px auto 0 auto !important;
             flex-direction: column !important;
-            align-items: flex-start !important;
-            gap: 14px !important;
+            align-items: stretch !important;
+            gap: 10px !important;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06) !important;
+        }
+        .hud-left-pro {
+            display: flex !important;
+            align-items: center !important;
+            gap: 10px !important;
+        }
+        .hud-icon-pro {
+            width: 38px !important;
+            height: 38px !important;
+            border-radius: 10px !important;
+            font-size: 1rem !important;
+            flex-shrink: 0 !important;
+        }
+        .hud-title-pro {
+            font-size: 0.94rem !important;
+            font-weight: 700 !important;
+            gap: 6px !important;
+            line-height: 1.25 !important;
+        }
+        .live-beacon-dot-pro {
+            width: 7px !important;
+            height: 7px !important;
+            flex-shrink: 0 !important;
+        }
+        .hud-desc-pro {
+            font-size: 0.76rem !important;
+            line-height: 1.35 !important;
+            margin-top: 2px !important;
+            color: #475569 !important;
         }
         .hud-right-pro {
             width: 100% !important;
+            display: flex !important;
+            align-items: center !important;
             justify-content: space-between !important;
+            gap: 8px !important;
+            padding-top: 8px !important;
+            border-top: 1px solid #f1f5f9 !important;
+        }
+        .hud-badge-pro {
+            padding: 5px 12px !important;
+            font-size: 0.74rem !important;
+            border-radius: 50px !important;
+        }
+        .hud-wa-btn-pro {
+            padding: 6px 14px !important;
+            font-size: 0.76rem !important;
+            border-radius: 50px !important;
+            gap: 5px !important;
+        }
+        .regional-hubs-container {
+            padding: 12px 10px !important;
+            margin-top: 12px !important;
+            border-radius: 16px !important;
+            gap: 8px !important;
+        }
+        .regional-hubs-badge {
+            font-size: 0.66rem !important;
+            padding: 3px 10px !important;
+        }
+        .regional-hubs-chips {
+            gap: 6px !important;
+        }
+        .hub-chip {
+            padding: 5px 10px !important;
+            font-size: 0.74rem !important;
+            gap: 5px !important;
+            border-radius: 40px !important;
+        }
+        .hub-chip i {
+            font-size: 0.70rem !important;
         }
     }
     </style>
