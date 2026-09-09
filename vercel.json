@@ -1,13 +1,13 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
-    { "source": "/about-us", "destination": "/about.html" },
-    { "source": "/company", "destination": "/about.html" },
-    { "source": "/team", "destination": "/about.html" },
-    { "source": "/contact-us", "destination": "/contact.html" },
-    { "source": "/work", "destination": "/portfolio.html" },
-    { "source": "/case-studies", "destination": "/portfolio.html" }
+  "redirects": [
+    { "source": "/about-us", "destination": "/about", "permanent": true },
+    { "source": "/company", "destination": "/about", "permanent": true },
+    { "source": "/team", "destination": "/about", "permanent": true },
+    { "source": "/contact-us", "destination": "/contact", "permanent": true },
+    { "source": "/work", "destination": "/portfolio", "permanent": true },
+    { "source": "/case-studies", "destination": "/portfolio", "permanent": true }
   ],
   "headers": [
     {
