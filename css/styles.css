@@ -13474,8 +13474,6 @@ html.js-ready [data-aos="fade-up"]:not(.aos-animate) {
    ========================================================================== */
 .cta-button,
 .hero-cta-button,
-.nav-cta-btn,
-.nav-cta-btn-mobile,
 .btn,
 .btn-primary,
 .btn-secondary,
@@ -13506,8 +13504,6 @@ html.js-ready [data-aos="fade-up"]:not(.aos-animate) {
 /* Hover State */
 .cta-button:hover,
 .hero-cta-button:hover,
-.nav-cta-btn:hover,
-.nav-cta-btn-mobile:hover,
 .btn:hover,
 .btn-primary:hover,
 .btn-secondary:hover,
@@ -13524,8 +13520,9 @@ html.js-ready [data-aos="fade-up"]:not(.aos-animate) {
 /* Active State */
 .cta-button:active,
 .hero-cta-button:active,
-.nav-cta-btn:active,
-.nav-cta-btn-mobile:active,
+.btn:active,
+.btn-primary:active,
+.btn-secondary:active,
 .success-action-btn:active {
     transform: translateY(1px) !important;
     box-shadow:
@@ -27484,8 +27481,6 @@ a.cta-button,
 a.cta-button.primary,
 .hero-cta-button,
 #home .hero-cta-button,
-.nav-cta-btn,
-.nav-cta-btn-mobile,
 .btn,
 .btn-primary,
 .faq-card-cta-btn,
@@ -27541,8 +27536,6 @@ a.cta-button:hover,
 a.cta-button.primary:hover,
 .hero-cta-button:hover,
 #home .hero-cta-button:hover,
-.nav-cta-btn:hover,
-.nav-cta-btn-mobile:hover,
 .btn:hover,
 .btn-primary:hover,
 .faq-card-cta-btn:hover,
@@ -27570,8 +27563,6 @@ a.cta-button:active,
 a.cta-button.primary:active,
 .hero-cta-button:active,
 #home .hero-cta-button:active,
-.nav-cta-btn:active,
-.nav-cta-btn-mobile:active,
 .btn:active,
 .btn-primary:active,
 .faq-card-cta-btn:active,
@@ -28537,6 +28528,104 @@ a.cta-button.secondary:active,
     background: linear-gradient(135deg, #1d4ed8, #1e40af);
     transform: translateY(-1px);
     box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
+}
+
+/* ==========================================================================
+   DEDICATED COMPACT NAVBAR "BOOK CALL" CTA BUTTON (DESKTOP & MOBILE)
+   ========================================================================== */
+.nav-cta-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    background: linear-gradient(180deg, #0077ed 0%, #0062cc 100%) !important;
+    color: #ffffff !important;
+    padding: 6px 14px !important; /* Sleek, perfectly proportioned pill */
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Segoe UI", sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 0.82rem !important;
+    letter-spacing: -0.01em !important;
+    border-radius: 9999px !important;
+    border: 1px solid rgba(0, 85, 204, 0.45) !important;
+    box-shadow: 0 2px 8px rgba(0, 113, 227, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15) !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    cursor: pointer !important;
+    line-height: 1.2 !important;
+    box-sizing: border-box !important;
+}
+
+.nav-cta-btn i {
+    font-size: 0.72rem !important;
+    transition: transform 0.2s ease !important;
+}
+
+.nav-cta-btn:hover {
+    background: linear-gradient(180deg, #1484f5 0%, #006ae0 100%) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 14px rgba(0, 113, 227, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+    color: #ffffff !important;
+}
+
+.nav-cta-btn:hover i {
+    transform: translateX(2px) !important;
+}
+
+.nav-cta-btn:active {
+    transform: translateY(0) scale(0.98) !important;
+}
+
+/* Tablet and Mobile header navbar CTA button */
+@media (max-width: 991px) {
+    .nav-cta-btn {
+        padding: 5px 12px !important;
+        font-size: 0.76rem !important;
+        gap: 5px !important;
+        border-radius: 9999px !important;
+    }
+
+    .nav-cta-btn i {
+        font-size: 0.68rem !important;
+    }
+
+    /* In mobile dropdown drawer menu */
+    .nav-cta-btn-mobile {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 6px !important;
+        background: linear-gradient(180deg, #0077ed 0%, #0062cc 100%) !important;
+        color: #ffffff !important;
+        padding: 9px 20px !important;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", sans-serif !important;
+        font-weight: 600 !important;
+        font-size: 0.86rem !important;
+        border-radius: 9999px !important;
+        text-decoration: none !important;
+        width: 100% !important;
+        max-width: 240px !important;
+        margin: 0 auto !important;
+        box-shadow: 0 4px 12px rgba(0, 113, 227, 0.25) !important;
+    }
+
+    .nav-cta-btn-mobile:hover {
+        background: linear-gradient(180deg, #1484f5 0%, #006ae0 100%) !important;
+        color: #ffffff !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-cta-btn {
+        padding: 4px 10px !important;
+        font-size: 0.72rem !important;
+        gap: 4px !important;
+    }
+
+    .nav-cta-btn i {
+        font-size: 0.65rem !important;
+    }
 }
 
 
