@@ -2,340 +2,423 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     
-    <!-- Homepage - Highest Priority -->
+    <!-- =================================================== -->
+    <!-- 1. PRIMARY CORE HUBS                               -->
+    <!-- =================================================== -->
+    
+    <!-- Homepage - Agency Flagship -->
     <url>
         <loc>https://www.curiouskaizer.com/</loc>
-        <lastmod>2026-09-10</lastmod>
+        <lastmod>2026-09-29</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <image:image>
             <image:loc>https://www.curiouskaizer.com/images/hero-positioning-desktop-final.jpg</image:loc>
-            <image:title>Curious Kaizer - Best Web Development Company in Delhi</image:title>
-            <image:caption>Custom SaaS platforms, AI agent automation, 3D web configurators, and bespoke websites</image:caption>
+            <image:title>Curious Kaizer - Premier Web Design &amp; Development Agency in Delhi NCR</image:title>
+            <image:caption>Bespoke software architecture, AI agent integrations, luxury 3D configurators, and conversion-engineered web applications.</image:caption>
         </image:image>
         <image:image>
             <image:loc>https://www.curiouskaizer.com/images/logo-icon.jpg</image:loc>
-            <image:title>Curious Kaizer Brand Mark</image:title>
+            <image:title>Curious Kaizer Monogram</image:title>
         </image:image>
     </url>
     
-    <!-- About Page - Company & Leadership -->
-    <url>
-        <loc>https://www.curiouskaizer.com/about</loc>
-        <lastmod>2026-09-10</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <!-- Services Page - Core Offerings -->
+    <!-- Services Hub - Engineering & Creative Capabilities -->
     <url>
         <loc>https://www.curiouskaizer.com/services</loc>
-        <lastmod>2026-09-10</lastmod>
+        <lastmod>2026-09-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     
-    <!-- Portfolio Page - Showcasing Best Work -->
+    <!-- Portfolio & Live Client Deployments Showcase -->
     <url>
         <loc>https://www.curiouskaizer.com/portfolio</loc>
-        <lastmod>2026-09-10</lastmod>
+        <lastmod>2026-09-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
         <image:image>
             <image:loc>https://www.curiouskaizer.com/images/hanboro-watches.png</image:loc>
-            <image:title>HANBORO Watches Luxury Horology &amp; Interactive E-Commerce Experience</image:title>
-            <image:caption>Interactive daylight-to-luminescence mechanical watch storefront engineered for HANBORO Watches India</image:caption>
+            <image:title>HANBORO Watches Luxury E-Commerce &amp; Spatial Web Experience</image:title>
+            <image:caption>Interactive daylight-to-luminescence mechanical watch storefront engineered by Curious Kaizer for HANBORO Watches India.</image:caption>
         </image:image>
         <image:image>
             <image:loc>https://www.curiouskaizer.com/images/club-re-straddle-system.png</image:loc>
-            <image:title>Club Re Straddle Multi-Portal Club Management Ecosystem UI</image:title>
-            <image:caption>Private club management platform featuring member passes, QR scanners, and live gate clearance</image:caption>
+            <image:title>Club Re Straddle Multi-Portal Ecosystem &amp; Player Management OS</image:title>
+            <image:caption>Complete private club operating system featuring member passes, QR scan check-ins, and cashier ledger.</image:caption>
         </image:image>
         <image:image>
             <image:loc>https://www.curiouskaizer.com/images/aloha-estate-portal.png</image:loc>
-            <image:title>Real Estate Group-Buying &amp; Operations SaaS Portal Showcase</image:title>
-            <image:caption>Custom spatial real estate map dashboard and token investment calculator</image:caption>
+            <image:title>Aloha Estates Real Estate Investment &amp; Syndication SaaS Portal</image:title>
+            <image:caption>Fractional property investment engine and interactive parcel maps engineered by Curious Kaizer.</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://www.curiouskaizer.com/images/blog-multi-agent-orchestration.png</image:loc>
-            <image:title>Three.js 3D Ring Customizer Visualizer</image:title>
+            <image:loc>https://www.curiouskaizer.com/images/auco-website.png</image:loc>
+            <image:title>Auco Architectural Spatial Surface Configurator</image:title>
+            <image:caption>3D material explorer and luxury architectural surface visualization platform.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/his-drink-3d.png</image:loc>
+            <image:title>HIS DRINK Spatial 3D Web Experience</image:title>
+            <image:caption>WebGL 3D beverage customizer with interactive physics and lighting.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/kaizerstays-pms-overview-dashboard.png</image:loc>
+            <image:title>KaizerStays Hotel Operating System Enterprise PMS Dashboard</image:title>
+            <image:caption>Unified hotel operations, reservation management, front desk, and room inventory platform.</image:caption>
         </image:image>
     </url>
     
-    <!-- Pricing Page - Cost & Packages -->
+    <!-- About Curious Kaizer - Agency Philosophy, Team & Standards -->
+    <url>
+        <loc>https://www.curiouskaizer.com/about</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/jai-g-founder.jpg</image:loc>
+            <image:title>Curious Kaizer Founder &amp; Lead Systems Architect</image:title>
+        </image:image>
+    </url>
+    
+    <!-- Pricing - Transparent Agency Packages & Investment Models -->
     <url>
         <loc>https://www.curiouskaizer.com/pricing</loc>
-        <lastmod>2026-09-10</lastmod>
+        <lastmod>2026-09-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     
-    <!-- CRM Product Page - Detailed Software Offering -->
+    <!-- Curious CRM Pro - Proprietary Enterprise Software -->
     <url>
         <loc>https://www.curiouskaizer.com/crm-product</loc>
-        <lastmod>2026-09-10</lastmod>
+        <lastmod>2026-09-29</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.85</priority>
         <image:image>
             <image:loc>https://www.curiouskaizer.com/images/crmimage.webp</image:loc>
-            <image:title>Curious CRM Pro Enterprise Dashboard Interface</image:title>
-            <image:caption>Custom Kanban lead pipeline tracking and client operation management software</image:caption>
+            <image:title>Curious CRM Enterprise Pipeline Interface</image:title>
+            <image:caption>Custom lead tracking, client lifecycle management, and sales operations software built by Curious Kaizer.</image:caption>
         </image:image>
     </url>
     
-    <!-- Contact Page - Local SEO Contact & Map -->
+    <!-- Contact & Discovery - Direct Agency Inquiries -->
     <url>
         <loc>https://www.curiouskaizer.com/contact</loc>
-        <lastmod>2026-09-10</lastmod>
+        <lastmod>2026-09-29</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.85</priority>
     </url>
     
-    <!-- Blog Hub Page - Articles & Tech Insights -->
+    <!-- Technology & Engineering Blog Hub -->
     <url>
         <loc>https://www.curiouskaizer.com/blog</loc>
-        <lastmod>2026-09-10</lastmod>
+        <lastmod>2026-09-29</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>
-    
-    <!-- Blog Article - Multi Agent Orchestration 2026 -->
-    <url>
-        <loc>https://www.curiouskaizer.com/blog-multi-agent-orchestration-2026</loc>
-        <lastmod>2026-09-10</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-        <image:image>
-            <image:loc>https://www.curiouskaizer.com/images/blog-multi-agent-orchestration.png</image:loc>
-            <image:title>Multi-Agent Orchestration Architecture Diagram</image:title>
-        </image:image>
-    </url>
 
-    <!-- Blog Article - Hybrid Search & Vector Indexing -->
-    <url>
-        <loc>https://www.curiouskaizer.com/blog-vector-database-indexing-hybrid-search</loc>
-        <lastmod>2026-09-10</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-        <image:image>
-            <image:loc>https://www.curiouskaizer.com/images/blog-vector-hybrid-search.png</image:loc>
-            <image:title>Hybrid Search HNSW and BM25 Architecture Diagram</image:title>
-        </image:image>
-    </url>
-
-    <!-- Blog Article - Serverless Postgres Neon Supabase -->
-    <url>
-        <loc>https://www.curiouskaizer.com/blog-serverless-postgres-neon-supabase</loc>
-        <lastmod>2026-09-10</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-        <image:image>
-            <image:loc>https://www.curiouskaizer.com/images/blog-serverless-postgres.png</image:loc>
-            <image:title>Serverless Postgres Database Branching Architecture</image:title>
-        </image:image>
-    </url>
-
-    <!-- Blog Article - Rust & WebAssembly Microservices -->
-    <url>
-        <loc>https://www.curiouskaizer.com/blog-rust-webassembly-microservices</loc>
-        <lastmod>2026-09-10</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-        <image:image>
-            <image:loc>https://www.curiouskaizer.com/images/blog-rust-webassembly.png</image:loc>
-            <image:title>Rust WebAssembly vs Docker Microservices Infrastructure</image:title>
-        </image:image>
-    </url>
-
-    <!-- Blog Article - Context Engineering over Prompt Engineering -->
-    <url>
-        <loc>https://www.curiouskaizer.com/blog-context-engineering-llm-apps</loc>
-        <lastmod>2026-09-10</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-        <image:image>
-            <image:loc>https://www.curiouskaizer.com/images/blog-context-engineering.png</image:loc>
-            <image:title>Context Engineering vs Prompt Engineering GraphRAG Diagram</image:title>
-        </image:image>
-    </url>
-
-    <!-- Blog Article - Browser AI Agent Automation -->
-    <url>
-        <loc>https://www.curiouskaizer.com/blog-browser-ai-agent-automation</loc>
-        <lastmod>2026-09-10</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Blog Article - Real Estate Operations Portal -->
-    <url>
-        <loc>https://www.curiouskaizer.com/blog-real-estate-operations-portal</loc>
-        <lastmod>2026-09-10</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Blog Article - RAG Latency Edge Optimization -->
-    <url>
-        <loc>https://www.curiouskaizer.com/blog-rag-latency-optimization</loc>
-        <lastmod>2026-09-10</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
+    <!-- =================================================== -->
+    <!-- 2. HIGH-VALUE COMMERCIAL & REGIONAL SEO HUBS       -->
+    <!-- =================================================== -->
     
-    <!-- Blog Article - Database Normalization -->
-    <url>
-        <loc>https://www.curiouskaizer.com/blog-database-normalization</loc>
-        <lastmod>2026-09-10</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <!-- Blog Article - Canonical Redirect Loops -->
-    <url>
-        <loc>https://www.curiouskaizer.com/blog-canonical-redirect-loops</loc>
-        <lastmod>2026-09-10</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <!-- Blog Article - B2B Chemical Procurement Case Study -->
-    <url>
-        <loc>https://www.curiouskaizer.com/blog-b2b-procurement-case-study</loc>
-        <lastmod>2026-09-10</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <!-- Blog Article - Voice AI Gemini Integration -->
-    <url>
-        <loc>https://www.curiouskaizer.com/blog-voice-ai-gemini-integration</loc>
-        <lastmod>2026-09-10</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <!-- Blog Article - Vanilla JS CRM Architecture -->
-    <url>
-        <loc>https://www.curiouskaizer.com/blog-vanilla-js-crm</loc>
-        <lastmod>2026-09-10</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <!-- Blog Article - AI Inference at the Edge -->
-    <url>
-        <loc>https://www.curiouskaizer.com/blog-edge-ai-inference</loc>
-        <lastmod>2026-09-10</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <!-- Blog Article - Edge Rendering in 2026 -->
-    <url>
-        <loc>https://www.curiouskaizer.com/blog-edge-rendering-2026</loc>
-        <lastmod>2026-09-10</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <!-- Blog Article - INP Core Web Vitals -->
-    <url>
-        <loc>https://www.curiouskaizer.com/blog-inp-core-web-vitals</loc>
-        <lastmod>2026-09-10</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <!-- Blog Article - WebAssembly at the Edge -->
-    <url>
-        <loc>https://www.curiouskaizer.com/blog-webassembly-edge</loc>
-        <lastmod>2026-09-10</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <!-- Blog Article - Inference Compute Scaling -->
-    <url>
-        <loc>https://www.curiouskaizer.com/blog-inference-compute-scaling</loc>
-        <lastmod>2026-09-10</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <!-- Blog Article - Liquid Foundation Models -->
-    <url>
-        <loc>https://www.curiouskaizer.com/blog-liquid-foundation-models</loc>
-        <lastmod>2026-09-10</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <!-- Privacy Policy Page -->
-    <url>
-        <loc>https://www.curiouskaizer.com/privacy</loc>
-        <lastmod>2026-09-10</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-    
-    <!-- Terms of Service Page -->
-    <url>
-        <loc>https://www.curiouskaizer.com/terms</loc>
-        <lastmod>2026-09-10</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-    
-
-    <!-- Matrix Landing Pages - Core & Local SEO -->
+    <!-- Core Pillar: Website Designing Company in Delhi -->
     <url>
         <loc>https://www.curiouskaizer.com/website-designing-company-in-delhi</loc>
-        <lastmod>2026-09-10</lastmod>
+        <lastmod>2026-09-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.95</priority>
     </url>
+    
+    <!-- E-Commerce Website Development Delhi -->
     <url>
         <loc>https://www.curiouskaizer.com/ecommerce-website-development-delhi</loc>
-        <lastmod>2026-09-10</lastmod>
+        <lastmod>2026-09-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/hanboro-watches.png</image:loc>
+            <image:title>Luxury E-Commerce Engineering Case Study - HANBORO Watches</image:title>
+        </image:image>
     </url>
+    
+    <!-- WordPress Website Development Delhi -->
     <url>
         <loc>https://www.curiouskaizer.com/wordpress-website-development-delhi</loc>
-        <lastmod>2026-09-10</lastmod>
+        <lastmod>2026-09-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
+    
+    <!-- Website Redesign Services Delhi -->
     <url>
         <loc>https://www.curiouskaizer.com/website-redesign-services-delhi</loc>
-        <lastmod>2026-09-10</lastmod>
+        <lastmod>2026-09-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
+    
+    <!-- Interactive Website Design Cost Calculator -->
     <url>
         <loc>https://www.curiouskaizer.com/website-design-cost-calculator</loc>
-        <lastmod>2026-09-10</lastmod>
+        <lastmod>2026-09-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
+    
+    <!-- Website Designing Company South Delhi -->
     <url>
         <loc>https://www.curiouskaizer.com/website-designing-company-south-delhi</loc>
-        <lastmod>2026-09-10</lastmod>
+        <lastmod>2026-09-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
+    
+    <!-- Website Design Company Noida -->
     <url>
         <loc>https://www.curiouskaizer.com/website-design-company-noida</loc>
-        <lastmod>2026-09-10</lastmod>
+        <lastmod>2026-09-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
+    
+    <!-- Website Design Company Gurgaon / Gurugram -->
     <url>
         <loc>https://www.curiouskaizer.com/website-design-company-gurgaon</loc>
-        <lastmod>2026-09-10</lastmod>
+        <lastmod>2026-09-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
 
+    <!-- =================================================== -->
+    <!-- 3. ENGINEERING ARTICLES & TECHNICAL CASE STUDIES   -->
+    <!-- =================================================== -->
+    
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-multi-agent-orchestration-2026</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/blog-multi-agent-orchestration.png</image:loc>
+            <image:title>Multi-Agent Orchestration Architecture in 2026</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-vector-database-indexing-hybrid-search</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/blog-vector-hybrid-search.png</image:loc>
+            <image:title>Vector Database Indexing &amp; Hybrid Search Optimization</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-serverless-postgres-neon-supabase</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/blog-serverless-postgres.png</image:loc>
+            <image:title>Serverless Postgres Architecture with Neon and Supabase</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-rust-webassembly-microservices</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/blog-rust-webassembly.png</image:loc>
+            <image:title>Rust and WebAssembly Microservices at the Edge</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-context-engineering-llm-apps</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/blog-context-engineering.png</image:loc>
+            <image:title>Context Engineering for Production LLM Applications</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-browser-ai-agent-automation</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/browser-buddy.webp</image:loc>
+            <image:title>Browser AI Agent Automation and Autonomous Web Workflows</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-real-estate-operations-portal</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/aloha-estates-superadmin-dashboard.png</image:loc>
+            <image:title>Real Estate Operations Portal Case Study</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-rag-latency-optimization</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/blog-rag-latency.png</image:loc>
+            <image:title>RAG Latency Optimization and Retrieval Pipeline Engineering</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-database-normalization</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/blog-database-schema.png</image:loc>
+            <image:title>Database Normalization vs Denormalization Tradeoffs</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-canonical-redirect-loops</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/blog-canonical-seo.png</image:loc>
+            <image:title>Diagnosing Canonical Redirect Loops in Modern Web Architectures</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-b2b-procurement-case-study</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/blog-b2b-procurement.png</image:loc>
+            <image:title>B2B Chemical Procurement System Engineering Case Study</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-voice-ai-gemini-integration</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/blog-voice-ai.png</image:loc>
+            <image:title>Voice AI and Real-Time Gemini Multimodal Integration</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-vanilla-js-crm</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/blog-vanilla-js.png</image:loc>
+            <image:title>Zero-Dependency Vanilla JavaScript CRM Architecture</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-edge-ai-inference</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/blog-edge-ai.png</image:loc>
+            <image:title>Edge AI Inference Models and Low-Latency Serving</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-edge-rendering-2026</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/blog-edge-rendering.png</image:loc>
+            <image:title>Edge Rendering Paradigms in 2026 Web Architectures</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-inp-core-web-vitals</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/blog-inp-vitals.png</image:loc>
+            <image:title>Mastering Interaction to Next Paint (INP) Core Web Vital</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-webassembly-edge</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/blog-webassembly.png</image:loc>
+            <image:title>WebAssembly at the Edge: High-Performance Compute Pipelines</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-inference-compute-scaling</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/blog-inference-scaling.png</image:loc>
+            <image:title>Inference-Time Compute Scaling Laws and Agent Architectures</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://www.curiouskaizer.com/blog-liquid-foundation-models</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/blog-liquid-models.png</image:loc>
+            <image:title>Liquid Neural Networks and Continuous-Time Foundation Models</image:title>
+        </image:image>
+    </url>
+
+    <!-- =================================================== -->
+    <!-- 4. LEGAL & COMPLIANCE                              -->
+    <!-- =================================================== -->
+    
+    <url>
+        <loc>https://www.curiouskaizer.com/privacy</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.curiouskaizer.com/terms</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
 </urlset>
