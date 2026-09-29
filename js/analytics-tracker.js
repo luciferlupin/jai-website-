@@ -68,32 +68,23 @@
     if (status !== 'granted' && wasLoaded) location.reload();
   }
   function show() {
-    if (document.getElementById('ck-consent-banner')) return;
-    lastFocus = document.activeElement;
-    const panel = document.createElement('section');
-    panel.id = 'ck-consent-banner';
-    panel.setAttribute('role', 'dialog');
-    panel.setAttribute('aria-labelledby', 'ck-consent-title');
-    panel.innerHTML = '<h2 id="ck-consent-title">Your privacy choices</h2><p>Necessary storage remembers your choices. Optional Google Analytics measures visits and enquiry handoffs. Advertising is disabled. We do not send form contents or precise location.</p>' + (signalDenied ? '<p>Your browser privacy signal keeps analytics disabled.</p>' : '') + '<div><button type="button" data-choice="denied">Necessary only</button><button type="button" data-choice="granted" ' + (signalDenied ? 'disabled' : '') + '>Allow analytics</button><a href="/privacy">Privacy &amp; cookies</a><button type="button" data-close>Close</button></div>';
-    panel.addEventListener('click', e => {
-      const button = e.target.closest('[data-choice]');
-      if (button) choose(button.dataset.choice);
-      if (e.target.closest('[data-close]')) { panel.remove(); lastFocus?.focus(); }
-    });
-    panel.addEventListener('keydown', e => { if (e.key === 'Escape') { panel.remove(); lastFocus?.focus(); } });
-    document.body.appendChild(panel);
-    if (lastFocus?.id === 'ck-privacy-control') panel.querySelector('button').focus();
+    if (window.CuriousKaizerConsent?.open) {
+      window.CuriousKaizerConsent.open();
+    }
   }
-  window.CuriousKaizerConsent = { getAnalyticsStatus: () => status, withdrawAnalytics: () => choose('denied'), open: show };
+  window.CuriousKaizerConsent = window.CuriousKaizerConsent || {};
+  window.CuriousKaizerConsent.getAnalyticsStatus = () => status;
+  window.CuriousKaizerConsent.withdrawAnalytics = () => choose('denied');
+  window.CuriousKaizerConsent.open = show;
   window.CuriousKaizerAnalytics = { track };
   window.addEventListener('storage', e => { if (e.key === KEY) choose(get(), false); });
+  window.addEventListener('ck_consent_changed', e => {
+    if (e.detail?.analytics) choose('granted', false);
+    else choose('denied', false);
+  });
   function ready() {
-    const control = document.createElement('button');
-    control.id = 'ck-privacy-control'; control.type = 'button'; control.textContent = 'Privacy choices'; control.addEventListener('click', show);
-    (document.querySelector('footer') || document.body).appendChild(control);
-    if (status === 'unset') show();
     if (status === 'denied') clearIdentifiers();
-    start();
+    if (status === 'granted') start();
     const started = new WeakSet();
     document.addEventListener('focusin', e => { const f = e.target.closest('form'); if (f && !started.has(f) && status === 'granted') { started.add(f); track('form_start', 'project_enquiry'); } });
     document.addEventListener('click', e => {
