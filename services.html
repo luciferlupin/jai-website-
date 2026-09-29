@@ -212,18 +212,17 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         /* =============================================
-           DM SANS DESIGNER BLUE CAPABILITY CARDS
+           VIBRANT ELECTRIC BLUE CAPABILITY CARDS (AS IN PHOTO 2)
            ============================================= */
         body {
             font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: #060d1a;
-            color: #e8f0fe;
+            background-color: #f8fafc;
+            color: #0f172a;
             -webkit-font-smoothing: antialiased;
         }
 
         .subpage-hero {
-            padding: 2.5rem 0 1rem !important;
+            padding: 3.5rem 0 1.5rem !important;
             background-color: transparent !important;
             text-align: center;
             border-bottom: none !important;
@@ -235,76 +234,109 @@
             gap: 6px;
             padding: 6px 20px;
             border-radius: 980px;
-            background: rgba(29, 107, 243, 0.15);
-            color: #60a5fa;
+            background: rgba(29, 107, 243, 0.08);
+            color: #1d6bf3;
             font-size: 0.82rem;
-            font-weight: 500;
+            font-weight: 600;
             letter-spacing: 0.05em;
             text-transform: uppercase;
-            border: 1px solid rgba(29, 107, 243, 0.25);
-            margin-bottom: 0.75rem;
+            border: 1px solid rgba(29, 107, 243, 0.22);
+            margin-bottom: 0.85rem;
         }
 
         .subpage-hero-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 400;
+            font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+            font-weight: 700;
             letter-spacing: -0.04em;
-            color: #ffffff;
-            margin: 0 0 0.75rem;
-            line-height: 1.1;
+            color: #0f172a;
+            margin: 0 0 0.85rem;
+            line-height: 1.15;
         }
 
         .highlight-blue {
-            background: linear-gradient(135deg, #1d6bf3 0%, #60a5fa 60%, #93c5fd 100%);
+            background: linear-gradient(135deg, #1d6bf3 0%, #2563eb 60%, #1e40af 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .section-subtitle {
-            color: #94a3b8;
-            font-size: 1rem;
+            color: #64748b;
+            font-size: 1.05rem;
             line-height: 1.65;
             font-weight: 400;
-            max-width: 620px;
+            max-width: 640px;
             margin: 0 auto;
         }
 
         /* =============================================
-           DESIGNER BLUE CARD SYSTEM
+           SIGNATURE ELECTRIC BLUE BENTO CARD SYSTEM
            ============================================= */
         .services-detail-grid {
-            padding: 1rem 0 4rem !important;
+            padding: 1.5rem 0 4rem !important;
             background-color: transparent;
+            counter-reset: capability-counter;
         }
 
-        /* Deep Blue Designer Card */
+        /* Signature Electric Blue Card (matching photo 2) */
         .service-detail-item {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 0;
             align-items: stretch;
-            margin-bottom: 2rem;
-            background: linear-gradient(145deg, #0b1628 0%, #0f1f3d 50%, #0a1628 100%);
-            border: 1px solid rgba(29, 107, 243, 0.2);
+            margin-bottom: 2.5rem;
+            background: linear-gradient(135deg, #1d6bf3 0%, #1557c0 60%, #0e44a1 100%);
+            border: 1px solid rgba(255, 255, 255, 0.25);
             border-radius: 28px;
             overflow: hidden;
-            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.03), inset 0 1px 0 rgba(255,255,255,0.06);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 20px 48px rgba(21, 87, 192, 0.22), 0 4px 12px rgba(15, 23, 42, 0.05);
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
+            counter-increment: capability-counter;
         }
 
+        /* Concentric circles radar watermark in top right (exact match to photo 2) */
         .service-detail-item::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(29, 107, 243, 0.6), rgba(96, 165, 250, 0.4), transparent);
+            top: -20px;
+            right: -20px;
+            width: 320px;
+            height: 320px;
+            background-image: url("data:image/svg+xml,%3Csvg width='320' height='320' viewBox='0 0 320 320' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='160' cy='160' r='50' stroke='rgba(255,255,255,0.22)' stroke-width='1.5'/%3E%3Ccircle cx='160' cy='160' r='95' stroke='rgba(255,255,255,0.16)' stroke-width='1.5' stroke-dasharray='5 5'/%3E%3Ccircle cx='160' cy='160' r='145' stroke='rgba(255,255,255,0.1)' stroke-width='1.5'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: contain;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Numbered Pill Badge in Top Right (like photo 2) */
+        .service-detail-item::after {
+            content: counter(capability-counter, decimal-leading-zero);
+            position: absolute;
+            top: 24px;
+            right: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: #ffffff;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            z-index: 3;
+            pointer-events: none;
         }
 
         .service-detail-item:hover {
             transform: translateY(-4px);
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(29, 107, 243, 0.3), 0 0 60px rgba(29, 107, 243, 0.08);
+            box-shadow: 0 32px 64px rgba(21, 87, 192, 0.35), 0 6px 18px rgba(15, 23, 42, 0.08);
         }
 
         /* Text Content Side */
@@ -312,41 +344,42 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            padding: 3rem 3rem;
+            padding: 3.25rem 3rem;
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
         .capability-badge-tag {
             display: inline-flex;
             align-items: center;
             gap: 7px;
-            padding: 5px 14px;
+            padding: 6px 15px;
             border-radius: 980px;
-            background: rgba(29, 107, 243, 0.15);
-            color: #60a5fa;
-            font-size: 0.78rem;
-            font-weight: 500;
-            margin-bottom: 1.1rem;
-            border: 1px solid rgba(29, 107, 243, 0.25);
+            background: rgba(255, 255, 255, 0.18);
+            color: #ffffff;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1.15rem;
+            border: 1px solid rgba(255, 255, 255, 0.32);
             text-transform: uppercase;
             letter-spacing: 0.04em;
             backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
         }
 
         .service-detail-content h3 {
             font-family: 'DM Sans', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 400;
+            font-size: 1.9rem;
+            font-weight: 600;
             letter-spacing: -0.03em;
             color: #ffffff;
-            margin-bottom: 0.9rem;
+            margin-bottom: 0.85rem;
             line-height: 1.2;
         }
 
         .service-detail-content p {
-            color: #94a3b8;
-            font-size: 0.97rem;
+            color: rgba(255, 255, 255, 0.92);
+            font-size: 0.98rem;
             line-height: 1.7;
             margin-bottom: 1.5rem;
             font-weight: 400;
@@ -358,66 +391,69 @@
             margin-bottom: 2rem;
             display: flex;
             flex-direction: column;
-            gap: 0.55rem;
+            gap: 0.6rem;
             width: 100%;
         }
 
         .service-features-list li {
-            font-size: 0.9rem;
-            color: #cbd5e1;
-            font-weight: 400;
+            font-size: 0.92rem;
+            color: #ffffff;
+            font-weight: 500;
             display: flex;
             align-items: flex-start;
             gap: 10px;
-            padding: 0.7rem 1rem;
-            border-radius: 10px;
-            border: 1px solid rgba(255,255,255,0.05);
-            background: rgba(255,255,255,0.03);
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.14);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             transition: all 0.2s ease;
         }
 
         .service-features-list li:hover {
-            background: rgba(29, 107, 243, 0.1);
-            border-color: rgba(29, 107, 243, 0.3);
-            color: #e2e8f0;
+            background: rgba(255, 255, 255, 0.22);
+            border-color: rgba(255, 255, 255, 0.35);
+            transform: translateX(3px);
         }
 
         .service-features-list li i {
-            color: #1d6bf3;
-            font-size: 0.85rem;
+            color: #ffffff;
+            font-size: 0.9rem;
             flex-shrink: 0;
             margin-top: 2px;
         }
 
-        /* Blue CTA Button */
+        /* Clean White CTA Button on Electric Blue (High Contrast) */
         .service-detail-content .cta-button.primary {
-            border-radius: 10px !important;
-            background: linear-gradient(135deg, #1d6bf3 0%, #1558d6 100%) !important;
-            color: #ffffff !important;
-            padding: 12px 24px !important;
-            font-size: 0.9rem !important;
-            font-weight: 500 !important;
+            border-radius: 12px !important;
+            background: #ffffff !important;
+            color: #1557c0 !important;
+            padding: 13px 26px !important;
+            font-size: 0.92rem !important;
+            font-weight: 700 !important;
             font-family: 'DM Sans', sans-serif !important;
             text-decoration: none !important;
             display: inline-flex !important;
             align-items: center !important;
             gap: 8px !important;
-            border: 1px solid rgba(96, 165, 250, 0.2) !important;
-            box-shadow: 0 4px 20px rgba(29, 107, 243, 0.3) !important;
+            border: none !important;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18) !important;
             transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
             letter-spacing: 0.01em !important;
         }
 
         .service-detail-content .cta-button.primary:hover {
-            background: linear-gradient(135deg, #2d7bff 0%, #1d6bf3 100%) !important;
+            background: #f0f7ff !important;
+            color: #0c4294 !important;
             transform: translateY(-2px) !important;
-            box-shadow: 0 8px 30px rgba(29, 107, 243, 0.5) !important;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25) !important;
         }
 
-        /* Animated Visual Side */
+        /* Frosted Glass Visual Side within Electric Blue Card */
         .service-detail-visual {
-            background: rgba(0, 0, 0, 0.3);
-            border-left: 1px solid rgba(29, 107, 243, 0.15);
+            background: rgba(10, 25, 60, 0.25);
+            border-left: 1px solid rgba(255, 255, 255, 0.15);
             padding: 2.5rem 2rem;
             display: flex;
             justify-content: center;
@@ -425,6 +461,9 @@
             width: 100%;
             position: relative;
             overflow: hidden;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 2;
         }
 
         .service-detail-visual::before {
@@ -432,9 +471,9 @@
             position: absolute;
             bottom: -60px;
             right: -60px;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(29, 107, 243, 0.12) 0%, transparent 70%);
+            width: 220px;
+            height: 220px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -517,20 +556,27 @@
         @media (max-width: 991px) {
             .service-detail-item {
                 grid-template-columns: 1fr;
-                border-radius: 20px;
-                margin-bottom: 1.5rem;
+                border-radius: 22px;
+                margin-bottom: 1.75rem;
+            }
+            .service-detail-item::after {
+                top: 18px;
+                right: 20px;
+                width: 34px;
+                height: 34px;
+                font-size: 0.76rem;
             }
             .service-detail-content {
-                padding: 2rem 1.75rem 1.5rem;
+                padding: 2.25rem 1.75rem 1.75rem;
             }
             .service-detail-visual {
                 border-left: none;
-                border-top: 1px solid rgba(29, 107, 243, 0.15);
-                padding: 2rem 1.75rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.15);
+                padding: 2rem 1.5rem;
                 min-height: 280px;
             }
             .service-detail-content h3 {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
             }
         }
 
@@ -1704,23 +1750,12 @@
     <section class="ck-ecosystem-discovery" aria-label="Explore Curious Kaizer Ecosystem">
         <style>
             .ck-ecosystem-discovery {
-                padding: 2.75rem 0 3.25rem !important;
-                background: #060d1a !important;
-                border-top: 1px solid rgba(29, 107, 243, 0.15) !important;
+                padding: 3.5rem 0 4.25rem !important;
+                background: #f8fafc !important;
+                border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
                 position: relative !important;
                 overflow: hidden !important;
                 font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif !important;
-            }
-            .ck-ecosystem-discovery::before {
-                content: '' !important;
-                position: absolute !important;
-                top: 0 !important;
-                left: 50% !important;
-                transform: translateX(-50%) !important;
-                width: 600px !important;
-                height: 120px !important;
-                background: radial-gradient(ellipse at center, rgba(29, 107, 243, 0.12) 0%, transparent 70%) !important;
-                pointer-events: none !important;
             }
             .ck-eco-container {
                 max-width: 1200px !important;
@@ -1731,125 +1766,133 @@
             }
             .ck-eco-header {
                 text-align: center !important;
-                max-width: 680px !important;
-                margin: 0 auto 2rem !important;
+                max-width: 720px !important;
+                margin: 0 auto 2.25rem !important;
             }
             .ck-eco-badge {
                 display: inline-flex !important;
                 align-items: center !important;
                 gap: 6px !important;
-                background: rgba(29, 107, 243, 0.12) !important;
-                border: 1px solid rgba(29, 107, 243, 0.25) !important;
+                background: rgba(29, 107, 243, 0.08) !important;
+                border: 1px solid rgba(29, 107, 243, 0.22) !important;
                 border-radius: 980px !important;
-                padding: 4px 14px !important;
-                font-size: 0.72rem !important;
-                font-weight: 500 !important;
-                color: #60a5fa !important;
+                padding: 5px 16px !important;
+                font-size: 0.75rem !important;
+                font-weight: 600 !important;
+                color: #1d6bf3 !important;
                 text-transform: uppercase !important;
                 letter-spacing: 0.08em !important;
-                margin-bottom: 0.75rem !important;
+                margin-bottom: 0.85rem !important;
             }
             .ck-eco-badge::before {
                 content: '' !important;
-                width: 5px !important;
-                height: 5px !important;
+                width: 6px !important;
+                height: 6px !important;
                 border-radius: 50% !important;
-                background: #60a5fa !important;
-                box-shadow: 0 0 6px rgba(96, 165, 250, 0.8) !important;
+                background: #1d6bf3 !important;
+                box-shadow: 0 0 6px rgba(29, 107, 243, 0.6) !important;
             }
             .ck-eco-title {
                 font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
-                font-size: clamp(1.4rem, 2.4vw, 1.85rem) !important;
-                font-weight: 400 !important;
-                color: #ffffff !important;
-                letter-spacing: -0.03em !important;
-                line-height: 1.25 !important;
-                margin: 0 0 6px !important;
+                font-size: clamp(1.75rem, 3vw, 2.35rem) !important;
+                font-weight: 700 !important;
+                color: #0f172a !important;
+                letter-spacing: -0.035em !important;
+                line-height: 1.2 !important;
+                margin: 0 0 10px !important;
             }
             .ck-eco-subtitle {
-                font-size: 0.88rem !important;
-                color: #94a3b8 !important;
+                font-size: 0.98rem !important;
+                color: #475569 !important;
                 font-weight: 400 !important;
-                line-height: 1.55 !important;
+                line-height: 1.6 !important;
                 margin: 0 auto !important;
+                max-width: 650px !important;
             }
             .ck-eco-grid {
                 display: grid !important;
                 grid-template-columns: repeat(3, 1fr) !important;
-                gap: 14px !important;
+                gap: 16px !important;
             }
             @media (max-width: 960px) {
                 .ck-eco-grid {
                     grid-template-columns: repeat(2, 1fr) !important;
-                    gap: 12px !important;
+                    gap: 14px !important;
                 }
             }
             @media (max-width: 580px) {
                 .ck-eco-grid {
                     grid-template-columns: 1fr !important;
-                    gap: 10px !important;
+                    gap: 12px !important;
                 }
             }
             .ck-eco-card {
-                background: linear-gradient(145deg, #0b1628 0%, #0f1f3d 50%, #0a1628 100%) !important;
-                border: 1px solid rgba(29, 107, 243, 0.22) !important;
-                border-radius: 16px !important;
-                padding: 14px 16px !important;
+                background: linear-gradient(135deg, #1d6bf3 0%, #1557c0 100%) !important;
+                border: 1px solid rgba(255, 255, 255, 0.28) !important;
+                border-radius: 18px !important;
+                padding: 18px 20px !important;
                 text-decoration: none !important;
                 position: relative !important;
                 overflow: hidden !important;
-                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
-                transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+                box-shadow: 0 10px 25px rgba(29, 107, 243, 0.26), 0 2px 6px rgba(0, 0, 0, 0.05) !important;
+                transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
                 display: flex !important;
                 flex-direction: row !important;
                 align-items: flex-start !important;
-                gap: 12px !important;
+                gap: 14px !important;
+                color: #ffffff !important;
             }
             .ck-eco-card::before {
                 content: '' !important;
                 position: absolute !important;
-                top: 0 !important;
-                left: 0 !important;
-                right: 0 !important;
-                height: 1px !important;
-                background: linear-gradient(90deg, transparent, rgba(29, 107, 243, 0.5), rgba(96, 165, 250, 0.4), transparent) !important;
+                top: -30px !important;
+                right: -30px !important;
+                width: 180px !important;
+                height: 180px !important;
+                background-image: url("data:image/svg+xml,%3Csvg width='180' height='180' viewBox='0 0 180 180' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='90' cy='90' r='30' stroke='rgba(255,255,255,0.2)' stroke-width='1.5'/%3E%3Ccircle cx='90' cy='90' r='58' stroke='rgba(255,255,255,0.14)' stroke-width='1.5' stroke-dasharray='4 4'/%3E%3Ccircle cx='90' cy='90' r='85' stroke='rgba(255,255,255,0.08)' stroke-width='1.5'/%3E%3C/svg%3E") !important;
+                background-repeat: no-repeat !important;
+                background-position: center !important;
+                pointer-events: none !important;
+                opacity: 0.9 !important;
                 display: block !important;
             }
             .ck-eco-card:hover {
-                transform: translateY(-3px) !important;
-                border-color: rgba(96, 165, 250, 0.45) !important;
-                box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55), 0 0 20px rgba(29, 107, 243, 0.18) !important;
-                background: linear-gradient(145deg, #0d1b32 0%, #12254a 50%, #0c1b32 100%) !important;
+                transform: translateY(-4px) scale(1.01) !important;
+                box-shadow: 0 18px 40px rgba(29, 107, 243, 0.42), 0 0 0 1px rgba(255, 255, 255, 0.45) !important;
+                background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
             }
             .ck-eco-icon-box {
-                width: 36px !important;
-                height: 36px !important;
-                border-radius: 10px !important;
+                width: 42px !important;
+                height: 42px !important;
+                border-radius: 12px !important;
                 display: inline-flex !important;
                 align-items: center !important;
                 justify-content: center !important;
-                font-size: 0.95rem !important;
+                font-size: 1.05rem !important;
                 flex-shrink: 0 !important;
-                background: rgba(29, 107, 243, 0.15) !important;
-                border: 1px solid rgba(96, 165, 250, 0.22) !important;
-                color: #60a5fa !important;
+                background: rgba(255, 255, 255, 0.2) !important;
+                border: 1px solid rgba(255, 255, 255, 0.35) !important;
+                color: #ffffff !important;
                 transition: all 0.25s ease !important;
                 margin-top: 2px !important;
+                position: relative !important;
+                z-index: 2 !important;
             }
             .ck-eco-card:hover .ck-eco-icon-box {
                 transform: scale(1.08) !important;
-                background: rgba(29, 107, 243, 0.28) !important;
-                border-color: rgba(96, 165, 250, 0.5) !important;
-                color: #93c5fd !important;
+                background: rgba(255, 255, 255, 0.3) !important;
+                border-color: rgba(255, 255, 255, 0.6) !important;
             }
             .ck-eco-body {
                 flex-grow: 1 !important;
                 min-width: 0 !important;
+                position: relative !important;
+                z-index: 2 !important;
             }
             .ck-eco-card-title {
                 font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
-                font-size: 0.95rem !important;
-                font-weight: 500 !important;
+                font-size: 1.02rem !important;
+                font-weight: 600 !important;
                 color: #ffffff !important;
                 letter-spacing: -0.015em !important;
                 margin: 0 !important;
@@ -1859,23 +1902,22 @@
                 line-height: 1.3 !important;
             }
             .ck-eco-card-title span.arrow {
-                font-size: 0.85rem !important;
-                color: #60a5fa !important;
-                opacity: 0.6 !important;
+                font-size: 0.9rem !important;
+                color: #ffffff !important;
+                opacity: 0.8 !important;
                 transform: translateX(0) !important;
                 transition: all 0.2s ease !important;
                 margin-left: 6px !important;
             }
             .ck-eco-card:hover .ck-eco-card-title span.arrow {
                 opacity: 1 !important;
-                transform: translateX(3px) !important;
-                color: #93c5fd !important;
+                transform: translateX(4px) !important;
             }
             .ck-eco-card-desc {
-                font-size: 0.8rem !important;
-                color: #94a3b8 !important;
-                line-height: 1.45 !important;
-                margin: 3px 0 0 !important;
+                font-size: 0.84rem !important;
+                color: rgba(255, 255, 255, 0.92) !important;
+                line-height: 1.48 !important;
+                margin: 4px 0 0 !important;
                 font-weight: 400 !important;
             }
         </style>
