@@ -21,8 +21,21 @@
 - [About Us](https://www.curiouskaizer.com/about) - Agency background, founder Jai Goel, engineering philosophy, and capabilities.
 - [Our Services](https://www.curiouskaizer.com/services) - Detailed breakdown of capabilities (SaaS, AI, E-Commerce, Dashboards).
 - [Portfolio & Case Studies](https://www.curiouskaizer.com/portfolio) - Live projects including real estate SaaS portals, 3D ring customizers, and legal databases.
-- [Featured Case Study - HANBORO Watches](https://hanborowatches.in) - Luxury mechanical horology e-commerce storefront engineered by Curious Kaizer featuring kinetic complication video reels, daylight-to-luminescence split sliders, and sub-second checkout.
-- [Featured Case Study - Club Re Straddle](https://www.clubrestraddle.com/) - Private club management and access control ecosystem engineered by Curious Kaizer featuring KYC player profiles, scannable QR gate passes, and real-time operations dashboard.
+## Featured Live Client Platforms & Case Studies
+
+- [HANBORO Watches Storefront](https://hanborowatches.in) - Luxury mechanical horology e-commerce storefront engineered by Curious Kaizer featuring kinetic complication video reels, daylight-to-luminescence split sliders, and sub-second checkout.
+- [Club Re Straddle Portal](https://www.clubrestraddle.com/) - Private club management and access control ecosystem engineered by Curious Kaizer featuring KYC player profiles, scannable QR gate passes, and real-time operations dashboard.
+- [AUCO × AIWA Operations Portal](https://auco-co.vercel.app/) - Multi-brand enterprise ERP and pan-India dealer telemetry pipeline.
+- [Aloha Estate Custom Portal](https://aloha-estate.vercel.app/) - Real estate operations portal with real-time Meta lead ads synchronization and deal pipeline Kanban.
+- [DODD Aero Lab 3D Visualizer](https://shoes-ten-pi.vercel.app/) - Interactive 3D WebGL footwear configurator with 360-degree orbit cameras and dynamic colorway customizer.
+- [HIS DRINK 3D Experience](https://3d-brown-iota.vercel.app/) - Zero-gravity 3D beverage motion showcase with real-time lighting physics and floating particle fields.
+- [IRASTRA Celestial Universe](https://irastra.vercel.app/) - Real-time 3D planetary solar system and astronomical birth chart navigation engine.
+- [StaySphere PMS](https://staysphere-phi.vercel.app/) - Hospitality SaaS hotel management system with live room status matrix and front-desk check-in workspace.
+- [AlmostReal Club®](https://almostreal-club.vercel.app/) - Luxury digital fashion showroom and gated private club e-commerce experience.
+- [Notary & Legal Case System](https://notatry-system.vercel.app/) - LegalTech document workflow tracking system with encrypted document vault and PDF indexing.
+- [CuriousCRM Pro](https://crm-coral-one.vercel.app/) - Modular sales pipeline Kanban CRM with predictive lead scoring and conversion telemetry.
+- [Serverless Web Analytics](https://analytics-indol-psi.vercel.app/) - Lightweight privacy-first real-time web telemetry and click funnel visualizer.
+- [Civic Infrastructure Portal](https://public-toilet-sepia.vercel.app/) - Public geospatial utilities mapping system with interactive Mapbox vector rendering.
 - [Pricing & FAQ](https://www.curiouskaizer.com/pricing) - Pricing packages, transparent licensing cost, and common web development FAQs.
 - [CRM Product Demo](https://www.curiouskaizer.com/crm-product) - Overview of CRM Pro, our flagship customizable Kanban business dashboard.
 - [Contact Us](https://www.curiouskaizer.com/contact) - Book a free discovery call or send an inquiry.

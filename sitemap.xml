@@ -42,6 +42,16 @@
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
         <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/hanboro-watches.png</image:loc>
+            <image:title>HANBORO Watches Luxury Horology &amp; Interactive E-Commerce Experience</image:title>
+            <image:caption>Interactive daylight-to-luminescence mechanical watch storefront engineered for HANBORO Watches India</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.curiouskaizer.com/images/club-re-straddle-system.png</image:loc>
+            <image:title>Club Re Straddle Multi-Portal Club Management Ecosystem UI</image:title>
+            <image:caption>Private club management platform featuring member passes, QR scanners, and live gate clearance</image:caption>
+        </image:image>
+        <image:image>
             <image:loc>https://www.curiouskaizer.com/images/aloha-estate-portal.png</image:loc>
             <image:title>Real Estate Group-Buying &amp; Operations SaaS Portal Showcase</image:title>
             <image:caption>Custom spatial real estate map dashboard and token investment calculator</image:caption>
