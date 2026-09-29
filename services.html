@@ -270,7 +270,7 @@
         }
 
         /* =============================================
-           SIGNATURE ELECTRIC BLUE BENTO CARD SYSTEM
+           PREMIUM LIGHT BLUE BENTO CARD SYSTEM
            ============================================= */
         .services-detail-grid {
             padding: 1.5rem 0 4rem !important;
@@ -278,24 +278,24 @@
             counter-reset: capability-counter;
         }
 
-        /* Signature Electric Blue Card (matching photo 2) */
+        /* Signature Light Blue Bento Card */
         .service-detail-item {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 0;
             align-items: stretch;
             margin-bottom: 2.5rem;
-            background: linear-gradient(135deg, #1d6bf3 0%, #1557c0 60%, #0e44a1 100%);
-            border: 1px solid rgba(255, 255, 255, 0.25);
+            background: linear-gradient(135deg, #f0f7ff 0%, #e3effe 50%, #d8e9fc 100%);
+            border: 1px solid rgba(59, 130, 246, 0.22);
             border-radius: 28px;
             overflow: hidden;
-            box-shadow: 0 20px 48px rgba(21, 87, 192, 0.22), 0 4px 12px rgba(15, 23, 42, 0.05);
+            box-shadow: 0 16px 40px rgba(37, 99, 235, 0.08), 0 2px 8px rgba(15, 23, 42, 0.03);
             transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
             counter-increment: capability-counter;
         }
 
-        /* Concentric circles radar watermark in top right (exact match to photo 2) */
+        /* Concentric circles radar watermark in top right (soft blue) */
         .service-detail-item::before {
             content: '';
             position: absolute;
@@ -303,14 +303,14 @@
             right: -20px;
             width: 320px;
             height: 320px;
-            background-image: url("data:image/svg+xml,%3Csvg width='320' height='320' viewBox='0 0 320 320' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='160' cy='160' r='50' stroke='rgba(255,255,255,0.22)' stroke-width='1.5'/%3E%3Ccircle cx='160' cy='160' r='95' stroke='rgba(255,255,255,0.16)' stroke-width='1.5' stroke-dasharray='5 5'/%3E%3Ccircle cx='160' cy='160' r='145' stroke='rgba(255,255,255,0.1)' stroke-width='1.5'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg width='320' height='320' viewBox='0 0 320 320' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='160' cy='160' r='50' stroke='rgba(37,99,235,0.12)' stroke-width='1.5'/%3E%3Ccircle cx='160' cy='160' r='95' stroke='rgba(37,99,235,0.08)' stroke-width='1.5' stroke-dasharray='5 5'/%3E%3Ccircle cx='160' cy='160' r='145' stroke='rgba(37,99,235,0.05)' stroke-width='1.5'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-size: contain;
             pointer-events: none;
             z-index: 1;
         }
 
-        /* Numbered Pill Badge in Top Right (like photo 2) */
+        /* Numbered Pill Badge in Top Right */
         .service-detail-item::after {
             content: counter(capability-counter, decimal-leading-zero);
             position: absolute;
@@ -322,11 +322,10 @@
             width: 38px;
             height: 38px;
             border-radius: 50%;
-            border: 1.5px solid rgba(255, 255, 255, 0.4);
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            color: #ffffff;
+            border: 1.5px solid rgba(59, 130, 246, 0.3);
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
+            color: #2563eb;
             font-size: 0.82rem;
             font-weight: 700;
             letter-spacing: 0.04em;
@@ -336,7 +335,7 @@
 
         .service-detail-item:hover {
             transform: translateY(-4px);
-            box-shadow: 0 32px 64px rgba(21, 87, 192, 0.35), 0 6px 18px rgba(15, 23, 42, 0.08);
+            box-shadow: 0 24px 50px rgba(37, 99, 235, 0.16), 0 4px 14px rgba(15, 23, 42, 0.05);
         }
 
         /* Text Content Side */
@@ -355,30 +354,29 @@
             gap: 7px;
             padding: 6px 15px;
             border-radius: 980px;
-            background: rgba(255, 255, 255, 0.18);
-            color: #ffffff;
+            background: #ffffff;
+            color: #1d4ed8;
             font-size: 0.8rem;
             font-weight: 600;
             margin-bottom: 1.15rem;
-            border: 1px solid rgba(255, 255, 255, 0.32);
+            border: 1px solid rgba(59, 130, 246, 0.25);
             text-transform: uppercase;
             letter-spacing: 0.04em;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.06);
         }
 
         .service-detail-content h3 {
             font-family: 'DM Sans', sans-serif;
             font-size: 1.9rem;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: -0.03em;
-            color: #ffffff;
+            color: #0f172a;
             margin-bottom: 0.85rem;
             line-height: 1.2;
         }
 
         .service-detail-content p {
-            color: rgba(255, 255, 255, 0.92);
+            color: #334155;
             font-size: 0.98rem;
             line-height: 1.7;
             margin-bottom: 1.5rem;
@@ -397,38 +395,37 @@
 
         .service-features-list li {
             font-size: 0.92rem;
-            color: #ffffff;
+            color: #1e293b;
             font-weight: 500;
             display: flex;
             align-items: flex-start;
             gap: 10px;
             padding: 0.75rem 1rem;
             border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background: rgba(255, 255, 255, 0.14);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(59, 130, 246, 0.16);
+            background: #ffffff;
+            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.04);
             transition: all 0.2s ease;
         }
 
         .service-features-list li:hover {
-            background: rgba(255, 255, 255, 0.22);
-            border-color: rgba(255, 255, 255, 0.35);
+            border-color: rgba(37, 99, 235, 0.35);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
             transform: translateX(3px);
         }
 
         .service-features-list li i {
-            color: #ffffff;
+            color: #2563eb;
             font-size: 0.9rem;
             flex-shrink: 0;
             margin-top: 2px;
         }
 
-        /* Clean White CTA Button on Electric Blue (High Contrast) */
+        /* Vibrant Blue Primary CTA Button */
         .service-detail-content .cta-button.primary {
             border-radius: 12px !important;
-            background: #ffffff !important;
-            color: #1557c0 !important;
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+            color: #ffffff !important;
             padding: 13px 26px !important;
             font-size: 0.92rem !important;
             font-weight: 700 !important;
@@ -438,22 +435,22 @@
             align-items: center !important;
             gap: 8px !important;
             border: none !important;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18) !important;
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.28) !important;
             transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
             letter-spacing: 0.01em !important;
         }
 
         .service-detail-content .cta-button.primary:hover {
-            background: #f0f7ff !important;
-            color: #0c4294 !important;
+            background: linear-gradient(135deg, #1d4ed8 0%, #173eb0 100%) !important;
+            color: #ffffff !important;
             transform: translateY(-2px) !important;
-            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25) !important;
+            box-shadow: 0 10px 28px rgba(37, 99, 235, 0.38) !important;
         }
 
-        /* Frosted Glass Visual Side within Electric Blue Card */
+        /* Seamless Frosted Visual Container */
         .service-detail-visual {
-            background: rgba(10, 25, 60, 0.25);
-            border-left: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.55);
+            border-left: 1px solid rgba(59, 130, 246, 0.15);
             padding: 2.5rem 2rem;
             display: flex;
             justify-content: center;
@@ -461,8 +458,8 @@
             width: 100%;
             position: relative;
             overflow: hidden;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             z-index: 2;
         }
 
@@ -473,7 +470,7 @@
             right: -60px;
             width: 220px;
             height: 220px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -571,7 +568,7 @@
             }
             .service-detail-visual {
                 border-left: none;
-                border-top: 1px solid rgba(255, 255, 255, 0.15);
+                border-top: 1px solid rgba(59, 130, 246, 0.15);
                 padding: 2rem 1.5rem;
                 min-height: 280px;
             }
@@ -1066,61 +1063,60 @@
                     <!-- Animated Browser + Conversion Metrics -->
                     <div style="width:100%;font-family:'DM Sans',sans-serif;">
                         <!-- Browser chrome -->
-                        <div style="background:rgba(15,25,50,0.9);border:1px solid rgba(29,107,243,0.3);border-radius:14px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.5);">
-                            <div style="background:rgba(255,255,255,0.04);padding:10px 14px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(255,255,255,0.07);">
+                        <div style="background:#ffffff;border:1px solid rgba(37,99,235,0.18);border-radius:16px;overflow:hidden;box-shadow:0 16px 40px rgba(37,99,235,0.1), 0 2px 6px rgba(15,23,42,0.03);">
+                            <div style="background:#f8fafc;padding:10px 14px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #e2e8f0;">
                                 <span style="width:9px;height:9px;border-radius:50%;background:#ff5f56;display:inline-block;"></span>
                                 <span style="width:9px;height:9px;border-radius:50%;background:#ffbd2e;display:inline-block;"></span>
                                 <span style="width:9px;height:9px;border-radius:50%;background:#27c93f;display:inline-block;"></span>
-                                <div style="flex-grow:1;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:4px 12px;font-size:0.75rem;color:#94a3b8;text-align:center;">
-                                    <i class="fas fa-lock" style="color:#10b981;margin-right:5px;"></i> curiouskaizer.com/store
+                                <div style="flex-grow:1;background:#ffffff;border:1px solid #cbd5e1;border-radius:6px;padding:4px 12px;font-size:0.75rem;color:#475569;text-align:center;">
+                                    <i class="fas fa-lock" style="color:#059669;margin-right:5px;"></i> curiouskaizer.com/store
                                 </div>
                             </div>
-                            <div style="padding:1.5rem;">
+                            <div style="padding:1.5rem;background:#ffffff;">
                                 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
-                                    <span style="font-size:0.78rem;color:#60a5fa;font-weight:500;text-transform:uppercase;letter-spacing:0.05em;">Storefront Analytics</span>
-                                    <span style="background:rgba(16,185,129,0.15);color:#10b981;padding:3px 10px;border-radius:980px;font-size:0.72rem;font-weight:500;border:1px solid rgba(16,185,129,0.2);">⚡ 100 / 100 Vitals</span>
+                                    <span style="font-size:0.78rem;color:#2563eb;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;">Storefront Analytics</span>
+                                    <span style="background:#ecfdf5;color:#059669;padding:3px 10px;border-radius:980px;font-size:0.72rem;font-weight:600;border:1px solid #a7f3d0;">⚡ 100 / 100 Vitals</span>
                                 </div>
                                 <!-- Animated metric bars -->
                                 <div style="margin-bottom:0.8rem;">
                                     <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
-                                        <span style="font-size:0.75rem;color:#94a3b8;">Conversion Rate</span>
-                                        <span style="font-size:0.75rem;color:#60a5fa;font-weight:500;">+185%</span>
+                                        <span style="font-size:0.75rem;color:#64748b;">Conversion Rate</span>
+                                        <span style="font-size:0.75rem;color:#2563eb;font-weight:600;">+185%</span>
                                     </div>
-                                    <div style="height:5px;background:rgba(255,255,255,0.07);border-radius:4px;overflow:hidden;">
-                                        <div class="ck-bar-anim" style="height:100%;background:linear-gradient(90deg,#1d6bf3,#60a5fa);border-radius:4px;--target-width:85%;"></div>
+                                    <div style="height:6px;background:#e2e8f0;border-radius:4px;overflow:hidden;">
+                                        <div class="ck-bar-anim" style="height:100%;background:linear-gradient(90deg,#2563eb,#60a5fa);border-radius:4px;--target-width:85%;"></div>
                                     </div>
                                 </div>
                                 <div style="margin-bottom:0.8rem;">
                                     <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
-                                        <span style="font-size:0.75rem;color:#94a3b8;">Page Speed Score</span>
-                                        <span style="font-size:0.75rem;color:#10b981;font-weight:500;">98/100</span>
+                                        <span style="font-size:0.75rem;color:#64748b;">Page Speed Score</span>
+                                        <span style="font-size:0.75rem;color:#059669;font-weight:600;">98/100</span>
                                     </div>
-                                    <div style="height:5px;background:rgba(255,255,255,0.07);border-radius:4px;overflow:hidden;">
+                                    <div style="height:6px;background:#e2e8f0;border-radius:4px;overflow:hidden;">
                                         <div class="ck-bar-anim" style="height:100%;background:linear-gradient(90deg,#10b981,#34d399);border-radius:4px;--target-width:98%;animation-delay:0.5s;"></div>
                                     </div>
                                 </div>
                                 <div style="margin-bottom:1.2rem;">
                                     <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
-                                        <span style="font-size:0.75rem;color:#94a3b8;">Mobile UX Score</span>
-                                        <span style="font-size:0.75rem;color:#f59e0b;font-weight:500;">96/100</span>
+                                        <span style="font-size:0.75rem;color:#64748b;">Mobile UX Score</span>
+                                        <span style="font-size:0.75rem;color:#d97706;font-weight:600;">96/100</span>
                                     </div>
-                                    <div style="height:5px;background:rgba(255,255,255,0.07);border-radius:4px;overflow:hidden;">
+                                    <div style="height:6px;background:#e2e8f0;border-radius:4px;overflow:hidden;">
                                         <div class="ck-bar-anim" style="height:100%;background:linear-gradient(90deg,#f59e0b,#fbbf24);border-radius:4px;--target-width:96%;animation-delay:0.7s;"></div>
                                     </div>
                                 </div>
                                 <!-- Payment chips -->
                                 <div style="display:flex;gap:8px;">
-                                    <span style="font-size:0.72rem;background:rgba(99,91,255,0.15);padding:5px 10px;border-radius:7px;color:#a78bfa;border:1px solid rgba(99,91,255,0.2);font-weight:500;"><i class="fab fa-cc-stripe"></i> Stripe</span>
-                                    <span style="font-size:0.72rem;background:rgba(29,107,243,0.15);padding:5px 10px;border-radius:7px;color:#60a5fa;border:1px solid rgba(29,107,243,0.2);font-weight:500;"><i class="fas fa-credit-card"></i> Razorpay</span>
-                                    <span style="font-size:0.72rem;background:rgba(0,48,135,0.25);padding:5px 10px;border-radius:7px;color:#93c5fd;border:1px solid rgba(0,48,135,0.35);font-weight:500;"><i class="fab fa-paypal"></i> PayPal</span>
+                                    <span style="font-size:0.72rem;background:#f5f3ff;padding:5px 10px;border-radius:7px;color:#7c3aed;border:1px solid #ddd6fe;font-weight:500;"><i class="fab fa-cc-stripe"></i> Stripe</span>
+                                    <span style="font-size:0.72rem;background:#eff6ff;padding:5px 10px;border-radius:7px;color:#2563eb;border:1px solid #bfdbfe;font-weight:500;"><i class="fas fa-credit-card"></i> Razorpay</span>
+                                    <span style="font-size:0.72rem;background:#f0f9ff;padding:5px 10px;border-radius:7px;color:#0284c7;border:1px solid #bae6fd;font-weight:500;"><i class="fab fa-paypal"></i> PayPal</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Service 2: AI & Intelligent Automation -->
+<!-- Service 2: AI & Intelligent Automation -->
             <div class="service-detail-item" data-aos="fade-up">
                 <div class="service-detail-content">
                     <div class="capability-badge-tag"><i class="fas fa-robot"></i> AI &amp; Intelligent Automation</div>
@@ -1137,44 +1133,43 @@
                 <div class="service-detail-visual">
                     <!-- Animated AI Code Terminal -->
                     <div style="width:100%;font-family:'DM Sans',sans-serif;">
-                        <div style="background:rgba(5,10,22,0.95);border:1px solid rgba(29,107,243,0.3);border-radius:14px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.5);">
-                            <div style="background:rgba(255,255,255,0.04);padding:10px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.07);">
-                                <span style="font-family:monospace;font-size:0.78rem;color:#60a5fa;"><i class="fas fa-code" style="margin-right:6px;"></i>KaizerAI.agent.ts</span>
-                                <span style="font-size:0.7rem;background:rgba(29,107,243,0.2);color:#60a5fa;padding:3px 10px;border-radius:980px;border:1px solid rgba(29,107,243,0.3);">GPT-4o · Gemini 2.0</span>
+                        <div style="background:#0f172a;border:1px solid rgba(37,99,235,0.25);border-radius:16px;overflow:hidden;box-shadow:0 16px 40px rgba(37,99,235,0.12);">
+                            <div style="background:rgba(255,255,255,0.06);padding:10px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.08);">
+                                <span style="font-family:monospace;font-size:0.78rem;color:#93c5fd;"><i class="fas fa-code" style="margin-right:6px;"></i>KaizerAI.agent.ts</span>
+                                <span style="font-size:0.7rem;background:rgba(37,99,235,0.2);color:#93c5fd;padding:3px 10px;border-radius:980px;border:1px solid rgba(37,99,235,0.35);">GPT-4o · Gemini 2.0</span>
                             </div>
-                            <div style="padding:1.25rem;font-family:monospace;font-size:0.82rem;line-height:1.8;color:#e2e8f0;">
+                            <div style="padding:1.25rem;font-family:monospace;font-size:0.82rem;line-height:1.8;color:#f1f5f9;">
                                 <div><span style="color:#f472b6;">import</span> { <span style="color:#60a5fa;">KaizerAgent</span> } <span style="color:#f472b6;">from</span> <span style="color:#86efac;">"@kaizer/ai-swarm"</span>;</div>
                                 <div style="margin-top:4px;"><span style="color:#f472b6;">const</span> agent = <span style="color:#f472b6;">new</span> <span style="color:#60a5fa;">KaizerAgent</span>({ model: <span style="color:#86efac;">"gemini-2.0-pro"</span> });</div>
-                                <div style="margin-top:4px;">agent.<span style="color:#a78bfa;">on</span>(<span style="color:#86efac;">"lead_captured"</span>, <span style="color:#f472b6;">async</span> (lead) =&gt; {</div>
+                                <div style="margin-top:4px;">agent.<span style="color:#c084fc;">on</span>(<span style="color:#86efac;">"lead_captured"</span>, <span style="color:#f472b6;">async</span> (lead) =&gt; {</div>
                                 <div style="padding-left:1.25rem;color:#94a3b8;">await agent.<span style="color:#34d399;">nurtureAndBookCall</span>(lead);</div>
                                 <div>});<span class="ck-cursor"></span></div>
                             </div>
                             <!-- Live status bar -->
-                            <div style="padding:0.75rem 1.25rem;background:rgba(16,185,129,0.06);border-top:1px solid rgba(16,185,129,0.15);display:flex;align-items:center;gap:10px;">
+                            <div style="padding:0.75rem 1.25rem;background:rgba(16,185,129,0.12);border-top:1px solid rgba(16,185,129,0.2);display:flex;align-items:center;gap:10px;">
                                 <span class="ck-pulse-green"></span>
                                 <span style="font-size:0.8rem;color:#34d399;font-weight:500;">Agent active · 1,420 leads nurtured · 0 human hours spent</span>
                             </div>
                         </div>
                         <!-- Agent nodes -->
                         <div style="display:flex;gap:8px;margin-top:10px;">
-                            <div style="flex:1;background:rgba(15,25,50,0.8);border:1px solid rgba(29,107,243,0.2);border-radius:10px;padding:10px 12px;text-align:center;">
-                                <div style="font-size:1.1rem;font-weight:500;color:#60a5fa;" class="ck-count">847</div>
-                                <div style="font-size:0.7rem;color:#64748b;margin-top:2px;">Emails Sent</div>
+                            <div style="flex:1;background:#ffffff;border:1px solid rgba(37,99,235,0.16);border-radius:12px;padding:10px 12px;text-align:center;box-shadow:0 2px 8px rgba(37,99,235,0.06);">
+                                <div style="font-size:1.15rem;font-weight:600;color:#2563eb;" class="ck-count">847</div>
+                                <div style="font-size:0.72rem;color:#64748b;margin-top:2px;">Emails Sent</div>
                             </div>
-                            <div style="flex:1;background:rgba(15,25,50,0.8);border:1px solid rgba(16,185,129,0.2);border-radius:10px;padding:10px 12px;text-align:center;">
-                                <div style="font-size:1.1rem;font-weight:500;color:#34d399;" class="ck-count">94%</div>
-                                <div style="font-size:0.7rem;color:#64748b;margin-top:2px;">Open Rate</div>
+                            <div style="flex:1;background:#ffffff;border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:10px 12px;text-align:center;box-shadow:0 2px 8px rgba(16,185,129,0.06);">
+                                <div style="font-size:1.15rem;font-weight:600;color:#059669;" class="ck-count">94%</div>
+                                <div style="font-size:0.72rem;color:#64748b;margin-top:2px;">Open Rate</div>
                             </div>
-                            <div style="flex:1;background:rgba(15,25,50,0.8);border:1px solid rgba(167,139,250,0.2);border-radius:10px;padding:10px 12px;text-align:center;">
-                                <div style="font-size:1.1rem;font-weight:500;color:#a78bfa;" class="ck-count">48</div>
-                                <div style="font-size:0.7rem;color:#64748b;margin-top:2px;">Calls Booked</div>
+                            <div style="flex:1;background:#ffffff;border:1px solid rgba(124,58,237,0.2);border-radius:12px;padding:10px 12px;text-align:center;box-shadow:0 2px 8px rgba(124,58,237,0.06);">
+                                <div style="font-size:1.15rem;font-weight:600;color:#7c3aed;" class="ck-count">48</div>
+                                <div style="font-size:0.72rem;color:#64748b;margin-top:2px;">Calls Booked</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Service 3: Business Software (HRMS, WMS, OMS, SCM) -->
+<!-- Service 3: Business Software (HRMS, WMS, OMS, SCM) -->
             <div class="service-detail-item" data-aos="fade-up">
                 <div class="service-detail-content">
                     <div class="capability-badge-tag"><i class="fas fa-briefcase"></i> Business Software</div>
@@ -1192,48 +1187,47 @@
                     <!-- Enterprise Dashboard Grid -->
                     <div style="width:100%;font-family:'DM Sans',sans-serif;">
                         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-                            <span style="font-size:0.72rem;color:#60a5fa;font-weight:500;text-transform:uppercase;letter-spacing:0.05em;"><i class="fas fa-network-wired" style="margin-right:6px;"></i>Enterprise Ops Core</span>
-                            <span style="background:rgba(29,107,243,0.15);color:#60a5fa;font-size:0.68rem;font-weight:500;padding:3px 10px;border-radius:980px;border:1px solid rgba(29,107,243,0.25);">v4.2 PRO · Live</span>
+                            <span style="font-size:0.75rem;color:#2563eb;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;"><i class="fas fa-network-wired" style="margin-right:6px;"></i>Enterprise Ops Core</span>
+                            <span style="background:#eff6ff;color:#2563eb;font-size:0.7rem;font-weight:600;padding:3px 10px;border-radius:980px;border:1px solid #bfdbfe;">v4.2 PRO · Live</span>
                         </div>
-                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;">
-                            <div style="background:rgba(15,25,50,0.9);border:1px solid rgba(29,107,243,0.2);border-radius:12px;padding:12px;">
-                                <div style="font-size:0.65rem;color:#64748b;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;">HRMS &amp; Payroll</div>
-                                <div style="font-size:1rem;font-weight:500;color:#e2e8f0;">Team Management</div>
-                                <div style="margin-top:8px;height:3px;background:rgba(255,255,255,0.07);border-radius:2px;overflow:hidden;">
-                                    <div class="ck-bar-anim" style="height:100%;background:#1d6bf3;--target-width:78%;animation-delay:0.4s;border-radius:2px;"></div>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+                            <div style="background:#ffffff;border:1px solid rgba(37,99,235,0.16);border-radius:14px;padding:14px;box-shadow:0 4px 12px rgba(37,99,235,0.05);">
+                                <div style="font-size:0.68rem;color:#64748b;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;font-weight:500;">HRMS &amp; Payroll</div>
+                                <div style="font-size:0.95rem;font-weight:600;color:#0f172a;">Team Management</div>
+                                <div style="margin-top:8px;height:4px;background:#e2e8f0;border-radius:2px;overflow:hidden;">
+                                    <div class="ck-bar-anim" style="height:100%;background:#2563eb;--target-width:78%;animation-delay:0.4s;border-radius:2px;"></div>
                                 </div>
                             </div>
-                            <div style="background:rgba(15,25,50,0.9);border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:12px;">
-                                <div style="font-size:0.65rem;color:#64748b;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;">WMS &amp; Inventory</div>
-                                <div style="font-size:1rem;font-weight:500;color:#e2e8f0;">4,820 <span style="color:#10b981;font-size:0.75rem;">SKUs Active</span></div>
-                                <div style="margin-top:8px;height:3px;background:rgba(255,255,255,0.07);border-radius:2px;overflow:hidden;">
+                            <div style="background:#ffffff;border:1px solid rgba(16,185,129,0.2);border-radius:14px;padding:14px;box-shadow:0 4px 12px rgba(16,185,129,0.05);">
+                                <div style="font-size:0.68rem;color:#64748b;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;font-weight:500;">WMS &amp; Inventory</div>
+                                <div style="font-size:0.95rem;font-weight:600;color:#0f172a;">4,820 <span style="color:#059669;font-size:0.75rem;">SKUs Active</span></div>
+                                <div style="margin-top:8px;height:4px;background:#e2e8f0;border-radius:2px;overflow:hidden;">
                                     <div class="ck-bar-anim" style="height:100%;background:#10b981;--target-width:91%;animation-delay:0.6s;border-radius:2px;"></div>
                                 </div>
                             </div>
-                            <div style="background:rgba(15,25,50,0.9);border:1px solid rgba(167,139,250,0.2);border-radius:12px;padding:12px;">
-                                <div style="font-size:0.65rem;color:#64748b;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;">OMS Dispatch</div>
-                                <div style="font-size:1rem;font-weight:500;color:#e2e8f0;">Order Queue <span style="color:#a78bfa;font-size:0.75rem;">Auto</span></div>
-                                <div style="margin-top:8px;height:3px;background:rgba(255,255,255,0.07);border-radius:2px;overflow:hidden;">
-                                    <div class="ck-bar-anim" style="height:100%;background:#a78bfa;--target-width:65%;animation-delay:0.8s;border-radius:2px;"></div>
+                            <div style="background:#ffffff;border:1px solid rgba(124,58,237,0.2);border-radius:14px;padding:14px;box-shadow:0 4px 12px rgba(124,58,237,0.05);">
+                                <div style="font-size:0.68rem;color:#64748b;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;font-weight:500;">OMS Dispatch</div>
+                                <div style="font-size:0.95rem;font-weight:600;color:#0f172a;">Order Queue <span style="color:#7c3aed;font-size:0.75rem;">Auto</span></div>
+                                <div style="margin-top:8px;height:4px;background:#e2e8f0;border-radius:2px;overflow:hidden;">
+                                    <div class="ck-bar-anim" style="height:100%;background:#7c3aed;--target-width:65%;animation-delay:0.8s;border-radius:2px;"></div>
                                 </div>
                             </div>
-                            <div style="background:rgba(15,25,50,0.9);border:1px solid rgba(245,158,11,0.2);border-radius:12px;padding:12px;">
-                                <div style="font-size:0.65rem;color:#64748b;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;">SCM &amp; Vendors</div>
-                                <div style="font-size:1rem;font-weight:500;color:#e2e8f0;">14 Linked <span style="color:#f59e0b;font-size:0.75rem;">Auto-RFQ</span></div>
-                                <div style="margin-top:8px;height:3px;background:rgba(255,255,255,0.07);border-radius:2px;overflow:hidden;">
+                            <div style="background:#ffffff;border:1px solid rgba(245,158,11,0.22);border-radius:14px;padding:14px;box-shadow:0 4px 12px rgba(245,158,11,0.05);">
+                                <div style="font-size:0.68rem;color:#64748b;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;font-weight:500;">SCM &amp; Vendors</div>
+                                <div style="font-size:0.95rem;font-weight:600;color:#0f172a;">14 Linked <span style="color:#d97706;font-size:0.75rem;">Auto-RFQ</span></div>
+                                <div style="margin-top:8px;height:4px;background:#e2e8f0;border-radius:2px;overflow:hidden;">
                                     <div class="ck-bar-anim" style="height:100%;background:#f59e0b;--target-width:55%;animation-delay:1s;border-radius:2px;"></div>
                                 </div>
                             </div>
                         </div>
-                        <div style="background:rgba(29,107,243,0.08);border:1px solid rgba(29,107,243,0.2);border-radius:10px;padding:8px 12px;display:flex;align-items:center;gap:8px;">
+                        <div style="background:#ffffff;border:1px solid rgba(37,99,235,0.18);border-radius:12px;padding:9px 14px;display:flex;align-items:center;gap:8px;box-shadow:0 2px 6px rgba(37,99,235,0.04);">
                             <span class="ck-pulse-blue"></span>
-                            <span style="font-size:0.75rem;color:#60a5fa;font-weight:500;">Unified Multi-Tenant DB · 0ms Drift · Fully Synced</span>
+                            <span style="font-size:0.78rem;color:#2563eb;font-weight:600;">Unified Multi-Tenant DB · 0ms Drift · Fully Synced</span>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Service 4: Industry-Specific Platforms -->
+<!-- Service 4: Industry-Specific Platforms -->
             <div class="service-detail-item" data-aos="fade-up">
                 <div class="service-detail-content">
                     <div class="capability-badge-tag"><i class="fas fa-building"></i> Industry-Specific Software</div>
@@ -1250,30 +1244,29 @@
                 <div class="service-detail-visual">
                     <!-- Industry verticals live stack -->
                     <div style="width:100%;font-family:'DM Sans',sans-serif;">
-                        <div style="font-size:0.72rem;color:#60a5fa;font-weight:500;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px;"><i class="fas fa-layer-group" style="margin-right:6px;"></i>Industry Sync Engine · 0% Commission</div>
-                        <div style="display:flex;flex-direction:column;gap:8px;">
-                            <div style="background:rgba(15,25,50,0.9);border:1px solid rgba(29,107,243,0.2);border-radius:12px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;animation:float 4s ease-in-out infinite;">
-                                <span style="font-size:0.85rem;font-weight:500;color:#e2e8f0;"><i class="fas fa-hotel" style="color:#1d6bf3;margin-right:8px;"></i>Hotel Booking &amp; Channel Manager</span>
-                                <span style="font-size:0.72rem;color:#10b981;font-weight:500;background:rgba(16,185,129,0.1);padding:3px 8px;border-radius:6px;">Live Sync</span>
+                        <div style="font-size:0.75rem;color:#2563eb;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:12px;"><i class="fas fa-layer-group" style="margin-right:6px;"></i>Industry Sync Engine · 0% Commission</div>
+                        <div style="display:flex;flex-direction:column;gap:9px;">
+                            <div style="background:#ffffff;border:1px solid rgba(37,99,235,0.16);border-radius:14px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 12px rgba(37,99,235,0.05);animation:float 4s ease-in-out infinite;">
+                                <span style="font-size:0.88rem;font-weight:600;color:#0f172a;"><i class="fas fa-hotel" style="color:#2563eb;margin-right:8px;"></i>Hotel Booking &amp; Channel Manager</span>
+                                <span style="font-size:0.72rem;color:#059669;font-weight:600;background:#ecfdf5;padding:4px 10px;border-radius:6px;border:1px solid #a7f3d0;">Live Sync</span>
                             </div>
-                            <div style="background:rgba(15,25,50,0.9);border:1px solid rgba(245,158,11,0.2);border-radius:12px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;animation:float 4s ease-in-out infinite;animation-delay:0.5s;">
-                                <span style="font-size:0.85rem;font-weight:500;color:#e2e8f0;"><i class="fas fa-utensils" style="color:#f59e0b;margin-right:8px;"></i>Restaurant KDS &amp; Table POS</span>
-                                <span style="font-size:0.72rem;color:#f59e0b;font-weight:500;background:rgba(245,158,11,0.1);padding:3px 8px;border-radius:6px;">4.2m Turn</span>
+                            <div style="background:#ffffff;border:1px solid rgba(245,158,11,0.2);border-radius:14px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 12px rgba(245,158,11,0.05);animation:float 4s ease-in-out infinite;animation-delay:0.5s;">
+                                <span style="font-size:0.88rem;font-weight:600;color:#0f172a;"><i class="fas fa-utensils" style="color:#d97706;margin-right:8px;"></i>Restaurant KDS &amp; Table POS</span>
+                                <span style="font-size:0.72rem;color:#d97706;font-weight:600;background:#fef3c7;padding:4px 10px;border-radius:6px;border:1px solid #fde68a;">4.2m Turn</span>
                             </div>
-                            <div style="background:rgba(15,25,50,0.9);border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;animation:float 4s ease-in-out infinite;animation-delay:1s;">
-                                <span style="font-size:0.85rem;font-weight:500;color:#e2e8f0;"><i class="fas fa-user-md" style="color:#10b981;margin-right:8px;"></i>Healthcare HMIS &amp; Lab LIS</span>
-                                <span style="font-size:0.72rem;color:#10b981;font-weight:500;background:rgba(16,185,129,0.1);padding:3px 8px;border-radius:6px;">1-Click Intake</span>
+                            <div style="background:#ffffff;border:1px solid rgba(16,185,129,0.2);border-radius:14px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 12px rgba(16,185,129,0.05);animation:float 4s ease-in-out infinite;animation-delay:1s;">
+                                <span style="font-size:0.88rem;font-weight:600;color:#0f172a;"><i class="fas fa-user-md" style="color:#059669;margin-right:8px;"></i>Healthcare HMIS &amp; Lab LIS</span>
+                                <span style="font-size:0.72rem;color:#059669;font-weight:600;background:#ecfdf5;padding:4px 10px;border-radius:6px;border:1px solid #a7f3d0;">1-Click Intake</span>
                             </div>
-                            <div style="background:rgba(15,25,50,0.9);border:1px solid rgba(167,139,250,0.2);border-radius:12px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;animation:float 4s ease-in-out infinite;animation-delay:1.5s;">
-                                <span style="font-size:0.85rem;font-weight:500;color:#e2e8f0;"><i class="fas fa-home" style="color:#a78bfa;margin-right:8px;"></i>Real Estate Brokerage &amp; SIS</span>
-                                <span style="font-size:0.72rem;color:#a78bfa;font-weight:500;background:rgba(167,139,250,0.1);padding:3px 8px;border-radius:6px;">Live Units</span>
+                            <div style="background:#ffffff;border:1px solid rgba(124,58,237,0.2);border-radius:14px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 12px rgba(124,58,237,0.05);animation:float 4s ease-in-out infinite;animation-delay:1.5s;">
+                                <span style="font-size:0.88rem;font-weight:600;color:#0f172a;"><i class="fas fa-home" style="color:#7c3aed;margin-right:8px;"></i>Real Estate Brokerage &amp; SIS</span>
+                                <span style="font-size:0.72rem;color:#7c3aed;font-weight:600;background:#f5f3ff;padding:4px 10px;border-radius:6px;border:1px solid #ddd6fe;">Live Units</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Service 5: Portals, BI Dashboards & Modern Systems -->
+<!-- Service 5: Portals, BI Dashboards & Modern Systems -->
             <div class="service-detail-item" data-aos="fade-up">
                 <div class="service-detail-content">
                     <div class="capability-badge-tag"><i class="fas fa-network-wired"></i> Modern &amp; High-Value Systems</div>
@@ -1291,46 +1284,45 @@
                     <!-- BI Dashboard mockup -->
                     <div style="width:100%;font-family:'DM Sans',sans-serif;">
                         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-                            <span style="font-size:0.72rem;color:#60a5fa;font-weight:500;text-transform:uppercase;letter-spacing:0.05em;">Portal &amp; BI Intelligence Grid</span>
-                            <span style="background:rgba(167,139,250,0.15);color:#a78bfa;font-size:0.68rem;font-weight:500;padding:3px 10px;border-radius:980px;border:1px solid rgba(167,139,250,0.25);">AI Swarm Active</span>
+                            <span style="font-size:0.75rem;color:#2563eb;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;">Portal &amp; BI Intelligence Grid</span>
+                            <span style="background:#f5f3ff;color:#7c3aed;font-size:0.7rem;font-weight:600;padding:3px 10px;border-radius:980px;border:1px solid #ddd6fe;">AI Swarm Active</span>
                         </div>
-                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">
-                            <div style="background:rgba(15,25,50,0.9);border:1px solid rgba(29,107,243,0.2);border-radius:12px;padding:14px;text-align:center;">
-                                <div style="font-size:1.5rem;color:#1d6bf3;margin-bottom:6px;"><i class="fas fa-users"></i></div>
-                                <div style="font-size:0.8rem;font-weight:500;color:#e2e8f0;">Client &amp; Staff Portals</div>
-                                <div style="font-size:0.68rem;color:#64748b;margin-top:2px;">Self-Service SSO</div>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+                            <div style="background:#ffffff;border:1px solid rgba(37,99,235,0.16);border-radius:14px;padding:14px;text-align:center;box-shadow:0 4px 12px rgba(37,99,235,0.05);">
+                                <div style="font-size:1.5rem;color:#2563eb;margin-bottom:6px;"><i class="fas fa-users"></i></div>
+                                <div style="font-size:0.85rem;font-weight:600;color:#0f172a;">Client &amp; Staff Portals</div>
+                                <div style="font-size:0.7rem;color:#64748b;margin-top:2px;">Self-Service SSO</div>
                             </div>
-                            <div style="background:rgba(15,25,50,0.9);border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:14px;text-align:center;">
-                                <div style="font-size:1.5rem;color:#10b981;margin-bottom:6px;"><i class="fas fa-chart-bar"></i></div>
-                                <div style="font-size:0.8rem;font-weight:500;color:#e2e8f0;">Executive BI</div>
-                                <div style="font-size:0.68rem;color:#64748b;margin-top:2px;">Real-Time Widgets</div>
+                            <div style="background:#ffffff;border:1px solid rgba(16,185,129,0.2);border-radius:14px;padding:14px;text-align:center;box-shadow:0 4px 12px rgba(16,185,129,0.05);">
+                                <div style="font-size:1.5rem;color:#059669;margin-bottom:6px;"><i class="fas fa-chart-bar"></i></div>
+                                <div style="font-size:0.85rem;font-weight:600;color:#0f172a;">Executive BI</div>
+                                <div style="font-size:0.7rem;color:#64748b;margin-top:2px;">Real-Time Widgets</div>
                             </div>
-                            <div style="background:rgba(15,25,50,0.9);border:1px solid rgba(167,139,250,0.2);border-radius:12px;padding:14px;text-align:center;">
-                                <div style="font-size:1.5rem;color:#a78bfa;margin-bottom:6px;"><i class="fas fa-handshake"></i></div>
-                                <div style="font-size:0.8rem;font-weight:500;color:#e2e8f0;">Dealer &amp; Vendor</div>
-                                <div style="font-size:0.68rem;color:#64748b;margin-top:2px;">B2B Quotations</div>
+                            <div style="background:#ffffff;border:1px solid rgba(124,58,237,0.2);border-radius:14px;padding:14px;text-align:center;box-shadow:0 4px 12px rgba(124,58,237,0.05);">
+                                <div style="font-size:1.5rem;color:#7c3aed;margin-bottom:6px;"><i class="fas fa-handshake"></i></div>
+                                <div style="font-size:0.85rem;font-weight:600;color:#0f172a;">Dealer &amp; Vendor</div>
+                                <div style="font-size:0.7rem;color:#64748b;margin-top:2px;">B2B Quotations</div>
                             </div>
-                            <div style="background:rgba(15,25,50,0.9);border:1px solid rgba(6,182,212,0.2);border-radius:12px;padding:14px;text-align:center;">
-                                <div style="font-size:1.5rem;color:#06b6d4;margin-bottom:6px;"><i class="fas fa-shield-alt"></i></div>
-                                <div style="font-size:0.8rem;font-weight:500;color:#e2e8f0;">Compliance &amp; IoT</div>
-                                <div style="font-size:0.68rem;color:#64748b;margin-top:2px;">Telemetry Streams</div>
+                            <div style="background:#ffffff;border:1px solid rgba(6,182,212,0.2);border-radius:14px;padding:14px;text-align:center;box-shadow:0 4px 12px rgba(6,182,212,0.05);">
+                                <div style="font-size:1.5rem;color:#0284c7;margin-bottom:6px;"><i class="fas fa-shield-alt"></i></div>
+                                <div style="font-size:0.85rem;font-weight:600;color:#0f172a;">Compliance &amp; IoT</div>
+                                <div style="font-size:0.7rem;color:#64748b;margin-top:2px;">Telemetry Streams</div>
                             </div>
                         </div>
                         <!-- Live KPI bar -->
-                        <div style="background:rgba(15,25,50,0.9);border:1px solid rgba(29,107,243,0.15);border-radius:10px;padding:10px 14px;">
+                        <div style="background:#ffffff;border:1px solid rgba(37,99,235,0.16);border-radius:12px;padding:10px 14px;box-shadow:0 2px 6px rgba(37,99,235,0.04);">
                             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
-                                <span style="font-size:0.72rem;color:#94a3b8;">Data Pipeline Throughput</span>
-                                <span style="font-size:0.72rem;color:#60a5fa;font-weight:500;">2.4M events/hr</span>
+                                <span style="font-size:0.75rem;color:#64748b;">Data Pipeline Throughput</span>
+                                <span style="font-size:0.75rem;color:#2563eb;font-weight:600;">2.4M events/hr</span>
                             </div>
-                            <div style="height:4px;background:rgba(255,255,255,0.07);border-radius:3px;overflow:hidden;">
-                                <div class="ck-bar-anim" style="height:100%;background:linear-gradient(90deg,#1d6bf3,#a78bfa);--target-width:88%;border-radius:3px;animation-delay:0.9s;"></div>
+                            <div style="height:5px;background:#e2e8f0;border-radius:3px;overflow:hidden;">
+                                <div class="ck-bar-anim" style="height:100%;background:linear-gradient(90deg,#2563eb,#7c3aed);--target-width:88%;border-radius:3px;animation-delay:0.9s;"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Service 6: Custom CRM & SaaS Platforms -->
+<!-- Service 6: Custom CRM & SaaS Platforms -->
             <div class="service-detail-item" data-aos="fade-up">
                 <div class="service-detail-content">
                     <div class="capability-badge-tag"><i class="fas fa-cubes"></i> Custom SaaS &amp; CRM</div>
@@ -1348,41 +1340,40 @@
                 <div class="service-detail-visual">
                     <!-- CRM Revenue Dashboard -->
                     <div style="width:100%;font-family:'DM Sans',sans-serif;">
-                        <div style="background:rgba(15,25,50,0.9);border:1px solid rgba(29,107,243,0.25);border-radius:14px;padding:1.25rem;box-shadow:0 20px 40px rgba(0,0,0,0.4);">
+                        <div style="background:#ffffff;border:1px solid rgba(37,99,235,0.18);border-radius:16px;padding:1.4rem;box-shadow:0 16px 40px rgba(37,99,235,0.1), 0 2px 6px rgba(15,23,42,0.03);">
                             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
                                 <div>
-                                    <div style="font-size:0.68rem;color:#64748b;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:3px;">Monthly Revenue</div>
-                                    <div style="font-size:1.8rem;font-weight:400;color:#ffffff;letter-spacing:-0.03em;" class="ck-count">₹4.2L <span style="font-size:0.85rem;color:#10b981;font-weight:500;">↑ MRR</span></div>
+                                    <div style="font-size:0.7rem;color:#64748b;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:3px;font-weight:500;">Monthly Revenue</div>
+                                    <div style="font-size:1.85rem;font-weight:600;color:#0f172a;letter-spacing:-0.03em;" class="ck-count">₹4.2L <span style="font-size:0.85rem;color:#059669;font-weight:600;">↑ MRR</span></div>
                                 </div>
-                                <span style="background:rgba(29,107,243,0.15);color:#60a5fa;font-size:0.72rem;font-weight:500;padding:5px 12px;border-radius:980px;border:1px solid rgba(29,107,243,0.25);"><i class="fas fa-chart-pie" style="margin-right:5px;"></i>Live Sync</span>
+                                <span style="background:#eff6ff;color:#2563eb;font-size:0.72rem;font-weight:600;padding:5px 12px;border-radius:980px;border:1px solid #bfdbfe;"><i class="fas fa-chart-pie" style="margin-right:5px;"></i>Live Sync</span>
                             </div>
-                            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem;">
-                                <div style="background:rgba(29,107,243,0.1);border:1px solid rgba(29,107,243,0.2);border-radius:10px;padding:10px;">
+                            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1rem;">
+                                <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:12px;padding:10px 12px;">
                                     <div style="font-size:0.68rem;color:#64748b;text-transform:uppercase;letter-spacing:0.04em;">Active Pipeline</div>
-                                    <div style="font-size:1.1rem;font-weight:500;color:#60a5fa;margin-top:3px;">1,420 Deals</div>
+                                    <div style="font-size:1.15rem;font-weight:600;color:#2563eb;margin-top:3px;">1,420 Deals</div>
                                 </div>
-                                <div style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);border-radius:10px;padding:10px;">
+                                <div style="background:#ecfdf5;border:1px solid #a7f3d0;border-radius:12px;padding:10px 12px;">
                                     <div style="font-size:0.68rem;color:#64748b;text-transform:uppercase;letter-spacing:0.04em;">Conversion Rate</div>
-                                    <div style="font-size:1.1rem;font-weight:500;color:#10b981;margin-top:3px;">4.85%</div>
+                                    <div style="font-size:1.15rem;font-weight:600;color:#059669;margin-top:3px;">4.85%</div>
                                 </div>
                             </div>
-                            <div style="font-size:0.72rem;color:#64748b;margin-bottom:6px;">Deal Stage Completion</div>
-                            <div style="height:6px;background:rgba(255,255,255,0.07);border-radius:4px;overflow:hidden;display:flex;">
-                                <div class="ck-bar-anim" style="height:100%;background:#1d6bf3;--target-width:55%;animation-delay:0.4s;"></div>
+                            <div style="font-size:0.72rem;color:#64748b;margin-bottom:6px;font-weight:500;">Deal Stage Completion</div>
+                            <div style="height:6px;background:#e2e8f0;border-radius:4px;overflow:hidden;display:flex;">
+                                <div class="ck-bar-anim" style="height:100%;background:#2563eb;--target-width:55%;animation-delay:0.4s;"></div>
                                 <div class="ck-bar-anim" style="height:100%;background:#60a5fa;--target-width:25%;animation-delay:0.8s;"></div>
                                 <div class="ck-bar-anim" style="height:100%;background:#10b981;--target-width:20%;animation-delay:1.2s;"></div>
                             </div>
-                            <div style="display:flex;justify-content:space-between;margin-top:5px;">
-                                <span style="font-size:0.65rem;color:#64748b;">Prospect · 55%</span>
-                                <span style="font-size:0.65rem;color:#64748b;">Proposal · 25%</span>
-                                <span style="font-size:0.65rem;color:#64748b;">Closed · 20%</span>
+                            <div style="display:flex;justify-content:space-between;margin-top:6px;">
+                                <span style="font-size:0.68rem;color:#64748b;">Prospect · 55%</span>
+                                <span style="font-size:0.68rem;color:#64748b;">Proposal · 25%</span>
+                                <span style="font-size:0.68rem;color:#64748b;">Closed · 20%</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Service 7: Cloud Infrastructure & API Engineering -->
+<!-- Service 7: Cloud Infrastructure & API Engineering -->
             <div class="service-detail-item" data-aos="fade-up">
                 <div class="service-detail-content">
                     <div class="capability-badge-tag"><i class="fas fa-cloud"></i> Cloud Architecture</div>
@@ -1399,43 +1390,44 @@
                 <div class="service-detail-visual">
                     <!-- Server terminal panel -->
                     <div style="width:100%;font-family:'DM Sans',sans-serif;">
-                        <div style="background:rgba(2,6,14,0.98);border:1px solid rgba(29,107,243,0.3);border-radius:14px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.5);">
-                            <div style="background:rgba(255,255,255,0.03);padding:10px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.07);">
-                                <span style="font-family:monospace;font-size:0.78rem;color:#60a5fa;"><i class="fas fa-server" style="margin-right:6px;"></i>AWS Edge Cluster (us-east-1)</span>
-                                <span style="font-size:0.7rem;background:rgba(16,185,129,0.2);color:#10b981;padding:3px 10px;border-radius:980px;border:1px solid rgba(16,185,129,0.3);">99.99% UPTIME</span>
+                        <div style="background:#0f172a;border:1px solid rgba(37,99,235,0.25);border-radius:16px;overflow:hidden;box-shadow:0 16px 40px rgba(37,99,235,0.12);">
+                            <div style="background:rgba(255,255,255,0.05);padding:10px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.08);">
+                                <span style="font-family:monospace;font-size:0.78rem;color:#93c5fd;"><i class="fas fa-server" style="margin-right:6px;"></i>AWS Edge Cluster (us-east-1)</span>
+                                <span style="font-size:0.7rem;background:rgba(16,185,129,0.2);color:#34d399;padding:3px 10px;border-radius:980px;border:1px solid rgba(16,185,129,0.3);">99.99% UPTIME</span>
                             </div>
                             <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:1rem;">
-                                <div style="background:rgba(29,107,243,0.08);border:1px solid rgba(29,107,243,0.15);border-radius:10px;padding:10px;text-align:center;">
-                                    <div style="font-family:monospace;font-size:0.65rem;color:#64748b;margin-bottom:4px;">LATENCY</div>
-                                    <div style="font-family:monospace;font-size:1.4rem;font-weight:500;color:#60a5fa;" class="ck-count">18ms</div>
+                                <div style="background:rgba(37,99,235,0.12);border:1px solid rgba(37,99,235,0.25);border-radius:10px;padding:10px;text-align:center;">
+                                    <div style="font-family:monospace;font-size:0.65rem;color:#93c5fd;margin-bottom:4px;">LATENCY</div>
+                                    <div style="font-family:monospace;font-size:1.4rem;font-weight:600;color:#60a5fa;" class="ck-count">18ms</div>
                                 </div>
-                                <div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.15);border-radius:10px;padding:10px;text-align:center;">
-                                    <div style="font-family:monospace;font-size:0.65rem;color:#64748b;margin-bottom:4px;">THROUGHPUT</div>
-                                    <div style="font-family:monospace;font-size:1.4rem;font-weight:500;color:#10b981;" class="ck-count">1.2M/d</div>
+                                <div style="background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.25);border-radius:10px;padding:10px;text-align:center;">
+                                    <div style="font-family:monospace;font-size:0.65rem;color:#86efac;margin-bottom:4px;">THROUGHPUT</div>
+                                    <div style="font-family:monospace;font-size:1.4rem;font-weight:600;color:#34d399;" class="ck-count">1.2M/d</div>
                                 </div>
                             </div>
-                            <div style="padding:0 1rem 1rem;font-family:monospace;font-size:0.78rem;background:rgba(0,0,0,0.4);margin:0 1rem 1rem;border-radius:10px;padding:10px 12px;">
-                                <div><span style="color:#10b981;">[200 OK]</span> <span style="color:#94a3b8;">GET /api/v1/analytics</span> <span style="color:#60a5fa;">— 12ms</span></div>
-                                <div style="margin-top:3px;"><span style="color:#10b981;">[200 OK]</span> <span style="color:#94a3b8;">POST /api/v1/sync</span> <span style="color:#60a5fa;">— 18ms</span></div>
-                                <div style="margin-top:3px;"><span style="color:#10b981;">[200 OK]</span> <span style="color:#94a3b8;">GET /api/v1/leads</span> <span style="color:#60a5fa;">— 9ms</span><span class="ck-cursor"></span></div>
+                            <div style="padding:0 1rem 1rem;">
+                                <div style="background:rgba(0,0,0,0.35);border-radius:10px;padding:10px 12px;font-family:monospace;font-size:0.78rem;">
+                                    <div><span style="color:#34d399;">[200 OK]</span> <span style="color:#94a3b8;">GET /api/v1/analytics</span> <span style="color:#60a5fa;">— 12ms</span></div>
+                                    <div style="margin-top:3px;"><span style="color:#34d399;">[200 OK]</span> <span style="color:#94a3b8;">POST /api/v1/sync</span> <span style="color:#60a5fa;">— 18ms</span></div>
+                                    <div style="margin-top:3px;"><span style="color:#34d399;">[200 OK]</span> <span style="color:#94a3b8;">GET /api/v1/leads</span> <span style="color:#60a5fa;">— 9ms</span><span class="ck-cursor"></span></div>
+                                </div>
                             </div>
                         </div>
                         <!-- CI/CD status -->
                         <div style="display:flex;gap:8px;margin-top:8px;">
-                            <div style="flex:1;background:rgba(15,25,50,0.9);border:1px solid rgba(16,185,129,0.2);border-radius:10px;padding:9px 12px;display:flex;align-items:center;gap:8px;">
+                            <div style="flex:1;background:#ffffff;border:1px solid rgba(16,185,129,0.25);border-radius:12px;padding:9px 12px;display:flex;align-items:center;gap:8px;box-shadow:0 2px 6px rgba(16,185,129,0.06);">
                                 <span class="ck-pulse-green"></span>
-                                <span style="font-size:0.75rem;color:#34d399;font-weight:500;">Deploy: Passed</span>
+                                <span style="font-size:0.75rem;color:#059669;font-weight:600;">Deploy: Passed</span>
                             </div>
-                            <div style="flex:1;background:rgba(15,25,50,0.9);border:1px solid rgba(29,107,243,0.2);border-radius:10px;padding:9px 12px;display:flex;align-items:center;gap:8px;">
+                            <div style="flex:1;background:#ffffff;border:1px solid rgba(37,99,235,0.2);border-radius:12px;padding:9px 12px;display:flex;align-items:center;gap:8px;box-shadow:0 2px 6px rgba(37,99,235,0.06);">
                                 <span class="ck-pulse-blue"></span>
-                                <span style="font-size:0.75rem;color:#60a5fa;font-weight:500;">Zero Downtime</span>
+                                <span style="font-size:0.75rem;color:#2563eb;font-weight:600;">Zero Downtime</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Service 8: Digital & Social Media Marketing -->
+<!-- Service 8: Digital & Social Media Marketing -->
             <div class="service-detail-item" data-aos="fade-up">
                 <div class="service-detail-content">
                     <div class="capability-badge-tag"><i class="fas fa-bullhorn"></i> Social &amp; Media</div>
@@ -1452,49 +1444,48 @@
                 <div class="service-detail-visual">
                     <!-- Social media analytics dashboard -->
                     <div style="width:100%;font-family:'DM Sans',sans-serif;">
-                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">
-                            <div style="background:rgba(15,25,50,0.9);border:1px solid rgba(225,48,108,0.25);border-radius:12px;padding:12px;display:flex;align-items:center;gap:10px;">
-                                <div style="width:36px;height:36px;border-radius:10px;background:rgba(225,48,108,0.15);display:flex;align-items:center;justify-content:center;font-size:1rem;color:#e1306c;flex-shrink:0;"><i class="fab fa-instagram"></i></div>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+                            <div style="background:#ffffff;border:1px solid rgba(225,48,108,0.22);border-radius:14px;padding:12px;display:flex;align-items:center;gap:10px;box-shadow:0 4px 12px rgba(225,48,108,0.05);">
+                                <div style="width:36px;height:36px;border-radius:10px;background:#fdf2f8;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#e1306c;flex-shrink:0;"><i class="fab fa-instagram"></i></div>
                                 <div>
-                                    <div style="font-size:0.68rem;color:#64748b;">Instagram</div>
-                                    <div style="font-size:0.95rem;font-weight:500;color:#e2e8f0;">+2.4K <span style="font-size:0.65rem;color:#10b981;">↑ 18%</span></div>
+                                    <div style="font-size:0.7rem;color:#64748b;">Instagram</div>
+                                    <div style="font-size:0.95rem;font-weight:600;color:#0f172a;">+2.4K <span style="font-size:0.68rem;color:#059669;">↑ 18%</span></div>
                                 </div>
                             </div>
-                            <div style="background:rgba(15,25,50,0.9);border:1px solid rgba(0,119,181,0.25);border-radius:12px;padding:12px;display:flex;align-items:center;gap:10px;">
-                                <div style="width:36px;height:36px;border-radius:10px;background:rgba(0,119,181,0.15);display:flex;align-items:center;justify-content:center;font-size:1rem;color:#0077b5;flex-shrink:0;"><i class="fab fa-linkedin"></i></div>
+                            <div style="background:#ffffff;border:1px solid rgba(0,119,181,0.22);border-radius:14px;padding:12px;display:flex;align-items:center;gap:10px;box-shadow:0 4px 12px rgba(0,119,181,0.05);">
+                                <div style="width:36px;height:36px;border-radius:10px;background:#eff6ff;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#0077b5;flex-shrink:0;"><i class="fab fa-linkedin"></i></div>
                                 <div>
-                                    <div style="font-size:0.68rem;color:#64748b;">LinkedIn</div>
-                                    <div style="font-size:0.95rem;font-weight:500;color:#e2e8f0;">+880 <span style="font-size:0.65rem;color:#10b981;">↑ 32%</span></div>
+                                    <div style="font-size:0.7rem;color:#64748b;">LinkedIn</div>
+                                    <div style="font-size:0.95rem;font-weight:600;color:#0f172a;">+880 <span style="font-size:0.68rem;color:#059669;">↑ 32%</span></div>
                                 </div>
                             </div>
-                            <div style="background:rgba(15,25,50,0.9);border:1px solid rgba(24,119,242,0.25);border-radius:12px;padding:12px;display:flex;align-items:center;gap:10px;">
-                                <div style="width:36px;height:36px;border-radius:10px;background:rgba(24,119,242,0.15);display:flex;align-items:center;justify-content:center;font-size:1rem;color:#1877f2;flex-shrink:0;"><i class="fab fa-facebook"></i></div>
+                            <div style="background:#ffffff;border:1px solid rgba(24,119,242,0.22);border-radius:14px;padding:12px;display:flex;align-items:center;gap:10px;box-shadow:0 4px 12px rgba(24,119,242,0.05);">
+                                <div style="width:36px;height:36px;border-radius:10px;background:#eff6ff;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#1877f2;flex-shrink:0;"><i class="fab fa-facebook"></i></div>
                                 <div>
-                                    <div style="font-size:0.68rem;color:#64748b;">Facebook</div>
-                                    <div style="font-size:0.95rem;font-weight:500;color:#e2e8f0;">+5.1K <span style="font-size:0.65rem;color:#10b981;">↑ 24%</span></div>
+                                    <div style="font-size:0.7rem;color:#64748b;">Facebook</div>
+                                    <div style="font-size:0.95rem;font-weight:600;color:#0f172a;">+5.1K <span style="font-size:0.68rem;color:#059669;">↑ 24%</span></div>
                                 </div>
                             </div>
-                            <div style="background:rgba(15,25,50,0.9);border:1px solid rgba(255,0,0,0.2);border-radius:12px;padding:12px;display:flex;align-items:center;gap:10px;">
-                                <div style="width:36px;height:36px;border-radius:10px;background:rgba(255,0,0,0.12);display:flex;align-items:center;justify-content:center;font-size:1rem;color:#ff4444;flex-shrink:0;"><i class="fab fa-youtube"></i></div>
+                            <div style="background:#ffffff;border:1px solid rgba(255,0,0,0.18);border-radius:14px;padding:12px;display:flex;align-items:center;gap:10px;box-shadow:0 4px 12px rgba(255,0,0,0.05);">
+                                <div style="width:36px;height:36px;border-radius:10px;background:#fff1f2;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#e11d48;flex-shrink:0;"><i class="fab fa-youtube"></i></div>
                                 <div>
-                                    <div style="font-size:0.68rem;color:#64748b;">YouTube</div>
-                                    <div style="font-size:0.95rem;font-weight:500;color:#e2e8f0;">+12K <span style="font-size:0.65rem;color:#10b981;">↑ 41%</span></div>
+                                    <div style="font-size:0.7rem;color:#64748b;">YouTube</div>
+                                    <div style="font-size:0.95rem;font-weight:600;color:#0f172a;">+12K <span style="font-size:0.68rem;color:#059669;">↑ 41%</span></div>
                                 </div>
                             </div>
                         </div>
                         <!-- Total reach card -->
-                        <div style="background:rgba(15,25,50,0.9);border:1px solid rgba(29,107,243,0.2);border-radius:12px;padding:12px 14px;text-align:center;">
-                            <div style="font-size:0.68rem;color:#64748b;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px;">Combined Monthly Reach</div>
-                            <div style="font-size:2rem;font-weight:400;color:#ffffff;letter-spacing:-0.03em;" class="ck-count">840K+</div>
-                            <div style="display:inline-flex;align-items:center;gap:5px;background:rgba(16,185,129,0.1);color:#10b981;padding:4px 12px;border-radius:980px;font-size:0.75rem;font-weight:500;border:1px solid rgba(16,185,129,0.2);margin-top:6px;">
+                        <div style="background:#ffffff;border:1px solid rgba(37,99,235,0.18);border-radius:14px;padding:14px 16px;text-align:center;box-shadow:0 4px 12px rgba(37,99,235,0.05);">
+                            <div style="font-size:0.7rem;color:#64748b;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px;font-weight:500;">Combined Monthly Reach</div>
+                            <div style="font-size:2rem;font-weight:700;color:#0f172a;letter-spacing:-0.03em;" class="ck-count">840K+</div>
+                            <div style="display:inline-flex;align-items:center;gap:5px;background:#ecfdf5;color:#059669;padding:4px 12px;border-radius:980px;font-size:0.75rem;font-weight:600;border:1px solid #a7f3d0;margin-top:6px;">
                                 <i class="fas fa-chart-line"></i> +280% Avg. Engagement Rate
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-        </div>
+</div>
     </section>
 
 
@@ -1827,29 +1818,29 @@
                 }
             }
             .ck-eco-card {
-                background: linear-gradient(135deg, #1d6bf3 0%, #1557c0 100%) !important;
-                border: 1px solid rgba(255, 255, 255, 0.28) !important;
+                background: linear-gradient(135deg, #f0f7ff 0%, #e2eeff 100%) !important;
+                border: 1px solid rgba(59, 130, 246, 0.22) !important;
                 border-radius: 18px !important;
                 padding: 18px 20px !important;
                 text-decoration: none !important;
                 position: relative !important;
                 overflow: hidden !important;
-                box-shadow: 0 10px 25px rgba(29, 107, 243, 0.26), 0 2px 6px rgba(0, 0, 0, 0.05) !important;
+                box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08), 0 2px 6px rgba(15, 23, 42, 0.03) !important;
                 transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
                 display: flex !important;
                 flex-direction: row !important;
                 align-items: flex-start !important;
                 gap: 14px !important;
-                color: #ffffff !important;
+                color: #0f172a !important;
             }
             .ck-eco-card::before {
-                content: '' !important;
+                content: "" !important;
                 position: absolute !important;
                 top: -30px !important;
                 right: -30px !important;
                 width: 180px !important;
                 height: 180px !important;
-                background-image: url("data:image/svg+xml,%3Csvg width='180' height='180' viewBox='0 0 180 180' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='90' cy='90' r='30' stroke='rgba(255,255,255,0.2)' stroke-width='1.5'/%3E%3Ccircle cx='90' cy='90' r='58' stroke='rgba(255,255,255,0.14)' stroke-width='1.5' stroke-dasharray='4 4'/%3E%3Ccircle cx='90' cy='90' r='85' stroke='rgba(255,255,255,0.08)' stroke-width='1.5'/%3E%3C/svg%3E") !important;
+                background-image: url("data:image/svg+xml,%3Csvg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Ccircle cx="90" cy="90" r="30" stroke="rgba(37,99,235,0.12)" stroke-width="1.5"/%3E%3Ccircle cx="90" cy="90" r="58" stroke="rgba(37,99,235,0.08)" stroke-width="1.5" stroke-dasharray="4 4"/%3E%3Ccircle cx="90" cy="90" r="85" stroke="rgba(37,99,235,0.05)" stroke-width="1.5"/%3E%3C/svg%3E") !important;
                 background-repeat: no-repeat !important;
                 background-position: center !important;
                 pointer-events: none !important;
@@ -1858,8 +1849,8 @@
             }
             .ck-eco-card:hover {
                 transform: translateY(-4px) scale(1.01) !important;
-                box-shadow: 0 18px 40px rgba(29, 107, 243, 0.42), 0 0 0 1px rgba(255, 255, 255, 0.45) !important;
-                background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+                box-shadow: 0 16px 36px rgba(37, 99, 235, 0.16), 0 0 0 1px rgba(37, 99, 235, 0.35) !important;
+                background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%) !important;
             }
             .ck-eco-icon-box {
                 width: 42px !important;
@@ -1870,9 +1861,10 @@
                 justify-content: center !important;
                 font-size: 1.05rem !important;
                 flex-shrink: 0 !important;
-                background: rgba(255, 255, 255, 0.2) !important;
-                border: 1px solid rgba(255, 255, 255, 0.35) !important;
-                color: #ffffff !important;
+                background: #ffffff !important;
+                border: 1px solid rgba(59, 130, 246, 0.22) !important;
+                color: #2563eb !important;
+                box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08) !important;
                 transition: all 0.25s ease !important;
                 margin-top: 2px !important;
                 position: relative !important;
@@ -1880,8 +1872,9 @@
             }
             .ck-eco-card:hover .ck-eco-icon-box {
                 transform: scale(1.08) !important;
-                background: rgba(255, 255, 255, 0.3) !important;
-                border-color: rgba(255, 255, 255, 0.6) !important;
+                background: #2563eb !important;
+                border-color: #2563eb !important;
+                color: #ffffff !important;
             }
             .ck-eco-body {
                 flex-grow: 1 !important;
@@ -1890,10 +1883,10 @@
                 z-index: 2 !important;
             }
             .ck-eco-card-title {
-                font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+                font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif !important;
                 font-size: 1.02rem !important;
                 font-weight: 600 !important;
-                color: #ffffff !important;
+                color: #0f172a !important;
                 letter-spacing: -0.015em !important;
                 margin: 0 !important;
                 display: flex !important;
@@ -1903,7 +1896,7 @@
             }
             .ck-eco-card-title span.arrow {
                 font-size: 0.9rem !important;
-                color: #ffffff !important;
+                color: #2563eb !important;
                 opacity: 0.8 !important;
                 transform: translateX(0) !important;
                 transition: all 0.2s ease !important;
@@ -1915,7 +1908,7 @@
             }
             .ck-eco-card-desc {
                 font-size: 0.84rem !important;
-                color: rgba(255, 255, 255, 0.92) !important;
+                color: #475569 !important;
                 line-height: 1.48 !important;
                 margin: 4px 0 0 !important;
                 font-weight: 400 !important;
