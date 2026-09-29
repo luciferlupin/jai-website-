@@ -1,0 +1,938 @@
+{
+  "images/blog-edge-rendering.png": {
+    "width": 1024,
+    "height": 576,
+    "originalBytes": 930860,
+    "variants": [
+      {
+        "src": "images/optimized/blog-edge-rendering-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 24244
+      },
+      {
+        "src": "images/optimized/blog-edge-rendering-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 41152
+      },
+      {
+        "src": "images/optimized/blog-edge-rendering-1024.webp",
+        "width": 1024,
+        "height": 576,
+        "bytes": 44464
+      }
+    ]
+  },
+  "images/blog-serverless-postgres.png": {
+    "width": 1024,
+    "height": 1024,
+    "originalBytes": 540640,
+    "variants": [
+      {
+        "src": "images/optimized/blog-serverless-postgres-640.webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 29914
+      },
+      {
+        "src": "images/optimized/blog-serverless-postgres-960.webp",
+        "width": 960,
+        "height": 960,
+        "bytes": 50408
+      },
+      {
+        "src": "images/optimized/blog-serverless-postgres-1024.webp",
+        "width": 1024,
+        "height": 1024,
+        "bytes": 54266
+      }
+    ]
+  },
+  "images/his-drink-3d.png": {
+    "width": 1920,
+    "height": 1080,
+    "originalBytes": 1175827,
+    "variants": [
+      {
+        "src": "images/optimized/his-drink-3d-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 18198
+      },
+      {
+        "src": "images/optimized/his-drink-3d-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 30536
+      },
+      {
+        "src": "images/optimized/his-drink-3d-1600.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 56548
+      },
+      {
+        "src": "images/optimized/his-drink-3d-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 72332
+      }
+    ]
+  },
+  "images/staysphere.png": {
+    "width": 1024,
+    "height": 576,
+    "originalBytes": 128330,
+    "variants": [
+      {
+        "src": "images/optimized/staysphere-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 13512
+      },
+      {
+        "src": "images/optimized/staysphere-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 25978
+      },
+      {
+        "src": "images/optimized/staysphere-1024.webp",
+        "width": 1024,
+        "height": 576,
+        "bytes": 28516
+      }
+    ]
+  },
+  "images/blog-canonical-seo.png": {
+    "width": 1024,
+    "height": 682,
+    "originalBytes": 1001914,
+    "variants": [
+      {
+        "src": "images/optimized/blog-canonical-seo-640.webp",
+        "width": 640,
+        "height": 426,
+        "bytes": 23502
+      },
+      {
+        "src": "images/optimized/blog-canonical-seo-960.webp",
+        "width": 959,
+        "height": 639,
+        "bytes": 41084
+      },
+      {
+        "src": "images/optimized/blog-canonical-seo-1024.webp",
+        "width": 1024,
+        "height": 682,
+        "bytes": 45258
+      }
+    ]
+  },
+  "images/blog-vector-hybrid-search.png": {
+    "width": 1024,
+    "height": 1024,
+    "originalBytes": 530853,
+    "variants": [
+      {
+        "src": "images/optimized/blog-vector-hybrid-search-640.webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 29552
+      },
+      {
+        "src": "images/optimized/blog-vector-hybrid-search-960.webp",
+        "width": 960,
+        "height": 960,
+        "bytes": 50410
+      },
+      {
+        "src": "images/optimized/blog-vector-hybrid-search-1024.webp",
+        "width": 1024,
+        "height": 1024,
+        "bytes": 55280
+      }
+    ]
+  },
+  "images/blog-vanilla-js.png": {
+    "width": 1024,
+    "height": 682,
+    "originalBytes": 1021071,
+    "variants": [
+      {
+        "src": "images/optimized/blog-vanilla-js-640.webp",
+        "width": 640,
+        "height": 426,
+        "bytes": 23528
+      },
+      {
+        "src": "images/optimized/blog-vanilla-js-960.webp",
+        "width": 959,
+        "height": 639,
+        "bytes": 42402
+      },
+      {
+        "src": "images/optimized/blog-vanilla-js-1024.webp",
+        "width": 1024,
+        "height": 682,
+        "bytes": 47452
+      }
+    ]
+  },
+  "images/kaizerstays-pms-overview-dashboard.png": {
+    "width": 1920,
+    "height": 1080,
+    "originalBytes": 244091,
+    "variants": [
+      {
+        "src": "images/optimized/kaizerstays-pms-overview-dashboard-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 13488
+      },
+      {
+        "src": "images/optimized/kaizerstays-pms-overview-dashboard-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 26356
+      },
+      {
+        "src": "images/optimized/kaizerstays-pms-overview-dashboard-1600.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 54218
+      },
+      {
+        "src": "images/optimized/kaizerstays-pms-overview-dashboard-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 68632
+      }
+    ]
+  },
+  "images/advocate-super-admin-dashboard.png": {
+    "width": 1920,
+    "height": 1080,
+    "originalBytes": 180092,
+    "variants": [
+      {
+        "src": "images/optimized/advocate-super-admin-dashboard-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 9590
+      },
+      {
+        "src": "images/optimized/advocate-super-admin-dashboard-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 17450
+      },
+      {
+        "src": "images/optimized/advocate-super-admin-dashboard-1600.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 37086
+      },
+      {
+        "src": "images/optimized/advocate-super-admin-dashboard-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 47900
+      }
+    ]
+  },
+  "images/curiouskaizer.png": {
+    "width": 2940,
+    "height": 1912,
+    "originalBytes": 1379000,
+    "variants": [
+      {
+        "src": "images/optimized/curiouskaizer-640.webp",
+        "width": 640,
+        "height": 416,
+        "bytes": 17224
+      },
+      {
+        "src": "images/optimized/curiouskaizer-960.webp",
+        "width": 959,
+        "height": 624,
+        "bytes": 30816
+      },
+      {
+        "src": "images/optimized/curiouskaizer-1600.webp",
+        "width": 1600,
+        "height": 1041,
+        "bytes": 58806
+      },
+      {
+        "src": "images/optimized/curiouskaizer-2940.webp",
+        "width": 2940,
+        "height": 1912,
+        "bytes": 117282
+      }
+    ]
+  },
+  "images/hanboro-watches.png": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 1672851,
+    "variants": [
+      {
+        "src": "images/optimized/hanboro-watches-640.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 29484
+      },
+      {
+        "src": "images/optimized/hanboro-watches-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 56154
+      },
+      {
+        "src": "images/optimized/hanboro-watches-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 116268
+      }
+    ]
+  },
+  "images/almostreal-club.png": {
+    "width": 1024,
+    "height": 576,
+    "originalBytes": 933206,
+    "variants": [
+      {
+        "src": "images/optimized/almostreal-club-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 7308
+      },
+      {
+        "src": "images/optimized/almostreal-club-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 12750
+      },
+      {
+        "src": "images/optimized/almostreal-club-1024.webp",
+        "width": 1024,
+        "height": 576,
+        "bytes": 14148
+      }
+    ]
+  },
+  "images/blog-webassembly.png": {
+    "width": 1024,
+    "height": 682,
+    "originalBytes": 274747,
+    "variants": [
+      {
+        "src": "images/optimized/blog-webassembly-640.webp",
+        "width": 640,
+        "height": 426,
+        "bytes": 30234
+      },
+      {
+        "src": "images/optimized/blog-webassembly-960.webp",
+        "width": 959,
+        "height": 639,
+        "bytes": 57358
+      },
+      {
+        "src": "images/optimized/blog-webassembly-1024.webp",
+        "width": 1024,
+        "height": 682,
+        "bytes": 64864
+      }
+    ]
+  },
+  "images/blog-liquid-models.png": {
+    "width": 1024,
+    "height": 568,
+    "originalBytes": 919406,
+    "variants": [
+      {
+        "src": "images/optimized/blog-liquid-models-640.webp",
+        "width": 640,
+        "height": 355,
+        "bytes": 24156
+      },
+      {
+        "src": "images/optimized/blog-liquid-models-960.webp",
+        "width": 959,
+        "height": 532,
+        "bytes": 41248
+      },
+      {
+        "src": "images/optimized/blog-liquid-models-1024.webp",
+        "width": 1024,
+        "height": 568,
+        "bytes": 46114
+      }
+    ]
+  },
+  "images/blog-inference-scaling.png": {
+    "width": 1024,
+    "height": 682,
+    "originalBytes": 1045478,
+    "variants": [
+      {
+        "src": "images/optimized/blog-inference-scaling-640.webp",
+        "width": 640,
+        "height": 426,
+        "bytes": 22876
+      },
+      {
+        "src": "images/optimized/blog-inference-scaling-960.webp",
+        "width": 959,
+        "height": 639,
+        "bytes": 38526
+      },
+      {
+        "src": "images/optimized/blog-inference-scaling-1024.webp",
+        "width": 1024,
+        "height": 682,
+        "bytes": 42148
+      }
+    ]
+  },
+  "images/auco-aiwa-operations-portal.png": {
+    "width": 1586,
+    "height": 992,
+    "originalBytes": 1404520,
+    "variants": [
+      {
+        "src": "images/optimized/auco-aiwa-operations-portal-640.webp",
+        "width": 640,
+        "height": 400,
+        "bytes": 26910
+      },
+      {
+        "src": "images/optimized/auco-aiwa-operations-portal-960.webp",
+        "width": 959,
+        "height": 600,
+        "bytes": 50590
+      },
+      {
+        "src": "images/optimized/auco-aiwa-operations-portal-1586.webp",
+        "width": 1586,
+        "height": 992,
+        "bytes": 103442
+      }
+    ]
+  },
+  "images/blog-inp-vitals.png": {
+    "width": 1024,
+    "height": 682,
+    "originalBytes": 1022752,
+    "variants": [
+      {
+        "src": "images/optimized/blog-inp-vitals-640.webp",
+        "width": 640,
+        "height": 426,
+        "bytes": 26226
+      },
+      {
+        "src": "images/optimized/blog-inp-vitals-960.webp",
+        "width": 959,
+        "height": 639,
+        "bytes": 46586
+      },
+      {
+        "src": "images/optimized/blog-inp-vitals-1024.webp",
+        "width": 1024,
+        "height": 682,
+        "bytes": 50916
+      }
+    ]
+  },
+  "images/irastra-celestial.png": {
+    "width": 1920,
+    "height": 1080,
+    "originalBytes": 386823,
+    "variants": [
+      {
+        "src": "images/optimized/irastra-celestial-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 10142
+      },
+      {
+        "src": "images/optimized/irastra-celestial-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 18864
+      },
+      {
+        "src": "images/optimized/irastra-celestial-1600.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 37802
+      },
+      {
+        "src": "images/optimized/irastra-celestial-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 51320
+      }
+    ]
+  },
+  "images/blog-rag-latency.png": {
+    "width": 1024,
+    "height": 682,
+    "originalBytes": 1038945,
+    "variants": [
+      {
+        "src": "images/optimized/blog-rag-latency-640.webp",
+        "width": 640,
+        "height": 426,
+        "bytes": 23290
+      },
+      {
+        "src": "images/optimized/blog-rag-latency-960.webp",
+        "width": 959,
+        "height": 639,
+        "bytes": 40922
+      },
+      {
+        "src": "images/optimized/blog-rag-latency-1024.webp",
+        "width": 1024,
+        "height": 682,
+        "bytes": 45066
+      }
+    ]
+  },
+  "images/blog-context-engineering.png": {
+    "width": 1024,
+    "height": 1024,
+    "originalBytes": 649166,
+    "variants": [
+      {
+        "src": "images/optimized/blog-context-engineering-640.webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 42026
+      },
+      {
+        "src": "images/optimized/blog-context-engineering-960.webp",
+        "width": 960,
+        "height": 960,
+        "bytes": 67924
+      },
+      {
+        "src": "images/optimized/blog-context-engineering-1024.webp",
+        "width": 1024,
+        "height": 1024,
+        "bytes": 73502
+      }
+    ]
+  },
+  "images/dodd-aero-lab.png": {
+    "width": 1920,
+    "height": 1080,
+    "originalBytes": 1393916,
+    "variants": [
+      {
+        "src": "images/optimized/dodd-aero-lab-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 18758
+      },
+      {
+        "src": "images/optimized/dodd-aero-lab-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 35050
+      },
+      {
+        "src": "images/optimized/dodd-aero-lab-1600.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 76986
+      },
+      {
+        "src": "images/optimized/dodd-aero-lab-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 105778
+      }
+    ]
+  },
+  "images/aloha-estates-superadmin-dashboard.png": {
+    "width": 1920,
+    "height": 1080,
+    "originalBytes": 247210,
+    "variants": [
+      {
+        "src": "images/optimized/aloha-estates-superadmin-dashboard-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 13498
+      },
+      {
+        "src": "images/optimized/aloha-estates-superadmin-dashboard-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 25242
+      },
+      {
+        "src": "images/optimized/aloha-estates-superadmin-dashboard-1600.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 52016
+      },
+      {
+        "src": "images/optimized/aloha-estates-superadmin-dashboard-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 68556
+      }
+    ]
+  },
+  "images/jai-g-founder.jpg": {
+    "width": 576,
+    "height": 1024,
+    "originalBytes": 197626,
+    "variants": [
+      {
+        "src": "images/optimized/jai-g-founder-576.webp",
+        "width": 576,
+        "height": 1024,
+        "bytes": 98880
+      }
+    ]
+  },
+  "images/blog-database-schema.png": {
+    "width": 1024,
+    "height": 682,
+    "originalBytes": 991629,
+    "variants": [
+      {
+        "src": "images/optimized/blog-database-schema-640.webp",
+        "width": 640,
+        "height": 426,
+        "bytes": 21572
+      },
+      {
+        "src": "images/optimized/blog-database-schema-960.webp",
+        "width": 959,
+        "height": 639,
+        "bytes": 37172
+      },
+      {
+        "src": "images/optimized/blog-database-schema-1024.webp",
+        "width": 1024,
+        "height": 682,
+        "bytes": 40620
+      }
+    ]
+  },
+  "images/logo.jpg": {
+    "width": 1024,
+    "height": 1024,
+    "originalBytes": 207728,
+    "variants": [
+      {
+        "src": "images/optimized/logo-640.webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 13692
+      },
+      {
+        "src": "images/optimized/logo-960.webp",
+        "width": 960,
+        "height": 960,
+        "bytes": 21070
+      },
+      {
+        "src": "images/optimized/logo-1024.webp",
+        "width": 1024,
+        "height": 1024,
+        "bytes": 22784
+      }
+    ]
+  },
+  "images/blog-voice-ai.png": {
+    "width": 1024,
+    "height": 682,
+    "originalBytes": 1030353,
+    "variants": [
+      {
+        "src": "images/optimized/blog-voice-ai-640.webp",
+        "width": 640,
+        "height": 426,
+        "bytes": 24592
+      },
+      {
+        "src": "images/optimized/blog-voice-ai-960.webp",
+        "width": 959,
+        "height": 639,
+        "bytes": 42986
+      },
+      {
+        "src": "images/optimized/blog-voice-ai-1024.webp",
+        "width": 1024,
+        "height": 682,
+        "bytes": 47156
+      }
+    ]
+  },
+  "images/club-re-straddle-system.png": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 1784172,
+    "variants": [
+      {
+        "src": "images/optimized/club-re-straddle-system-640.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 36330
+      },
+      {
+        "src": "images/optimized/club-re-straddle-system-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 69708
+      },
+      {
+        "src": "images/optimized/club-re-straddle-system-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 144426
+      }
+    ]
+  },
+  "images/auco-website.png": {
+    "width": 1920,
+    "height": 1080,
+    "originalBytes": 1534074,
+    "variants": [
+      {
+        "src": "images/optimized/auco-website-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 13056
+      },
+      {
+        "src": "images/optimized/auco-website-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 21586
+      },
+      {
+        "src": "images/optimized/auco-website-1600.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 40440
+      },
+      {
+        "src": "images/optimized/auco-website-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 49968
+      }
+    ]
+  },
+  "images/blog-b2b-procurement.png": {
+    "width": 1024,
+    "height": 682,
+    "originalBytes": 1012407,
+    "variants": [
+      {
+        "src": "images/optimized/blog-b2b-procurement-640.webp",
+        "width": 640,
+        "height": 426,
+        "bytes": 23872
+      },
+      {
+        "src": "images/optimized/blog-b2b-procurement-960.webp",
+        "width": 959,
+        "height": 639,
+        "bytes": 42056
+      },
+      {
+        "src": "images/optimized/blog-b2b-procurement-1024.webp",
+        "width": 1024,
+        "height": 682,
+        "bytes": 46760
+      }
+    ]
+  },
+  "images/aloha-estate-portal.png": {
+    "width": 1024,
+    "height": 682,
+    "originalBytes": 1000691,
+    "variants": [
+      {
+        "src": "images/optimized/aloha-estate-portal-640.webp",
+        "width": 640,
+        "height": 426,
+        "bytes": 24926
+      },
+      {
+        "src": "images/optimized/aloha-estate-portal-960.webp",
+        "width": 959,
+        "height": 639,
+        "bytes": 45636
+      },
+      {
+        "src": "images/optimized/aloha-estate-portal-1024.webp",
+        "width": 1024,
+        "height": 682,
+        "bytes": 52178
+      }
+    ]
+  },
+  "images/blog-rust-webassembly.png": {
+    "width": 1024,
+    "height": 1024,
+    "originalBytes": 669283,
+    "variants": [
+      {
+        "src": "images/optimized/blog-rust-webassembly-640.webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 42482
+      },
+      {
+        "src": "images/optimized/blog-rust-webassembly-960.webp",
+        "width": 960,
+        "height": 960,
+        "bytes": 70444
+      },
+      {
+        "src": "images/optimized/blog-rust-webassembly-1024.webp",
+        "width": 1024,
+        "height": 1024,
+        "bytes": 76864
+      }
+    ]
+  },
+  "images/avatar-you.png": {
+    "width": 1024,
+    "height": 1024,
+    "originalBytes": 424340,
+    "variants": [
+      {
+        "src": "images/optimized/avatar-you-640.webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 16592
+      },
+      {
+        "src": "images/optimized/avatar-you-960.webp",
+        "width": 960,
+        "height": 960,
+        "bytes": 31064
+      },
+      {
+        "src": "images/optimized/avatar-you-1024.webp",
+        "width": 1024,
+        "height": 1024,
+        "bytes": 37102
+      }
+    ]
+  },
+  "images/blog-multi-agent-orchestration.png": {
+    "width": 1024,
+    "height": 1024,
+    "originalBytes": 539554,
+    "variants": [
+      {
+        "src": "images/optimized/blog-multi-agent-orchestration-640.webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 28050
+      },
+      {
+        "src": "images/optimized/blog-multi-agent-orchestration-960.webp",
+        "width": 960,
+        "height": 960,
+        "bytes": 46248
+      },
+      {
+        "src": "images/optimized/blog-multi-agent-orchestration-1024.webp",
+        "width": 1024,
+        "height": 1024,
+        "bytes": 50642
+      }
+    ]
+  },
+  "images/coinvortex.png": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 1806795,
+    "variants": [
+      {
+        "src": "images/optimized/coinvortex-640.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 39298
+      },
+      {
+        "src": "images/optimized/coinvortex-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 76728
+      },
+      {
+        "src": "images/optimized/coinvortex-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 157528
+      }
+    ]
+  },
+  "images/avatar-kaizer.png": {
+    "width": 1024,
+    "height": 1024,
+    "originalBytes": 448107,
+    "variants": [
+      {
+        "src": "images/optimized/avatar-kaizer-640.webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 14750
+      },
+      {
+        "src": "images/optimized/avatar-kaizer-960.webp",
+        "width": 960,
+        "height": 960,
+        "bytes": 25968
+      },
+      {
+        "src": "images/optimized/avatar-kaizer-1024.webp",
+        "width": 1024,
+        "height": 1024,
+        "bytes": 30898
+      }
+    ]
+  },
+  "images/blog-edge-ai.png": {
+    "width": 1024,
+    "height": 682,
+    "originalBytes": 254918,
+    "variants": [
+      {
+        "src": "images/optimized/blog-edge-ai-640.webp",
+        "width": 640,
+        "height": 426,
+        "bytes": 25954
+      },
+      {
+        "src": "images/optimized/blog-edge-ai-960.webp",
+        "width": 959,
+        "height": 639,
+        "bytes": 48666
+      },
+      {
+        "src": "images/optimized/blog-edge-ai-1024.webp",
+        "width": 1024,
+        "height": 682,
+        "bytes": 55684
+      }
+    ]
+  }
+}

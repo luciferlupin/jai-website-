@@ -1,0 +1,31 @@
+keyword_cluster,intent,market,business_value,existing_url,target_url,parent_topic,supporting_content,schema,cta,status
+website development,transactional,global,high,/services,/website-development,services,"process; stack; cost; maintenance",Service,Request a project review,implemented
+web design,commercial,India,high,/website-designing-company-in-delhi,/website-development,services,"responsive design; UI UX; planning",Service,Request a design consultation,implemented
+custom software development,transactional,global,high,/services,/custom-software-development,services,"build vs buy; architecture; security",Service,Discuss a software system,implemented
+AI automation,transactional,global,high,/services,/ai-automation-services,services,"workflow audit; permissions; evaluations; integrations",Service,Request an automation audit,implemented
+SaaS development,transactional,global,high,/services,/saas-development,services,"MVP; multi tenant; billing; auth",Service,Plan a SaaS product,implemented
+CRM development,transactional,global,high,/crm-product,/crm-development,services,"lead management; roles; integrations",Service,Map a CRM workflow,implemented
+ERP development,transactional,global,high,/services,/erp-development,services,"modules; integrations; migration",Service,Scope an ERP system,implemented
+portal development,transactional,global,high,/services,/portal-development,services,"customer; vendor; employee; admin",Service,Plan a portal,implemented
+dashboard development,transactional,global,high,/services,/dashboard-development,services,"operations; data sources; access",Service,Review dashboard requirements,implemented
+backend development,transactional,global,high,/services,/backend-development,services,"business rules; databases; security",Service,Discuss backend architecture,implemented
+API development,transactional,global,high,/services,/api-development,services,"authentication; ownership; retries",Service,Discuss an integration,implemented
+ecommerce development,transactional,India,high,/ecommerce-website-development-delhi,/shopify-development,services,"catalog; checkout; integrations",Service,Plan an online store,implemented
+Shopify development,transactional,global,high,/services,/shopify-development,services,"themes; headless; migration",Service,Request a Shopify review,implemented
+UI UX design,transactional,global,medium,/services,/ui-ux-design,services,"research; prototypes; design systems",Service,Book a design workshop,implemented
+website maintenance,transactional,global,medium,/services,/website-maintenance,services,"support; security; updates",Service,Request maintenance support,implemented
+technical SEO,transactional,global,medium,/services,/seo-services,services,"crawlability; metadata; structured data",Service,Request a technical review,implemented
+website speed optimisation,transactional,global,medium,/services,/speed-optimisation,services,"images; JavaScript; Core Web Vitals",Service,Request a performance review,implemented
+website development cost,commercial,India,high,/pricing,/website-development-cost-india,cost,"scope; cost factors; estimator",Article,Estimate a project,implemented
+ecommerce website cost,commercial,India,high,/pricing,/ecommerce-website-cost,cost,"catalog; payments; logistics",Article,Estimate ecommerce,implemented
+real estate operations software,transactional,global,high,/blog-real-estate-operations-portal,/industries-real-estate,industries,"lead routing; inventory; portals",Service,Discuss operations,implemented
+B2B procurement portal,transactional,global,high,/blog-b2b-procurement-case-study,/industries-procurement,industries,"RFQ; approvals; suppliers",Service,Map procurement,implemented
+hospitality software,transactional,global,medium,/portfolio,/industries-hospitality,industries,"booking; operations; integrations",Service,Discuss hospitality,implemented
+luxury ecommerce development,transactional,global,medium,/portfolio,/industries-retail,industries,"merchandising; imagery; checkout",Service,Review a storefront,implemented
+membership platform development,transactional,global,medium,/portfolio,/industries-membership,industries,"roles; privacy; operations",Service,Plan a membership platform,implemented
+website development India,commercial,India,high,/services,/website-development,markets,"remote delivery; planning; support",Service,Discuss an India project,implemented
+web development Dubai,commercial,UAE,high,,/website-development-dubai,markets,"remote delivery; integrations; localization",Service,Discuss a UAE project,implemented
+custom software USA,commercial,US,high,,/website-development-usa,markets,"remote delivery; ownership; handoff",Service,Discuss a US project,implemented
+web development UK,commercial,UK,high,,/website-development-uk,markets,"UK English; privacy; ecommerce",Service,Discuss a UK project,implemented
+AI automation guide,informational,global,medium,,/guides-ai-automation,guides,"use cases; permissions; evaluation",Article,Plan an automation,implemented
+software planning guide,informational,global,medium,,/guides-software-planning,guides,"requirements; roles; acceptance criteria",Article,Create a requirements brief,implemented

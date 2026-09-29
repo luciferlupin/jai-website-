@@ -1,219 +1,118 @@
-/**
- * Curious Kaizer Website Analytics Tracker
- * Connects directly to Supabase for serverless event tracking.
- * Filters bots, automated scrapers, admin views, and local dev environments to ensure only real visitor data is recorded.
- */
-
-(function () {
-    try {
-        const hostname = window.location.hostname || '';
-        const port = window.location.port || '';
-        const pathname = window.location.pathname || '';
-
-        // 1. Disable tracker on localhost / loopback / local IPs / dev ports / file protocol
-        const isLocal = hostname === 'localhost' || 
-                        hostname === '127.0.0.1' || 
-                        hostname === '0.0.0.0' ||
-                        hostname === '[::1]' ||
-                        hostname.startsWith('192.168.') ||
-                        hostname.startsWith('10.') ||
-                        hostname.startsWith('172.') ||
-                        hostname.endsWith('.local') ||
-                        (port !== '' && port !== '80' && port !== '443') ||
-                        window.location.protocol === 'file:';
-        if (isLocal) {
-            return;
-        }
-
-        // 2. Disable tracking on analytics dashboard pages
-        if (pathname.includes('analytics.html') || pathname.includes('analytics-deploy')) {
-            return;
-        }
-
-        // 3. Disable tracking for Bots, Crawlers, Automated Webdrivers & Headless Browsers
-        const ua = (navigator.userAgent || '').toLowerCase();
-        const isBot = navigator.webdriver ||
-                      /bot|crawler|spider|headless|lighthouse|slurp|seek|python|curl|wget|bytespider|gptbot|claudebot|meta-externalagent|facebookexternalhit|yandex|baidu|pingdom|uptime|checker/i.test(ua);
-        if (isBot) {
-            return;
-        }
-
-        // Safe storage helpers to avoid SecurityError crashes in Safari Private Mode or blocked third-party storage on mobile
-        function safeGetLocalStorage(key) {
-            try {
-                return localStorage.getItem(key);
-            } catch (e) {
-                return null;
-            }
-        }
-
-        const memorySessionStorage = {};
-        function safeGetSessionStorage(key) {
-            try {
-                return sessionStorage.getItem(key);
-            } catch (e) {
-                return memorySessionStorage[key] || null;
-            }
-        }
-        function safeSetSessionStorage(key, value) {
-            try {
-                sessionStorage.setItem(key, value);
-            } catch (e) {
-                memorySessionStorage[key] = value;
-            }
-        }
-
-        // Configuration - Only run if a valid, active Supabase endpoint is explicitly configured
-        const SUPABASE_URL = window.SUPABASE_URL || safeGetLocalStorage('supabase_url') || "";
-        const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || safeGetLocalStorage('supabase_anon_key') || "";
-
-        if (!SUPABASE_URL || 
-            SUPABASE_URL === "YOUR_SUPABASE_URL" || 
-            SUPABASE_URL.includes("umuetoqaoaqlhelgoyfx") || 
-            !SUPABASE_ANON_KEY || 
-            SUPABASE_ANON_KEY === "YOUR_SUPABASE_ANON_KEY") {
-            return;
-        }
-
-        // Helper to get or create Session ID
-        function getSessionId() {
-            let sessionId = safeGetSessionStorage('kk_analytics_session_id');
-            if (!sessionId) {
-                sessionId = 'session_' + Math.random().toString(36).substring(2, 15) + '_' + Date.now().toString(36);
-                safeSetSessionStorage('kk_analytics_session_id', sessionId);
-            }
-            return sessionId;
-        }
-
-        // Helper to get location once per session
-        async function getSessionLocation() {
-            const cached = safeGetSessionStorage('kk_analytics_location');
-            if (cached) {
-                try { return JSON.parse(cached); } catch (e) {}
-            }
-
-            if (isLocal) {
-                return { ipAddress: null, country: null, region: null, city: null, zipCode: null, latitude: null, longitude: null };
-            }
-
-            try {
-                const response = await fetch('https://free.freeipapi.com/api/json');
-                if (response.ok) {
-                    const data = await response.json();
-                    const loc = {
-                        ipAddress: data.ipAddress || null,
-                        country: data.countryName || null,
-                        region: data.regionName || null,
-                        city: data.cityName || null,
-                        zipCode: data.zipCode || null,
-                        latitude: data.latitude || null,
-                        longitude: data.longitude || null
-                    };
-                    safeSetSessionStorage('kk_analytics_location', JSON.stringify(loc));
-                    return loc;
-                }
-            } catch (e) {
-                // Silently handle location fetch errors
-            }
-            return { ipAddress: null, country: null, region: null, city: null, zipCode: null, latitude: null, longitude: null };
-        }
-
-        function limitLength(str, max) {
-            if (typeof str !== 'string') return str;
-            return str.substring(0, max);
-        }
-
-        // Send Event to Supabase
-        async function trackEvent(eventType, eventLabel = null) {
-            const currentPath = window.location.pathname || '/';
-            if (currentPath.includes('analytics.html') || currentPath.includes('analytics-deploy')) {
-                return;
-            }
-
-            const loc = await getSessionLocation();
-            const payload = {
-                session_id: limitLength(getSessionId(), 100),
-                page_path: limitLength(currentPath, 2048),
-                page_title: limitLength(document.title || null, 500),
-                event_type: limitLength(eventType, 50),
-                event_label: limitLength(eventLabel, 1000),
-                referrer: limitLength(document.referrer || null, 1024),
-                user_agent: limitLength(navigator.userAgent, 1000),
-                screen_resolution: limitLength(`${window.screen.width}x${window.screen.height}`, 50),
-                language: limitLength(navigator.language || null, 50),
-                ip_address: limitLength(loc.ipAddress, 45),
-                country: limitLength(loc.country, 100),
-                region: limitLength(loc.region, 100),
-                city: limitLength(loc.city, 100),
-                zip_code: limitLength(loc.zipCode, 20),
-                latitude: loc.latitude,
-                longitude: loc.longitude
-            };
-
-            try {
-                await fetch(`${SUPABASE_URL}/rest/v1/analytics_events`, {
-                    method: 'POST',
-                    headers: {
-                        'apikey': SUPABASE_ANON_KEY,
-                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-                        'Content-Type': 'application/json',
-                        'Prefer': 'return=minimal'
-                    },
-                    body: JSON.stringify(payload)
-                });
-            } catch (e) {
-                // Silently handle network errors
-            }
-        }
-
-        // Initialize tracking
-        function initTracker() {
-            // Track the pageview event
-            trackEvent('pageview');
-
-            // Track click events on CTAs and interactive elements
-            document.body.addEventListener('click', (event) => {
-                const target = event.target.closest('a, button, [data-track]');
-                if (!target) return;
-
-                let trackThis = false;
-                let label = '';
-
-                if (target.hasAttribute('data-track')) {
-                    trackThis = true;
-                    label = target.getAttribute('data-track');
-                } else {
-                    const classes = target.className || '';
-                    const id = target.id || '';
-                    const rawText = (target.innerText || target.textContent || '').replace(/\s+/g, ' ').trim();
-                    const text = rawText.substring(0, 60);
-
-                    if (
-                        classes.includes('cta') || 
-                        classes.includes('btn') || 
-                        id.includes('book') || 
-                        id.includes('cta') ||
-                        target.closest('.hero') || 
-                        target.closest('.navbar') ||
-                        target.closest('.site-header')
-                    ) {
-                        trackThis = true;
-                        label = text ? `Click: ${text}` : `Click: ${target.tagName} (${id || classes})`;
-                    }
-                }
-
-                if (trackThis) {
-                    trackEvent('click', label);
-                }
-            });
-        }
-
-        if (document.readyState === 'loading') {
-            window.addEventListener('DOMContentLoaded', initTracker);
-        } else {
-            initTracker();
-        }
-    } catch (globalError) {
-        console.warn("KK Analytics tracker load failed:", globalError);
+/* Optional analytics: basic consent mode. No Google script or ping before opt-in. */
+(() => {
+  'use strict';
+  const KEY = 'ck_privacy_v2';
+  const GA = 'G-9KFQ266Z1Z';
+  const hosts = ['curiouskaizer.com', 'www.curiouskaizer.com'];
+  const allowed = hosts.includes(location.hostname) && !/^\/(analytics|admin)(\/|\.|$)/.test(location.pathname);
+  const signalDenied = navigator.globalPrivacyControl === true || navigator.doNotTrack === '1';
+  const get = () => { try { const c = JSON.parse(localStorage.getItem(KEY)); return c && Date.now() - c.at < 180 * 86400000 ? c.analytics : 'unset'; } catch { return 'unset'; } };
+  let status = signalDenied ? 'denied' : get();
+  let loaded = false;
+  let pageSent = false;
+  let lastFocus;
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { window.dataLayer.push(arguments); };
+  const denied = { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' };
+  window.gtag('consent', 'default', denied);
+  window['ga-disable-' + GA] = status !== 'granted';
+  const page = () => document.querySelector('link[rel="canonical"]')?.href || location.origin + location.pathname;
+  const events = new Set(['page_view', 'cta_click', 'whatsapp_click', 'phone_click', 'email_click', 'form_start', 'enquiry_handoff', 'scroll_depth', 'engaged_visit', 'portfolio_view', 'case_study_view', 'service_view', 'share_click']);
+  function track(name, label = '') {
+    if (status !== 'granted' || !allowed || !loaded || !events.has(name)) return;
+    // Labels are controlled enums/paths, never link query strings or user-entered text.
+    const safeLabel = /^[a-z0-9_\/-]{0,100}$/i.test(label) ? label : '';
+    window.gtag('event', name, { page_location: page(), page_referrer: '', event_label: safeLabel, send_to: GA });
+  }
+  function start() {
+    if (status !== 'granted' || !allowed || loaded) return;
+    loaded = true;
+    window['ga-disable-' + GA] = false;
+    window.gtag('consent', 'update', { ...denied, analytics_storage: 'granted' });
+    window.gtag('js', new Date());
+    let referrer = '';
+    try { referrer = document.referrer ? new URL(document.referrer).origin : ''; } catch { /* empty */ }
+    window.gtag('config', GA, { send_page_view: false, allow_google_signals: false, allow_ad_personalization_signals: false, page_location: page(), page_referrer: referrer, cookie_expires: 15552000, cookie_update: false });
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA;
+    document.head.appendChild(script);
+    if (!pageSent) { pageSent = true; track('page_view'); }
+    if (/portfolio/.test(location.pathname)) track('portfolio_view');
+    if (/case-study/.test(location.pathname)) track('case_study_view');
+    if (/development|services/.test(location.pathname)) track('service_view');
+  }
+  function clearIdentifiers() {
+    const domains = ['', location.hostname, '.' + location.hostname, '.curiouskaizer.com'];
+    for (const entry of document.cookie.split(';')) {
+      const name = entry.trim().split('=')[0];
+      if (!/^(_ga|_gid|_gat)/.test(name)) continue;
+      for (const domain of domains) document.cookie = name + '=; Max-Age=0; Path=/; SameSite=Lax' + (domain ? '; Domain=' + domain : '');
     }
+    try { sessionStorage.removeItem('kk_analytics_session_id'); localStorage.removeItem('ck_analytics_consent_v1'); } catch { /* blocked storage */ }
+  }
+  function choose(value, persist = true) {
+    const wasLoaded = loaded;
+    status = signalDenied ? 'denied' : value;
+    if (persist) { try { localStorage.setItem(KEY, JSON.stringify({ analytics: status, advertising: 'denied', at: Date.now() })); } catch { /* session-only choice */ } }
+    window['ga-disable-' + GA] = status !== 'granted';
+    if (status !== 'granted') {
+      window.gtag('consent', 'update', denied);
+      clearIdentifiers();
+      window.dataLayer.length = 0;
+    }
+    document.getElementById('ck-consent-banner')?.remove();
+    lastFocus?.focus();
+    if (status === 'granted') start();
+    // Remove already-loaded third-party listeners after withdrawal; no queued events survive.
+    if (status !== 'granted' && wasLoaded) location.reload();
+  }
+  function show() {
+    if (document.getElementById('ck-consent-banner')) return;
+    lastFocus = document.activeElement;
+    const panel = document.createElement('section');
+    panel.id = 'ck-consent-banner';
+    panel.setAttribute('role', 'dialog');
+    panel.setAttribute('aria-labelledby', 'ck-consent-title');
+    panel.innerHTML = '<h2 id="ck-consent-title">Your privacy choices</h2><p>Necessary storage remembers your choices. Optional Google Analytics measures visits and enquiry handoffs. Advertising is disabled. We do not send form contents or precise location.</p>' + (signalDenied ? '<p>Your browser privacy signal keeps analytics disabled.</p>' : '') + '<div><button type="button" data-choice="denied">Necessary only</button><button type="button" data-choice="granted" ' + (signalDenied ? 'disabled' : '') + '>Allow analytics</button><a href="/privacy">Privacy &amp; cookies</a><button type="button" data-close>Close</button></div>';
+    panel.addEventListener('click', e => {
+      const button = e.target.closest('[data-choice]');
+      if (button) choose(button.dataset.choice);
+      if (e.target.closest('[data-close]')) { panel.remove(); lastFocus?.focus(); }
+    });
+    panel.addEventListener('keydown', e => { if (e.key === 'Escape') { panel.remove(); lastFocus?.focus(); } });
+    document.body.appendChild(panel);
+    if (lastFocus?.id === 'ck-privacy-control') panel.querySelector('button').focus();
+  }
+  window.CuriousKaizerConsent = { getAnalyticsStatus: () => status, withdrawAnalytics: () => choose('denied'), open: show };
+  window.CuriousKaizerAnalytics = { track };
+  window.addEventListener('storage', e => { if (e.key === KEY) choose(get(), false); });
+  function ready() {
+    const control = document.createElement('button');
+    control.id = 'ck-privacy-control'; control.type = 'button'; control.textContent = 'Privacy choices'; control.addEventListener('click', show);
+    (document.querySelector('footer') || document.body).appendChild(control);
+    if (status === 'unset') show();
+    if (status === 'denied') clearIdentifiers();
+    start();
+    const started = new WeakSet();
+    document.addEventListener('focusin', e => { const f = e.target.closest('form'); if (f && !started.has(f) && status === 'granted') { started.add(f); track('form_start', 'project_enquiry'); } });
+    document.addEventListener('click', e => {
+      const a = e.target.closest('a'); if (!a) return;
+      const href = a.getAttribute('href') || '';
+      if (/wa\.me|api.whatsapp.com/.test(href)) track('whatsapp_click');
+      else if (href.startsWith('tel:')) track('phone_click');
+      else if (href.startsWith('mailto:')) track('email_click');
+      else if (/contact|portfolio|pricing/.test(href)) track('cta_click', href.split(/[?#]/)[0].replace(/\.html$/, ''));
+    });
+    const depths = new Set();
+    window.addEventListener('scroll', () => {
+      if (status !== 'granted') return;
+      const height = document.documentElement.scrollHeight - innerHeight;
+      if (height <= 0) return;
+      const depth = Math.floor(scrollY / height * 100);
+      for (const threshold of [25, 50, 75, 90]) if (depth >= threshold && !depths.has(threshold)) { depths.add(threshold); track('scroll_depth', String(threshold)); }
+    }, { passive: true });
+    setTimeout(() => { if (document.visibilityState === 'visible') track('engaged_visit'); }, 30000);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', ready, { once: true }); else ready();
 })();

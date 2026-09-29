@@ -2,24 +2,15 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KFQ266Z1Z"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-9KFQ266Z1Z');
-    </script>
+    
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Browser Cache Control to force fresh rendering -->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
+    <!-- CDN caching enabled for Core Web Vitals -->
     
     <!-- Primary SEO Meta Tags -->
-    <title>About Curious Kaizer | Delhi's Premier Web Engineering & AI Studio</title>
-    <meta name="description" content="Learn about Curious Kaizer, founded by Jai Goel (@luciferlupin). We design and build bespoke custom SaaS platforms, AI automation agents, 3D web visualizers, and conversion-optimized websites in Delhi, India.">
-    <meta name="keywords" content="About Curious Kaizer, Jai Goel, luciferlupin, Delhi web development studio, custom SaaS agency, AI automation engineering, bespoke software development Delhi, Three.js 3D web developers">
+    <title>About Curious Kaizer and Jai Goel | Delhi</title>
+    <meta name="description" content="Meet Jai Goel (@luciferlupin), founder of Curious Kaizer. We build bespoke SaaS platforms, AI automation agents, 3D web experiences, and high-converting...">
     
     <!-- Advanced SEO Meta Tags -->
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -27,6 +18,16 @@
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     
     <!-- Canonical URL -->
+    <!-- International SEO Hreflang — India, UAE, US, UK, EU, Global -->
+        <!-- International SEO Hreflang — India, UAE, US, UK, EU, Global -->
+    <link rel="alternate" hreflang="en" href="https://www.curiouskaizer.com/about" />
+    <link rel="alternate" hreflang="en-IN" href="https://www.curiouskaizer.com/about" />
+    <link rel="alternate" hreflang="en-AE" href="https://www.curiouskaizer.com/about" />
+    <link rel="alternate" hreflang="en-US" href="https://www.curiouskaizer.com/about" />
+    <link rel="alternate" hreflang="en-GB" href="https://www.curiouskaizer.com/about" />
+    <link rel="alternate" hreflang="en-AU" href="https://www.curiouskaizer.com/about" />
+    <link rel="alternate" hreflang="en-CA" href="https://www.curiouskaizer.com/about" />
+    <link rel="alternate" hreflang="x-default" href="https://www.curiouskaizer.com/about" />
     <link rel="canonical" href="https://www.curiouskaizer.com/about" />
     
     <!-- Open Graph / Social Media -->
@@ -53,6 +54,27 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     
+
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.curiouskaizer.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "About",
+      "item": "https://www.curiouskaizer.com/about"
+    }
+  ]
+}</script>
+
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,78 +90,59 @@
 
     
     <!-- JSON-LD Structured Data Schema -->
-    <script type="application/ld+json">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-        "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "AboutPage",
-                "@id": "https://www.curiouskaizer.com/about#webpage",
-                "url": "https://www.curiouskaizer.com/about",
-                "name": "About Curious Kaizer | Web Engineering & AI Architecture Studio",
-                "isPartOf": {
-                    "@type": "WebSite",
-                    "@id": "https://www.curiouskaizer.com/#website",
-                    "url": "https://www.curiouskaizer.com/",
-                    "name": "Curious Kaizer"
-                },
-                "about": {
-                    "@id": "https://www.curiouskaizer.com/#organization"
-                },
-                "description": "Curious Kaizer is a high-velocity software engineering and digital architecture studio based in Delhi, India, delivering bespoke web applications, AI automation pipelines, and enterprise systems."
-            },
-            {
-                "@type": "Organization",
-                "@id": "https://www.curiouskaizer.com/#organization",
-                "name": "Curious Kaizer",
-                "url": "https://www.curiouskaizer.com/",
-                "logo": "https://www.curiouskaizer.com/images/logo-icon.jpg",
-                "slogan": "Turning business problems into software, AI and scalable digital products.",
-                "founder": {
-                    "@type": "Person",
-                    "name": "Jai Goel",
-                    "alternateName": ["luciferlupin", "Jai G"],
-                    "jobTitle": "Founder & Principal Architect",
-                    "worksFor": {
-                        "@type": "Organization",
-                        "name": "Curious Kaizer"
-                    },
-                    "sameAs": [
-                        "https://www.linkedin.com/in/jai-g-5a2708218/",
-                        "https://www.linkedin.com/company/curious-kaizer/",
-                        "https://www.instagram.com/curiouskaizer/",
-                        "https://www.f6s.com/member/jai-goel",
-                        "https://github.com/luciferlupin"
-                    ]
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "addressLocality": "Delhi",
-                    "addressRegion": "Delhi",
-                    "postalCode": "110001",
-                    "addressCountry": "IN"
-                },
-                "sameAs": [
-                    "https://clutch.co/profile/curiouskaizer",
-            "https://yourstory.com/companies/curiouskaizer",
-                    "https://www.f6s.com/curiouskaizer",
-                    "https://github.com/luciferlupin",
-                    "https://www.linkedin.com/company/curious-kaizer/",
-                    "https://www.instagram.com/curiouskaizer/"
-                ]
-            }
-        ]
+      "@type": "AboutPage",
+      "@id": "https://www.curiouskaizer.com/about#webpage",
+      "url": "https://www.curiouskaizer.com/about",
+      "name": "About Curious Kaizer | Web Engineering & AI Architecture Studio",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://www.curiouskaizer.com/#website",
+        "url": "https://www.curiouskaizer.com/",
+        "name": "Curious Kaizer"
+      },
+      "about": {
+        "@id": "https://www.curiouskaizer.com/#organization"
+      },
+      "description": "Curious Kaizer is a high-velocity software engineering and digital architecture studio based in Delhi, India, delivering bespoke web applications, AI automation pipelines, and enterprise systems."
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.curiouskaizer.com/#organization",
+      "name": "Curious Kaizer",
+      "url": "https://www.curiouskaizer.com/",
+      "logo": "https://www.curiouskaizer.com/images/logo-icon.jpg",
+      "slogan": "Turning business problems into software, AI and scalable digital products.",
+      "founder": {
+        "@type": "Person",
+        "name": "Jai Goel",
+        "alternateName": [
+          "luciferlupin",
+          "Jai G"
+        ],
+        "jobTitle": "Founder & Principal Architect",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Curious Kaizer"
+        }
+      }
     }
-    </script>
+  ]
+}</script>
+    <link rel="stylesheet" href="/css/privacy.css?v=20260930">
+    <script src="/js/analytics-tracker.js?v=20260930" defer></script>
 </head>
-<body itemscope itemtype="https://schema.org/AboutPage">
+<body itemtype="https://schema.org/AboutPage">
 
     <!-- Navigation Header -->
     <header class="site-header">
-    <nav class="navbar" itemscope itemtype="https://schema.org/SiteNavigationElement" aria-label="Main navigation">
+    <nav class="navbar" itemtype="https://schema.org/SiteNavigationElement" aria-label="Main navigation">
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="images/logo-icon.jpg" alt="Curious Kaizer Logo" class="logo-icon" width="50" height="38">
+                <img decoding="async" src="images/logo-icon.jpg" alt="Curious Kaizer Logo" class="logo-icon" width="50" height="38">
                 <span class="logo-text">Curious Kaizer</span>
             </a>
             <ul class="nav-links" id="navLinks">
@@ -168,7 +171,7 @@
                 Turning Business Problems into <span class="highlight-blue" style="color: #2563eb;">Software, AI &amp; Scalable Products.</span>
             </h1>
             <p class="section-subtitle" style="margin: 0 auto; max-width: 720px; font-size: 1.05rem; color: #475569; line-height: 1.6;">
-                We are a high-velocity software engineering studio based in Delhi, India. We eliminate bloat and compress traditional months of software development into 7–14 day rapid delivery sprints — with zero compromises on type safety, speed, or scalability.
+                We are a software engineering studio based in Delhi, India. We plan websites and business systems around an approved scope, documented architecture and release checks.
             </p>
         </div>
     </section>
@@ -281,7 +284,7 @@
             <div class="footer-grid">
                 <div class="footer-col brand-col">
                     <div class="footer-logo">
-                        <img src="images/logo-icon.jpg" alt="Curious Kaizer" width="40" height="30">
+                        <img decoding="async" src="images/logo-icon.jpg" alt="Curious Kaizer" width="40" height="30">
                         <span>Curious Kaizer</span>
                     </div>
                     <p class="footer-desc">Turning business problems into software, AI and scalable digital products.</p>
@@ -312,7 +315,7 @@
             </div>
             
             <div class="footer-social-row">
-                <span class="social-label">Verified Profiles &amp; Ratings</span>
+                <span class="social-label">External profiles</span>
                 <div class="social-divider"></div>
                 <div class="social-badges">
                     <a href="https://www.google.com/search?q=curiouskaizer" class="social-badge google-badge" target="_blank" rel="noopener" aria-label="Google Business Profile &amp; Reviews" title="Google 5.0 Star Verified Reviews">
@@ -353,6 +356,7 @@
 
     <!-- Scripts -->
     <script src="js/scripts.js?v=20260820_fresh" defer></script>
-    <script src="js/analytics-tracker.js?v=20260820_fresh" defer></script>
+    
+    <script src="/js/cookie-consent.js" defer></script>
 </body>
 </html>

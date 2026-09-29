@@ -1,0 +1,392 @@
+[
+  {
+    "url": "/crm-development",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/custom-software-development",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/saas-development",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/shopify-development",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/ai-automation-services",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/erp-development",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/portal-development",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/dashboard-development",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/api-development",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/backend-development",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/ui-ux-design",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/website-development",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/website-maintenance",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/seo-services",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/speed-optimisation",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/web-app-development",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/website-development-dubai",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/website-development-usa",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/website-development-uk",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/industries-retail",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/industries-hospitality",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/industries-real-estate",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/industries-procurement",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/industries-membership",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/website-development-cost-india",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/ecommerce-website-cost",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/guides-ai-automation",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/guides-software-planning",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/guides-website-planning",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  },
+  {
+    "url": "/hanboro-watches-website-case-study",
+    "indexable": true,
+    "checks": {
+      "editorialReview": true,
+      "distinctSections": true,
+      "substantiveCopy": true,
+      "uniqueBody": true,
+      "relatedLinks": true,
+      "workingTargets": true
+    },
+    "note": "Editorial review is mandatory. Word count alone never approves a page."
+  }
+]

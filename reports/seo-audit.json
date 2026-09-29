@@ -1,0 +1,1424 @@
+{
+  "generatedAt": "2026-09-29T18:30:56.917Z",
+  "root": "/Users/harshitgoyal/jai website",
+  "totals": {
+    "htmlPages": 41,
+    "indexablePages": 39,
+    "issues": 67,
+    "critical": 0,
+    "high": 0,
+    "medium": 42,
+    "low": 25,
+    "images": 55,
+    "imageBytes": 30720428,
+    "imagesOver500KB": 25
+  },
+  "pages": [
+    {
+      "file": "404.html",
+      "url": "/404",
+      "title": "Page Not Found | 404 Error | Curious Kaizer",
+      "description": "The page you are looking for does not exist or has been moved. Return to the Curious Kaizer homepage or explore our custom web development services.",
+      "canonical": "https://www.curiouskaizer.com/404",
+      "h1s": [
+        "Page Not Found"
+      ],
+      "robots": "noindex, follow",
+      "wordCount": 112,
+      "jsonLd": 0,
+      "issues": [],
+      "imageCount": 2,
+      "internalLinkCount": 38,
+      "incomingLinks": 0
+    },
+    {
+      "file": "about.html",
+      "url": "/about",
+      "title": "About Curious Kaizer | Jai Goel — Delhi's Premier Web Engineering & AI Studio",
+      "description": "Meet Jai Goel (@luciferlupin), founder of Curious Kaizer. We build bespoke SaaS platforms, AI automation agents, 3D web experiences, and high-converting websites in Delhi. Learn our engineering philosophy.",
+      "canonical": "https://www.curiouskaizer.com/about",
+      "h1s": [
+        "Turning Business Problems into Software, AI Scalable Products."
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 319,
+      "jsonLd": 2,
+      "issues": [
+        [
+          "medium",
+          "long title (77)"
+        ],
+        [
+          "low",
+          "long meta description (205)"
+        ]
+      ],
+      "imageCount": 2,
+      "internalLinkCount": 31,
+      "incomingLinks": 1
+    },
+    {
+      "file": "analytics.html",
+      "url": "/analytics",
+      "title": "Curious Kaizer Analytics | Custom Dashboard",
+      "description": "",
+      "canonical": "",
+      "h1s": [
+        "Curious Kaizer"
+      ],
+      "robots": "noindex, nofollow",
+      "wordCount": 247,
+      "jsonLd": 0,
+      "issues": [],
+      "imageCount": 0,
+      "internalLinkCount": 0,
+      "incomingLinks": 0
+    },
+    {
+      "file": "blog-b2b-procurement-case-study.html",
+      "url": "/blog-b2b-procurement-case-study",
+      "title": "Case Study: Designing the Perfect B2B Procurement Portal | Curious Kaizer",
+      "description": "Explore Jai Goel",
+      "canonical": "https://www.curiouskaizer.com/blog-b2b-procurement-case-study",
+      "h1s": [
+        "Case Study: Designing the Perfect B2B Procurement Portal"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 472,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (73)"
+        ]
+      ],
+      "imageCount": 2,
+      "internalLinkCount": 38,
+      "incomingLinks": 3
+    },
+    {
+      "file": "blog-browser-ai-agent-automation.html",
+      "url": "/blog-browser-ai-agent-automation",
+      "title": "Autonomous AI Browser Employees: Building Web Automation with Gemini API & Function Calling | Curious Kaizer",
+      "description": "A comprehensive technical guide by Jai Goel on building voice-controlled autonomous AI browser agents like Browser Buddy using Google Gemini API, Web Speech APIs, and Chrome Extension background scripts.",
+      "canonical": "https://www.curiouskaizer.com/blog-browser-ai-agent-automation",
+      "h1s": [
+        "Autonomous AI Browser Employees: Scaling Web Automation with Gemini API & Function Calling"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 218,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (108)"
+        ],
+        [
+          "low",
+          "long meta description (203)"
+        ],
+        [
+          "medium",
+          "thin page (218 words)"
+        ]
+      ],
+      "imageCount": 3,
+      "internalLinkCount": 37,
+      "incomingLinks": 1
+    },
+    {
+      "file": "blog-canonical-redirect-loops.html",
+      "url": "/blog-canonical-redirect-loops",
+      "title": "Fixing Canonical Redirect Loops on Vercel Custom Domains | Curious Kaizer",
+      "description": "A comprehensive technical guide by Jai Goel on diagnosing and fixing canonical loops on Vercel deployments to resolve Google indexing errors.",
+      "canonical": "https://www.curiouskaizer.com/blog-canonical-redirect-loops",
+      "h1s": [
+        "Fixing Canonical Redirect Loops on Vercel Custom Domains"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 579,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (73)"
+        ]
+      ],
+      "imageCount": 2,
+      "internalLinkCount": 38,
+      "incomingLinks": 3
+    },
+    {
+      "file": "blog-context-engineering-llm-apps.html",
+      "url": "/blog-context-engineering-llm-apps",
+      "title": "Context Engineering over Prompt Engineering: Managing 1M+ Token Windows | Curious Kaizer",
+      "description": "Why context engineering has superseded prompt engineering in 2026—exploring dynamic context window compression, GraphRAG, stateful memory buffers, and token budget management.",
+      "canonical": "https://www.curiouskaizer.com/blog-context-engineering-llm-apps",
+      "h1s": [
+        "Context Engineering over Prompt Engineering: Managing 1M+ Token Windows Efficiently"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 236,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (88)"
+        ],
+        [
+          "low",
+          "long meta description (175)"
+        ],
+        [
+          "medium",
+          "thin page (236 words)"
+        ]
+      ],
+      "imageCount": 1,
+      "internalLinkCount": 11,
+      "incomingLinks": 1
+    },
+    {
+      "file": "blog-database-normalization.html",
+      "url": "/blog-database-normalization",
+      "title": "Optimizing Database Schema to Reduce Supabase Storage by 80% | Curious Kaizer",
+      "description": "Read Jai Goel",
+      "canonical": "https://www.curiouskaizer.com/blog-database-normalization",
+      "h1s": [
+        "Optimizing Database Schema to Reduce Supabase Storage by 80%"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 281,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (77)"
+        ]
+      ],
+      "imageCount": 2,
+      "internalLinkCount": 38,
+      "incomingLinks": 5
+    },
+    {
+      "file": "blog-edge-ai-inference.html",
+      "url": "/blog-edge-ai-inference",
+      "title": "AI Inference at the Edge: Running LLMs in Under 50ms Globally | Curious Kaizer",
+      "description": "Learn how edge AI inference delivers real-time responses for content moderation, recommendations, and fraud detection at 50ms, eliminating the 300ms latency of centralized GPU clusters.",
+      "canonical": "https://www.curiouskaizer.com/blog-edge-ai-inference",
+      "h1s": [
+        "AI Inference at the Edge: Running LLMs in Under 50ms Globally"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 603,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (78)"
+        ],
+        [
+          "low",
+          "long meta description (185)"
+        ]
+      ],
+      "imageCount": 2,
+      "internalLinkCount": 38,
+      "incomingLinks": 4
+    },
+    {
+      "file": "blog-edge-rendering-2026.html",
+      "url": "/blog-edge-rendering-2026",
+      "title": "Edge Rendering in 2026: Why Your Next App Should Run at 300+ Locations | Curious Kaizer",
+      "description": "Learn how edge rendering reduces TTFB by 60-80% by running server logic at 300+ global PoPs. A practical guide to implementing edge rendering with Cloudflare Workers and Vercel Edge.",
+      "canonical": "https://www.curiouskaizer.com/blog-edge-rendering-2026",
+      "h1s": [
+        "Edge Rendering in 2026: Why Your Next App Should Run at 300+ Locations"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 1026,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (87)"
+        ],
+        [
+          "low",
+          "long meta description (182)"
+        ]
+      ],
+      "imageCount": 2,
+      "internalLinkCount": 38,
+      "incomingLinks": 2
+    },
+    {
+      "file": "blog-inference-compute-scaling.html",
+      "url": "/blog-inference-compute-scaling",
+      "title": "Scaling Inference-Time Compute: How Search and RL are Reshaping LLM Performance in 2026 | Curious Kaizer",
+      "description": "A comprehensive technical guide by Jai Goel on scaling inference-time compute using Monte Carlo Tree Search, Best-of-N sampling, and Reinforcement Learning to boost LLM reasoning.",
+      "canonical": "https://www.curiouskaizer.com/blog-inference-compute-scaling",
+      "h1s": [
+        "Scaling Inference-Time Compute: How Search and RL are Reshaping LLM Performance in 2026"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 378,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (104)"
+        ],
+        [
+          "low",
+          "long meta description (179)"
+        ]
+      ],
+      "imageCount": 2,
+      "internalLinkCount": 38,
+      "incomingLinks": 3
+    },
+    {
+      "file": "blog-inp-core-web-vitals.html",
+      "url": "/blog-inp-core-web-vitals",
+      "title": "INP Replaces FID: Optimizing for the New Core Web Vital in 2026 | Curious Kaizer",
+      "description": "Interaction to Next Paint is now Google",
+      "canonical": "https://www.curiouskaizer.com/blog-inp-core-web-vitals",
+      "h1s": [
+        "INP Replaces FID: Optimizing for the New Core Web Vital in 2026"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 1152,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (80)"
+        ]
+      ],
+      "imageCount": 2,
+      "internalLinkCount": 38,
+      "incomingLinks": 3
+    },
+    {
+      "file": "blog-liquid-foundation-models.html",
+      "url": "/blog-liquid-foundation-models",
+      "title": "Liquid Foundation Models: Replacing Transformers for Real-Time Streaming and IoT Edge | Curious Kaizer",
+      "description": "A comprehensive technical guide by Jai Goel on Liquid Foundation Models (LFMs), comparing them to Transformers for time-series, streaming, and edge computation.",
+      "canonical": "https://www.curiouskaizer.com/blog-liquid-foundation-models",
+      "h1s": [
+        "Liquid Foundation Models: Replacing Transformers for Real-Time Streaming and IoT Edge"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 327,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (102)"
+        ]
+      ],
+      "imageCount": 2,
+      "internalLinkCount": 38,
+      "incomingLinks": 3
+    },
+    {
+      "file": "blog-multi-agent-orchestration-2026.html",
+      "url": "/blog-multi-agent-orchestration-2026",
+      "title": "Multi-Agent Orchestration in 2026: Architecting Autonomous AI Swarms | Curious Kaizer",
+      "description": "Learn how multi-agent coordination frameworks (LangGraph, CrewAI, AutoGen) replace single-prompt execution to build autonomous, self-correcting enterprise AI pipelines.",
+      "canonical": "https://www.curiouskaizer.com/blog-multi-agent-orchestration-2026",
+      "h1s": [
+        "Multi-Agent Orchestration in 2026: Architecting Autonomous AI Swarms for Enterprise Workflows"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 515,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (85)"
+        ],
+        [
+          "low",
+          "long meta description (168)"
+        ]
+      ],
+      "imageCount": 1,
+      "internalLinkCount": 11,
+      "incomingLinks": 1
+    },
+    {
+      "file": "blog-rag-latency-optimization.html",
+      "url": "/blog-rag-latency-optimization",
+      "title": "Reducing LLM RAG Latency from 8s to 900ms on Serverless Edge Runtimes | Curious Kaizer",
+      "description": "A comprehensive technical guide by Jai Goel on optimizing vector database queries, implementing Redis caching on Vercel Edge, and streaming parsed JSON outputs.",
+      "canonical": "https://www.curiouskaizer.com/blog-rag-latency-optimization",
+      "h1s": [
+        "Reducing LLM RAG Latency from 8s to 900ms on Serverless Edge Runtimes"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 834,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (86)"
+        ],
+        [
+          "low",
+          "3 images without explicit dimensions"
+        ]
+      ],
+      "imageCount": 5,
+      "internalLinkCount": 41,
+      "incomingLinks": 3
+    },
+    {
+      "file": "blog-real-estate-operations-portal.html",
+      "url": "/blog-real-estate-operations-portal",
+      "title": "Building Real-Time Real Estate Operations Portals: Architecture, Meta Lead Sync & Multi-Agent Workflows | Curious Kaizer",
+      "description": "An engineering deep dive by Jai Goel on replacing fragmented real estate spreadsheets with centralized operations portals, automated Meta lead syncing, agent shift overwatch, and real-time CRM pipelines.",
+      "canonical": "https://www.curiouskaizer.com/blog-real-estate-operations-portal",
+      "h1s": [
+        "Building Real-Time Real Estate Operations Portals: Architecture, Meta Lead Sync & Multi-Agent Workflows"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 94,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (120)"
+        ],
+        [
+          "low",
+          "long meta description (203)"
+        ],
+        [
+          "medium",
+          "thin page (94 words)"
+        ]
+      ],
+      "imageCount": 3,
+      "internalLinkCount": 37,
+      "incomingLinks": 1
+    },
+    {
+      "file": "blog-rust-webassembly-microservices.html",
+      "url": "/blog-rust-webassembly-microservices",
+      "title": "Rust & WebAssembly Microservices: Replacing Docker Containers | Curious Kaizer",
+      "description": "Why enterprise engineering teams are pairing Rust and WASI 0.2 WebAssembly modules to achieve <1ms container cold starts and 90% cloud compute savings over Docker.",
+      "canonical": "https://www.curiouskaizer.com/blog-rust-webassembly-microservices",
+      "h1s": [
+        "Rust WebAssembly Microservices: Replacing Docker Containers for 10x Faster Cold Starts"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 294,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (78)"
+        ]
+      ],
+      "imageCount": 1,
+      "internalLinkCount": 11,
+      "incomingLinks": 1
+    },
+    {
+      "file": "blog-serverless-postgres-neon-supabase.html",
+      "url": "/blog-serverless-postgres-neon-supabase",
+      "title": "Serverless Postgres in 2026: Database Branching & Scale-to-Zero | Curious Kaizer",
+      "description": "Explore how decoupling compute from storage in serverless PostgreSQL (Neon, Supabase) enables instant database branching, scale-to-zero efficiency, and zero-downtime migrations.",
+      "canonical": "https://www.curiouskaizer.com/blog-serverless-postgres-neon-supabase",
+      "h1s": [
+        "Serverless Postgres in 2026: Branching, Instant Autoscaling, and Cold-Start Optimization with Neon Supabase"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 298,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (80)"
+        ],
+        [
+          "low",
+          "long meta description (177)"
+        ]
+      ],
+      "imageCount": 1,
+      "internalLinkCount": 11,
+      "incomingLinks": 1
+    },
+    {
+      "file": "blog-vanilla-js-crm.html",
+      "url": "/blog-vanilla-js-crm",
+      "title": "Why We Built CuriousCRM on Vanilla JS with Zero Frameworks | Curious Kaizer",
+      "description": "Explore Jai Goel",
+      "canonical": "https://www.curiouskaizer.com/blog-vanilla-js-crm",
+      "h1s": [
+        "Why We Built CuriousCRM on Vanilla JS with Zero Frameworks"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 383,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (75)"
+        ]
+      ],
+      "imageCount": 2,
+      "internalLinkCount": 38,
+      "incomingLinks": 3
+    },
+    {
+      "file": "blog-vector-database-indexing-hybrid-search.html",
+      "url": "/blog-vector-database-indexing-hybrid-search",
+      "title": "Hybrid Search & Vector Indexing at Scale: Dense Embeddings + BM25 | Curious Kaizer",
+      "description": "Master hybrid search techniques by pairing HNSW dense vector indexing with sparse BM25 keyword matching and Reciprocal Rank Fusion (RRF) to eliminate RAG hallucination.",
+      "canonical": "https://www.curiouskaizer.com/blog-vector-database-indexing-hybrid-search",
+      "h1s": [
+        "Hybrid Search Vector Indexing at Scale: Combining Dense Embeddings with BM25 for Sub-10ms Retrieval"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 398,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (82)"
+        ],
+        [
+          "low",
+          "long meta description (168)"
+        ]
+      ],
+      "imageCount": 1,
+      "internalLinkCount": 11,
+      "incomingLinks": 1
+    },
+    {
+      "file": "blog-voice-ai-gemini-integration.html",
+      "url": "/blog-voice-ai-gemini-integration",
+      "title": "Integrating Voice-Recognition Automation with Gemini API | Curious Kaizer",
+      "description": "Read Jai Goel",
+      "canonical": "https://www.curiouskaizer.com/blog-voice-ai-gemini-integration",
+      "h1s": [
+        "Integrating Voice-Recognition Automation with Gemini API"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 506,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (73)"
+        ]
+      ],
+      "imageCount": 2,
+      "internalLinkCount": 38,
+      "incomingLinks": 3
+    },
+    {
+      "file": "blog-webassembly-edge.html",
+      "url": "/blog-webassembly-edge",
+      "title": "WebAssembly at the Edge: Breaking Language Constraints in Serverless | Curious Kaizer",
+      "description": "Cloudflare Workers and Vercel Edge run JavaScript, but Fastly Compute runs Wasm. Learn how to use Rust, Go, and C++ at the edge for performance-critical workloads.",
+      "canonical": "https://www.curiouskaizer.com/blog-webassembly-edge",
+      "h1s": [
+        "WebAssembly at the Edge: Breaking Language Constraints in Serverless"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 807,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (85)"
+        ]
+      ],
+      "imageCount": 2,
+      "internalLinkCount": 38,
+      "incomingLinks": 2
+    },
+    {
+      "file": "blog.html",
+      "url": "/blog",
+      "title": "Engineering & Tech Blog | AI, Web Dev, SaaS Architecture — Curious Kaizer",
+      "description": "Deep technical articles by Curious Kaizer engineers: AI agents, LLM optimization, edge computing, Core Web Vitals, database architecture, real estate SaaS & more. Updated regularly.",
+      "canonical": "https://www.curiouskaizer.com/blog",
+      "h1s": [
+        "KAIZER INSIGHTS Insights & Ideas. Engineered to perform."
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 344,
+      "jsonLd": 5,
+      "issues": [
+        [
+          "medium",
+          "long title (73)"
+        ],
+        [
+          "low",
+          "long meta description (181)"
+        ],
+        [
+          "low",
+          "19 images without explicit dimensions"
+        ]
+      ],
+      "imageCount": 21,
+      "internalLinkCount": 72,
+      "incomingLinks": 85
+    },
+    {
+      "file": "contact.html",
+      "url": "/contact",
+      "title": "Contact Curious Kaizer | Book Free Discovery Call — Web Design Delhi",
+      "description": "Get in touch with Curious Kaizer, Delhi",
+      "canonical": "https://www.curiouskaizer.com/contact",
+      "h1s": [
+        "Let’s build what moves your business forward."
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 433,
+      "jsonLd": 4,
+      "issues": [
+        [
+          "medium",
+          "long title (68)"
+        ]
+      ],
+      "imageCount": 1,
+      "internalLinkCount": 44,
+      "incomingLinks": 171
+    },
+    {
+      "file": "crm-product.html",
+      "url": "/crm-product",
+      "title": "Curious CRM Pro | Enterprise Kanban CRM for Delhi Businesses — Curious Kaizer",
+      "description": "Curious CRM Pro is a custom enterprise Kanban CRM with predictive lead scoring, client lifecycle management, and sales operations dashboard. Built by Curious Kaizer for Indian SMEs.",
+      "canonical": "https://www.curiouskaizer.com/crm-product",
+      "h1s": [
+        "CRM Pro"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 270,
+      "jsonLd": 2,
+      "issues": [
+        [
+          "medium",
+          "long title (77)"
+        ],
+        [
+          "low",
+          "long meta description (181)"
+        ]
+      ],
+      "imageCount": 2,
+      "internalLinkCount": 35,
+      "incomingLinks": 27
+    },
+    {
+      "file": "ecommerce-website-development-delhi.html",
+      "url": "/ecommerce-website-development-delhi",
+      "title": "E-Commerce Website Development in Delhi from ₹21,900 | Curious Kaizer",
+      "description": "⭐ 5.0 Rated E-Commerce Website Development Company in Delhi. Custom Shopify alternatives, Razorpay/UPI checkout, product catalogs & inventory. Starting ₹21,900. Free demo.",
+      "canonical": "https://www.curiouskaizer.com/ecommerce-website-development-delhi",
+      "h1s": [
+        "E-Commerce Website Development in Delhi"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 388,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (69)"
+        ],
+        [
+          "low",
+          "long meta description (171)"
+        ]
+      ],
+      "imageCount": 1,
+      "internalLinkCount": 44,
+      "incomingLinks": 17
+    },
+    {
+      "file": "googledccfa22a0725d83d.html",
+      "url": "/googledccfa22a0725d83d",
+      "title": "",
+      "description": "",
+      "canonical": "",
+      "h1s": [],
+      "robots": "",
+      "wordCount": 2,
+      "jsonLd": 0,
+      "issues": [],
+      "imageCount": 0,
+      "internalLinkCount": 0,
+      "incomingLinks": 0
+    },
+    {
+      "file": "hanboro-watches-website-case-study.html",
+      "url": "/hanboro-watches-website-case-study",
+      "title": "HANBORO Watches Website Made by Curious Kaizer | Luxury E-Commerce Case Study",
+      "description": "HANBORO Watches (hanborowatches.in) was designed and built by Curious Kaizer, Delhi",
+      "canonical": "https://www.curiouskaizer.com/hanboro-watches-website-case-study",
+      "h1s": [
+        "HANBORO Watches Website Built by Curious Kaizer"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 532,
+      "jsonLd": 5,
+      "issues": [
+        [
+          "medium",
+          "long title (77)"
+        ]
+      ],
+      "imageCount": 1,
+      "internalLinkCount": 19,
+      "incomingLinks": 0
+    },
+    {
+      "file": "index.html",
+      "url": "/",
+      "title": "Website Designing Company in Delhi | Custom Web Dev from ₹15,200 | Curious Kaizer",
+      "description": "⭐ 5.0 Rated #1 Website Designing Company in Delhi. Custom websites, e-commerce, AI agents &amp; SaaS from ₹15,200. Free prototype in 48hrs. Delhi NCR, Noida, Gurgaon.",
+      "canonical": "https://www.curiouskaizer.com/",
+      "h1s": [
+        "Delhi's Best Web Development Company Your competitors have a website. Let's build one that's better. Your competitors have a website. Let's build one that's better."
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 1515,
+      "jsonLd": 9,
+      "issues": [
+        [
+          "medium",
+          "long title (81)"
+        ],
+        [
+          "low",
+          "long meta description (166)"
+        ],
+        [
+          "low",
+          "135 images without explicit dimensions"
+        ]
+      ],
+      "imageCount": 136,
+      "internalLinkCount": 57,
+      "incomingLinks": 209
+    },
+    {
+      "file": "portfolio.html",
+      "url": "/portfolio",
+      "title": "Portfolio | Live Projects — Luxury E-Commerce, AI Portals & SaaS | Curious Kaizer",
+      "description": "Explore Curious Kaizer",
+      "canonical": "https://www.curiouskaizer.com/portfolio",
+      "h1s": [
+        "Our Best Work. Engineered to Excel."
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 1147,
+      "jsonLd": 2,
+      "issues": [
+        [
+          "medium",
+          "long title (81)"
+        ],
+        [
+          "low",
+          "3 images without explicit dimensions"
+        ]
+      ],
+      "imageCount": 14,
+      "internalLinkCount": 70,
+      "incomingLinks": 69
+    },
+    {
+      "file": "pricing.html",
+      "url": "/pricing",
+      "title": "Website Development Pricing in Delhi 2026 | Transparent Packages — Curious Kaizer",
+      "description": "100% transparent website development pricing in Delhi. Basic business website from ₹15,200 • E-commerce from ₹21,900 • Custom SaaS from ₹33,900. No hidden fees. Free consultation.",
+      "canonical": "https://www.curiouskaizer.com/pricing",
+      "h1s": [
+        "Transparent Packages. Zero Surprises."
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 1079,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (81)"
+        ],
+        [
+          "low",
+          "long meta description (179)"
+        ]
+      ],
+      "imageCount": 1,
+      "internalLinkCount": 37,
+      "incomingLinks": 77
+    },
+    {
+      "file": "privacy.html",
+      "url": "/privacy",
+      "title": "Privacy Policy | Curious Kaizer",
+      "description": "Read the Privacy Policy of Curious Kaizer. Learn how we collect, protect, and use your personal information when you use our website or web development services.",
+      "canonical": "https://www.curiouskaizer.com/privacy",
+      "h1s": [
+        "Privacy Policy"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 805,
+      "jsonLd": 1,
+      "issues": [],
+      "imageCount": 2,
+      "internalLinkCount": 39,
+      "incomingLinks": 34
+    },
+    {
+      "file": "services.html",
+      "url": "/services",
+      "title": "Web Design & Development Services in Delhi | AI, SaaS, E-Commerce — Curious Kaizer",
+      "description": "⭐ Comprehensive web services in Delhi: custom websites, e-commerce, AI agents, 3D visualizers, SaaS dashboards, CRM systems & more. Starting ₹15,200. View all services.",
+      "canonical": "https://www.curiouskaizer.com/services",
+      "h1s": [
+        "Expert Capabilities. Engineered for Results."
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 1016,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (82)"
+        ],
+        [
+          "low",
+          "long meta description (168)"
+        ]
+      ],
+      "imageCount": 1,
+      "internalLinkCount": 41,
+      "incomingLinks": 146
+    },
+    {
+      "file": "terms.html",
+      "url": "/terms",
+      "title": "Terms of Service | Curious Kaizer",
+      "description": "Review the Terms of Service for Curious Kaizer. Understand the agreements, rules, and conditions governing the use of our custom web development services.",
+      "canonical": "https://www.curiouskaizer.com/terms",
+      "h1s": [
+        "Terms of Service"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 689,
+      "jsonLd": 1,
+      "issues": [],
+      "imageCount": 2,
+      "internalLinkCount": 40,
+      "incomingLinks": 34
+    },
+    {
+      "file": "website-design-company-gurgaon.html",
+      "url": "/website-design-company-gurgaon",
+      "title": "Website Design Company in Gurgaon | Custom Web Development — Curious Kaizer",
+      "description": "⭐ Top Website Design Company in Gurgaon / Gurugram. Custom websites, e-commerce & SaaS for Gurgaon businesses from ₹15,200. 5.0 Google Rating. Free prototype in 48hrs.",
+      "canonical": "https://www.curiouskaizer.com/website-design-company-gurgaon",
+      "h1s": [
+        "Enterprise Web Design in Gurgaon"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 304,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (75)"
+        ],
+        [
+          "low",
+          "long meta description (167)"
+        ]
+      ],
+      "imageCount": 1,
+      "internalLinkCount": 42,
+      "incomingLinks": 17
+    },
+    {
+      "file": "website-design-company-noida.html",
+      "url": "/website-design-company-noida",
+      "title": "Website Design Company in Noida | Custom Web Development — Curious Kaizer",
+      "description": "⭐ Top Website Design Company in Noida. Curious Kaizer builds custom websites, e-commerce stores & SaaS apps for Noida businesses. Starting ₹15,200. 5.0 Google rating.",
+      "canonical": "https://www.curiouskaizer.com/website-design-company-noida",
+      "h1s": [
+        "Website Design & Development in Noida"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 259,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (73)"
+        ],
+        [
+          "low",
+          "long meta description (166)"
+        ]
+      ],
+      "imageCount": 1,
+      "internalLinkCount": 42,
+      "incomingLinks": 17
+    },
+    {
+      "file": "website-design-cost-calculator.html",
+      "url": "/website-design-cost-calculator",
+      "title": "Website Design Cost Calculator India 2026 | Get Instant Quote — Curious Kaizer",
+      "description": "Use our free Website Design Cost Calculator to instantly estimate your project cost in India. Custom websites from ₹15,200. Get an accurate quote in 60 seconds.",
+      "canonical": "https://www.curiouskaizer.com/website-design-cost-calculator",
+      "h1s": [
+        "Website Design Cost Calculator in Delhi"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 341,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (78)"
+        ]
+      ],
+      "imageCount": 1,
+      "internalLinkCount": 43,
+      "incomingLinks": 16
+    },
+    {
+      "file": "website-designing-company-in-delhi.html",
+      "url": "/website-designing-company-in-delhi",
+      "title": "Website Designing Company in Delhi | #1 Web Design Agency — Curious Kaizer",
+      "description": "⭐ #1 Website Designing Company in Delhi. Curious Kaizer builds custom high-converting business websites, e-commerce platforms & AI web apps from ₹15,200. 5.0 Google Reviews ✓ Free prototype in 48hrs ✓",
+      "canonical": "https://www.curiouskaizer.com/website-designing-company-in-delhi",
+      "h1s": [
+        "Website Designing Company in Delhi"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 534,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (74)"
+        ],
+        [
+          "low",
+          "long meta description (200)"
+        ]
+      ],
+      "imageCount": 1,
+      "internalLinkCount": 45,
+      "incomingLinks": 17
+    },
+    {
+      "file": "website-designing-company-south-delhi.html",
+      "url": "/website-designing-company-south-delhi",
+      "title": "Website Designing Company in South Delhi | Premium Web Design — Curious Kaizer",
+      "description": "⭐ Premium Website Designing Company in South Delhi. Custom websites for Defence Colony, Greater Kailash, Hauz Khas & South Delhi businesses. Starting ₹15,200.",
+      "canonical": "https://www.curiouskaizer.com/website-designing-company-south-delhi",
+      "h1s": [
+        "Website Designing Company in South Delhi"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 302,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (78)"
+        ]
+      ],
+      "imageCount": 1,
+      "internalLinkCount": 42,
+      "incomingLinks": 17
+    },
+    {
+      "file": "website-redesign-services-delhi.html",
+      "url": "/website-redesign-services-delhi",
+      "title": "Website Redesign Services in Delhi | Modernize Your Old Site — Curious Kaizer",
+      "description": "⭐ Professional Website Redesign Services in Delhi. Transform slow outdated websites into lightning-fast modern web apps. Preserve SEO rankings. Starting ₹15,200. Free audit.",
+      "canonical": "https://www.curiouskaizer.com/website-redesign-services-delhi",
+      "h1s": [
+        "Website Redesign Services in Delhi"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 362,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (77)"
+        ],
+        [
+          "low",
+          "long meta description (173)"
+        ]
+      ],
+      "imageCount": 1,
+      "internalLinkCount": 42,
+      "incomingLinks": 17
+    },
+    {
+      "file": "wordpress-website-development-delhi.html",
+      "url": "/wordpress-website-development-delhi",
+      "title": "WordPress Website Development in Delhi | Expert WP Developers — Curious Kaizer",
+      "description": "⭐ Expert WordPress Website Development in Delhi. Custom themes, WooCommerce stores, plugin development & site migrations. Starting ₹15,200. Curious Kaizer — 5.0 Google Rating.",
+      "canonical": "https://www.curiouskaizer.com/wordpress-website-development-delhi",
+      "h1s": [
+        "WordPress & Custom CMS Development in Delhi"
+      ],
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "wordCount": 321,
+      "jsonLd": 3,
+      "issues": [
+        [
+          "medium",
+          "long title (78)"
+        ],
+        [
+          "low",
+          "long meta description (175)"
+        ]
+      ],
+      "imageCount": 1,
+      "internalLinkCount": 42,
+      "incomingLinks": 17
+    }
+  ],
+  "largestImages": [
+    {
+      "path": "images/coinvortex.png",
+      "bytes": 1806795
+    },
+    {
+      "path": "images/club-re-straddle-system.png",
+      "bytes": 1784172
+    },
+    {
+      "path": "images/hanboro-watches.png",
+      "bytes": 1672851
+    },
+    {
+      "path": "images/auco-website.png",
+      "bytes": 1534074
+    },
+    {
+      "path": "images/auco-aiwa-operations-portal.png",
+      "bytes": 1404520
+    },
+    {
+      "path": "images/dodd-aero-lab.png",
+      "bytes": 1393916
+    },
+    {
+      "path": "images/curiouskaizer.png",
+      "bytes": 1379000
+    },
+    {
+      "path": "images/his-drink-3d.png",
+      "bytes": 1175827
+    },
+    {
+      "path": "images/blog-inference-scaling.png",
+      "bytes": 1045478
+    },
+    {
+      "path": "images/blog-rag-latency.png",
+      "bytes": 1038945
+    },
+    {
+      "path": "images/blog-voice-ai.png",
+      "bytes": 1030353
+    },
+    {
+      "path": "images/blog-inp-vitals.png",
+      "bytes": 1022752
+    },
+    {
+      "path": "images/blog-vanilla-js.png",
+      "bytes": 1021071
+    },
+    {
+      "path": "images/blog-b2b-procurement.png",
+      "bytes": 1012407
+    },
+    {
+      "path": "images/blog-canonical-seo.png",
+      "bytes": 1001914
+    },
+    {
+      "path": "images/aloha-estate-portal.png",
+      "bytes": 1000691
+    },
+    {
+      "path": "images/blog-database-schema.png",
+      "bytes": 991629
+    },
+    {
+      "path": "images/almostreal-club.png",
+      "bytes": 933206
+    },
+    {
+      "path": "images/blog-edge-rendering.png",
+      "bytes": 930860
+    },
+    {
+      "path": "images/blog-liquid-models.png",
+      "bytes": 919406
+    }
+  ],
+  "issues": [
+    {
+      "severity": "medium",
+      "file": "about.html",
+      "issue": "long title (77)"
+    },
+    {
+      "severity": "medium",
+      "file": "analytics.html",
+      "issue": "orphan page (no internal links)"
+    },
+    {
+      "severity": "medium",
+      "file": "blog-b2b-procurement-case-study.html",
+      "issue": "long title (73)"
+    },
+    {
+      "severity": "medium",
+      "file": "blog-browser-ai-agent-automation.html",
+      "issue": "long title (108)"
+    },
+    {
+      "severity": "medium",
+      "file": "blog-browser-ai-agent-automation.html",
+      "issue": "thin page (218 words)"
+    },
+    {
+      "severity": "medium",
+      "file": "blog-canonical-redirect-loops.html",
+      "issue": "long title (73)"
+    },
+    {
+      "severity": "medium",
+      "file": "blog-context-engineering-llm-apps.html",
+      "issue": "long title (88)"
+    },
+    {
+      "severity": "medium",
+      "file": "blog-context-engineering-llm-apps.html",
+      "issue": "thin page (236 words)"
+    },
+    {
+      "severity": "medium",
+      "file": "blog-database-normalization.html",
+      "issue": "long title (77)"
+    },
+    {
+      "severity": "medium",
+      "file": "blog-edge-ai-inference.html",
+      "issue": "long title (78)"
+    },
+    {
+      "severity": "medium",
+      "file": "blog-edge-rendering-2026.html",
+      "issue": "long title (87)"
+    },
+    {
+      "severity": "medium",
+      "file": "blog-inference-compute-scaling.html",
+      "issue": "long title (104)"
+    },
+    {
+      "severity": "medium",
+      "file": "blog-inp-core-web-vitals.html",
+      "issue": "long title (80)"
+    },
+    {
+      "severity": "medium",
+      "file": "blog-liquid-foundation-models.html",
+      "issue": "long title (102)"
+    },
+    {
+      "severity": "medium",
+      "file": "blog-multi-agent-orchestration-2026.html",
+      "issue": "long title (85)"
+    },
+    {
+      "severity": "medium",
+      "file": "blog-rag-latency-optimization.html",
+      "issue": "long title (86)"
+    },
+    {
+      "severity": "medium",
+      "file": "blog-real-estate-operations-portal.html",
+      "issue": "long title (120)"
+    },
+    {
+      "severity": "medium",
+      "file": "blog-real-estate-operations-portal.html",
+      "issue": "thin page (94 words)"
+    },
+    {
+      "severity": "medium",
+      "file": "blog-rust-webassembly-microservices.html",
+      "issue": "long title (78)"
+    },
+    {
+      "severity": "medium",
+      "file": "blog-serverless-postgres-neon-supabase.html",
+      "issue": "long title (80)"
+    },
+    {
+      "severity": "medium",
+      "file": "blog-vanilla-js-crm.html",
+      "issue": "long title (75)"
+    },
+    {
+      "severity": "medium",
+      "file": "blog-vector-database-indexing-hybrid-search.html",
+      "issue": "long title (82)"
+    },
+    {
+      "severity": "medium",
+      "file": "blog-voice-ai-gemini-integration.html",
+      "issue": "long title (73)"
+    },
+    {
+      "severity": "medium",
+      "file": "blog-webassembly-edge.html",
+      "issue": "long title (85)"
+    },
+    {
+      "severity": "medium",
+      "file": "blog.html",
+      "issue": "long title (73)"
+    },
+    {
+      "severity": "medium",
+      "file": "contact.html",
+      "issue": "long title (68)"
+    },
+    {
+      "severity": "medium",
+      "file": "crm-product.html",
+      "issue": "long title (77)"
+    },
+    {
+      "severity": "medium",
+      "file": "ecommerce-website-development-delhi.html",
+      "issue": "long title (69)"
+    },
+    {
+      "severity": "medium",
+      "file": "googledccfa22a0725d83d.html",
+      "issue": "orphan page (no internal links)"
+    },
+    {
+      "severity": "medium",
+      "file": "hanboro-watches-website-case-study.html",
+      "issue": "long title (77)"
+    },
+    {
+      "severity": "medium",
+      "file": "hanboro-watches-website-case-study.html",
+      "issue": "orphan page (no internal links)"
+    },
+    {
+      "severity": "medium",
+      "file": "index.html",
+      "issue": "long title (81)"
+    },
+    {
+      "severity": "medium",
+      "file": "portfolio.html",
+      "issue": "long title (81)"
+    },
+    {
+      "severity": "medium",
+      "file": "pricing.html",
+      "issue": "long title (81)"
+    },
+    {
+      "severity": "medium",
+      "file": "services.html",
+      "issue": "long title (82)"
+    },
+    {
+      "severity": "medium",
+      "file": "website-design-company-gurgaon.html",
+      "issue": "long title (75)"
+    },
+    {
+      "severity": "medium",
+      "file": "website-design-company-noida.html",
+      "issue": "long title (73)"
+    },
+    {
+      "severity": "medium",
+      "file": "website-design-cost-calculator.html",
+      "issue": "long title (78)"
+    },
+    {
+      "severity": "medium",
+      "file": "website-designing-company-in-delhi.html",
+      "issue": "long title (74)"
+    },
+    {
+      "severity": "medium",
+      "file": "website-designing-company-south-delhi.html",
+      "issue": "long title (78)"
+    },
+    {
+      "severity": "medium",
+      "file": "website-redesign-services-delhi.html",
+      "issue": "long title (77)"
+    },
+    {
+      "severity": "medium",
+      "file": "wordpress-website-development-delhi.html",
+      "issue": "long title (78)"
+    },
+    {
+      "severity": "low",
+      "file": "about.html",
+      "issue": "long meta description (205)"
+    },
+    {
+      "severity": "low",
+      "file": "blog-browser-ai-agent-automation.html",
+      "issue": "long meta description (203)"
+    },
+    {
+      "severity": "low",
+      "file": "blog-context-engineering-llm-apps.html",
+      "issue": "long meta description (175)"
+    },
+    {
+      "severity": "low",
+      "file": "blog-edge-ai-inference.html",
+      "issue": "long meta description (185)"
+    },
+    {
+      "severity": "low",
+      "file": "blog-edge-rendering-2026.html",
+      "issue": "long meta description (182)"
+    },
+    {
+      "severity": "low",
+      "file": "blog-inference-compute-scaling.html",
+      "issue": "long meta description (179)"
+    },
+    {
+      "severity": "low",
+      "file": "blog-multi-agent-orchestration-2026.html",
+      "issue": "long meta description (168)"
+    },
+    {
+      "severity": "low",
+      "file": "blog-rag-latency-optimization.html",
+      "issue": "3 images without explicit dimensions"
+    },
+    {
+      "severity": "low",
+      "file": "blog-real-estate-operations-portal.html",
+      "issue": "long meta description (203)"
+    },
+    {
+      "severity": "low",
+      "file": "blog-serverless-postgres-neon-supabase.html",
+      "issue": "long meta description (177)"
+    },
+    {
+      "severity": "low",
+      "file": "blog-vector-database-indexing-hybrid-search.html",
+      "issue": "long meta description (168)"
+    },
+    {
+      "severity": "low",
+      "file": "blog.html",
+      "issue": "long meta description (181)"
+    },
+    {
+      "severity": "low",
+      "file": "blog.html",
+      "issue": "19 images without explicit dimensions"
+    },
+    {
+      "severity": "low",
+      "file": "crm-product.html",
+      "issue": "long meta description (181)"
+    },
+    {
+      "severity": "low",
+      "file": "ecommerce-website-development-delhi.html",
+      "issue": "long meta description (171)"
+    },
+    {
+      "severity": "low",
+      "file": "index.html",
+      "issue": "long meta description (166)"
+    },
+    {
+      "severity": "low",
+      "file": "index.html",
+      "issue": "135 images without explicit dimensions"
+    },
+    {
+      "severity": "low",
+      "file": "portfolio.html",
+      "issue": "3 images without explicit dimensions"
+    },
+    {
+      "severity": "low",
+      "file": "pricing.html",
+      "issue": "long meta description (179)"
+    },
+    {
+      "severity": "low",
+      "file": "services.html",
+      "issue": "long meta description (168)"
+    },
+    {
+      "severity": "low",
+      "file": "website-design-company-gurgaon.html",
+      "issue": "long meta description (167)"
+    },
+    {
+      "severity": "low",
+      "file": "website-design-company-noida.html",
+      "issue": "long meta description (166)"
+    },
+    {
+      "severity": "low",
+      "file": "website-designing-company-in-delhi.html",
+      "issue": "long meta description (200)"
+    },
+    {
+      "severity": "low",
+      "file": "website-redesign-services-delhi.html",
+      "issue": "long meta description (173)"
+    },
+    {
+      "severity": "low",
+      "file": "wordpress-website-development-delhi.html",
+      "issue": "long meta description (175)"
+    }
+  ]
+}

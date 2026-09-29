@@ -2,62 +2,101 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KFQ266Z1Z"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-9KFQ266Z1Z');
-    </script>
+    
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Browser Cache Control to force fresh rendering -->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
+    <!-- CDN caching enabled for Core Web Vitals performance -->
     
     <!-- Primary SEO Meta Tags -->
-    <title>Serverless Postgres in 2026: Database Branching & Scale-to-Zero | Curious Kaizer</title>
-    <meta name="description" content="Explore how decoupling compute from storage in serverless PostgreSQL (Neon, Supabase) enables instant database branching, scale-to-zero efficiency, and zero-downtime migrations.">
-    <meta name="keywords" content="serverless postgres, Neon database, Supabase Postgres 2026, database branching, scale to zero DB, connection pooling Supavisor, cloud database scaling">
+    <title>Serverless Postgres in 2026: Database Branching | Curious Kaizer</title>
+    <meta name="description" content="Explore how decoupling compute from storage in serverless PostgreSQL (Neon, Supabase) enables instant database branching, scale-to-zero efficiency, and...">
     
     <!-- Advanced SEO Meta Tags -->
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     
     <!-- Canonical URL -->
+    <!-- International SEO Hreflang — India, UAE, US, UK, EU, Global -->
+        <!-- International SEO Hreflang — India, UAE, US, UK, EU, Global -->
+    <link rel="alternate" hreflang="en" href="https://www.curiouskaizer.com/blog-serverless-postgres-neon-supabase" />
+    <link rel="alternate" hreflang="en-IN" href="https://www.curiouskaizer.com/blog-serverless-postgres-neon-supabase" />
+    <link rel="alternate" hreflang="en-AE" href="https://www.curiouskaizer.com/blog-serverless-postgres-neon-supabase" />
+    <link rel="alternate" hreflang="en-US" href="https://www.curiouskaizer.com/blog-serverless-postgres-neon-supabase" />
+    <link rel="alternate" hreflang="en-GB" href="https://www.curiouskaizer.com/blog-serverless-postgres-neon-supabase" />
+    <link rel="alternate" hreflang="en-AU" href="https://www.curiouskaizer.com/blog-serverless-postgres-neon-supabase" />
+    <link rel="alternate" hreflang="en-CA" href="https://www.curiouskaizer.com/blog-serverless-postgres-neon-supabase" />
+    <link rel="alternate" hreflang="x-default" href="https://www.curiouskaizer.com/blog-serverless-postgres-neon-supabase" />
     <link rel="canonical" href="https://www.curiouskaizer.com/blog-serverless-postgres-neon-supabase" />
     
     <!-- Schema.org Article Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Serverless Postgres in 2026: Branching, Instant Autoscaling, and Cold-Start Optimization with Neon & Supabase",
-        "description": "Explore how decoupling compute from storage in serverless PostgreSQL (Neon, Supabase) enables instant database branching, scale-to-zero efficiency, and zero-downtime migrations.",
-        "image": "https://www.curiouskaizer.com/images/og-image.jpg",
-        "author": {
-            "@type": "Person",
-            "name": "Jai Goel",
-            "jobTitle": "Founder & Lead Developer",
-            "url": "https://www.curiouskaizer.com"
-        },
-        "publisher": {
-            "sameAs": ["https://yourstory.com/companies/curiouskaizer", "https://clutch.co/profile/curiouskaizer", "https://www.f6s.com/curiouskaizer"],
-            "@type": "Organization",
-            "name": "Curious Kaizer",
-            "url": "https://www.curiouskaizer.com"
-        },
-        "datePublished": "2026-08-05T00:00:00+05:30",
-        "dateModified": "2026-08-05T00:00:00+05:30",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://www.curiouskaizer.com/blog-serverless-postgres-neon-supabase.html"
-        },
-        "articleSection": "Cloud Infrastructure"
-    }
-    </script>
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Serverless Postgres in 2026: Branching, Instant Autoscaling, and Cold-Start Optimization with Neon & Supabase",
+  "description": "Explore how decoupling compute from storage in serverless PostgreSQL (Neon, Supabase) enables instant database branching, scale-to-zero efficiency, and zero-downtime migrations.",
+  "image": "https://www.curiouskaizer.com/images/og-image.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Jai Goel",
+    "jobTitle": "Founder & Lead Developer",
+    "url": "https://www.curiouskaizer.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Curious Kaizer",
+    "url": "https://www.curiouskaizer.com"
+  },
+  "datePublished": "2026-08-05T00:00:00+05:30",
+  "dateModified": "2026-08-05T00:00:00+05:30",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.curiouskaizer.com/blog-serverless-postgres-neon-supabase"
+  },
+  "articleSection": "Cloud Infrastructure"
+}</script>
     
+
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.curiouskaizer.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.curiouskaizer.com/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Serverless Postgres Neon Supabase",
+      "item": "https://www.curiouskaizer.com/blog-serverless-postgres-neon-supabase"
+    }
+  ]
+}</script>
+
+    <!-- JSON-LD Speakable Schema - Voice Search -->
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://www.curiouskaizer.com/blog-serverless-postgres-neon-supabase#webpage",
+  "url": "https://www.curiouskaizer.com/blog-serverless-postgres-neon-supabase",
+  "name": "Serverless Postgres Architecture with Neon vs Supabase: 2026 Comparison | Curious Kaizer",
+  "dateModified": "2026-09-29",
+  "isPartOf": {
+    "@type": "WebSite",
+    "url": "https://www.curiouskaizer.com/"
+  }
+}</script>
+
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -111,6 +150,8 @@
     <meta property="og:image:alt" content="Serverless Postgres in 2026: Database Branching & Scale-to-Zero | Curious Kaizer">
     <meta property="og:site_name" content="Curious Kaizer">
     <meta property="og:locale" content="en_US">
+    <link rel="stylesheet" href="/css/privacy.css?v=20260930">
+    <script src="/js/analytics-tracker.js?v=20260930" defer></script>
 </head>
 <body>
 
@@ -119,7 +160,7 @@
         <nav class="navbar" aria-label="Main navigation">
             <div class="container">
                 <a href="index.html" class="logo">
-                    <img src="images/logo-icon.jpg" alt="Curious Kaizer Logo" class="logo-icon" width="50" height="38">
+                    <img decoding="async" src="images/logo-icon.jpg" alt="Curious Kaizer Logo" class="logo-icon" width="50" height="38">
                     <span class="logo-text">Curious Kaizer</span>
                 </a>
                 <ul class="nav-links">
@@ -220,5 +261,6 @@ jobs:
         </div>
     </footer>
 
+    <script src="/js/cookie-consent.js" defer></script>
 </body>
 </html>

@@ -2,30 +2,31 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KFQ266Z1Z"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-9KFQ266Z1Z');
-    </script>
+    
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Browser Cache Control to force fresh rendering -->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
+    <!-- CDN caching enabled for Core Web Vitals performance -->
     
     <!-- Primary SEO Meta Tags -->
-    <title>Reducing LLM RAG Latency from 8s to 900ms on Serverless Edge Runtimes | Curious Kaizer</title>
+    <title>Reducing LLM RAG Latency from 8s to 900ms on | Curious Kaizer</title>
     <meta name="description" content="A comprehensive technical guide by Jai Goel on optimizing vector database queries, implementing Redis caching on Vercel Edge, and streaming parsed JSON outputs.">
-    <meta name="keywords" content="RAG latency, LLM response speed, pgvector cache, Vercel Edge functions, Gemini streaming JSON, serverless vector search, AI latency optimization">
     
     <!-- Advanced SEO Meta Tags -->
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     
     <!-- Canonical URL -->
+    <!-- International SEO Hreflang — India, UAE, US, UK, EU, Global -->
+        <!-- International SEO Hreflang — India, UAE, US, UK, EU, Global -->
+    <link rel="alternate" hreflang="en" href="https://www.curiouskaizer.com/blog-rag-latency-optimization" />
+    <link rel="alternate" hreflang="en-IN" href="https://www.curiouskaizer.com/blog-rag-latency-optimization" />
+    <link rel="alternate" hreflang="en-AE" href="https://www.curiouskaizer.com/blog-rag-latency-optimization" />
+    <link rel="alternate" hreflang="en-US" href="https://www.curiouskaizer.com/blog-rag-latency-optimization" />
+    <link rel="alternate" hreflang="en-GB" href="https://www.curiouskaizer.com/blog-rag-latency-optimization" />
+    <link rel="alternate" hreflang="en-AU" href="https://www.curiouskaizer.com/blog-rag-latency-optimization" />
+    <link rel="alternate" hreflang="en-CA" href="https://www.curiouskaizer.com/blog-rag-latency-optimization" />
+    <link rel="alternate" hreflang="x-default" href="https://www.curiouskaizer.com/blog-rag-latency-optimization" />
     <link rel="canonical" href="https://www.curiouskaizer.com/blog-rag-latency-optimization" />
     
     <!-- Open Graph / Facebook -->
@@ -64,71 +65,81 @@
     <meta name="apple-mobile-web-app-title" content="Curious Kaizer">
     
     <!-- Schema.org Structured Data for Article -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Reducing LLM RAG Latency from 8s to 900ms on Serverless Edge Runtimes",
-        "description": "A comprehensive technical guide by Jai Goel on optimizing vector database queries, implementing Redis caching on Vercel Edge, and streaming parsed JSON outputs.",
-        "image": "https://www.curiouskaizer.com/images/blog-rag-latency.png",
-        "author": {
-            "@type": "Person",
-            "name": "Jai Goel",
-            "jobTitle": "Founder & Lead Developer",
-            "url": "https://www.curiouskaizer.com",
-                            "sameAs": [
-            "https://clutch.co/profile/curiouskaizer",
-            "https://yourstory.com/companies/curiouskaizer",
-            "https://www.google.com/search?q=curiouskaizer",
-            "https://www.justdial.com/Delhi/Curious-Kaizer",
-            "https://www.indiamart.com/curious-kaizer/",
-            "https://www.sulekha.com/curious-kaizer-delhi",
-            "https://www.tradeindia.com/Seller-Curious-Kaizer/",
-            "https://www.linkedin.com/company/curious-kaizer/",
-            "https://www.linkedin.com/in/jai-g-5a2708218/",
-            "https://www.instagram.com/curiouskaizer/",
-            "https://www.f6s.com/curiouskaizer",
-            "https://www.f6s.com/member/jai-goel",
-            "https://github.com/luciferlupin"
-        ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Curious Kaizer",
-            "url": "https://www.curiouskaizer.com",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.curiouskaizer.com/images/logo.jpg",
-                "width": 200,
-                "height": 60
-            },
-                            "sameAs": [
-            "https://clutch.co/profile/curiouskaizer",
-            "https://yourstory.com/companies/curiouskaizer",
-            "https://www.google.com/search?q=curiouskaizer",
-            "https://www.justdial.com/Delhi/Curious-Kaizer",
-            "https://www.indiamart.com/curious-kaizer/",
-            "https://www.sulekha.com/curious-kaizer-delhi",
-            "https://www.tradeindia.com/Seller-Curious-Kaizer/",
-            "https://www.linkedin.com/company/curious-kaizer/",
-            "https://www.linkedin.com/in/jai-g-5a2708218/",
-            "https://www.instagram.com/curiouskaizer/",
-            "https://www.f6s.com/curiouskaizer",
-            "https://www.f6s.com/member/jai-goel",
-            "https://github.com/luciferlupin"
-        ]
-        },
-        "datePublished": "2026-07-18T00:00:00+05:30",
-        "dateModified": "2026-07-18T00:00:00+05:30",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://www.curiouskaizer.com/blog-rag-latency-optimization.html"
-        },
-        "articleSection": "AI & Automation",
-        "keywords": "RAG latency, LLM response speed, pgvector cache, Vercel Edge functions, Gemini streaming JSON, serverless vector search, AI latency optimization"
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Reducing LLM RAG Latency from 8s to 900ms on Serverless Edge Runtimes",
+  "description": "A comprehensive technical guide by Jai Goel on optimizing vector database queries, implementing Redis caching on Vercel Edge, and streaming parsed JSON outputs.",
+  "image": "https://www.curiouskaizer.com/images/blog-rag-latency.png",
+  "author": {
+    "@type": "Person",
+    "name": "Jai Goel",
+    "jobTitle": "Founder & Lead Developer",
+    "url": "https://www.curiouskaizer.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Curious Kaizer",
+    "url": "https://www.curiouskaizer.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.curiouskaizer.com/images/logo.jpg",
+      "width": 200,
+      "height": 60
     }
-    </script>
+  },
+  "datePublished": "2026-07-18T00:00:00+05:30",
+  "dateModified": "2026-07-18T00:00:00+05:30",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.curiouskaizer.com/blog-rag-latency-optimization"
+  },
+  "articleSection": "AI & Automation",
+  "wordCount": 2500,
+  "keywords": "RAG latency, LLM response speed, pgvector cache, Vercel Edge functions, Gemini streaming JSON, serverless vector search, AI latency optimization"
+}</script>
     
+
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.curiouskaizer.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.curiouskaizer.com/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "RAG Latency Optimization",
+      "item": "https://www.curiouskaizer.com/blog-rag-latency-optimization"
+    }
+  ]
+}</script>
+
+    <!-- JSON-LD Speakable Schema - Voice Search -->
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://www.curiouskaizer.com/blog-rag-latency-optimization#webpage",
+  "url": "https://www.curiouskaizer.com/blog-rag-latency-optimization",
+  "name": "RAG Latency Optimization: Retrieval Pipeline Engineering for Sub-100ms Responses | Curious Kaizer",
+  "dateModified": "2026-09-29",
+  "isPartOf": {
+    "@type": "WebSite",
+    "url": "https://www.curiouskaizer.com/"
+  }
+}</script>
+
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -392,14 +403,16 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="/css/privacy.css?v=20260930">
+    <script src="/js/analytics-tracker.js?v=20260930" defer></script>
 </head>
-<body itemscope itemtype="https://schema.org/BlogPosting">
+<body itemtype="https://schema.org/BlogPosting">
     <!-- Navigation Header -->
     <header class="site-header">
-    <nav class="navbar" itemscope itemtype="https://schema.org/SiteNavigationElement" aria-label="Main navigation">
+    <nav class="navbar" itemtype="https://schema.org/SiteNavigationElement" aria-label="Main navigation">
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="images/logo-icon.jpg" alt="Curious Kaizer Logo" class="logo-icon" width="50" height="38">
+                <img decoding="async" src="images/logo-icon.jpg" alt="Curious Kaizer Logo" class="logo-icon" width="50" height="38">
                 <span class="logo-text">Curious Kaizer</span>
             </a>
             <ul class="nav-links" id="navLinks">
@@ -437,7 +450,7 @@
             <h1 itemprop="headline">Reducing LLM RAG Latency from 8s to 900ms on Serverless Edge Runtimes</h1>
             
             <div class="article-meta-bar">
-                <span itemprop="author" itemscope itemtype="https://schema.org/Person"><strong itemprop="name">Jai Goel</strong></span>
+                <span itemprop="author" itemtype="https://schema.org/Person"><strong itemprop="name">Jai Goel</strong></span>
                 <span>•</span>
                 <time datetime="2026-07-18" itemprop="datePublished">July 18, 2026</time>
                 <span>•</span>
@@ -562,17 +575,17 @@ export default async function handler(req) {
                         <h3>Related Articles</h3>
                         <div class="related-articles-grid">
                             <a href="blog-edge-ai-inference.html" class="related-article-card">
-                                <img src="images/blog-edge-ai.png" alt="Edge AI Inference">
+                                <img decoding="async" srcset="/images/optimized/blog-edge-ai-640.webp 640w, /images/optimized/blog-edge-ai-960.webp 959w, /images/optimized/blog-edge-ai-1024.webp 1024w" sizes="(max-width: 760px) 100vw, 60vw" width="1024" height="682" src="/images/optimized/blog-edge-ai-1024.webp" alt="Edge AI Inference">
                                 <h4>AI Inference at the Edge: Running LLMs in Under 50ms Globally</h4>
                                 <p>Learn how edge AI inference delivers real-time responses for content moderation, recommendations, and fraud detection at 50ms.</p>
                             </a>
                             <a href="blog-inference-compute-scaling.html" class="related-article-card">
-                                <img src="images/blog-inference-scaling.png" alt="Inference Compute Scaling">
+                                <img decoding="async" srcset="/images/optimized/blog-inference-scaling-640.webp 640w, /images/optimized/blog-inference-scaling-960.webp 959w, /images/optimized/blog-inference-scaling-1024.webp 1024w" sizes="(max-width: 760px) 100vw, 60vw" width="1024" height="682" src="/images/optimized/blog-inference-scaling-1024.webp" alt="Inference Compute Scaling">
                                 <h4>Scaling Inference-Time Compute: How Search and RL are Reshaping LLM Performance</h4>
                                 <p>A comprehensive guide on scaling inference-time compute using Monte Carlo Tree Search, Best-of-N sampling, and Reinforcement Learning.</p>
                             </a>
                             <a href="blog-database-normalization.html" class="related-article-card">
-                                <img src="images/blog-database-schema.png" alt="Database Schema Normalization">
+                                <img decoding="async" srcset="/images/optimized/blog-database-schema-640.webp 640w, /images/optimized/blog-database-schema-960.webp 959w, /images/optimized/blog-database-schema-1024.webp 1024w" sizes="(max-width: 760px) 100vw, 60vw" width="1024" height="682" src="/images/optimized/blog-database-schema-1024.webp" alt="Database Schema Normalization">
                                 <h4>Optimizing Database Schema to Reduce Supabase Storage by 80%</h4>
                                 <p>Technical guide on database normalization in PostgreSQL & Supabase, structuring sessions, and solving RLS insertion violations.</p>
                             </a>
@@ -602,7 +615,7 @@ export default async function handler(req) {
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="index.html" class="footer-logo-link">
-                        <img src="images/logo.jpg" alt="Curious Kaizer Logo" class="footer-logo-img" width="72" height="72" loading="lazy" decoding="async">
+                        <img srcset="/images/optimized/logo-640.webp 640w, /images/optimized/logo-960.webp 960w, /images/optimized/logo-1024.webp 1024w" sizes="(max-width: 760px) 100vw, 60vw" src="/images/optimized/logo-1024.webp" alt="Curious Kaizer Logo" class="footer-logo-img" width="72" height="72" loading="lazy" decoding="async">
                     </a>
                     <p class="subtitle" style="margin-top: 0.5rem;">Where Innovation Meets Digital Excellence</p>
                     <p class="tagline">
@@ -679,6 +692,16 @@ export default async function handler(req) {
 
     <!-- Scripts -->
     <script src="js/scripts.js?v=20260820_fresh" defer></script>
-    <script src="js/analytics-tracker.js?v=20260820_fresh" defer></script>
+    
+<section style="padding:2rem;background:#f8fafc;border-top:1px solid #e5e7eb;margin-top:3rem">
+            <div style="max-width:800px;margin:0 auto">
+                <p style="font-size:.9rem;color:#64748b;margin:0 0 .8rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;">Build AI Systems with Curious Kaizer</p>
+                <div style="display:flex;flex-wrap:wrap;gap:.8rem">
+                    <a href="/ai-automation-services" style="background:#eff6ff;color:#2563eb;border:1px solid #bfdbfe;border-radius:8px;padding:6px 14px;text-decoration:none;font-size:.88rem;font-weight:600">AI Automation Services →</a>
+                    <a href="/contact" style="background:#2563eb;color:#fff;border-radius:8px;padding:6px 14px;text-decoration:none;font-size:.88rem;font-weight:600">Free Consultation →</a>
+                </div>
+            </div>
+        </section>
+    <script src="/js/cookie-consent.js" defer></script>
 </body>
 </html>

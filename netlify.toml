@@ -1,53 +1,177 @@
 [[redirects]]
+  from = "/server.py"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/server.log"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/*.sql"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/*.pem"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/design-qa.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/design-reference/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
   from = "/about-us"
   to = "/about"
-  status = 200
+  status = 301
 
 [[redirects]]
   from = "/company"
   to = "/about"
-  status = 200
+  status = 301
 
 [[redirects]]
   from = "/team"
   to = "/about"
-  status = 200
+  status = 301
 
 [[redirects]]
   from = "/contact-us"
   to = "/contact"
-  status = 200
+  status = 301
 
 [[redirects]]
   from = "/work"
   to = "/portfolio"
-  status = 200
+  status = 301
 
 [[redirects]]
   from = "/case-studies"
   to = "/portfolio"
-  status = 200
+  status = 301
 
+# .html → clean URL redirects (prevent duplicate content)
+[[redirects]]
+  from = "/services.html"
+  to = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/portfolio.html"
+  to = "/portfolio"
+  status = 301
+
+[[redirects]]
+  from = "/pricing.html"
+  to = "/pricing"
+  status = 301
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact"
+  status = 301
+
+[[redirects]]
+  from = "/about.html"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/blog.html"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/crm-product.html"
+  to = "/crm-product"
+  status = 301
+
+[[redirects]]
+  from = "/website-designing-company-in-delhi.html"
+  to = "/website-designing-company-in-delhi"
+  status = 301
+
+[[redirects]]
+  from = "/ecommerce-website-development-delhi.html"
+  to = "/ecommerce-website-development-delhi"
+  status = 301
+
+[[redirects]]
+  from = "/wordpress-website-development-delhi.html"
+  to = "/wordpress-website-development-delhi"
+  status = 301
+
+[[redirects]]
+  from = "/website-redesign-services-delhi.html"
+  to = "/website-redesign-services-delhi"
+  status = 301
+
+[[redirects]]
+  from = "/website-design-cost-calculator.html"
+  to = "/website-design-cost-calculator"
+  status = 301
+
+[[redirects]]
+  from = "/website-designing-company-south-delhi.html"
+  to = "/website-designing-company-south-delhi"
+  status = 301
+
+[[redirects]]
+  from = "/website-design-company-noida.html"
+  to = "/website-design-company-noida"
+  status = 301
+
+[[redirects]]
+  from = "/website-design-company-gurgaon.html"
+  to = "/website-design-company-gurgaon"
+  status = 301
+
+# Global security & SEO headers
 [[headers]]
   for = "/*"
   [headers.values]
     Link = "<https://www.curiouskaizer.com/sitemap.xml>; rel=\"sitemap\""
-    X-Robots-Tag = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "SAMEORIGIN"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    Strict-Transport-Security = "max-age=31536000"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    X-Permitted-Cross-Domain-Policies = "none"
+    Cross-Origin-Opener-Policy = "same-origin-allow-popups"
 
+# HTML pages - CDN edge cache 1hr, stale-while-revalidate 24hr (CRITICAL for Core Web Vitals)
 [[headers]]
   for = "/"
   [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
+    Cache-Control = "public, s-maxage=3600, stale-while-revalidate=86400"
 
 [[headers]]
   for = "/*.html"
   [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
+    Cache-Control = "public, s-maxage=3600, stale-while-revalidate=86400"
 
+# Blog posts - cache 24hr, stale-while-revalidate 7 days
+[[headers]]
+  for = "/blog-*"
+  [headers.values]
+    Cache-Control = "public, s-maxage=86400, stale-while-revalidate=604800"
+
+# CSS & JS - immutable, 1 year (versioned with ?v= query param)
 [[headers]]
   for = "/css/*"
   [headers.values]
@@ -58,7 +182,66 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
+# Images - cache 30 days
 [[headers]]
   for = "/images/*"
   [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
+    Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"
+
+# Videos - cache 7 days
+[[headers]]
+  for = "/videos/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
+
+# Static assets - cache 7 days
+[[headers]]
+  for = "/(favicon.ico|apple-touch-icon.png|favicon-*.png|site.webmanifest)"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# Sitemap, robots, llms.txt - cache 1hr
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Cache-Control = "public, s-maxage=3600"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Cache-Control = "public, s-maxage=86400"
+
+[[headers]]
+  for = "/llms.txt"
+  [headers.values]
+    Cache-Control = "public, s-maxage=3600"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "base-uri 'self'; object-src 'none'; frame-ancestors 'self'"
+
+[[headers]]
+  for = "/analytics"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, nosnippet"
+
+[[headers]]
+  for = "/analytics.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, nosnippet"
+
+[[headers]]
+  for = "/analytics-deploy/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, nosnippet"
+
+[[headers]]
+  for = "/404"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, nosnippet"
+
+[[headers]]
+  for = "/404.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, nosnippet"

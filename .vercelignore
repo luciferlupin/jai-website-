@@ -1,0 +1,17 @@
+# Local development and operational files must never be deployed publicly.
+key.pem
+cert.pem
+server.py
+server.log
+*.sql
+design-qa.md
+design-reference/
+reports/
+scripts/
+.git/
+.DS_Store
+data/
+analytics.html
+analytics-deploy/
+.antigravity/
+.agents/

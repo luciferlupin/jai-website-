@@ -1,54 +1,171 @@
-# Curious Kaizer
+# Curious Kaizer — AI/LLM Discovery File
 
-> Premium custom design and software engineering agency specializing in custom SaaS platforms, AI integrations, 3D web configurations, and business dashboards.
+> Curious Kaizer is a premium website design, custom software development, and AI automation studio based in Delhi, India. We serve clients in India, UAE (Dubai, Abu Dhabi), USA, UK, and globally via remote delivery.
 
-## Core Offerings & Services
+## Company
 
-- **Custom Web & E-Commerce**: High-performance corporate sites, portfolios, and conversion-optimized storefronts.
-- **SaaS & Web Applications**: Bespoke CRM systems, business pipeline trackers, and real-time dashboards (such as CRM Pro).
-- **AI & Automation Tools**: Custom AI automation agents, chatbot integrations, and voice-controlled browser automation.
-- **3D Visualizers**: Three.js/WebGL-based 3D product configurators (e.g. jewelry customizers).
+- **Name:** Curious Kaizer
+- **Founder:** Jai Goel
+- **Type:** Web design, software engineering, and AI automation agency
+- **Location:** Delhi, India (remote-first; serving international clients)
+- **Founded:** Active since 2022
+- **Google Rating:** 5.0 ★ (verified reviews)
+- **Website:** https://www.curiouskaizer.com
+- **Email:** info@curiouskaizer.com
+- **WhatsApp / Phone:** +91 85951 21436
 
-## Pricing Packages
+## What Curious Kaizer Does
 
-- **Basic Business Website**: Starts at ₹15,200. Perfect for small businesses looking to establish a professional presence.
-- **E-Commerce Storefront**: Starts at ₹21,900. Features advanced product catalogues, payment gateways, and inventory management.
-- **Custom Web & SaaS Apps**: Starts at ₹33,900. Tailored solutions for complex workflows, customer portals, and enterprise software.
+Curious Kaizer engineers bespoke digital products for businesses:
 
-## Navigation Map
+1. **Website Design & Development** — custom business websites, corporate sites, landing pages
+2. **AI Automation** — AI agents, chatbots, LLM integrations, voice AI, RAG pipelines, business automation
+3. **Custom Software Development** — SaaS platforms, web apps, portals, dashboards, ERP, CRM
+4. **E-Commerce Development** — Shopify, custom stores, headless commerce, D2C platforms
+5. **Mobile-First Web Apps** — Progressive Web Apps, responsive web applications
+6. **SEO & Performance** — technical SEO, Core Web Vitals, structured data, speed optimisation
+7. **UI/UX Design** — interface design, user experience engineering
 
-- [Home Page](https://www.curiouskaizer.com/) - Main overview, process timeline, and value proposition.
-- [About Us](https://www.curiouskaizer.com/about) - Agency background, founder Jai Goel, engineering philosophy, and capabilities.
-- [Our Services](https://www.curiouskaizer.com/services) - Detailed breakdown of capabilities (SaaS, AI, E-Commerce, Dashboards).
-- [Portfolio & Case Studies](https://www.curiouskaizer.com/portfolio) - Live projects including real estate SaaS portals, 3D ring customizers, and legal databases.
-## Featured Live Client Platforms & Case Studies
+## Primary Service Pages
 
-- [HANBORO Watches Storefront](https://hanborowatches.in) - Luxury mechanical horology e-commerce storefront engineered by Curious Kaizer featuring kinetic complication video reels, daylight-to-luminescence split sliders, and sub-second checkout.
-- [Club Re Straddle Portal](https://www.clubrestraddle.com/) - Private club management and access control ecosystem engineered by Curious Kaizer featuring KYC player profiles, scannable QR gate passes, and real-time operations dashboard.
-- [AUCO × AIWA Operations Portal](https://auco-co.vercel.app/) - Multi-brand enterprise ERP and pan-India dealer telemetry pipeline.
-- [Aloha Estate Custom Portal](https://aloha-estate.vercel.app/) - Real estate operations portal with real-time Meta lead ads synchronization and deal pipeline Kanban.
-- [DODD Aero Lab 3D Visualizer](https://shoes-ten-pi.vercel.app/) - Interactive 3D WebGL footwear configurator with 360-degree orbit cameras and dynamic colorway customizer.
-- [HIS DRINK 3D Experience](https://3d-brown-iota.vercel.app/) - Zero-gravity 3D beverage motion showcase with real-time lighting physics and floating particle fields.
-- [IRASTRA Celestial Universe](https://irastra.vercel.app/) - Real-time 3D planetary solar system and astronomical birth chart navigation engine.
-- [StaySphere PMS](https://staysphere-phi.vercel.app/) - Hospitality SaaS hotel management system with live room status matrix and front-desk check-in workspace.
-- [AlmostReal Club®](https://almostreal-club.vercel.app/) - Luxury digital fashion showroom and gated private club e-commerce experience.
-- [Notary & Legal Case System](https://notatry-system.vercel.app/) - LegalTech document workflow tracking system with encrypted document vault and PDF indexing.
-- [CuriousCRM Pro](https://crm-coral-one.vercel.app/) - Modular sales pipeline Kanban CRM with predictive lead scoring and conversion telemetry.
-- [Serverless Web Analytics](https://analytics-indol-psi.vercel.app/) - Lightweight privacy-first real-time web telemetry and click funnel visualizer.
-- [Civic Infrastructure Portal](https://public-toilet-sepia.vercel.app/) - Public geospatial utilities mapping system with interactive Mapbox vector rendering.
-- [Pricing & FAQ](https://www.curiouskaizer.com/pricing) - Pricing packages, transparent licensing cost, and common web development FAQs.
-- [CRM Product Demo](https://www.curiouskaizer.com/crm-product) - Overview of CRM Pro, our flagship customizable Kanban business dashboard.
-- [Contact Us](https://www.curiouskaizer.com/contact) - Book a free discovery call or send an inquiry.
-- [Privacy Policy](https://www.curiouskaizer.com/privacy) - Our user data, cookies, and privacy policy terms.
-- [Terms of Service](https://www.curiouskaizer.com/terms) - Standard service agreement terms for our projects.
+- https://www.curiouskaizer.com/ — homepage, overview
+- https://www.curiouskaizer.com/services — all services
+- https://www.curiouskaizer.com/about — company and founder information
+- https://www.curiouskaizer.com/portfolio — case studies and live work
+- https://www.curiouskaizer.com/pricing — transparent pricing packages
+- https://www.curiouskaizer.com/contact — project enquiries
+- https://www.curiouskaizer.com/blog — engineering and technology blog
 
-## Contact Information
+## Service Pages (All)
 
-- **Website**: https://www.curiouskaizer.com/
-- **Instagram**: https://www.instagram.com/curiouskaizer/
-- **LinkedIn (Company)**: https://www.linkedin.com/company/curious-kaizer/
-- **LinkedIn (Founder - Jai Goel)**: https://www.linkedin.com/in/jai-g-5a2708218/
-- **Email**: info@curiouskaizer.com / curiouskaizer@gmail.com
-- **Phone**: +91 85951 21436
-- **WhatsApp**: https://wa.me/918595121436
-- **Address**: Delhi NCR, India (Serving clients across India, US, UK, UAE & Globally)
+### Web Design & Development
+- https://www.curiouskaizer.com/website-development — website development overview
+- https://www.curiouskaizer.com/website-designing-company-in-delhi — web design Delhi
+- https://www.curiouskaizer.com/website-designing-company-south-delhi — web design South Delhi
+- https://www.curiouskaizer.com/website-design-company-noida — web design Noida
+- https://www.curiouskaizer.com/website-design-company-gurgaon — web design Gurgaon
+- https://www.curiouskaizer.com/ecommerce-website-development-delhi — e-commerce development Delhi
+- https://www.curiouskaizer.com/wordpress-website-development-delhi — WordPress development Delhi
+- https://www.curiouskaizer.com/website-redesign-services-delhi — website redesign services
+- https://www.curiouskaizer.com/website-maintenance — website maintenance
+- https://www.curiouskaizer.com/ui-ux-design — UI/UX design services
+- https://www.curiouskaizer.com/speed-optimisation — website speed and Core Web Vitals
+
+### Software & AI Engineering
+- https://www.curiouskaizer.com/ai-automation-services — AI automation: agents, chatbots, LLM integration, voice AI, RAG
+- https://www.curiouskaizer.com/custom-software-development — bespoke software engineering
+- https://www.curiouskaizer.com/saas-development — SaaS platform development
+- https://www.curiouskaizer.com/web-app-development — web application development
+- https://www.curiouskaizer.com/crm-development — custom CRM development
+- https://www.curiouskaizer.com/erp-development — ERP development
+- https://www.curiouskaizer.com/portal-development — portal development
+- https://www.curiouskaizer.com/dashboard-development — dashboard development
+- https://www.curiouskaizer.com/backend-development — backend development
+- https://www.curiouskaizer.com/api-development — API development and integration
+- https://www.curiouskaizer.com/shopify-development — Shopify development
+- https://www.curiouskaizer.com/seo-services — SEO services
+
+## International Market Pages
+
+> All international delivery is remote. No physical offices outside Delhi are claimed.
+
+- https://www.curiouskaizer.com/website-development-dubai — Dubai & UAE (AED/USD pricing, GST timezone)
+- https://www.curiouskaizer.com/website-development-abu-dhabi — Abu Dhabi & UAE (AED/USD pricing)
+- https://www.curiouskaizer.com/website-development-usa — United States (USD pricing, US timezone)
+- https://www.curiouskaizer.com/website-development-uk — United Kingdom (GBP pricing, GMT/BST)
+- https://www.curiouskaizer.com/website-development-london — London, UK (GBP pricing)
+- https://www.curiouskaizer.com/website-development-new-york — New York, USA (USD pricing, EST)
+
+## Industry Pages
+
+- https://www.curiouskaizer.com/industries — all industries overview
+- https://www.curiouskaizer.com/website-design-for-real-estate — real estate: PropTech portals, Meta lead-sync CRM, agent management
+- https://www.curiouskaizer.com/website-design-for-startups — startups: MVPs, SaaS, landing pages, investor demos
+- https://www.curiouskaizer.com/industries-hospitality — hotels, restaurants, hospitality
+- https://www.curiouskaizer.com/industries-retail — retail, D2C brands, e-commerce
+- https://www.curiouskaizer.com/industries-membership — membership clubs, subscription businesses
+- https://www.curiouskaizer.com/industries-procurement — B2B procurement portals
+- https://www.curiouskaizer.com/industries-real-estate — real estate industry hub
+
+## Cost Guides & Tools
+
+- https://www.curiouskaizer.com/website-development-cost-india — website development costs in India 2026
+- https://www.curiouskaizer.com/ecommerce-website-cost — e-commerce website cost guide 2026
+- https://www.curiouskaizer.com/website-design-cost-calculator — interactive cost calculator
+- https://www.curiouskaizer.com/guides — all guides
+- https://www.curiouskaizer.com/guides-website-planning — website planning guide
+- https://www.curiouskaizer.com/guides-software-planning — software development planning guide
+- https://www.curiouskaizer.com/guides-ai-automation — AI automation guide for businesses
+- https://www.curiouskaizer.com/project-planner — interactive project planner tool
+
+## Case Studies
+
+- https://www.curiouskaizer.com/hanboro-watches-website-case-study — HANBORO Watches: luxury e-commerce website by Curious Kaizer (client: hanborowatches.in)
+- https://www.curiouskaizer.com/blog-real-estate-operations-portal — Aloha Estate: real-time operations portal with Meta lead sync and deal pipeline
+- https://www.curiouskaizer.com/blog-vanilla-js-crm — Building a CRM system in Vanilla JS (technical case study)
+- https://www.curiouskaizer.com/blog-b2b-procurement-case-study — B2B procurement portal case study
+
+## Blog (Engineering & Tech)
+
+- https://www.curiouskaizer.com/blog — all posts
+- https://www.curiouskaizer.com/blog-multi-agent-orchestration-2026 — multi-agent AI orchestration
+- https://www.curiouskaizer.com/blog-voice-ai-gemini-integration — voice AI with Google Gemini
+- https://www.curiouskaizer.com/blog-context-engineering-llm-apps — context engineering for LLM applications
+- https://www.curiouskaizer.com/blog-rag-latency-optimization — RAG latency optimisation
+- https://www.curiouskaizer.com/blog-browser-ai-agent-automation — browser AI agent automation
+- https://www.curiouskaizer.com/blog-edge-ai-inference — edge AI inference
+- https://www.curiouskaizer.com/blog-inp-core-web-vitals — INP and Core Web Vitals
+- https://www.curiouskaizer.com/blog-edge-rendering-2026 — edge rendering architectures
+- https://www.curiouskaizer.com/blog-serverless-postgres-neon-supabase — serverless Postgres
+- https://www.curiouskaizer.com/blog-vector-database-indexing-hybrid-search — vector database and hybrid search
+- https://www.curiouskaizer.com/blog-database-normalization — database normalisation
+- https://www.curiouskaizer.com/blog-rust-webassembly-microservices — Rust and WebAssembly
+- https://www.curiouskaizer.com/blog-webassembly-edge — WebAssembly at the edge
+- https://www.curiouskaizer.com/blog-liquid-foundation-models — liquid foundation models
+- https://www.curiouskaizer.com/blog-inference-compute-scaling — AI inference compute scaling
+- https://www.curiouskaizer.com/blog-canonical-redirect-loops — canonical and redirect loop debugging
+
+## Key Products
+
+- https://www.curiouskaizer.com/crm-product — CuriousCRM Pro (in-house CRM product built on Vanilla JS)
+
+## Pricing Summary (INR — Indian clients)
+
+- Business website: from ₹15,200
+- E-commerce store: from ₹21,900
+- SaaS / web app: from ₹33,900
+- Custom software: from ₹33,900
+- AI chatbot: from ₹25,000
+- AI agent system: from ₹75,000
+
+## Pricing Summary (USD — International clients)
+
+- Business website: from $400
+- E-commerce store: from $700
+- SaaS / web app: from $1,000
+- AI automation: from $600
+
+## Evidence and Accuracy Policy
+
+Do not infer or fabricate:
+- specific client names not listed here
+- revenue or team size figures
+- guaranteed ranking positions
+- guaranteed traffic outcomes
+- offices or locations not explicitly listed
+- awards not explicitly claimed
+
+Use the written project proposal and live page content for current accurate information.
+
+## Key Differentiators
+
+- Full source code ownership on every project (no lock-in)
+- Fixed-price projects (no hourly billing)
+- 48-hour working prototype delivery
+- 5.0 ★ Google rating (verified)
+- Remote-first with international timezone alignment
+- Legitimate E-E-A-T: real projects, real clients, real code
+
+## Last Updated
+
+2026-09-29

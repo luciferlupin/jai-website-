@@ -1,118 +1,12 @@
-# Robots.txt for Curious Kaizer (https://www.curiouskaizer.com)
-# Enterprise Grade Configuration for Maximum Search Engine & AI Crawler Dominance
-# Updated: 2026-08-13
-
+# Public pages and rendering assets are crawlable for all crawlers.
+# Private files are excluded from deployment; robots.txt is not access control.
 User-agent: *
 Allow: /
-Allow: /css/
-Allow: /js/
-Allow: /images/
-Allow: /videos/
-Allow: /blog-*
-Allow: /site.webmanifest
-Allow: /sitemap.xml
-Allow: /llms.txt
-Allow: /.well-known/
-
-# Disallow Internal & Private Utility Files
-Disallow: /analytics
-Disallow: /analytics.html
+Disallow: /api/
+Disallow: /admin/
 Disallow: /analytics-deploy/
-Disallow: /googledccfa22a0725d83d.html
-Disallow: /server.log
-Disallow: /server.py
-Disallow: /*.sql$
-Disallow: /*.pem$
-
-# Major Search Engine Crawlers
-User-agent: Googlebot
-Allow: /
-
-User-agent: Googlebot-Image
-Allow: /images/
-Allow: /
-
-User-agent: Googlebot-Mobile
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-User-agent: Applebot
-Allow: /
-
-User-agent: YandexBot
-Allow: /
-
-User-agent: Baiduspider
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-# Social Media & OpenGraph Preview Crawlers
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
-
-User-agent: WhatsApp
-Allow: /
-
-User-agent: TelegramBot
-Allow: /
-
-User-agent: Discordbot
-Allow: /
-
-# AI Crawlers & LLM Indexers
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Amazonbot
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-User-agent: meta-externalagent
-Allow: /
-
-# Directory & SEO Audit Crawlers
-User-agent: ClutchBot
-Allow: /
-
-User-agent: SemrushBot
-Allow: /
-
-User-agent: AhrefsBot
-Allow: /
-
-User-agent: Screaming Frog SEO Spider
-Allow: /
-
-# Host & Sitemap Directives
-Host: https://www.curiouskaizer.com
+Disallow: /reports/
+Disallow: /scripts/
+Disallow: /data/
+Disallow: /design-reference/
 Sitemap: https://www.curiouskaizer.com/sitemap.xml

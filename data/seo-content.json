@@ -1,0 +1,1059 @@
+[
+  {
+    "slug": "crm-development",
+    "title": "Custom CRM Development",
+    "description": "Plan a CRM around lead ownership, sales stages, follow-ups and reporting. Explore migration, permissions and integration requirements with Curious Kaizer.",
+    "intro": "A custom CRM connects the way your team wins and retains customers with the records it needs to do that work. Curious Kaizer develops CRM workflows around lead ownership, sales stages, follow-ups and reporting. Start with the sales process and the gaps in your current tools before deciding whether a custom build is justified.",
+    "sections": [
+      {
+        "heading": "When a custom CRM makes sense",
+        "body": "A packaged CRM is usually the first option to evaluate when standard pipelines, email activity and contact management cover the requirement. Custom development becomes useful when approvals, pricing rules, account hierarchies or operational handoffs repeatedly force staff into spreadsheets. Document those exceptions with real examples. A custom interface alone does not justify rebuilding dependable commodity features."
+      },
+      {
+        "heading": "From incoming lead to account handoff",
+        "body": "Map each entry point: website enquiry, approved WhatsApp integration, referral or manual entry. Decide how leads are deduplicated, assigned and accepted. Define the evidence needed to move a deal between stages, when a stalled deal needs attention, and what an operations team receives after a sale. Managers need queue health and conversion definitions; representatives need a focused next-action view."
+      },
+      {
+        "heading": "Data migration and integrations",
+        "body": "Inventory contacts, companies, deals, notes and attachments separately. Establish which system owns each field before connecting email, billing or messaging providers. Import a small sample, reconcile counts and preserve source identifiers before a full cutover. WhatsApp messaging requires an eligible business account, approved provider configuration and the relevant messaging permissions. Existing contact details do not automatically authorize marketing messages."
+      },
+      {
+        "heading": "Permissions, automation and acceptance",
+        "body": "Specify who can export customer records, change deal value or reassign an account. Test those permissions at the API and database layers. Automations need visible ownership, retry limits and a manual recovery route. Acceptance should include duplicate imports, disabled users, failed message delivery and restoring a backup. Reports must use agreed definitions rather than attractive but ambiguous totals."
+      },
+      {
+        "heading": "Explore the product before scoping the system",
+        "body": "The CuriousCRM product page provides a starting point for discussing pipeline and dashboard requirements. A product demonstration is not evidence that every requested integration is already available. Bring your stage definitions, anonymized record samples, user roles and reporting examples to the scope review. We can then distinguish reusable patterns from work specific to your organization."
+      }
+    ],
+    "related": [
+      "crm-product",
+      "ai-automation-services",
+      "dashboard-development",
+      "custom-software-development"
+    ],
+    "kind": "service",
+    "market": "global",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "custom-software-development",
+    "title": "Custom Software Development",
+    "description": "Scope business software around real workflows, permissions, integrations and ownership. Compare build versus buy and plan a staged delivery.",
+    "intro": "Custom software is appropriate when the rules that make your business work cannot be handled reliably by existing products. Curious Kaizer helps turn operational requirements into a scoped application, with clear data ownership, user permissions, integrations and a practical handover plan.",
+    "sections": [
+      {
+        "heading": "Decide what should be built",
+        "body": "List the costly workarounds in your current process and test whether configuration or integration can remove them. Buying an established product may be more economical than owning a new system. Build only the parts that support a distinctive workflow or solve a verified limitation. Include hosting, support, security updates and staff training in the comparison, not just the first development quote."
+      },
+      {
+        "heading": "Map the operation before screens",
+        "body": "Start with actors, records and state changes. For a procurement workflow, a request, approval, supplier response and purchase order are different records with different permissions. Specify who can change each state and what evidence is retained. Wireframes then show the decisions people need to make, rather than mirroring every database field onto one crowded dashboard."
+      },
+      {
+        "heading": "Architecture and integrations",
+        "body": "Separate the application interface from authoritative business rules. Identify existing identity, accounting and inventory systems and decide which system owns each record. Design retries and reconciliation for integrations that fail or send duplicate events. Choose a modular deployment that the team can operate; distributed services add coordination costs and should solve a demonstrated scaling or ownership problem."
+      },
+      {
+        "heading": "Delivery and acceptance",
+        "body": "A first release should complete one useful workflow from start to finish. Review an interactive prototype, test realistic permissions and validate a small data import before adding more modules. Define acceptance around observable outcomes: correct totals, permitted transitions, recoverable failures and accessible interaction. Performance targets must be agreed and measured with the expected workload."
+      },
+      {
+        "heading": "Ownership beyond launch",
+        "body": "The handover should identify repositories, deployment accounts, database backups, credentials, recurring supplier costs and responsibility for incidents. Agree what support covers and how changes are estimated. Portfolio examples can help explain interface and workflow patterns, but a new implementation needs its own validation. Request a scope discussion with process notes and an anonymized example of the records involved."
+      }
+    ],
+    "related": [
+      "portfolio",
+      "erp-development",
+      "portal-development",
+      "api-development"
+    ],
+    "kind": "service",
+    "market": "global",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "saas-development",
+    "title": "SaaS Product Development",
+    "description": "Plan a SaaS MVP with tenant isolation, subscriptions, permissions and operations. Define a useful first release and test the risks before scaling.",
+    "intro": "A SaaS product combines a repeatable customer workflow with the infrastructure needed to operate it for multiple organizations. Curious Kaizer scopes SaaS applications from the first useful customer journey through tenant access, billing integration, observability and handover.",
+    "sections": [
+      {
+        "heading": "Find the smallest useful release",
+        "body": "An MVP should let a defined customer complete a valuable task and understand the result. Separate essential workflow steps from reporting, customization and administrator conveniences. Document the assumptions a pilot needs to test, including onboarding effort and willingness to use the product. Avoid building a large settings system before there is evidence that customers need those choices."
+      },
+      {
+        "heading": "Tenant boundaries and roles",
+        "body": "Define whether a user can belong to several organizations and how invitations, suspension and ownership transfer work. Enforce organization boundaries on every server-side query, export, file and background job. UI filtering alone is insufficient. Test two tenants with overlapping record identifiers and deliberately attempt cross-tenant access. Administrative support access should be explicit and auditable."
+      },
+      {
+        "heading": "Subscription and entitlement design",
+        "body": "A billing provider processes payments; your application still needs authoritative entitlement rules. Decide what happens during a trial, failed renewal, upgrade, refund and cancellation. Process webhook events idempotently and reconcile them against provider records. Keep features tied to entitlements rather than scattered checks on plan names. Confirm provider availability and fees for the operating business before committing to an integration."
+      },
+      {
+        "heading": "Operating the application",
+        "body": "Plan logs that help diagnose failures without exposing customer content. Monitor errors, queue delays and resource limits. Define backup restoration and account deletion procedures and test them with sample data. A support team needs enough context to solve problems without unrestricted access to every tenant. Rate limits and usage budgets matter when a feature calls a paid external API."
+      },
+      {
+        "heading": "Pilot, measure and extend",
+        "body": "Invite a small agreed pilot group and collect consent-appropriate product feedback. Measure successful task completion and failure points before adding feature breadth. Acceptance includes tenant isolation, billing event replay, invitation expiry and restore checks. A SaaS quotation should distinguish initial build, hosting, paid services and ongoing operational responsibilities. Bring a user journey and pricing hypothesis to the discovery discussion."
+      }
+    ],
+    "related": [
+      "crm-product",
+      "backend-development",
+      "dashboard-development",
+      "custom-software-development"
+    ],
+    "kind": "service",
+    "market": "global",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "shopify-development",
+    "title": "Shopify Development Services",
+    "description": "Plan Shopify storefronts, theme changes and integrations around catalog, checkout and operations. Explore when headless commerce is worth the complexity.",
+    "intro": "Curious Kaizer develops Shopify storefront experiences and integrations around the merchant’s catalog, customer journey and operating requirements. The first decision is whether a theme-based storefront solves the problem or a separate headless frontend delivers enough value to justify additional maintenance.",
+    "sections": [
+      {
+        "heading": "Choose the storefront approach",
+        "body": "A theme keeps many platform capabilities close to the merchant’s standard editing workflow. A headless storefront can support a distinctive interaction or a broader application, but the team must manage routing, caching, account journeys and compatibility. Compare the actual merchandising tasks and integrations before selecting an approach. Visual ambition alone should not hide the ongoing operating cost."
+      },
+      {
+        "heading": "Catalog and merchandising",
+        "body": "Review product options, collections, imagery, search, filters and availability. Define the source of truth for prices and inventory and avoid hardcoded copies that become stale. Preserve product handles or create an explicit redirect map during migration. Test products with no stock, several variants, long names and missing optional media so the storefront remains usable beyond the ideal demonstration catalog."
+      },
+      {
+        "heading": "Checkout, accounts and integrations",
+        "body": "Use merchant-approved platform flows for sensitive checkout and account steps. Verify actual cart creation and the resulting checkout URL rather than assuming that a working button proves checkout. Shipping, payment and messaging providers have their own eligibility and configuration requirements. Keep administrative credentials on the server and request only permissions needed for the agreed integration."
+      },
+      {
+        "heading": "SEO and launch checks",
+        "body": "Ensure product and collection pages expose meaningful HTML, correct canonical URLs, original descriptions and appropriate structured data. Review filter URLs to avoid indexing redundant combinations. Validate navigation, cart persistence and account return journeys on phone and desktop. A theme preview or localhost test does not establish that the published domain, payment configuration or delivery integration works."
+      },
+      {
+        "heading": "What to bring to a storefront review",
+        "body": "Share the catalog size, current theme or frontend, planned markets, critical apps and an example product journey. The portfolio includes the HANBORO watch storefront; its case study can inform a discussion about visual merchandising without promising the same technical scope for every store. Agree who owns product data, content approval, merchant accounts and release testing before the build begins."
+      }
+    ],
+    "related": [
+      "hanboro-watches-website-case-study",
+      "ecommerce-website-development-delhi",
+      "ecommerce-website-cost",
+      "website-redesign-services-delhi"
+    ],
+    "kind": "service",
+    "market": "global",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "ai-automation-services",
+    "title": "AI Automation and Integration",
+    "description": "Design AI workflows with clear permissions, human review, evaluations and cost controls. Explore chatbots, knowledge retrieval and operational integrations.",
+    "intro": "AI automation uses models alongside deterministic software to help complete a defined business task. Curious Kaizer scopes assistants, retrieval systems and workflow integrations around the information they can access, the actions they may take and the point where a person must review the result.",
+    "sections": [
+      {
+        "heading": "Choose a bounded business problem",
+        "body": "Start with a repeated task such as classifying an enquiry, drafting a response or locating an answer in approved documents. Record the current process and common exceptions. A simple rule or conventional integration may solve the problem more reliably than an agent. Define success with examples before choosing a model, orchestration framework or interface."
+      },
+      {
+        "heading": "Knowledge assistants and retrieval",
+        "body": "A knowledge assistant needs a maintained source collection, access controls and a way to show supporting material. It should explain when the available documents do not answer the question. Test outdated, conflicting and inaccessible documents. Treat retrieved text as untrusted input, and avoid allowing instructions inside a document to override application rules or authorize an external action."
+      },
+      {
+        "heading": "Actions, approvals and recovery",
+        "body": "Connecting a model to a CRM or billing system changes the risk. Read access, draft creation and sending a message are separate permissions. Require explicit review for consequential actions, record the responsible user and make retries safe against duplication. Define timeouts, spending limits, manual fallbacks and an emergency stop before a workflow can operate without supervision."
+      },
+      {
+        "heading": "Evaluate quality and operating cost",
+        "body": "Build a small evaluation set from representative, permissioned examples. Measure incorrect answers, missed cases, latency and cost per completed task. Include adversarial prompts and integration failures. Provider charges, data preparation, monitoring and human review belong in the estimate. No defensible proposal can promise a universal percentage saving without measuring the actual workflow."
+      },
+      {
+        "heading": "Pilot before expansion",
+        "body": "Begin with a restricted pilot and compare outcomes against the existing process. Keep sensitive records out of development fixtures and agree retention and access with the organization responsible for the data. Healthcare, financial or legal decisions need domain-specific governance. Bring an anonymized task example, the approved data sources and a list of permitted actions to the automation discussion."
+      }
+    ],
+    "related": [
+      "api-development",
+      "crm-development",
+      "guides-ai-automation",
+      "blog-context-engineering-llm-apps"
+    ],
+    "kind": "service",
+    "market": "global",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "erp-development",
+    "title": "ERP Development and Integrations",
+    "description": "ERP software connects operational records across purchasing, inventory, billing and reporting. The goal is consistent business state, not one giant interface for every department.",
+    "intro": "ERP software connects operational records across purchasing, inventory, billing and reporting. The goal is consistent business state, not one giant interface for every department. Curious Kaizer can help turn these requirements into a reviewable implementation scope.",
+    "sections": [
+      {
+        "heading": "Define module boundaries",
+        "body": "Begin with the records that cross teams: suppliers, items, purchase orders, receipts and invoices. Establish one owner for each source record and identify where staff currently re-enter the same information. An ERP project can start by integrating an existing system rather than replacing everything. Preserve statutory and accounting responsibilities with the people qualified to approve them."
+      },
+      {
+        "heading": "Purchasing and inventory workflow",
+        "body": "Map requested, approved, ordered, received and returned quantities separately. Partial receipts and damaged stock must not silently become available inventory. Define units, locations and valuation inputs before designing screens. An approval should record who approved which version; changes after approval need a deliberate reapproval rule. Include exception queues so missing information is visible."
+      },
+      {
+        "heading": "Migration and reconciliation",
+        "body": "Trial-import reference data before transaction history. Retain source identifiers and compare balances, quantities and document totals with the existing system. Schedule a controlled cutover and agree how outstanding transactions are handled. Integrations need idempotency and an audit trail for retries. Reconciliation reports are as important as the import function itself."
+      },
+      {
+        "heading": "Acceptance and ownership",
+        "body": "Test partial deliveries, cancellation after approval, duplicate supplier invoices and users with restricted roles. Confirm backup restoration and export formats before release. The handover should identify who maintains tax settings, accounting mappings and vendor connections. Bring sample purchase documents, role definitions and reporting requirements to a workshop; a scoped module plan is more useful than an unbounded request for a complete ERP."
+      }
+    ],
+    "related": [
+      "custom-software-development",
+      "api-development",
+      "industries-procurement"
+    ],
+    "kind": "service",
+    "market": "global",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "portal-development",
+    "title": "Customer and Business Portal Development",
+    "description": "A business portal gives a defined group secure access to the records and tasks they need. Customer, vendor, employee and administrator portals share infrastructure but require different permissions and workflows.",
+    "intro": "A business portal gives a defined group secure access to the records and tasks they need. Customer, vendor, employee and administrator portals share infrastructure but require different permissions and workflows. Curious Kaizer can help turn these requirements into a reviewable implementation scope.",
+    "sections": [
+      {
+        "heading": "Design for the external user",
+        "body": "A customer may need to review progress or upload a document; a supplier may need to answer an RFQ; an employee may need to approve a request. Map the user’s task and the organization that owns the record. Avoid exposing an internal administration interface through a new login screen. Decide which status information can be shared and which notes remain private."
+      },
+      {
+        "heading": "Identity and invitations",
+        "body": "Specify invitation expiry, account recovery, organization switching and access removal. Email verification establishes control of an address, not a person’s authority to see every company record. OTP delivery must be handled by an approved provider with expiry, attempt limits and recovery behavior. Never place a production verification secret in frontend code."
+      },
+      {
+        "heading": "Documents and notifications",
+        "body": "Files need size and type restrictions, controlled download access and an agreed retention policy. Decide whether links expire and what happens when a user’s access is revoked. Notifications should direct users to the portal rather than include sensitive record contents in email or chat. Delivery failures need a visible route for retry or staff intervention."
+      },
+      {
+        "heading": "End-to-end validation",
+        "body": "Test expired invitations, removed organization membership, forbidden file requests and concurrent edits. Check keyboard navigation, error messages and mobile document upload. Acceptance should prove that a user can finish a real task and cannot retrieve another account’s data. Bring the current forms, status definitions and permission matrix so the portal scope reflects operational reality."
+      }
+    ],
+    "related": [
+      "backend-development",
+      "crm-development",
+      "industries-real-estate"
+    ],
+    "kind": "service",
+    "market": "global",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "dashboard-development",
+    "title": "Dashboard and Internal Tool Development",
+    "description": "An operational dashboard should help someone decide what to do next. Curious Kaizer scopes dashboards around metric definitions, data freshness, role-specific actions and traceable source records.",
+    "intro": "An operational dashboard should help someone decide what to do next. Curious Kaizer scopes dashboards around metric definitions, data freshness, role-specific actions and traceable source records. Curious Kaizer can help turn these requirements into a reviewable implementation scope.",
+    "sections": [
+      {
+        "heading": "Start with decisions and definitions",
+        "body": "Choose the decisions the dashboard must support before choosing chart types. Revenue booked, invoices issued and cash received are different measures. Document filters, date boundaries, exclusions and who approves each definition. A useful dashboard allows a person to understand how a number was produced instead of presenting a polished total with no way to inspect it."
+      },
+      {
+        "heading": "Data sources and freshness",
+        "body": "Inventory database queries, vendor APIs and uploaded files. Agree when each source is refreshed and how stale or incomplete data is displayed. Avoid fetching an entire history or large attachments for every screen visit. Aggregate where appropriate, paginate operational tables and load detail only when a user asks for it. Cache rules must respect tenant and permission boundaries."
+      },
+      {
+        "heading": "Actions beside reporting",
+        "body": "If staff can assign work, change a status or issue a refund, the dashboard is an operational tool as well as a report. Protect actions with server-side permissions and confirm consequential changes. Handle concurrent edits and show failures clearly. Keep bulk actions reviewable and make partial failure understandable rather than showing an unconditional success toast."
+      },
+      {
+        "heading": "Validation and handover",
+        "body": "Compare a sample of displayed totals with authoritative source records. Test empty periods, daylight-saving boundaries, revoked permissions, slow queries and mobile layouts. Document the meaning and owner of each metric, query cost and refresh schedule. Bring a current report and the decision it supports; these make a much stronger starting brief than a collection of chart screenshots."
+      }
+    ],
+    "related": [
+      "erp-development",
+      "crm-development",
+      "guides-software-planning"
+    ],
+    "kind": "service",
+    "market": "global",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "api-development",
+    "title": "API Development and Integrations",
+    "description": "API integrations connect systems without requiring people to copy data between them. A reliable integration defines ownership, authentication, failure handling and reconciliation before it sends its first production record.",
+    "intro": "API integrations connect systems without requiring people to copy data between them. A reliable integration defines ownership, authentication, failure handling and reconciliation before it sends its first production record. Curious Kaizer can help turn these requirements into a reviewable implementation scope.",
+    "sections": [
+      {
+        "heading": "Define the integration contract",
+        "body": "List each operation, required fields, response shapes and permitted actors. Specify which system owns customer, order or stock data and how changes flow. Version contracts deliberately and distinguish validation failures from temporary service errors. Document rate limits and pagination. A successful request in a development console is only the beginning of integration testing."
+      },
+      {
+        "heading": "Authentication and access",
+        "body": "Keep provider secrets in server-side configuration, separate test and production accounts, and request the smallest useful permission set. Verify webhook signatures using the provider’s documented method. Rotation and revocation should be possible without editing a browser bundle. An API used by multiple organizations must check organization access on every record operation."
+      },
+      {
+        "heading": "Retries, duplicates and ordering",
+        "body": "Providers may deliver the same event repeatedly or events may arrive out of order. Use stable event identifiers and idempotent processing. Retry transient failures with a bounded policy and send unresolved work to an inspectable queue. Reconciliation should compare the local state with the provider, so a missed callback can be detected and repaired."
+      },
+      {
+        "heading": "Integration acceptance",
+        "body": "Test expired credentials, missing permissions, malformed payloads, timeouts and duplicate callbacks. Use provider sandboxes where available, then verify approved production flows without fabricating payment, OTP or delivery success. Agree monitoring ownership and maintenance responsibility when an external API changes. Bring provider documentation, account access requirements and sample sanitized payloads to the scope review."
+      }
+    ],
+    "related": [
+      "backend-development",
+      "ai-automation-services",
+      "shopify-development"
+    ],
+    "kind": "service",
+    "market": "global",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "backend-development",
+    "title": "Backend Development Services",
+    "description": "Backend development implements the business rules, data access and integrations behind a website or application. The architecture should make correctness and operations understandable before optimizing for hypothetical scale.",
+    "intro": "Backend development implements the business rules, data access and integrations behind a website or application. The architecture should make correctness and operations understandable before optimizing for hypothetical scale. Curious Kaizer can help turn these requirements into a reviewable implementation scope.",
+    "sections": [
+      {
+        "heading": "Model the business rules",
+        "body": "Identify records, relationships and permitted transitions. Separate an editable draft from an approved transaction when the business needs an audit trail. Put important validation on the server even if the frontend also checks it. Use database constraints for invariants that must hold across concurrent requests. Document assumptions about deletion, archiving and record ownership."
+      },
+      {
+        "heading": "Authentication and authorization",
+        "body": "Authentication identifies a session; authorization decides what that session may do. Enforce permissions at the request and data layers. Plan account recovery, session expiry and access revocation. Cookie-based sessions need appropriate security flags and CSRF protection for state-changing requests. Avoid trusting organization or role fields supplied by the browser without checking them."
+      },
+      {
+        "heading": "Performance and resilience",
+        "body": "Measure expected queries with realistic data sizes, inspect slow paths and avoid loading entire tables for compact screens. Introduce queues where a user should not wait for a slow external service. Set request deadlines and resource limits. A modular application can be easier to operate than many services; choose boundaries based on real ownership and workload constraints."
+      },
+      {
+        "heading": "Deployment and operation",
+        "body": "Use separate environments, controlled migrations and a documented rollback process. Test restoring data instead of assuming backups work. Logs should support debugging while avoiding secrets and unnecessary personal data. Handover includes hosting ownership, alert routing, dependency updates and support responsibilities. Bring expected traffic, data shape and critical failure scenarios to the backend planning session."
+      }
+    ],
+    "related": [
+      "api-development",
+      "saas-development",
+      "portal-development"
+    ],
+    "kind": "service",
+    "market": "global",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "ui-ux-design",
+    "title": "UI and UX Design Services",
+    "description": "UI and UX design turns business goals into journeys people can understand and complete. Curious Kaizer works from user tasks and content to prototypes, interface patterns and implementation-ready decisions.",
+    "intro": "UI and UX design turns business goals into journeys people can understand and complete. Curious Kaizer works from user tasks and content to prototypes, interface patterns and implementation-ready decisions. Curious Kaizer can help turn these requirements into a reviewable implementation scope.",
+    "sections": [
+      {
+        "heading": "Understand the task and context",
+        "body": "Identify who uses the product, what they need to finish and the conditions in which they work. A cashier handling a queue has different needs from a buyer comparing services on a phone. Review current support questions and workflow friction before adding interface complexity. Treat assumptions as questions to test, rather than as established customer facts."
+      },
+      {
+        "heading": "Architecture before polish",
+        "body": "Map navigation, content priority and the states a journey can enter. Include errors, empty results, pending work and permission restrictions in wireframes. A prototype should clarify what happens after a click, not only how the first screen looks. Define the language of controls so users can predict the result of an action."
+      },
+      {
+        "heading": "Accessible interaction and motion",
+        "body": "Use readable text, visible focus, adequate target sizes and meaningful labels. Do not rely on color alone to communicate status. Motion should explain a transition and respect reduced-motion preferences. Important copy and actions should remain available when an animation fails or JavaScript loads slowly. Validate long content and small screens before approving a component."
+      },
+      {
+        "heading": "Design handoff and validation",
+        "body": "Document component states, spacing, content rules and interaction behavior. Review the rendered implementation because browser behavior can differ from a design file. Observe representative users completing key tasks where research access is available. Record unresolved questions instead of inventing research findings. Bring current screens, brand assets and the most important user journey to a design review."
+      }
+    ],
+    "related": [
+      "website-development",
+      "website-redesign-services-delhi",
+      "portfolio"
+    ],
+    "kind": "service",
+    "market": "global",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "website-development",
+    "title": "Website Development Services",
+    "description": "A business website should explain the offer, help visitors evaluate it and provide a reliable route to enquiry. Curious Kaizer plans website development around content, accessible interaction, search visibility and ownership.",
+    "intro": "A business website should explain the offer, help visitors evaluate it and provide a reliable route to enquiry. Curious Kaizer plans website development around content, accessible interaction, search visibility and ownership. Curious Kaizer can help turn these requirements into a reviewable implementation scope.",
+    "sections": [
+      {
+        "heading": "Plan pages around visitor questions",
+        "body": "Separate the primary offer from supporting services, proof, pricing context and contact information. Give each page a clear purpose and a logical next step. Reuse existing valuable URLs when rebuilding a site, and map necessary redirects before launch. The content plan should reflect actual services and completed work rather than a list of keywords or unsupported claims."
+      },
+      {
+        "heading": "Choose an editing and delivery model",
+        "body": "A static site can suit a compact website with controlled updates; a content system may be better when nontechnical staff publish frequently. Consider who updates pages, how changes are reviewed and what integrations are required. Server-rendered or prebuilt critical content helps visitors and crawlers receive useful information without waiting for client-side applications."
+      },
+      {
+        "heading": "Forms and conversion paths",
+        "body": "Specify what an enquiry form sends, where the record is stored and how delivery is confirmed. A link opening WhatsApp is a handoff, not proof of a sent message. Keep validation understandable and preserve entered information if delivery fails. Analytics should measure agreed events only after the required privacy choices, without copying form contents into tracking tools."
+      },
+      {
+        "heading": "Launch and maintenance",
+        "body": "Test navigation, canonical URLs, metadata, images, responsive layouts and real contact journeys on the deployment domain. Check missing URLs return appropriate status codes. Agree backups, domain ownership, hosting access and support scope. Performance is measured with realistic devices and field data when available; a visual preview alone does not prove reliability. Bring your content, brand assets and existing website for an initial review."
+      }
+    ],
+    "related": [
+      "website-designing-company-in-delhi",
+      "ui-ux-design",
+      "website-development-cost-india",
+      "portfolio"
+    ],
+    "kind": "service",
+    "market": "global",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "website-maintenance",
+    "title": "Website Maintenance and Support",
+    "description": "Website maintenance keeps content, dependencies and business journeys working after launch. Define a support scope that matches the technology and operational importance of the site.",
+    "intro": "Website maintenance keeps content, dependencies and business journeys working after launch. Define a support scope that matches the technology and operational importance of the site. Curious Kaizer can help turn these requirements into a reviewable implementation scope.",
+    "sections": [
+      {
+        "heading": "Establish the baseline",
+        "body": "Inventory the domain, DNS, hosting, repositories, plugins and external services. Confirm who owns access and how recovery works. Record critical pages and contact journeys before making changes. An inherited site may need an initial repair project before routine maintenance is predictable; separate that work from a recurring support scope."
+      },
+      {
+        "heading": "Updates and release checks",
+        "body": "Review dependency or platform updates, test changes in a suitable environment and preserve a rollback path. Content changes can also break navigation, metadata or page layout. A compact regression checklist should cover the routes that generate enquiries, including mobile navigation and external account or payment handoffs where they exist."
+      },
+      {
+        "heading": "Monitoring and incidents",
+        "body": "Define meaningful alerts for outages, broken forms, certificate problems and failed integrations. Agree support hours and response expectations explicitly; do not assume round-the-clock coverage. Alerts should identify an owner and a next action. Monitor real failures without fabricating transactions or submitting customer enquiries solely to create activity."
+      },
+      {
+        "heading": "Continuity and scope",
+        "body": "Test backups and document where exports are stored. Review access when team members leave and keep renewal responsibilities clear. Distinguish security fixes, content changes and new features in the agreement. Bring the current technology stack, access owners and the three most important site journeys to a maintenance review so the plan covers actual business risk."
+      }
+    ],
+    "related": [
+      "website-development",
+      "website-redesign-services-delhi",
+      "speed-optimisation"
+    ],
+    "kind": "service",
+    "market": "global",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "seo-services",
+    "title": "Technical SEO Services",
+    "description": "Technical SEO makes useful pages easier to crawl, understand and evaluate. Curious Kaizer combines site audits, rendering checks, content architecture and measurable release validation.",
+    "intro": "Technical SEO makes useful pages easier to crawl, understand and evaluate. Curious Kaizer combines site audits, rendering checks, content architecture and measurable release validation. Curious Kaizer can help turn these requirements into a reviewable implementation scope.",
+    "sections": [
+      {
+        "heading": "Audit the actual website",
+        "body": "Crawl public URLs and inspect status codes, redirects, canonical tags, sitemap entries and internal links. Compare source HTML with rendered pages and identify content that depends on fragile interactions. Review existing search data if the owner supplies access. A crawler report describes technical observations; it does not by itself prove ranking potential or a traffic forecast."
+      },
+      {
+        "heading": "Map intent to useful pages",
+        "body": "Group searches by the question or task they represent. Prefer one strong primary page for related commercial queries and use supporting guides for distinct informational questions. Geographic pages need meaningful local differences and truthful delivery information. Avoid creating interchangeable pages for every service, industry and city combination."
+      },
+      {
+        "heading": "Entities, evidence and answers",
+        "body": "Keep organization identity consistent and use structured data supported by visible content. Link service pages to relevant portfolio evidence and explain what that evidence actually demonstrates. Direct answers, clear headings and source references help readers and machine interpretation. No special file or schema guarantees inclusion in AI answers or a particular search position."
+      },
+      {
+        "heading": "Validate and measure",
+        "body": "Check changes against a saved baseline and verify the deployed site after release. Search Console can show query, page and country changes over time, but changes need context for seasonality and other releases. Test one hypothesis at a time when traffic supports it. Bring the domain, target customers and available search data to the audit discussion; rankings and backlinks are never fabricated."
+      }
+    ],
+    "related": [
+      "website-development",
+      "speed-optimisation",
+      "guides-website-planning"
+    ],
+    "kind": "service",
+    "market": "global",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "speed-optimisation",
+    "title": "Website Speed Optimisation",
+    "description": "Improve website performance by measuring the pages and interactions customers actually use. Keep essential content, accessibility and visual quality while reducing avoidable work.",
+    "intro": "Improve website performance by measuring the pages and interactions customers actually use. Keep essential content, accessibility and visual quality while reducing avoidable work. Curious Kaizer can help turn these requirements into a reviewable implementation scope.",
+    "sections": [
+      {
+        "heading": "Measure before changing",
+        "body": "Capture representative mobile and desktop journeys, including loading, scrolling and interactive states. Lab tests help reproduce problems; field measurements show how actual visits behave. Largest Contentful Paint, Interaction to Next Paint and Cumulative Layout Shift describe different aspects of experience. A single synthetic score is not evidence that every user or route performs well."
+      },
+      {
+        "heading": "Prioritize content delivery",
+        "body": "Identify the element that dominates initial loading. Use appropriate image dimensions and responsive sources, reserve space for media and avoid lazy-loading the critical image. Review font files and preload only assets that are truly needed immediately. Cache rules should let stable media load efficiently while ensuring changed scripts and pages can update reliably."
+      },
+      {
+        "heading": "Reduce interaction cost",
+        "body": "Inspect long tasks, repeated layout calculations and work triggered on every scroll event. Use passive listeners where appropriate and defer nonessential features. Complex motion should pause when offscreen and respect reduced-motion preferences. Reducing JavaScript is useful only if navigation, forms and content remain functional in the resulting experience."
+      },
+      {
+        "heading": "Verify improvements and constraints",
+        "body": "Compare repeatable measurements with the baseline and test the actual production delivery path. Check layout and interactions after compression, code splitting or cache changes. Third-party tools and large media can dominate the remaining cost; identify their business value before removing them. Bring the slow routes and affected device examples so the work targets user-visible delays rather than a score alone."
+      }
+    ],
+    "related": [
+      "website-development",
+      "seo-services",
+      "blog-inp-core-web-vitals"
+    ],
+    "kind": "service",
+    "market": "global",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "web-app-development",
+    "title": "Web Application Development",
+    "description": "Plan a web application with meaningful workflows, accessible interfaces, reliable data and a clear delivery scope.",
+    "intro": "A web application helps people complete a task through the browser: manage a booking, approve a request, collaborate on a record or operate a business process. Curious Kaizer scopes web apps around these journeys and the permissions, data and operational requirements behind them.",
+    "sections": [
+      {
+        "heading": "Website or application?",
+        "body": "A content website primarily explains information; an application changes and retrieves business state. Some projects combine both. Identify where visitors become authenticated users and which tasks need persistent records. Avoid moving all public content into a client-only app when it can be delivered as readable HTML. Separate content editing needs from operational workflow needs."
+      },
+      {
+        "heading": "Plan the full journey",
+        "body": "Sketch the successful path and the ways it can fail. A booking journey needs availability, temporary selection, confirmation, cancellation and conflict handling. Decide what happens when the network drops or another person edits the same record. Show loading and error states in prototypes so these behaviors are agreed before detailed implementation."
+      },
+      {
+        "heading": "Data and access",
+        "body": "Define which records belong to each user or organization and enforce access on the server. Browser validation improves usability but cannot replace authoritative business rules. Review file uploads, exports and external integrations as separate access surfaces. Use a suitable authentication provider and define account recovery rather than inventing a shortcut that bypasses identity checks."
+      },
+      {
+        "heading": "Delivery, testing and ownership",
+        "body": "Build one useful journey through the interface, API and database before expanding the feature list. Test persistence after reload, permission boundaries, accessibility and mobile layouts. Define the handover for repositories, hosting, migrations and backups. Maintenance and vendor costs should be visible in the scope. Bring a sample task, user roles and existing records to discuss what the first release needs to accomplish."
+      }
+    ],
+    "related": [
+      "saas-development",
+      "portal-development",
+      "backend-development",
+      "ui-ux-design"
+    ],
+    "kind": "service",
+    "market": "global",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "website-development-dubai",
+    "title": "Website Development for UAE Businesses",
+    "description": "Plan a remotely delivered website for Dubai and Abu Dhabi with clear content, integration, review and handover requirements.",
+    "intro": "Curious Kaizer offers remote website and software development for businesses in Dubai and Abu Dhabi. A useful market-specific brief defines audience language, operational integrations, review times and release requirements. Delivery is coordinated from India; local business requirements should be supplied and approved by the organization responsible for them.",
+    "sections": [
+      {
+        "heading": "English and Arabic journeys",
+        "body": "Decide whether the first release serves English readers, Arabic readers or both. Arabic is a content and interaction requirement, not just a direction switch: navigation, mixed-direction numbers, forms and imagery need review by a fluent editor. Publish language alternatives only when the corresponding content exists, then connect equivalent URLs with reciprocal language annotations."
+      },
+      {
+        "heading": "Commerce and business inputs",
+        "body": "For a store, confirm the merchant entity, supported settlement currency, delivery coverage and payment-provider eligibility. The business should supply approved VAT, invoice and returns requirements for implementation and review. Product catalog and stock ownership must remain clear across storefront and operations systems. Provider names in a proposal do not establish that an account is approved or a live integration is complete."
+      },
+      {
+        "heading": "Dubai and Abu Dhabi project coordination",
+        "body": "A hospitality enquiry flow, property lead journey and B2B vendor portal need different records and approval steps. Start with the actual operation rather than separate city pages carrying identical copy. Agree calls in Gulf Standard Time, name the content approver and document asynchronous review. Remote delivery does not imply a staffed UAE office or on-site support."
+      },
+      {
+        "heading": "Scope and acceptance",
+        "body": "Request a written scope covering pages, languages, integrations, training and ongoing costs. Confirm the quotation currency and payment terms in the proposal; this page does not publish a converted price or compare unverified agency fees. Validate local phone entry, address formats, language switching and approved payment flows. Review applicable privacy and commercial requirements with qualified local advisers before launch."
+      }
+    ],
+    "related": [
+      "website-development",
+      "shopify-development",
+      "custom-software-development",
+      "markets"
+    ],
+    "kind": "market",
+    "market": "UAE",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "website-development-usa",
+    "title": "Website Development for US Businesses",
+    "description": "Plan a remotely delivered website for the United States with clear content, integration, review and handover requirements.",
+    "intro": "Curious Kaizer offers remote website and software development for businesses in the United States. A useful market-specific brief defines audience language, operational integrations, review times and release requirements. Delivery is coordinated from India; local business requirements should be supplied and approved by the organization responsible for them.",
+    "sections": [
+      {
+        "heading": "A clear remote working agreement",
+        "body": "The United States spans several time zones. Agree review windows using a named time zone and account for daylight-saving changes rather than promising universal US office hours. Name decision makers for content, design and acceptance. Keep decisions in a shared written brief so asynchronous work does not turn into repeated rework or undocumented changes."
+      },
+      {
+        "heading": "Content and conversion expectations",
+        "body": "Use US English when it matches the audience and make service scope, contact routes and ownership easy to find. A B2B buyer may need integration and procurement information, while a consumer storefront needs clear product, delivery and return details. Address and phone fields should accept the intended audience. City-specific pages should wait until there is useful evidence for a distinct local journey."
+      },
+      {
+        "heading": "Integrations and privacy inputs",
+        "body": "Confirm the operating entity and provider eligibility before choosing payment, tax or messaging integrations. Multi-state commercial and privacy requirements depend on the business and data processing involved; the client and qualified advisers should define applicable rules. Implement approved retention and consent requirements and test them. Do not equate a cookie banner or a checklist with legal compliance."
+      },
+      {
+        "heading": "Procurement and release",
+        "body": "Agree contract ownership, repository access, intellectual-property terms and recurring supplier costs during scoping. Confirm the currency of the written quote rather than assuming an automatic conversion. Acceptance should cover the production domain, enquiry delivery, mobile use and the priority user journey. Curious Kaizer delivers remotely from India; this page does not claim a US office or a US client result."
+      }
+    ],
+    "related": [
+      "website-development",
+      "shopify-development",
+      "custom-software-development",
+      "markets"
+    ],
+    "kind": "market",
+    "market": "US",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "website-development-uk",
+    "title": "Website Development for UK Businesses",
+    "description": "Plan a remotely delivered website for the United Kingdom with clear content, integration, review and handover requirements.",
+    "intro": "Curious Kaizer offers remote website and software development for businesses in the United Kingdom. A useful market-specific brief defines audience language, operational integrations, review times and release requirements. Delivery is coordinated from India; local business requirements should be supplied and approved by the organization responsible for them.",
+    "sections": [
+      {
+        "heading": "Content and service clarity",
+        "body": "Use UK English where appropriate and explain what a visitor can enquire about, what happens next and who provides the service. A professional-services website may need a clear consultation journey, while an online store needs approved delivery, returns and product information. Keep forms accessible and make alternative contact routes available rather than forcing every visitor into one channel."
+      },
+      {
+        "heading": "Privacy and measurement planning",
+        "body": "Ask the business to identify its purposes, processors, retention requirements and consent approach with appropriate advice. Optional analytics can be held until opt-in and withdrawal must remain accessible. Test the actual network behavior, not just the presence of a banner. UK privacy and electronic-communications obligations require context-specific review; a technical implementation is not a legal certification."
+      },
+      {
+        "heading": "Remote collaboration and procurement",
+        "body": "Agree meeting times using Europe/London so seasonal clock changes are explicit. Document the approval process and the point at which scope changes affect delivery. Confirm quotation currency, tax treatment and payment terms in the proposal. Hosting location, processor arrangements and data access should be discussed where they matter to the buyer rather than implied by a domain name."
+      },
+      {
+        "heading": "Launch requirements",
+        "body": "Test postcode and telephone inputs with realistic examples, keyboard use, mobile enquiry routes and approved integrations. Verify redirects when replacing an existing site and preserve valuable content and addresses. Record ownership of the domain, hosting and repositories at handover. Curious Kaizer delivers remotely from India; no UK office, local staff or unsupported UK project outcome is claimed here."
+      }
+    ],
+    "related": [
+      "website-development",
+      "shopify-development",
+      "custom-software-development",
+      "markets"
+    ],
+    "kind": "market",
+    "market": "UK",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "industries-retail",
+    "title": "Retail and D2C Website Solutions",
+    "description": "Retail and D2C businesses need a consistent path from product discovery to purchase and post-purchase support. A distinctive storefront helps only when catalog, pricing, availability and checkout remain dependable.",
+    "intro": "Retail and D2C businesses need a consistent path from product discovery to purchase and post-purchase support. A distinctive storefront helps only when catalog, pricing, availability and checkout remain dependable.",
+    "sections": [
+      {
+        "heading": "Catalog and customer journey",
+        "body": "Start with product taxonomy, variants, imagery and the questions buyers ask before purchase. Watches may need readable dimensions and material information; fashion may need size guidance and clear variant availability. Use only specifications supplied by the merchant. Plan collection pages, search, product detail, cart and support as a connected journey rather than independent visual designs."
+      },
+      {
+        "heading": "Stock, payments and operations",
+        "body": "Identify the source of truth for price, stock and order status. Provider availability depends on the merchant account and intended markets. Test out-of-stock states, failed payments and canceled orders through approved platform flows. Customer support should see enough order context to help without exposing payment secrets or unnecessary personal data. Delivery promises must come from the operating business."
+      },
+      {
+        "heading": "Performance and measurement",
+        "body": "Product media often dominates transfer size. Generate appropriate image sizes, reserve layout space and keep the critical product image available early. Measure catalog-to-cart and checkout handoffs after the required consent. Do not call a checkout click a sale. Reconcile purchases with authoritative order records when an approved analytics integration supports that measurement."
+      },
+      {
+        "heading": "Relevant work and project brief",
+        "body": "The portfolio and HANBORO storefront case study offer visual examples for a retail discussion. They do not establish a sales uplift or a universal platform configuration. Bring representative products, the current catalog system, target markets and critical apps. Scope the migration, redirects, integration ownership and launch tests before committing to the storefront architecture."
+      }
+    ],
+    "related": [
+      "hanboro-watches-website-case-study",
+      "shopify-development",
+      "ecommerce-website-cost"
+    ],
+    "kind": "industry",
+    "market": "global",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "industries-hospitality",
+    "title": "Hospitality Websites and Operations Tools",
+    "description": "Hospitality journeys connect guests, reservations and staff operations. A hotel website and an internal property dashboard solve different problems but need a reliable handoff between enquiry, availability and service delivery.",
+    "intro": "Hospitality journeys connect guests, reservations and staff operations. A hotel website and an internal property dashboard solve different problems but need a reliable handoff between enquiry, availability and service delivery.",
+    "sections": [
+      {
+        "heading": "Separate enquiry from confirmed booking",
+        "body": "Define whether the site takes enquiries, sends visitors to a booking engine or confirms reservations itself. A contact form does not establish room availability. Display only approved room descriptions, policies and offers. Where a booking provider handles confirmation and payment, test the return path and make responsibility clear to the guest."
+      },
+      {
+        "heading": "Operational workflows",
+        "body": "Map room status, arrivals, departures, housekeeping and maintenance as distinct tasks. A room marked clean is not necessarily ready for occupancy if maintenance is outstanding. Staff need concise queues and role-specific access. Record changes and exceptions so a shift handover does not depend on memory or an unstructured messaging thread."
+      },
+      {
+        "heading": "Integration and information boundaries",
+        "body": "Identify the property-management or booking system that owns inventory and reservation state. Avoid two systems independently accepting the last available room. If synchronization fails, show uncertainty and route work to staff rather than fabricating availability. Restrict access to guest documents and contact details, and define retention with the operator."
+      },
+      {
+        "heading": "Proof and acceptance",
+        "body": "The portfolio includes hospitality interface work that can anchor a discussion of staff tools. It is not evidence of occupancy gains or a live connection to every booking vendor. Bring current forms, role definitions and booking-provider documentation. Test duplicate reservations, date changes, time-zone boundaries and staff access removal before release. The project scope should name who operates integrations and handles incidents."
+      }
+    ],
+    "related": [
+      "portfolio",
+      "portal-development",
+      "dashboard-development"
+    ],
+    "kind": "industry",
+    "market": "global",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "industries-real-estate",
+    "title": "Real Estate Websites and CRM Workflows",
+    "description": "Real-estate teams need accurate property information and accountable lead follow-up. A website, CRM and operations portal should share enough context to support a buyer without creating conflicting versions of availability or sales status.",
+    "intro": "Real-estate teams need accurate property information and accountable lead follow-up. A website, CRM and operations portal should share enough context to support a buyer without creating conflicting versions of availability or sales status.",
+    "sections": [
+      {
+        "heading": "Property discovery and enquiry",
+        "body": "Define the fields that matter to the offered inventory: location, property type, availability and approved supporting documents. Publish only authorized pricing, claims and imagery. A lead enquiry should retain the property context so a sales representative can respond meaningfully. Avoid misleading urgency or implying an investment return that has not been substantiated."
+      },
+      {
+        "heading": "Lead ownership and activity",
+        "body": "Map assignment, acceptance, follow-up, visit scheduling and closure reasons. Prevent duplicate leads from silently creating competing owners. Managers need queue health and overdue actions; representatives need relevant next steps. An approved messaging integration should distinguish an attempted message from confirmed delivery and should follow the organization’s contact permissions."
+      },
+      {
+        "heading": "Documents and approvals",
+        "body": "Property records can involve sensitive documents and internal notes. Define which information is public, customer-visible or restricted to staff. Keep document access tied to authorization and review changes to published inventory. Integrations should preserve the source identifier so records can be reconciled after imports or failed updates."
+      },
+      {
+        "heading": "Evidence and scoping",
+        "body": "The portfolio shows Aloha Estate interface work; use it as an example of a workflow discussion, not proof of financial outcomes or a legally approved transaction system. Bring anonymized lead stages, inventory fields and role definitions. Acceptance should cover assignment conflicts, withdrawn listings, access revocation and restored records. Regulatory content and commercial claims require approval from the responsible business."
+      }
+    ],
+    "related": [
+      "portfolio",
+      "crm-development",
+      "portal-development"
+    ],
+    "kind": "industry",
+    "market": "global",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "industries-procurement",
+    "title": "B2B Procurement and Manufacturing Portals",
+    "description": "Procurement software connects requests, approvals, supplier responses and fulfillment. The design should reduce ambiguous handoffs while preserving the evidence needed to explain a purchasing decision.",
+    "intro": "Procurement software connects requests, approvals, supplier responses and fulfillment. The design should reduce ambiguous handoffs while preserving the evidence needed to explain a purchasing decision.",
+    "sections": [
+      {
+        "heading": "Model the purchasing process",
+        "body": "Separate a request for quotation from an approved purchase order. Define line items, units, attachments, quote versions and approval limits. Buyers need a way to compare like-for-like responses; suppliers need a focused view of what they must provide. Preserve changes so an approver knows which version they authorized."
+      },
+      {
+        "heading": "Supplier and staff access",
+        "body": "A supplier should see its own requests and submissions, not competing commercial terms. Staff roles may differ for request creation, approval, receipt and finance reconciliation. Enforce those boundaries in the data layer and on file downloads. Invitations and revoked access need tests beyond simply hiding navigation links."
+      },
+      {
+        "heading": "Integrations and exceptions",
+        "body": "Identify the accounting or inventory system that owns each final record. Partial deliveries, rejected goods, revised quotations and duplicate callbacks are normal test cases. Use stable identifiers and reconciliation reports so the team can repair missed updates. Avoid assuming a successful API response means every downstream business step is complete."
+      },
+      {
+        "heading": "Project approach",
+        "body": "Portfolio examples can help discuss B2B interfaces and approval workflows without inventing cost savings. Bring anonymized purchase documents, current approval rules, supplier roles and integration documentation. Start with one request-to-approval workflow and agree acceptance before broadening the module list. Handover should identify data ownership, backup procedures and responsibility for vendor API changes."
+      }
+    ],
+    "related": [
+      "erp-development",
+      "portal-development",
+      "api-development"
+    ],
+    "kind": "industry",
+    "market": "global",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "industries-membership",
+    "title": "Membership and Club Operations Software",
+    "description": "Membership operations depend on accurate access status, staff permissions and auditable transactions. A digital system should make routine check-in and account work clear while keeping sensitive member information restricted.",
+    "intro": "Membership operations depend on accurate access status, staff permissions and auditable transactions. A digital system should make routine check-in and account work clear while keeping sensitive member information restricted.",
+    "sections": [
+      {
+        "heading": "Member lifecycle",
+        "body": "Define application, review, activation, suspension and expiry as explicit states. A digital pass should reflect authoritative access status rather than a screenshot that remains valid forever. Decide what a front-desk operator needs to see and what belongs only with authorized administrators. Do not use public links to expose member documents or contact records."
+      },
+      {
+        "heading": "Check-in and staff workflows",
+        "body": "A QR check-in should verify current access and handle duplicate scans, unavailable connectivity and revoked membership. Staff need a clear result and an exception process. Separate check-in authority from the ability to change financial records. Log consequential actions so the operator can investigate a disputed change without sharing unrestricted database access."
+      },
+      {
+        "heading": "Data minimization and reliability",
+        "body": "Load sensitive detail only when an authorized workflow needs it. Keep broad member lists compact and avoid transferring identity documents during routine dashboard refreshes. Define retention and deletion with the operator. Test backups, revocation and tenant separation. A polished interface does not demonstrate that these controls are enforced on the backend."
+      },
+      {
+        "heading": "Appropriate scope and evidence",
+        "body": "The portfolio includes private-club interface work. That supports a design discussion, not a claim of regulatory authorization or suitability for every activity. Any gaming-related scope must be limited to lawful operations and reviewed by the responsible organization. Bring roles, access rules and anonymized workflows; document compliance requirements and acceptance checks before implementation."
+      }
+    ],
+    "related": [
+      "portfolio",
+      "portal-development",
+      "dashboard-development"
+    ],
+    "kind": "industry",
+    "market": "global",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "website-development-cost-india",
+    "title": "Website Development Cost in India",
+    "description": "Understand the scope, content, integrations and operating costs behind a website quote in India. Prepare a comparable brief before choosing a supplier.",
+    "intro": "Website cost depends on what must be designed, built, populated, integrated and maintained. Comparing quotes is useful only when those responsibilities are explicit. This guide helps prepare an India-focused brief; the pricing page remains the source for published package details and a written proposal defines the actual project price.",
+    "sections": [
+      {
+        "heading": "Separate the cost components",
+        "body": "Ask each supplier to distinguish discovery, design, development, content entry, integrations and launch work. Domain registration, hosting, paid fonts, stock media and third-party subscriptions can be separate expenses. Clarify whether taxes and ongoing support are included in the written quote. A low headline fee may cover fewer pages or leave the buyer responsible for content and operational setup."
+      },
+      {
+        "heading": "What changes the estimate",
+        "body": "A five-page content site differs from a catalog with variants, an authenticated portal or a multilingual application. Custom workflows, data migration and external services add testing and coordination. The number of page templates often matters more than the raw count of pages. Identify the content owner and approval process because incomplete content can delay even a technically simple site."
+      },
+      {
+        "heading": "Compare like-for-like proposals",
+        "body": "Use the same brief for each quote. Ask what is delivered, which platform is used, who owns accounts and source code, how revisions work and what acceptance tests are included. Compare recurring costs and exit options as well as the initial fee. Do not infer delivery dates, unlimited revisions or a particular performance score from a package name."
+      },
+      {
+        "heading": "Prepare a useful enquiry",
+        "body": "Bring the current site, required pages, brand assets, content status, expected integrations and preferred launch window. Mark essential features separately from later improvements. The existing cost calculator can provide a planning conversation starter; it is not a binding quote or a substitute for reviewing the scope. For software or commerce, budget for operational testing and ongoing provider charges."
+      }
+    ],
+    "related": [
+      "pricing",
+      "website-design-cost-calculator",
+      "website-development",
+      "ecommerce-website-cost"
+    ],
+    "kind": "guide",
+    "market": "India",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "ecommerce-website-cost",
+    "title": "Ecommerce Website Cost Planning",
+    "description": "Compare storefront, catalog, checkout, migration and ongoing costs when planning an online store. Build a realistic brief before requesting a quote.",
+    "intro": "An ecommerce estimate needs to include the storefront and the operation behind it. Catalog structure, payment and shipping providers, content migration and post-purchase support can affect effort more than the homepage design. Use this guide to compare scope; confirm all prices and recurring charges in the written proposal.",
+    "sections": [
+      {
+        "heading": "Storefront and catalog scope",
+        "body": "Count distinct product types, options and content patterns before counting products alone. A catalog with complex variants needs different validation from a small set of simple items. Decide whether search, filters, size guides, bundles and subscriptions are essential at launch. Product photography, copy, data cleanup and upload responsibility should be visible in the estimate."
+      },
+      {
+        "heading": "Checkout and operational connections",
+        "body": "Confirm the merchant’s chosen platform and eligibility for payment and delivery providers. Include testing for taxes, address entry, discounts, inventory and order status where those features are in scope. Payment processing fees, platform subscriptions and third-party apps are operating costs. An integration quote should say who owns credentials, monitors failures and maintains compatibility."
+      },
+      {
+        "heading": "Migration and search visibility",
+        "body": "A replacement store needs a product and collection URL map, redirects where appropriate and validation of canonical metadata. Reconcile product records and preserve original approved media. Importing customer or order history requires permission and a defined purpose. Test representative products and edge cases before switching the live domain."
+      },
+      {
+        "heading": "Compare delivery and ownership",
+        "body": "Ask whether a theme or headless frontend is proposed and why. Include ongoing editing, deployment, account recovery and support in the comparison. Define launch acceptance around actual cart and approved checkout flows; a beautiful preview does not prove orders can be placed. Bring a sample catalog, critical apps, target markets and provider details to receive an estimate tied to the operation."
+      }
+    ],
+    "related": [
+      "shopify-development",
+      "ecommerce-website-development-delhi",
+      "pricing",
+      "industries-retail"
+    ],
+    "kind": "guide",
+    "market": "global",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "guides-ai-automation",
+    "title": "How to Scope an AI Automation Pilot",
+    "description": "Choose a bounded task, evaluate risk and measure AI automation against an existing workflow before expanding the system.",
+    "intro": "An AI pilot is useful when it tests a specific operational hypothesis. Start with a task, a baseline and a decision about whether to continue. A demonstration that produces a plausible answer is not enough to establish accuracy, value or permission to take actions.",
+    "sections": [
+      {
+        "heading": "Write the task and baseline",
+        "body": "Describe the input, expected output, responsible person and current completion steps. Use representative examples that you have permission to process. Record where errors matter and how staff recover from them. Compare with simpler alternatives such as validation rules, templates or an API integration. Avoid assuming every repetitive task requires a language model."
+      },
+      {
+        "heading": "Define allowed information and actions",
+        "body": "List approved data sources and roles that may access them. Separate reading a record from drafting or sending a message. Decide which steps require human approval and how the workflow stops if context is missing. Treat retrieved documents and external pages as untrusted data, not instructions authorizing new actions."
+      },
+      {
+        "heading": "Create the evaluation set",
+        "body": "Include straightforward cases, ambiguous cases, unavailable information and deliberate attempts to bypass rules. Score factual correctness, appropriate abstention, task completion, latency and cost. Keep a record of the model and configuration used so comparisons remain meaningful. A small set of carefully reviewed examples is more useful than an unsupported accuracy percentage."
+      },
+      {
+        "heading": "Calculate value cautiously",
+        "body": "Estimate time saved only after observing actual completed tasks, including review and correction time. Subtract provider usage, maintenance, monitoring and support costs. Separate projected values from measured outcomes. Expand the pilot only when there is evidence that it is useful and its failure behavior is acceptable. Bring the baseline, approved examples and decision criteria to an automation review."
+      }
+    ],
+    "related": [
+      "ai-automation-services",
+      "api-development",
+      "crm-development"
+    ],
+    "kind": "guide",
+    "market": "global",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "guides-software-planning",
+    "title": "Custom Software Requirements Checklist",
+    "description": "Prepare workflows, roles, data rules and acceptance criteria for a custom software project without overbuilding the first release.",
+    "intro": "A useful software brief describes what people must accomplish and how the business knows the result is correct. It should expose risks and decisions early enough to scope a first release. Screen references can support the brief but cannot replace workflow and data requirements.",
+    "sections": [
+      {
+        "heading": "Describe roles and records",
+        "body": "List the people who create, approve, view and export information. Describe the core records and their relationships in plain language. Include exceptions such as reassignment, cancellation and record merging. Identify the organization responsible for each dataset and what information should never appear in a broad operational list."
+      },
+      {
+        "heading": "Map one complete workflow",
+        "body": "Choose a valuable path from initial input to finished outcome. Show who acts at each stage, what evidence is required and what can go wrong. Define how the system handles a failed external call, a duplicate submission or two people editing together. A narrow complete workflow is a better first release than many disconnected administration screens."
+      },
+      {
+        "heading": "Define nonfunctional requirements",
+        "body": "Record access controls, backup and recovery needs, expected data volumes, accessibility goals and operational support. Distinguish a measured requirement from a preference. If a dashboard must update quickly, specify the source and acceptable delay rather than writing real-time everywhere. Identify external services and their account, cost and rate-limit constraints."
+      },
+      {
+        "heading": "Make acceptance reviewable",
+        "body": "Use observable checks: a revoked user cannot read a record, a repeated callback does not duplicate a payment state, and a backup restores the agreed data. Name the approver for each check. Specify repositories, accounts and documentation in the handover. Keep future ideas in a separate backlog and compare changes against the original first-release goal."
+      }
+    ],
+    "related": [
+      "custom-software-development",
+      "erp-development",
+      "saas-development"
+    ],
+    "kind": "guide",
+    "market": "global",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "guides-website-planning",
+    "title": "Business Website Planning Guide",
+    "description": "Plan content, proof, enquiry routes and ownership before commissioning a business website or redesign.",
+    "intro": "A website plan should connect the customer’s questions with the business’s actual offer. The strongest starting point is a clear audience, a small set of useful pages and a dependable enquiry route. Design then helps people understand and navigate that information.",
+    "sections": [
+      {
+        "heading": "Define audience and offer",
+        "body": "Describe the customer, the problem they want solved and the next action they can take. Separate distinct services only when visitors need different information to evaluate them. Use actual portfolio work and approved company facts. Avoid invented reviews, unsupported numbers or a city list that implies offices the business does not operate."
+      },
+      {
+        "heading": "Create the content map",
+        "body": "List the questions each page answers and its relationship to other pages. A service page can link to relevant work, scope guidance and contact information. A cost guide should explain variables and refer to approved pricing rather than manufacture a universal quote. Keep valuable existing URLs and record any necessary replacements."
+      },
+      {
+        "heading": "Specify the enquiry journey",
+        "body": "Decide whether contact is by form, phone, email or an external messaging service. Explain what happens after a visitor acts. If a form opens WhatsApp, the visitor still needs to send the message; do not report that handoff as a delivered lead. Preserve draft input if the handoff fails and avoid sending personal details into analytics."
+      },
+      {
+        "heading": "Prepare launch ownership",
+        "body": "Name owners for content approval, the domain, hosting, repositories and third-party accounts. Test the production domain on phone and desktop, including navigation, errors and the enquiry path. Agree update and support responsibilities before launch. Bring the current website, brand assets and prioritized page list to a discovery discussion so the scope reflects real work."
+      }
+    ],
+    "related": [
+      "website-development",
+      "ui-ux-design",
+      "website-development-cost-india"
+    ],
+    "kind": "guide",
+    "market": "global",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "hanboro-watches-website-case-study",
+    "title": "HANBORO Watch Storefront: Portfolio Study",
+    "description": "Explore the HANBORO watch storefront shown in the Curious Kaizer portfolio, with a focus on visual merchandising and evidence limits.",
+    "intro": "The Curious Kaizer portfolio includes a HANBORO watch storefront with product imagery and an interactive presentation. This study describes the visible design direction and the engineering questions a similar store needs to address. It does not claim measured sales, rankings, checkout performance or an unverified delivery date.",
+    "kind": "case study",
+    "market": "India",
+    "language": "en",
+    "editorialReview": true,
+    "updated": "2026-09-30",
+    "sections": [
+      {
+        "heading": "The storefront context",
+        "body": "A watch buyer needs to understand the product as well as the brand. The portfolio presentation uses large watch imagery and a dark visual setting to place attention on the dial, finish and product silhouette. A comparable project should begin with approved product photographs, accurate specifications and a clear merchandising hierarchy rather than invented technical features."
+      },
+      {
+        "heading": "Visual design and product exploration",
+        "body": "The site portfolio identifies a daylight-to-luminescence comparison as part of the HANBORO presentation. Such an interaction should preserve the supplied photographs, work with pointer and touch input and expose a keyboard-accessible control. Meaningful product information should remain available without using the interaction. A visual comparison is a merchandising feature, not evidence of a product specification that the merchant has not supplied."
+      },
+      {
+        "heading": "Engineering and operational questions",
+        "body": "For a similar storefront, catalog, variants, price, stock, cart and checkout must share an authoritative source. The chosen commerce platform and provider configuration determine account and checkout behavior. This portfolio study does not certify the current payment, shipping or messaging setup. Validate those flows against the actual deployed store and merchant-approved accounts before describing them as complete."
+      },
+      {
+        "heading": "What the evidence supports",
+        "body": "The repository contains a HANBORO project screenshot and a portfolio entry. That supports discussing the interface direction. It does not establish a launch month, build duration, source framework, sales lift, Core Web Vitals result or Google ranking. Those claims have been excluded from this study. A fuller case study should add an approved client brief, implementation evidence and dated measurements."
+      },
+      {
+        "heading": "Plan a related retail project",
+        "body": "Bring an approved sample catalog, original media, the existing commerce platform and the most important purchase journey. Agree the responsibilities for product data, account configuration, content approval and release testing. The related Shopify and retail guides explain the tradeoffs to review. Contact Curious Kaizer to scope an appropriate storefront rather than assuming every visual feature implies the same underlying implementation."
+      }
+    ],
+    "related": [
+      "portfolio",
+      "shopify-development",
+      "industries-retail",
+      "ecommerce-website-cost"
+    ]
+  }
+]
