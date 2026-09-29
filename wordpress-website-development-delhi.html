@@ -230,6 +230,250 @@
     </section>
 
     <!-- Footer -->
+        <!-- Curious Kaizer Ecosystem Discovery Hub -->
+    <section class="ck-ecosystem-discovery" aria-label="Explore Curious Kaizer Ecosystem">
+        <style>
+            .ck-ecosystem-discovery {
+                padding: 4.5rem 0 5rem;
+                background: radial-gradient(circle at 18% 20%, rgba(37, 99, 235, 0.05) 0%, transparent 48%),
+                            radial-gradient(circle at 82% 80%, rgba(147, 51, 234, 0.04) 0%, transparent 48%),
+                            #f8fafc;
+                border-top: 1px solid rgba(0, 0, 0, 0.06);
+                position: relative;
+                overflow: hidden;
+                font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+            }
+            .ck-eco-container {
+                max-width: 1240px;
+                margin: 0 auto;
+                padding: 0 2rem;
+                position: relative;
+                z-index: 2;
+            }
+            .ck-eco-header {
+                text-align: center;
+                max-width: 760px;
+                margin: 0 auto 3rem;
+            }
+            .ck-eco-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                background: rgba(37, 99, 235, 0.08);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                border: 1px solid rgba(37, 99, 235, 0.2);
+                border-radius: 9999px;
+                padding: 6px 18px;
+                font-size: 0.78rem;
+                font-weight: 700;
+                color: #2563eb;
+                text-transform: uppercase;
+                letter-spacing: 0.12em;
+                margin-bottom: 1rem;
+            }
+            .ck-eco-badge::before {
+                content: '';
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: #2563eb;
+                box-shadow: 0 0 8px rgba(37, 99, 235, 0.6);
+            }
+            .ck-eco-title {
+                font-family: 'DM Sans', -apple-system, sans-serif;
+                font-size: clamp(1.85rem, 3.2vw, 2.5rem);
+                font-weight: 800;
+                color: #0f172a;
+                letter-spacing: -0.035em;
+                line-height: 1.2;
+                margin: 0 0 0.85rem;
+            }
+            .ck-eco-subtitle {
+                font-size: 1.02rem;
+                color: #64748b;
+                font-weight: 400;
+                line-height: 1.65;
+                margin: 0;
+            }
+            .ck-eco-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+            @media (max-width: 1024px) {
+                .ck-eco-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+            @media (max-width: 640px) {
+                .ck-eco-container {
+                    padding: 0 1.25rem;
+                }
+                .ck-eco-grid {
+                    grid-template-columns: 1fr;
+                }
+                .ck-ecosystem-discovery {
+                    padding: 3.5rem 0 4rem;
+                }
+            }
+            .ck-eco-card {
+                background: rgba(255, 255, 255, 0.88);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                border: 1px solid rgba(0, 0, 0, 0.06);
+                border-radius: 20px;
+                padding: 22px 20px;
+                text-decoration: none;
+                position: relative;
+                overflow: hidden;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04),
+                            0 8px 24px rgba(0, 0, 0, 0.03),
+                            inset 0 1px 0 rgba(255, 255, 255, 0.95);
+                transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                            box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                            border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                display: flex;
+                align-items: flex-start;
+                gap: 16px;
+            }
+            .ck-eco-card::before {
+                content: '';
+                position: absolute;
+                top: -25px;
+                right: -25px;
+                width: 100px;
+                height: 100px;
+                background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, rgba(147, 51, 234, 0.08) 50%, transparent 75%);
+                filter: blur(18px);
+                pointer-events: none;
+                border-radius: 50%;
+                opacity: 0.8;
+                transition: opacity 0.3s ease, transform 0.3s ease;
+            }
+            .ck-eco-card:hover {
+                transform: translateY(-4px) scale(1.01);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06),
+                            0 16px 36px rgba(37, 99, 235, 0.12),
+                            inset 0 1px 0 rgba(255, 255, 255, 1);
+                border-color: rgba(37, 99, 235, 0.3);
+            }
+            .ck-eco-card:hover::before {
+                opacity: 1;
+                transform: scale(1.25);
+            }
+            .ck-eco-icon-box {
+                width: 44px;
+                height: 44px;
+                border-radius: 12px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.15rem;
+                flex-shrink: 0;
+                transition: transform 0.25s ease;
+            }
+            .ck-eco-card:hover .ck-eco-icon-box {
+                transform: scale(1.08);
+            }
+            .ck-eco-body {
+                flex-grow: 1;
+            }
+            .ck-eco-card-title {
+                font-family: 'DM Sans', -apple-system, sans-serif;
+                font-size: 1.02rem;
+                font-weight: 700;
+                color: #0f172a;
+                letter-spacing: -0.015em;
+                margin: 0 0 4px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .ck-eco-card-title span.arrow {
+                font-size: 0.9rem;
+                color: #2563eb;
+                opacity: 0;
+                transform: translateX(-4px);
+                transition: all 0.2s ease;
+            }
+            .ck-eco-card:hover .ck-eco-card-title span.arrow {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            .ck-eco-card-desc {
+                font-size: 0.86rem;
+                color: #64748b;
+                line-height: 1.5;
+                margin: 0;
+                font-weight: 400;
+            }
+        </style>
+        <div class="ck-eco-container">
+            <div class="ck-eco-header">
+                <div class="ck-eco-badge">Plan Your Next Project</div>
+                <h2 class="ck-eco-title">Explore Curious Kaizer's Digital Ecosystem</h2>
+                <p class="ck-eco-subtitle">Discover our custom software architectures, AI automations, industry-specific platforms, and global remote delivery frameworks.</p>
+            </div>
+            <div class="ck-eco-grid">
+                <a href="/services" class="ck-eco-card">
+                    <div class="ck-eco-icon-box" style="background: rgba(37, 99, 235, 0.08); color: #2563eb;">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <div class="ck-eco-body">
+                        <div class="ck-eco-card-title">Development Services <span class="arrow">→</span></div>
+                        <p class="ck-eco-desc">Custom web, SaaS, Shopify, APIs &amp; cloud backend architectures.</p>
+                    </div>
+                </a>
+                <a href="/industries" class="ck-eco-card">
+                    <div class="ck-eco-icon-box" style="background: rgba(16, 185, 129, 0.08); color: #10b981;">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="ck-eco-body">
+                        <div class="ck-eco-card-title">Industry Solutions <span class="arrow">→</span></div>
+                        <p class="ck-eco-desc">Real estate, hospitality, procurement, retail &amp; membership platforms.</p>
+                    </div>
+                </a>
+                <a href="/guides" class="ck-eco-card">
+                    <div class="ck-eco-icon-box" style="background: rgba(99, 102, 241, 0.08); color: #6366f1;">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="ck-eco-body">
+                        <div class="ck-eco-card-title">Planning &amp; Cost Guides <span class="arrow">→</span></div>
+                        <p class="ck-eco-desc">Software requirement playbooks, cost guides &amp; AI architectures.</p>
+                    </div>
+                </a>
+                <a href="/markets" class="ck-eco-card">
+                    <div class="ck-eco-icon-box" style="background: rgba(245, 158, 11, 0.08); color: #d97706;">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <div class="ck-eco-body">
+                        <div class="ck-eco-card-title">International Delivery <span class="arrow">→</span></div>
+                        <p class="ck-eco-desc">Remote execution for clients in Dubai (UAE), the US, UK &amp; India.</p>
+                    </div>
+                </a>
+                <a href="/project-planner" class="ck-eco-card">
+                    <div class="ck-eco-icon-box" style="background: rgba(147, 51, 234, 0.08); color: #9333ea;">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="ck-eco-body">
+                        <div class="ck-eco-card-title">Project Scope Planner <span class="arrow">→</span></div>
+                        <p class="ck-eco-desc">Interactive requirements generator, stack builder &amp; cost calculator.</p>
+                    </div>
+                </a>
+                <a href="/portfolio" class="ck-eco-card">
+                    <div class="ck-eco-icon-box" style="background: rgba(236, 72, 153, 0.08); color: #db2777;">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="ck-eco-body">
+                        <div class="ck-eco-card-title">Curated Portfolio <span class="arrow">→</span></div>
+                        <p class="ck-eco-desc">Production case studies, verified client metrics &amp; engineering proof.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer-wantace" role="contentinfo">
         <div class="footer-bg-glow"></div>
         <div class="container">
