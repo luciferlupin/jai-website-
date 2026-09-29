@@ -21,6 +21,8 @@
 - [About Us](https://www.curiouskaizer.com/about) - Agency background, founder Jai Goel, engineering philosophy, and capabilities.
 - [Our Services](https://www.curiouskaizer.com/services) - Detailed breakdown of capabilities (SaaS, AI, E-Commerce, Dashboards).
 - [Portfolio & Case Studies](https://www.curiouskaizer.com/portfolio) - Live projects including real estate SaaS portals, 3D ring customizers, and legal databases.
+- [Featured Case Study - HANBORO Watches](https://hanborowatches.in) - Luxury mechanical horology e-commerce storefront engineered by Curious Kaizer featuring kinetic complication video reels, daylight-to-luminescence split sliders, and sub-second checkout.
+- [Featured Case Study - Club Re Straddle](https://www.clubrestraddle.com/) - Private club management and access control ecosystem engineered by Curious Kaizer featuring KYC player profiles, scannable QR gate passes, and real-time operations dashboard.
 - [Pricing & FAQ](https://www.curiouskaizer.com/pricing) - Pricing packages, transparent licensing cost, and common web development FAQs.
 - [CRM Product Demo](https://www.curiouskaizer.com/crm-product) - Overview of CRM Pro, our flagship customizable Kanban business dashboard.
 - [Contact Us](https://www.curiouskaizer.com/contact) - Book a free discovery call or send an inquiry.
