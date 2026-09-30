@@ -103,6 +103,31 @@
       "permanent": true
     },
     {
+      "source": "/blog-agentic-coding-cursor-claude-workflows.html",
+      "destination": "/blog-agentic-coding-cursor-claude-workflows",
+      "permanent": true
+    },
+    {
+      "source": "/blog-nextjs-15-react-19-production-guide.html",
+      "destination": "/blog-nextjs-15-react-19-production-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog-generative-engine-optimization-geo-ai-seo.html",
+      "destination": "/blog-generative-engine-optimization-geo-ai-seo",
+      "permanent": true
+    },
+    {
+      "source": "/blog-deepseek-r1-local-reasoning-models.html",
+      "destination": "/blog-deepseek-r1-local-reasoning-models",
+      "permanent": true
+    },
+    {
+      "source": "/blog-model-context-protocol-mcp.html",
+      "destination": "/blog-model-context-protocol-mcp",
+      "permanent": true
+    },
+    {
       "source": "/blog-multi-agent-orchestration-2026.html",
       "destination": "/blog-multi-agent-orchestration-2026",
       "permanent": true

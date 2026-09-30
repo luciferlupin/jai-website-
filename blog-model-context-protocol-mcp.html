@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CDN caching enabled for Core Web Vitals performance -->
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>Model Context Protocol (MCP) in Production: Enterprise AI Agents | Curious Kaizer</title>
+    <meta name="description" content="Complete architectural guide to Anthropic's Model Context Protocol (MCP). Learn how to build production MCP servers, secure tool sandboxes, and integrate LLMs with enterprise systems.">
+    
+    <!-- Advanced SEO Meta Tags -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    
+    <!-- International SEO Hreflang — India, UAE, US, UK, EU, Global -->
+    <link rel="alternate" hreflang="en" href="https://www.curiouskaizer.com/blog-model-context-protocol-mcp" />
+    <link rel="alternate" hreflang="en-IN" href="https://www.curiouskaizer.com/blog-model-context-protocol-mcp" />
+    <link rel="alternate" hreflang="en-AE" href="https://www.curiouskaizer.com/blog-model-context-protocol-mcp" />
+    <link rel="alternate" hreflang="en-US" href="https://www.curiouskaizer.com/blog-model-context-protocol-mcp" />
+    <link rel="alternate" hreflang="en-GB" href="https://www.curiouskaizer.com/blog-model-context-protocol-mcp" />
+    <link rel="alternate" hreflang="en-AU" href="https://www.curiouskaizer.com/blog-model-context-protocol-mcp" />
+    <link rel="alternate" hreflang="en-CA" href="https://www.curiouskaizer.com/blog-model-context-protocol-mcp" />
+    <link rel="alternate" hreflang="x-default" href="https://www.curiouskaizer.com/blog-model-context-protocol-mcp" />
+    <link rel="canonical" href="https://www.curiouskaizer.com/blog-model-context-protocol-mcp" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Model Context Protocol (MCP) in Production: The Universal AI Tooling Standard | Curious Kaizer">
+    <meta property="og:description" content="Complete architectural guide to Anthropic's Model Context Protocol (MCP). Learn how to build production MCP servers, secure tool sandboxes, and integrate LLMs with enterprise systems.">
+    <meta property="og:url" content="https://www.curiouskaizer.com/blog-model-context-protocol-mcp">
+    <meta property="og:image" content="https://www.curiouskaizer.com/images/ck-mcp-protocol-architecture.jpg">
+    <meta property="article:author" content="Jai Goel">
+    <meta property="article:published_time" content="2026-09-15T00:00:00+05:30">
+    <meta property="article:section" content="AI & Automation">
+    <meta property="article:tag" content="Model Context Protocol">
+    <meta property="article:tag" content="MCP Architecture">
+    <meta property="article:tag" content="Enterprise AI Agents">
+    
+    <!-- Schema.org Article Structured Data -->
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Model Context Protocol (MCP) in Production: Architecting the Universal Standard for Enterprise AI Agents",
+  "description": "Complete architectural guide to Anthropic's Model Context Protocol (MCP). Learn how to build production MCP servers, secure tool sandboxes, and integrate LLMs with enterprise systems.",
+  "image": "https://www.curiouskaizer.com/images/ck-mcp-protocol-architecture.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Jai Goel",
+    "jobTitle": "Founder & Lead AI Systems Architect",
+    "url": "https://www.curiouskaizer.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Curious Kaizer",
+    "url": "https://www.curiouskaizer.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.curiouskaizer.com/images/logo-icon.jpg"
+    }
+  },
+  "datePublished": "2026-09-15T00:00:00+05:30",
+  "dateModified": "2026-09-29T00:00:00+05:30",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.curiouskaizer.com/blog-model-context-protocol-mcp"
+  },
+  "articleSection": "AI & Automation"
+}</script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.curiouskaizer.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.curiouskaizer.com/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Model Context Protocol MCP",
+      "item": "https://www.curiouskaizer.com/blog-model-context-protocol-mcp"
+    }
+  ]
+}</script>
+
+    <!-- JSON-LD Speakable Schema -->
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://www.curiouskaizer.com/blog-model-context-protocol-mcp#webpage",
+  "url": "https://www.curiouskaizer.com/blog-model-context-protocol-mcp",
+  "name": "Model Context Protocol (MCP) in Production: The Universal AI Tooling Standard | Curious Kaizer",
+  "dateModified": "2026-09-29",
+  "isPartOf": {
+    "@type": "WebSite",
+    "url": "https://www.curiouskaizer.com/"
+  }
+}</script>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css?v=20260820_fresh">
+    
+    <style>
+        body { font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif !important; }
+        .article-hero { padding: 7.5rem 0 3rem; background-color: #fafbfc; border-bottom: 1px solid #f1f5f9; }
+        .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: #64748b; margin-bottom: 1.2rem; }
+        .breadcrumb a { color: #64748b; text-decoration: none; }
+        .breadcrumb a:hover { color: #2563eb; }
+        .article-hero h1 { font-size: 2.6rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.25; color: #0f172a; margin-bottom: 1.2rem; }
+        .article-meta-bar { display: flex; align-items: center; gap: 16px; font-size: 0.9rem; color: #475569; flex-wrap: wrap; }
+        .article-tag { background: rgba(37, 99, 235, 0.08); color: #2563eb; padding: 4px 12px; border-radius: 12px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+        .article-main-section { padding: 4rem 0; background: #ffffff; }
+        .article-container { max-width: 820px; margin: 0 auto; padding: 0 20px; }
+        .article-body { font-size: 1.1rem; line-height: 1.85; color: #334155; }
+        .article-body p { margin-bottom: 1.8rem; }
+        .article-body h2 { font-size: 1.85rem; font-weight: 800; color: #0f172a; margin: 2.8rem 0 1.1rem; letter-spacing: -0.02em; }
+        .article-body h3 { font-size: 1.35rem; font-weight: 700; color: #0f172a; margin: 2rem 0 0.8rem; }
+        .article-body ul, .article-body ol { margin-bottom: 1.8rem; padding-left: 1.5rem; }
+        .article-body li { margin-bottom: 0.6rem; }
+        .article-body blockquote { border-left: 4px solid #2563eb; background: #f8fafc; padding: 1.2rem 1.6rem; border-radius: 0 12px 12px 0; margin: 2rem 0; font-style: italic; color: #475569; }
+        .article-featured-img { width: 100%; border-radius: 16px; margin: 2rem 0 3rem; box-shadow: 0 10px 30px rgba(0,0,0,0.08); overflow: hidden; }
+        .article-featured-img img { width: 100%; height: auto; display: block; }
+        pre { background: #0f172a; border-radius: 12px; padding: 1.4rem; overflow-x: auto; margin: 2rem 0; font-family: 'JetBrains Mono', 'Courier New', monospace; font-size: 0.9rem; color: #e2e8f0; line-height: 1.6; }
+        code { background: #f1f5f9; color: #0f172a; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; font-family: 'JetBrains Mono', monospace; }
+        pre code { background: transparent; color: #e2e8f0; padding: 0; font-size: 0.88rem; }
+        .article-table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.95rem; }
+        .article-table th, .article-table td { padding: 12px 16px; border: 1px solid #e2e8f0; text-align: left; }
+        .article-table th { background: #f8fafc; font-weight: 700; color: #0f172a; }
+        .article-author-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 18px; padding: 2rem; display: flex; align-items: center; gap: 1.5rem; margin-top: 4rem; }
+        .article-author-avatar { width: 70px; height: 70px; border-radius: 50%; background: #2563eb; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.6rem; flex-shrink: 0; }
+        .callout-box { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 12px; padding: 1.4rem 1.6rem; margin: 2rem 0; }
+        .callout-box h4 { color: #1e40af; margin: 0 0 0.5rem; font-size: 1.1rem; }
+        .callout-box p { margin: 0; font-size: 0.95rem; color: #1e3a8a; }
+    </style>
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@curiouskaizer">
+    <meta name="twitter:creator" content="@jaigoel">
+    <meta name="twitter:title" content="Model Context Protocol (MCP) in Production: The Universal AI Tooling Standard | Curious Kaizer">
+    <meta name="twitter:description" content="Complete architectural guide to Anthropic's Model Context Protocol (MCP). Learn how to build production MCP servers, secure tool sandboxes, and integrate LLMs with enterprise systems.">
+    <meta name="twitter:image" content="https://www.curiouskaizer.com/images/ck-mcp-protocol-architecture.jpg">
+    <link rel="stylesheet" href="/css/privacy.css?v=20260930">
+    <script src="/js/analytics-tracker.js?v=20260930" defer></script>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <img decoding="async" src="images/logo-icon.jpg" alt="Curious Kaizer Logo" class="logo-icon" width="50" height="38">
+                    <span class="logo-text">Curious Kaizer</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Capabilities</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                </ul>
+                <a href="contact.html" class="nav-cta-btn">Book Call <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Header -->
+    <section class="article-hero">
+        <div class="article-container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> <i class="fas fa-chevron-right" style="font-size: 0.7rem;"></i>
+                <a href="blog.html">Blog</a> <i class="fas fa-chevron-right" style="font-size: 0.7rem;"></i>
+                <span>Model Context Protocol (MCP)</span>
+            </div>
+            <span class="article-tag">AI &amp; Automation</span>
+            <h1>Model Context Protocol (MCP) in Production: Architecting the Universal Standard for Enterprise AI Agents</h1>
+            <div class="article-meta-bar">
+                <span><i class="far fa-user"></i> By Jai Goel</span>
+                <span><i class="far fa-calendar"></i> September 15, 2026</span>
+                <span><i class="far fa-clock"></i> 10 min read</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="article-main-section">
+        <div class="article-container">
+            <article class="article-body">
+                
+                <div class="article-featured-img">
+                    <img decoding="async" srcset="/images/optimized/ck-mcp-protocol-architecture-640.webp 640w, /images/optimized/ck-mcp-protocol-architecture-960.webp 960w, /images/optimized/ck-mcp-protocol-architecture-1536.webp 1536w" sizes="(max-width: 768px) 100vw, 820px" width="1536" height="864" src="/images/ck-mcp-protocol-architecture.jpg" alt="Model Context Protocol MCP architecture connecting reasoning models to database nodes, API servers, and developer tools" loading="eager">
+                </div>
+
+                <p class="lead" style="font-size: 1.25rem; font-weight: 500; color: #0f172a;">
+                    For years, integrating AI agents with real-world business tools was a nightmare of custom JSON schemas, proprietary function-calling wrappers, and brittle API integrations. In 2026, the <strong>Model Context Protocol (MCP)</strong> has emerged as the universal "USB-C standard" for AI, establishing an open protocol that seamlessly bridges LLMs with internal databases, private APIs, file systems, and enterprise SaaS.
+                </p>
+
+                <h2>Why MCP is Replacing Ad-Hoc Function Calling</h2>
+                <p>
+                    Before MCP, every developer who wanted an LLM (whether Claude, GPT-4o, or Gemini) to interact with Postgres or GitHub had to write tailored function definitions, parse custom response formats, and constantly update schemas whenever the underlying API changed. If you wanted 5 different agents to talk to 10 different systems, you had to maintain 50 bespoke point-to-point connections.
+                </p>
+                <p>
+                    MCP inverts this paradigm by decoupling <strong>Tool Providers (MCP Servers)</strong> from <strong>AI Hosts (MCP Clients)</strong>. An engineering team creates an MCP Server for their internal PostgreSQL warehouse once, and any MCP-compliant client (Cursor, Claude Desktop, autonomous background swarms, or custom internal web apps) can immediately discover capabilities, execute authenticated queries, and retrieve structured context safely.
+                </p>
+
+                <div class="callout-box">
+                    <h4>The Core MCP Value Proposition</h4>
+                    <p>Instead of <em>N × M</em> brittle point-to-point tool integrations, MCP establishes an <em>N + M</em> composable architecture with standardized JSON-RPC 2.0 communication, streaming SSE transports, and zero vendor lock-in.</p>
+                </div>
+
+                <h2>The Three Pillars of MCP Architecture</h2>
+                <p>
+                    The Model Context Protocol operates on three fundamental primitive types exposed by servers to client agents:
+                </p>
+                <ol>
+                    <li><strong>Prompts:</strong> Pre-packaged, dynamic prompt templates and workflows that guide the AI through domain-specific tasks.</li>
+                    <li><strong>Resources:</strong> Read-only contextual data streams (such as database schemas, markdown documentation, log files, or code diffs) that the model can inspect as context.</li>
+                    <li><strong>Tools:</strong> Executable functions with typed input schemas that allow the LLM to take real actions in the world (e.g., executing SQL transactions, sending Slack notifications, or deploying microservices).</li>
+                </ol>
+
+                <table class="article-table">
+                    <thead>
+                        <tr>
+                            <th>Primitive</th>
+                            <th>Direction</th>
+                            <th>Primary Use Case</th>
+                            <th>Enterprise Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Resources</strong></td>
+                            <td>Server → Client</td>
+                            <td>Passive context retrieval</td>
+                            <td>Live CRM account dossiers, Git branch diffs</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tools</strong></td>
+                            <td>Client → Server</td>
+                            <td>State-changing execution</td>
+                            <td>Refund processing, database schema migrations</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Prompts</strong></td>
+                            <td>Server → Client</td>
+                            <td>Guided prompt templates</td>
+                            <td>Incident post-mortem workflows, code review templates</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Building a Production MCP Server in TypeScript</h2>
+                <p>
+                    Let's walk through building a resilient, schema-validated MCP Server using the official TypeScript SDK (<code>@modelcontextprotocol/sdk</code>). This server exposes a secure PostgreSQL read and analytical tool to our AI agents:
+                </p>
+
+<pre><code>// server.ts - Production MCP Server with Zod Validation
+import { Server } from "@modelcontextprotocol/sdk/server/index.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import {
+  CallToolRequestSchema,
+  ListToolsRequestSchema,
+  ListResourcesRequestSchema,
+  ReadResourceRequestSchema
+} from "@modelcontextprotocol/sdk/types.js";
+import { z } from "zod";
+import pg from "pg";
+
+const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
+
+const server = new Server(
+  { name: "enterprise-postgres-mcp", version: "1.0.0" },
+  { capabilities: { tools: {}, resources: {} } }
+);
+
+// 1. List Available Tools
+server.setRequestHandler(ListToolsRequestSchema, async () => {
+  return {
+    tools: [
+      {
+        name: "execute_safe_query",
+        description: "Executes read-only analytical SQL queries with strict row limits",
+        inputSchema: {
+          type: "object",
+          properties: {
+            sqlQuery: { type: "string", description: "SELECT query to run" },
+            limit: { type: "number", description: "Max rows (capped at 100)" }
+          },
+          required: ["sqlQuery"]
+        }
+      }
+    ]
+  };
+});
+
+// 2. Handle Tool Execution with Guardrails
+server.setRequestHandler(CallToolRequestSchema, async (request) => {
+  if (request.params.name === "execute_safe_query") {
+    const { sqlQuery, limit = 50 } = request.params.arguments as { sqlQuery: string; limit?: number };
+    
+    // Strict Guardrail: Prevent mutations
+    const trimmed = sqlQuery.trim().toLowerCase();
+    if (!trimmed.startsWith("select") || trimmed.includes("insert") || trimmed.includes("drop") || trimmed.includes("delete")) {
+      throw new Error("Security Violation: Only SELECT queries are permitted on this MCP endpoint.");
+    }
+
+    const client = await pool.connect();
+    try {
+      const sanitizedLimit = Math.min(limit, 100);
+      const res = await client.query(`${sqlQuery} LIMIT $1`, [sanitizedLimit]);
+      return {
+        content: [{ type: "text", text: JSON.stringify(res.rows, null, 2) }]
+      };
+    } finally {
+      client.release();
+    }
+  }
+  throw new Error(`Tool not found: ${request.params.name}`);
+});
+
+// Start the stdio transport
+const transport = new StdioServerTransport();
+await server.connect(transport);
+</code></pre>
+
+                <h2>Enterprise Security & Sandboxing Patterns</h2>
+                <p>
+                    Connecting autonomous LLMs directly to core infrastructure introduces substantial risk if not guarded by strict boundaries. In production enterprise environments, we implement three non-negotiable security layers:
+                </p>
+                <ul>
+                    <li><strong>Least Privilege Scoping:</strong> MCP servers must run with read-only database roles and scoped OAuth 2.0 bearer tokens restricted exclusively to required endpoints.</li>
+                    <li><strong>Deterministic Schema Validation:</strong> All tool inputs must undergo rigorous runtime type checks (e.g., via Zod or Pydantic) before touching backend execution engines.</li>
+                    <li><strong>Human-in-the-Loop Interceptors:</strong> Destructive or financial operations (such as payments, bulk email dispatch, or DNS modifications) require an interactive confirmation token from a human supervisor before the MCP server commits the transaction.</li>
+                </ul>
+
+                <blockquote>
+                    <p>"The true power of MCP is not just standardizing tool calls—it is creating an auditable, cryptographic boundary where security teams can inspect and revoke every autonomous agent interaction in real time."</p>
+                </blockquote>
+
+                <h2>MCP Transports: Stdio vs Server-Sent Events (SSE)</h2>
+                <p>
+                    MCP supports two primary transport protocols depending on the deployment topology:
+                </p>
+                <ul>
+                    <li><strong>Stdio (Standard Input/Output):</strong> Best for local developer tools, IDE extensions (Cursor, VSCode), and CLI utilities where the client spawns the MCP server as a child process. Zero networking overhead and instant startup.</li>
+                    <li><strong>SSE (Server-Sent Events over HTTP):</strong> Essential for distributed cloud microservices, multi-tenant agent swarms, and remote serverless deployments. Enables asynchronous bi-directional streaming over standard HTTP/2 and HTTPS.</li>
+                </ul>
+
+                <h2>How Curious Kaizer Deploys MCP for Clients</h2>
+                <p>
+                    At Curious Kaizer, we build custom MCP infrastructure for fast-growing startups and enterprises. Whether you are connecting your internal ERP to AI customer service swarms or giving your engineering team agentic database tools with complete audit logs, we architect hardened, sub-50ms MCP pipelines that scale reliably.
+                </p>
+
+                <!-- Author Bio Card -->
+                <div class="article-author-card">
+                    <div class="article-author-avatar">JG</div>
+                    <div>
+                        <h4 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin-bottom: 4px;">Jai Goel</h4>
+                        <p style="font-size: 0.92rem; color: #64748b; margin: 0;">Founder &amp; Lead AI Systems Architect at Curious Kaizer. Specializing in autonomous multi-agent pipelines, MCP servers, high-performance web systems, and serverless architectures.</p>
+                    </div>
+                </div>
+
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: #0f172a; color: #fff; padding: 3rem 0; margin-top: 4rem;">
+        <div class="container" style="text-align: center;">
+            <p>© 2026 Curious Kaizer. All rights reserved. | <a href="pricing.html" style="color: #60a5fa;">View Pricing</a> | <a href="contact.html" style="color: #60a5fa;">Contact Us</a></p>
+        </div>
+    </footer>
+
+    <section style="padding:2rem;background:#f8fafc;border-top:1px solid #e5e7eb;margin-top:3rem">
+        <div style="max-width:800px;margin:0 auto">
+            <p style="font-size:.9rem;color:#64748b;margin:0 0 .8rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;">Related Services</p>
+            <div style="display:flex;flex-wrap:wrap;gap:.8rem">
+                <a href="/ai-automation-services" style="background:#eff6ff;color:#2563eb;border:1px solid #bfdbfe;border-radius:8px;padding:6px 14px;text-decoration:none;font-size:.88rem;font-weight:600">AI Automation Services →</a>
+                <a href="/custom-software-development" style="background:#f5f3ff;color:#7c3aed;border:1px solid #ddd6fe;border-radius:8px;padding:6px 14px;text-decoration:none;font-size:.88rem;font-weight:600">Custom Software →</a>
+                <a href="/saas-development" style="background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;border-radius:8px;padding:6px 14px;text-decoration:none;font-size:.88rem;font-weight:600">SaaS Development →</a>
+                <a href="/contact" style="background:#2563eb;color:#fff;border-radius:8px;padding:6px 14px;text-decoration:none;font-size:.88rem;font-weight:600">Get a Free Proposal →</a>
+            </div>
+        </div>
+    </section>
+    <script src="/js/cookie-consent.js" defer></script>
+</body>
+</html>

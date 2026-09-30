@@ -13,6 +13,9 @@
     <loc>https://www.curiouskaizer.com/backend-development</loc>
   </url>
   <url>
+    <loc>https://www.curiouskaizer.com/blog-agentic-coding-cursor-claude-workflows</loc>
+  </url>
+  <url>
     <loc>https://www.curiouskaizer.com/blog-b2b-procurement-case-study</loc>
   </url>
   <url>
@@ -22,10 +25,16 @@
     <loc>https://www.curiouskaizer.com/blog-database-normalization</loc>
   </url>
   <url>
+    <loc>https://www.curiouskaizer.com/blog-deepseek-r1-local-reasoning-models</loc>
+  </url>
+  <url>
     <loc>https://www.curiouskaizer.com/blog-edge-ai-inference</loc>
   </url>
   <url>
     <loc>https://www.curiouskaizer.com/blog-edge-rendering-2026</loc>
+  </url>
+  <url>
+    <loc>https://www.curiouskaizer.com/blog-generative-engine-optimization-geo-ai-seo</loc>
   </url>
   <url>
     <loc>https://www.curiouskaizer.com/blog-inference-compute-scaling</loc>
@@ -37,7 +46,13 @@
     <loc>https://www.curiouskaizer.com/blog-liquid-foundation-models</loc>
   </url>
   <url>
+    <loc>https://www.curiouskaizer.com/blog-model-context-protocol-mcp</loc>
+  </url>
+  <url>
     <loc>https://www.curiouskaizer.com/blog-multi-agent-orchestration-2026</loc>
+  </url>
+  <url>
+    <loc>https://www.curiouskaizer.com/blog-nextjs-15-react-19-production-guide</loc>
   </url>
   <url>
     <loc>https://www.curiouskaizer.com/blog-rag-latency-optimization</loc>

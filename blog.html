@@ -100,6 +100,36 @@
   "blogPost": [
     {
       "@type": "BlogPosting",
+      "headline": "Agentic Coding in 2026: Claude 3.7 Sonnet, Cursor & Windsurf Workflows for 10x Engineering Velocity",
+      "url": "https://www.curiouskaizer.com/blog-agentic-coding-cursor-claude-workflows.html",
+      "datePublished": "2026-09-25"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Next.js 15 & React 19 in Production: Server Actions, Partial Prerendering (PPR), and Async Request Optimization",
+      "url": "https://www.curiouskaizer.com/blog-nextjs-15-react-19-production-guide.html",
+      "datePublished": "2026-09-22"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Generative Engine Optimization (GEO): How to Rank #1 on Perplexity, SearchGPT, and Google AI Overviews in 2026",
+      "url": "https://www.curiouskaizer.com/blog-generative-engine-optimization-geo-ai-seo.html",
+      "datePublished": "2026-09-20"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "DeepSeek-R1 & Distilled Reasoning Models: Self-Hosting Local AI Inference for 95% Compute Cost Reduction",
+      "url": "https://www.curiouskaizer.com/blog-deepseek-r1-local-reasoning-models.html",
+      "datePublished": "2026-09-18"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Model Context Protocol (MCP) in Production: Architecting the Universal Standard for Enterprise AI Agents",
+      "url": "https://www.curiouskaizer.com/blog-model-context-protocol-mcp.html",
+      "datePublished": "2026-09-15"
+    },
+    {
+      "@type": "BlogPosting",
       "headline": "Multi-Agent Orchestration in 2026: Architecting Autonomous AI Swarms for Enterprise Workflows",
       "url": "https://www.curiouskaizer.com/blog-multi-agent-orchestration-2026.html",
       "datePublished": "2026-08-10"
@@ -115,18 +145,6 @@
       "headline": "Serverless Postgres in 2026: Branching, Instant Autoscaling, and Cold-Start Optimization with Neon & Supabase",
       "url": "https://www.curiouskaizer.com/blog-serverless-postgres-neon-supabase.html",
       "datePublished": "2026-08-05"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Rust & WebAssembly Microservices: Replacing Docker Containers for 10x Faster Cold Starts",
-      "url": "https://www.curiouskaizer.com/blog-rust-webassembly-microservices.html",
-      "datePublished": "2026-08-02"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Context Engineering over Prompt Engineering: Managing 1M+ Token Windows Efficiently",
-      "url": "https://www.curiouskaizer.com/blog-context-engineering-llm-apps.html",
-      "datePublished": "2026-07-28"
     }
   ],
   "potentialAction": {
@@ -227,7 +245,7 @@
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
     
     <!-- CSS Stylesheets -->
-    <link rel="stylesheet" href="css/styles.css?v=20260820_fresh">
+    <link rel="stylesheet" href="css/styles.css?v=20260930_ecosystem_blue">
 
     <!-- Apple-style & Curious Kaizer Cohesive Style Sheets -->
     <style>
@@ -489,6 +507,16 @@
             height: 100%;
             object-fit: cover;
             object-position: center top;
+        }
+
+        .blog-card-image img.latest-cover {
+            object-position: center center;
+            transform: scale(1.01);
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .blog-card:hover .blog-card-image img.latest-cover {
+            transform: scale(1.035);
         }
 
         /* Dynamic Category Theming */
@@ -1388,10 +1416,125 @@
             <!-- Blog Posts Grid -->
             <section class="blog-grid" id="blogGrid">
                 
-                <!-- New Post 1: Multi-Agent Orchestration (AI & Automation) -->
+                <!-- Latest Post 1: Agentic Coding (SaaS & Databases) -->
+                <article class="blog-card blog-card-item" data-category="saas" data-aos="fade-up">
+                    <div class="blog-card-image">
+                        <img class="latest-cover" decoding="async" srcset="/images/optimized/ck-agentic-coding-flows-640.webp 640w, /images/optimized/ck-agentic-coding-flows-960.webp 960w, /images/optimized/ck-agentic-coding-flows-1536.webp 1536w" sizes="(max-width: 760px) 100vw, 60vw" width="1536" height="864" src="/images/ck-agentic-coding-flows.jpg" alt="Agentic AI coding workstation executing multi-file refactoring loops with Claude 3.7 Sonnet" loading="lazy">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-meta">
+                            <span class="blog-tag">SaaS &amp; Databases</span>
+                            <span>•</span>
+                            <span>9 min read</span>
+                        </div>
+                        <h3><a href="blog-agentic-coding-cursor-claude-workflows.html">Agentic Coding in 2026: Claude 3.7 Sonnet, Cursor &amp; Windsurf Workflows for 10x Engineering Velocity</a></h3>
+                        <p>How hybrid reasoning models and agentic IDEs enable single engineers to orchestrate multi-file refactoring, context steering via .cursorrules, and self-healing test loops.</p>
+                        <div class="blog-author-strip">
+                            <div class="blog-author-avatar">JG</div>
+                            <div class="blog-author-info">
+                                <span>Jai Goel</span>
+                                <small>September 25, 2026</small>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Latest Post 2: Next.js 15 & React 19 (Web Design & Engineering) -->
+                <article class="blog-card blog-card-item" data-category="web" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-card-image">
+                        <img class="latest-cover" decoding="async" srcset="/images/optimized/ck-nextjs15-react19-640.webp 640w, /images/optimized/ck-nextjs15-react19-960.webp 960w, /images/optimized/ck-nextjs15-react19-1536.webp 1536w" sizes="(max-width: 760px) 100vw, 60vw" width="1536" height="864" src="/images/ck-nextjs15-react19.jpg" alt="Next.js 15 and React 19 architecture showing Partial Prerendering PPR and Server Actions data flow" loading="lazy">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-meta">
+                            <span class="blog-tag">Web Design</span>
+                            <span>•</span>
+                            <span>9 min read</span>
+                        </div>
+                        <h3><a href="blog-nextjs-15-react-19-production-guide.html">Next.js 15 &amp; React 19 in Production: Server Actions, Partial Prerendering (PPR) &amp; Async Request APIs</a></h3>
+                        <p>Mastering Partial Prerendering (PPR), async cookies/headers, hardened Server Actions with Zod validation, and sub-40ms TTFB edge caching.</p>
+                        <div class="blog-author-strip">
+                            <div class="blog-author-avatar">JG</div>
+                            <div class="blog-author-info">
+                                <span>Jai Goel</span>
+                                <small>September 22, 2026</small>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Latest Post 3: Generative Engine Optimization (Web Design & SEO) -->
+                <article class="blog-card blog-card-item" data-category="web" data-aos="fade-up">
+                    <div class="blog-card-image">
+                        <img class="latest-cover" decoding="async" srcset="/images/optimized/ck-geo-ai-search-640.webp 640w, /images/optimized/ck-geo-ai-search-960.webp 960w, /images/optimized/ck-geo-ai-search-1536.webp 1536w" sizes="(max-width: 760px) 100vw, 60vw" width="1536" height="864" src="/images/ck-geo-ai-search.jpg" alt="Generative Engine Optimization GEO analytics dashboard indexing AI citations across search engines" loading="lazy">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-meta">
+                            <span class="blog-tag">Web Design</span>
+                            <span>•</span>
+                            <span>8 min read</span>
+                        </div>
+                        <h3><a href="blog-generative-engine-optimization-geo-ai-seo.html">Generative Engine Optimization (GEO): How to Rank #1 on Perplexity, SearchGPT &amp; Google AI Overviews</a></h3>
+                        <p>Moving beyond traditional SERP SEO to master Generative Engine Optimization. Proven technical blueprints for llms.txt, JSON-LD schemas, and AI citation authority.</p>
+                        <div class="blog-author-strip">
+                            <div class="blog-author-avatar">JG</div>
+                            <div class="blog-author-info">
+                                <span>Jai Goel</span>
+                                <small>September 20, 2026</small>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Latest Post 4: DeepSeek-R1 & Local Reasoning (AI & Automation) -->
+                <article class="blog-card blog-card-item" data-category="ai" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-card-image">
+                        <img class="latest-cover" decoding="async" srcset="/images/optimized/ck-deepseek-r1-reasoning-640.webp 640w, /images/optimized/ck-deepseek-r1-reasoning-960.webp 960w, /images/optimized/ck-deepseek-r1-reasoning-1536.webp 1536w" sizes="(max-width: 760px) 100vw, 60vw" width="1536" height="864" src="/images/ck-deepseek-r1-reasoning.jpg" alt="DeepSeek R1 and distilled reasoning neural network processor running local private inference" loading="lazy">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-meta">
+                            <span class="blog-tag">AI &amp; Automation</span>
+                            <span>•</span>
+                            <span>9 min read</span>
+                        </div>
+                        <h3><a href="blog-deepseek-r1-local-reasoning-models.html">DeepSeek-R1 &amp; Distilled Reasoning Models: Self-Hosting Local AI for 95% Compute Cost Reduction</a></h3>
+                        <p>How pure reinforcement learning (GRPO) unlocked frontier reasoning, and how to host distilled 14B/32B models on local hardware with vLLM and zero data leakage.</p>
+                        <div class="blog-author-strip">
+                            <div class="blog-author-avatar">JG</div>
+                            <div class="blog-author-info">
+                                <span>Jai Goel</span>
+                                <small>September 18, 2026</small>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Latest Post 5: Model Context Protocol (AI & Automation) -->
                 <article class="blog-card blog-card-item" data-category="ai" data-aos="fade-up">
                     <div class="blog-card-image">
-                        <img decoding="async" srcset="/images/optimized/blog-multi-agent-orchestration-640.webp 640w, /images/optimized/blog-multi-agent-orchestration-960.webp 960w, /images/optimized/blog-multi-agent-orchestration-1024.webp 1024w" sizes="(max-width: 760px) 100vw, 60vw" width="1024" height="1024" src="/images/optimized/blog-multi-agent-orchestration-1024.webp" alt="Multi-Agent Orchestration in 2026" loading="lazy">
+                        <img class="latest-cover" decoding="async" srcset="/images/optimized/ck-mcp-protocol-architecture-640.webp 640w, /images/optimized/ck-mcp-protocol-architecture-960.webp 960w, /images/optimized/ck-mcp-protocol-architecture-1536.webp 1536w" sizes="(max-width: 760px) 100vw, 60vw" width="1536" height="864" src="/images/ck-mcp-protocol-architecture.jpg" alt="Model Context Protocol MCP architecture connecting reasoning models to database nodes and tools" loading="lazy">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-meta">
+                            <span class="blog-tag">AI &amp; Automation</span>
+                            <span>•</span>
+                            <span>10 min read</span>
+                        </div>
+                        <h3><a href="blog-model-context-protocol-mcp.html">Model Context Protocol (MCP) in Production: Architecting the Universal Standard for Enterprise AI Agents</a></h3>
+                        <p>Why Anthropic's MCP has become the universal standard for AI agents—connecting LLMs to internal databases, tools, and SaaS with JSON-RPC security sandboxing.</p>
+                        <div class="blog-author-strip">
+                            <div class="blog-author-avatar">JG</div>
+                            <div class="blog-author-info">
+                                <span>Jai Goel</span>
+                                <small>September 15, 2026</small>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post: Multi-Agent Orchestration (AI & Automation) -->
+                <article class="blog-card blog-card-item" data-category="ai" data-aos="fade-up">
+                    <div class="blog-card-image">
+                        <img class="latest-cover" decoding="async" srcset="/images/optimized/ck-multi-agent-orchestration-2026-640.webp 640w, /images/optimized/ck-multi-agent-orchestration-2026-960.webp 960w, /images/optimized/ck-multi-agent-orchestration-2026-1536.webp 1536w" sizes="(max-width: 760px) 100vw, 60vw" width="1536" height="1024" src="/images/optimized/ck-multi-agent-orchestration-2026-1536.webp" alt="Abstract network of AI agents coordinating around a central intelligence core" loading="lazy">
                     </div>
                     <div class="blog-card-body">
                         <div class="blog-meta">
@@ -1414,7 +1557,7 @@
                 <!-- New Post 2: Hybrid Search & Vector Indexing (SaaS & Databases) -->
                 <article class="blog-card blog-card-item" data-category="saas" data-aos="fade-up" data-aos-delay="100">
                     <div class="blog-card-image">
-                        <img decoding="async" srcset="/images/optimized/blog-vector-hybrid-search-640.webp 640w, /images/optimized/blog-vector-hybrid-search-960.webp 960w, /images/optimized/blog-vector-hybrid-search-1024.webp 1024w" sizes="(max-width: 760px) 100vw, 60vw" width="1024" height="1024" src="/images/optimized/blog-vector-hybrid-search-1024.webp" alt="Hybrid Search & Vector Indexing at Scale" loading="lazy">
+                        <img class="latest-cover" decoding="async" srcset="/images/optimized/ck-hybrid-search-vector-indexing-640.webp 640w, /images/optimized/ck-hybrid-search-vector-indexing-960.webp 960w, /images/optimized/ck-hybrid-search-vector-indexing-1536.webp 1536w" sizes="(max-width: 760px) 100vw, 60vw" width="1536" height="1024" src="/images/optimized/ck-hybrid-search-vector-indexing-1536.webp" alt="Vector network and keyword index streams combining into one search result" loading="lazy">
                     </div>
                     <div class="blog-card-body">
                         <div class="blog-meta">
@@ -1437,7 +1580,7 @@
                 <!-- New Post 3: Serverless Postgres in 2026 (SaaS & Databases) -->
                 <article class="blog-card blog-card-item" data-category="saas" data-aos="fade-up">
                     <div class="blog-card-image">
-                        <img decoding="async" srcset="/images/optimized/blog-serverless-postgres-640.webp 640w, /images/optimized/blog-serverless-postgres-960.webp 960w, /images/optimized/blog-serverless-postgres-1024.webp 1024w" sizes="(max-width: 760px) 100vw, 60vw" width="1024" height="1024" src="/images/optimized/blog-serverless-postgres-1024.webp" alt="Serverless Postgres in 2026: Neon & Supabase" loading="lazy">
+                        <img class="latest-cover" decoding="async" srcset="/images/optimized/ck-serverless-postgres-2026-640.webp 640w, /images/optimized/ck-serverless-postgres-2026-960.webp 960w, /images/optimized/ck-serverless-postgres-2026-1536.webp 1536w" sizes="(max-width: 760px) 100vw, 60vw" width="1536" height="1024" src="/images/optimized/ck-serverless-postgres-2026-1536.webp" alt="Serverless database core branching into independent compute environments" loading="lazy">
                     </div>
                     <div class="blog-card-body">
                         <div class="blog-meta">
@@ -1460,7 +1603,7 @@
                 <!-- New Post 4: Rust & WebAssembly Microservices (Web Design & Engineering) -->
                 <article class="blog-card blog-card-item" data-category="web" data-aos="fade-up" data-aos-delay="100">
                     <div class="blog-card-image">
-                        <img decoding="async" srcset="/images/optimized/blog-rust-webassembly-640.webp 640w, /images/optimized/blog-rust-webassembly-960.webp 960w, /images/optimized/blog-rust-webassembly-1024.webp 1024w" sizes="(max-width: 760px) 100vw, 60vw" width="1024" height="1024" src="/images/optimized/blog-rust-webassembly-1024.webp" alt="Rust & WebAssembly Microservices" loading="lazy">
+                        <img class="latest-cover" decoding="async" srcset="/images/optimized/ck-rust-webassembly-microservices-640.webp 640w, /images/optimized/ck-rust-webassembly-microservices-960.webp 960w, /images/optimized/ck-rust-webassembly-microservices-1536.webp 1536w" sizes="(max-width: 760px) 100vw, 60vw" width="1536" height="1024" src="/images/optimized/ck-rust-webassembly-microservices-1536.webp" alt="Large software container transforming into fast modular WebAssembly components" loading="lazy">
                     </div>
                     <div class="blog-card-body">
                         <div class="blog-meta">
@@ -1483,7 +1626,7 @@
                 <!-- New Post 5: Context Engineering over Prompt Engineering (AI & Automation) -->
                 <article class="blog-card blog-card-item" data-category="ai" data-aos="fade-up">
                     <div class="blog-card-image">
-                        <img decoding="async" srcset="/images/optimized/blog-context-engineering-640.webp 640w, /images/optimized/blog-context-engineering-960.webp 960w, /images/optimized/blog-context-engineering-1024.webp 1024w" sizes="(max-width: 760px) 100vw, 60vw" width="1024" height="1024" src="/images/optimized/blog-context-engineering-1024.webp" alt="Context Engineering over Prompt Engineering" loading="lazy">
+                        <img class="latest-cover" decoding="async" srcset="/images/optimized/ck-context-engineering-640.webp 640w, /images/optimized/ck-context-engineering-960.webp 960w, /images/optimized/ck-context-engineering-1536.webp 1536w" sizes="(max-width: 760px) 100vw, 60vw" width="1536" height="1024" src="/images/optimized/ck-context-engineering-1536.webp" alt="Layered context streams organized around an AI memory core" loading="lazy">
                     </div>
                     <div class="blog-card-body">
                         <div class="blog-meta">
@@ -1506,7 +1649,7 @@
                 <!-- Post: SaaS / Real Estate Operations Portals -->
                 <article class="blog-card blog-card-item" data-category="saas" data-aos="fade-up">
                     <div class="blog-card-image">
-                        <img decoding="async" srcset="/images/optimized/aloha-estate-portal-640.webp 640w, /images/optimized/aloha-estate-portal-960.webp 959w, /images/optimized/aloha-estate-portal-1024.webp 1024w" sizes="(max-width: 760px) 100vw, 60vw" width="1024" height="682" src="/images/optimized/aloha-estate-portal-1024.webp" alt="Real Estate Operations Portals Architecture" loading="lazy">
+                        <img class="latest-cover" decoding="async" srcset="/images/optimized/ck-real-estate-operations-portal-640.webp 640w, /images/optimized/ck-real-estate-operations-portal-960.webp 960w, /images/optimized/ck-real-estate-operations-portal-1536.webp 1536w" sizes="(max-width: 760px) 100vw, 60vw" width="1536" height="1024" src="/images/optimized/ck-real-estate-operations-portal-1536.webp" alt="Real estate operations hub connecting properties, leads, and location data" loading="lazy">
                     </div>
                     <div class="blog-card-body">
                         <div class="blog-meta">

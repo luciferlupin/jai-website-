@@ -108,6 +108,11 @@ Curious Kaizer engineers bespoke digital products for businesses:
 ## Blog (Engineering & Tech)
 
 - https://www.curiouskaizer.com/blog — all posts
+- https://www.curiouskaizer.com/blog-agentic-coding-cursor-claude-workflows — agentic AI coding with Claude 3.7 Sonnet, Cursor & Windsurf
+- https://www.curiouskaizer.com/blog-nextjs-15-react-19-production-guide — Next.js 15 & React 19 architecture, Partial Prerendering (PPR) & Server Actions
+- https://www.curiouskaizer.com/blog-generative-engine-optimization-geo-ai-seo — Generative Engine Optimization (GEO) for Perplexity, SearchGPT & Google AI Overviews
+- https://www.curiouskaizer.com/blog-deepseek-r1-local-reasoning-models — DeepSeek-R1 & distilled reasoning models local self-hosting with vLLM
+- https://www.curiouskaizer.com/blog-model-context-protocol-mcp — Model Context Protocol (MCP) in production for enterprise AI agents
 - https://www.curiouskaizer.com/blog-multi-agent-orchestration-2026 — multi-agent AI orchestration
 - https://www.curiouskaizer.com/blog-voice-ai-gemini-integration — voice AI with Google Gemini
 - https://www.curiouskaizer.com/blog-context-engineering-llm-apps — context engineering for LLM applications
