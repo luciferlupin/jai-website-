@@ -1439,8 +1439,9 @@ section {
 .saas-scroll-section .sticky-card:nth-child(6) { top: 90px !important; z-index: 60 !important; }
 .saas-scroll-section .sticky-card:nth-child(7) { top: 90px !important; z-index: 70 !important; }
 
+/* Equal trailing margins keep the entire sticky deck on the same exit boundary. */
 .saas-scroll-section .sticky-card:last-child {
-    margin-bottom: 32px !important;
+    margin-bottom: 220px !important;
 }
 
 .saas-scroll-section .sticky-card:hover {
@@ -14553,7 +14554,8 @@ h6::after,
         padding-bottom: 140px !important; /* Generous bottom spacing so sticky cards have room to scroll and stack */
     }
 
-    .saas-scroll-section .sticky-card {
+    .saas-scroll-section .sticky-card,
+    .saas-scroll-section .sticky-card:last-child {
         margin-bottom: 20px !important; /* Sleek vertical gap between cards */
         min-height: auto !important; /* Remove restrictive min-height */
         height: auto !important;

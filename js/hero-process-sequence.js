@@ -74,7 +74,7 @@
 
         let frameRequest = 0;
         const updateResponsiveStops = () => {
-            if (window.innerWidth <= 768) return;
+            if (window.innerWidth <= 600) return;
             cancelAnimationFrame(frameRequest);
             frameRequest = requestAnimationFrame(() => {
                 const strategyStop = clipInsetForCard(strategyCard);
@@ -101,7 +101,13 @@
         // ==========================================
         // Mobile Interactive Step Controller
         // ==========================================
-        const isMobile = () => window.innerWidth <= 768;
+        const isMobile = () => window.innerWidth <= 600;
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const sceneObserver = new IntersectionObserver(([entry]) => {
+            flow.classList.toggle('pc-paused', !entry.isIntersecting || document.hidden);
+        });
+        sceneObserver.observe(flow);
+        reducedMotion.addEventListener('change', () => startMobileAutoPlay());
         let currentStepIndex = 0;
         let mobileTimer = null;
         let isUserInteracting = false;
@@ -141,7 +147,7 @@
 
         const startMobileAutoPlay = () => {
             clearInterval(mobileTimer);
-            if (!isMobile()) return;
+            if (!isMobile() || reducedMotion.matches) return;
             mobileTimer = setInterval(() => {
                 if (isMobile() && !isUserInteracting && !document.hidden) {
                     setMobileStep(currentStepIndex + 1);
@@ -212,6 +218,7 @@
 
         // Pause timer when tab is inactive
         document.addEventListener('visibilitychange', () => {
+            flow.classList.toggle('pc-paused', document.hidden);
             if (document.hidden) {
                 clearInterval(mobileTimer);
             } else if (isMobile()) {
